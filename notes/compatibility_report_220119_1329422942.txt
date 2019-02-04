@@ -1,0 +1,1750 @@
+Converting GML script: MACRO: CANVAS_X
+Converted builtin - line 1: view_xview[0] -> __view_get( e__VW.XView, 0 )
+
+Converting GML script: MACRO: CANVAS_Y
+Converted builtin - line 1: view_yview[0] -> __view_get( e__VW.YView, 0 )
+
+Converting GML script: MACRO: CANVAS_WIDTH             
+Converted builtin - line 1: view_wview[0] -> __view_get( e__VW.WView, 0 )
+
+Converting GML script: MACRO: CANVAS_HEIGHT
+Converted builtin - line 1: view_hview[0] -> __view_get( e__VW.HView, 0 )
+
+Converting GML script: ${project_dir}\scripts\instance_create_f\instance_create_f.gml
+Converted description /// @description instance_create_f(x,y,object_index,value)
+/// @param x
+/// @param y
+/// @param object_index
+/// @param value
+
+Converting GML script: ${project_dir}\scripts\image_scale\image_scale.gml
+Converted description /// @description image_scale(xscale,yscale);
+/// @param xscale
+/// @param yscale
+
+Converting GML script: ${project_dir}\scripts\mousepos\mousepos.gml
+Converted builtin - line 13: view_xview[argument[1]] -> __view_get( e__VW.XView, argument[1] )
+Converted builtin - line 16: view_yview[argument[1]] -> __view_get( e__VW.YView, argument[1] )
+Converted builtin - line 13: view_wview[argument[1]] -> __view_get( e__VW.WView, argument[1] )
+Converted builtin - line 16: view_hview[argument[1]] -> __view_get( e__VW.HView, argument[1] )
+Converted description /// @description mousepos(x or y,view)
+/// @param x or y
+/// @param view
+
+Converting GML script: ${project_dir}\scripts\toggle\toggle.gml
+Converted description /// @description toggle(var,val1,val2...)
+/// @param var
+/// @param val1
+/// @param val2...
+
+Converting GML script: ${project_dir}\scripts\draw_set_align\draw_set_align.gml
+Converted description /// @description draw_set_align(halign,valign)
+/// @param halign
+/// @param valign
+
+Converting GML script: ${project_dir}\scripts\draw_text_full\draw_text_full.gml
+Converted description /// @description draw_text_full(x,y,text,xscale,yscale,angle,alpha,halign,valign,color);
+/// @param x
+/// @param y
+/// @param text
+/// @param xscale
+/// @param yscale
+/// @param angle
+/// @param alpha
+/// @param halign
+/// @param valign
+/// @param color
+
+Converting GML script: ${project_dir}\scripts\draw_text_outline\draw_text_outline.gml
+Converted description /// @description draw_text_outline(x,y,text,xscale,yscale,angle,color,outlinetype,outlinecolor,thickness);
+/// @param x
+/// @param y
+/// @param text
+/// @param xscale
+/// @param yscale
+/// @param angle
+/// @param color
+/// @param outlinetype
+/// @param outlinecolor
+/// @param thickness
+
+Converting GML script: ${project_dir}\scripts\instance_setup\instance_setup.gml
+Converted description /// @description instance_setup(image_index,image_speed,image_angle,image_alpha);
+/// @param image_index
+/// @param image_speed
+/// @param image_angle
+/// @param image_alpha
+
+Converting GML script: ${project_dir}\scripts\home\home.gml
+Converted description /// @description home(input,goal,velocity,angle);
+/// @param input
+/// @param goal
+/// @param velocity
+/// @param angle
+
+Converting GML script: ${project_dir}\scripts\part_system_create_pro\part_system_create_pro.gml
+Converted description /// @description part_system_create_pro(draw_oldtonew,base_slots,'top_limit)
+/// @param draw_oldtonew
+/// @param base_slots
+/// @param 'top_limit
+
+Converting GML script: ${project_dir}\scripts\part_system_update_pro\part_system_update_pro.gml
+Converted description /// @description part_system_update_pro(system,step)
+/// @param system
+/// @param step
+
+Converting GML script: ${project_dir}\scripts\part_system_draw_pro\part_system_draw_pro.gml
+Converted description /// @description part_system_draw_pro(system);
+/// @param system
+
+Converting GML script: ${project_dir}\scripts\part_system_edit_pro\part_system_edit_pro.gml
+Converted description /// @description part_system_edit_pro(system,draw_oldtonew,base_slots,limit)
+/// @param system
+/// @param draw_oldtonew
+/// @param base_slots
+/// @param limit
+
+Converting GML script: ${project_dir}\scripts\part_system_clear_pro\part_system_clear_pro.gml
+Converted description /// @description part_system_clear_pro(system)
+/// @param system
+
+Converting GML script: ${project_dir}\scripts\part_system_exists_pro\part_system_exists_pro.gml
+Converted description /// @description part_system_exists_pro(system)
+/// @param system
+
+Converting GML script: ${project_dir}\scripts\part_system_remove_pro\part_system_remove_pro.gml
+Converted description /// @description part_system_remove_pro(system)
+/// @param system
+
+Converting GML script: ${project_dir}\scripts\part_type_setup_pro\part_type_setup_pro.gml
+Converted description /// @description part_type_setup_pro(sprite,subimg,imgspd,life_min,life_max);
+/// @param sprite
+/// @param subimg
+/// @param imgspd
+/// @param life_min
+/// @param life_max
+
+Converting GML script: ${project_dir}\scripts\part_type_size_orientation_pro\part_type_size_orientation_pro.gml
+Converted description /// @description part_type_size_orientation_pro(part,size_min,size_max,size_incr,size_wiggle,ang_min,ang_max,ang_incr,ang_wiggle,ang_relative);
+/// @param part
+/// @param size_min
+/// @param size_max
+/// @param size_incr
+/// @param size_wiggle
+/// @param ang_min
+/// @param ang_max
+/// @param ang_incr
+/// @param ang_wiggle
+/// @param ang_relative
+
+Converting GML script: ${project_dir}\scripts\part_type_direction_speed_pro\part_type_direction_speed_pro.gml
+Converted description /// @description part_type_direction_speed_pro(part,dir_min,dir_max,dir_incr,dir_wiggle,speed_min,speed_max,speed_incr,speed_wiggle);
+/// @param part
+/// @param dir_min
+/// @param dir_max
+/// @param dir_incr
+/// @param dir_wiggle
+/// @param speed_min
+/// @param speed_max
+/// @param speed_incr
+/// @param speed_wiggle
+
+Converting GML script: ${project_dir}\scripts\part_type_gravity_pro\part_type_gravity_pro.gml
+Converted description /// @description part_type_gravity_pro(part,speed,acceleration,dir_min,dir_max)
+/// @param part
+/// @param speed
+/// @param acceleration
+/// @param dir_min
+/// @param dir_max
+
+Converting GML script: ${project_dir}\scripts\part_type_blend_color_alpha_pro\part_type_blend_color_alpha_pro.gml
+Converted description /// @description part_type_blend_color_alpha_pro(part,blend_mode,color1,color2,alpha1,alpha2)
+/// @param part
+/// @param blend_mode
+/// @param color1
+/// @param color2
+/// @param alpha1
+/// @param alpha2
+
+Converting GML script: ${project_dir}\scripts\part_type_spawn_pro\part_type_spawn_pro.gml
+Converted description /// @description part_type_spawn_pro(system,part,spawn_slot,xmin,ymin,xmax,ymax,shape,distr,amount)
+/// @param system
+/// @param part
+/// @param spawn_slot
+/// @param xmin
+/// @param ymin
+/// @param xmax
+/// @param ymax
+/// @param shape
+/// @param distr
+/// @param amount
+
+Converting GML script: ${project_dir}\scripts\part_type_wipe_pro\part_type_wipe_pro.gml
+Converted description /// @description part_type_wipe_pro(part,system)
+/// @param part
+/// @param system
+
+Converting GML script: ${project_dir}\scripts\part_system_count_pro\part_system_count_pro.gml
+Converted description /// @description part_system_count_pro(system)
+/// @param system
+
+Converting GML script: ${project_dir}\scripts\part_type_count_pro\part_type_count_pro.gml
+Converted description /// @description part_type_count_pro(part,system)
+/// @param part
+/// @param system
+
+Converting GML script: ${project_dir}\scripts\part_type_edit_pro\part_type_edit_pro.gml
+Converted description /// @description part_type_edit_pro(part,trait,val1,...)
+/// @param part
+/// @param trait
+/// @param val1
+/// @param ...
+
+Converting GML script: ${project_dir}\scripts\part_type_exists_pro\part_type_exists_pro.gml
+Converted description /// @description part_type_exists_pro(part)
+/// @param part
+
+Converting GML script: ${project_dir}\scripts\part_type_remove_pro\part_type_remove_pro.gml
+Converted description /// @description part_type_remove_pro(part)
+/// @param part
+
+Converting GML script: ${project_dir}\scripts\part_system_create_lt\part_system_create_lt.gml
+Converted description /// @description part_system_create_lt(draw_oldtonew,base_slots,'limit)
+/// @param draw_oldtonew
+/// @param base_slots
+/// @param 'limit
+
+Converting GML script: ${project_dir}\scripts\part_system_update_lt\part_system_update_lt.gml
+Converted description /// @description part_system_update_lt(system,step)
+/// @param system
+/// @param step
+
+Converting GML script: ${project_dir}\scripts\part_system_draw_lt\part_system_draw_lt.gml
+Converted description /// @description part_system_draw_lt(system);
+/// @param system
+
+Converting GML script: ${project_dir}\scripts\part_system_edit_lt\part_system_edit_lt.gml
+Converted description /// @description part_system_edit_lt(system,draw_oldtonew,base_slots,limit)
+/// @param system
+/// @param draw_oldtonew
+/// @param base_slots
+/// @param limit
+
+Converting GML script: ${project_dir}\scripts\part_system_clear_lt\part_system_clear_lt.gml
+Converted description /// @description part_system_clear_lt(system)
+/// @param system
+
+Converting GML script: ${project_dir}\scripts\part_system_exists_lt\part_system_exists_lt.gml
+Converted description /// @description part_system_exists_lt(system)
+/// @param system
+
+Converting GML script: ${project_dir}\scripts\part_system_remove_lt\part_system_remove_lt.gml
+Converted description /// @description part_system_remove_lt(system)
+/// @param system
+
+Converting GML script: ${project_dir}\scripts\part_type_setup_lt\part_type_setup_lt.gml
+Converted description /// @description part_type_setup_lt(sprite,subimg,life_min,life_max);
+/// @param sprite
+/// @param subimg
+/// @param life_min
+/// @param life_max
+
+Converting GML script: ${project_dir}\scripts\part_type_size_orientation_lt\part_type_size_orientation_lt.gml
+Converted description /// @description part_type_size_orientation_lt(part,size_min,size_max,size_incr,ang_min,ang_max,ang_incr,random_rot_dir);
+/// @param part
+/// @param size_min
+/// @param size_max
+/// @param size_incr
+/// @param ang_min
+/// @param ang_max
+/// @param ang_incr
+/// @param random_rot_dir
+
+Converting GML script: ${project_dir}\scripts\part_type_direction_speed_lt\part_type_direction_speed_lt.gml
+Converted description /// @description part_type_direction_speed_lt(part,dir_min,dir_max,speed_min,speed_max,speed_incr);
+/// @param part
+/// @param dir_min
+/// @param dir_max
+/// @param speed_min
+/// @param speed_max
+/// @param speed_incr
+
+Converting GML script: ${project_dir}\scripts\part_type_blend_color_alpha_lt\part_type_blend_color_alpha_lt.gml
+Converted description /// @description part_type_blend_color_alpha_lt(part,blend_mode,color1,color2,alpha1,alpha2)
+/// @param part
+/// @param blend_mode
+/// @param color1
+/// @param color2
+/// @param alpha1
+/// @param alpha2
+
+Converting GML script: ${project_dir}\scripts\part_type_wipe_lt\part_type_wipe_lt.gml
+Converted description /// @description part_type_wipe_lt(part,system)
+/// @param part
+/// @param system
+
+Converting GML script: ${project_dir}\scripts\part_type_spawn_lt\part_type_spawn_lt.gml
+Converted description /// @description part_type_spawn_lt(system,part,spawn_slot,xmin,ymin,xmax,ymax,shape,distr,amount)
+/// @param system
+/// @param part
+/// @param spawn_slot
+/// @param xmin
+/// @param ymin
+/// @param xmax
+/// @param ymax
+/// @param shape
+/// @param distr
+/// @param amount
+
+Converting GML script: ${project_dir}\scripts\part_system_count_lt\part_system_count_lt.gml
+Converted description /// @description part_system_count_lt(system)
+/// @param system
+
+Converting GML script: ${project_dir}\scripts\part_type_count_lt\part_type_count_lt.gml
+Converted description /// @description part_type_count_lt(part,system)
+/// @param part
+/// @param system
+
+Converting GML script: ${project_dir}\scripts\part_type_edit_lt\part_type_edit_lt.gml
+Converted description /// @description part_type_edit_lt(part,trait,val1,...)
+/// @param part
+/// @param trait
+/// @param val1
+/// @param ...
+
+Converting GML script: ${project_dir}\scripts\part_type_exists_lt\part_type_exists_lt.gml
+Converted description /// @description part_type_exists_lt(part)
+/// @param part
+
+Converting GML script: ${project_dir}\scripts\part_type_remove_lt\part_type_remove_lt.gml
+Converted description /// @description part_type_remove_lt(part)
+/// @param part
+
+Converting GML script: ${project_dir}\scripts\part_system_create_ult\part_system_create_ult.gml
+Converted description /// @description part_system_create_ult(draw_oldtonew,base_slots,'limit)
+/// @param draw_oldtonew
+/// @param base_slots
+/// @param 'limit
+
+Converting GML script: ${project_dir}\scripts\part_system_update_ult\part_system_update_ult.gml
+Converted description /// @description part_system_update_ult(system,step)
+/// @param system
+/// @param step
+
+Converting GML script: ${project_dir}\scripts\part_system_draw_ult\part_system_draw_ult.gml
+Converted description /// @description part_system_draw_ult(system);
+/// @param system
+
+Converting GML script: ${project_dir}\scripts\part_system_edit_ult\part_system_edit_ult.gml
+Converted description /// @description part_system_edit_ult(system,draw_oldtonew,base_slots,limit)
+/// @param system
+/// @param draw_oldtonew
+/// @param base_slots
+/// @param limit
+
+Converting GML script: ${project_dir}\scripts\part_system_clear_ult\part_system_clear_ult.gml
+Converted description /// @description part_system_clear_ult(system)
+/// @param system
+
+Converting GML script: ${project_dir}\scripts\part_system_exists_ult\part_system_exists_ult.gml
+Converted description /// @description part_system_exists_ult(system)
+/// @param system
+
+Converting GML script: ${project_dir}\scripts\part_system_remove_ult\part_system_remove_ult.gml
+Converted description /// @description part_system_remove_ult(system)
+/// @param system
+
+Converting GML script: ${project_dir}\scripts\part_type_setup_ult\part_type_setup_ult.gml
+Converted description /// @description part_type_setup_ult(sprite,subimg);
+/// @param sprite
+/// @param subimg
+
+Converting GML script: ${project_dir}\scripts\part_type_size_orientation_ult\part_type_size_orientation_ult.gml
+Converted description /// @description part_type_size_orientation_ult(part,size_min,size_max,size_incr,ang_min,ang_max,ang_incr);
+/// @param part
+/// @param size_min
+/// @param size_max
+/// @param size_incr
+/// @param ang_min
+/// @param ang_max
+/// @param ang_incr
+
+Converting GML script: ${project_dir}\scripts\part_type_blend_color_alpha_ult\part_type_blend_color_alpha_ult.gml
+Converted description /// @description part_type_blend_color_alpha_ult(part,blend_mode,color,alpha,alpha_incr)
+/// @param part
+/// @param blend_mode
+/// @param color
+/// @param alpha
+/// @param alpha_incr
+
+Converting GML script: ${project_dir}\scripts\part_type_wipe_ult\part_type_wipe_ult.gml
+Converted description /// @description part_type_wipe_ult(part,system)
+/// @param part
+/// @param system
+
+Converting GML script: ${project_dir}\scripts\part_type_spawn_ult\part_type_spawn_ult.gml
+Converted description /// @description part_type_spawn_ult(system,part,spawn_slot,xmin,ymin,xmax,ymax,shape,distr,amount)
+/// @param system
+/// @param part
+/// @param spawn_slot
+/// @param xmin
+/// @param ymin
+/// @param xmax
+/// @param ymax
+/// @param shape
+/// @param distr
+/// @param amount
+
+Converting GML script: ${project_dir}\scripts\part_system_count_ult\part_system_count_ult.gml
+Converted description /// @description part_system_count_ult(system)
+/// @param system
+
+Converting GML script: ${project_dir}\scripts\part_type_count_ult\part_type_count_ult.gml
+Converted description /// @description part_type_count_ult(part,system)
+/// @param part
+/// @param system
+
+Converting GML script: ${project_dir}\scripts\part_type_edit_ult\part_type_edit_ult.gml
+Converted description /// @description part_type_edit_ult(part,trait,val1,...)
+/// @param part
+/// @param trait
+/// @param val1
+/// @param ...
+
+Converting GML script: ${project_dir}\scripts\part_type_exists_ult\part_type_exists_ult.gml
+Converted description /// @description part_type_exists_ult(part)
+/// @param part
+
+Converting GML script: ${project_dir}\scripts\part_type_remove_ult\part_type_remove_ult.gml
+Converted description /// @description part_type_remove_ult(part)
+/// @param part
+
+Converting GML script: ${project_dir}\scripts\rgb\rgb.gml
+Converted description /// @description rgb(red,green,blue);
+/// @param red
+/// @param green
+/// @param blue
+
+Converting GML script: ${project_dir}\scripts\hsv\hsv.gml
+Converted description /// @description hsv(hue,saturation,value);
+/// @param hue
+/// @param saturation
+/// @param value
+
+Converting GML script: ${project_dir}\scripts\color_shift_hsv\color_shift_hsv.gml
+Converted description /// @description color_shift_hsv(color,hue,saturation,value,relative);
+/// @param color
+/// @param hue
+/// @param saturation
+/// @param value
+/// @param relative
+
+Converting GML script: ${project_dir}\scripts\screen_transition\screen_transition.gml
+Converted description /// @description screen_transition(room,script,time,type,color);
+/// @param room
+/// @param script
+/// @param time
+/// @param type
+/// @param color
+
+Converting GML script: ${project_dir}\scripts\wipe\wipe.gml
+Converted description /// @description wipe(object);
+/// @param object
+
+Converting GML script: ${project_dir}\scripts\ascii_encode\ascii_encode.gml
+Converted description /// @description ascii_encode(string)
+/// @param string
+
+Converting GML script: ${project_dir}\scripts\ascii_decode\ascii_decode.gml
+Converted description /// @description ascii_decode(string)
+/// @param string
+
+Converting GML script: ${project_dir}\scripts\flip_encode\flip_encode.gml
+Converted description /// @description flip_encode(val,key);
+/// @param val
+/// @param key
+
+Converting GML script: ${project_dir}\scripts\flip_decode\flip_decode.gml
+Converted description /// @description flip_decode(val,key);
+/// @param val
+/// @param key
+
+Converting GML script: ${project_dir}\scripts\draw_object\draw_object.gml
+Converted description /// @description draw_object(obj)
+/// @param obj
+
+Converting GML script: ${project_dir}\scripts\draw_afterimage\draw_afterimage.gml
+Converted description /// @description draw_afterimage(count,alpha,fadeout,frameskip,rate);
+/// @param count
+/// @param alpha
+/// @param fadeout
+/// @param frameskip
+/// @param rate
+
+Converting GML script: ${project_dir}\scripts\draw_afterimage_ext\draw_afterimage_ext.gml
+Converted description /// @description draw_afterimage_ext(count,alpha,fadeout,frameskip,rate,sprite,subimg,x,y,image_xscale,image_yscale,image_angle);
+/// @param count
+/// @param alpha
+/// @param fadeout
+/// @param frameskip
+/// @param rate
+/// @param sprite
+/// @param subimg
+/// @param x
+/// @param y
+/// @param image_xscale
+/// @param image_yscale
+/// @param image_angle
+
+Converting GML script: ${project_dir}\scripts\draw_afterimage_remove\draw_afterimage_remove.gml
+Converted description /// @description draw_afterimage_remove();
+
+Converting GML script: ${project_dir}\scripts\draw_afterimage_pause\draw_afterimage_pause.gml
+Converted description /// @description draw_afterimage_pause(frameskip);
+/// @param frameskip
+
+Converting GML script: ${project_dir}\scripts\draw_afterimage_set_sprite\draw_afterimage_set_sprite.gml
+Converted description /// @description draw_afterimage_set_sprite(newsprite,subimg)
+/// @param newsprite
+/// @param subimg
+
+Converting GML script: ${project_dir}\scripts\gaussian_random\gaussian_random.gml
+Converted description /// @description gaussian_random(mean,acceptable_range,'total_range)
+/// @param mean
+/// @param acceptable_range
+/// @param 'total_range
+
+Converting GML script: ${project_dir}\scripts\invgaussian_random\invgaussian_random.gml
+Converted description /// @description invgaussian_random()
+
+Converting GML script: ${project_dir}\scripts\random_coords\random_coords.gml
+Converted description /// @description random_coords(xmin,ymin,xmax,ymax,shape,distribution)
+/// @param xmin
+/// @param ymin
+/// @param xmax
+/// @param ymax
+/// @param shape
+/// @param distribution
+
+Converting GML script: ${project_dir}\scripts\array_setup\array_setup.gml
+Converted description /// @description array_setup(value,width,'height)
+/// @param value
+/// @param width
+/// @param 'height
+
+Converting GML script: ${project_dir}\scripts\string_readln\string_readln.gml
+Converted description /// @description string_readln(string,separator)
+/// @param string
+/// @param separator
+
+Converting GML script: ${project_dir}\scripts\string_readln_real\string_readln_real.gml
+Converted description /// @description string_readln_real(string,separator)
+/// @param string
+/// @param separator
+
+Converting GML script: ${project_dir}\scripts\ds_grid_export\ds_grid_export.gml
+Converted description /// @description ds_grid_export(grid,'separator)
+/// @param grid
+/// @param 'separator
+
+Converting GML script: ${project_dir}\scripts\ds_grid_import\ds_grid_import.gml
+Converted description /// @description ds_grid_import(grid,data,'separator)
+/// @param grid
+/// @param data
+/// @param 'separator
+
+Converting GML script: ${project_dir}\scripts\file_text_readbit\file_text_readbit.gml
+Converted description /// @description file_text_readbit(file)
+/// @param file
+
+Converting GML script: ${project_dir}\scripts\linsin\linsin.gml
+Converted description /// @description linsin(x)
+/// @param x
+
+Converting GML script: ${project_dir}\scripts\ask\ask.gml
+Converted description /// @description ask(question,if no[scr],if yes[scr]);
+/// @param question
+/// @param if no[scr]
+/// @param if yes[scr]
+
+Converting GML script: ${project_dir}\scripts\display_message\display_message.gml
+Converted description /// @description display_message(message,script);
+/// @param message
+/// @param script
+
+Converting GML script: ${project_dir}\scripts\version_check\version_check.gml
+Converted description /// @description version_check(string to check);
+/// @param string to check
+
+Converting GML script: ${project_dir}\scripts\screen_darken\screen_darken.gml
+Converted description /// @description screen_darken(alpha)
+/// @param alpha
+
+Converting GML script: ${project_dir}\scripts\draw_tooltip\draw_tooltip.gml
+Converted description /// @description draw_tooltip(text,'text_color,'bg_color,'border_color);
+/// @param text
+/// @param 'text_color
+/// @param 'bg_color
+/// @param 'border_color
+
+Converting GML script: ${project_dir}\scripts\draw_text_highlight\draw_text_highlight.gml
+Converted description /// @description draw_text_highlight(x,y,text,scale,bg_color,bg_alpha,halign,valign,hborder,vborder)
+/// @param x
+/// @param y
+/// @param text
+/// @param scale
+/// @param bg_color
+/// @param bg_alpha
+/// @param halign
+/// @param valign
+/// @param hborder
+/// @param vborder
+
+Converting GML script: ${project_dir}\scripts\enemy_setup\enemy_setup.gml
+Converted description /// @description enemy_setup(sprite,size,behmin,behmax,intro);
+/// @param sprite
+/// @param size
+/// @param behmin
+/// @param behmax
+/// @param intro
+
+Converting GML script: ${project_dir}\scripts\stats_main\stats_main.gml
+Converted description /// @description stats_main(hp,bdef,pdef,fdef,cdef,udef,bdmg,bpen,bkb,bkbres,pkbres,fkbres,ckbres,ukbres);
+/// @param hp
+/// @param bdef
+/// @param pdef
+/// @param fdef
+/// @param cdef
+/// @param udef
+/// @param bdmg
+/// @param bpen
+/// @param bkb
+/// @param bkbres
+/// @param pkbres
+/// @param fkbres
+/// @param ckbres
+/// @param ukbres
+
+Converting GML script: ${project_dir}\scripts\stats_projectile\stats_projectile.gml
+Converted description /// @description stats_projectile(type,dmg,pen,kb);
+/// @param type
+/// @param dmg
+/// @param pen
+/// @param kb
+
+Converting GML script: ${project_dir}\scripts\scr_PlayerDataUpdate\scr_PlayerDataUpdate.gml
+Converted description /// @description scr_PlayerDataUpdate(character_index);
+/// @param character_index
+
+Converting GML script: ${project_dir}\scripts\scr_PlayerGetData\scr_PlayerGetData.gml
+Converted description /// @description scr_PlayerGetData();
+
+Converting GML script: ${project_dir}\scripts\scr_ParticlesUpdate\scr_ParticlesUpdate.gml
+Converted description /// @description scr_ParticlesUpdate()
+
+Converting GML script: ${project_dir}\scripts\scr_BackgroundUpdate\scr_BackgroundUpdate.gml
+Converted builtin - line 5: background_index[0]=bg_Menu0 -> __background_set( e__BG.Index, 0, bg_Menu0 )
+Converted builtin - line 10: background_index[1]=bg_Menu1 -> __background_set( e__BG.Index, 1, bg_Menu1 )
+Converted builtin - line 15: background_index[2]=bg_Menu2 -> __background_set( e__BG.Index, 2, bg_Menu2 )
+Converted builtin - line 20: background_index[3]=bg_Menu3 -> __background_set( e__BG.Index, 3, bg_Menu3 )
+Converted builtin - line 25: background_index[4]=bg_Menu4 -> __background_set( e__BG.Index, 4, bg_Menu4 )
+Converted builtin - line 30: background_index[5]=bg_Menu5 -> __background_set( e__BG.Index, 5, bg_Menu5 )
+Converted builtin - line 35: background_index[6]=bg_Menu6 -> __background_set( e__BG.Index, 6, bg_Menu6 )
+Converted builtin - line 40: background_index[7]=-1 -> __background_set( e__BG.Index, 7, -1 )
+Converted builtin - line 43: background_index[0]=bg_Christmas0 -> __background_set( e__BG.Index, 0, bg_Christmas0 )
+Converted builtin - line 48: background_index[1]=bg_Christmas1 -> __background_set( e__BG.Index, 1, bg_Christmas1 )
+Converted builtin - line 53: background_index[2]=bg_Christmas2 -> __background_set( e__BG.Index, 2, bg_Christmas2 )
+Converted builtin - line 58: background_index[3]=bg_Christmas3 -> __background_set( e__BG.Index, 3, bg_Christmas3 )
+Converted builtin - line 63: background_index[4]=bg_Christmas4 -> __background_set( e__BG.Index, 4, bg_Christmas4 )
+Converted builtin - line 68: background_index[5]=bg_Christmas5 -> __background_set( e__BG.Index, 5, bg_Christmas5 )
+Converted builtin - line 73: background_index[6]=-1 -> __background_set( e__BG.Index, 6, -1 )
+Converted builtin - line 74: background_index[7]=-1 -> __background_set( e__BG.Index, 7, -1 )
+Converted builtin - line 6: background_htiled[0]=0 -> __background_set( e__BG.HTiled, 0, 0 )
+Converted builtin - line 11: background_htiled[1]=1 -> __background_set( e__BG.HTiled, 1, 1 )
+Converted builtin - line 16: background_htiled[2]=1 -> __background_set( e__BG.HTiled, 2, 1 )
+Converted builtin - line 21: background_htiled[3]=1 -> __background_set( e__BG.HTiled, 3, 1 )
+Converted builtin - line 26: background_htiled[4]=1 -> __background_set( e__BG.HTiled, 4, 1 )
+Converted builtin - line 31: background_htiled[5]=1 -> __background_set( e__BG.HTiled, 5, 1 )
+Converted builtin - line 36: background_htiled[6]=1 -> __background_set( e__BG.HTiled, 6, 1 )
+Converted builtin - line 44: background_htiled[0]=0 -> __background_set( e__BG.HTiled, 0, 0 )
+Converted builtin - line 49: background_htiled[1]=1 -> __background_set( e__BG.HTiled, 1, 1 )
+Converted builtin - line 54: background_htiled[2]=1 -> __background_set( e__BG.HTiled, 2, 1 )
+Converted builtin - line 59: background_htiled[3]=1 -> __background_set( e__BG.HTiled, 3, 1 )
+Converted builtin - line 64: background_htiled[4]=1 -> __background_set( e__BG.HTiled, 4, 1 )
+Converted builtin - line 69: background_htiled[5]=1 -> __background_set( e__BG.HTiled, 5, 1 )
+Converted builtin - line 7: background_vtiled[0]=1 -> __background_set( e__BG.VTiled, 0, 1 )
+Converted builtin - line 12: background_vtiled[1]=0 -> __background_set( e__BG.VTiled, 1, 0 )
+Converted builtin - line 17: background_vtiled[2]=0 -> __background_set( e__BG.VTiled, 2, 0 )
+Converted builtin - line 22: background_vtiled[3]=0 -> __background_set( e__BG.VTiled, 3, 0 )
+Converted builtin - line 27: background_vtiled[4]=0 -> __background_set( e__BG.VTiled, 4, 0 )
+Converted builtin - line 32: background_vtiled[5]=0 -> __background_set( e__BG.VTiled, 5, 0 )
+Converted builtin - line 37: background_vtiled[6]=0 -> __background_set( e__BG.VTiled, 6, 0 )
+Converted builtin - line 45: background_vtiled[0]=1 -> __background_set( e__BG.VTiled, 0, 1 )
+Converted builtin - line 50: background_vtiled[1]=0 -> __background_set( e__BG.VTiled, 1, 0 )
+Converted builtin - line 55: background_vtiled[2]=0 -> __background_set( e__BG.VTiled, 2, 0 )
+Converted builtin - line 60: background_vtiled[3]=0 -> __background_set( e__BG.VTiled, 3, 0 )
+Converted builtin - line 65: background_vtiled[4]=0 -> __background_set( e__BG.VTiled, 4, 0 )
+Converted builtin - line 70: background_vtiled[5]=0 -> __background_set( e__BG.VTiled, 5, 0 )
+Converted description /// @description scr_BackgroundUpdate(realm)
+/// @param realm
+
+Converting GML script: ${project_dir}\scripts\scr_Stats_Update\scr_Stats_Update.gml
+Converted description /// @description scr_Stats_Update(show all);
+/// @param show all
+
+Converting GML script: ${project_dir}\scripts\scr_Stats_Linecount\scr_Stats_Linecount.gml
+Converted description /// @description scr_Stats_Linecount(a,b,c);
+/// @param a
+/// @param b
+/// @param c
+
+Converting GML script: ${project_dir}\scripts\scr_toggle_stats_selection\scr_toggle_stats_selection.gml
+Converted description /// @description scr_toggle_stats_selection(bool);
+/// @param bool
+
+Converting GML script: ${project_dir}\scripts\scr_LoreUpdate\scr_LoreUpdate.gml
+Converted description /// @description scr_LoreUpdate()
+
+Converting GML script: ${project_dir}\scripts\scr_Save\scr_Save.gml
+Converted description /// @description scr_Save(slot_name);
+/// @param slot_name
+
+Converting GML script: ${project_dir}\scripts\scr_Load\scr_Load.gml
+Converted description /// @description scr_Load(slot_path)
+/// @param slot_path
+
+Converting GML script: ${project_dir}\scripts\scr_Rename\scr_Rename.gml
+Converted description /// @description scr_Rename(file path, new filename);
+/// @param file path
+/// @param  new filename
+Converted string - line 4: "\" -> "\\"
+Converted string - line 4: '"' -> "\""
+Converted string - line 4: '' -> ""
+Converted string - line 5: "slots\" -> "slots\\"
+Converted string - line 10: "slots\" -> "slots\\"
+
+Converting GML script: ${project_dir}\scripts\scr_Pause\scr_Pause.gml
+Converted description /// @description scr_Pause();
+
+Converting GML script: ${project_dir}\scripts\scr_Restart\scr_Restart.gml
+Converted description /// @description scr_Restart();
+
+Converting GML script: ${project_dir}\scripts\spawn_bullet\spawn_bullet.gml
+Converted description /// @description spawn_bullet(x,y,obj,f,e,enemy,spawn);
+/// @param x
+/// @param y
+/// @param obj
+/// @param f
+/// @param e
+/// @param enemy
+/// @param spawn
+
+Converting GML script: ${project_dir}\scripts\spawn_bullet_ring\spawn_bullet_ring.gml
+Converted description /// @description spawn_bullet_ring(x,y,obj,f,e,enemy,spawn,count,random);
+/// @param x
+/// @param y
+/// @param obj
+/// @param f
+/// @param e
+/// @param enemy
+/// @param spawn
+/// @param count
+/// @param random
+
+Converting GML script: ${project_dir}\scripts\explode\explode.gml
+Converted description /// @description explode(x,y,size,sfx?)
+/// @param x
+/// @param y
+/// @param size
+/// @param sfx?
+
+Converting GML script: ${project_dir}\scripts\calculate_damage\calculate_damage.gml
+Converted description /// @description calculate_damage(dmg,pen,def);
+/// @param dmg
+/// @param pen
+/// @param def
+
+Converting GML script: ${project_dir}\scripts\player_hp\player_hp.gml
+Converted description /// @description player_hp(amount,_playerid);
+/// @param amount
+/// @param _playerid
+
+Converting GML script: ${project_dir}\scripts\knockback\knockback.gml
+Converted description /// @description knockback(force,direction,Hacceleration,Vacceleration);
+/// @param force
+/// @param direction
+/// @param Hacceleration
+/// @param Vacceleration
+
+Converting GML script: ${project_dir}\scripts\indicate\indicate.gml
+Converted description /// @description indicate(x,y,content,importance[1-3],color1,color2);
+/// @param x
+/// @param y
+/// @param content
+/// @param importance[1-3]
+/// @param color1
+/// @param color2
+
+Converting GML script: ${project_dir}\scripts\char_index\char_index.gml
+Converted description /// @description char_index(char)
+/// @param char
+Converted string - line 3: '"' -> "\""
+
+Converting GML script: ${project_dir}\scripts\gamespeed\gamespeed.gml
+Converted description /// @description gamespeed(speed);
+/// @param speed
+
+Converting GML script: ${project_dir}\scripts\player_status_add\player_status_add.gml
+Converted description /// @description player_status_add(statusid,duration,relative);
+/// @param statusid
+/// @param duration
+/// @param relative
+
+Converting GML script: ${project_dir}\scripts\player_status_update\player_status_update.gml
+Converted description /// @description player_status_update();
+
+Converting GML script: ${project_dir}\scripts\real_step\real_step.gml
+Converted description /// @description real_step();
+
+Converting GML script: ${project_dir}\scripts\scr_EnemySplit\scr_EnemySplit.gml
+Converted description /// @description scr_EnemySplit(enemyid,direction);
+/// @param enemyid
+/// @param direction
+
+Converting GML script: ${project_dir}\scripts\scr_SpriteSplit\scr_SpriteSplit.gml
+Converted description /// @description scr_SpriteSplit(sprite,subimg,xscale,yscale,color,alpha,direction);
+/// @param sprite
+/// @param subimg
+/// @param xscale
+/// @param yscale
+/// @param color
+/// @param alpha
+/// @param direction
+
+Converting GML script: ${project_dir}\scripts\shd_sprite_effect_set\shd_sprite_effect_set.gml
+Converted description /// @description shd_sprite_effect_set(case);
+/// @param case
+
+Converting GML script: ${project_dir}\scripts\shd_background_effect_set\shd_background_effect_set.gml
+Converted description /// @description shd_background_effect_set(case);
+/// @param case
+
+Converting GML script: ${project_dir}\scripts\shd_application_surface_effect_set\shd_application_surface_effect_set.gml
+Converted description /// @description shd_application_surface_effect_set(case);
+/// @param case
+
+Converting GML script: ${project_dir}\scripts\shd_shine_set\shd_shine_set.gml
+Converted description /// @description shd_shine_set(time,size[x],[y],suf_size[x],[y],color_blend[r],[g],[b],[a],pixel_size[x],[y],whitelist_box[x1],[y1],[x2],[y2]);
+/// @param time
+/// @param size[x]
+/// @param [y]
+/// @param suf_size[x]
+/// @param [y]
+/// @param color_blend[r]
+/// @param [g]
+/// @param [b]
+/// @param [a]
+/// @param pixel_size[x]
+/// @param [y]
+/// @param whitelist_box[x1]
+/// @param [y1]
+/// @param [x2]
+/// @param [y2]
+
+Converting GML script: ${project_dir}\scripts\play_music\play_music.gml
+Converted description /// @description play_music(soundid,priority,loops,pitch[%])
+/// @param soundid
+/// @param priority
+/// @param loops
+/// @param pitch[%]
+
+Converting GML script: ${project_dir}\scripts\play_sfx\play_sfx.gml
+Converted description /// @description play_sfx(soundid,priority,loops,pitch[%])
+/// @param soundid
+/// @param priority
+/// @param loops
+/// @param pitch[%]
+
+Converting GML script: ${project_dir}\scripts\music_volume\music_volume.gml
+Converted description /// @description music_volume(volume,time)
+/// @param volume
+/// @param time
+
+Converting GML script: ${project_dir}\scripts\sfx_volume\sfx_volume.gml
+Converted description /// @description sfx_volume(volume,time)
+/// @param volume
+/// @param time
+
+Converting GML script: ${project_dir}\scripts\music_pitch\music_pitch.gml
+Converted description /// @description music_pitch(pitch)
+/// @param pitch
+
+Converting GML script: ${project_dir}\scripts\sfx_pitch\sfx_pitch.gml
+Converted description /// @description sfx_pitch(pitch)
+/// @param pitch
+
+Converting GML script: ${project_dir}\scripts\fx_wave\fx_wave.gml
+Converted description /// @description fx_wave(1/4xwave,2/4xwave,3/4xwave,4/4xwave,xradius,xcycle,xoffset,xduration,1/4ywave,2/4ywave,3/4ywave,4/4ywave,yradius,ycycle,yoffset,yduration)
+/// @param 1/4xwave
+/// @param 2/4xwave
+/// @param 3/4xwave
+/// @param 4/4xwave
+/// @param xradius
+/// @param xcycle
+/// @param xoffset
+/// @param xduration
+/// @param 1/4ywave
+/// @param 2/4ywave
+/// @param 3/4ywave
+/// @param 4/4ywave
+/// @param yradius
+/// @param ycycle
+/// @param yoffset
+/// @param yduration
+
+Converting GML script: ${project_dir}\scripts\fx_emphasize\fx_emphasize.gml
+Converted description /// @description fx_emphasize(1/4xwave,2/4xwave,3/4xwave,4/4xwave,1/4ywave,2/4ywave,3/4ywave,4/4ywave,xradius,yradius,xcycle,ycycle,xoffset,yoffset,xduration,yduration)
+/// @param 1/4xwave
+/// @param 2/4xwave
+/// @param 3/4xwave
+/// @param 4/4xwave
+/// @param 1/4ywave
+/// @param 2/4ywave
+/// @param 3/4ywave
+/// @param 4/4ywave
+/// @param xradius
+/// @param yradius
+/// @param xcycle
+/// @param ycycle
+/// @param xoffset
+/// @param yoffset
+/// @param xduration
+/// @param yduration
+
+Converting GML script: ${project_dir}\scripts\screenshake_set\screenshake_set.gml
+Converted description /// @description screenshake_set(offset,direction,time,rate,smoothing)
+/// @param offset
+/// @param direction
+/// @param time
+/// @param rate
+/// @param smoothing
+
+Converting GML script: ${project_dir}\scripts\screenflash_set\screenflash_set.gml
+Converted description /// @description screenflash_set(fade_in,fade_hold,fade_out,script,color,alpha);
+/// @param fade_in
+/// @param fade_hold
+/// @param fade_out
+/// @param script
+/// @param color
+/// @param alpha
+
+Converting GML script: ${project_dir}\scripts\fx_shockwave\fx_shockwave.gml
+Converted description /// @description /fx_shockwave(x,y,maxradius,thickness,time,color,depth,alpha);
+/// @param x
+/// @param y
+/// @param maxradius
+/// @param thickness
+/// @param time
+/// @param color
+/// @param depth
+/// @param alpha
+
+Converting GML script: ${project_dir}\scripts\disperse_particles\disperse_particles.gml
+Converted description /// @description disperse_particles(system,xmin,xmax,ymin,ymax,count,color);
+/// @param system
+/// @param xmin
+/// @param xmax
+/// @param ymin
+/// @param ymax
+/// @param count
+/// @param color
+
+Converting GML script: ${project_dir}\scripts\scrt_restart\scrt_restart.gml
+Converted description /// @description scrt_restart();
+
+Converting GML script: ${project_dir}\scripts\scrt_back\scrt_back.gml
+Converted description /// @description scrt_back();
+
+Converting GML script: ${project_dir}\scripts\scrt_loading\scrt_loading.gml
+Converted builtin - line 3: background_visible[0]=1 -> __background_set( e__BG.Visible, 0, 1 )
+
+Converting GML script: ${project_dir}\scripts\scrt_finish_slot_loading\scrt_finish_slot_loading.gml
+Converted description /// @description scrt_finish_slot_loading();
+
+Converting GML script: ${project_dir}\scripts\scrq_do_nothing\scrq_do_nothing.gml
+Converted description /// @description scrq_do_nothing();
+
+Converting GML script: ${project_dir}\scripts\scrq_delete_slot\scrq_delete_slot.gml
+Converted description /// @description scrq_delete_slot();
+
+Converting GML script: ${project_dir}\scripts\scrq_reset_slot_selection\scrq_reset_slot_selection.gml
+Converted description /// @description scrq_reset_slot_selection();
+
+Converting GML script: ${project_dir}\scripts\scrq_exit\scrq_exit.gml
+Converted description /// @description scrq_exit();
+
+Converting GML script: ${project_dir}\scripts\scrc_fullscreen\scrc_fullscreen.gml
+Converted description /// @description scrc_fullscreen();
+
+Converting GML script: ${project_dir}\scripts\scrc_screenshake\scrc_screenshake.gml
+Converted description /// @description scrc_screenshake();
+
+Converting GML script: ${project_dir}\scripts\scrc_save_particles\scrc_save_particles.gml
+Converted description /// @description scrc_save_particles()
+
+Converting GML script: ${project_dir}\scripts\scrc_left_handed_mode\scrc_left_handed_mode.gml
+Converted description /// @description scrc_left_handed_mode()
+Converted string - line 13: 'W' -> "W"
+Converted string - line 14: 'A' -> "A"
+Converted string - line 15: 'S' -> "S"
+Converted string - line 16: 'D' -> "D"
+Converted string - line 19: 'E' -> "E"
+
+Converting GML script: ${project_dir}\scripts\scrc_enemy_details_selection_auto_aim\scrc_enemy_details_selection_auto_aim.gml
+Converted description /// @description scrc_enemy_details_selection_auto_aim()
+
+Converting GML script: ${project_dir}\scripts\scrm_do_nothing\scrm_do_nothing.gml
+Converted description /// @description scrm_do_nothing();
+
+!!! Font f_pixeldise uses a font (Pixeldise) not installed on this system - Font has NOT been regenerated
+Converting GML script: ${project_dir}\objects\boss\Create_0.gml
+Converted description /// @description setup
+Converted string - line 61: 'W' -> "W"
+Converted string - line 62: 'A' -> "A"
+Converted string - line 63: 'S' -> "S"
+Converted string - line 64: 'D' -> "D"
+Converted string - line 67: 'E' -> "E"
+Converted string - line 118: '"' -> "\""
+
+Converting GML script: ${project_dir}\objects\boss\Step_1.gml
+Converted description /// @description gpspeed management
+
+Converting GML script: ${project_dir}\objects\boss\Step_0.gml
+Converted description /// @description Gameplay
+
+Converting GML script: ${project_dir}\objects\boss\Other_3.gml
+Converted description /// @description Auto Save & Wipe
+Converted string - line 2: "\userconfig.mbdat" -> "\\userconfig.mbdat"
+
+Converting GML script: ${project_dir}\objects\boss\Draw_77.gml
+Converted description /// @description draw application surface & GUI surface
+
+Converting GML script: ${project_dir}\objects\boss\Draw_76.gml
+Converted description /// @description surfaces check
+
+Converting GML script: ${project_dir}\objects\boss\Draw_73.gml
+Converted description /// @description GUI_SURFACE set
+Converted string - line 35: '"Battletown"#' -> "\"Battletown\"#"
+Converted string - line 35: '"8-bit Jingle Twist"' -> "\"8-bit Jingle Twist\""
+
+Converting GML script: ${project_dir}\objects\boss\Draw_72.gml
+Converted builtin - line 10: background_index[i] -> __background_get( e__BG.Index, i )
+Converted builtin - line 13: background_index[i] -> __background_get( e__BG.Index, i )
+Converted builtin - line 18: background_index[i] -> __background_get( e__BG.Index, i )
+Converted builtin - line 21: background_index[i] -> __background_get( e__BG.Index, i )
+Converted builtin - line 13: background_x[i] -> __background_get( e__BG.X, i )
+Converted builtin - line 21: background_x[i] -> __background_get( e__BG.X, i )
+Converted builtin - line 11: background_x[i]+=gpspeed*global.parallax_speed[i,0] -> __background_set( e__BG.X, i, __background_get( e__BG.X, i ) + (gpspeed*global.parallax_speed[i,0]) )
+Converted builtin - line 19: background_x[i]+=gpspeed*global.parallax_speed[i,0] -> __background_set( e__BG.X, i, __background_get( e__BG.X, i ) + (gpspeed*global.parallax_speed[i,0]) )
+Converted builtin - line 13: background_y[i] -> __background_get( e__BG.Y, i )
+Converted builtin - line 21: background_y[i] -> __background_get( e__BG.Y, i )
+Converted builtin - line 12: background_y[i]+=gpspeed*global.parallax_speed[i,1] -> __background_set( e__BG.Y, i, __background_get( e__BG.Y, i ) + (gpspeed*global.parallax_speed[i,1]) )
+Converted builtin - line 20: background_y[i]+=gpspeed*global.parallax_speed[i,1] -> __background_set( e__BG.Y, i, __background_get( e__BG.Y, i ) + (gpspeed*global.parallax_speed[i,1]) )
+Converted description /// @description draw backgrounds & apply shaders
+
+Converting GML script: ${project_dir}\objects\boss\Draw_0.gml
+Converted description /// @description skip draw_self();
+
+Converting GML script: ${project_dir}\objects\obj_damage_indicators\Create_0.gml
+Converted description /// @description setup
+
+Converting GML script: ${project_dir}\objects\obj_damage_indicators\Step_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_damage_indicators\Draw_73.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_player_tparticles\Create_0.gml
+Converted description /// @description setup
+
+Converting GML script: ${project_dir}\objects\obj_player_tparticles\Step_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_player_tparticles\Draw_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_player_bparticles\Create_0.gml
+Converted description /// @description setup
+
+Converting GML script: ${project_dir}\objects\obj_player_bparticles\Step_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_player_bparticles\Draw_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_ultimate_particles\Create_0.gml
+Converted description /// @description setup
+
+Converting GML script: ${project_dir}\objects\obj_ultimate_particles\Step_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_ultimate_particles\Draw_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_charge_particles\Create_0.gml
+Converted description /// @description setup
+
+Converting GML script: ${project_dir}\objects\obj_charge_particles\Step_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_charge_particles\Draw_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_enemy_particles\Create_0.gml
+Converted description /// @description setup
+
+Converting GML script: ${project_dir}\objects\obj_enemy_particles\Step_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_enemy_particles\Draw_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_frag_particles\Create_0.gml
+Converted description /// @description setup
+
+Converting GML script: ${project_dir}\objects\obj_frag_particles\Step_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_frag_particles\Draw_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_player\Create_0.gml
+Converted description /// @description setup
+
+Converting GML script: ${project_dir}\objects\obj_player\Step_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_player\Draw_73.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_player\Draw_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_wrap_helper\Create_0.gml
+Converted description /// @description setup
+
+Converting GML script: ${project_dir}\objects\obj_wrap_helper\Destroy_0.gml
+Converted description /// @description destroy the afterimage grid
+
+Converting GML script: ${project_dir}\objects\obj_wrap_helper\Draw_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_projectile\Create_0.gml
+Converted description /// @description setup
+
+Converting GML script: ${project_dir}\objects\obj_projectile\Destroy_0.gml
+Converted description /// @description disperse particles
+
+Converting GML script: ${project_dir}\objects\obj_projectile\Step_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_projectile\Other_10.gml
+Converted description /// @description startup code
+
+Converting GML script: ${project_dir}\objects\obj_projectile\Draw_76.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_projectile\Draw_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_frag\Create_0.gml
+Converted description /// @description event_inherited();
+
+Converting GML script: ${project_dir}\objects\obj_frag\Destroy_0.gml
+Converted description /// @description destroy event
+
+Converting GML script: ${project_dir}\objects\obj_frag\Step_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_frag\Other_10.gml
+Converted description /// @description startup code
+
+Converting GML script: ${project_dir}\objects\obj_frag\Draw_76.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_frag\Draw_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_charge\Create_0.gml
+Converted description /// @description event_inherited();
+
+Converting GML script: ${project_dir}\objects\obj_charge\Step_0.gml
+Converted description /// @description event_inherited();
+
+Converting GML script: ${project_dir}\objects\obj_charge\Other_10.gml
+Converted description /// @description startup code
+
+Converting GML script: ${project_dir}\objects\obj_charge\Draw_76.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_charge\Draw_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_evilflame_ultimate\Create_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_evilflame_ultimate\Destroy_0.gml
+Converted description /// @description destroy event
+
+Converting GML script: ${project_dir}\objects\obj_evilflame_ultimate\Step_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_evilflame_ultimate\Draw_73.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_evilflame_ultimate\Draw_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_emerald_ultimate\Create_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_emerald_ultimate\Step_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_emerald_ultimate\Draw_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_emerald_ultimate_flow\Create_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_emerald_ultimate_flow\Step_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_emerald_ultimate_flow\Draw_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_emerald_ultimate_force\Create_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_emerald_ultimate_force\Step_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_emerald_ultimate_force\Draw_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_enemy\Create_0.gml
+Converted description /// @description event_inherited();
+
+Converting GML script: ${project_dir}\objects\obj_enemy\Destroy_0.gml
+Converted description /// @description ds_map loot destroy
+
+Converting GML script: ${project_dir}\objects\obj_enemy\Step_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_enemy\Other_11.gml
+Converted description /// @description Add points and kill_count
+
+Converting GML script: ${project_dir}\objects\obj_enemy\Other_10.gml
+Converted description /// @description startup code
+
+Converting GML script: ${project_dir}\objects\obj_enemy\Draw_76.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_enemy\Draw_73.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_enemy\Draw_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_eprojectile\Create_0.gml
+Converted description /// @description setup
+
+Converting GML script: ${project_dir}\objects\obj_eprojectile\Destroy_0.gml
+Converted description /// @description destroy event
+
+Converting GML script: ${project_dir}\objects\obj_eprojectile\Step_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_eprojectile\Other_10.gml
+Converted description /// @description startup code
+
+Converting GML script: ${project_dir}\objects\obj_eprojectile\Draw_76.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_eprojectile\Draw_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_oscillator\Create_0.gml
+Converted description /// @description setup
+
+Converting GML script: ${project_dir}\objects\obj_oscillator\Step_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_screenshake\Create_0.gml
+Converted builtin - line 5: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 4: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted description /// @description setup
+
+Converting GML script: ${project_dir}\objects\obj_screenshake\Destroy_0.gml
+Converted builtin - line 2: view_xview[0]=global.viewxstartpos -> __view_set( e__VW.XView, 0, global.viewxstartpos )
+Converted builtin - line 3: view_yview[0]=global.viewystartpos -> __view_set( e__VW.YView, 0, global.viewystartpos )
+Converted description /// @description Return the View to normal
+
+Converting GML script: ${project_dir}\objects\obj_screenshake\Step_0.gml
+Converted builtin - line 4: view_xview[0]=global.viewxstartpos+h_value -> __view_set( e__VW.XView, 0, global.viewxstartpos+h_value )
+Converted builtin - line 7: view_xview[0]=global.viewxstartpos-h_value -> __view_set( e__VW.XView, 0, global.viewxstartpos-h_value )
+Converted builtin - line 15: view_xview[0]=global.viewxstartpos+h_value -> __view_set( e__VW.XView, 0, global.viewxstartpos+h_value )
+Converted builtin - line 19: view_xview[0]=global.viewxstartpos+lengthdir_x(h_value,225) -> __view_set( e__VW.XView, 0, global.viewxstartpos+lengthdir_x(h_value,225) )
+Converted builtin - line 23: view_xview[0]=global.viewxstartpos -> __view_set( e__VW.XView, 0, global.viewxstartpos )
+Converted builtin - line 27: view_xview[0]=global.viewxstartpos+lengthdir_x(h_value,315) -> __view_set( e__VW.XView, 0, global.viewxstartpos+lengthdir_x(h_value,315) )
+Converted builtin - line 31: view_xview[0]=global.viewxstartpos+lengthdir_x(h_value,135) -> __view_set( e__VW.XView, 0, global.viewxstartpos+lengthdir_x(h_value,135) )
+Converted builtin - line 35: view_xview[0]=global.viewxstartpos -> __view_set( e__VW.XView, 0, global.viewxstartpos )
+Converted builtin - line 39: view_xview[0]=global.viewxstartpos+lengthdir_x(h_value,45) -> __view_set( e__VW.XView, 0, global.viewxstartpos+lengthdir_x(h_value,45) )
+Converted builtin - line 42: view_xview[0]=global.viewxstartpos-h_value -> __view_set( e__VW.XView, 0, global.viewxstartpos-h_value )
+Converted builtin - line 5: view_yview[0]=global.viewystartpos+v_value -> __view_set( e__VW.YView, 0, global.viewystartpos+v_value )
+Converted builtin - line 8: view_yview[0]=global.viewystartpos-v_value -> __view_set( e__VW.YView, 0, global.viewystartpos-v_value )
+Converted builtin - line 16: view_yview[0]=global.viewystartpos -> __view_set( e__VW.YView, 0, global.viewystartpos )
+Converted builtin - line 20: view_yview[0]=global.viewystartpos+lengthdir_y(v_value,225) -> __view_set( e__VW.YView, 0, global.viewystartpos+lengthdir_y(v_value,225) )
+Converted builtin - line 24: view_yview[0]=global.viewystartpos-v_value -> __view_set( e__VW.YView, 0, global.viewystartpos-v_value )
+Converted builtin - line 28: view_yview[0]=global.viewystartpos+lengthdir_y(v_value,315) -> __view_set( e__VW.YView, 0, global.viewystartpos+lengthdir_y(v_value,315) )
+Converted builtin - line 32: view_yview[0]=global.viewystartpos+lengthdir_y(v_value,135) -> __view_set( e__VW.YView, 0, global.viewystartpos+lengthdir_y(v_value,135) )
+Converted builtin - line 36: view_yview[0]=global.viewystartpos+v_value -> __view_set( e__VW.YView, 0, global.viewystartpos+v_value )
+Converted builtin - line 40: view_yview[0]=global.viewystartpos+lengthdir_y(v_value,45) -> __view_set( e__VW.YView, 0, global.viewystartpos+lengthdir_y(v_value,45) )
+Converted builtin - line 43: view_yview[0]=global.viewystartpos -> __view_set( e__VW.YView, 0, global.viewystartpos )
+Converted description /// @description Directional Screenshake
+
+Converting GML script: ${project_dir}\objects\obj_Transition\Create_0.gml
+Converted description /// @description setup
+
+Converting GML script: ${project_dir}\objects\obj_Transition\Other_10.gml
+Converted description /// @description Room change && script
+
+Converting GML script: ${project_dir}\objects\obj_ultimate_activation\Create_0.gml
+Converted description /// @description setup
+
+Converting GML script: ${project_dir}\objects\obj_ultimate_activation\Step_0.gml
+Converted description /// @description size & stage control
+
+Converting GML script: ${project_dir}\objects\obj_ultimate_activation\Draw_73.gml
+Converted description /// @description GUI_SURFACE set
+
+Converting GML script: ${project_dir}\objects\obj_screenflash\Create_0.gml
+Converted description /// @description setup
+
+Converting GML script: ${project_dir}\objects\obj_screenflash\Step_0.gml
+Converted description /// @description Control Alpha
+
+Converting GML script: ${project_dir}\objects\obj_screenflash\Draw_73.gml
+Converted description /// @description GUI_SURFACE set
+
+Converting GML script: ${project_dir}\objects\obj_shockwave\Create_0.gml
+Converted description /// @description setup
+
+Converting GML script: ${project_dir}\objects\obj_shockwave\Step_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_shockwave\Draw_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_prev_imgspd\Create_0.gml
+Converted description /// @description prev_image_speed=image_speed;
+
+Converting GML script: ${project_dir}\objects\obj_speeds_physics\Create_0.gml
+Converted description /// @description speeds setup
+
+Converting GML script: ${project_dir}\objects\obj_speeds_physics\Step_0.gml
+Converted description /// @description event_inherited();
+
+Converting GML script: ${project_dir}\objects\obj_knockback_physics\Create_0.gml
+Converted description /// @description setup
+
+Converting GML script: ${project_dir}\objects\obj_knockback_physics\Step_0.gml
+Converted description /// @description event_inherited();
+
+Converting GML script: ${project_dir}\objects\obj_popup_group\Create_0.gml
+Converted description /// @description busy & start_busy
+
+Converting GML script: ${project_dir}\objects\obj_popup_group\Destroy_0.gml
+Converted description /// @description upon destruction
+
+Converting GML script: ${project_dir}\objects\obj_popup_group\Step_0.gml
+Converted description /// @description do nothing if busy!=start_busy
+
+Converting GML script: ${project_dir}\objects\obj_startup_loading\Create_0.gml
+Converted description /// @description setup
+Converted string - line 12: "\userconfig.mbdat" -> "\\userconfig.mbdat"
+Converted string - line 13: "\userconfig.mbdat" -> "\\userconfig.mbdat"
+
+Converting GML script: ${project_dir}\objects\obj_startup_loading\Alarm_2.gml
+Converted description /// @description Moving on
+
+Converting GML script: ${project_dir}\objects\obj_startup_loading\Alarm_1.gml
+Converted description /// @description start loading
+
+Converting GML script: ${project_dir}\objects\obj_startup_loading\Alarm_0.gml
+Converted description /// @description transition
+
+Converting GML script: ${project_dir}\objects\obj_startup_loading\Step_0.gml
+Converted description /// @description load audio groups
+
+Converting GML script: ${project_dir}\objects\obj_startup_loading\Draw_0.gml
+Converted description /// @description GENERAL_SURFACE set
+
+Converting GML script: ${project_dir}\objects\obj_slot_saving\Create_0.gml
+Converted description /// @description setup
+
+Converting GML script: ${project_dir}\objects\obj_slot_saving\Step_0.gml
+Converted builtin - line 28: background_index[i] -> __background_get( e__BG.Index, i )
+Converted builtin - line 28: background_htiled[i] -> __background_get( e__BG.HTiled, i )
+Converted builtin - line 28: background_vtiled[i] -> __background_get( e__BG.VTiled, i )
+Converted description /// @description Phase 1 - Fetching Data
+Converted string - line 6: "\" -> "\\"
+Converted string - line 6: '"' -> "\""
+Converted string - line 6: '_' -> "_"
+Converted string - line 7: "slots\" -> "slots\\"
+Converted string - line 11: "slots\" -> "slots\\"
+
+Converting GML script: ${project_dir}\objects\obj_slot_saving\Draw_73.gml
+Converted builtin - line 11: instance_id[i] -> instance_id_get( i )
+Converted builtin - line 12: instance_id[i] -> instance_id_get( i )
+Converted description /// @description GUI_SURFACE set
+
+Converting GML script: ${project_dir}\objects\obj_slot_loading\Create_0.gml
+Converted description /// @description setup
+
+Converting GML script: ${project_dir}\objects\obj_slot_loading\Step_0.gml
+Converted builtin - line 134: background_index[i]=string_readln_real(bit,";") -> __background_set( e__BG.Index, i, string_readln_real(bit,";") )
+Converted builtin - line 135: background_htiled[i]=string_readln_real(bit,";") -> __background_set( e__BG.HTiled, i, string_readln_real(bit,";") )
+Converted builtin - line 136: background_vtiled[i]=string_readln_real(bit,";") -> __background_set( e__BG.VTiled, i, string_readln_real(bit,";") )
+Converted description /// @description Phase 1 - Fetching Data
+
+Converting GML script: ${project_dir}\objects\obj_slot_loading\Draw_73.gml
+Converted description /// @description GUI_SURFACE set
+
+Converting GML script: ${project_dir}\objects\obj_button\Step_0.gml
+Converted description /// @description functionality
+Converted string - line 132: 'Delete slot#"' -> "Delete slot#\""
+Converted string - line 132: '"?#This change will be permanent.' -> "\"?#This change will be permanent."
+Converted string - line 221: 'W' -> "W"
+Converted string - line 222: 'A' -> "A"
+Converted string - line 223: 'S' -> "S"
+Converted string - line 224: 'D' -> "D"
+
+Converting GML script: ${project_dir}\objects\obj_button\Other_10.gml
+Converted description /// @description startup code
+
+Converting GML script: ${project_dir}\objects\obj_button\Draw_76.gml
+Converted description /// @description startup code initiation
+
+Converting GML script: ${project_dir}\objects\obj_button\Draw_73.gml
+Converted description /// @description GUI_SURFACE set
+
+Converting GML script: ${project_dir}\objects\obj_button\Draw_0.gml
+Converted description /// @description skip default draw_self();
+
+Converting GML script: ${project_dir}\objects\obj_keyboard\Create_0.gml
+Converted description /// @description setup
+
+Converting GML script: ${project_dir}\objects\obj_keyboard\Step_0.gml
+Converted description /// @description hiding
+
+Converting GML script: ${project_dir}\objects\obj_keyboard\Draw_73.gml
+Converted description /// @description GUI_SURFACE set
+
+Converting GML script: ${project_dir}\objects\obj_keyboard\Draw_0.gml
+Converted description /// @description skip default draw_self();
+
+Converting GML script: ${project_dir}\objects\obj_statboard\Create_0.gml
+Converted description /// @description setup
+
+Converting GML script: ${project_dir}\objects\obj_statboard\Destroy_0.gml
+Converted description /// @description destroy sprites
+
+Converting GML script: ${project_dir}\objects\obj_statboard\Step_0.gml
+Converted description /// @description hiding && support objects management
+
+Converting GML script: ${project_dir}\objects\obj_statboard\Other_10.gml
+Converted description /// @description building cut1 & cut2
+
+Converting GML script: ${project_dir}\objects\obj_statboard\Draw_76.gml
+Converted description /// @description startup code initiation
+
+Converting GML script: ${project_dir}\objects\obj_statboard\Draw_73.gml
+Converted description /// @description GUI_SURFACE set
+
+Converting GML script: ${project_dir}\objects\obj_statboard\Draw_0.gml
+Converted description /// @description skip default draw_self();
+
+Converting GML script: ${project_dir}\objects\obj_lore\Create_0.gml
+Converted description /// @description setup
+
+Converting GML script: ${project_dir}\objects\obj_lore\Destroy_0.gml
+Converted description /// @description destroy sprites
+
+Converting GML script: ${project_dir}\objects\obj_lore\Step_0.gml
+Converted description /// @description hiding
+
+Converting GML script: ${project_dir}\objects\obj_lore\Other_10.gml
+Converted description /// @description building cut1 & cut2
+
+Converting GML script: ${project_dir}\objects\obj_lore\Draw_76.gml
+Converted description /// @description startup code initiation
+
+Converting GML script: ${project_dir}\objects\obj_lore\Draw_73.gml
+Converted description /// @description GUI_SURFACE set
+
+Converting GML script: ${project_dir}\objects\obj_lore\Draw_0.gml
+Converted description /// @description skip default draw_self();
+
+Converting GML script: ${project_dir}\objects\obj_sound_bar\Create_0.gml
+Converted description /// @description setup
+
+Converting GML script: ${project_dir}\objects\obj_sound_bar\Step_0.gml
+Converted description /// @description dot interaction
+
+Converting GML script: ${project_dir}\objects\obj_sound_bar\Other_10.gml
+Converted description /// @description startup code
+
+Converting GML script: ${project_dir}\objects\obj_sound_bar\Draw_76.gml
+Converted description /// @description startup code initiation
+
+Converting GML script: ${project_dir}\objects\obj_sound_bar\Draw_73.gml
+Converted description /// @description GUI_SURFACE set
+
+Converting GML script: ${project_dir}\objects\obj_sound_bar\Draw_0.gml
+Converted description /// @description skip default draw_self();
+
+Converting GML script: ${project_dir}\objects\obj_slot_name\Create_0.gml
+Converted description /// @description event_inherited
+
+Converting GML script: ${project_dir}\objects\obj_slot_name\Step_0.gml
+Converted description /// @description event_inherited
+
+Converting GML script: ${project_dir}\objects\obj_slot_name\Draw_73.gml
+Converted description /// @description GUI_SURFACE set
+Converted string - line 22: "\#" -> "\\#"
+
+Converting GML script: ${project_dir}\objects\obj_slot_name\Draw_0.gml
+Converted description /// @description skip default draw_self();
+
+Converting GML script: ${project_dir}\objects\obj_slot_load\Create_0.gml
+Converted description /// @description event_inherited
+Converted string - line 15: "slots\*mbslot" -> "slots\\*mbslot"
+Converted string - line 32: "slots\" -> "slots\\"
+
+Converting GML script: ${project_dir}\objects\obj_slot_load\Alarm_1.gml
+Converted description /// @description spawn slot
+Converted string - line 18: "slots\" -> "slots\\"
+
+Converting GML script: ${project_dir}\objects\obj_slot_load\Alarm_0.gml
+Converted description /// @description spawn slot
+Converted string - line 19: "slots\" -> "slots\\"
+
+Converting GML script: ${project_dir}\objects\obj_slot_load\Step_0.gml
+Converted description /// @description event_inherited
+
+Converting GML script: ${project_dir}\objects\obj_slot_load\Draw_73.gml
+Converted description /// @description GUI_SURFACE set
+
+Converting GML script: ${project_dir}\objects\obj_slot_load\Draw_0.gml
+Converted description /// @description skip default draw_self();
+
+Converting GML script: ${project_dir}\objects\obj_slot\Create_0.gml
+Converted description /// @description setup
+
+Converting GML script: ${project_dir}\objects\obj_slot\Step_0.gml
+Converted description /// @description lock busywise
+
+Converting GML script: ${project_dir}\objects\obj_slot\Draw_73.gml
+Converted description /// @description GUI_SURFACE set
+Converted string - line 8: "\#" -> "\\#"
+
+Converting GML script: ${project_dir}\objects\obj_slot\Draw_0.gml
+Converted description /// @description skip default draw_self();
+
+Converting GML script: ${project_dir}\objects\obj_popup_question\Create_0.gml
+Converted description /// @description event_inherited
+
+Converting GML script: ${project_dir}\objects\obj_popup_question\Step_0.gml
+Converted description /// @description event_inherited
+
+Converting GML script: ${project_dir}\objects\obj_popup_question\Draw_73.gml
+Converted description /// @description GUI_SURFACE set
+
+Converting GML script: ${project_dir}\objects\obj_popup_question\Draw_0.gml
+Converted description /// @description skip default draw_self();
+
+Converting GML script: ${project_dir}\objects\obj_popup_message\Create_0.gml
+Converted description /// @description event_inherited
+
+Converting GML script: ${project_dir}\objects\obj_popup_message\Step_0.gml
+Converted description /// @description event_inherited
+
+Converting GML script: ${project_dir}\objects\obj_popup_message\Draw_73.gml
+Converted description /// @description GUI_SURFACE set
+
+Converting GML script: ${project_dir}\objects\obj_popup_message\Draw_0.gml
+Converted description /// @description skip default draw_self();
+
+Converting GML script: ${project_dir}\objects\obj_realm_button\Create_0.gml
+Converted description /// @description setup
+
+Converting GML script: ${project_dir}\objects\obj_realm_button\Step_1.gml
+Converted description /// @description startup code initiation
+
+Converting GML script: ${project_dir}\objects\obj_realm_button\Step_0.gml
+Converted description /// @description button mechanics
+
+Converting GML script: ${project_dir}\objects\obj_realm_button\Other_10.gml
+Converted description /// @description startup code
+
+Converting GML script: ${project_dir}\objects\obj_realm_button\Draw_73.gml
+Converted description /// @description GUI_SURFACE set
+
+Converting GML script: ${project_dir}\objects\obj_realm_button\Draw_0.gml
+Converted description /// @description skip default draw_self();
+
+Converting GML script: ${project_dir}\objects\obj_settings_checkbox\Create_0.gml
+Converted description /// @description setup
+
+Converting GML script: ${project_dir}\objects\obj_settings_checkbox\Step_0.gml
+Converted description /// @description mouse functionality
+
+Converting GML script: ${project_dir}\objects\obj_settings_checkbox\Draw_73.gml
+Converted description /// @description GUI_SURFACE set
+
+Converting GML script: ${project_dir}\objects\obj_settings_checkbox\Draw_0.gml
+Converted description /// @description GUI_SURFACE set
+
+Converting GML script: ${project_dir}\objects\obj_lock\Create_0.gml
+Converted description /// @description setup
+
+Converting GML script: ${project_dir}\objects\obj_changelog_board\Create_0.gml
+Converted description /// @description setup
+Converted string - line 8: "\changelog.txt" -> "\\changelog.txt"
+Converted string - line 9: "\changelog.txt" -> "\\changelog.txt"
+Converted string - line 22: "\#" -> "\\#"
+Converted string - line 35: "\#" -> "\\#"
+
+Converting GML script: ${project_dir}\objects\obj_changelog_board\Destroy_0.gml
+Converted description /// @description destroy sprites
+
+Converting GML script: ${project_dir}\objects\obj_changelog_board\Other_10.gml
+Converted description /// @description building cut1 & cut2
+
+Converting GML script: ${project_dir}\objects\obj_changelog_board\Draw_76.gml
+Converted description /// @description startup code initiation
+
+Converting GML script: ${project_dir}\objects\obj_changelog_board\Draw_73.gml
+Converted description /// @description GUI_SURFACE set
+
+Converting GML script: ${project_dir}\objects\obj_changelog_board\Draw_0.gml
+Converted description /// @description skip default draw_self();
+
+Converting GML script: ${project_dir}\objects\obj_present\Create_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_present\Step_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_present\Draw_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_ultimate_pickup\Create_0.gml
+Converted description /// @description setup
+
+Converting GML script: ${project_dir}\objects\obj_ultimate_pickup\Step_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_ultimate_pickup\Draw_0.gml
+Converted description /// @description GUI_SURFACE set
+
+Converting GML script: ${project_dir}\objects\obj_explosion\Create_0.gml
+Converted description /// @description setup
+
+Converting GML script: ${project_dir}\objects\obj_explosion\Destroy_0.gml
+Converted description /// @description destroy the afterimage grid
+
+Converting GML script: ${project_dir}\objects\obj_explosion\Step_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_explosion\Draw_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_presentHD\Create_0.gml
+Converted description /// @description setup
+
+Converting GML script: ${project_dir}\objects\obj_presentHD\Step_0.gml
+Converted description /// @description opening
+
+Converting GML script: ${project_dir}\objects\obj_logo_M\Create_0.gml
+Converted description /// @description setup
+
+Converting GML script: ${project_dir}\objects\obj_logo_M\Step_0.gml
+Converted description /// @description effects
+
+Converting GML script: ${project_dir}\objects\obj_logo_M\Draw_0.gml
+Converted description /// @description GENERAL_SURFACE set
+
+Converting GML script: ${project_dir}\objects\obj_debris\Create_0.gml
+Converted description /// @description setup
+
+Converting GML script: ${project_dir}\objects\obj_debris\Destroy_0.gml
+Converted description /// @description destroy the afterimage grid
+
+Converting GML script: ${project_dir}\objects\obj_debris\Step_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_debris\Draw_0.gml
+Converted description /// @description skip if loading
+
+Converting GML script: ${project_dir}\objects\obj_menu_board\Draw_73.gml
+Converted description /// @description GENERAL_SURFACE set
+
+Converting GML script: ${project_dir}\objects\obj_content_board\Draw_0.gml
+Converted description /// @description GENERAL_SURFACE set
+
+Converting GML script: ${project_dir}\objects\obj_randoragon_logo\Create_0.gml
+Converted description /// @description setup
+
+Converting GML script: ${project_dir}\objects\obj_randoragon_logo\Alarm_1.gml
+Converted description /// @description stage=4;
+
+Converting GML script: ${project_dir}\objects\obj_randoragon_logo\Alarm_0.gml
+Converted description /// @description begin
+
+Converting GML script: ${project_dir}\objects\obj_randoragon_logo\Step_0.gml
+Converted description /// @description Fly out
+
+Converting GML script: ${project_dir}\objects\obj_randoragon_logo\Draw_0.gml
+Converted description /// @description draw self & text
+
+macOS icon ${options_dir}\mac\icons\icon512.png written out as 32-bit
+Windows NSIS Installer Script has been set to default due to changes in GameMaker Studio 2
+macOS icon ${options_dir}\mac\icons\icon512.png written out as 32-bit
+Windows NSIS Installer Script has been set to default due to changes in GameMaker Studio 2
+Converting GML script: MACRO: VER
+Converted string - line 1: '1.1.0' -> "1.1.0"
+
+Game speed set to 60
+Added compatibility script 'background/draw_background_tiled.gml'
+Added compatibility script 'background/__background_get.gml'
+Added compatibility script 'background/__background_get_element.gml'
+Added compatibility script 'background/__background_get_internal.gml'
+Added compatibility script 'background/__background_set.gml'
+Added compatibility script 'background/__background_set_element.gml'
+Added compatibility script 'background/__background_set_internal.gml'
+Added compatibility script 'draw/draw_set_alpha_test.gml'
+Added compatibility script 'draw/draw_set_alpha_test_ref_value.gml'
+Added compatibility script 'draw/draw_set_blend_mode.gml'
+Added compatibility script 'draw/draw_set_blend_mode_ext.gml'
+Added compatibility script 'draw/draw_set_color_write_enable.gml'
+Added compatibility script 'instance/instance_create.gml'
+Added compatibility script 'object/object_get_depth.gml'
+Added compatibility script 'view/__view_get.gml'
+Added compatibility script 'view/__view_set.gml'
+Added compatibility script 'view/__view_set_internal.gml'
+Added compatibility script 'background/__init_background.gml'
+Added compatibility script 'view/__init_view.gml'
+Added compatibility script '__init_global.gml'
+Added compatibility script '__global_object_depths.gml'

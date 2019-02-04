@@ -1,0 +1,40 @@
+/// @description startup code
+
+switch(f)
+{
+case 0:
+sprite_index=spr_snowball;
+instance_setup(0,0,irandom(360),1);
+var size=random_range(1,1.1);
+image_scale(size,size);
+acc=random_range(0.05,0.2);
+hspeed1=random_range(-6,-10);
+vspeed1=random_range(0,-0.2);
+rot=random_range(-5,5);
+lifespan=600;
+break;
+
+case 1:
+sprite_index=spr_bolt;
+instance_setup(irandom(image_number-1),0.25*gpspeed,irandom(360),1);
+direction=clamp(point_direction(x,y,obj_player.x,obj_player.y)+irandom_range(-45,45),120,240);
+speed1=random_range(1,2);
+lifespan=1800;
+break;
+
+case 2:
+sprite_index=spr_laser;
+instance_setup(0,1*gpspeed,0,1);
+hspeed1=-10;
+image_scale(2,2);
+lifespan=300;
+break;
+}
+if instance_exists(spawn)
+{
+pdmg=spawn.pdmg;
+ppen=spawn.ppen;
+pkb=spawn.pkb;
+}
+else instance_destroy();
+

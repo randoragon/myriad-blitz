@@ -1,0 +1,24 @@
+/// @description skip if loading
+if global.loading==1 exit;
+
+///GENERAL_SURFACE set
+surface_set_target(GENERAL_SURFACE);
+
+///draw current flow
+var maxlength=sqrt(sqr(CANVAS_WIDTH)+sqr(CANVAS_HEIGHT));
+draw_set_alpha_test_ref_value(0);
+var xx, yy, yscale;
+for(var i=0; i<ceil(maxlength/16); i++) {
+    xx=x+lengthdir_x(16*i,(image_angle-(rot*i)));
+    yy=y+lengthdir_y(16*i,image_angle-(rot*i));
+    yscale=(size_growth*i/ceil(maxlength/16))+1;
+    if(xx<-24*yscale && xx>CANVAS_XEND+(24*yscale) && yy<-24*yscale && yy>CANVAS_YEND+(24*yscale)) {
+        break;
+    }
+    draw_sprite_ext(sprite_index,image_index,xx,yy,1,(image_yscale*yscale),image_angle-(rot*i),c_white,image_alpha);
+}
+draw_set_alpha_test_ref_value(254);
+
+///SURFACE RESET
+surface_reset_target();
+

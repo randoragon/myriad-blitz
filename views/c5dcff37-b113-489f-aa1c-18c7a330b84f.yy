@@ -1,0 +1,32 @@
+{
+    "id": "c5dcff37-b113-489f-aa1c-18c7a330b84f",
+    "modelName": "GMFolder",
+    "mvc": "1.1",
+    "name": "c5dcff37-b113-489f-aa1c-18c7a330b84f",
+    "children": [
+        "420fb9ce-2af8-487d-885c-f9eba794204b",
+        "a4ea70a3-a900-47bd-8869-2093f02921f0",
+        "4b5b0ece-33ac-4926-9249-13762d62f6f1",
+        "44a0cd77-dec5-4adb-b8ae-f2caa631afd3",
+        "c1230d5f-20cb-435d-b18a-d54d76b604fa",
+        "fc22d116-e1e4-40f8-85c6-d8307b0cf1b6",
+        "cee4ed8d-d704-4882-848a-7e9c3fcefbe8",
+        "7a33df18-5b7d-44da-b0b4-ca0bb0e6a211",
+        "3b3a0eb0-e921-47cb-b861-8d2e59295a59",
+        "70fddfd9-7880-412b-a2f2-90964f1a9b2e",
+        "a357509d-e9d5-4ed3-8561-200245a73ac7",
+        "e662494c-4d6d-4cf4-a8d6-c4f63ca30a5f",
+        "11aca01e-892c-4646-a845-bfd8e8a4b1fb",
+        "52d4c4bc-abb0-4af0-b488-2401e23fcc61",
+        "7701c6ab-723b-4266-9976-9ff50db45926",
+        "1ba2ad2c-cdf8-49fd-88bd-f7bf90c80460",
+        "0424640f-ec15-4bb9-93c7-5c2ccd53b99e",
+        "1d294ce3-d341-471a-a048-a7f6cc2d9cbb",
+        "a6f94a30-7b53-4f11-9083-296924df3246",
+        "70aba756-6aca-4597-94a2-1c222596c9d9"
+    ],
+    "filterType": "GMSprite",
+    "folderName": "buttons",
+    "isDefaultView": false,
+    "localisedFolderName": ""
+}

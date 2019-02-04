@@ -1,0 +1,1 @@
+if global.loading==1 instance_destroy();
