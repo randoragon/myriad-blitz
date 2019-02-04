@@ -23,7 +23,7 @@ if (room == rm_Main) {
         transition = home(transition, 0, 1/20, 0);
     }
     
-    if (instance_exists(obj_player)) {
+    if (instance_exists(obj_player) && gpspeed != 0) {
         dizzy_alpha = home(dizzy_alpha, obj_player.status_effect[4] * 0.5, 0.0025, 0);
     }
 }
