@@ -1,7 +1,14 @@
-/// @description skip if loading
-if global.loading==1 exit;
+/// @description Update System
 
-///update system
-if part_system_count_lt(global.part_system[4])>0
-part_system_update_lt(global.part_system[4],gpspeed);
+#region Skip if loading
 
+if (global.loading == 1) { exit; }
+
+#endregion
+
+#region Update system
+
+if (part_system_count_lt(global.part_system[4]) > 0)
+	part_system_update_lt(global.part_system[4], gpspeed);
+
+#endregion

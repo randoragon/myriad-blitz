@@ -1,11 +1,17 @@
-/// @description skip if loading
-if global.loading==1 exit;
+/// @description Draw Enemy Particles
 
-///draw enemy particles
-if(part_system_count_lt(global.part_system[4])>0) {
+#region Skip if loading
+
+if (global.loading == 1) { exit; }
+
+#endregion
+
+#region Draw enemy particles
+
+if (part_system_count_lt(global.part_system[4]) > 0) {
     surface_set_target(GENERAL_SURFACE);
     draw_set_alpha_test_ref_value(0);
-    if(global.shader_conditions==0) {
+    if (global.shader_conditions == 0) {
         part_system_draw_lt(global.part_system[4]);
     } else {
         shd_sprite_effect_set(global.shader_conditions);
@@ -16,3 +22,4 @@ if(part_system_count_lt(global.part_system[4])>0) {
     surface_reset_target();
 }
 
+#endregion

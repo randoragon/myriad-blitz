@@ -28,7 +28,6 @@ if (!global.loading) {
 
 #endregion
 
-
 #region global.shader_conditions Management
 
 if (room == rm_Main && instance_exists(obj_player) && !global.loading) {

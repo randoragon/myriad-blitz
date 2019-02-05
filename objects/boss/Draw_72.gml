@@ -1,5 +1,7 @@
 /// @description Backgrounds & Shaders
 
+#region Backgrounds & Shaders
+
 if (!global.loading && room != rm_Startup) {
     surface_set_target(GENERAL_SURFACE);
     draw_set_alpha_test(1);
@@ -27,3 +29,4 @@ if (!global.loading && room != rm_Startup) {
     surface_reset_target();
 }
 
+#endregion
