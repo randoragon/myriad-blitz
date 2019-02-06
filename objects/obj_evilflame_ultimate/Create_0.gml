@@ -3,7 +3,8 @@ if global.loading==1 exit;
 
 ///setup
 
-player=instance_find(obj_player,1);
+player=instance_find(obj_player,0);
+show_message(instance_exists(player));
 if player.evilflame_sprite_swap sprite_index=spr_evilflame;
 else sprite_index=spr_evilflame_ultimate;
 instance_setup(obj_player.image_index,0,-obj_player.image_angle,obj_player.image_alpha);
