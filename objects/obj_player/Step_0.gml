@@ -784,6 +784,7 @@ if (hp <= 0 && image_alpha == 1) {
 #endregion
 
 #region Inherit parent event
+
 event_inherited();
 
 #endregion

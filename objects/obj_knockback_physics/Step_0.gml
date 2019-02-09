@@ -1,12 +1,18 @@
-/// @description event_inherited();
+/// @description Apply Knockback & dirkb
+
+#region Inherit parent event
+
 event_inherited();
 
-///Knockback mechanics && dirkb
+#endregion
 
-if vkb!=0 or hkb!=0
-{
-x+=hkb; y+=vkb;
-hkb=home(hkb,0,ahkb);
-vkb=home(vkb,0,avkb);
+#region Knockback mechanics && dirkb
+
+if (vkb != 0 || hkb != 0) {
+	x  += hkb;
+	y  += vkb;
+	hkb = home(hkb, 0, ahkb);
+	vkb = home(vkb, 0, avkb);
 }
 
+#endregion

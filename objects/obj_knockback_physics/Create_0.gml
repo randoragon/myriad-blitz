@@ -1,9 +1,16 @@
-/// @description setup
-hkb=0;
-vkb=0;
-ahkb=0;
-avkb=0;
+/// @description Setup
 
-///event_inherited();
+#region Setup
+
+hkb  = 0;
+vkb  = 0;
+ahkb = 0;
+avkb = 0;
+
+#endregion
+
+#region Inherit parent event
+
 event_inherited();
 
+#endregion

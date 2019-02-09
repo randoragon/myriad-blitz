@@ -1,8 +1,15 @@
-/// @description speeds setup
-speed1=0;
-hspeed1=0;
-vspeed1=0;
+/// @description Setup Speeds
 
-///event_inherited();
+#region Setup speeds
+
+speed1  = 0;
+hspeed1 = 0;
+vspeed1 = 0;
+
+#endregion
+
+#region Inherit parent event
+
 event_inherited();
 
+#endregion

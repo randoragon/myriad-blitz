@@ -1,4 +1,8 @@
-/// @description busy & start_busy
-busy++;
-start_busy=busy;
+/// @description Increment busy
 
+#region Increment busy
+
+busy++;
+start_busy = busy;
+
+#endregion
