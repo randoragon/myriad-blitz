@@ -1,29 +1,44 @@
-/// @description skip if loading
-if global.loading==1 exit;
+/// @description Projectile Behavior
 
-///projectile behavior
-lifespan-=gpspeed;
-if lifespan<=0 or y>CANVAS_YEND+sprite_yoffset or y<-sprite_height+sprite_yoffset or x<-sprite_width+sprite_xoffset instance_destroy();
+#region Skip if loading
 
-switch(f)
-{
-case 0:
-if !instance_exists(obj_emerald_ultimate) vspeed1+=acc*sqr(gpspeed);
-image_angle+=rot*gpspeed;
-break;
+if (global.loading == 1) { exit; }
+
+#endregion
+
+#region Projectile behavior
+
+lifespan -= gpspeed;
+var is_out_of_border = y > (CANVAS_YEND + sprite_yoffset) || (y < -sprite_height + sprite_yoffset) || (x < -sprite_width + sprite_xoffset);
+if (lifespan <= 0 || is_out_of_border) {
+	instance_destroy();
 }
 
-///emerald's current crush
-if instance_exists(obj_emerald_ultimate)
-if f!=2 {
-if hspeed1!=0 or vspeed1!=0 {
-speed1+=sqrt(sqr(hspeed1)+sqr(vspeed1));
-hspeed1=0; vspeed1=0;
-}
-direction=home(direction,point_direction(x,y,obj_emerald_ultimate.x,obj_emerald_ultimate.y),clamp((400-distance_to_point(obj_emerald_ultimate.x,obj_emerald_ultimate.y))*.25,1,10)*gpspeed,1);
-image_angle=direction;
+switch(f) {
+	case 0:
+		if (!instance_exists(obj_emerald_ultimate)) { vspeed1 += acc * sqr(gpspeed); }
+		image_angle += rot * gpspeed;
+	break;
 }
 
-///event_inherited();
+#endregion
+
+#region Emerald's Current Crush influence
+
+if (instance_exists(obj_emerald_ultimate) && f != 2) {
+	if (hspeed1 != 0 || vspeed1 != 0) {
+		speed1 += sqrt(sqr(hspeed1) + sqr(vspeed1));
+		hspeed1 = 0;
+		vspeed1 = 0;
+	}
+	direction   = home(direction, point_direction(x, y, obj_emerald_ultimate.x, obj_emerald_ultimate.y), clamp((400 - distance_to_point(obj_emerald_ultimate.x, obj_emerald_ultimate.y)) * 0.25, 1, 10) * gpspeed, 1);
+	image_angle = direction;
+}
+
+#endregion
+
+#region Inherit parent event
+
 event_inherited();
 
+#endregion

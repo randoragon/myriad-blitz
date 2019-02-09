@@ -1,14 +1,27 @@
-/// @description skip if loading
-if global.loading==1 exit;
+/// @description Draw self
 
-///GENERAL_SURFACE set
+#region Skip if loading
+
+if (global.loading == 1) { exit; }
+
+#endregion
+
+#region GENERAL_SURFACE set
+
 surface_set_target(GENERAL_SURFACE);
 
-///emerald - current crush
-image_xscale*=sign(rot);
-draw_self();
-image_xscale*=sign(rot);
+#endregion
 
-///SURFACE RESET
+#region Draw self
+
+image_xscale *= sign(rot);
+draw_self();
+image_xscale *= sign(rot);
+
+#endregion
+
+#region Reset surface
+
 surface_reset_target();
 
+#endregion

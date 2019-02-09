@@ -8,67 +8,69 @@ event_inherited();
 
 #region Blazing Fireball
 
-if (f == 0 && gpspeed != 0 && e != 2) {
-	//DEFAULT FIREBALL
-	if (target < -4) {
-		target++;
-	} else {
-		if (!instance_exists(target) || target.object_index != obj_enemy) {
-			target = instance_nearest(x, y, obj_enemy);
-		} else if (instance_exists(target)) {
-			direction = home(direction, point_direction(x, y, target.x, target.y), 2 * gpspeed, 1);
+if (f == 0 && gpspeed != 0) {
+	if (e != 2) {
+		//DEFAULT FIREBALL
+		if (target < -4) {
+			target++;
+		} else {
+			if (!instance_exists(target) || target.object_index != obj_enemy) {
+				target = instance_nearest(x, y, obj_enemy);
+			} else if (instance_exists(target)) {
+				direction = home(direction, point_direction(x, y, target.x, target.y), 2 * gpspeed, 1);
+			}
+			image_angle = direction;
 		}
-		image_angle = direction;
-	}
-	if (real_step()) {
-		part_type_spawn_ult(global.part_system[3], global.charge_part[0], 3, x - 30, y - 30, x + 30, y + 30, "ellipse", "linear", 1.5);
-	}
-	if (place_meeting(x, y, obj_enemy) && instance_place(x, y, obj_enemy).hp > 0) {
-		with (instance_place(x,y,obj_enemy)) {
-			var damage = calculate_damage(other.cdmg, other.cpen, cdef);
-			var display_damage = ceil(hp) - ceil(hp - damage);
-			hp = clamp(hp - damage, 0, hpmax);
-			indicate(x, y, display_damage, 2, rgb(255, 170, 0), c_red);
-			knockback((100 - ckbres) * other.ckb / 1000, point_direction(other.x, other.y, x, y), 1);
-			spawn_bullet_ring(x, y, obj_frag, boss.chrsel, 1, id, other.spawn, 15, 0);
-			screenshake_set(5, 0, 4, 5, 1);
-			with(other) { instance_destroy(); }
+		if (real_step()) {
+			part_type_spawn_ult(global.part_system[3], global.charge_part[0], 3, x - 30, y - 30, x + 30, y + 30, "ellipse", "linear", 1.5);
 		}
-	}
+		if (place_meeting(x, y, obj_enemy) && instance_place(x, y, obj_enemy).hp > 0) {
+			with (instance_place(x,y,obj_enemy)) {
+				var damage = calculate_damage(other.cdmg, other.cpen, cdef);
+				var display_damage = ceil(hp) - ceil(hp - damage);
+				hp = clamp(hp - damage, 0, hpmax);
+				indicate(x, y, display_damage, 2, rgb(255, 170, 0), c_red);
+				knockback((100 - ckbres) * other.ckb / 1000, point_direction(other.x, other.y, x, y), 1);
+				spawn_bullet_ring(x, y, obj_frag, boss.chrsel, 1, id, other.spawn, 15, 0);
+				screenshake_set(5, 0, 4, 5, 1);
+				with(other) { instance_destroy(); }
+			}
+		}
 
-	if (x > CANVAS_XEND + 128 || x < -128 || y < -128 || y > CANVAS_YEND + 128) {
-		instance_destroy();
-	}
-	charge -= gpspeed;
-} else {             //TWILIGHT FURY VARIANT
-	if (target < -4) {
-		target++;
-	} else {
-		if (!instance_exists(target) || target.object_index != obj_enemy) {
-			target = instance_nearest(x, y, obj_enemy);
-		} else if (instance_exists(target)) {
-			direction = home(direction, point_direction(x, y, target.x, target.y), 5 * gpspeed, 1);
+		if (x > CANVAS_XEND + 128 || x < -128 || y < -128 || y > CANVAS_YEND + 128) {
+			instance_destroy();
 		}
-		image_angle = direction;
-	}
-	if (real_step()) {
-		part_type_spawn_ult(global.part_system[3], global.charge_part[1], 3, x - 6, y - 6, x + 6, y + 6, "ellipse", "linear", 1);
-	}
-	if (place_meeting(x, y, obj_enemy) && instance_place(x, y, obj_enemy).hp > 0) {
-		with (instance_place(x, y, obj_enemy)) {
-			var damage = calculate_damage(other.cdmg, other.cpen, cdef);
-			var display_damage = ceil(hp) - ceil(hp - damage);
-			hp = clamp(hp - damage, 0, hpmax);
-			indicate(x, y, display_damage, 2, rgb(255, 170, 0), c_red);
-			knockback((100 - ckbres) * other.ckb / 1000, point_direction(other.x, other.y, x, y), 1);
-			screenshake_set(5, 0, 4, 1, 1);
-			with(other) { instance_destroy(); }
+		charge -= gpspeed;
+	} else {             //TWILIGHT FURY VARIANT
+		if (target < -4) {
+			target++;
+		} else {
+			if (!instance_exists(target) || target.object_index != obj_enemy) {
+				target = instance_nearest(x, y, obj_enemy);
+			} else if (instance_exists(target)) {
+				direction = home(direction, point_direction(x, y, target.x, target.y), 5 * gpspeed, 1);
+			}
+			image_angle = direction;
 		}
+		if (real_step()) {
+			part_type_spawn_ult(global.part_system[3], global.charge_part[1], 3, x - 6, y - 6, x + 6, y + 6, "ellipse", "linear", 1);
+		}
+		if (place_meeting(x, y, obj_enemy) && instance_place(x, y, obj_enemy).hp > 0) {
+			with (instance_place(x, y, obj_enemy)) {
+				var damage = calculate_damage(other.cdmg, other.cpen, cdef);
+				var display_damage = ceil(hp) - ceil(hp - damage);
+				hp = clamp(hp - damage, 0, hpmax);
+				indicate(x, y, display_damage, 2, rgb(255, 170, 0), c_red);
+				knockback((100 - ckbres) * other.ckb / 1000, point_direction(other.x, other.y, x, y), 1);
+				screenshake_set(5, 0, 4, 1, 1);
+				with(other) { instance_destroy(); }
+			}
+		}
+		if (x > CANVAS_XEND + 128 || x < -128 || y < -128 || y > CANVAS_YEND + 128) {
+			instance_destroy();
+		}
+		charge -= gpspeed;
 	}
-	if (x > CANVAS_XEND + 128 || x < -128 || y < -128 || y > CANVAS_YEND + 128) {
-		instance_destroy();
-	}
-	charge -= gpspeed;
 }
 
 #endregion

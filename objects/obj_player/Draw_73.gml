@@ -1,4 +1,4 @@
-/// @description Gameplay bars
+/// @description Gameplay Bars
 
 #region Skip if loading
 

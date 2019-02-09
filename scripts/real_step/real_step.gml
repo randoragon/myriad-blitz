@@ -1,2 +1,3 @@
 /// @description real_step();
-return gpstep>=1;
+
+return (gpstep >= 1);

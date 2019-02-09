@@ -1,6 +1,13 @@
-/// @description ds_map loot destroy
+/// @description Cleanup
+
+#region Destroy loot ds_map
+
 ds_map_destroy(loot);
 
-///destroy the afterimage grid
+#endregion
+
+#region Destroy afterimage grid
+
 draw_afterimage_remove();
 
+#endregion

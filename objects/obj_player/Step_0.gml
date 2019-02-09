@@ -263,7 +263,7 @@ if (state == 1 && gpspd != 0) {
     var charge_sprite_lock = ((charge > 0 && artcharge == 0) || ((boss.chrsel == 1 || boss.chrsel == 2) && instance_exists(obj_charge)));
     var can_shoot = (discharge > 0 || !mouse_check_button(mb_right)) && !charge_sprite_lock && !((boss.chrsel == 1) && status_effect[2]);
     if (can_shoot) {
-        //is shooting event:
+        // is shooting event:
 		var is_shooting = (keyboard_check(global.keybind[4]) || (mouse_check_button(mb_left) && (!place_meeting(boss.x, boss.y, obj_button) || instance_place(boss.x, boss.y, obj_button).image_alpha == 0)));
         if(is_shooting || status_effect[10]) {
             if (evilflame_sprite_swap) {
@@ -287,12 +287,13 @@ if (state == 1 && gpspd != 0) {
                     case 2: xoffset = 31 * image_xscale; yoffset = -17 * image_yscale; xoffset2 = -39 * image_xscale; yoffset2 = -4 * image_yscale; break;
                 }
                 var angle = image_angle + point_direction(0, 0, xoffset, yoffset);
-				angle %= 360;
-                var l = sqrt(sqr(xoffset) + sqr(yoffset));
+				angle    %= 360;
+                var l     = sqrt(sqr(xoffset) + sqr(yoffset));
+				var xx;
                 if (x + xoffset > CANVAS_XEND && instance_exists(helper)) {
-                    var xx = helper.x;
+                    xx = helper.x;
                 } else {
-                    var xx = x;
+                    xx = x;
                 }
                 var e = 0;
                 if (boss.chrsel == 0 && status_effect[9]) {
