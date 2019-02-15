@@ -1,3 +1,7 @@
-/// @description hiding
-x=xstart-(360*boss.transition);
+/// @description Hiding
 
+#region
+
+x = xstart - (360 * boss.transition);
+
+#endregion
