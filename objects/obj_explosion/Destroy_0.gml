@@ -1,3 +1,7 @@
-/// @description destroy the afterimage grid
+/// @description Cleanup
+
+#region Destroy afterimage grid
+
 draw_afterimage_remove();
 
+#endregion

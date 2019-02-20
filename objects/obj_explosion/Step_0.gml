@@ -1,10 +1,19 @@
-/// @description skip if loading
-if global.loading==1 exit;
+/// @description Destroy Condition
 
-///event_inherited();
+#region Skip if loading
+
+if (global.loading == 1) { exit; }
+
+#endregion
+
+#region Inherit parent event
+
 event_inherited();
 
-///destroy condition
+#endregion
 
-if image_index+image_speed>=image_number instance_destroy();
+#region Destroy condition
 
+if (image_index + image_speed >= image_number) { instance_destroy(); }
+
+#endregion

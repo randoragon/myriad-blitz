@@ -1,11 +1,21 @@
-/// @description GUI_SURFACE set
+/// @description Draw Self
+
+#region GUI_SURFACE set
+
 surface_set_target(GUI_SURFACE);
 
-///draw self
+#endregion
+
+#region Draw self
+
 draw_set_alpha_test_ref_value(0);
 draw_self();
 draw_set_alpha_test_ref_value(254);
 
-///SURFACE RESET
+#endregion
+
+#region Reset surface
+
 surface_reset_target();
 
+#endregion
