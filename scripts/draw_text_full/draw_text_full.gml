@@ -1,4 +1,4 @@
-/// @description draw_text_full(x,y,text,xscale,yscale,angle,alpha,halign,valign,color);
+/// @description draw_text_full(x, y, text, xscale, yscale, angle, alpha, halign, valign, color);
 /// @param x
 /// @param y
 /// @param text
@@ -9,12 +9,14 @@
 /// @param halign
 /// @param valign
 /// @param color
+
 draw_set_halign(argument[7]);
 draw_set_valign(argument[8]);
 draw_set_color(argument[9]);
-var prealpha=draw_get_alpha();
+var prealpha = draw_get_alpha();
+
 draw_set_alpha(argument[6]);
-if argument[6]<1 draw_set_alpha_test_ref_value(254);
-draw_text_transformed(argument[0],argument[1],string_hash_to_newline(argument[2]),argument[3],argument[4],argument[5]);
-if prealpha==1 draw_set_alpha_test_ref_value(0);
+if (argument[6] < 1) { draw_set_alpha_test_ref_value(254); }
+draw_text_transformed(argument[0], argument[1], string_hash_to_newline(argument[2]), argument[3], argument[4], argument[5]);
+if (prealpha == 1) { draw_set_alpha_test_ref_value(0); }
 draw_set_alpha(prealpha);

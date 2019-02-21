@@ -8,7 +8,7 @@
 /// @param color
 /// @param alpha
 
-var w = argument[4] * sprite_get_width(argument[0]);
+var w = argument[4] *  sprite_get_width(argument[0]);
 var h = argument[5] * sprite_get_height(argument[0]);
 
 for (var i = 0; i < room_width; i += w) {
