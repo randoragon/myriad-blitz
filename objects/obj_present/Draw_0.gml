@@ -7,6 +7,7 @@ if (global.loading == 1) { exit; }
 #endregion
 
 #region Picking & drawing with shader implementation
+
 if (picked == 0) {
     surface_set_target(GENERAL_SURFACE);
     if (global.shader_conditions == 0) {
@@ -37,3 +38,5 @@ if (picked == 0) {
 		break;
     }
 }
+
+#endregion

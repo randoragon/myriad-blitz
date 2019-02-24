@@ -19,8 +19,8 @@ if (instance_exists(obj_Transition)) {
     exit;
 }
 
-if (!(argument[0]==-1 && argument[1]==-1)) {
-    var instance=instance_create(0,0,obj_Transition);
+if (!(argument[0] == -1 && argument[1] == -1)) {
+    var instance = instance_create(0, 0, obj_Transition);
     with (instance) {
         if (argument[0] != -1) { destination = argument[0]; }
         if (argument[1] != -1) { script      = argument[1]; }

@@ -1,2 +1,4 @@
 /// @description scrt_back();
-wipe(obj_sound_bar); scr_Restart();
+
+wipe(obj_sound_bar);
+scr_Restart();

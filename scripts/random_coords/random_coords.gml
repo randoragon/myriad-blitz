@@ -23,7 +23,7 @@ var xmin = argument[0];
 var ymin = argument[1];
 var xmax = argument[2];
 var ymax = argument[3];
-var xx,yy;
+var xx, yy;
 
 //POINT SHAPE
 if (xmin == xmax && ymin == ymax) {

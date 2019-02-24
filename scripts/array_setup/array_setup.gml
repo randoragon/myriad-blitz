@@ -1,4 +1,4 @@
-/// @description array_setup(value,width,'height)
+/// @description array_setup(value, width, 'height)
 /// @param value
 /// @param width
 /// @param 'height

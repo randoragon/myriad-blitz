@@ -1,14 +1,24 @@
 /// @description scrq_delete_slot();
-play_sfx(sfx_slot_delete,0,0);
-var prevpage=obj_slot_load.page;
-var prevslotcount=array_length_1d(obj_slot_load.slot)-1;
-with(obj_slot_load)
-{
-file_delete(selection);
-wipe(obj_slot); wipe(button[0]); wipe(button[1]); wipe(button[2]); wipe(button[3]);
-instance_destroy();
+
+play_sfx(sfx_slot_delete, 0, 0);
+
+var prevpage      = obj_slot_load.page;
+var prevslotcount = array_length_1d(obj_slot_load.slot)-1;
+
+with (obj_slot_load) {
+    file_delete(selection);
+    wipe(obj_slot);
+    wipe(button[0]);
+    wipe(button[1]);
+    wipe(button[2]);
+    wipe(button[3]);
+    instance_destroy();
 }
+
 instance_destroy();
-var newinstance=instance_create(CANVAS_XMID,CANVAS_YMID,obj_slot_load);
-newinstance.page=prevpage;
-if ceil((prevslotcount-1)/6)<prevpage newinstance.page--;
+var newinstance = instance_create(CANVAS_XMID, CANVAS_YMID, obj_slot_load);
+newinstance.page = prevpage;
+
+if (ceil((prevslotcount - 1) / 6) < prevpage) {
+    newinstance.page--;
+}

@@ -141,8 +141,8 @@ if (phase == 4 && clock-- <= 0) {
 	        boss.last_ult					   = string_readln_real(bit, ";");
 	        kill_count						   = string_readln_real(bit, ";");
 	        boss.dizzy_alpha				   = string_readln_real(bit, ";");
-	        for (var i = 0; i<8; i++) {
-	            __background_set( e__BG.Index, i, string_readln_real(bit, ";") );
+	        for (var i = 0; i < 8; i++) {
+	            __background_set( e__BG.Index,  i, string_readln_real(bit, ";") );
 	            __background_set( e__BG.HTiled, i, string_readln_real(bit, ";") );
 	            __background_set( e__BG.VTiled, i, string_readln_real(bit, ";") );
 	            global.parallax_speed[i, 0]	   = string_readln_real(bit, ";");

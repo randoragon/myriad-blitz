@@ -1,5 +1,5 @@
-/// @description mousepos(x or y, view)
-/// @param x or y
+/// @description mousepos(x_or_y, view)
+/// @param x_or_y
 /// @param view
 
 var o;

@@ -1,21 +1,21 @@
-/// @description flip_decode(val,key);
+/// @description flip_decode(val, key);
 /// @param val
 /// @param key
 
 //Key's characters all have to be u(0-255).
 
-var input=string(argument[0]);
-var key=string(argument[1]);
-var key_length=string_length(key);
+var input      = string(argument[0]);
+var key        = string(argument[1]);
+var key_length = string_length(key);
 
 var cipher_key;
-for(var i=0; i<key_length; i++) {
-cipher_key[i]=string_ord_at(key,i);
+for (var i = 0; i < key_length; i++) {
+    cipher_key[i] = string_ord_at(key, i);
 }
 
 var output="";
-for(var i=1; i<=string_length(input); i++) {
-output+=chr((string_ord_at(input,i)+255-cipher_key[i%key_length])%255);
+for (var i = 1; i <= string_length(input); i++) {
+    output += chr((string_ord_at(input, i) + 255 - cipher_key[i % key_length]) % 255);
 }
 
 return output;
