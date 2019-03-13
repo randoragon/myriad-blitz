@@ -243,18 +243,18 @@ if (f == 8 && state == 1 && !global.loading && ds_exists(player_status_effects, 
 			draw_set_color(c_black);
 			if (timer_countdown >= 0) {
 				if (timer_countdown < 60) {
-					timer_text = " - " + string_format(timer_countdown/60, -1, 2) + "s";
+					timer_text = " - " + string_format(timer_countdown / 60, -1, 2) + "s";
 				} else if (timer_countdown < 3600) {
-					timer_text = " - " + string(floor(timer_countdown/60)) + "s";
+					timer_text = " - " + string(floor(timer_countdown / 60)) + "s";
 				} else {
-					timer_text = " - " + string(floor(timer_countdown/3600)) + "m " + string(floor(timer_countdown/60)%60) + "s";
+					timer_text = " - " + string(floor(timer_countdown / 3600)) + "m " + string(floor(timer_countdown / 60) % 60) + "s";
 				}
 			} else {
 				timer_text = " - " + chr(8734);
 			}
-			var rec_width = max(2*string_width(string_hash_to_newline(global.player_status_effect_name[status_id])), timer_text, 2*string_width(string_hash_to_newline(global.player_status_effect_desc[status_id])));
+			var rec_width = max(2 * string_width(string_hash_to_newline(global.player_status_effect_name[status_id])), 2 * string_width(timer_text), 2 * string_width(string_hash_to_newline(global.player_status_effect_desc[status_id])));
 
-			draw_roundrect(xx - 4, yy + 36, xx + rec_width + 4, yy + 40 + (2*string_height(string_hash_to_newline(global.player_status_effect_desc[status_id] + "###"))), 0);
+			draw_roundrect(xx - 4, yy + 36, xx + rec_width + 4, yy + 40 + (2 * string_height(string_hash_to_newline(global.player_status_effect_desc[status_id] + "###"))), 0);
 			draw_set_alpha(1);
 			draw_set_color(c_white);
 			draw_text_transformed(xx, yy + 38, string_hash_to_newline(global.player_status_effect_name[status_id]), 2, 2, 0);

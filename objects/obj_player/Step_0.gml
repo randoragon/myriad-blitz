@@ -56,8 +56,6 @@ var ctime_factor      = 1;
 var ccooldown_factor  = 1;
 var invtime_factor    = 1;
 
-var global.chrsel = global.chrsel;
-
 //status: exhausted
 if (status_effect[0]) {
     spd_factor        *= 0.5;

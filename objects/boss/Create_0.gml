@@ -1,7 +1,7 @@
 #region Miscellaneous Setup
 
 gml_release_mode(1);
-window_last_width = window_get_width();
+window_last_width  = window_get_width();
 window_last_height = window_get_height();
 global.general_surface = -1;
 global.gui_surface = -1;
@@ -9,63 +9,57 @@ application_surface_enable(0);
 window_set_cursor(cr_none);
 math_set_epsilon(0.0001);
 audio_channel_num(32);
-lastpresent = 0;
 globalvar kill_count; kill_count = 0;
-last_ult = 0;
-menu_intro = 0;
-dizzy_alpha = 0;
-os_pause = 0;
-
-global.loading = 0;
-global.fullscreen = 1;
+global.loading     = 0;
+global.fullscreen  = 1;
 global.screenshake = 1;
-global.points = 0;
-global.music[0] = -1;
-global.sfx[0] = -1;
+global.points      = 0;
+global.music[0]    = -1;
+global.sfx[0]      = -1;
 globalvar spawnrate, gpspeed, prev_gpspeed, sound_gpspeed, gpstep, busy, realm, gptime;
-spawnrate = 10;
-gpspeed = 1;
+spawnrate     = 10;
+gpspeed       = 1;
 sound_gpspeed = gpspeed;
-prev_gpspeed = gpspeed;
-gpstep = 1;
-busy = 0;
-realm = 0;
-gptime = 0;
-global.gpspeed_focus = 1;
+prev_gpspeed  = gpspeed;
+gpstep        = 1;
+busy          = 0;
+realm         = 0;
+gptime        = 0;
+global.gpspeed_focus               = 1;
 global.gpspeed_ultimate_activation = 1;
-global.gpspeed_ultimate = 1;
-global.gpspeed_state = 1;
+global.gpspeed_ultimate            = 1;
+global.gpspeed_state               = 1;
 globalvar state;
 state = 0;
-global.viewxstartpos = 0; global.viewystartpos = 0;
+global.viewxstartpos     = 0;
+global.viewystartpos     = 0;
 global.shader_conditions = 0;
-chrsel = 0; chrcount = 3;
-scr_PlayerDataUpdate(chrsel);
-global.color = array_setup(c_white, chrcount);
+global.chrsel			 = 0;
+scr_PlayerDataUpdate(global.chrsel);
+global.color = array_setup(c_white, CHRCOUNT);
 global.color[0] = c_aqua;
 global.color[1] = hsv(110, 255, 255);
 global.color[2] = hsv(40, 60, 200);
-global.name = array_setup("<failed to fetch name>", chrcount);
+global.name = array_setup("<failed to fetch name>", CHRCOUNT);
 global.name[0] = "Evilflame";
 global.name[1] = "Emerald~";
 global.name[2] = "Der Scootomik";
-transition = 0;
-data = "";
-global.realm_name[1] = "Christmas Realm";
-global.realm_name[0] = "Menu";
+global.transition     = 0;
+global.realm_name[1]  = "Christmas Realm";
+global.realm_name[0]  = "Menu";
 global.parallax_speed = array_setup(0, 8, 2);
 global.enemy_details_selection = noone;
 
-global.save_chunk_size = 500;
-global.save_particles = 1;
+global.save_chunk_size  = 500;
+global.save_particles   = 1;
 global.left_handed_mode = 0;
-    global.keybind[0] = ord("W"); // move upwards
-    global.keybind[1] = ord("A"); // move left
-    global.keybind[2] = ord("S"); // move downwards
-    global.keybind[3] = ord("D"); // move right
-    global.keybind[4] = vk_space; // shoot
-    global.keybind[5] = vk_shift; // focus
-    global.keybind[6] = ord("E"); // ultimate
+global.keybind[0]	    = ord("W"); // move upwards
+global.keybind[1]       = ord("A"); // move left
+global.keybind[2]       = ord("S"); // move downwards
+global.keybind[3]       = ord("D"); // move right
+global.keybind[4]       = vk_space; // shoot
+global.keybind[5]       = vk_shift; // focus
+global.keybind[6]       = ord("E"); // ultimate
 	
 #endregion
 

@@ -2334,6 +2334,14 @@
             }
         },
         {
+            "Key": "8427047f-9ef8-4c77-89f3-9c20623d07b6",
+            "Value": {
+                "id": "c54dc490-5ef0-43ff-9647-82a035dc715c",
+                "resourcePath": "options\\ios\\options_ios.yy",
+                "resourceType": "GMiOSOptions"
+            }
+        },
+        {
             "Key": "8430bc27-b9b7-47bf-85a7-98f61e27eeae",
             "Value": {
                 "id": "cab2c305-43b7-4fb0-92ac-f28e30d3e0ea",
@@ -2818,6 +2826,14 @@
                 "id": "643b2e65-7ce7-45a0-af8e-0a1b7803509b",
                 "resourcePath": "sprites\\spr_loading\\spr_loading.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "a128950b-5063-4876-b4a6-b99dbd2ea6d1",
+            "Value": {
+                "id": "d7eb9406-2a61-4809-b0ec-aec9553f4749",
+                "resourcePath": "options\\amazonfire\\options_amazonfire.yy",
+                "resourceType": "GMAmazonFireOptions"
             }
         },
         {
@@ -4031,6 +4047,14 @@
             }
         },
         {
+            "Key": "e42bf5cc-3f46-4d67-a6d0-a4885a11ac3f",
+            "Value": {
+                "id": "51bf2331-c5f3-4fbf-a014-53b90dfafae9",
+                "resourcePath": "options\\android\\options_android.yy",
+                "resourceType": "GMAndroidOptions"
+            }
+        },
+        {
             "Key": "e4847c3d-8b88-4216-8835-486904dad089",
             "Value": {
                 "id": "525ed992-c5a5-4c57-acd5-4884c6558ad0",
@@ -4343,14 +4367,6 @@
             }
         },
         {
-            "Key": "f89a3d79-9a7b-4959-bad8-159ea8ee3361",
-            "Value": {
-                "id": "86e32f12-d839-44c4-8406-5429a2d5abd5",
-                "resourcePath": "views\\f89a3d79-9a7b-4959-bad8-159ea8ee3361.yy",
-                "resourceType": "GMFolder"
-            }
-        },
-        {
             "Key": "f8b90fd6-1d91-4935-9166-9b1d691f6a5f",
             "Value": {
                 "configDeltas": [
@@ -4359,14 +4375,6 @@
                 "id": "352cc970-0d02-4f27-ac54-ea14f3d5f0f4",
                 "resourcePath": "sprites\\spr_scootomik_ultimate_overlay\\spr_scootomik_ultimate_overlay.yy",
                 "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "f8dd9b6b-32ec-423a-a3a5-94973bd9a681",
-            "Value": {
-                "id": "0f7fb903-2c69-4119-b57c-086faeaa6331",
-                "resourcePath": "views\\f8dd9b6b-32ec-423a-a3a5-94973bd9a681.yy",
-                "resourceType": "GMFolder"
             }
         },
         {
@@ -4627,19 +4635,14 @@
         "21f2748c-a4ac-4794-803f-669b1ae1c916",
         "4fbfa28b-6ff2-445b-9204-af62dcacfea6",
         "62d70170-19dc-4744-a5af-00f8790c7fbc",
-        "d24beb22-8b71-4e88-ab33-36e87ed38766",
-        "37ac6e88-e4d4-449b-8545-bf70ff2029db",
-        "61230c68-77ea-4b46-91f0-435009d1ae26",
-        "677706c5-3645-4a58-b9fd-a6555dcb64e0",
-        "ee3d3a08-e852-49aa-a3c8-0a1794b1ebd7",
-        "b6bfc7f8-6f10-4a48-9ead-f30fa1445539",
         "be8d55f5-650e-44aa-b27e-608b6b3d05ae",
         "51ea6df0-925a-4561-a710-97649d0f2b6a",
         "749fd0b8-96bf-480f-9756-a8d0fdd90f69",
         "69f47048-dc33-443c-b79f-66772a8aba3f",
         "76fd388f-08df-45c9-aed7-12c004a84ccd",
         "4494470b-9543-4d73-935f-3782000cf919",
-        "039b8662-cbec-45f3-b69c-3123f9cedb90"
+        "039b8662-cbec-45f3-b69c-3123f9cedb90",
+        "b6bfc7f8-6f10-4a48-9ead-f30fa1445539"
     ],
     "tutorial": ""
 }
