@@ -17,10 +17,10 @@ if (room == rm_Main) {
         }
     }
     
-    if (state == 1 && global.transition != 1) {
-        global.transition = home(global.transition, 1, 1/20, 0);
-    } else if (state == 0 && global.transition != 0) {
-        global.transition = home(global.transition, 0, 1/20, 0);
+    if (state == 1 && transition != 1) {
+        transition = home(transition, 1, 1/20, 0);
+    } else if (state == 0 && transition != 0) {
+        transition = home(transition, 0, 1/20, 0);
     }
     
     if (instance_exists(obj_player) && gpspeed != 0) {

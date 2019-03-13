@@ -1,4 +1,3 @@
-#macro CHRCOUNT 3
 #macro BORDER_THICKNESS 20
 #macro SURFACE_SCALE (window_get_width() / (room_width - (2 * BORDER_THICKNESS)))
 #macro CANVAS_X __view_get( e__VW.XView, 0 )
