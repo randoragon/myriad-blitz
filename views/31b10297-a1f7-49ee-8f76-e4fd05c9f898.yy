@@ -14,7 +14,8 @@
         "19b501f2-46bb-43c2-9f23-3c49ba43300a",
         "50994d3b-f532-41d2-8331-6260b4a19341",
         "5c23a69f-da8d-414c-b269-5ab90d31e6cb",
-        "a99faefd-f3ab-4ac7-a52b-500b74ece9f9"
+        "a99faefd-f3ab-4ac7-a52b-500b74ece9f9",
+        "b6bfc7f8-6f10-4a48-9ead-f30fa1445539"
     ],
     "filterType": "GMScript",
     "folderName": "Shorteners",
