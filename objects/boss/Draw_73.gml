@@ -31,9 +31,9 @@ if (room == rm_About) {
     draw_text_outline(703, 200 + (2 * 3 * 12), "Randoragon", 3, 3, 0, rgb(128, 255, 0), 1, c_black, 1);
     //Waterflame
     if (highlight == 1) {
-        draw_set_alpha_test_ref_value(0);
+        gpu_set_alphatestref(0);
         draw_text_highlight(703, 200 + (5 * 3 * 12), "Waterflame", 3, c_black, 0.5, fa_center, fa_top, 7, 7);
-        draw_set_alpha_test_ref_value(254);
+        gpu_set_alphatestref(254);
         draw_text_outline(703, 200 + (5 * 3 * 12), "Waterflame", 3, 3, 0, rgb(0,165,255), 1, c_black, 1);
         draw_tooltip("Menu Song: "+"\"Battletown\"#"+"Christmas Realm: "+"\"8-bit Jingle Twist\"");
         draw_set_align(fa_center, fa_top);
@@ -42,9 +42,9 @@ if (room == rm_About) {
     }
     //Mahlarian
     if (highlight == 2) {
-        draw_set_alpha_test_ref_value(0);
+        gpu_set_alphatestref(0);
         draw_text_highlight(703, 200 + (8 * 3 * 12), "Mahlarian", 3, c_black, 0.5, fa_center, fa_top, 7, 7);
-        draw_set_alpha_test_ref_value(254);
+        gpu_set_alphatestref(254);
         draw_text_outline(703, 200 + (8 * 3 * 12), "Mahlarian", 3, 3, 0, rgb(255, 0, 255), 1, c_black, 1);
         draw_tooltip("For useful suggestions, tips,#playtesting and being a good friend.");
         draw_set_align(fa_center, fa_top);
@@ -53,9 +53,9 @@ if (room == rm_About) {
     }
     //Discord Community
     if (highlight == 3) {
-        draw_set_alpha_test_ref_value(0);
+        gpu_set_alphatestref(0);
         draw_text_highlight(703, 200 + (9 * 3 * 12), "My Discord Community", 3, c_black, 0.5, fa_center, fa_top, 7, 7);
-        draw_set_alpha_test_ref_value(254);
+        gpu_set_alphatestref(254);
         draw_text_outline(703, 200 + (9 * 3 * 12), "My Discord Community", 3, 3, 0, c_white, 1, c_black, 1);
         draw_tooltip("For partaking in polls, supporting my work#and patiently waiting for delayed updates <3");
         draw_set_align(fa_center, fa_top);
@@ -80,7 +80,7 @@ if (room == rm_Help) {
     "In this infinity run shooter game your goal is to obtain" +
     "#as many points as you can by killing enemies." +
     "#" +
-    "You have " + string(chrcount) + " characters to choose from, each with its own strengths" +
+    "You have " + string(CHRCOUNT) + " characters to choose from, each with its own strengths" +
     "#and weaknesses. Their characteristics can be viewed in detail" +
     "#in the character selection menu. Controls are listed there as well.";
     
@@ -111,10 +111,10 @@ with (obj_Transition) {
 	    progress += 2/time;
 	    draw_set_color(color);
 	    if (progress <= 1) { draw_set_alpha(progress); } else { draw_set_alpha(2 - progress); }
-	    draw_set_alpha_test_ref_value(254);
+	    gpu_set_alphatestref(254);
 	    draw_rectangle(GUI_X, GUI_Y, GUI_XEND, GUI_YEND, 0);
 	    draw_set_alpha(1);
-	    draw_set_alpha_test_ref_value(0);
+	    gpu_set_alphatestref(0);
 	    if (progress==1)   { event_perform(ev_other, ev_user0); }
 	    if (progress >= 2) { instance_destroy(); }
 	} else if (type == 1) {

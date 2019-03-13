@@ -10,7 +10,7 @@ if (global.loading == 1) { exit; }
 
 if (state == 1) {
     surface_set_target(GUI_SURFACE);
-    draw_set_alpha_test_ref_value(0);
+    gpu_set_alphatestref(0);
     //HP Bar
     if (bar_opacity[0] > 0) {
         bar_yoffset[0] = home(bar_yoffset[0], 36 + (((bar_opacity[1] > 0) + (bar_opacity[2] > 0)) * 8), 0.5);
@@ -89,7 +89,7 @@ if (state == 1) {
             bar_opacity[2] -= 0.05;
         }
     }
-    draw_set_alpha_test_ref_value(254);
+    gpu_set_alphatestref(254);
     surface_reset_target();
 }
 

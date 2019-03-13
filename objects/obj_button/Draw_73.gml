@@ -22,10 +22,10 @@ if (f == 8) {
 }
 
 if (sprite_index == spr_stats_checkbox && image_index == 1) { // this one sprite has semi-transparent parts
-	draw_set_alpha_test_ref_value(0);
+	gpu_set_alphatestref(0);
 }
 draw_self();
-draw_set_alpha_test_ref_value(254);
+gpu_set_alphatestref(254);
 
 // Overlays
 switch(f) {
@@ -72,7 +72,7 @@ if (f == 8 && instance_exists(obj_player) && global.loading == 0) {
     var hpmax	 = target.hpmax;
     var ultcount = target.ultcount;
     var ultblink = target.ultblink;
-    draw_set_alpha_test_ref_value(0);
+    gpu_set_alphatestref(0);
     draw_sprite_ext(spr_HP_bar, 1, GUI_X + 43, GUI_Y + 3, 1, 1, 0, c_black, 0.5);
     if (hpmark < hp) {
         draw_sprite_ext(spr_HP_bar, 1, GUI_X + 43, GUI_Y + 3, clamp(hpmark/hpmax, 0, 1), 1, 0, c_red, 0.75);
@@ -81,18 +81,18 @@ if (f == 8 && instance_exists(obj_player) && global.loading == 0) {
         draw_sprite_ext(spr_HP_bar, 1, GUI_X + 43, GUI_Y + 3, clamp(hp/hpmax, 0, 1), 1, 0, c_red, 0.75);
         draw_sprite_ext(spr_HP_bar, 1, GUI_X + 43 + (294*clamp(hp/hpmax, 0, 1)), GUI_Y + 4, clamp((hpmark - hp)/hpmax, 0, 1), 1, 0, c_yellow, 0.75);
     }
-    draw_set_alpha_test_ref_value(254);
+    gpu_set_alphatestref(254);
     draw_sprite(spr_HP_bar, 0, GUI_X + 43, GUI_Y + 3);
     draw_set_align(fa_center, fa_middle);
     draw_text_outline(GUI_X + 43 + 151, GUI_Y + 20, string(ceil(hp)) + " / " + string_format(hpmax, -1, 0), 2, 2, 0, c_red, 0, c_black, 1);
-    draw_set_alpha_test_ref_value(0);
-    draw_set_blend_mode(bm_add);
+    gpu_set_alphatestref(0);
+    gpu_set_blendmode(bm_add);
     draw_sprite_ext(spr_HP_bar, 2, GUI_X + 44, GUI_Y + 3, 1, 1, 0, c_black, 0.5);
-    draw_set_blend_mode(bm_normal);
-    draw_set_color_write_enable(1, 1, 1, 0);
+    gpu_set_blendmode(bm_normal);
+    gpu_set_colorwriteenable(1, 1, 1, 0);
     draw_sprite_ext(spr_HP_bar, 2, GUI_X + 44, GUI_Y + 3, 1, 1, 0, c_black, 0.5);
-    draw_set_color_write_enable(1, 1, 1, 1);
-    draw_set_alpha_test_ref_value(254);
+    gpu_set_colorwriteenable(1, 1, 1, 1);
+    gpu_set_alphatestref(254);
     draw_set_halign(fa_left);
     draw_text_outline(GUI_X + 63, GUI_Y + 20, "HP", 2, 2, 0, c_red, 0, c_black, 1);
     if ((ultblink > 15 && ultblink <= 30) || (ultblink <= -15 && ultblink > -30) || ultblink == 0) {
@@ -104,10 +104,10 @@ if (f == 8 && instance_exists(obj_player) && global.loading == 0) {
     //Focus bar
     var focus   = target.focus;
     var foctime = target.foctime;
-    draw_set_alpha_test_ref_value(0);
+    gpu_set_alphatestref(0);
     draw_sprite_ext(spr_GUI_bar, 1, GUI_X + 6, GUI_Y + 40, 1, 1, 0, c_black, 0.5);
     draw_sprite_ext(spr_GUI_bar, 1, GUI_X + 6, GUI_Y + 40, clamp(focus/foctime, 0, 1), 1, 0, c_white, 0.75);
-    draw_set_alpha_test_ref_value(254);
+    gpu_set_alphatestref(254);
     draw_sprite_ext(spr_GUI_bar, 0, GUI_X + 6, GUI_Y + 40, 1, 1, 0, c_white, 1);
     draw_text_outline(GUI_X + 26, GUI_Y + 51, "FOCUS", 2, 2, 0, c_white, 0, c_black, 1);
     draw_set_halign(fa_center);
@@ -116,14 +116,14 @@ if (f == 8 && instance_exists(obj_player) && global.loading == 0) {
     //Charge bar
     var discharge = target.discharge;
     var ccooldown = target.ccooldown;
-    var color     = global.color[boss.chrsel];
+    var color     = global.color[global.chrsel];
     var charge    = target.charge;
     var ctime     = target.ctime;
-    draw_set_alpha_test_ref_value(0);
+    gpu_set_alphatestref(0);
     draw_sprite_ext(spr_GUI_bar, 1, GUI_X + 6, GUI_Y + 67, 1, 1, 0, c_black, 0.5);
     draw_sprite_ext(spr_GUI_bar, 1, GUI_X + 6, GUI_Y + 67, clamp(discharge/ccooldown, 0, 1), 1, 0, color_shift_hsv(color, 128, 0, 0, 1), 0.75);
     draw_sprite_ext(spr_GUI_bar, 1, GUI_X + 6, GUI_Y + 67, clamp(charge/ctime, 0, 1), 1, 0, color, 0.75);
-    draw_set_alpha_test_ref_value(254);
+    gpu_set_alphatestref(254);
     draw_sprite_ext(spr_GUI_bar, 0, GUI_X + 6, GUI_Y + 67, 1, 1, 0, c_white, 1);
     if (discharge > 0) {
         draw_text_outline(GUI_X + 153, GUI_Y + 78, "- " + string_format(discharge/60, -1, 1) + "s", 2, 2, 0, color_shift_hsv(color, 128, 0, 0, 1), 0, c_black, 1);
@@ -135,7 +135,7 @@ if (f == 8 && instance_exists(obj_player) && global.loading == 0) {
         draw_text_outline(GUI_X + 26, GUI_Y + 78, "CHARGE", 2, 2, 0, color, 0, c_black, 1);
     }
     
-    if (instance_exists(obj_evilflame_ultimate) && boss.chrsel == 0) { // EVILFLAME'S DUAL CLONE ALTERNATIVE
+    if (instance_exists(obj_evilflame_ultimate) && global.chrsel == 0) { // EVILFLAME'S DUAL CLONE ALTERNATIVE
         var target = obj_evilflame_ultimate;
         
         //HP Bar
@@ -145,7 +145,7 @@ if (f == 8 && instance_exists(obj_player) && global.loading == 0) {
         var hpmax    = target.hpmax;
         var ultcount = obj_player.ultcount;
         var ultblink = obj_player.ultblink;
-        draw_set_alpha_test_ref_value(0);
+        gpu_set_alphatestref(0);
         draw_sprite_ext(spr_HP_bar, 1, GUI_X + 43, GUI_Y + 731, 1, 1, 0, c_black, 0.5);
         if (hpmark < hp) {
             draw_sprite_ext(spr_HP_bar, 1, GUI_X + 43, GUI_Y + 731, clamp(hpmark/hpmax, 0, 1), 1, 0, c_red, 0.75);
@@ -154,18 +154,18 @@ if (f == 8 && instance_exists(obj_player) && global.loading == 0) {
             draw_sprite_ext(spr_HP_bar, 1, GUI_X + 43, GUI_Y + 731, clamp(hp/hpmax, 0, 1), 1, 0, c_red, 0.75);
             draw_sprite_ext(spr_HP_bar, 1, GUI_X + 43 + (294*clamp(hp/hpmax, 0, 1)), GUI_Y + 730, clamp((hpmark - hp)/hpmax, 0, 1), 1, 0, c_yellow, 0.75);
         }
-        draw_set_alpha_test_ref_value(254);
+        gpu_set_alphatestref(254);
         draw_sprite(spr_HP_bar, 0, GUI_X + 43, GUI_Y + 731);
         draw_set_align(fa_center, fa_middle);
         draw_text_outline(GUI_X + 43 + 151, GUI_Y + 746, string(ceil(hp)) + " / " + string_format(hpmax, -1, 0), 2, 2, 0, c_red, 0, c_black, 1);
-        draw_set_alpha_test_ref_value(0);
-        draw_set_blend_mode(bm_add);
+        gpu_set_alphatestref(0);
+        gpu_set_blendmode(bm_add);
         draw_sprite_ext(spr_HP_bar, 2, GUI_X + 44, GUI_Y + 731, 1, 1, 0, c_black, 0.5);
-        draw_set_blend_mode(bm_normal);
-        draw_set_color_write_enable(1, 1, 1, 0);
+        gpu_set_blendmode(bm_normal);
+        gpu_set_colorwriteenable(1, 1, 1, 0);
         draw_sprite_ext(spr_HP_bar, 2, GUI_X + 44, GUI_Y + 731, 1, 1, 0, c_black, 0.5);
-        draw_set_color_write_enable(1, 1, 1, 1);
-        draw_set_alpha_test_ref_value(254);
+        gpu_set_colorwriteenable(1, 1, 1, 1);
+        gpu_set_alphatestref(254);
         draw_set_halign(fa_left);
         draw_text_outline(GUI_X + 63, GUI_Y + 746, "HP", 2, 2, 0, c_red, 0, c_black, 1);
         if ((ultblink > 15 && ultblink <= 30) || (ultblink <= -15 && ultblink > -30) || ultblink == 0) {
@@ -178,10 +178,10 @@ if (f == 8 && instance_exists(obj_player) && global.loading == 0) {
         //Focus bar
         var focus   = obj_player.focus;
         var foctime = obj_player.foctime;
-        draw_set_alpha_test_ref_value(0);
+        gpu_set_alphatestref(0);
         draw_sprite_ext(spr_GUI_bar, 1, GUI_X + 6, GUI_Y + 704, 1, 1, 0, c_black, 0.5);
         draw_sprite_ext(spr_GUI_bar, 1, GUI_X + 6, GUI_Y + 704, clamp(focus/foctime, 0, 1), 1, 0, c_white, 0.75);
-        draw_set_alpha_test_ref_value(254);
+        gpu_set_alphatestref(254);
         draw_sprite_ext(spr_GUI_bar, 0, GUI_X + 6, GUI_Y + 704, 1, 1, 0, c_white, 1);
         draw_text_outline(GUI_X + 26, GUI_Y + 715, "FOCUS", 2, 2, 0, c_white, 0, c_black, 1);
         draw_set_halign(fa_center);
@@ -190,14 +190,14 @@ if (f == 8 && instance_exists(obj_player) && global.loading == 0) {
         //Charge bar
         var discharge = target.discharge;
         var ccooldown = target.ccooldown;
-        var color     = global.color[boss.chrsel];
+        var color     = global.color[global.chrsel];
         var charge    = target.charge;
         var ctime     = target.ctime;
-        draw_set_alpha_test_ref_value(0);
+        gpu_set_alphatestref(0);
         draw_sprite_ext(spr_GUI_bar, 1, GUI_X + 6, GUI_Y + 677, 1, 1, 0, c_black, 0.5);
         draw_sprite_ext(spr_GUI_bar, 1, GUI_X + 6, GUI_Y + 677, clamp(discharge/ccooldown, 0, 1), 1, 0, color_shift_hsv(color, 128, 0, 0, 1), 0.75);
         draw_sprite_ext(spr_GUI_bar, 1, GUI_X + 6, GUI_Y + 677, clamp(charge/ctime, 0, 1), 1, 0, color, 0.75);
-        draw_set_alpha_test_ref_value(254);
+        gpu_set_alphatestref(254);
         draw_sprite_ext(spr_GUI_bar, 0, GUI_X + 6, GUI_Y + 677, 1, 1, 0, c_white, 1);
         if (discharge > 0) {
             draw_text_outline(GUI_X + 153, GUI_Y + 688, "- " + string_format(discharge/60, -1, 1) + "s", 2, 2, 0, color_shift_hsv(color, 128, 0, 0, 1), 0, c_black, 1);
@@ -217,7 +217,7 @@ if (f == 8 && instance_exists(obj_player) && global.loading == 0) {
 
 if (f == 8 && state == 1 && !global.loading && ds_exists(player_status_effects, ds_type_grid) && ds_grid_height(player_status_effects) > 0) {
 	player_status_update();
-	draw_set_alpha_test_ref_value(0);
+	gpu_set_alphatestref(0);
 	draw_set_align(fa_left, fa_top);
 	
 	var xx, yy, status_id, timer_text, timer_countdown;
@@ -264,7 +264,7 @@ if (f == 8 && state == 1 && !global.loading && ds_exists(player_status_effects, 
 			draw_text_transformed(xx, yy + 38, string_hash_to_newline("##" + global.player_status_effect_desc[status_id]), 2, 2, 0);
 		}
 	}
-	draw_set_alpha_test_ref_value(254);
+	gpu_set_alphatestref(254);
 }
 
 #endregion
@@ -273,29 +273,29 @@ if (f == 8 && state == 1 && !global.loading && ds_exists(player_status_effects, 
 
 if (f == 8 && room == rm_Main && !global.loading) {
 	//CHARACTER NAMES
-	if (boss.transition != 1) {
+	if (global.transition != 1) {
 		draw_set_align(fa_center, fa_bottom);
-		draw_text_outline(GUI_X + 683, GUI_Y + 475, global.name[boss.chrsel], 4 - (4*boss.transition), 4, 0, c_black, 1, c_black, 1);
-		draw_text_outline(GUI_X + 683, GUI_Y + 471, global.name[boss.chrsel], 4 - (4*boss.transition), 4, 0, global.color[boss.chrsel], 1, color_shift_hsv(global.color[boss.chrsel], 0, 0, -170, 1), 1);
+		draw_text_outline(GUI_X + 683, GUI_Y + 475, global.name[global.chrsel], 4 - (4*global.transition), 4, 0, c_black, 1, c_black, 1);
+		draw_text_outline(GUI_X + 683, GUI_Y + 471, global.name[global.chrsel], 4 - (4*global.transition), 4, 0, global.color[global.chrsel], 1, color_shift_hsv(global.color[global.chrsel], 0, 0, -170, 1), 1);
 	}
 
 	//SCORE
 	draw_set_align(fa_right, fa_top);
-	draw_text_outline(GUI_XEND - 10, GUI_Y - 80 + (85*boss.transition), "score: " + string_format(global.points, -1, 0), 3, 3, 0, c_yellow, 1, c_black, 1);
+	draw_text_outline(GUI_XEND - 10, GUI_Y - 80 + (85*global.transition), "score: " + string_format(global.points, -1, 0), 3, 3, 0, c_yellow, 1, c_black, 1);
 
 	//'YOU DIED!' MESSAGE
 	if (state == 2) {
 		if (global.gpspeed_state < 0.5) { global.gpspeed_state = home(global.gpspeed_state, 0.5, 0.01); }
 		draw_set_alpha(0.6);
 		draw_set_color(c_black);
-		draw_set_alpha_test_ref_value(0);
-		draw_set_blend_mode(bm_add);
+		gpu_set_alphatestref(0);
+		gpu_set_blendmode(bm_add);
 		draw_rectangle(0, 0, GUI_XEND, GUI_YEND, 0);
-		draw_set_blend_mode(bm_normal);
-		draw_set_color_write_enable(1, 1, 1, 0);
+		gpu_set_blendmode(bm_normal);
+		gpu_set_colorwriteenable(1, 1, 1, 0);
 		draw_rectangle(0, 0, GUI_X, GUI_Y, 0);
-		draw_set_color_write_enable(1, 1, 1, 1);
-		draw_set_alpha_test_ref_value(254);
+		gpu_set_colorwriteenable(1, 1, 1, 1);
+		gpu_set_alphatestref(254);
 		draw_set_alpha(1);
 		draw_set_align(fa_center, fa_top);
 		draw_text_outline(GUI_X + 683, GUI_Y + 300, "GAME OVER!", 4, 4, 0, c_yellow, 1, c_black, 1);

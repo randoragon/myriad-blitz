@@ -63,7 +63,7 @@ if (place_meeting(x, y, obj_enemy) && instance_place(x, y, obj_enemy).hp > 0 && 
     ee.hp = clamp(ee.hp - damage, 0, ee.hpmax);
     knockback((100 - ee.fkbres) * fkb / 1000, point_direction(x, y, x, y), 1);
     indicate(x, y, display_damage, 1, rgb(255, 85, 0), c_red);
-    play_sfx(sfx_evilflame_frag_hit + (boss.chrsel * 4), sound_priority.player_frag_hit, 0, sound_gpspeed * 100);
+    play_sfx(sfx_evilflame_frag_hit + (global.chrsel * 4), sound_priority.player_frag_hit, 0, sound_gpspeed * 100);
     instance_destroy();
 }
 

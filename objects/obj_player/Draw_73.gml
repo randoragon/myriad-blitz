@@ -11,7 +11,7 @@ if (global.loading == 1) { exit; }
 if (state == 1 && !status_effect[8]) {
     surface_set_target(GUI_SURFACE);
     var self_or_helper = self;
-    draw_set_alpha_test_ref_value(0);
+    gpu_set_alphatestref(0);
     repeat(1 + instance_exists(helper)) {
         with(self_or_helper) {
             //HP bar
@@ -70,7 +70,7 @@ if (state == 1 && !status_effect[8]) {
                     draw_set_color(c_black);
                     draw_rectangle(x - 30, y - obj_player.bar_yoffset[2] - 6, x + 30, y - obj_player.bar_yoffset[2], 0);
                     draw_set_alpha(obj_player.bar_opacity[2]);
-                    draw_set_color(global.color[boss.chrsel]);
+                    draw_set_color(global.color[global.chrsel]);
                     draw_rectangle(x - 29, y - obj_player.bar_yoffset[2] - 5, x - 29 + ((59 * obj_player.charge) / (obj_player.ctime)), y - obj_player.bar_yoffset[2], 0);
                     draw_set_color(c_black);
                     draw_rectangle(x - 30, y - obj_player.bar_yoffset[2] - 6, x + 30, y - obj_player.bar_yoffset[2], 1);
@@ -81,7 +81,7 @@ if (state == 1 && !status_effect[8]) {
                     draw_set_color(c_black);
                     draw_rectangle(x - 30, y - obj_player.bar_yoffset[2] - 6, x + 30, y - obj_player.bar_yoffset[2], 0);
                     draw_set_alpha(obj_player.bar_opacity[2]);
-                    draw_set_color(color_shift_hsv(global.color[boss.chrsel], 128, 0, 0, 1));
+                    draw_set_color(color_shift_hsv(global.color[global.chrsel], 128, 0, 0, 1));
                     draw_rectangle(x - 29, y - obj_player.bar_yoffset[2] - 5, x - 29 + ((59 * obj_player.discharge) / obj_player.ccooldown), y - obj_player.bar_yoffset[2], 0);
                     draw_set_color(c_black);
                     draw_rectangle(x - 30, y - obj_player.bar_yoffset[2] - 6, x + 30, y - obj_player.bar_yoffset[2], 1);
@@ -94,7 +94,7 @@ if (state == 1 && !status_effect[8]) {
         }
         self_or_helper = helper;
     }
-    draw_set_alpha_test_ref_value(254);
+    gpu_set_alphatestref(254);
     surface_reset_target();
 }
 

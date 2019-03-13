@@ -30,7 +30,7 @@ ctime     = player.ctime;
 discharge = player.discharge;
 ccooldown = player.ccooldown;
 artcharge = player.artcharge;
-color     = global.color[boss.chrsel];
+color     = global.color[global.chrsel];
 shot      = player.shot;
 bar_opacity[0] = 0; bar_yoffset[0] = 52;
 bar_opacity[1] = 0; bar_yoffset[1] = 44;

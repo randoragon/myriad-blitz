@@ -52,19 +52,19 @@ if (place_meeting(x, y, obj_enemy) && instance_place(x, y, obj_enemy).hp > 0) {
     ee.hp = clamp(ee.hp - damage, 0, ee.hpmax);
     knockback((100 - ee.pkbres) * pkb / 1000, point_direction(x, y, x, y), 1);
     indicate(x, y, display_damage, 1, rgb(255, 85, 0), c_red);
-    play_sfx(sfx_evilflame_bullet_hit + (boss.chrsel * 4), sound_priority.player_bullet_hit, 0, sound_gpspeed * 100);
+    play_sfx(sfx_evilflame_bullet_hit + (global.chrsel * 4), sound_priority.player_bullet_hit, 0, sound_gpspeed * 100);
     if (global.enemy_details_selection_auto_aim) {
         global.enemy_details_selection = ee;
     }
     //spawning frags
     var angle  = irandom(359);
     var frag_e = 0;
-    if (boss.chrsel == 0 && e == 2) {
+    if (global.chrsel == 0 && e == 2) {
         frag_e = 2;
-    } else if(boss.chrsel == 2 && e == 1) {
+    } else if(global.chrsel == 2 && e == 1) {
         frag_e = 1;
     }
-    spawn_bullet_ring(x, y, obj_frag,boss.chrsel, frag_e, ee.id, spawn, irandom_range(floor(fmin), ceil(fmax)), 0);
+    spawn_bullet_ring(x, y, obj_frag,global.chrsel, frag_e, ee.id, spawn, irandom_range(floor(fmin), ceil(fmax)), 0);
     instance_destroy();
 }
 

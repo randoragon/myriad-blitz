@@ -70,9 +70,9 @@ if ((angle >= 0 && angle < 90) or angle == 360) {
 var temp_suf = surface_create(tiltwidth, tiltheight);
 surface_set_target(temp_suf);
 draw_clear_alpha(0, 0);
-draw_set_alpha_test_ref_value(0);
+gpu_set_alphatestref(0);
 draw_sprite_ext(argument[0], argument[1], xoffset, yoffset, argument[2], argument[3], angle, argument[4], argument[5]);
-draw_set_alpha_test_ref_value(254);
+gpu_set_alphatestref(254);
 
 var sprite;
 sprite[0] = sprite_create_from_surface(temp_suf, 0, 0, tiltwidth, round(tiltheight / 2), 0, 0, xoffset, yoffset);

@@ -2,7 +2,7 @@
 
 #region Hiding
 
-y = ystart + (350 * boss.transition);
+y = ystart + (350 * global.transition);
 
 #endregion
 

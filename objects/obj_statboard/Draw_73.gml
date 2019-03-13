@@ -62,24 +62,24 @@ if (x < xstart + 360) {
 					}
 				}
 			    if (desc[elementid[s, i]] != "" && boss.x >= xoffset + x - (sprite_width / 2) + 45 - 2 && boss.x <= xoffset + x - (sprite_width / 2) + 45 + (2 * string_width(string_hash_to_newline(text[s, i]))) + 2 && boss.y >= y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 0.2) * lineh) + 2 - (lineh / 2) + 2 && boss.y <= y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 0.2) * lineh) + 2 + (lineh / 2) - 2) {
-				    draw_set_alpha_test_ref_value(0);
-				    draw_set_blend_mode(bm_add);
+				    gpu_set_alphatestref(0);
+				    gpu_set_blendmode(bm_add);
 				    draw_text_highlight(xoffset + x-(sprite_width / 2) + 45, y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 0.2) * lineh) + 2, text[s, i], 2, c_black, 0.5, fa_left, fa_middle, 3, 3);
-				    draw_set_blend_mode(bm_normal);
-				    draw_set_color_write_enable(1, 1, 1, 0);
+				    gpu_set_blendmode(bm_normal);
+				    gpu_set_colorwriteenable(1, 1, 1, 0);
 				    draw_text_highlight(xoffset + x - (sprite_width / 2) + 45, y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 0.2) * lineh) + 2, text[s, i], 2, c_black, 0.5, fa_left, fa_middle, 3, 3);
-				    draw_set_color_write_enable(1, 1, 1, 1);
+				    gpu_set_colorwriteenable(1, 1, 1, 1);
 				    draw_set_color(c_white);
-				    draw_set_alpha_test_ref_value(254);
+				    gpu_set_alphatestref(254);
 				}
 			    draw_text_transformed(xoffset + x - (sprite_width / 2) + 45, y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 0.2) * lineh) + 2, string_hash_to_newline(text[s, i]), 2, 2, 0);
 			    draw_set_color(c_black);
 			    draw_set_halign(fa_right);
-			    draw_text_outline(10 + x + (sprite_width / 2) - 26, y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 0.2) * lineh) + 2, display[s, i], 2, 2, 0, global.color[boss.chrsel], 1, c_black, 1);
+			    draw_text_outline(10 + x + (sprite_width / 2) - 26, y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 0.2) * lineh) + 2, display[s, i], 2, 2, 0, global.color[global.chrsel], 1, c_black, 1);
 			    draw_set_halign(fa_left);
 		    }
 		    if (datatype[s, i] == 1 || datatype[s, i] == 2) && (y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 1.2) * lineh) >= y - (sprite_height / 2) + 125 - lineh && y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 1.2) * lineh) <= y + (sprite_height / 2) - 50) {
-			    draw_set_color(color_shift_hsv(global.color[boss.chrsel], 0, -random_range(0, (display[s, i] > limit[s, i]) * 30), 0, 1));
+			    draw_set_color(color_shift_hsv(global.color[global.chrsel], 0, -random_range(0, (display[s, i] > limit[s, i]) * 30), 0, 1));
 			    draw_rectangle(xoffset + x - (sprite_width / 2) + 46, y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 1.2) * lineh) - 8, xoffset + x - (sprite_width / 2) + 46 + clamp(value[s, i] * (sprite_width - 64 - xoffset) / limit[s, i], 0, sprite_width - 74), y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 1.2) * lineh) + 8, 0);
 			    draw_set_color(c_black);
 			    draw_rectangle(xoffset + x - (sprite_width / 2) + 46, y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 1.2) * lineh) - 9, 10 + x + (sprite_width / 2) - 28, y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 1.2) * lineh) + 9, 1);
@@ -92,8 +92,8 @@ if (x < xstart + 360) {
 				}
 			    switch(real(string_char_at(text[s, i], 1))) {
 				    case 0: draw_text_transformed(xoffset + x - (sprite_width / 2) + 45, y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 0.2) * lineh) + 2, string_hash_to_newline(value[s, i]), 2, 2, 0); break;
-				    case 1: draw_text_outline(xoffset + x - (sprite_width / 2) + 45, y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 0.2) * lineh) + 2, value[s, i], 2, 2, 0, global.color[boss.chrsel], 0, c_black, 1); break;
-				    case 2: draw_text_outline(xoffset + x - (sprite_width / 2) + 45, y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 0.2) * lineh) + 2, value[s, i], 2, 2, 0, global.color[boss.chrsel], 1, c_black, 1); break;
+				    case 1: draw_text_outline(xoffset + x - (sprite_width / 2) + 45, y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 0.2) * lineh) + 2, value[s, i], 2, 2, 0, global.color[global.chrsel], 0, c_black, 1); break;
+				    case 2: draw_text_outline(xoffset + x - (sprite_width / 2) + 45, y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 0.2) * lineh) + 2, value[s, i], 2, 2, 0, global.color[global.chrsel], 1, c_black, 1); break;
 			    }
 		    }
 		}
@@ -115,14 +115,14 @@ if (x < xstart + 360) {
 	}
 	if (cut2_exists) { draw_sprite_ext(cut2[floor(image_index) % image_number], 0, x, y, image_xscale, image_yscale, image_angle, image_blend, 1); }
 	
-	draw_set_alpha_test_ref_value(0);
-	draw_set_blend_mode(bm_add);
+	gpu_set_alphatestref(0);
+	gpu_set_blendmode(bm_add);
 	draw_sprite_ext(spr_stats_headline, 0, x + 17, y - 195, 1, 1, 0, -1, 0.5);
-	draw_set_blend_mode(bm_normal);
-	draw_set_color_write_enable(1, 1, 1, 0);
+	gpu_set_blendmode(bm_normal);
+	gpu_set_colorwriteenable(1, 1, 1, 0);
 	draw_sprite_ext(spr_stats_headline, 0, x + 17, y - 195, 1, 1, 0, -1, 0.5);
-	draw_set_color_write_enable(1, 1, 1, 1);
-	draw_set_alpha_test_ref_value(254);
+	gpu_set_colorwriteenable(1, 1, 1, 1);
+	gpu_set_alphatestref(254);
 
 	if (osc != -1) {
 		var lineh = 22;

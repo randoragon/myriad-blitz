@@ -31,7 +31,7 @@ if (f == 0 && gpspeed != 0) {
 				hp = clamp(hp - damage, 0, hpmax);
 				indicate(x, y, display_damage, 2, rgb(255, 170, 0), c_red);
 				knockback((100 - ckbres) * other.ckb / 1000, point_direction(other.x, other.y, x, y), 1);
-				spawn_bullet_ring(x, y, obj_frag, boss.chrsel, 1, id, other.spawn, 15, 0);
+				spawn_bullet_ring(x, y, obj_frag, global.chrsel, 1, id, other.spawn, 15, 0);
 				screenshake_set(5, 0, 4, 5, 1);
 				with(other) { instance_destroy(); }
 			}

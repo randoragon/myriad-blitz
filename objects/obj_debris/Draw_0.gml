@@ -15,7 +15,7 @@ surface_set_target(GENERAL_SURFACE);
 #region Draw self & shader implementation
 
 if (sprite_exists(sprite_index)) {
-	draw_set_alpha_test_ref_value(0);
+	gpu_set_alphatestref(0);
 
 	if (global.shader_conditions == 0) {
 		draw_self();
@@ -33,7 +33,7 @@ if (sprite_exists(sprite_index)) {
 		draw_self();
 		shader_reset();
 	}
-	draw_set_alpha_test_ref_value(254);
+	gpu_set_alphatestref(254);
 }
 
 #endregion

@@ -31,11 +31,11 @@ for (var i = 0; i < array_length_1d(global.ultimate_part); i++) {
 }
 
 // ultimate burst color
-part_type_edit_lt(global.player_part[0], "color", c_white, global.color[boss.chrsel]);
+part_type_edit_lt(global.player_part[0], "color", c_white, global.color[global.chrsel]);
 
 // create all varying data anew
 var part;
-switch (boss.chrsel) {
+switch (global.chrsel) {
     case 0:
         // update systems
         part_system_edit_lt(global.part_system[5],  1, 0,   -1);  // PLAYER   PARTICLES (top)

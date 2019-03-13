@@ -6,20 +6,20 @@ if (busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 	
     switch(f) {
 	    case 5:
-			image_xscale = 2 - (2 * boss.transition);
-			x = xstart - (50 * boss.transition);
-			if (boss.transition == 1 && state == 1) { instance_destroy(); }
+			image_xscale = 2 - (2 * global.transition);
+			x = xstart - (50 * global.transition);
+			if (global.transition == 1 && state == 1) { instance_destroy(); }
 		break;
 	    case 6:
-			image_xscale = 2 - (2 * boss.transition);
-			x = xstart + (50 * boss.transition);
-			if (boss.transition == 1 && state == 1) { instance_destroy(); }
+			image_xscale = 2 - (2 * global.transition);
+			x = xstart + (50 * global.transition);
+			if (global.transition == 1 && state == 1) { instance_destroy(); }
 		break;
 	    case 7:
-			x = xstart - (boss.transition * 40);
+			x = xstart - (global.transition * 40);
 		break;
 	    case 8:
-			y = ystart - ((1 - boss.transition) * 40);
+			y = ystart - ((1 - global.transition) * 40);
 			image_index = (2 * (gpspeed > 0)) + ((mouse_check_button(mb_left) || keyboard_check(vk_escape)) && grabbed = 1);
 		break;
 	    case 9: case 10: case 11: case 12:
@@ -170,11 +170,11 @@ if (busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
             grabbed = 1;
             image_index = 1;
             play_sfx(sfx_button1, 0, 0);
-            boss.chrsel--;
-            if (boss.chrsel < 0) {
-                boss.chrsel = boss.chrcount - 1;
+            global.chrsel--;
+            if (global.chrsel < 0) {
+                global.chrsel = CHRCOUNT - 1;
             }
-            scr_PlayerDataUpdate(boss.chrsel);
+            scr_PlayerDataUpdate(global.chrsel);
             scr_PlayerGetData();
             scr_ParticlesUpdate();
             scr_LoreUpdate();
@@ -187,18 +187,18 @@ if (busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
                 grabbed = 1;
                 image_index = 3;
                 play_sfx(sfx_button1, 0, 0);
-                boss.chrsel++;
-                if (boss.chrsel > boss.chrcount - 1) {
-                    boss.chrsel = 0;
+                global.chrsel++;
+                if (global.chrsel > CHRCOUNT - 1) {
+                    global.chrsel = 0;
                 }
-                scr_PlayerDataUpdate(boss.chrsel);
+                scr_PlayerDataUpdate(global.chrsel);
                 scr_PlayerGetData();
                 scr_ParticlesUpdate();
                 scr_LoreUpdate();
                 scr_Stats_Update(obj_statboard.button[0].show);
             }
         break;
-        case 8: if (state == 1 && boss.transition == 1) {grabbed = 1; if (global.gpspeed_state != 0) {scr_Pause();} else {play_sfx(sfx_pause, 0, 0); global.gpspeed_state = 1; wipe(obj_sound_bar); audio_resume_all();}} break;
+        case 8: if (state == 1 && global.transition == 1) {grabbed = 1; if (global.gpspeed_state != 0) {scr_Pause();} else {play_sfx(sfx_pause, 0, 0); global.gpspeed_state = 1; wipe(obj_sound_bar); audio_resume_all();}} break;
         case 21: play_sfx(sfx_button1, 0, 0); show = toggle(show); scr_toggle_stats_selection(0); scr_Stats_Update(show); ini_open(working_directory + "userconfig.mbdat"); ini_write_real("shown_stats", "show", show); ini_close(); grabbed = 1; break;
         case 22: play_sfx(sfx_button1, 0, 0); scr_toggle_stats_selection(toggle(customize)); if (customize == 0 && obj_statboard.button[0].show == 0) scr_Stats_Update(0); grabbed = 1; break;
         case 23: check = toggle(check); grabbed = 1; break;
@@ -378,11 +378,11 @@ if (busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 	            //previous character
 	            if (keyboard_check_pressed(global.keybind[1]) && state == 0 && room == rm_Main) {
 	                play_sfx(sfx_button1, 0, 0);
-	                boss.chrsel--;
-	                if (boss.chrsel < 0) {
-	                    boss.chrsel = boss.chrcount - 1;
+	                global.chrsel--;
+	                if (global.chrsel < 0) {
+	                    global.chrsel = CHRCOUNT - 1;
 	                }
-	                scr_PlayerDataUpdate(boss.chrsel);
+	                scr_PlayerDataUpdate(global.chrsel);
 	                scr_PlayerGetData();
 	                scr_ParticlesUpdate();
 	                scr_LoreUpdate();
@@ -394,11 +394,11 @@ if (busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 	            //next character
 	            if (keyboard_check_pressed(global.keybind[3]) && state == 0 && room == rm_Main) {
 	                play_sfx(sfx_button1, 0, 0);
-	                boss.chrsel++;
-	                if (boss.chrsel > boss.chrcount - 1) {
-	                    boss.chrsel = 0;
+	                global.chrsel++;
+	                if (global.chrsel > CHRCOUNT - 1) {
+	                    global.chrsel = 0;
 	                }
-	                scr_PlayerDataUpdate(boss.chrsel);
+	                scr_PlayerDataUpdate(global.chrsel);
 	                scr_PlayerGetData();
 	                scr_ParticlesUpdate();
 	                scr_LoreUpdate();
@@ -425,10 +425,10 @@ if (busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 	        break;
 	        case 8:
 	            //pause button
-	            if (os_is_paused() && gpspeed != 0 && state == 1 && boss.transition == 1) {
+	            if (os_is_paused() && gpspeed != 0 && state == 1 && global.transition == 1) {
 	                scr_Pause();
 	            }
-	            if (state == 1 && keyboard_check_pressed(vk_escape) && boss.transition == 1) {
+	            if (state == 1 && keyboard_check_pressed(vk_escape) && global.transition == 1) {
 	                if (global.gpspeed_state != 0) {
 	                    scr_Pause();
 	                } else {

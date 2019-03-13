@@ -13,7 +13,7 @@ fmax = spawn.fmax;
 
 switch(e) {
 	case 0:
-	    sprite_index = spr_evilflame_bullet + boss.chrsel;
+	    sprite_index = spr_evilflame_bullet + global.chrsel;
 	    direction    = spawn.image_angle + random_range(-45 * (1 - sacc), 45 * (1 - sacc));
 	    speed1       = pspd;
 	    image_angle  = direction;

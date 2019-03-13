@@ -2,7 +2,7 @@
 
 #region Setup
 
-sprite_index = boss.chrsel;
+sprite_index = global.chrsel;
 prev_image_speed = 0;
 afterimage_ds_grid = -1;
 depth = general_depth.wrap_helper;

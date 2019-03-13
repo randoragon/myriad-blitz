@@ -29,7 +29,7 @@ evilflame_twilight_fury = 0;
      afterimage_ds_grid = -1;
 	 
  image_speed = 0.4 * gpspeed;
-sprite_index = spr_evilflame + boss.chrsel;
+sprite_index = spr_evilflame + global.chrsel;
  image_alpha = 1;
  image_angle = 0;
            x = CANVAS_XMID;
@@ -37,7 +37,7 @@ sprite_index = spr_evilflame + boss.chrsel;
 	   depth = general_depth.player;
 		   
 if (!global.loading) {
-    scr_PlayerDataUpdate(boss.chrsel);
+    scr_PlayerDataUpdate(global.chrsel);
     scr_PlayerGetData();
     scr_ParticlesUpdate();
     scr_BackgroundUpdate(realm);

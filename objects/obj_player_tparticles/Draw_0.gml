@@ -10,7 +10,7 @@ if global.loading==1 exit;
 
 if(part_system_count_lt(global.part_system[5]) > 0) {
     surface_set_target(GENERAL_SURFACE);
-    draw_set_alpha_test_ref_value(0);
+    gpu_set_alphatestref(0);
     if (global.shader_conditions == 0) {
         part_system_draw_lt(global.part_system[5]);
     } else {
@@ -18,7 +18,7 @@ if(part_system_count_lt(global.part_system[5]) > 0) {
         part_system_draw_lt(global.part_system[5]);
         shader_reset();
     }
-    draw_set_alpha_test_ref_value(254);
+    gpu_set_alphatestref(254);
     surface_reset_target();
 }
 

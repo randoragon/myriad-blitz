@@ -33,7 +33,7 @@ if (picked == 0) {
 			instance_destroy();
 		break;
 	    case 1:
-			indicate(x, y, "charged", 2, color_shift_hsv(global.color[boss.chrsel], 0, 0, 150, 1), global.color[boss.chrsel]);
+			indicate(x, y, "charged", 2, color_shift_hsv(global.color[global.chrsel], 0, 0, 150, 1), global.color[global.chrsel]);
 			instance_destroy();
 		break;
     }

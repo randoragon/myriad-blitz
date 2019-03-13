@@ -9,7 +9,7 @@ if (global.loading == 1) { exit; }
 #region Stats control
 
 // Twilight fury stats check
-if (boss.chrsel == 0) {
+if (global.chrsel == 0) {
 	if (global.uname == "DUAL CLONE" && TWILIGHT_FURY) {
 		global.uname = "TWILIGHT FURY";
 		global.utype = "SECRET BUFF";
@@ -56,7 +56,7 @@ var ctime_factor      = 1;
 var ccooldown_factor  = 1;
 var invtime_factor    = 1;
 
-var chrsel = boss.chrsel;
+var global.chrsel = global.chrsel;
 
 //status: exhausted
 if (status_effect[0]) {
@@ -67,7 +67,7 @@ if (status_effect[0]) {
 
 //status: magic fatigue
 if (status_effect[1]) {
-    switch(chrsel) {
+    switch(global.chrsel) {
 	    case 1:
 	        pdmg_factor  *= 0.5;
 	        sspd_factor  *= 0.8;
@@ -202,7 +202,7 @@ flash_clock -= (flash_clock > 0);
 
 #region Movement & Shooting
 
-image_scale(2 - boss.transition, 2 - boss.transition);
+image_scale(2 - global.transition, 2 - global.transition);
 var gpspd;
 if (status_effect[8] && gpspeed != 0) {
 	gpspd = gpspeed / global.gpspeed_ultimate;
@@ -224,18 +224,18 @@ if (state == 1 && gpspd != 0) {
         xv = clamp(xv + (acc * sqr(gpspd)), -spd * gpspd, spd * gpspd);
     }
 	
-    if (boss.chrsel != 2) {
-        x = clamp(x + xv, CANVAS_X + (sprite_get_xoffset(spr_evilflame_hitbox + boss.chrsel) - sprite_get_bbox_left(spr_evilflame_hitbox + boss.chrsel)) * image_xscale, CANVAS_XEND + ((sprite_get_xoffset(spr_evilflame_hitbox + boss.chrsel) - sprite_get_bbox_right(spr_evilflame_hitbox + boss.chrsel)) * image_xscale));
-        y = clamp(y + yv, CANVAS_Y + (sprite_get_yoffset(spr_evilflame_hitbox + boss.chrsel) - sprite_get_bbox_top(spr_evilflame_hitbox + boss.chrsel)) * image_yscale, CANVAS_YEND + ((sprite_get_yoffset(spr_evilflame_hitbox + boss.chrsel) - sprite_get_bbox_bottom(spr_evilflame_hitbox + boss.chrsel)) * image_yscale));
+    if (global.chrsel != 2) {
+        x = clamp(x + xv, CANVAS_X + (sprite_get_xoffset(spr_evilflame_hitbox + global.chrsel) - sprite_get_bbox_left(spr_evilflame_hitbox + global.chrsel)) * image_xscale, CANVAS_XEND + ((sprite_get_xoffset(spr_evilflame_hitbox + global.chrsel) - sprite_get_bbox_right(spr_evilflame_hitbox + global.chrsel)) * image_xscale));
+        y = clamp(y + yv, CANVAS_Y + (sprite_get_yoffset(spr_evilflame_hitbox + global.chrsel) - sprite_get_bbox_top(spr_evilflame_hitbox + global.chrsel)) * image_yscale, CANVAS_YEND + ((sprite_get_yoffset(spr_evilflame_hitbox + global.chrsel) - sprite_get_bbox_bottom(spr_evilflame_hitbox + global.chrsel)) * image_yscale));
     }
     else {
         x += xv;
-        y = clamp(y + yv, CANVAS_Y + (sprite_get_yoffset(spr_evilflame_hitbox + boss.chrsel) - sprite_get_bbox_top(spr_evilflame_hitbox + boss.chrsel)) * image_yscale, CANVAS_YEND + ((sprite_get_yoffset(spr_evilflame_hitbox + boss.chrsel) - sprite_get_bbox_bottom(spr_evilflame_hitbox + boss.chrsel)) * image_yscale));
+        y = clamp(y + yv, CANVAS_Y + (sprite_get_yoffset(spr_evilflame_hitbox + global.chrsel) - sprite_get_bbox_top(spr_evilflame_hitbox + global.chrsel)) * image_yscale, CANVAS_YEND + ((sprite_get_yoffset(spr_evilflame_hitbox + global.chrsel) - sprite_get_bbox_bottom(spr_evilflame_hitbox + global.chrsel)) * image_yscale));
     }
-    if (x == CANVAS_X + (sprite_get_xoffset(spr_evilflame_hitbox + boss.chrsel) - sprite_get_bbox_left(spr_evilflame_hitbox + boss.chrsel)) * image_xscale || x == CANVAS_XEND + ((sprite_get_xoffset(spr_evilflame_hitbox + boss.chrsel) - sprite_get_bbox_right(spr_evilflame_hitbox + boss.chrsel)) * image_xscale)) {
+    if (x == CANVAS_X + (sprite_get_xoffset(spr_evilflame_hitbox + global.chrsel) - sprite_get_bbox_left(spr_evilflame_hitbox + global.chrsel)) * image_xscale || x == CANVAS_XEND + ((sprite_get_xoffset(spr_evilflame_hitbox + global.chrsel) - sprite_get_bbox_right(spr_evilflame_hitbox + global.chrsel)) * image_xscale)) {
         xv = 0;
     }
-    if (y == CANVAS_Y + (sprite_get_yoffset(spr_evilflame_hitbox + boss.chrsel) - sprite_get_bbox_top(spr_evilflame_hitbox + boss.chrsel)) * image_yscale || y == CANVAS_YEND + ((sprite_get_yoffset(spr_evilflame_hitbox + boss.chrsel) - sprite_get_bbox_bottom(spr_evilflame_hitbox+boss.chrsel)) * image_yscale)) {
+    if (y == CANVAS_Y + (sprite_get_yoffset(spr_evilflame_hitbox + global.chrsel) - sprite_get_bbox_top(spr_evilflame_hitbox + global.chrsel)) * image_yscale || y == CANVAS_YEND + ((sprite_get_yoffset(spr_evilflame_hitbox + global.chrsel) - sprite_get_bbox_bottom(spr_evilflame_hitbox+global.chrsel)) * image_yscale)) {
         yv = 0;
     }
     
@@ -255,13 +255,13 @@ if (state == 1 && gpspd != 0) {
         }
     }
     
-    if (!(boss.chrsel == 2 && instance_exists(obj_charge)) && gpspd != 0) {
+    if (!(global.chrsel == 2 && instance_exists(obj_charge)) && gpspd != 0) {
         image_angle = -2 * yv / gpspd;
     }
 
     gpspd = gpspeed;
-    var charge_sprite_lock = ((charge > 0 && artcharge == 0) || ((boss.chrsel == 1 || boss.chrsel == 2) && instance_exists(obj_charge)));
-    var can_shoot = (discharge > 0 || !mouse_check_button(mb_right)) && !charge_sprite_lock && !((boss.chrsel == 1) && status_effect[2]);
+    var charge_sprite_lock = ((charge > 0 && artcharge == 0) || ((global.chrsel == 1 || global.chrsel == 2) && instance_exists(obj_charge)));
+    var can_shoot = (discharge > 0 || !mouse_check_button(mb_right)) && !charge_sprite_lock && !((global.chrsel == 1) && status_effect[2]);
     if (can_shoot) {
         // is shooting event:
 		var is_shooting = (keyboard_check(global.keybind[4]) || (mouse_check_button(mb_left) && (!place_meeting(boss.x, boss.y, obj_button) || instance_place(boss.x, boss.y, obj_button).image_alpha == 0)));
@@ -275,12 +275,12 @@ if (state == 1 && gpspd != 0) {
                     sprite_index = spr_evilflame_fury_shooting;
                 }
             } else if(sprite_index < spr_evilflame_shooting) {
-                sprite_index = spr_evilflame_shooting + boss.chrsel;
+                sprite_index = spr_evilflame_shooting + global.chrsel;
             }
             if (shot <= 0) {
-                play_sfx(sfx_evilflame_shoot + (boss.chrsel * 4), sound_priority.player_shoot, 0, sound_gpspeed * 100);
+                play_sfx(sfx_evilflame_shoot + (global.chrsel * 4), sound_priority.player_shoot, 0, sound_gpspeed * 100);
 				var xoffset, yoffset, xoffset2, yoffset2;
-                switch(boss.chrsel)
+                switch(global.chrsel)
                 {
                     case 0: xoffset = 32 * image_xscale; yoffset = -7  * image_yscale; break;
                     case 1: xoffset = 30 * image_xscale; yoffset = -19 * image_yscale; break;
@@ -296,11 +296,11 @@ if (state == 1 && gpspd != 0) {
                     xx = x;
                 }
                 var e = 0;
-                if (boss.chrsel == 0 && status_effect[9]) {
+                if (global.chrsel == 0 && status_effect[9]) {
                     e = 2;
                 }
-                spawn_bullet(xx + lengthdir_x(l, angle), y + lengthdir_y(l, angle), obj_projectile, boss.chrsel, e, -1, id);
-                if (boss.chrsel == 2) { //scootomik's second bullet
+                spawn_bullet(xx + lengthdir_x(l, angle), y + lengthdir_y(l, angle), obj_projectile, global.chrsel, e, -1, id);
+                if (global.chrsel == 2) { //scootomik's second bullet
                     var angle = image_angle + point_direction(0, 0, xoffset2, yoffset2); angle %= 360;
                     var l     = sqrt(sqr(xoffset2) + sqr(yoffset2));
 					var is_helper_in_shooting_position = (x + xoffset2 < CANVAS_X && instance_exists(helper));
@@ -312,25 +312,25 @@ if (state == 1 && gpspd != 0) {
                 shot--;
             }
         } else { //can shoot but doesn't shoot:
-            if (sprite_index > boss.chrcount - 1) {
+            if (sprite_index > CHRCOUNT - 1) {
                 if (evilflame_sprite_swap) {
                     sprite_index = spr_evilflame_ultimate;
                 } else if (evilflame_twilight_fury) {
                     sprite_index = spr_evilflame_fury;
                 } else {
-                    sprite_index = spr_evilflame + boss.chrsel;
+                    sprite_index = spr_evilflame + global.chrsel;
                 }
             }
             shot = home(shot, 0, 1);
         }
     } else { //can't shoot:
-        if (sprite_index > spr_evilflame + boss.chrcount - 1 && !charge_sprite_lock) {
+        if (sprite_index > spr_evilflame + CHRCOUNT - 1 && !charge_sprite_lock) {
             if (evilflame_sprite_swap) {
                 sprite_index = spr_evilflame_ultimate;
             } else if(evilflame_twilight_fury) {
                 sprite_index = spr_evilflame_fury;
             } else {
-                sprite_index = spr_evilflame + boss.chrsel;
+                sprite_index = spr_evilflame + global.chrsel;
             }
         }
     shot = home(shot, 0, 1, 0);
@@ -341,7 +341,7 @@ if (state == 1 && gpspd != 0) {
 
 #region Wrapping movement
 
-if (boss.chrsel == 2 && state == 1) {
+if (global.chrsel == 2 && state == 1) {
 	
     //teleport the player to the other side
     if (x + sprite_width-sprite_xoffset > CANVAS_XEND + (sprite_width / 2)) {
@@ -393,7 +393,7 @@ if (boss.chrsel == 2 && state == 1) {
 #region Player particles
 
 if (gpspeed != 0 && state != 2 && real_step()) {
-	switch(boss.chrsel) {
+	switch(global.chrsel) {
 		case 0:
 			var xoffset = -22; var yoffset = 1 - (2 * status_effect[9]);                   // this is the distance from the center of the sprite to the point from which the particles are supposed to pour out
 			var dis     = sqrt(sqr(xoffset * image_xscale) + sqr(yoffset * image_yscale)); // this is to calculate distance from the center of the sprite to the point from which the particles are supposed to pour out
@@ -415,8 +415,8 @@ if (gpspeed != 0 && state != 2 && real_step()) {
 if (state==1 && gpspeed!=0) {
 	if (artcharge == 1) { charge = ctime };
 	
-	var does_emerald_laser_exist = (boss.chrsel == 1 && instance_exists(obj_charge));
-	var is_spell_dried = (boss.chrsel == 1 && status_effect[2]);
+	var does_emerald_laser_exist = (global.chrsel == 1 && instance_exists(obj_charge));
+	var is_spell_dried = (global.chrsel == 1 && status_effect[2]);
 	if (mouse_check_button(mb_right) && state == 1 && !does_emerald_laser_exist && !is_spell_dried) {
 		//charging
 		bar_opacity[2] = 5;
@@ -426,7 +426,7 @@ if (state==1 && gpspeed!=0) {
 			} else if (evilflame_twilight_fury) {
 				sprite_index = spr_evilflame_fury_charging;
 			} else if (sprite_index < spr_evilflame_charging)
-				sprite_index = spr_evilflame_charging + boss.chrsel;
+				sprite_index = spr_evilflame_charging + global.chrsel;
 			charge = min(charge + gpspeed, ctime);
 			if (!audio_is_playing(sfx_charging))
 				play_sfx(sfx_charging, sound_priority.player_charging, 0, sound_gpspeed * 100);
@@ -434,11 +434,11 @@ if (state==1 && gpspeed!=0) {
 	}
 
 	//launching charge
-	var does_emerald_laser_exist = (instance_exists(obj_charge) && (boss.chrsel == 1));
+	var does_emerald_laser_exist = (instance_exists(obj_charge) && (global.chrsel == 1));
 	if (mouse_check_button(mb_right) && charge > 0 && !does_emerald_laser_exist) {
 		if (charge >= ctime) {
 			cb = 1;
-			play_sfx(sfx_evilflame_charge_shot + (boss.chrsel * 4), sound_priority.player_charge_shot, 0, sound_gpspeed * 100);
+			play_sfx(sfx_evilflame_charge_shot + (global.chrsel * 4), sound_priority.player_charge_shot, 0, sound_gpspeed * 100);
 			charge = 0;
 			if (artcharge == 0) {
 				discharge = ccooldown;
@@ -458,19 +458,19 @@ if (state==1 && gpspeed!=0) {
 		else if (evilflame_twilight_fury)
 			sprite_index = spr_evilflame_fury;
 		else
-			sprite_index = spr_evilflame + boss.chrsel;
+			sprite_index = spr_evilflame + global.chrsel;
 	}
 
 	//spawning the charge
 	if (cb == 1) {
-		switch(boss.chrsel) {
+		switch(global.chrsel) {
 			case 0:
 				cb = 0;
 				if (!evilflame_twilight_fury) {
 					knockback(10, 180 + image_angle, 1);
-					spawn_bullet(x + 20, y, obj_charge, boss.chrsel, 0, -1, id);
+					spawn_bullet(x + 20, y, obj_charge, global.chrsel, 0, -1, id);
 				} else repeat(irandom_range(2, 6)) {
-					spawn_bullet(irandom_range(CANVAS_X, CANVAS_XEND), CANVAS_Y - 50, obj_charge, boss.chrsel, 2, -1, id);
+					spawn_bullet(irandom_range(CANVAS_X, CANVAS_XEND), CANVAS_Y - 50, obj_charge, global.chrsel, 2, -1, id);
 				}
 			break;
 			case 2:
@@ -479,11 +479,11 @@ if (state==1 && gpspeed!=0) {
 					indicate(x, y, "FIZZLED!", 2, c_white, c_yellow);
 					sprite_index = spr_scootomik;
 				} else {
-					spawn_bullet(x + 20, y, obj_charge, boss.chrsel, 0, -1, id);
+					spawn_bullet(x + 20, y, obj_charge, global.chrsel, 0, -1, id);
 				}
 			break;
 			default:
-				spawn_bullet(x + 20, y, obj_charge, boss.chrsel, 0, -1, id);
+				spawn_bullet(x + 20, y, obj_charge, global.chrsel, 0, -1, id);
 				cb = 0;
 			break;
 		}
@@ -498,9 +498,9 @@ if (state==1 && gpspeed!=0) {
 
 //activation conditions and immediate effect
 var is_ultimate_cooldown  = status_effect[6];
-var is_evilflame_ultimate = (boss.chrsel == 0 && (instance_exists(obj_evilflame_ultimate) || evilflame_twilight_fury == 1));
-var is_emerald_ultimate   = (boss.chrsel == 1 && instance_exists(obj_emerald_ultimate));
-var is_scootomik_ultimate = (boss.chrsel == 2 && obj_player.status_effect[8]);
+var is_evilflame_ultimate = (global.chrsel == 0 && (instance_exists(obj_evilflame_ultimate) || evilflame_twilight_fury == 1));
+var is_emerald_ultimate   = (global.chrsel == 1 && instance_exists(obj_emerald_ultimate));
+var is_scootomik_ultimate = (global.chrsel == 2 && obj_player.status_effect[8]);
 var are_all_ultimates_off = !is_evilflame_ultimate && !is_emerald_ultimate && !is_scootomik_ultimate;
 if (keyboard_check_pressed(global.keybind[6]) && ultcount > 0 && !is_ultimate_cooldown && are_all_ultimates_off && state == 1 && gpspeed != 0 && !instance_exists(obj_ultimate_activation)) {
     ultcount--;
@@ -514,17 +514,17 @@ if (flash_clock == 40) {
         //particle burst
         part_type_spawn_lt(global.part_system[5], global.player_part[0], 0, x - sprite_xoffset, y - sprite_yoffset, x - sprite_xoffset + sprite_width, y - sprite_yoffset + sprite_height, "ellipse", "invgaussian", 100);
 		
-        if (boss.chrsel == 0 && !TWILIGHT_FURY) {
+        if (global.chrsel == 0 && !TWILIGHT_FURY) {
 			//evilflame's dual clone's burst
 			part_type_spawn_lt(global.part_system[5],global.player_part[0],0,x-sprite_xoffset,-(y-sprite_yoffset)+room_height,x-sprite_xoffset+sprite_width,-(y-sprite_yoffset+sprite_height)+room_height,"ellipse","invgaussian",100);
-        } else if (boss.chrsel == 1) {
+        } else if (global.chrsel == 1) {
 			//emerald's current crush burst
 	        var random_x = irandom_range(CANVAS_XEND - 600, CANVAS_XEND - 200);
 	        var random_y = irandom_range(CANVAS_Y + 234, CANVAS_YEND - 234);
 	        part_type_spawn_lt(global.part_system[5], global.player_part[0], 0, x, y, random_x, random_y, "line", "linear", 100);
         }
 		
-    switch(boss.chrsel) {
+    switch(global.chrsel) {
 	    case 0:
 		    obj_ultimate_particles.depth = general_depth.evilflame_ultimate_particles;
 		    if (!TWILIGHT_FURY) {
@@ -585,7 +585,7 @@ if (state == 1) {
     if (inv > 0 && gpspeed != 0) {
         inv = max(inv - 1, 0);
     }
-    if ((boss.chrsel == 2 && instance_exists(obj_charge) || instance_exists(obj_ultimate_activation)) && inv <= 0) {
+    if ((global.chrsel == 2 && instance_exists(obj_charge) || instance_exists(obj_ultimate_activation)) && inv <= 0) {
         inv = 1;
     }
     
@@ -769,7 +769,7 @@ if (hp <= 0 && image_alpha == 1) {
 	}
 	else {
 		image_alpha = 0;
-		if (boss.chrsel == 1) {
+		if (global.chrsel == 1) {
 			with(obj_charge) { instance_destroy(); }
 		}
 		if (instance_exists(helper)) {

@@ -1,8 +1,8 @@
 /// @description scr_PlayerGetData();
 
 with (obj_player) {
-    sprite_index = spr_evilflame + boss.chrsel;
-    mask_index   = spr_evilflame_hitbox + boss.chrsel;
+    sprite_index = spr_evilflame + global.chrsel;
+    mask_index   = spr_evilflame_hitbox + global.chrsel;
     hp           = global.hp;
     hpmax        = hp;
     hpmark       = hp;

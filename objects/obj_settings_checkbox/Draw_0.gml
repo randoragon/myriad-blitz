@@ -12,14 +12,14 @@ draw_self();
 
 draw_set_align(fa_left, fa_middle);
 if (boss.x >= x + 25 - 2 && boss.x <= x + 25 + (3 * string_width(string_hash_to_newline(label))) + 2 && boss.y >= y - (1.5 * (string_height(string_hash_to_newline(label)))) - 2 && boss.y <= y + (1.5 * (string_height(string_hash_to_newline(label)))) + 2) {
-    draw_set_alpha_test_ref_value(0);
-    draw_set_blend_mode(bm_add);
+    gpu_set_alphatestref(0);
+    gpu_set_blendmode(bm_add);
     draw_text_highlight(x + 25, y, label, 3, c_black, 0.5, fa_left, fa_middle, 4, 4);
-    draw_set_color_write_enable(1, 1, 1, 0);
-    draw_set_blend_mode(bm_normal);
+    gpu_set_colorwriteenable(1, 1, 1, 0);
+    gpu_set_blendmode(bm_normal);
     draw_text_highlight(x + 25, y, label, 3, c_black, 0.5, fa_left, fa_middle, 4, 4);
-    draw_set_color_write_enable(1, 1, 1, 1);
-    draw_set_alpha_test_ref_value(254);
+    gpu_set_colorwriteenable(1, 1, 1, 1);
+    gpu_set_alphatestref(254);
     if(check == 1) {
         draw_set_color(rgb(0, 255, 0));
     } else {

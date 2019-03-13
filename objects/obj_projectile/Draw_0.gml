@@ -15,9 +15,9 @@ surface_set_target(GENERAL_SURFACE);
 #region Draw self & apply shaders
 
 if (f == 0 && e == 2) {
-    draw_set_blend_mode(bm_add);
+    gpu_set_blendmode(bm_add);
 }
-draw_set_alpha_test_ref_value(0);
+gpu_set_alphatestref(0);
 
 if (global.shader_conditions == 0) {
     draw_afterimage_remove();
@@ -34,8 +34,8 @@ if (global.shader_conditions == 0) {
     draw_self();
     shader_reset();
 }
-draw_set_alpha_test_ref_value(254);
-draw_set_blend_mode(bm_normal);
+gpu_set_alphatestref(254);
+gpu_set_blendmode(bm_normal);
 
 #endregion
 

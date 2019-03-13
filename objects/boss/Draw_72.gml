@@ -4,8 +4,8 @@
 
 if (!global.loading && room != rm_Startup) {
     surface_set_target(GENERAL_SURFACE);
-    draw_set_alpha_test(1);
-    draw_set_alpha_test_ref_value(0);
+    gpu_set_alphatestenable(1);
+    gpu_set_alphatestref(0);
     var border = BORDER_THICKNESS * SURFACE_SCALE;
     
     if (room != rm_Startup && global.shader_conditions == 0) {
@@ -25,7 +25,7 @@ if (!global.loading && room != rm_Startup) {
         }
         shader_reset();
     }
-    draw_set_alpha_test_ref_value(254);
+    gpu_set_alphatestref(254);
     surface_reset_target();
 }
 

@@ -19,7 +19,7 @@ if (lifespan <= 0) {
 			}
 		break;
 		default:
-			disperse_particles(global.part_system[5], x, x, y, y, irandom_range(3, 5), global.color[boss.chrsel]);
+			disperse_particles(global.part_system[5], x, x, y, y, irandom_range(3, 5), global.color[global.chrsel]);
 		break;
 	}
 }

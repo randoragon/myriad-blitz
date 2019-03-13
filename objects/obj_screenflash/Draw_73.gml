@@ -10,9 +10,9 @@ surface_set_target(GUI_SURFACE);
 
 draw_set_alpha(image_alpha);
 draw_set_color(image_blend);
-draw_set_alpha_test_ref_value(0);
+gpu_set_alphatestref(0);
 draw_rectangle(CANVAS_X, CANVAS_Y, CANVAS_XEND, CANVAS_YEND, 0);
-draw_set_alpha_test_ref_value(254);
+gpu_set_alphatestref(254);
 draw_set_alpha(1);
 
 #endregion

@@ -53,7 +53,7 @@ if (grid[# 0, 0] <= 0) {
 }
 
 // draw the afterimage
-draw_set_alpha_test_ref_value(floor(ds_grid_get_min(grid, 1, 7, ds_grid_width(grid) - 1, 7) * draw_get_alpha() * 255));
+gpu_set_alphatestref(floor(ds_grid_get_min(grid, 1, 7, ds_grid_width(grid) - 1, 7) * draw_get_alpha() * 255));
 for (var i=1; i < ds_grid_width(grid); i+=argument[3] + 1) {
     if (grid[# i, 7] > 0) {
         draw_sprite_ext(grid[# i, 0], grid[# i, 1], grid[# i, 2], grid[# i, 3], grid[# i, 4], grid[# i, 5], grid[# i, 6], image_blend, grid[# i, 7] * draw_get_alpha());
@@ -61,4 +61,4 @@ for (var i=1; i < ds_grid_width(grid); i+=argument[3] + 1) {
     grid[# i, 7] -= argument[1] / (argument[0] * argument[4]);
 }
 
-draw_set_alpha_test_ref_value(254);
+gpu_set_alphatestref(254);

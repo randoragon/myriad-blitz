@@ -30,14 +30,14 @@ for (var i = 0; i < array_length_1d(section); i++) {
         if (date[i] == "" || !(boss.x >= x - (0.5 * 3 * string_width(string_hash_to_newline(section[i]))) - 2 && boss.x <= x + (0.5 * 3 * string_width(string_hash_to_newline(section[i]))) && boss.y > yy - 2 && boss.y < yy + (3 * 12) + 2)) {
             draw_text_outline(x, yy, section[i], 3, 3, 0, rgb(0, 200, 255), 1, c_black, 1);
         } else {
-            draw_set_alpha_test_ref_value(0);
-            draw_set_blend_mode(bm_add);
+            gpu_set_alphatestref(0);
+            gpu_set_blendmode(bm_add);
             draw_text_highlight(x, yy, section[i], 3, c_black, 0.3, fa_center, fa_top, 6, 6);
-            draw_set_blend_mode(bm_normal);
-            draw_set_color_write_enable(1, 1, 1, 0);
+            gpu_set_blendmode(bm_normal);
+            gpu_set_colorwriteenable(1, 1, 1, 0);
             draw_text_highlight(x, yy, section[i], 3, c_black, 0.3, fa_center, fa_top, 6, 6);
-            draw_set_color_write_enable(1, 1, 1, 1);
-            draw_set_alpha_test_ref_value(254);
+            gpu_set_colorwriteenable(1, 1, 1, 1);
+            gpu_set_alphatestref(254);
             draw_text_outline(x, yy, section[i], 3, 3, 0, rgb(0, 255, 255), 1, c_black, 1);
         }
     }

@@ -2,7 +2,7 @@
 
 #region Hide
 
-x=xstart+(360*boss.transition);
+x=xstart+(360*global.transition);
 
 #endregion
 

@@ -15,7 +15,7 @@ surface_set_target(GENERAL_SURFACE);
 #region Draw self & shader implementation
 
 if (f == 0 && e == 2) {
-    draw_set_blend_mode(bm_add);
+    gpu_set_blendmode(bm_add);
 }
 
 if (global.shader_conditions == 0) {
@@ -33,7 +33,7 @@ if (global.shader_conditions == 0) {
     draw_self();
     shader_reset();
 }
-draw_set_blend_mode(bm_normal);
+gpu_set_blendmode(bm_normal);
 
 #endregion
 

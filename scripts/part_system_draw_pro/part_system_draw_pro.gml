@@ -14,7 +14,7 @@ if (oldtonew == 1) {
         sprite          = source[# part, 0];
         scale           = grid[# i, 3] / max(sprite_get_width(sprite), sprite_get_height(sprite));
         life_percentage = grid[# i, 2] / grid[# i, 13];
-        draw_set_blend_mode(source[# part, 26]);
+        gpu_set_blendmode(source[# part, 26]);
         draw_sprite_ext(sprite, grid[# i, 1], grid[# i, 11], grid[# i, 12], scale, scale, grid[# i, 4], merge_color(grid[# i, 9], grid[# i, 15], 1 - life_percentage), lerp(grid[# i, 10], grid[# i, 16], 1 - life_percentage));
     }
 } else {
@@ -24,9 +24,9 @@ if (oldtonew == 1) {
         sprite          = source[# part, 0];
         scale           = grid[# i, 3] / max(sprite_get_width(sprite), sprite_get_height(sprite));
         life_percentage = grid[# i, 2] / grid[# i, 13];
-        draw_set_blend_mode(source[# part, 26]);
+        gpu_set_blendmode(source[# part, 26]);
         draw_sprite_ext(sprite, grid[# i, 1], grid[# i, 11], grid[# i, 12], scale, scale, grid[# i, 4], merge_color(grid[# i, 9], grid[# i, 15], 1 - life_percentage), lerp(grid[# i, 10], grid[# i, 16], 1 - life_percentage));
     }
 }
 
-draw_set_blend_mode(bm_normal);
+gpu_set_blendmode(bm_normal);

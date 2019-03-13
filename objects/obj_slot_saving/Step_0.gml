@@ -23,7 +23,7 @@ if (phase == 1) {
 	        break;
 	        case 1: //global variables, sounds, global player stats, player status effects
 	            data = 
-	            string(VER) + ";" + string(boss.chrsel) + ";" + string(global.points) + ";" + string(realm) + ";" + 
+	            string(VER) + ";" + string(global.chrsel) + ";" + string(global.points) + ";" + string(realm) + ";" + 
 	            string(boss.lastpresent) + ";" + string(spawnrate) + ";" + string(gpspeed) + ";" + string(prev_gpspeed) + ";" + string(global.gpspeed_state) + ";" + string(global.gpspeed_focus) + ";" + string(global.gpspeed_ultimate_activation) + ";" + string(global.gpspeed_ultimate) + ";" + string(gpstep) + ";" + 
 	            string(global.viewxstartpos) + ";" + string(global.viewystartpos) + ";" + string(random_get_seed()) + ";" + string(global.shader_conditions) + ";" + string(global.enemy_details_selection) + ";" + string(boss.last_ult) + ";" + string(kill_count) + ";" + 
 	            string(boss.dizzy_alpha) + ";";
@@ -172,7 +172,7 @@ if (phase == 1) {
 	        break;
 	        case 15:
 	            data = string(global.player_part[0]) + ";"; //disperse particles are always present so there's no need to check
-	            switch(boss.chrsel) {
+	            switch(global.chrsel) {
 		            case 0:
 		                data += string(global.player_part[1]) + ";" + string(global.player_part[2]) + ";" + 
 		                string(global.frag_part[0]) + ";" + string(global.frag_part[1]) + ";" + string(global.frag_part[2]) + ";" + 

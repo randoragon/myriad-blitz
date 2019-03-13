@@ -32,7 +32,7 @@ image_speed = 0;
 image_scale(3, 3);
 switch(f) {
 	case 0: image_index = 0;			   break;
-	case 1: image_index = boss.chrsel + 1; break;
+	case 1: image_index = global.chrsel + 1; break;
 }
 
 afterimage_ds_grid = -1;

@@ -121,7 +121,7 @@ if (phase == 4 && clock-- <= 0) {
 	    case 0:
 	        //global variables
 	        string_readln(bit, ";"); //skip the slot game version
-	        boss.chrsel						   = string_readln_real(bit, ";");
+	        global.chrsel						   = string_readln_real(bit, ";");
 	        global.points					   = string_readln_real(bit, ";");
 	        realm							   = string_readln_real(bit, ";");
 	        boss.lastpresent				   = string_readln_real(bit, ";");
@@ -295,7 +295,7 @@ if (phase == 4 && clock-- <= 0) {
 	    break;
 	    case 17:
 	        global.player_part[0] = string_readln_real(bit, ";"); //disperse particle
-	            switch(boss.chrsel) {
+	            switch(global.chrsel) {
 		            case 0:
 		                global.player_part[1]   = string_readln_real(bit, ";");
 		                global.player_part[2]	= string_readln_real(bit, ";");

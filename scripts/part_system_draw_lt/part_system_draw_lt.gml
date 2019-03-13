@@ -12,7 +12,7 @@ if (oldtonew == 1) {
         part = grid[# i, 0];
         if (part == -1) { continue; }
         percentage = 1 - (grid[# i, 2] / grid[# i, 3]);
-        draw_set_blend_mode(source[# part, 16]);
+        gpu_set_blendmode(source[# part, 16]);
         draw_sprite_ext(source[# part, 0], grid[# i, 1], grid[# i, 8], grid[# i, 9], grid[# i, 4], grid[# i, 4], grid[# i, 5], merge_color(source[# part, 17], source[# part, 18], percentage), lerp(source[# part, 19], source[# part, 20], percentage));
     }
 } else {
@@ -20,9 +20,9 @@ if (oldtonew == 1) {
     part = grid[# i, 0];
     if (part == -1) { continue; }
     percentage = 1 - (grid[# i, 2] / grid[# i, 3]);
-    draw_set_blend_mode(source[# part, 16]);
+    gpu_set_blendmode(source[# part, 16]);
     draw_sprite_ext(source[# part, 0], grid[# i, 1], grid[# i, 8], grid[# i, 9], grid[# i, 4], grid[# i, 4], grid[# i, 5], merge_color(source[# part, 17], source[# part, 18], percentage), lerp(source[# part, 19], source[# part, 20], percentage));
     }
 }
 
-draw_set_blend_mode(bm_normal);
+gpu_set_blendmode(bm_normal);

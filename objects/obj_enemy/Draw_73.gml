@@ -13,11 +13,11 @@ if (hp > 0 && !obj_player.status_effect[7] && !obj_player.status_effect[8]) {
     if (bar_extension == 0) {
         draw_set_color(c_black);
         draw_set_alpha(0.5);
-        draw_set_alpha_test_ref_value(0);
+        gpu_set_alphatestref(0);
         draw_rectangle(x - 30, y - (sprite_height / 2) - 6, x + 30, y - (sprite_height / 2), 0);
         draw_set_color(c_red);
         draw_set_alpha(1);
-        draw_set_alpha_test_ref_value(254);
+        gpu_set_alphatestref(254);
         draw_rectangle(x - 29, y - (sprite_height / 2) - 5, x - 29 + (59 * hp / hpmax), y - (sprite_height / 2), 0);
         draw_set_color(c_black);
         draw_rectangle(x - 30, y - (sprite_height / 2) - 6, x + 30, y - (sprite_height / 2), 1);
@@ -29,11 +29,11 @@ if (hp > 0 && !obj_player.status_effect[7] && !obj_player.status_effect[8]) {
         var vgrowth     = bar_extension * max(0, text_height + 4 - 6) / 2;
         draw_set_color(c_black);
         draw_set_alpha(0.5);
-        draw_set_alpha_test_ref_value(0);
+        gpu_set_alphatestref(0);
         draw_rectangle(x - 30 - hgrowth, y - (sprite_height / 2) - 6 - vgrowth, x + 30 + hgrowth, y - (sprite_height / 2) + vgrowth, 0);
         draw_set_color(hsv(0, 255, 255 - (191 * bar_extension)));
         draw_set_alpha(1);
-        draw_set_alpha_test_ref_value(254);
+        gpu_set_alphatestref(254);
         draw_rectangle(x - 29 - hgrowth, y - (sprite_height / 2) - 5 - vgrowth, x - 29 - hgrowth + ((59 + (2 * hgrowth)) * hp / hpmax), y - (sprite_height / 2) + vgrowth, 0);
         draw_set_color(c_black);
         draw_rectangle(x - 30 - hgrowth, y - (sprite_height / 2) - 6 - vgrowth, x + 30 + hgrowth, y - (sprite_height / 2) + vgrowth, 1);
