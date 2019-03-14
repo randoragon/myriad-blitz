@@ -93,7 +93,67 @@
         
     ],
     "physicsStartAwake": true,
-    "properties": null,
+    "properties": [
+        {
+            "id": "770232eb-5fae-41f3-904b-c29762f2da21",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "scroll",
+            "varType": 0
+        },
+        {
+            "id": "c6e5df34-7934-4dfd-bcd9-6257d2dfc9bb",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "scrollv",
+            "varType": 0
+        },
+        {
+            "id": "23fee465-a3e8-4a17-9166-16a67bad3b7a",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "-1",
+            "varName": "osc",
+            "varType": 1
+        },
+        {
+            "id": "68a4df28-ae22-4606-95ef-e955522b9c99",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": [
+                "-4",
+                "-4"
+            ],
+            "multiselect": true,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "-4, -4",
+            "varName": "button",
+            "varType": 6
+        }
+    ],
     "solid": false,
     "spriteId": "889b160d-91bd-43b9-910c-0d3509d8a310",
     "visible": true

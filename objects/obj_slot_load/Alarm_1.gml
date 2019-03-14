@@ -7,6 +7,7 @@ if (spawncount < 6) {
 	
 	var xshift = 300;
 	var yshift = 115;
+	var xx, yy;
 	switch (spawncount) {
 		case 1: xx = x - (0.5 * xshift); yy = y - 213 + (1 * yshift); break;
 		case 2: xx = x + (0.5 * xshift); yy = y - 213 + (1 * yshift); break;

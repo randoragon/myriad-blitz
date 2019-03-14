@@ -21,7 +21,6 @@ depth = general_depth.wrap_helper;
 hp        = player.hp;
 hpmax     = player.hpmax;
 hpmark    = hp;
-hpmark_v  = 0;
 inv       = player.invtime;
 invtime   = player.invtime;
 cb        = player.cb;
@@ -32,9 +31,6 @@ ccooldown = player.ccooldown;
 artcharge = player.artcharge;
 color     = global.color[global.chrsel];
 shot      = player.shot;
-bar_opacity[0] = 0; bar_yoffset[0] = 52;
-bar_opacity[1] = 0; bar_yoffset[1] = 44;
-bar_opacity[2] = 0; bar_yoffset[2] = 36;
 
 #endregion
 

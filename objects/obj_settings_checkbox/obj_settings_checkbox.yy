@@ -63,7 +63,64 @@
         
     ],
     "physicsStartAwake": true,
-    "properties": null,
+    "properties": [
+        {
+            "id": "e3faf902-ee42-4fee-9537-729a91261ec2",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "check",
+            "varType": 3
+        },
+        {
+            "id": "c0561672-3bd4-4def-acd5-07f7d7c66004",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "\"\"",
+            "varName": "label",
+            "varType": 2
+        },
+        {
+            "id": "1b79281a-053b-4602-8eb3-3f5cbf8db4f1",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 16,
+            "value": "-1",
+            "varName": "script",
+            "varType": 5
+        },
+        {
+            "id": "f75966aa-560a-42ea-93a6-61643712366a",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "\"\"",
+            "varName": "desc",
+            "varType": 2
+        }
+    ],
     "solid": false,
     "spriteId": "70fddfd9-7880-412b-a2f2-90964f1a9b2e",
     "visible": true

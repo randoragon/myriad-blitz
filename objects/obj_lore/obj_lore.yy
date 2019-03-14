@@ -93,7 +93,50 @@
         
     ],
     "physicsStartAwake": true,
-    "properties": null,
+    "properties": [
+        {
+            "id": "008ee138-e923-4309-a65e-d381f76ae11f",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "scroll",
+            "varType": 0
+        },
+        {
+            "id": "7cb63941-4ce1-4eb3-8313-8e8b508ce56b",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "scrollv",
+            "varType": 0
+        },
+        {
+            "id": "ba4f46f5-4803-422f-a259-1d3feaa772e3",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "-1",
+            "varName": "osc",
+            "varType": 1
+        }
+    ],
     "solid": false,
     "spriteId": "7b77a25d-fbcc-450e-84dc-65d664396a16",
     "visible": true

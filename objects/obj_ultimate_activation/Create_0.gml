@@ -4,10 +4,6 @@
 
 instance_setup(0, 0, 0, 1);
 text        = global.uname;
-stage       = 0;
-size        = 0;
-progress    = 0;
-multiplier  = 1;
 depth       = gui_depth.ultimate_text;
 image_alpha = 0;
 

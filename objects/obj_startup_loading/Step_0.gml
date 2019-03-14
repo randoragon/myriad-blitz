@@ -15,6 +15,6 @@ if (stage == 1.5 && audio_group_load_progress(SFX) == 100) {
 
 #region Cycle
 
-cycle=(cycle+7)%360;
+cycle = (cycle + 7) % 360;
 
 #endregion

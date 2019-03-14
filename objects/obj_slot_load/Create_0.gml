@@ -11,18 +11,8 @@ event_inherited();
 image_speed		= 0;
 image_index		= 0;
 depth			= gui_depth.slot_load;
-grabbed         = 0;
 keyboard_string = "";
-selection		= "";
-selection_name	= "<failed to fetch name>";
-page			= 0;
-readpos			= 1;
-slotcount		= 0;
 slot[0]			= file_find_first(working_directory+"slots\\*mbslot",0);
-button[0]		= -4;
-button[1]		= -4;
-button[2]		= -4;
-button[3]		= -4;
 
 if (slot[0] != "") {
     button[0] = instance_create_f(x - 250, y + 218, obj_button, 19);

@@ -4,11 +4,8 @@
 
 instance_setup(irandom(image_number - 1), 0.04);
 depth		 = gui_depth.statboard;
-scroll		 = 0;
-scrollv		 = 0;
 osc			 = fx_wave(3, 4, -3, -4, 1, 30, 0, -1, 3, 4, -3, -4, 3, 45, 0, -1);
 sprite_index = noone;
-linesum		 = 0;
 button[0]	 = instance_create_f(x + 115, y - 170, obj_button, 21); with (button[0]) { show = 0; image_index = 0;}
 button[1]	 = instance_create_f(x - 87, y - 170, obj_button, 22);  with (button[1]) { customize = 0; }
 

@@ -31,8 +31,7 @@ switch(f) {
 		    if (enemyharm < 1) {
 				enemyharm = min(enemyharm + (0.08 * gpspeed), 1);
 				direction += 2 * gpspeed;
-			}
-		    if (enemyharm == 1 && instance_exists(obj_enemy)) {
+			} else if (enemyharm == 1 && instance_exists(obj_enemy)) {
 				direction = home(direction, point_direction(x, y, instance_nearest(x, y, obj_enemy).x, instance_nearest(x, y, obj_enemy).y), 4 * gpspeed, 1);
 			}
 	    }

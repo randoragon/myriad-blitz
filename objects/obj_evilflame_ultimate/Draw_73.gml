@@ -54,14 +54,14 @@ if (state == 1) {
         draw_set_color(c_black);
         draw_rectangle(x - 30, y + bar_yoffset[1] + 6, x + 30, y + bar_yoffset[1], 1);
         draw_set_alpha(1);
-        if(gpspeed!=0) {
+        if (gpspeed != 0) {
             bar_opacity[1] -= 0.05;
         }
     }
     //Charging & CCooldown
-    if(bar_opacity[2]>0) {
-        bar_yoffset[2]=36;
-        if(charge>0) {
+    if (bar_opacity[2] > 0) {
+        bar_yoffset[2] = 36;
+        if (charge > 0) {
             //Charging Bar
             draw_set_alpha(min(bar_opacity[2] / 2, 0.5));
             draw_set_color(c_black);
@@ -85,7 +85,7 @@ if (state == 1) {
             draw_rectangle(x - 30, y + bar_yoffset[2] + 6, x + 30, y + bar_yoffset[2], 1);
             draw_set_alpha(1);
         }
-        if(gpspeed != 0) {
+        if (gpspeed != 0) {
             bar_opacity[2] -= 0.05;
         }
     }

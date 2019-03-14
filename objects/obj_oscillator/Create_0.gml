@@ -16,7 +16,6 @@ for(var i = 0; i < 2; i++) {
 	duration[i]     = -1;
 }
 
-prev_image_speed = 0;
 previd           = id;
 
 #endregion

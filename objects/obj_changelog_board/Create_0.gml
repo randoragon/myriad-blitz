@@ -1,5 +1,9 @@
 /// @description Setup
 
+// section padding = padding between a headline and content below
+// content_padding = padding between two lines of content
+// content_end_padding = padding between the end of content and beginning of a new section
+
 #region Setup
 
 instance_setup(irandom(image_number - 1), 0.04);
@@ -47,10 +51,6 @@ if (file_exists(program_directory + "\\changelog.txt")) {
     content[0, 2] = "_randoragongamedev@gmail.com";
     content[0, 3] = "_Discord server invite is in the About section.";
 }
-
-section_padding     = 9; //padding between a headline and content below
-content_padding     = 3; //padding between two lines of content
-content_end_padding = 24; //padding between the end of content and beginning of a new section
 
 total_height = array_length_1d(section) * ((3 * 12) + section_padding);
 for (var i = 0; i < array_length_1d(section); i++) {

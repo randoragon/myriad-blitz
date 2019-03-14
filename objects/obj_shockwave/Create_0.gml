@@ -3,7 +3,6 @@
 #region Setup
 
 instance_setup(0, 0, 0, 1);
-radius = 0;
 
 #endregion
 

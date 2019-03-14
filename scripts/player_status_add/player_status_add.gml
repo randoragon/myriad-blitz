@@ -29,7 +29,7 @@ player_status_effects[# 1, 0] = argument[1];
 player_status_effects[# 2, 0] = argument[1];
 
 // update player status_effect array
-obj_player.status_effect[argument[0]] = 1;
+obj_player.status_effect[argument[0]] = true;
 
 /* STATUS EFFECTS:
  * 0 - Exhausted

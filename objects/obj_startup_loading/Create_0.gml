@@ -7,10 +7,6 @@ image_alpha = 0;
 image_speed = 0;
 instance_create(0, 0, obj_randoragon_logo);
 
-progress = 0;
-stage    = 0;
-cycle    = 0;
-
 #endregion
 
 

@@ -1,33 +1,7 @@
 /// @description Setup
 
 #region General
-
-         xv = 0;
-         yv = 0;
-       shot = 0;
-        inv = 0;
-      focus = 0;
-focus_state = 0;
-     charge = 0;
-  discharge = 0;
-  artcharge = 0;
-         cb = 0;
-   ultcount = 1;
-   ultblink = 0;
-flash_clock = 0; // for white flash when activating an ultimate
       spawn = id;
-     hpmark = 0;
-   hpmark_v = 0;
-     helper = noone;
-	 
-bar_opacity[0] = 0; bar_yoffset[0] = 52;
-bar_opacity[1] = 0; bar_yoffset[1] = 44;
-bar_opacity[2] = 0; bar_yoffset[2] = 36;
-
-  evilflame_sprite_swap = 0;
-evilflame_twilight_fury = 0;
-     afterimage_ds_grid = -1;
-	 
  image_speed = 0.4 * gpspeed;
 sprite_index = spr_evilflame + global.chrsel;
  image_alpha = 1;
@@ -50,7 +24,7 @@ if (!global.loading) {
 
 global.status_effect_count = 11; //this is how many status effects there are in total
 for (var i = global.status_effect_count-1; i >= 0; i--)
-	status_effect[i] = 0;
+	status_effect[i] = false;
 
 if (!global.loading) {
 	globalvar player_status_effects;

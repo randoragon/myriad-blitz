@@ -7,7 +7,7 @@ if (ds_grid_get_min(player_status_effects, 1, 0, 1, ds_grid_height(player_status
         if (player_status_effects[# 1, i] <= 0 && player_status_effects[# 1, i] >= -1) {
             // update player status_effect array
             var deceased_effect_id = player_status_effects[# 0, i];
-            obj_player.status_effect[deceased_effect_id] = 0;
+            obj_player.status_effect[deceased_effect_id] = false;
 
             // get rid of the used cooldown
             if (i < ds_grid_height(player_status_effects) - 1) {
