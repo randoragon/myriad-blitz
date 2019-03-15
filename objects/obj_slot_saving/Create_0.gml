@@ -15,8 +15,8 @@ interval	 = 2 * (global.save_chunk_size <= 500);
 
 #endregion
 
-#region Increment busy
+#region Increment global.busy
 
-busy++;
+global.busy++;
 
 #endregion

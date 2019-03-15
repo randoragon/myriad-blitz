@@ -123,23 +123,23 @@ if (phase == 4 && clock-- <= 0) {
 	        string_readln(bit, ";"); //skip the slot game version
 	        global.chrsel						   = string_readln_real(bit, ";");
 	        global.points					   = string_readln_real(bit, ";");
-	        realm							   = string_readln_real(bit, ";");
+	        global.realm							   = string_readln_real(bit, ";");
 	        boss.lastpresent				   = string_readln_real(bit, ";");
-	        spawnrate						   = string_readln_real(bit, ";");
-	        gpspeed							   = string_readln_real(bit, ";");
-	        prev_gpspeed					   = string_readln_real(bit, ";");
+	        global.spawnrate						   = string_readln_real(bit, ";");
+	        global.gpspeed							   = string_readln_real(bit, ";");
+	        global.prev_gpspeed					   = string_readln_real(bit, ";");
 	        global.gpspeed_state			   = string_readln_real(bit, ";");
 	        global.gpspeed_focus               = string_readln_real(bit, ";");
 	        global.gpspeed_ultimate_activation = string_readln_real(bit, ";");
 	        global.gpspeed_ultimate			   = string_readln_real(bit, ";");
-	        gpstep							   = string_readln_real(bit, ";");
+	        global.gpstep							   = string_readln_real(bit, ";");
 	        global.viewxstartpos			   = string_readln_real(bit, ";");
 	        global.viewystartpos			   = string_readln_real(bit, ";");
 	        random_set_seed(string_readln_real(bit, ";"));
 	        global.shader_conditions		   = string_readln_real(bit, ";");
 	        global.enemy_details_selection	   = string_readln_real(bit, ";");
 	        boss.last_ult					   = string_readln_real(bit, ";");
-	        kill_count						   = string_readln_real(bit, ";");
+	        global.kill_count						   = string_readln_real(bit, ";");
 	        boss.dizzy_alpha				   = string_readln_real(bit, ";");
 	        for (var i = 0; i < 8; i++) {
 	            __background_set( e__BG.Index,  i, string_readln_real(bit, ";") );
@@ -203,10 +203,9 @@ if (phase == 4 && clock-- <= 0) {
 	        global.ccooldown  = string_readln_real(bit, ";");
 	        global.ucooldown  = string_readln_real(bit, ";");
 	    break;
-	    case 3: //player_status_effects grid
-	        globalvar player_status_effects;
-	        player_status_effects = ds_grid_create(0, 0);
-	        player_status_effects = ds_grid_import(player_status_effects, line[progress]);
+	    case 3: //global.player_status_effects grid
+	        global.player_status_effects = ds_grid_create(0, 0);
+	        global.player_status_effects = ds_grid_import(global.player_status_effects, line[progress]);
 	    break;
 	    case 4: //part systems, types and spawn slots
 	        if (ds_exists(global.part_system[0], ds_type_grid)) { part_system_clear_lt(global.part_system[0]);  }

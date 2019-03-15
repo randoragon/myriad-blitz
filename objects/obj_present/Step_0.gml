@@ -17,11 +17,11 @@ event_inherited();
 //wave motion
 switch (wave_cycle) {
 	case 0:
-		vspeed1 = home(vspeed1,  1.5, 0.1 * sqr(gpspeed), 0);
+		vspeed1 = home(vspeed1,  1.5, 0.1 * sqr(global.gpspeed), 0);
 		if (vspeed1 >= 1.5) { wave_cycle = 1; }
 	break;
 	case 1:
-		vspeed1 = home(vspeed1, -1.5, 0.1 * sqr(gpspeed), 0);
+		vspeed1 = home(vspeed1, -1.5, 0.1 * sqr(global.gpspeed), 0);
 		if (vspeed1 <= -1.5) { wave_cycle = 0; }
 	break;
 }

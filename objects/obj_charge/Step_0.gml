@@ -8,7 +8,7 @@ event_inherited();
 
 #region Blazing Fireball
 
-if (f == 0 && gpspeed != 0) {
+if (f == 0 && global.gpspeed != 0) {
 	if (e != 2) {
 		//DEFAULT FIREBALL
 		if (target < -4) {
@@ -17,7 +17,7 @@ if (f == 0 && gpspeed != 0) {
 			if (!instance_exists(target) || target.object_index != obj_enemy) {
 				target = instance_nearest(x, y, obj_enemy);
 			} else if (instance_exists(target)) {
-				direction = home(direction, point_direction(x, y, target.x, target.y), 2 * gpspeed, 1);
+				direction = home(direction, point_direction(x, y, target.x, target.y), 2 * global.gpspeed, 1);
 			}
 			image_angle = direction;
 		}
@@ -40,7 +40,7 @@ if (f == 0 && gpspeed != 0) {
 		if (x > CANVAS_XEND + 128 || x < -128 || y < -128 || y > CANVAS_YEND + 128) {
 			instance_destroy();
 		}
-		charge -= gpspeed;
+		charge -= global.gpspeed;
 	} else {             //TWILIGHT FURY VARIANT
 		if (target < -4) {
 			target++;
@@ -48,7 +48,7 @@ if (f == 0 && gpspeed != 0) {
 			if (!instance_exists(target) || target.object_index != obj_enemy) {
 				target = instance_nearest(x, y, obj_enemy);
 			} else if (instance_exists(target)) {
-				direction = home(direction, point_direction(x, y, target.x, target.y), 5 * gpspeed, 1);
+				direction = home(direction, point_direction(x, y, target.x, target.y), 5 * global.gpspeed, 1);
 			}
 			image_angle = direction;
 		}
@@ -69,7 +69,7 @@ if (f == 0 && gpspeed != 0) {
 		if (x > CANVAS_XEND + 128 || x < -128 || y < -128 || y > CANVAS_YEND + 128) {
 			instance_destroy();
 		}
-		charge -= gpspeed;
+		charge -= global.gpspeed;
 	}
 }
 
@@ -77,9 +77,9 @@ if (f == 0 && gpspeed != 0) {
 
 #region Beaming Spin
 
-if (f == 2 && gpspeed != 0) {
+if (f == 2 && global.gpspeed != 0) {
 	if (charge > 0) {
-		spawn.image_angle -= 12 * gpspeed;
+		spawn.image_angle -= 12 * global.gpspeed;
 		if (instance_exists(spawn.helper)) {
 			spawn.helper.image_angle = spawn.image_angle;
 		}
@@ -111,11 +111,11 @@ if (f == 2 && gpspeed != 0) {
 			spawn_bullet(xx + lengthdir_x(l, angle), spawn.y + lengthdir_y(l, angle), obj_frag, 2, 3, -1, spawn.id);
 		}
 		if (real_step()) {
-			play_sfx(sfx_scootomik_frag_hit, sound_priority.player_frag_hit, 0, sound_gpspeed * 100);
+			play_sfx(sfx_scootomik_frag_hit, sound_priority.player_frag_hit, 0, global.sound_gpspeed * 100);
 		}
-		charge -= gpspeed;
+		charge -= global.gpspeed;
 	} else {
-		spawn.inv = round(global.invtime / gpspeed);
+		spawn.inv = round(global.invtime / global.gpspeed);
 		spawn.sprite_index = spr_scootomik;
 		instance_destroy();
 	}

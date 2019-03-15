@@ -8,8 +8,8 @@ surface_set_target(GUI_SURFACE);
 
 #region Draw content
 
-if (busy == start_busy) {
-	screen_darken(image_xscale * (3 - (gpspeed == 0 || instance_exists(obj_slot_load))) / 4); //basically it's 0.75, but it lowers to 0.5 if gpspeed==0 or slot_load exists
+if (global.busy == start_busy) {
+	screen_darken(image_xscale * (3 - (global.gpspeed == 0 || instance_exists(obj_slot_load))) / 4); //basically it's 0.75, but it lowers to 0.5 if global.gpspeed==0 or slot_load exists
 }
 draw_self();
 draw_set_align(fa_left, fa_middle);

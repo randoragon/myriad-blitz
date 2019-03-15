@@ -12,7 +12,7 @@ if (page > ceil((array_length_1d(slot) - 1) / 6)) {
 	page = ceil((array_length_1d(slot) - 1) / 6);
 }
 
-if (obj_slot_load.start_busy != busy) { exit; }
+if (obj_slot_load.start_busy != global.busy) { exit; }
 if (boss.x >= x + 284 && boss.x <= x + 331 && boss.y >= y - 240 && boss.y <= y - 194 && mouse_check_button_pressed(mb_left)) { grabbed = 2; }
 if (keyboard_check_pressed(vk_escape) || (boss.x >= x + 284 && boss.x <= x + 331 && boss.y >= y - 240 && boss.y <= y - 194 && grabbed == 2 && mouse_check_button_released(mb_left))) {
 	wipe(obj_slot);

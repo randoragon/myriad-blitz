@@ -8,7 +8,7 @@ surface_set_target(GUI_SURFACE);
 
 #region Draw overlay
 
-if (gpspeed != 0) {
+if (global.gpspeed != 0) {
     screen_darken(image_alpha * 3 / 4);
 }
 draw_set_alpha(image_alpha);

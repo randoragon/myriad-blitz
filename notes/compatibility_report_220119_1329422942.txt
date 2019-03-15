@@ -685,8 +685,8 @@ Converted builtin - line 55: background_vtiled[2]=0 -> __background_set( e__BG.V
 Converted builtin - line 60: background_vtiled[3]=0 -> __background_set( e__BG.VTiled, 3, 0 )
 Converted builtin - line 65: background_vtiled[4]=0 -> __background_set( e__BG.VTiled, 4, 0 )
 Converted builtin - line 70: background_vtiled[5]=0 -> __background_set( e__BG.VTiled, 5, 0 )
-Converted description /// @description scr_BackgroundUpdate(realm)
-/// @param realm
+Converted description /// @description scr_BackgroundUpdate(global.realm)
+/// @param global.realm
 
 Converting GML script: ${project_dir}\scripts\scr_Stats_Update\scr_Stats_Update.gml
 Converted description /// @description scr_Stats_Update(show all);
@@ -1017,7 +1017,7 @@ Converted string - line 67: 'E' -> "E"
 Converted string - line 118: '"' -> "\""
 
 Converting GML script: ${project_dir}\objects\boss\Step_1.gml
-Converted description /// @description gpspeed management
+Converted description /// @description global.gpspeed management
 
 Converting GML script: ${project_dir}\objects\boss\Step_0.gml
 Converted description /// @description Gameplay
@@ -1044,12 +1044,12 @@ Converted builtin - line 18: background_index[i] -> __background_get( e__BG.Inde
 Converted builtin - line 21: background_index[i] -> __background_get( e__BG.Index, i )
 Converted builtin - line 13: background_x[i] -> __background_get( e__BG.X, i )
 Converted builtin - line 21: background_x[i] -> __background_get( e__BG.X, i )
-Converted builtin - line 11: background_x[i]+=gpspeed*global.parallax_speed[i,0] -> __background_set( e__BG.X, i, __background_get( e__BG.X, i ) + (gpspeed*global.parallax_speed[i,0]) )
-Converted builtin - line 19: background_x[i]+=gpspeed*global.parallax_speed[i,0] -> __background_set( e__BG.X, i, __background_get( e__BG.X, i ) + (gpspeed*global.parallax_speed[i,0]) )
+Converted builtin - line 11: background_x[i]+=global.gpspeed*global.parallax_speed[i,0] -> __background_set( e__BG.X, i, __background_get( e__BG.X, i ) + (global.gpspeed*global.parallax_speed[i,0]) )
+Converted builtin - line 19: background_x[i]+=global.gpspeed*global.parallax_speed[i,0] -> __background_set( e__BG.X, i, __background_get( e__BG.X, i ) + (global.gpspeed*global.parallax_speed[i,0]) )
 Converted builtin - line 13: background_y[i] -> __background_get( e__BG.Y, i )
 Converted builtin - line 21: background_y[i] -> __background_get( e__BG.Y, i )
-Converted builtin - line 12: background_y[i]+=gpspeed*global.parallax_speed[i,1] -> __background_set( e__BG.Y, i, __background_get( e__BG.Y, i ) + (gpspeed*global.parallax_speed[i,1]) )
-Converted builtin - line 20: background_y[i]+=gpspeed*global.parallax_speed[i,1] -> __background_set( e__BG.Y, i, __background_get( e__BG.Y, i ) + (gpspeed*global.parallax_speed[i,1]) )
+Converted builtin - line 12: background_y[i]+=global.gpspeed*global.parallax_speed[i,1] -> __background_set( e__BG.Y, i, __background_get( e__BG.Y, i ) + (global.gpspeed*global.parallax_speed[i,1]) )
+Converted builtin - line 20: background_y[i]+=global.gpspeed*global.parallax_speed[i,1] -> __background_set( e__BG.Y, i, __background_get( e__BG.Y, i ) + (global.gpspeed*global.parallax_speed[i,1]) )
 Converted description /// @description draw backgrounds & apply shaders
 
 Converting GML script: ${project_dir}\objects\boss\Draw_0.gml
@@ -1242,7 +1242,7 @@ Converting GML script: ${project_dir}\objects\obj_enemy\Step_0.gml
 Converted description /// @description skip if loading
 
 Converting GML script: ${project_dir}\objects\obj_enemy\Other_11.gml
-Converted description /// @description Add points and kill_count
+Converted description /// @description Add points and global.kill_count
 
 Converting GML script: ${project_dir}\objects\obj_enemy\Other_10.gml
 Converted description /// @description startup code
@@ -1362,13 +1362,13 @@ Converting GML script: ${project_dir}\objects\obj_knockback_physics\Step_0.gml
 Converted description /// @description event_inherited();
 
 Converting GML script: ${project_dir}\objects\obj_popup_group\Create_0.gml
-Converted description /// @description busy & start_busy
+Converted description /// @description global.busy & start_busy
 
 Converting GML script: ${project_dir}\objects\obj_popup_group\Destroy_0.gml
 Converted description /// @description upon destruction
 
 Converting GML script: ${project_dir}\objects\obj_popup_group\Step_0.gml
-Converted description /// @description do nothing if busy!=start_busy
+Converted description /// @description do nothing if global.busy!=start_busy
 
 Converting GML script: ${project_dir}\objects\obj_startup_loading\Create_0.gml
 Converted description /// @description setup

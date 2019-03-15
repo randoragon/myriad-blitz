@@ -4,10 +4,10 @@
 /// @param Hacceleration
 /// @param Vacceleration
 
-var gpspd = gpspeed;
-if (gpspeed == 0) {
-    if (prev_gpspeed != 0) {
-        gpspd = prev_gpspeed;
+var gpspd = global.gpspeed;
+if (global.gpspeed == 0) {
+    if (global.prev_gpspeed != 0) {
+        gpspd = global.prev_gpspeed;
     } else {
         gpspd = 1;
     }
@@ -33,7 +33,7 @@ if (kbangle == 180) { hkb = -fkb; vkb = 0;    }
 if (kbangle == 270) { hkb = 0;    vkb = fkb;  }
 
 
-// gpspeed correction
+// global.gpspeed correction
 if (hkb != 0) {
     var ahkb0 = argument[2];
     var hkb0  = hkb;

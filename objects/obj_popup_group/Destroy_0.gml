@@ -1,7 +1,7 @@
 /// @description Decrement Busy
 
-#region Decrement busy
+#region Decrement global.busy
 
-busy--;
+global.busy--;
 
 #endregion

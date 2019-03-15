@@ -8,9 +8,9 @@ event_inherited();
 
 #region Apply forces
 
-x += hspeed1 * gpspeed;
-y += vspeed1 * gpspeed;
-x += lengthdir_x(speed1 * gpspeed, direction);
-y += lengthdir_y(speed1 * gpspeed, direction);
+x += hspeed1 * global.gpspeed;
+y += vspeed1 * global.gpspeed;
+x += lengthdir_x(speed1 * global.gpspeed, direction);
+y += lengthdir_y(speed1 * global.gpspeed, direction);
 
 #endregion

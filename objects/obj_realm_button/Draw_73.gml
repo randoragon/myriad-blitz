@@ -6,7 +6,7 @@ surface_set_target(GUI_SURFACE);
 
 #endregion
 
-#region Draw realm overlay
+#region Draw global.realm overlay
 
 draw_self();
 gpu_set_alphatestref(0);

@@ -13,14 +13,14 @@ var arg, u_blendIntensity, u_colorBlend, u_gptime, u_contrastIntensity, u_desatu
 arg                     = argument[0];
 u_blendIntensity        = 0;
 u_colorBlend            = c_black;
-u_gptime                = gptime;
+u_gptime                = global.gptime;
 u_contrastIntensity     = 0;
 u_desaturationIntensity = 0;
 u_brightnessIntensity   = 0;
 
 if (arg == 1 || arg == 3) { // focus mode
     u_gptime = 0;
-    u_desaturationIntensity = 1 - gpspeed;
+    u_desaturationIntensity = 1 - global.gpspeed;
 } else if (arg == 4 || arg == 5) { // chip tuning
     u_contrastIntensity     = 0.2;
     u_desaturationIntensity = 1;

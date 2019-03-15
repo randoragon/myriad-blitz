@@ -29,7 +29,7 @@ if (f == 0 && e != 2) {
 #region Royal Laser
 
 if (f == 1) {
-    //register enemy hits if on gpstep
+    //register enemy hits if on global.gpstep
     if (real_step()) {
         var buff = buffer_create(4, buffer_grow, 4);
         buffer_seek(buff, buffer_seek_start, 0);
@@ -61,7 +61,7 @@ if (f == 1) {
     }
     
     //hit registered enemies
-    if (gpspeed != 0 && gpstep >= 1) {
+    if (global.gpspeed != 0 && global.gpstep >= 1) {
         var buff_length = buffer_tell(buff);
         for (var i = 0; i < buff_length / 4; i++) {
             buffer_seek(buff, buffer_seek_start, 4 * i)
@@ -76,7 +76,7 @@ if (f == 1) {
             }
         }
         buffer_delete(buff);
-        charge -= gpspeed;
+        charge -= global.gpspeed;
     }
     
     if (charge <= 0) {

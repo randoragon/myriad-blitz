@@ -1,6 +1,6 @@
 /// @description Button Behavior
 
-if (busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
+if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
     
     #region Constant behavior
 	
@@ -8,25 +8,25 @@ if (busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 	    case 5:
 			image_xscale = 2 - (2 * global.transition);
 			x = xstart - (50 * global.transition);
-			if (global.transition == 1 && state == 1) { instance_destroy(); }
+			if (global.transition == 1 && global.state == 1) { instance_destroy(); }
 		break;
 	    case 6:
 			image_xscale = 2 - (2 * global.transition);
 			x = xstart + (50 * global.transition);
-			if (global.transition == 1 && state == 1) { instance_destroy(); }
+			if (global.transition == 1 && global.state == 1) { instance_destroy(); }
 		break;
 	    case 7:
 			x = xstart - (global.transition * 40);
 		break;
 	    case 8:
 			y = ystart - ((1 - global.transition) * 40);
-			image_index = (2 * (gpspeed > 0)) + ((mouse_check_button(mb_left) || keyboard_check(vk_escape)) && grabbed = 1);
+			image_index = (2 * (global.gpspeed > 0)) + ((mouse_check_button(mb_left) || keyboard_check(vk_escape)) && grabbed = 1);
 		break;
 	    case 9: case 10: case 11: case 12:
-			if (gpspeed != 0) { instance_destroy(); }
+			if (global.gpspeed != 0) { instance_destroy(); }
 		break;
 	    case 17:
-			if (obj_slot_load.start_busy != busy) { exit };
+			if (obj_slot_load.start_busy != global.busy) { exit };
 			if (obj_slot_load.page == 0) {
 				image_blend = c_gray;
 			} else {
@@ -34,7 +34,7 @@ if (busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 			}
 		break;
 	    case 18:
-			if (obj_slot_load.start_busy != busy) { exit; }
+			if (obj_slot_load.start_busy != global.busy) { exit; }
 			if (obj_slot_load.page == ceil((array_length_1d(obj_slot_load.slot) - 1) / 6) - 1) {
 				image_blend = c_gray;
 			} else {
@@ -42,7 +42,7 @@ if (busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 			}
 		break;
 	    case 19: case 20:
-			if (obj_slot_load.start_busy != busy) { exit; }
+			if (obj_slot_load.start_busy != global.busy) { exit; }
 			if (obj_slot_load.selection == "") {
 				image_index = 2;
 			} else {
@@ -123,7 +123,7 @@ if (busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 		
     } else {
 		
-		#region Idle state (not hovering)
+		#region Idle global.state (not hovering)
 		
         switch(f) {
 	        case 0: case 1: case 2: case 3: case 4:
@@ -166,7 +166,7 @@ if (busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
         switch(f) {
         case 5:
             //previous character
-            if (state == 0) {
+            if (global.state == 0) {
             grabbed = 1;
             image_index = 1;
             play_sfx(sfx_button1, 0, 0);
@@ -183,7 +183,7 @@ if (busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
         break;
         case 6:
             //next character
-            if (state == 0) {
+            if (global.state == 0) {
                 grabbed = 1;
                 image_index = 3;
                 play_sfx(sfx_button1, 0, 0);
@@ -198,7 +198,7 @@ if (busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
                 scr_Stats_Update(obj_statboard.button[0].show);
             }
         break;
-        case 8: if (state == 1 && global.transition == 1) {grabbed = 1; if (global.gpspeed_state != 0) {scr_Pause();} else {play_sfx(sfx_pause, 0, 0); global.gpspeed_state = 1; wipe(obj_sound_bar); audio_resume_all();}} break;
+        case 8: if (global.state == 1 && global.transition == 1) {grabbed = 1; if (global.gpspeed_state != 0) {scr_Pause();} else {play_sfx(sfx_pause, 0, 0); global.gpspeed_state = 1; wipe(obj_sound_bar); audio_resume_all();}} break;
         case 21: play_sfx(sfx_button1, 0, 0); show = toggle(show); scr_toggle_stats_selection(0); scr_Stats_Update(show); ini_open(working_directory + "userconfig.mbdat"); ini_write_real("shown_stats", "show", show); ini_close(); grabbed = 1; break;
         case 22: play_sfx(sfx_button1, 0, 0); scr_toggle_stats_selection(toggle(customize)); if (customize == 0 && obj_statboard.button[0].show == 0) scr_Stats_Update(0); grabbed = 1; break;
         case 23: check = toggle(check); grabbed = 1; break;
@@ -273,7 +273,7 @@ if (busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 				break;
 	            case 7:
 					if (room == rm_Main) {
-						if (state == 0) {
+						if (global.state == 0) {
 							scr_toggle_stats_selection(0);
 							screen_transition(rm_Realms, -1, 30, choose(-1, 1, -2, 2), c_black);
 							play_sfx(sfx_back, 0, 0);
@@ -376,7 +376,7 @@ if (busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
         switch(f) {
 	        case 5:
 	            //previous character
-	            if (keyboard_check_pressed(global.keybind[1]) && state == 0 && room == rm_Main) {
+	            if (keyboard_check_pressed(global.keybind[1]) && global.state == 0 && room == rm_Main) {
 	                play_sfx(sfx_button1, 0, 0);
 	                global.chrsel--;
 	                if (global.chrsel < 0) {
@@ -392,7 +392,7 @@ if (busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 	        break;
 	        case 6:
 	            //next character
-	            if (keyboard_check_pressed(global.keybind[3]) && state == 0 && room == rm_Main) {
+	            if (keyboard_check_pressed(global.keybind[3]) && global.state == 0 && room == rm_Main) {
 	                play_sfx(sfx_button1, 0, 0);
 	                global.chrsel++;
 	                if (global.chrsel > CHRCOUNT - 1) {
@@ -408,9 +408,9 @@ if (busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 	        break;
 	        case 7:
 	            //back button
-	            if (room != rm_Menu && state == 0 && keyboard_check_pressed(vk_escape) && !instance_exists(obj_Transition)) {
+	            if (room != rm_Menu && global.state == 0 && keyboard_check_pressed(vk_escape) && !instance_exists(obj_Transition)) {
 	                if (room == rm_Main) {
-	                    if (state == 0) {
+	                    if (global.state == 0) {
 	                        scr_toggle_stats_selection(0);
 	                        screen_transition(rm_Realms, -1, 30, choose(-1, 1, -2, 2), c_black);
 	                        play_sfx(sfx_back, 0, 0);
@@ -425,10 +425,10 @@ if (busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 	        break;
 	        case 8:
 	            //pause button
-	            if (os_is_paused() && gpspeed != 0 && state == 1 && global.transition == 1) {
+	            if (os_is_paused() && global.gpspeed != 0 && global.state == 1 && global.transition == 1) {
 	                scr_Pause();
 	            }
-	            if (state == 1 && keyboard_check_pressed(vk_escape) && global.transition == 1) {
+	            if (global.state == 1 && keyboard_check_pressed(vk_escape) && global.transition == 1) {
 	                if (global.gpspeed_state != 0) {
 	                    scr_Pause();
 	                } else {
@@ -441,11 +441,11 @@ if (busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 	        break;
         }
         
-        if (((keyboard_check_pressed(vk_enter) || keyboard_check_pressed(vk_space)) || (place_meeting(mousepos(0, -1), mousepos(1, -1), obj_player) && mouse_check_button_pressed(mb_left))) && state == 0 && room == rm_Main) {
+        if (((keyboard_check_pressed(vk_enter) || keyboard_check_pressed(vk_space)) || (place_meeting(mousepos(0, -1), mousepos(1, -1), obj_player) && mouse_check_button_pressed(mb_left))) && global.state == 0 && room == rm_Main) {
             scr_toggle_stats_selection(0);
             play_sfx(sfx_run_start, 0, 0);
-            play_music(mus_rlm_christmas + realm - 1, sound_priority.music, 1);
-            state = 1; global.points = 0;
+            play_music(mus_rlm_christmas + global.realm - 1, sound_priority.music, 1);
+            global.state = 1; global.points = 0;
             randomize();
             mouse_clear(mb_left);
             mouse_clear(mb_right);

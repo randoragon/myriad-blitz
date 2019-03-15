@@ -8,17 +8,17 @@ if (global.loading == 1) { exit; }
 
 #region General Behavior
 
-if (gpspeed != 0) {
+if (global.gpspeed != 0) {
 	//startup resize
 	if (scale_stage == 0) {
-		if (scale_v < 0.4 * gpspeed) {
-			scale_v += 0.05 * sqr(gpspeed);
+		if (scale_v < 0.4 * global.gpspeed) {
+			scale_v += 0.05 * sqr(global.gpspeed);
 		} else {
 			scale_stage = 1;
 		}
 	} else if (scale_stage == 1) {
-		scale_v -= 0.1 * sqr(gpspeed);
-		if (image_xscale <= 1 * gpspeed) {
+		scale_v -= 0.1 * sqr(global.gpspeed);
+		if (image_xscale <= 1 * global.gpspeed) {
 			scale_v = 0;
 			image_scale(1, 1);
 			scale_stage = 2;
@@ -26,10 +26,10 @@ if (gpspeed != 0) {
 	}
 	if (scale_stage != 2) { image_scale(image_xscale + scale_v, image_yscale + scale_v); }
 
-	image_angle += rot * gpspeed;
+	image_angle += rot * global.gpspeed;
 
 	//spawning flow tiles
-	spawn_clock -= gpspeed;
+	spawn_clock -= global.gpspeed;
 	if (spawn_clock <= 0) {
 		with (instance_create(x, y, obj_emerald_ultimate_flow)) {
 			image_angle = (other.image_angle * 0.25 / 5) + (65 * other.rot_cycle) + irandom_range(-15, 15);
@@ -41,7 +41,7 @@ if (gpspeed != 0) {
 	if (spawn_clock % 3 == 0) { instance_create(x, y, obj_emerald_ultimate_force); }
 
 	//despawn
-	lifespan -= gpspeed;
+	lifespan -= global.gpspeed;
 	if (lifespan <= 0) {
 		//particle burst
 		part_type_edit_lt(global.player_part[0], "angle", 0, 360, choose(-1, 1) * 4, 0, 1);

@@ -11,6 +11,6 @@ event_inherited();
 image_speed     = 0;
 image_index     = 0;
 keyboard_string = "";
-depth           = gui_depth.slot_name - busy + 1;
+depth           = gui_depth.slot_name - global.busy + 1;
 
 #endregion

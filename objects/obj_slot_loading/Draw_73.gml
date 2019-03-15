@@ -28,13 +28,13 @@ if (phase == 0) {
         
         phase			= 1;
         global.loading	= 1;
-        state			= 1;
+        global.state			= 1;
         global.transition = 1;
         room_goto(rm_Main);
     }
 } else if (phase == 6) {
     if (++intro == 30) {
-        busy--;
+        global.busy--;
         instance_destroy();
     }
 }

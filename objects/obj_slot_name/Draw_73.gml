@@ -8,7 +8,7 @@ surface_set_target(GUI_SURFACE);
 
 #region Draw everything
 
-if (busy == start_busy) {
+if (global.busy == start_busy) {
 	draw_set_color(c_black);
 	draw_set_alpha(0.3);
 	gpu_set_alphatestref(0);

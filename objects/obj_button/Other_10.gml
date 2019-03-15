@@ -8,8 +8,8 @@ switch(f) {
 	case 2:  sprite_index=spr_button_bar; image_speed=0; image_blend=rgb(255,40,130); break;
 	case 3:  sprite_index=spr_button_bar; image_speed=0; image_blend=rgb(205,205,205); break;
 	case 4:  sprite_index=spr_button_bar; image_speed=0; image_blend=rgb(255,88,88); break;
-	case 5:  sprite_index=spr_button_arrows; image_index=0; image_speed=0; image_yscale=2; if state==1 image_alpha=0; depth=gui_depth.main_arrow; break;
-	case 6:  sprite_index=spr_button_arrows; image_index=1; image_speed=0; image_yscale=2; if state==1 image_alpha=0; depth=gui_depth.main_arrow; break;
+	case 5:  sprite_index=spr_button_arrows; image_index=0; image_speed=0; image_yscale=2; if global.state==1 image_alpha=0; depth=gui_depth.main_arrow; break;
+	case 6:  sprite_index=spr_button_arrows; image_index=1; image_speed=0; image_yscale=2; if global.state==1 image_alpha=0; depth=gui_depth.main_arrow; break;
 	case 7:  sprite_index=spr_button_back; image_index=0; image_speed=0; depth=gui_depth.back_button; break;
 	case 8:  sprite_index=spr_button_pause; image_index=0; image_speed=0; depth=gui_depth.pause_button; uni_center=shader_get_uniform(shd_clock_overlay,"u_vCenter"); uni_time=shader_get_uniform(shd_clock_overlay,"u_fTime"); break;
 	case 9:  sprite_index=spr_button_pause_bar; image_index=0; image_speed=0; prev_image_speed=0; image_blend=rgb(0,255,89); depth=gui_depth.pause_menu; break;

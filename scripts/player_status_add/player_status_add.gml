@@ -7,26 +7,26 @@
 // To erase a permanent status use 0 as duration AND set relative to 0.
 
 // check if the status effect already exists, in which case you're supposed to add to the timer, rather than creating a duplicate status effect
-if (ds_grid_value_exists(player_status_effects, 0, 0, 0, ds_grid_height(player_status_effects), argument[0])) {
-    var y_index = ds_grid_value_y(player_status_effects, 0, 0, 0, ds_grid_height(player_status_effects), argument[0]);
+if (ds_grid_value_exists(global.player_status_effects, 0, 0, 0, ds_grid_height(global.player_status_effects), argument[0])) {
+    var y_index = ds_grid_value_y(global.player_status_effects, 0, 0, 0, ds_grid_height(global.player_status_effects), argument[0]);
     if (argument[2]) {
-        ds_grid_add_region(player_status_effects, 1, y_index, 2, y_index, argument[1]);
+        ds_grid_add_region(global.player_status_effects, 1, y_index, 2, y_index, argument[1]);
     } else {
-        ds_grid_set_region(player_status_effects, 1, y_index, 2, y_index, argument[1]);
+        ds_grid_set_region(global.player_status_effects, 1, y_index, 2, y_index, argument[1]);
     }
     exit;
 }
 
 // make room for new status effect
-ds_grid_resize(player_status_effects, 3, ds_grid_height(player_status_effects) + 1);
+ds_grid_resize(global.player_status_effects, 3, ds_grid_height(global.player_status_effects) + 1);
 
 // move the old status effects one row lower, to make room for the new status effect
-ds_grid_set_grid_region(player_status_effects, player_status_effects, 0, 0, 2, ds_grid_height(player_status_effects) - 2, 0, 1);
+ds_grid_set_grid_region(global.player_status_effects, global.player_status_effects, 0, 0, 2, ds_grid_height(global.player_status_effects) - 2, 0, 1);
 
 // set the top row to the new status effect
-player_status_effects[# 0, 0] = argument[0];
-player_status_effects[# 1, 0] = argument[1];
-player_status_effects[# 2, 0] = argument[1];
+global.player_status_effects[# 0, 0] = argument[0];
+global.player_status_effects[# 1, 0] = argument[1];
+global.player_status_effects[# 2, 0] = argument[1];
 
 // update player status_effect array
 obj_player.status_effect[argument[0]] = true;

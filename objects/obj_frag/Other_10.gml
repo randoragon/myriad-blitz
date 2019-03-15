@@ -17,11 +17,11 @@ switch(f) {
 				image_speed  = 0;
 			    hspeed1      = choose(1, -1) * random(4);
 			    vspeed1      = random_range(-1, -3);
-			    if (gpspeed != 0) {
-			        vacc = 0.25 / gpspeed;
+			    if (global.gpspeed != 0) {
+			        vacc = 0.25 / global.gpspeed;
 			    } else {
-			        if (prev_gpspeed != 0) {
-			            vacc = 0.25 / prev_gpspeed;
+			        if (global.prev_gpspeed != 0) {
+			            vacc = 0.25 / global.prev_gpspeed;
 			        } else {
 			            vac  = 0.25;
 			        }

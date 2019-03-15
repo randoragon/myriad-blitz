@@ -9,6 +9,6 @@ if (global.loading == 1) { exit; }
 #region Update system
 
 if (part_system_count_lt(global.part_system[0]) > 0)
-	part_system_update_lt(global.part_system[0], gpspeed);
+	part_system_update_lt(global.part_system[0], global.gpspeed);
 
 #endregion

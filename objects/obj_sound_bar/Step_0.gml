@@ -2,7 +2,7 @@
 
 #region Dot interaction
 
-if (busy == 0) {
+if (global.busy == 0) {
 	if (grabbed == 1) {
 		val = (clamp(boss.x, x - 169, x + 169) - x + 169) * 100 / 338;
 		switch(f) {

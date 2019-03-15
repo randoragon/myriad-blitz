@@ -1,5 +1,5 @@
-/// @description scr_BackgroundUpdate(realm)
-/// @param realm
+/// @description scr_BackgroundUpdate(global.realm)
+/// @param global.realm
 
 switch (argument[0]) {
     case 0: // Menu

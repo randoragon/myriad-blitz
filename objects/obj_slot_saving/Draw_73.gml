@@ -22,7 +22,7 @@ if (phase == 0) {
     }
 } else if (phase == 5) {
     if (++intro == 30) {
-        busy--;
+        global.busy--;
         instance_destroy();
     }
 }

@@ -1,8 +1,8 @@
 /// @description Behavior
 
-#region Lock depending on busy state
+#region Lock depending on global.busy global.state
 
-if (obj_slot_load.start_busy != busy) { exit; }
+if (obj_slot_load.start_busy != global.busy) { exit; }
 
 #endregion
 

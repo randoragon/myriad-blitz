@@ -14,10 +14,10 @@ event_inherited();
 
 #region Enemy Behavior
 
-if (gpspeed != 0) {
+if (global.gpspeed != 0) {
     //INTRO
     if (intro == 1 && (x > CANVAS_XEND - 10 - (0.5 * sprite_width) || y > CANVAS_YEND - (sprite_height * 0.5) - 10 || y < CANVAS_Y + 10 + (0.5 * sprite_height))) {
-        x -= 0.75 * gpspeed;
+        x -= 0.75 * global.gpspeed;
         if (y > CANVAS_YEND - (sprite_height * 0.5) - 10 - 1) {
             y = max(CANVAS_YEND - (sprite_height * 0.5) - 10 - 1, y - 0.75);
         }
@@ -41,7 +41,7 @@ if (gpspeed != 0) {
 	                direction = point_direction(x, y, xx, yy);
 	                speed1    = distance_to_point(xx, yy) / cooldown;
 	            } else {
-	                cooldown = max(cooldown - gpspeed, 0);
+	                cooldown = max(cooldown - global.gpspeed, 0);
 	            }
 				
 	            if (cooldown == 0) {
@@ -61,7 +61,7 @@ if (gpspeed != 0) {
 	                direction = point_direction(x, y, xx, yy);
 	                speed1    = distance_to_point(xx, yy) / cooldown;
 	            } else {
-	                cooldown = max(cooldown - gpspeed ,0);
+	                cooldown = max(cooldown - global.gpspeed ,0);
 	            }
 				
 	            if (cooldown == 0) {
@@ -85,7 +85,7 @@ if (gpspeed != 0) {
 					direction = point_direction(x, y, xx, yy);
 	                speed1    = distance_to_point(xx, yy) / cooldown;
 	            } else {
-	                cooldown = max(cooldown - gpspeed, 0);
+	                cooldown = max(cooldown - global.gpspeed, 0);
 	            }
 				
 	            if (cooldown == 0) {
@@ -96,7 +96,7 @@ if (gpspeed != 0) {
 	                    hspeed1  = irandom_range(-3, -8);
 	                } else {
 	                    repeat (irandom_range(1, 3)) {
-	                        play_sfx(sfx_snowman_shoot, sound_priority.enemy_shoot, 0, sound_gpspeed * 100);
+	                        play_sfx(sfx_snowman_shoot, sound_priority.enemy_shoot, 0, global.sound_gpspeed * 100);
 	                        spawn_bullet(x - 20, y + 16, obj_eprojectile, 0, 0, -1, id);
 	                    }
 	                }
@@ -110,7 +110,7 @@ if (gpspeed != 0) {
 	                direction = point_direction(x, y, xx, yy);
 	                speed1    = distance_to_point(xx, yy) / cooldown;
 	            } else {
-	                cooldown = max(cooldown - gpspeed, 0);
+	                cooldown = max(cooldown - global.gpspeed, 0);
 	            }
 				
 	            if (cooldown == 0) {
@@ -121,32 +121,32 @@ if (gpspeed != 0) {
 	                    hspeed1  = irandom_range(-7, -16);
 	                } else {
 	                    repeat (irandom_range(2, 4)) {
-	                        play_sfx(sfx_gingerbread_man_shoot, sound_priority.enemy_shoot, 0, sound_gpspeed * 100);
+	                        play_sfx(sfx_gingerbread_man_shoot, sound_priority.enemy_shoot, 0, global.sound_gpspeed * 100);
 	                        spawn_bullet(x, y, obj_eprojectile, 1, 0, -1, id);
 	                    }
 	                }
 	            }
 	        break;
 	        case 4: //Reindeer
-	            if (irandom(90) == 0 && gpstep >= 1) {
-	                play_sfx(sfx_reindeer_shoot, sound_priority.enemy_shoot, 0, sound_gpspeed * 100);
+	            if (irandom(90) == 0 && global.gpstep >= 1) {
+	                play_sfx(sfx_reindeer_shoot, sound_priority.enemy_shoot, 0, global.sound_gpspeed * 100);
 	                spawn_bullet(x - 41, y - 21, obj_eprojectile, 2, 0, -1, id);
 	            }
-	            vspeed1 = 2 * linsin(5 * (gptime - time_mark));
+	            vspeed1 = 2 * linsin(5 * (global.gptime - time_mark));
         }
     }
     
     // getting sucked in by emerald's current crush
-        if (instance_exists(obj_emerald_ultimate) && gpspeed != 0) {
+        if (instance_exists(obj_emerald_ultimate) && global.gpspeed != 0) {
         var prev_dir = direction;
-        speed1       = home(speed1, 10, 0.4 * gpspeed, 0);
-        direction    = home(direction, point_direction(x, y, obj_emerald_ultimate.x, obj_emerald_ultimate.y), speed1 * 2 * gpspeed, 1);
-        image_angle += clamp(direction - prev_dir, -5 * gpspeed, 5 * gpspeed);
+        speed1       = home(speed1, 10, 0.4 * global.gpspeed, 0);
+        direction    = home(direction, point_direction(x, y, obj_emerald_ultimate.x, obj_emerald_ultimate.y), speed1 * 2 * global.gpspeed, 1);
+        image_angle += clamp(direction - prev_dir, -5 * global.gpspeed, 5 * global.gpspeed);
         if (hspeed1 != 0) {
-            hspeed1 = home(hspeed1, 0, 0.05 * gpspeed, 0);
+            hspeed1 = home(hspeed1, 0, 0.05 * global.gpspeed, 0);
         }
         if (vspeed1 != 0) {
-            vspeed1 = home(vspeed1, 0, 0.05 * gpspeed, 0);
+            vspeed1 = home(vspeed1, 0, 0.05 * global.gpspeed, 0);
         }
     }
 }
@@ -180,15 +180,15 @@ if (hp <= 0) {
 	if (!obj_player.status_effect[8]) {
 		intro = 2;
 	} else {
-		image_alpha -= 0.4 * gpspeed;
+		image_alpha -= 0.4 * global.gpspeed;
 		if (image_alpha <= 0) { instance_destroy(); }
 	}
 }
 
-if (gpspeed != 0 && intro == 2 && image_alpha > 0) || state == 2 {
+if (global.gpspeed != 0 && intro == 2 && image_alpha > 0) || global.state == 2 {
 	image_alpha = 0;
 	explode(x, y, image_xscale, 1);
-	if (state != 2) {
+	if (global.state != 2) {
 		event_perform(ev_other, ev_user1);
 		if (ds_map_exists(loot, "ultimate")) {
 			repeat (loot[? "ultimate"]) {

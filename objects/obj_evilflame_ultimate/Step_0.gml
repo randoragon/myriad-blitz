@@ -6,7 +6,7 @@ if (global.loading == 1) { exit; }
 
 #endregion
 
-if (gpspeed != 0) {
+if (global.gpspeed != 0) {
 	#region General behavior & particles
 	
     x =  player.x;
@@ -15,7 +15,7 @@ if (gpspeed != 0) {
     image_index =  player.image_index;
     inv -= (inv > 0);
 	
-    if (state != 2 && real_step()) {
+    if (global.state != 2 && real_step()) {
         var xoffset = -22; var yoffset = -1;											// this is the distance from the center of the sprite to the point from which the particles are supposed to pour out
         var dis     = sqrt(sqr(xoffset * image_xscale) + sqr(yoffset * image_yscale));  // this is to calculate distance from the center of the sprite to the point from which the particles are supposed to pour out
         var ang     = point_direction(0, 0, xoffset, yoffset) + image_angle;			// this is the angle between the center of the sprite and the particle point, player tilt included
@@ -25,7 +25,7 @@ if (gpspeed != 0) {
         part_type_spawn_lt(global.part_system[6], global.ultimate_part[0], 4, x + lengthdir_x(dis, ang), y + lengthdir_y(dis, ang), x + lengthdir_x(dis, ang), y + lengthdir_y(dis, ang), "line", "linear", 1.5);
     }
 
-	if (hpmark != hp) { hpmark = home(hpmark, hp, hpmark_v * gpspeed, 0); } //this is for both Gameplay bars and GUI bars
+	if (hpmark != hp) { hpmark = home(hpmark, hp, hpmark_v * global.gpspeed, 0); } //this is for both Gameplay bars and GUI bars
 
 	#endregion
 
@@ -42,14 +42,14 @@ if (gpspeed != 0) {
 				sprite_index = spr_evilflame_ultimate_shooting;
 			}
 			if (shot <= 0) {
-				play_sfx(sfx_evilflame_shoot, sound_priority.player_shoot, 0, sound_gpspeed * 100);
+				play_sfx(sfx_evilflame_shoot, sound_priority.player_shoot, 0, global.sound_gpspeed * 100);
 				var xoffset = 32 * image_xscale;
 				var yoffset = -7 * image_yscale;
 				var angle   = image_angle + point_direction(0, 0, xoffset, yoffset);
 				angle      %= 360;
 				var l       = sqrt(sqr(xoffset) + sqr(yoffset));
 				spawn_bullet(x + lengthdir_x(l, angle), y + lengthdir_y(l, angle), obj_projectile, 0, 1, -1, player);
-				shot += ceil((60 / player.sspd) / gpspeed);
+				shot += ceil((60 / player.sspd) / global.gpspeed);
 			} else {
 				shot--;
 			}
@@ -66,8 +66,8 @@ if (gpspeed != 0) {
 	}
 
 	//charge
-	if (state == 1 && gpspeed != 0) {
-		if (mouse_check_button(mb_right) && state == 1) {
+	if (global.state == 1 && global.gpspeed != 0) {
+		if (mouse_check_button(mb_right) && global.state == 1) {
 			bar_opacity[2] = 5;
 			if (discharge == 0) {
 				if (player.evilflame_sprite_swap) {
@@ -75,9 +75,9 @@ if (gpspeed != 0) {
 				} else {
 					if (sprite_index != spr_evilflame_ultimate_charging) { sprite_index = spr_evilflame_ultimate_charging; }
 				}
-				charge = min(charge + gpspeed, ctime);
+				charge = min(charge + global.gpspeed, ctime);
 				if (!audio_is_playing(sfx_charging)) {
-					play_sfx(sfx_charging, sound_priority.player_charging, 0, sound_gpspeed * 100);
+					play_sfx(sfx_charging, sound_priority.player_charging, 0, global.sound_gpspeed * 100);
 				}
 			}
 		}
@@ -85,7 +85,7 @@ if (gpspeed != 0) {
 		if (mouse_check_button(mb_right) && charge > 0) {
 			if (charge >= ctime) {
 				cb = 1;
-				play_sfx(sfx_evilflame_charge_shot, sound_priority.player_charge_shot, 0, sound_gpspeed * 100);
+				play_sfx(sfx_evilflame_charge_shot, sound_priority.player_charge_shot, 0, global.sound_gpspeed * 100);
 				charge = 0;
 				if (artcharge == 0) {
 					discharge = ccooldown;
@@ -112,14 +112,14 @@ if (gpspeed != 0) {
 			with (player) { knockback(10, 180 + image_angle, 1); }
 			spawn_bullet(x + 20, y, obj_charge, 0, 1, -1, player);
 		}
-		discharge = max(0, discharge - gpspeed);
+		discharge = max(0, discharge - global.gpspeed);
 	}
 
 	#endregion
 
 	#region Presents & taking damage
 
-	if (state == 1) {
+	if (global.state == 1) {
 		if (place_meeting(x, y, obj_present) && instance_place(x, y, obj_present).picked == 0) {
 			with (instance_place(x,y,obj_present)) {
 				switch(f) {
@@ -141,8 +141,8 @@ if (gpspeed != 0) {
 	    inv -= (inv > 0);
 	    if ((place_meeting(x, y, obj_enemy) || place_meeting(x, y, obj_eprojectile)) && hp > 0 && inv == 0) {
 			
-		    inv = round(invtime / gpspeed);
-			play_sfx(sfx_player_hurt, sound_priority.player_hurt, 0, sound_gpspeed * 100);
+		    inv = round(invtime / global.gpspeed);
+			play_sfx(sfx_player_hurt, sound_priority.player_hurt, 0, global.sound_gpspeed * 100);
     
 		    //contact damage
 		    if (place_meeting(x, y, obj_enemy) && (!place_meeting(x, y, obj_eprojectile) || (distance_to_object(instance_place(x, y, obj_eprojectile)) > distance_to_object(instance_place(x, y, obj_enemy)))) && instance_place(x, y, obj_enemy).touchable == 1) {

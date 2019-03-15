@@ -2,7 +2,7 @@
 
 #region Startup code
 
-sprite_index = spr_christmas_statboard + realm - 1;
+sprite_index = spr_christmas_statboard + global.realm - 1;
 cut1[image_number - 1] = -4;
 cut2[image_number - 1] = -4;
 mysurface = surface_create(sprite_get_width(sprite_index), sprite_get_height(sprite_index));

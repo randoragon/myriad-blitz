@@ -14,9 +14,9 @@ draw_self();
 
 #region Draw text
 
-if (busy == 0 && mouse_wheel_up() && place_meeting(x, y, boss)) {
+if (global.busy == 0 && mouse_wheel_up() && place_meeting(x, y, boss)) {
     scrollv = max(scrollv + 6, 6);
-} else if (busy == 0 && mouse_wheel_down() && place_meeting(x, y, boss)) {
+} else if (global.busy == 0 && mouse_wheel_down() && place_meeting(x, y, boss)) {
     scrollv = min(scrollv - 6,  -6);
 } else {
     scrollv = home(scrollv, 0, 1, 0);

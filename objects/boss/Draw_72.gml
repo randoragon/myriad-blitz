@@ -11,16 +11,16 @@ if (!global.loading && room != rm_Startup) {
     if (room != rm_Startup && global.shader_conditions == 0) {
         for (var i = 0; i < 8; i++) {
             if(__background_get( e__BG.Index, i )==-1) { break; }
-            __background_set( e__BG.X, i, __background_get( e__BG.X, i ) + (gpspeed*global.parallax_speed[i,0]) );
-            __background_set( e__BG.Y, i, __background_get( e__BG.Y, i ) + (gpspeed*global.parallax_speed[i,1]) );
+            __background_set( e__BG.X, i, __background_get( e__BG.X, i ) + (global.gpspeed*global.parallax_speed[i,0]) );
+            __background_set( e__BG.Y, i, __background_get( e__BG.Y, i ) + (global.gpspeed*global.parallax_speed[i,1]) );
             draw_background_tiled(__background_get( e__BG.Index, i ),__background_get( e__BG.X, i ),__background_get( e__BG.Y, i ));
         }
     } else {
         shd_background_effect_set(global.shader_conditions);
         for(var i = 0; i < 8; i++) {
             if(__background_get( e__BG.Index, i ) == -1) { break; }
-            __background_set( e__BG.X, i, __background_get( e__BG.X, i ) + (gpspeed*global.parallax_speed[i,0]) );
-            __background_set( e__BG.Y, i, __background_get( e__BG.Y, i ) + (gpspeed*global.parallax_speed[i,1]) );
+            __background_set( e__BG.X, i, __background_get( e__BG.X, i ) + (global.gpspeed*global.parallax_speed[i,0]) );
+            __background_set( e__BG.Y, i, __background_get( e__BG.Y, i ) + (global.gpspeed*global.parallax_speed[i,1]) );
             draw_background_tiled(__background_get( e__BG.Index, i ),__background_get( e__BG.X, i ),__background_get( e__BG.Y, i ));
         }
         shader_reset();

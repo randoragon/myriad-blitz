@@ -57,8 +57,8 @@ if (time_clock <= 0) {
     instance_destroy();
 }
 
-if (gpspeed != 0) {
-    time_clock -= gpspeed / rate;
+if (global.gpspeed != 0) {
+    time_clock -= global.gpspeed / rate;
 }
 
 #endregion

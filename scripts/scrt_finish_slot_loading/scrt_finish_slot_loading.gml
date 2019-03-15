@@ -2,6 +2,6 @@
 
 play_sfx(sfx_run_start, 0, 0);
 global.loading = 0;
-busy--;
+global.busy--;
 wipe(obj_slot_loading);
 draw_texture_flush();

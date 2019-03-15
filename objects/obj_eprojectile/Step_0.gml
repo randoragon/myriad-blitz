@@ -8,7 +8,7 @@ if (global.loading == 1) { exit; }
 
 #region Projectile behavior
 
-lifespan -= gpspeed;
+lifespan -= global.gpspeed;
 var is_out_of_border = y > (CANVAS_YEND + sprite_yoffset) || (y < -sprite_height + sprite_yoffset) || (x < -sprite_width + sprite_xoffset);
 if (lifespan <= 0 || is_out_of_border) {
 	instance_destroy();
@@ -16,8 +16,8 @@ if (lifespan <= 0 || is_out_of_border) {
 
 switch(f) {
 	case 0:
-		if (!instance_exists(obj_emerald_ultimate)) { vspeed1 += acc * sqr(gpspeed); }
-		image_angle += rot * gpspeed;
+		if (!instance_exists(obj_emerald_ultimate)) { vspeed1 += acc * sqr(global.gpspeed); }
+		image_angle += rot * global.gpspeed;
 	break;
 }
 
@@ -31,7 +31,7 @@ if (instance_exists(obj_emerald_ultimate) && f != 2) {
 		hspeed1 = 0;
 		vspeed1 = 0;
 	}
-	direction   = home(direction, point_direction(x, y, obj_emerald_ultimate.x, obj_emerald_ultimate.y), clamp((400 - distance_to_point(obj_emerald_ultimate.x, obj_emerald_ultimate.y)) * 0.25, 1, 10) * gpspeed, 1);
+	direction   = home(direction, point_direction(x, y, obj_emerald_ultimate.x, obj_emerald_ultimate.y), clamp((400 - distance_to_point(obj_emerald_ultimate.x, obj_emerald_ultimate.y)) * 0.25, 1, 10) * global.gpspeed, 1);
 	image_angle = direction;
 }
 

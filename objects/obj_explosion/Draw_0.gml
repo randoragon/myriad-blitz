@@ -20,7 +20,7 @@ if (global.shader_conditions == 0) {
 } else {
     shd_sprite_effect_set(global.shader_conditions);
     if (global.shader_conditions >= 4 && global.shader_conditions <= 7) {
-        if (gpspeed != 0) {
+        if (global.gpspeed != 0) {
             draw_afterimage(10, 0.1, 1, 0, 6);
         } else {
             draw_afterimage_pause(0);

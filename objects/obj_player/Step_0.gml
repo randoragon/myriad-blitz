@@ -85,8 +85,8 @@ if (status_effect[3]) {
 
 //status: current crush
 if (status_effect[7]) {
-    if (gpspeed != 0 && !audio_is_playing(sfx_emerald_ultimate_loop)) {
-        play_sfx(sfx_emerald_ultimate_loop, sound_priority.emerald_ultimate_loop, 0, sound_gpspeed * 100);
+    if (global.gpspeed != 0 && !audio_is_playing(sfx_emerald_ultimate_loop)) {
+        play_sfx(sfx_emerald_ultimate_loop, sound_priority.emerald_ultimate_loop, 0, global.sound_gpspeed * 100);
     }
 }
 
@@ -97,7 +97,7 @@ if (status_effect[8]) {
     acc_factor        *= 4;
     counteracc_factor *= 4;
     invtime_factor     = 0;
-    if (gpspeed != 0 && !audio_is_playing(sfx_scootomik_ultimate_loop)) {
+    if (global.gpspeed != 0 && !audio_is_playing(sfx_scootomik_ultimate_loop)) {
         play_sfx(sfx_scootomik_ultimate_loop, sound_priority.scootomik_ultimate_loop, 0, 100);
     }
 }
@@ -151,7 +151,7 @@ invtime    =global.invtime * invtime_factor;
 
 #region Focus mode
 
-if (room == rm_Main && gpspeed != 0 && state == 1 && !status_effect[4] && !status_effect[8] && !status_effect[10]) {
+if (room == rm_Main && global.gpspeed != 0 && global.state == 1 && !status_effect[4] && !status_effect[8] && !status_effect[10]) {
 	if (keyboard_check(global.keybind[5])) {
 		bar_opacity[1] = 5;
 		if (instance_exists(obj_evilflame_ultimate)) {
@@ -167,14 +167,14 @@ if (room == rm_Main && gpspeed != 0 && state == 1 && !status_effect[4] && !statu
 		if (global.gpspeed_focus > 0.25) {
 			global.gpspeed_focus = 0.25;
 		} else {
-			focus = home(focus, 0, gpspeed / global.gpspeed_focus, 0);
+			focus = home(focus, 0, global.gpspeed / global.gpspeed_focus, 0);
 		}
 	} else if (focus_state == 2) {
 		if (global.gpspeed_focus < 1) {
-			global.gpspeed_focus = home(global.gpspeed_focus, 1, 0.05 * gpspeed / global.gpspeed_focus, 0);
+			global.gpspeed_focus = home(global.gpspeed_focus, 1, 0.05 * global.gpspeed / global.gpspeed_focus, 0);
 		} else { focus_state=0; }
 	} else if (focus_state == 0) {
-		focus = home(focus, foctime, 0.1 * gpspeed / global.gpspeed_focus, 0);
+		focus = home(focus, foctime, 0.1 * global.gpspeed / global.gpspeed_focus, 0);
 	}
 	
 	if (focus <= 0 && focus_state == 1)
@@ -191,7 +191,7 @@ global.gpspeed_focus=1;
 
 if (hpmark != hp) {
 	//this is for both Gameplay bars and GUI bars
-	hpmark = home(hpmark, hp, hpmark_v * gpspeed, 0);
+	hpmark = home(hpmark, hp, hpmark_v * global.gpspeed, 0);
 }
 ultblink    -= (ultblink    > 0);
 flash_clock -= (flash_clock > 0);
@@ -202,13 +202,13 @@ flash_clock -= (flash_clock > 0);
 
 image_scale(2 - global.transition, 2 - global.transition);
 var gpspd;
-if (status_effect[8] && gpspeed != 0) {
-	gpspd = gpspeed / global.gpspeed_ultimate;
+if (status_effect[8] && global.gpspeed != 0) {
+	gpspd = global.gpspeed / global.gpspeed_ultimate;
 } else {
-    gpspd = gpspeed;
+    gpspd = global.gpspeed;
 }
 
-if (state == 1 && gpspd != 0) {
+if (global.state == 1 && gpspd != 0) {
     if (keyboard_check(global.keybind[0])) {
         yv = clamp(yv - (acc * sqr(gpspd)), -spd * gpspd, spd * gpspd);
     }
@@ -257,7 +257,7 @@ if (state == 1 && gpspd != 0) {
         image_angle = -2 * yv / gpspd;
     }
 
-    gpspd = gpspeed;
+    gpspd = global.gpspeed;
     var charge_sprite_lock = ((charge > 0 && artcharge == 0) || ((global.chrsel == 1 || global.chrsel == 2) && instance_exists(obj_charge)));
     var can_shoot = (discharge > 0 || !mouse_check_button(mb_right)) && !charge_sprite_lock && !((global.chrsel == 1) && status_effect[2]);
     if (can_shoot) {
@@ -276,7 +276,7 @@ if (state == 1 && gpspd != 0) {
                 sprite_index = spr_evilflame_shooting + global.chrsel;
             }
             if (shot <= 0) {
-                play_sfx(sfx_evilflame_shoot + (global.chrsel * 4), sound_priority.player_shoot, 0, sound_gpspeed * 100);
+                play_sfx(sfx_evilflame_shoot + (global.chrsel * 4), sound_priority.player_shoot, 0, global.sound_gpspeed * 100);
 				var xoffset, yoffset, xoffset2, yoffset2;
                 switch(global.chrsel)
                 {
@@ -339,7 +339,7 @@ if (state == 1 && gpspd != 0) {
 
 #region Wrapping movement
 
-if (global.chrsel == 2 && state == 1) {
+if (global.chrsel == 2 && global.state == 1) {
 	
     //teleport the player to the other side
     if (x + sprite_width-sprite_xoffset > CANVAS_XEND + (sprite_width / 2)) {
@@ -390,7 +390,7 @@ if (global.chrsel == 2 && state == 1) {
 
 #region Player particles
 
-if (gpspeed != 0 && state != 2 && real_step()) {
+if (global.gpspeed != 0 && global.state != 2 && real_step()) {
 	switch(global.chrsel) {
 		case 0:
 			var xoffset = -22; var yoffset = 1 - (2 * status_effect[9]);                   // this is the distance from the center of the sprite to the point from which the particles are supposed to pour out
@@ -410,12 +410,12 @@ if (gpspeed != 0 && state != 2 && real_step()) {
 
 #region Charge
 
-if (state==1 && gpspeed!=0) {
+if (global.state==1 && global.gpspeed!=0) {
 	if (artcharge == 1) { charge = ctime };
 	
 	var does_emerald_laser_exist = (global.chrsel == 1 && instance_exists(obj_charge));
 	var is_spell_dried = (global.chrsel == 1 && status_effect[2]);
-	if (mouse_check_button(mb_right) && state == 1 && !does_emerald_laser_exist && !is_spell_dried) {
+	if (mouse_check_button(mb_right) && global.state == 1 && !does_emerald_laser_exist && !is_spell_dried) {
 		//charging
 		bar_opacity[2] = 5;
 		if (discharge == 0) {
@@ -425,9 +425,9 @@ if (state==1 && gpspeed!=0) {
 				sprite_index = spr_evilflame_fury_charging;
 			} else if (sprite_index < spr_evilflame_charging)
 				sprite_index = spr_evilflame_charging + global.chrsel;
-			charge = min(charge + gpspeed, ctime);
+			charge = min(charge + global.gpspeed, ctime);
 			if (!audio_is_playing(sfx_charging))
-				play_sfx(sfx_charging, sound_priority.player_charging, 0, sound_gpspeed * 100);
+				play_sfx(sfx_charging, sound_priority.player_charging, 0, global.sound_gpspeed * 100);
 		}
 	}
 
@@ -436,7 +436,7 @@ if (state==1 && gpspeed!=0) {
 	if (mouse_check_button(mb_right) && charge > 0 && !does_emerald_laser_exist) {
 		if (charge >= ctime) {
 			cb = 1;
-			play_sfx(sfx_evilflame_charge_shot + (global.chrsel * 4), sound_priority.player_charge_shot, 0, sound_gpspeed * 100);
+			play_sfx(sfx_evilflame_charge_shot + (global.chrsel * 4), sound_priority.player_charge_shot, 0, global.sound_gpspeed * 100);
 			charge = 0;
 			if (artcharge == 0) {
 				discharge = ccooldown;
@@ -448,7 +448,7 @@ if (state==1 && gpspeed!=0) {
 	}
 
 	//resetting charging progress
-	if (charge > 0 && !mouse_check_button(mb_right) && gpspeed != 0 && charge < ctime) {
+	if (charge > 0 && !mouse_check_button(mb_right) && global.gpspeed != 0 && charge < ctime) {
 		charge = 0;
 		bar_opacity[2] = 0;
 		if (evilflame_sprite_swap)
@@ -487,7 +487,7 @@ if (state==1 && gpspeed!=0) {
 		}
 	}
 
-	discharge = max(0, discharge - gpspeed);
+	discharge = max(0, discharge - global.gpspeed);
 }
 
 #endregion
@@ -500,7 +500,7 @@ var is_evilflame_ultimate = (global.chrsel == 0 && (instance_exists(obj_evilflam
 var is_emerald_ultimate   = (global.chrsel == 1 && instance_exists(obj_emerald_ultimate));
 var is_scootomik_ultimate = (global.chrsel == 2 && obj_player.status_effect[8]);
 var are_all_ultimates_off = !is_evilflame_ultimate && !is_emerald_ultimate && !is_scootomik_ultimate;
-if (keyboard_check_pressed(global.keybind[6]) && ultcount > 0 && !is_ultimate_cooldown && are_all_ultimates_off && state == 1 && gpspeed != 0 && !instance_exists(obj_ultimate_activation)) {
+if (keyboard_check_pressed(global.keybind[6]) && ultcount > 0 && !is_ultimate_cooldown && are_all_ultimates_off && global.state == 1 && global.gpspeed != 0 && !instance_exists(obj_ultimate_activation)) {
     ultcount--;
     instance_create(0, 0, obj_ultimate_activation);
     flash_clock = 50;
@@ -555,7 +555,7 @@ if (flash_clock == 40) {
 #endregion
 
 #region Presents
-if (state == 1) {
+if (global.state == 1) {
 	if (place_meeting(x, y, obj_present) && instance_place(x, y, obj_present).picked == 0) {
 		with(instance_place(x, y, obj_present)) {
 			switch(f) {
@@ -579,16 +579,16 @@ if (state == 1) {
 
 #region Contact & eprojectile damage (helper also)
 
-if (state == 1) {
-    if (inv > 0 && gpspeed != 0) {
+if (global.state == 1) {
+    if (inv > 0 && global.gpspeed != 0) {
         inv = max(inv - 1, 0);
     }
     if ((global.chrsel == 2 && instance_exists(obj_charge) || instance_exists(obj_ultimate_activation)) && inv <= 0) {
         inv = 1;
     }
     
-    if ((place_meeting(x, y, obj_enemy) || place_meeting(x, y, obj_eprojectile)) && hp > 0 && inv == 0 && gpspeed != 0) {
-        inv = round(invtime / gpspeed);
+    if ((place_meeting(x, y, obj_enemy) || place_meeting(x, y, obj_eprojectile)) && hp > 0 && inv == 0 && global.gpspeed != 0) {
+        inv = round(invtime / global.gpspeed);
         //contact damage
         if (place_meeting(x, y, obj_enemy) && (!place_meeting(x, y, obj_eprojectile) || (distance_to_object(instance_place(x, y, obj_eprojectile)) > distance_to_object(instance_place(x, y, obj_enemy)))) && instance_place(x, y, obj_enemy).touchable == 1 && instance_place(x, y, obj_enemy).hp > 0) {
             var enemy = instance_place(x, y, obj_enemy);
@@ -600,9 +600,9 @@ if (state == 1) {
                 knockback((100 - bkbres) * enemy.bkb / 1000, point_direction(enemy.x, enemy.y, x, y), counteracc);
                 indicate(x, y, display_damage, 2, rgb(255, 170, 0), c_red);
                 if (hp > 0) {
-                    play_sfx(sfx_player_hurt,  sound_priority.player_hurt,  0, sound_gpspeed * 100);
+                    play_sfx(sfx_player_hurt,  sound_priority.player_hurt,  0, global.sound_gpspeed * 100);
                 } else {
-                    play_sfx(sfx_player_death, sound_priority.player_death, 0, sound_gpspeed * 100);
+                    play_sfx(sfx_player_death, sound_priority.player_death, 0, global.sound_gpspeed * 100);
                 }
                 with(enemy) {
                     var damage = calculate_damage(other.bdmg, other.bpen, bdef);
@@ -615,7 +615,7 @@ if (state == 1) {
                     }
                 }
             } else { //split the enemy in two
-                if (abs(xv) + abs(yv) >= spd * gpspeed * 0.8) {
+                if (abs(xv) + abs(yv) >= spd * global.gpspeed * 0.8) {
                     scr_EnemySplit(enemy, point_direction(0, 0, xv, yv));
                     enemy.hp = 0;
                     with(enemy) {
@@ -638,9 +638,9 @@ if (state == 1) {
                 knockback((100 - pkbres) * projectile.pkb / 1000, point_direction(projectile.x, projectile.y, x, y), counteracc);
                 indicate(projectile.x, projectile.y, display_damage, 2, rgb(255, 170, 0), c_red);
                 if (hp > 0) {
-                    play_sfx(sfx_player_hurt,  sound_priority.player_hurt,  0, sound_gpspeed * 100);
+                    play_sfx(sfx_player_hurt,  sound_priority.player_hurt,  0, global.sound_gpspeed * 100);
                 } else {
-                    play_sfx(sfx_player_death, sound_priority.player_death, 0, sound_gpspeed * 100);
+                    play_sfx(sfx_player_death, sound_priority.player_death, 0, global.sound_gpspeed * 100);
                 }
             }
             with (projectile) {
@@ -653,8 +653,8 @@ if (state == 1) {
     //////////HELPER ALTERNATIVE
     if (instance_exists(obj_wrap_helper) && instance_exists(helper)) {
         var hx = helper.x; var hy = helper.y;
-        if ((place_meeting(hx, hy, obj_enemy) || place_meeting(hx, hy, obj_eprojectile)) && hp > 0 && inv == 0 && gpspeed != 0) {
-            inv = round(invtime / gpspeed); play_sfx(sfx_player_hurt, 0, 0);
+        if ((place_meeting(hx, hy, obj_enemy) || place_meeting(hx, hy, obj_eprojectile)) && hp > 0 && inv == 0 && global.gpspeed != 0) {
+            inv = round(invtime / global.gpspeed); play_sfx(sfx_player_hurt, 0, 0);
             //helper contact damage
             if (place_meeting(hx, hy, obj_enemy) && (!place_meeting(hx, hy, obj_eprojectile) || (distance_to_object(instance_place(hx, hy, obj_eprojectile)) > distance_to_object(instance_place(hx, hy, obj_enemy)))) && instance_place(hx, hy, obj_enemy).touchable == 1 && instance_place(hx, hy, obj_enemy).hp > 0) {
                 var enemy = instance_place(hx, hy, obj_enemy);
@@ -666,9 +666,9 @@ if (state == 1) {
                     knockback((100 - bkbres) * enemy.bkb / 1000, point_direction(enemy.x, enemy.y, hx, hy), counteracc);
                     indicate(hx, hy, display_damage, 2, rgb(255, 170, 0), c_red);
                     if (hp > 0) {
-                        play_sfx(sfx_player_hurt,  sound_priority.player_hurt,  0, sound_gpspeed * 100);
+                        play_sfx(sfx_player_hurt,  sound_priority.player_hurt,  0, global.sound_gpspeed * 100);
                     } else {
-                        play_sfx(sfx_player_death, sound_priority.player_death, 0, sound_gpspeed * 100);
+                        play_sfx(sfx_player_death, sound_priority.player_death, 0, global.sound_gpspeed * 100);
                     }
                     with (enemy) {
                         var damage = calculate_damage(other.bdmg, other.bpen, bdef);
@@ -681,7 +681,7 @@ if (state == 1) {
                         }
                     }
                 } else { //split the enemy in two
-                    if (abs(xv) + abs(yv) >= spd * gpspeed * 0.8) {
+                    if (abs(xv) + abs(yv) >= spd * global.gpspeed * 0.8) {
                         scr_EnemySplit(enemy, point_direction(0, 0, xv, yv));
                         enemy.hp = 0;
                         with(enemy) {
@@ -704,9 +704,9 @@ if (state == 1) {
                     knockback((100 - pkbres) * projectile.pkb / 1000, point_direction(projectile.x, projectile.y, hx, hy), counteracc);
                     indicate(projectile.x, projectile.y, display_damage, 2, rgb(255, 170, 0), c_red);
                     if (hp > 0) {
-                        play_sfx(sfx_player_hurt,  sound_priority.player_hurt,  0, sound_gpspeed * 100);
+                        play_sfx(sfx_player_hurt,  sound_priority.player_hurt,  0, global.sound_gpspeed * 100);
                     } else {
-                        play_sfx(sfx_player_death, sound_priority.player_death, 0, sound_gpspeed * 100);
+                        play_sfx(sfx_player_death, sound_priority.player_death, 0, global.sound_gpspeed * 100);
                     }
                 }
                 with (projectile) {
@@ -774,7 +774,7 @@ if (hp <= 0 && image_alpha == 1) {
 			with(helper) { instance_create(x,y,obj_explosion); instance_destroy(); }
 		}
 		instance_create(x, y, obj_explosion);
-		state = 2;
+		global.state = 2;
 		global.gpspeed_state = 0.1;
 	}
 }

@@ -2,7 +2,7 @@
 
 #region Startup code
 
-sprite_index = spr_christmas_lore + realm - 1;
+sprite_index = spr_christmas_lore + global.realm - 1;
 mysurface = surface_create(sprite_width, sprite_height);
 surface_set_target(mysurface);
 for (var i = 0; i < image_number; i++) {

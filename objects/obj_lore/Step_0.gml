@@ -11,7 +11,7 @@ y = ystart + (350 * global.transition);
 if (y == ystart + 350 && osc != -1) {
 	wipe(osc);
 	osc = -1;
-	if (state == 1) { instance_destroy(); }
+	if (global.state == 1) { instance_destroy(); }
 }
 
 if (y < ystart + 350 && !instance_exists(osc)) {

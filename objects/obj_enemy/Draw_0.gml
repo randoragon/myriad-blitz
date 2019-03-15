@@ -26,7 +26,7 @@ if (shd_conds == 0) {
     shd_sprite_effect_set(shd_conds);
     if (global.shader_conditions >= 4 && global.shader_conditions <= 7) {
         draw_set_alpha(image_alpha);
-        if (gpspeed != 0) {
+        if (global.gpspeed != 0) {
             draw_afterimage(30, 0.1 * image_alpha, 1, 0, 4);
         } else {
             draw_afterimage_pause(0);

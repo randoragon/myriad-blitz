@@ -2,7 +2,7 @@
 
 #region General
       spawn = id;
- image_speed = 0.4 * gpspeed;
+ image_speed = 0.4 * global.gpspeed;
 sprite_index = spr_evilflame + global.chrsel;
  image_alpha = 1;
  image_angle = 0;
@@ -14,7 +14,7 @@ if (!global.loading) {
     scr_PlayerDataUpdate(global.chrsel);
     scr_PlayerGetData();
     scr_ParticlesUpdate();
-    scr_BackgroundUpdate(realm);
+    scr_BackgroundUpdate(global.realm);
     image_scale(2, 2);
 }
 
@@ -27,9 +27,8 @@ for (var i = global.status_effect_count-1; i >= 0; i--)
 	status_effect[i] = false;
 
 if (!global.loading) {
-	globalvar player_status_effects;
-	player_status_effects = ds_grid_create(3, 0);
-	ds_grid_clear(player_status_effects,-1);
+	global.player_status_effects = ds_grid_create(3, 0);
+	ds_grid_clear(global.player_status_effects,-1);
 }
 
 global.player_status_effect_name[global.status_effect_count-1] = "";

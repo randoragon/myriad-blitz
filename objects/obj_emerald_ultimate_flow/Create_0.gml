@@ -8,7 +8,7 @@ if (global.loading == 1) { exit; }
 
 #region Setup
 
-instance_setup(0, random_range(1, 2) * gpspeed, 0, 0.5);
+instance_setup(0, random_range(1, 2) * global.gpspeed, 0, 0.5);
 rot         = 0.25 * sign(obj_emerald_ultimate.rot);
 size_growth = random_range(2, 15);
 image_alpha = random_range(0.2, 0.5);

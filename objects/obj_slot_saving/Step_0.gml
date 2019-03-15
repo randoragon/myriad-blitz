@@ -23,9 +23,9 @@ if (phase == 1) {
 	        break;
 	        case 1: //global variables, sounds, global player stats, player status effects
 	            data = 
-	            string(VER) + ";" + string(global.chrsel) + ";" + string(global.points) + ";" + string(realm) + ";" + 
-	            string(boss.lastpresent) + ";" + string(spawnrate) + ";" + string(gpspeed) + ";" + string(prev_gpspeed) + ";" + string(global.gpspeed_state) + ";" + string(global.gpspeed_focus) + ";" + string(global.gpspeed_ultimate_activation) + ";" + string(global.gpspeed_ultimate) + ";" + string(gpstep) + ";" + 
-	            string(global.viewxstartpos) + ";" + string(global.viewystartpos) + ";" + string(random_get_seed()) + ";" + string(global.shader_conditions) + ";" + string(global.enemy_details_selection) + ";" + string(boss.last_ult) + ";" + string(kill_count) + ";" + 
+	            string(VER) + ";" + string(global.chrsel) + ";" + string(global.points) + ";" + string(global.realm) + ";" + 
+	            string(boss.lastpresent) + ";" + string(global.spawnrate) + ";" + string(global.gpspeed) + ";" + string(global.prev_gpspeed) + ";" + string(global.gpspeed_state) + ";" + string(global.gpspeed_focus) + ";" + string(global.gpspeed_ultimate_activation) + ";" + string(global.gpspeed_ultimate) + ";" + string(global.gpstep) + ";" + 
+	            string(global.viewxstartpos) + ";" + string(global.viewystartpos) + ";" + string(random_get_seed()) + ";" + string(global.shader_conditions) + ";" + string(global.enemy_details_selection) + ";" + string(boss.last_ult) + ";" + string(global.kill_count) + ";" + 
 	            string(boss.dizzy_alpha) + ";";
 	            for (var i = 0; i < 8; i++) {
 	            data += string(__background_get( e__BG.Index, i )) + ";" + string(__background_get( e__BG.HTiled, i )) + ";" + string(__background_get( e__BG.VTiled, i )) + ";" + string(global.parallax_speed[i, 0]) + ";" + string(global.parallax_speed[i, 1]) + ";";
@@ -50,7 +50,7 @@ if (phase == 1) {
 	            string(global.pkb) + ";" + string(global.pkbres) + ";" + string(global.pspd) + ";" + string(global.sacc) + ";" + string(global.sspd) + ";" + string(global.fmin) + ";" + string(global.fmax) + ";" + string(global.fdmg) + ";" + 
 	            string(global.fpen) + ";" + string(global.fkb) + ";" + string(global.cdmg) + ";" + string(global.cpen) + ";" + string(global.ckb) + ";" + string(global.ctime) + ";" + string(global.ccooldown) + ";" + string(global.ucooldown) + ";";
 	            line[4] = data + separator;
-	            line[5] = ds_grid_export(player_status_effects) + separator;
+	            line[5] = ds_grid_export(global.player_status_effects) + separator;
 	            progress = 2;
 	        break;
 	        case 2: //particle systems

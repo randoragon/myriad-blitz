@@ -4,31 +4,31 @@
 var new_gpspeed = argument[0];
 
 // prev_image_speed manipulation
-if (gpspeed == 0 && new_gpspeed != 0) {
+if (global.gpspeed == 0 && new_gpspeed != 0) {
     with (all) {
         if (object_is_ancestor(object_index,obj_prev_imgspd)) {
             image_speed = prev_image_speed;
         }
     }
 } else {
-    if (gpspeed != 0) {
+    if (global.gpspeed != 0) {
         with (all) {
             if (object_is_ancestor(object_index,obj_prev_imgspd)) {
                 prev_image_speed = image_speed;
-                image_speed *= new_gpspeed / gpspeed;
+                image_speed *= new_gpspeed / global.gpspeed;
             }
         }
     }
 }
 
-// setting up prev_gpspeed and updating gpstep
-if (gpspeed != 0) {
-    prev_gpspeed = gpspeed;
-    gpstep *= new_gpspeed / gpspeed;
+// setting up global.prev_gpspeed and updating global.gpstep
+if (global.gpspeed != 0) {
+    global.prev_gpspeed = global.gpspeed;
+    global.gpstep *= new_gpspeed / global.gpspeed;
 }
 
 // resuming after pause when holding down shift to get into focus mode immediately
-if (gpspeed == 0) {
+if (global.gpspeed == 0) {
     with (obj_player) {
         if (keyboard_check(global.keybind[5]) && focus_state == 0 && new_gpspeed == 1) {
             focus_state = 1;
@@ -36,40 +36,40 @@ if (gpspeed == 0) {
     }
 }
 
-// changing gpspeed to the new value
-gpspeed = new_gpspeed;
+// changing global.gpspeed to the new value
+global.gpspeed = new_gpspeed;
 
-// if the new gpspeed isn't 0 :
-if (gpspeed != 0) {
+// if the new global.gpspeed isn't 0 :
+if (global.gpspeed != 0) {
     // player variable changes
     with (obj_player) {
         if (inv > 0) {
-            inv = round(inv * prev_gpspeed / gpspeed);
+            inv = round(inv * global.prev_gpspeed / global.gpspeed);
         }
         if (instance_exists(obj_evilflame_ultimate) && obj_evilflame_ultimate.inv > 0) {
-            obj_evilflame_ultimate.inv=round(obj_evilflame_ultimate.inv * prev_gpspeed / gpspeed);
+            obj_evilflame_ultimate.inv=round(obj_evilflame_ultimate.inv * global.prev_gpspeed / global.gpspeed);
         }
         if (shot > 0) {
-            shot *= prev_gpspeed / gpspeed;
+            shot *= global.prev_gpspeed / global.gpspeed;
         }
         if (instance_exists(obj_evilflame_ultimate) && obj_evilflame_ultimate.shot > 0) {
-            obj_evilflame_ultimate.shot = round(obj_evilflame_ultimate.shot * prev_gpspeed / gpspeed);
+            obj_evilflame_ultimate.shot = round(obj_evilflame_ultimate.shot * global.prev_gpspeed / global.gpspeed);
         }
         if (xv != 0) {
-            xv *= gpspeed / prev_gpspeed;
+            xv *= global.gpspeed / global.prev_gpspeed;
         }
         if (yv != 0) {
-            yv *= gpspeed / prev_gpspeed;
+            yv *= global.gpspeed / global.prev_gpspeed;
         }
-        hpmark_v *= gpspeed / prev_gpspeed;
+        hpmark_v *= global.gpspeed / global.prev_gpspeed;
         if (instance_exists(obj_evilflame_ultimate)) {
-            obj_evilflame_ultimate.hpmark_v *= gpspeed / prev_gpspeed;
+            obj_evilflame_ultimate.hpmark_v *= global.gpspeed / global.prev_gpspeed;
         }
     }
 
     // repitch sounds
-    music_pitch(sound_gpspeed);
-    sfx_pitch(sound_gpspeed);
+    music_pitch(global.sound_gpspeed);
+    sfx_pitch(global.sound_gpspeed);
 
     // knockback correction
     with (all) {
@@ -78,15 +78,15 @@ if (gpspeed != 0) {
                 var ahkb00 = ahkb;
                 var hkb00  = hkb;
                 var th00   = abs(hkb00 / ahkb00);
-                ahkb       = abs((hkb00 * (th00+1)) / (sqr(th00 * prev_gpspeed / gpspeed)+(th00 * prev_gpspeed / gpspeed)));
-                hkb        = abs(ahkb * (th00 * prev_gpspeed / gpspeed)) * sign(hkb00);
+                ahkb       = abs((hkb00 * (th00+1)) / (sqr(th00 * global.prev_gpspeed / global.gpspeed)+(th00 * global.prev_gpspeed / global.gpspeed)));
+                hkb        = abs(ahkb * (th00 * global.prev_gpspeed / global.gpspeed)) * sign(hkb00);
             }
             if (avkb != 0 && vkb != 0) {
                 var avkb00 = avkb;
                 var vkb00  = vkb;
                 var tv00   = abs(vkb00 / avkb00);
-                avkb       = abs((vkb00 * (tv00+1)) / (sqr(tv00 * prev_gpspeed / gpspeed)+(tv00 * prev_gpspeed / gpspeed)));
-                vkb        = abs(avkb * (tv00 * prev_gpspeed / gpspeed)) * sign(vkb00);
+                avkb       = abs((vkb00 * (tv00+1)) / (sqr(tv00 * global.prev_gpspeed / global.gpspeed)+(tv00 * global.prev_gpspeed / global.gpspeed)));
+                vkb        = abs(avkb * (tv00 * global.prev_gpspeed / global.gpspeed)) * sign(vkb00);
             }
             /*show_message(
             'OBJECT: '+object_get_name(object_index)+

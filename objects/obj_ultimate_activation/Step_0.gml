@@ -5,7 +5,7 @@ if (!surface_exists(suf_mysurface)) {
 	suf_mysurface = surface_create(mysurface_width, mysurface_height);
 }
 
-if (gpspeed != 0) {
+if (global.gpspeed != 0) {
 	progress++;
 	if (stage == 0) {
 		size                               = progress / 2;

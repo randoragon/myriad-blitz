@@ -1,24 +1,24 @@
 /// @description player_status_update();
 
-ds_grid_add_region(player_status_effects, 1, 0, 1, ds_grid_height(player_status_effects) - 1, -gpspeed);
+ds_grid_add_region(global.player_status_effects, 1, 0, 1, ds_grid_height(global.player_status_effects) - 1, -global.gpspeed);
 
-if (ds_grid_get_min(player_status_effects, 1, 0, 1, ds_grid_height(player_status_effects) - 1) >= -1 && ds_grid_get_min(player_status_effects, 1, 0, 1, ds_grid_height(player_status_effects) - 1) <= 0) {
-    for (var i = 0; i < ds_grid_height(player_status_effects); i++) {
-        if (player_status_effects[# 1, i] <= 0 && player_status_effects[# 1, i] >= -1) {
+if (ds_grid_get_min(global.player_status_effects, 1, 0, 1, ds_grid_height(global.player_status_effects) - 1) >= -1 && ds_grid_get_min(global.player_status_effects, 1, 0, 1, ds_grid_height(global.player_status_effects) - 1) <= 0) {
+    for (var i = 0; i < ds_grid_height(global.player_status_effects); i++) {
+        if (global.player_status_effects[# 1, i] <= 0 && global.player_status_effects[# 1, i] >= -1) {
             // update player status_effect array
-            var deceased_effect_id = player_status_effects[# 0, i];
+            var deceased_effect_id = global.player_status_effects[# 0, i];
             obj_player.status_effect[deceased_effect_id] = false;
 
             // get rid of the used cooldown
-            if (i < ds_grid_height(player_status_effects) - 1) {
-                ds_grid_set_grid_region(player_status_effects, player_status_effects, 0, i + 1, 2, ds_grid_height(player_status_effects) - 1, 0, i);
+            if (i < ds_grid_height(global.player_status_effects) - 1) {
+                ds_grid_set_grid_region(global.player_status_effects, global.player_status_effects, 0, i + 1, 2, ds_grid_height(global.player_status_effects) - 1, 0, i);
                 i--;
             }
-            if (ds_grid_height(player_status_effects) > 1) {
-                ds_grid_resize(player_status_effects, 3, ds_grid_height(player_status_effects) - 1);
+            if (ds_grid_height(global.player_status_effects) > 1) {
+                ds_grid_resize(global.player_status_effects, 3, ds_grid_height(global.player_status_effects) - 1);
             } else {
-                ds_grid_destroy(player_status_effects);
-                player_status_effects = ds_grid_create(3, 0);
+                ds_grid_destroy(global.player_status_effects);
+                global.player_status_effects = ds_grid_create(3, 0);
             }
 
             // aftereffects

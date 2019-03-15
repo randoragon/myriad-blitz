@@ -1,8 +1,8 @@
-/// @description Increment busy
+/// @description Increment global.busy
 
-#region Increment busy
+#region Increment global.busy
 
-busy++;
-start_busy = busy;
+global.busy++;
+start_busy = global.busy;
 
 #endregion

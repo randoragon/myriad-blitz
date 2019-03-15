@@ -8,7 +8,7 @@ if (global.loading == 1) { exit; }
 
 #region Draw gameplay bars
 
-if (state == 1 && !status_effect[8]) {
+if (global.state == 1 && !status_effect[8]) {
     surface_set_target(GUI_SURFACE);
     var self_or_helper = self;
     gpu_set_alphatestref(0);
@@ -39,7 +39,7 @@ if (state == 1 && !status_effect[8]) {
                 draw_set_color(c_black);
                 draw_rectangle(x - 30, y - obj_player.bar_yoffset[0] - 6, x + 30, y - obj_player.bar_yoffset[0], 1);
                 draw_set_alpha(1);
-                if (gpspeed != 0) {
+                if (global.gpspeed != 0) {
                     obj_player.bar_opacity[0] -= 0.05;
                 }
             }
@@ -57,7 +57,7 @@ if (state == 1 && !status_effect[8]) {
                 draw_set_color(c_black);
                 draw_rectangle(x - 30, y - obj_player.bar_yoffset[1] - 6, x + 30, y - obj_player.bar_yoffset[1], 1);
                 draw_set_alpha(1);
-                if (gpspeed != 0) {
+                if (global.gpspeed != 0) {
                     obj_player.bar_opacity[1] -= 0.05;
                 }
             }
@@ -87,7 +87,7 @@ if (state == 1 && !status_effect[8]) {
                     draw_rectangle(x - 30, y - obj_player.bar_yoffset[2] - 6, x + 30, y - obj_player.bar_yoffset[2], 1);
                     draw_set_alpha(1);
                 }
-                if (gpspeed != 0) {
+                if (global.gpspeed != 0) {
                     obj_player.bar_opacity[2] -= 0.05;
                 }
             }

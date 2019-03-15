@@ -16,7 +16,7 @@ if (f == 21 || f == 22) {
 
 //pause button dark fade
 if (f == 8) {
-	if (gpspeed == 0 && state == 1) {
+	if (global.gpspeed == 0 && global.state == 1) {
 		screen_darken(0.75);
 	}
 }
@@ -215,21 +215,21 @@ if (f == 8 && instance_exists(obj_player) && global.loading == 0) {
 
 #region Status effects display & update
 
-if (f == 8 && state == 1 && !global.loading && ds_exists(player_status_effects, ds_type_grid) && ds_grid_height(player_status_effects) > 0) {
+if (f == 8 && global.state == 1 && !global.loading && ds_exists(global.player_status_effects, ds_type_grid) && ds_grid_height(global.player_status_effects) > 0) {
 	player_status_update();
 	gpu_set_alphatestref(0);
 	draw_set_align(fa_left, fa_top);
 	
 	var xx, yy, status_id, timer_text, timer_countdown;
-	for (var i = 0; i < ds_grid_height(player_status_effects); i++) {
+	for (var i = 0; i < ds_grid_height(global.player_status_effects); i++) {
 		xx              = GUI_X + 403 + (i*37);
 		yy              = GUI_Y + 3;
-		timer_countdown = player_status_effects[# 1, i];
-		status_id       = player_status_effects[# 0, i];
+		timer_countdown = global.player_status_effects[# 1, i];
+		status_id       = global.player_status_effects[# 0, i];
 		if (timer_countdown >= 0) {
 			shader_set(shd_clock_overlay);
 			shader_set_uniform_f(uni_center, xx + 17, yy + 17);
-			shader_set_uniform_f(uni_time, 1 - (timer_countdown/player_status_effects[# 2, i]));
+			shader_set_uniform_f(uni_time, 1 - (timer_countdown/global.player_status_effects[# 2, i]));
 			draw_sprite(spr_status_exhausted + status_id, 0, xx, yy);
 			shader_reset();
 			draw_sprite(spr_status_border, 0, xx, yy);
@@ -284,7 +284,7 @@ if (f == 8 && room == rm_Main && !global.loading) {
 	draw_text_outline(GUI_XEND - 10, GUI_Y - 80 + (85*global.transition), "score: " + string_format(global.points, -1, 0), 3, 3, 0, c_yellow, 1, c_black, 1);
 
 	//'YOU DIED!' MESSAGE
-	if (state == 2) {
+	if (global.state == 2) {
 		if (global.gpspeed_state < 0.5) { global.gpspeed_state = home(global.gpspeed_state, 0.5, 0.01); }
 		draw_set_alpha(0.6);
 		draw_set_color(c_black);
@@ -299,7 +299,7 @@ if (f == 8 && room == rm_Main && !global.loading) {
 		draw_set_alpha(1);
 		draw_set_align(fa_center, fa_top);
 		draw_text_outline(GUI_X + 683, GUI_Y + 300, "GAME OVER!", 4, 4, 0, c_yellow, 1, c_black, 1);
-		draw_text_outline(GUI_X + 683, GUI_Y + 360, "enemies killed: " + string(kill_count) + "#final score: " + string(global.points) + "##press space to continue", 2, 2, 0, c_white, 0, c_black, 1);
+		draw_text_outline(GUI_X + 683, GUI_Y + 360, "enemies killed: " + string(global.kill_count) + "#final score: " + string(global.points) + "##press space to continue", 2, 2, 0, c_white, 0, c_black, 1);
 	}
 }
 

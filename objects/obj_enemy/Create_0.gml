@@ -10,7 +10,7 @@ event_inherited();
 
 depth              = general_depth.enemy;
 image_speed        = 0;
-time_mark          = gptime;
+time_mark          = global.gptime;
 loot               = ds_map_create();
 sprite_index       = noone;
 

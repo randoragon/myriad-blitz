@@ -17,7 +17,7 @@ if (!(obj_player.inv > 0 && (obj_player.inv / 2) % 2 == 0)) {
     } else {
         shd_sprite_effect_set(global.shader_conditions);
         if (global.shader_conditions >= 4 && global.shader_conditions <= 7) {
-            if (gpspeed != 0) {
+            if (global.gpspeed != 0) {
                 draw_afterimage(8, 1, 1, 0, 1);
             } else {
                 draw_afterimage_pause(0);
