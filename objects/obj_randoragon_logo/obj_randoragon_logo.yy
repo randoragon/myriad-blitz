@@ -73,7 +73,64 @@
         
     ],
     "physicsStartAwake": true,
-    "properties": null,
+    "properties": [
+        {
+            "id": "fc128943-eb43-4013-904c-828cf9fe0282",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "start",
+            "varType": 3
+        },
+        {
+            "id": "2e9d3b12-066a-49b1-8651-7787c5c911eb",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "cycle",
+            "varType": 1
+        },
+        {
+            "id": "0ad3f74f-0b9b-47ae-8097-37195efb0c3b",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "stage",
+            "varType": 1
+        },
+        {
+            "id": "748291e8-e030-4d34-bbae-e7b9dbbf64b6",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": true,
+            "rangeMax": 1,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "text_alpha",
+            "varType": 0
+        }
+    ],
     "solid": false,
     "spriteId": "d3dd4a0d-0334-49f8-b72b-fa964dcb456d",
     "visible": true

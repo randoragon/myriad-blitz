@@ -63,7 +63,22 @@
         
     ],
     "physicsStartAwake": true,
-    "properties": null,
+    "properties": [
+        {
+            "id": "a9841263-e7f7-470b-85e6-f881471abeee",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "-1",
+            "varName": "afterimage_ds_grid",
+            "varType": 1
+        }
+    ],
     "solid": false,
     "spriteId": "a91230d4-6ad2-43f6-b3e6-60cc3adaaf1b",
     "visible": true

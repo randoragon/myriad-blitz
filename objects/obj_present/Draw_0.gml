@@ -8,7 +8,7 @@ if (global.loading == 1) { exit; }
 
 #region Picking & drawing with shader implementation
 
-if (picked == 0) {
+if (!picked) {
     surface_set_target(GENERAL_SURFACE);
     if (global.shader_conditions == 0) {
         draw_afterimage_remove();

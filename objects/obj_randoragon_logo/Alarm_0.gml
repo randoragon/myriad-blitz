@@ -2,7 +2,7 @@
 
 #region Begin
 
-start  = 1;
+start  = true;
 vspeed = -20;
 
 #endregion
