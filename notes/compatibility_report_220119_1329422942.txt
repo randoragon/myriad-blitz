@@ -1313,10 +1313,10 @@ Converted builtin - line 40: view_yview[0]=global.viewystartpos+lengthdir_y(v_va
 Converted builtin - line 43: view_yview[0]=global.viewystartpos -> __view_set( e__VW.YView, 0, global.viewystartpos )
 Converted description /// @description Directional Screenshake
 
-Converting GML script: ${project_dir}\objects\obj_Transition\Create_0.gml
+Converting GML script: ${project_dir}\objects\obj_transition\Create_0.gml
 Converted description /// @description setup
 
-Converting GML script: ${project_dir}\objects\obj_Transition\Other_10.gml
+Converting GML script: ${project_dir}\objects\obj_transition\Other_10.gml
 Converted description /// @description Room change && script
 
 Converting GML script: ${project_dir}\objects\obj_ultimate_activation\Create_0.gml

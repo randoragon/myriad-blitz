@@ -162,7 +162,7 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
     
     #region On mouse press
 	
-    if (place_meeting(x, y, boss) && mouse_check_button_pressed(mb_left) && image_alpha == 1 && !instance_exists(obj_Transition)) {
+    if (place_meeting(x, y, boss) && mouse_check_button_pressed(mb_left) && image_alpha == 1 && !instance_exists(obj_transition)) {
         switch(f) {
         case 5:
             //previous character
@@ -249,7 +249,7 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 	
     #region On mouse release
 	
-    if (grabbed == 1 && mouse_check_button_released(mb_left) && image_alpha == 1 && !instance_exists(obj_Transition)) {
+    if (grabbed == 1 && mouse_check_button_released(mb_left) && image_alpha == 1 && !instance_exists(obj_transition)) {
         grabbed = 0;
         if (place_meeting(x, y, boss)) {
             switch(f) {
@@ -408,7 +408,7 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 	        break;
 	        case 7:
 	            //back button
-	            if (room != rm_Menu && global.state == 0 && keyboard_check_pressed(vk_escape) && !instance_exists(obj_Transition)) {
+	            if (room != rm_Menu && global.state == 0 && keyboard_check_pressed(vk_escape) && !instance_exists(obj_transition)) {
 	                if (room == rm_Main) {
 	                    if (global.state == 0) {
 	                        scr_toggle_stats_selection(0);

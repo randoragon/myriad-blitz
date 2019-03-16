@@ -15,12 +15,12 @@
  * [NOTE] The affected area is always designated using the VIEW_CURRENT function!
  */
  
-if (instance_exists(obj_Transition)) {
+if (instance_exists(obj_transition)) {
     exit;
 }
 
 if (!(argument[0] == -1 && argument[1] == -1)) {
-    var instance = instance_create(0, 0, obj_Transition);
+    var instance = instance_create_layer(0, 0, "Transition", obj_transition);
     with (instance) {
         if (argument[0] != -1) { destination = argument[0]; }
         if (argument[1] != -1) { script      = argument[1]; }

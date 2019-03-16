@@ -104,9 +104,9 @@ if (room == rm_Help) {
 
 #endregion
 
-#region obj_Transition Management
+#region obj_transition Management
 
-with (obj_Transition) {
+with (obj_transition) {
 	if (type == 0) {
 	    progress += 2/time;
 	    draw_set_color(color);

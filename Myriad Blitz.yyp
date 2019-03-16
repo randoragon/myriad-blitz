@@ -2052,7 +2052,7 @@
             "Key": "75e1448b-f423-4100-a81f-c8cc7a185d00",
             "Value": {
                 "id": "bc1fe84d-540a-44a6-9cc0-b3b83fa1f539",
-                "resourcePath": "objects\\obj_Transition\\obj_Transition.yy",
+                "resourcePath": "objects\\obj_transition\\obj_transition.yy",
                 "resourceType": "GMObject"
             }
         },

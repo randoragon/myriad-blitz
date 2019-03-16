@@ -121,25 +121,25 @@ if (phase == 4 && clock-- <= 0) {
 	    case 0:
 	        //global variables
 	        string_readln(bit, ";"); //skip the slot game version
-	        global.chrsel						   = string_readln_real(bit, ";");
+	        global.chrsel					   = string_readln_real(bit, ";");
 	        global.points					   = string_readln_real(bit, ";");
-	        global.realm							   = string_readln_real(bit, ";");
+	        global.realm					   = string_readln_real(bit, ";");
 	        boss.lastpresent				   = string_readln_real(bit, ";");
-	        global.spawnrate						   = string_readln_real(bit, ";");
-	        global.gpspeed							   = string_readln_real(bit, ";");
-	        global.prev_gpspeed					   = string_readln_real(bit, ";");
+	        global.spawnrate				   = string_readln_real(bit, ";");
+	        global.gpspeed					   = string_readln_real(bit, ";");
+	        global.prev_gpspeed				   = string_readln_real(bit, ";");
 	        global.gpspeed_state			   = string_readln_real(bit, ";");
 	        global.gpspeed_focus               = string_readln_real(bit, ";");
 	        global.gpspeed_ultimate_activation = string_readln_real(bit, ";");
 	        global.gpspeed_ultimate			   = string_readln_real(bit, ";");
-	        global.gpstep							   = string_readln_real(bit, ";");
+	        global.gpstep					   = string_readln_real(bit, ";");
 	        global.viewxstartpos			   = string_readln_real(bit, ";");
 	        global.viewystartpos			   = string_readln_real(bit, ";");
 	        random_set_seed(string_readln_real(bit, ";"));
 	        global.shader_conditions		   = string_readln_real(bit, ";");
 	        global.enemy_details_selection	   = string_readln_real(bit, ";");
 	        boss.last_ult					   = string_readln_real(bit, ";");
-	        global.kill_count						   = string_readln_real(bit, ";");
+	        global.kill_count				   = string_readln_real(bit, ";");
 	        boss.dizzy_alpha				   = string_readln_real(bit, ";");
 	        for (var i = 0; i < 8; i++) {
 	            __background_set( e__BG.Index,  i, string_readln_real(bit, ";") );
