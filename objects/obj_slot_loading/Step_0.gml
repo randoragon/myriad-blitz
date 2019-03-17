@@ -120,7 +120,7 @@ if (phase == 4 && clock-- <= 0) {
     switch(progress) {
 	    case 0:
 	        //global variables
-	        string_readln(bit, ";"); //skip the slot game version
+	        slotversion						   = string_readln(bit, ";");
 	        global.chrsel					   = string_readln_real(bit, ";");
 	        global.points					   = string_readln_real(bit, ";");
 	        global.realm					   = string_readln_real(bit, ";");
@@ -141,13 +141,35 @@ if (phase == 4 && clock-- <= 0) {
 	        boss.last_ult					   = string_readln_real(bit, ";");
 	        global.kill_count				   = string_readln_real(bit, ";");
 	        boss.dizzy_alpha				   = string_readln_real(bit, ";");
-	        for (var i = 0; i < 8; i++) {
-	            __background_set( e__BG.Index,  i, string_readln_real(bit, ";") );
-	            __background_set( e__BG.HTiled, i, string_readln_real(bit, ";") );
-	            __background_set( e__BG.VTiled, i, string_readln_real(bit, ";") );
-	            global.parallax_speed[i, 0]	   = string_readln_real(bit, ";");
-	            global.parallax_speed[i, 1]	   = string_readln_real(bit, ";");
-	        }
+			switch(slotversion) {
+				default:
+					for (var i = 0; i < 8; i++) {
+			            global.background_sprite[i]		  = string_readln_real(bit, ";");
+			            global.background_sprite_index[i] = string_readln_real(bit, ";");
+			            global.background_image_speed[i]  = string_readln_real(bit, ";");
+			            global.background_x[i]			  = string_readln_real(bit, ";");
+			            global.background_y[i]			  = string_readln_real(bit, ";");
+			            global.background_htiled[i]		  = string_readln_real(bit, ";");
+			            global.background_vtiled[i]		  = string_readln_real(bit, ";");
+			            global.background_hspeed[i]		  = string_readln_real(bit, ";");
+			            global.background_vspeed[i]		  = string_readln_real(bit, ";");
+			        }
+				break;
+				case "1.1.0": case "1.1.1":
+					for (var i = 0; i < 8; i++) {
+						var bgspr = string_readln_real(bit, ";");
+			            global.background_sprite[i]		  = (bgspr != -1 ? bgspr - VER1_1_1_BG_CHRISTMAS0 + bg_Christmas0 : noone);
+						global.background_sprite_index[i] = 0;
+						global.background_image_speed[i]  = 0;
+						global.background_x[i]			  = CANVAS_X;
+						global.background_y[i]			  = CANVAS_Y;
+			            global.background_htiled[i]		  = string_readln_real(bit, ";");
+			            global.background_vtiled[i]		  = string_readln_real(bit, ";");
+			            global.background_hspeed[i]		  = string_readln_real(bit, ";");
+			            global.background_vspeed[i]		  = string_readln_real(bit, ";");
+			        }
+				break;
+			}
 	        global.enemy_details_selection	   = string_readln_real(bit, ";");
 	    break;
 	    case 1:

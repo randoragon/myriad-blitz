@@ -28,7 +28,7 @@ if (phase == 1) {
 	            string(global.viewxstartpos) + ";" + string(global.viewystartpos) + ";" + string(random_get_seed()) + ";" + string(global.shader_conditions) + ";" + string(global.enemy_details_selection) + ";" + string(boss.last_ult) + ";" + string(global.kill_count) + ";" + 
 	            string(boss.dizzy_alpha) + ";";
 	            for (var i = 0; i < 8; i++) {
-	            data += string(__background_get( e__BG.Index, i )) + ";" + string(__background_get( e__BG.HTiled, i )) + ";" + string(__background_get( e__BG.VTiled, i )) + ";" + string(global.parallax_speed[i, 0]) + ";" + string(global.parallax_speed[i, 1]) + ";";
+					data += string(global.background_sprite[i]) + ";" + string(global.background_sprite_index[i]) + ";" + string(global.background_image_speed[i]) + ";" + string(global.background_x[i]) + ";" + string(global.background_y[i]) + ";" + string(global.background_htiled[i]) + ";" + string(global.background_vtiled[i]) + ";" + string(global.background_hspeed[i]) + ";" + string(global.background_vspeed[i]) + ";";
 	            }
 	            line[2] = data + separator;
             

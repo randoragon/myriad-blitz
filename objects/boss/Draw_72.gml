@@ -16,14 +16,16 @@ if (!global.loading && room != rm_Startup) {
 				draw_sprite_htiled(global.background_sprite[i], global.background_sprite_index[i], global.background_x[i], global.background_y[i]);
 			} else if (global.background_htiled[i] && global.background_vtiled[i]) {
 				draw_sprite_tiled(global.background_sprite[i], global.background_sprite_index[i], global.background_x[i], global.background_y[i]);
-			} else {
+			} else if (global.background_vtiled[i]) {
 				draw_sprite_vtiled(global.background_sprite[i], global.background_sprite_index[i], global.background_x[i], global.background_y[i]);
+			} else {
+				draw_sprite(global.background_sprite[i], global.background_sprite_index[i], global.background_x[i], global.background_y[i]);
 			}
 		}
 			
-		global.background_x[i]			  += global.background_hspeed[i];
-		global.background_y[i]			  += global.background_vspeed[i];
-		global.background_sprite_index[i] += global.background_image_speed[i];
+		global.background_x[i]			  += global.background_hspeed[i]	  * global.gpspeed;
+		global.background_y[i]			  += global.background_vspeed[i]	  * global.gpspeed;
+		global.background_sprite_index[i] += global.background_image_speed[i] * global.gpspeed;
     }
 	
 	if (global.shader_conditions != 0) {

@@ -1,6 +1,6 @@
 #region Miscellaneous Setup
 
-gml_release_mode(1);
+gml_release_mode(false);
 window_last_width  = window_get_width();
 window_last_height = window_get_height();
 global.general_surface = -1;
