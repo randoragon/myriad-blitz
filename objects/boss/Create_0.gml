@@ -4,18 +4,18 @@ gml_release_mode(1);
 window_last_width  = window_get_width();
 window_last_height = window_get_height();
 global.general_surface = -1;
-global.gui_surface = -1;
+global.gui_surface     = -1;
 application_surface_enable(0);
 window_set_cursor(cr_none);
 math_set_epsilon(0.0001);
 audio_channel_num(32);
-global.kill_count = 0;
-global.loading     = 0;
-global.fullscreen  = 1;
-global.screenshake = 1;
-global.points      = 0;
-global.music[0]    = -1;
-global.sfx[0]      = -1;
+global.kill_count    = 0;
+global.loading       = 0;
+global.fullscreen    = 1;
+global.screenshake   = 1;
+global.points        = 0;
+global.music[0]      = -1;
+global.sfx[0]        = -1;
 global.spawnrate     = 10;
 global.gpspeed       = 1;
 global.sound_gpspeed = global.gpspeed;
@@ -28,7 +28,7 @@ global.gpspeed_focus               = 1;
 global.gpspeed_ultimate_activation = 1;
 global.gpspeed_ultimate            = 1;
 global.gpspeed_state               = 1;
-global.state = 0;
+global.state             = 0;
 global.viewxstartpos     = 0;
 global.viewystartpos     = 0;
 global.shader_conditions = 0;
@@ -38,14 +38,22 @@ global.color = array_setup(c_white, CHRCOUNT);
 global.color[0] = c_aqua;
 global.color[1] = hsv(110, 255, 255);
 global.color[2] = hsv(40, 60, 200);
-global.name = array_setup("<failed to fetch name>", CHRCOUNT);
-global.name[0] = "Evilflame";
-global.name[1] = "Emerald~";
-global.name[2] = "Der Scootomik";
+global.name     = array_setup("<failed to fetch name>", CHRCOUNT);
+global.name[0]  = "Evilflame";
+global.name[1]  = "Emerald~";
+global.name[2]  = "Der Scootomik";
 global.transition     = 0;
 global.realm_name[1]  = "Christmas Realm";
 global.realm_name[0]  = "Menu";
-global.parallax_speed = array_setup(0, 8, 2);
+global.background_sprite       = array_setup(noone, 8);
+global.background_sprite_index = array_setup(0,     8);
+global.background_image_speed  = array_setup(0,     8);
+global.background_x            = array_setup(0,     8);
+global.background_y            = array_setup(0,     8);
+global.background_htiled       = array_setup(false, 8);
+global.background_vtiled	   = array_setup(false, 8);
+global.background_hspeed	   = array_setup(0,     8);
+global.background_vspeed	   = array_setup(0,     8);
 global.enemy_details_selection = noone;
 
 global.save_chunk_size  = 500;
@@ -228,49 +236,49 @@ enum sound_priority {
 
 global.shd_sprite_effect_uni = ds_list_create();
 ds_list_add(global.shd_sprite_effect_uni, 
-shader_get_uniform(shd_sprite_effect, "u_gpspeed"), 
-shader_get_uniform(shd_sprite_effect, "u_gptime"), 
-shader_get_uniform(shd_sprite_effect, "u_contrastIntensity"), 
-shader_get_uniform(shd_sprite_effect, "u_minColorAvg"), 
-shader_get_uniform(shd_sprite_effect, "u_maxColorAvg"), 
-shader_get_uniform(shd_sprite_effect, "u_desaturationIntensity"), 
-shader_get_uniform(shd_sprite_effect, "u_brightnessIntensity"), 
-shader_get_uniform(shd_sprite_effect, "u_flickerInterval"), 
+	shader_get_uniform(shd_sprite_effect, "u_gpspeed"), 
+	shader_get_uniform(shd_sprite_effect, "u_gptime"), 
+	shader_get_uniform(shd_sprite_effect, "u_contrastIntensity"), 
+	shader_get_uniform(shd_sprite_effect, "u_minColorAvg"), 
+	shader_get_uniform(shd_sprite_effect, "u_maxColorAvg"), 
+	shader_get_uniform(shd_sprite_effect, "u_desaturationIntensity"), 
+	shader_get_uniform(shd_sprite_effect, "u_brightnessIntensity"), 
+	shader_get_uniform(shd_sprite_effect, "u_flickerInterval"), 
 );
 
 global.shd_background_effect_uni = ds_list_create();
 ds_list_add(global.shd_background_effect_uni, 
-shader_get_uniform(shd_background_effect, "u_blendIntensity"), 
-shader_get_uniform(shd_background_effect, "u_colorBlend"), 
-shader_get_uniform(shd_background_effect, "u_gptime"), 
-shader_get_uniform(shd_background_effect, "u_contrastIntensity"), 
-shader_get_uniform(shd_background_effect, "u_desaturationIntensity"), 
-shader_get_uniform(shd_background_effect, "u_brightnessIntensity")
+	shader_get_uniform(shd_background_effect, "u_blendIntensity"), 
+	shader_get_uniform(shd_background_effect, "u_colorBlend"), 
+	shader_get_uniform(shd_background_effect, "u_gptime"), 
+	shader_get_uniform(shd_background_effect, "u_contrastIntensity"), 
+	shader_get_uniform(shd_background_effect, "u_desaturationIntensity"), 
+	shader_get_uniform(shd_background_effect, "u_brightnessIntensity")
 );
 
 global.shd_application_surface_effect_uni = ds_list_create();
 ds_list_add(global.shd_application_surface_effect_uni, 
-shader_get_uniform(shd_application_surface_effect, "u_waveAmplitude"), 
-shader_get_uniform(shd_application_surface_effect, "u_waveClock"), 
-shader_get_uniform(shd_application_surface_effect, "u_wavingSpeed"), 
-shader_get_uniform(shd_application_surface_effect, "u_waveLength"), 
-shader_get_uniform(shd_application_surface_effect, "u_blendIntensity"), 
-shader_get_uniform(shd_application_surface_effect, "u_colorBlend"), 
-shader_get_uniform(shd_application_surface_effect, "u_gptime"), 
-shader_get_uniform(shd_application_surface_effect, "u_contrastIntensity"), 
-shader_get_uniform(shd_application_surface_effect, "u_desaturationIntensity"), 
-shader_get_uniform(shd_application_surface_effect, "u_brightnessIntensity"), 
-shader_get_uniform(shd_application_surface_effect, "u_velocityLines")
+	shader_get_uniform(shd_application_surface_effect, "u_waveAmplitude"), 
+	shader_get_uniform(shd_application_surface_effect, "u_waveClock"), 
+	shader_get_uniform(shd_application_surface_effect, "u_wavingSpeed"), 
+	shader_get_uniform(shd_application_surface_effect, "u_waveLength"), 
+	shader_get_uniform(shd_application_surface_effect, "u_blendIntensity"), 
+	shader_get_uniform(shd_application_surface_effect, "u_colorBlend"), 
+	shader_get_uniform(shd_application_surface_effect, "u_gptime"), 
+	shader_get_uniform(shd_application_surface_effect, "u_contrastIntensity"), 
+	shader_get_uniform(shd_application_surface_effect, "u_desaturationIntensity"), 
+	shader_get_uniform(shd_application_surface_effect, "u_brightnessIntensity"), 
+	shader_get_uniform(shd_application_surface_effect, "u_velocityLines")
 );
 
 global.shd_shine_uni = ds_list_create();
 ds_list_add(global.shd_shine_uni, 
-shader_get_uniform(shd_shine, "time"), 
-shader_get_uniform(shd_shine, "size"), 
-shader_get_uniform(shd_shine, "suf_size"), 
-shader_get_uniform(shd_shine, "color_blend"), 
-shader_get_uniform(shd_shine, "pixel_size"), 
-shader_get_uniform(shd_shine, "whitelist_box")
+	shader_get_uniform(shd_shine, "time"), 
+	shader_get_uniform(shd_shine, "size"), 
+	shader_get_uniform(shd_shine, "suf_size"), 
+	shader_get_uniform(shd_shine, "color_blend"), 
+	shader_get_uniform(shd_shine, "pixel_size"), 
+	shader_get_uniform(shd_shine, "whitelist_box")
 );
 
 #endregion

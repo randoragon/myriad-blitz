@@ -14,7 +14,7 @@ if (!global.loading) {
     scr_PlayerDataUpdate(global.chrsel);
     scr_PlayerGetData();
     scr_ParticlesUpdate();
-    scr_BackgroundUpdate(global.realm);
+	scr_BackgroundUpdate(global.realm);
     image_scale(2, 2);
 }
 

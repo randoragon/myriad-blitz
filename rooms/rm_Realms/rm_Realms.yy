@@ -17,7 +17,7 @@
             "__type": "GMRInstanceLayer_Model:#YoYoStudio.MVCFormat",
             "name": "Transition",
             "id": "43d2a5ad-5bfd-45b2-87b7-06f80aec5286",
-            "depth": -200,
+            "depth": -106,
             "grid_x": 32,
             "grid_y": 32,
             "hierarchyFrozen": false,
@@ -43,7 +43,7 @@
             "__type": "GMRInstanceLayer_Model:#YoYoStudio.MVCFormat",
             "name": "Popups",
             "id": "e2cee995-6c74-43db-bd87-5f937c91f308",
-            "depth": -100,
+            "depth": -6,
             "grid_x": 32,
             "grid_y": 32,
             "hierarchyFrozen": false,
@@ -62,7 +62,7 @@
             "m_serialiseFrozen": false,
             "modelName": "GMRInstanceLayer",
             "mvc": "1.0",
-            "userdefined_depth": false,
+            "userdefined_depth": true,
             "visible": true
         },
         {
@@ -95,7 +95,7 @@
         }
     ],
     "modelName": "GMRoom",
-    "parentId": "00000000-0000-0000-0000-000000000000",
+    "parentId": "91768f2b-de97-406e-8928-4830eff867f8",
     "physicsSettings":     {
         "id": "27551651-15b9-40ee-8ccb-989b802f16cf",
         "inheritPhysicsSettings": false,

@@ -1629,6 +1629,14 @@
             }
         },
         {
+            "Key": "612ed7e2-02af-4891-b3ec-978c0e6ce3fc",
+            "Value": {
+                "id": "7461f13d-af22-4512-b5dc-9ad7a8054500",
+                "resourcePath": "views\\91768f2b-de97-406e-8928-4830eff867f8-room.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "6152dadf-7bfd-4b35-aec1-86b05d172148",
             "Value": {
                 "configDeltas": [
@@ -2821,6 +2829,14 @@
                 "id": "4a46bcbb-fbb9-49d9-9313-ec575d945f5c",
                 "resourcePath": "sprites\\spr_loading_bar\\spr_loading_bar.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "a1b0b3d6-d4ef-4db2-b5d9-4234bbd3287b",
+            "Value": {
+                "id": "8d9aa6fe-834c-4f00-8ffe-caf4795b14e6",
+                "resourcePath": "views\\fd8c8e74-3ce2-4d1f-83a4-1f8378e264f7-room.yy",
+                "resourceType": "GMFolder"
             }
         },
         {

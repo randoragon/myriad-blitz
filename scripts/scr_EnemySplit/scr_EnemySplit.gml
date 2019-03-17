@@ -15,7 +15,8 @@ if (angle > 0 && angle < 90) {
     xlen    = enemy_xoffset;
     ylen    = enemy_yoffset;
     xoffset = sqrt(sqr(xlen) + sqr(ylen)) * dcos(darctan(ylen / xlen) - (angle % 90));
-    xlen    = enemy_width - enemy_xoffset; ylen = enemy_yoffset;
+    xlen    = enemy_width - enemy_xoffset;
+	ylen    = enemy_yoffset;
     yoffset = sqrt(sqr(xlen) + sqr(ylen)) * dsin(darctan(ylen / xlen) + (angle % 90));
 } else if (angle > 90 && angle < 180) {
     xlen    = enemy_width - enemy_xoffset;
@@ -35,7 +36,8 @@ if (angle > 0 && angle < 90) {
     xlen    = enemy_xoffset;
     ylen    = enemy_height - enemy_yoffset;
     xoffset = sqrt(sqr(xlen) + sqr(ylen)) * dcos(darctan(xlen / ylen) - (angle % 90));
-    xlen    = enemy_xoffset; ylen = enemy_yoffset;
+    xlen    = enemy_xoffset;
+	ylen    = enemy_yoffset;
     yoffset = sqrt(sqr(xlen) + sqr(ylen)) * dsin(darctan(xlen / ylen) + (angle % 90));
 } else if (angle == 0 || angle == 360) {
     xoffset = enemy_xoffset;

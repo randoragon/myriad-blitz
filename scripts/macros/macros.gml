@@ -1,4 +1,5 @@
 #macro CHRCOUNT 3
+#macro RLMCOUNT 1
 #macro BORDER_THICKNESS 20
 #macro SURFACE_SCALE (window_get_width() / (room_width - (2 * BORDER_THICKNESS)))
 #macro CANVAS_X __view_get( e__VW.XView, 0 )
@@ -25,8 +26,3 @@
 #macro DEV Randoragon
 #macro ENGINE GameMaker: Studio
 #macro COPYRIGHT All rights reserved.
-#macro ProjectInfo:NAME Myriad Blitz
-#macro ProjectInfo:DEV Randoragon
-#macro ProjectInfo:VER "1.1.0"
-#macro ProjectInfo:COPYRIGHT All rights reserved.
-#macro ProjectInfo:ENGINE GameMaker: Studio

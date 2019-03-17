@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ActiveConfig="default" Platform="Windows" Runtime="VM" Device="Default">
+	<Desktop x="-8" y="-8" width="1920" height="1057" id="19" title="Myriad Blitz - GameMaker Studio 2" windowState="Maximized">
+		<Workspaces>
+			<Workspace active="True" chain="True" title="Workspace 1" localise_title="Workspace_TabTitle" localise_arguments="[&#xD;&#xA;    &quot;1&quot;&#xD;&#xA;]" workspace_offset="[11039, 7252]" workspace_scale="1">
+				<Module Command="open_object_editor">
+					<ObjectEditor objectId="5bbfc8a5-4b4d-4483-86a4-b4ebd39f6110" objectName="boss" eventsOpen="true" parentOpen="false" physicsOpen="false" physicsEditorOpen="false" propertiesOpen="true" activeWindow="parent">
+						<Variables>
+							<Window left="0px" right="" top="320px" bottom="" width="100%" height="250dpi_px" flags="CloseButton, MinimizeButton, ResizeTop, ResizeBottom, DragDisabled, DockingDisabled, Bookmark" title="Variable Definitions" localise_title="ObjectEditor_InstPropsDefs" />
+							<Table columns="4" column_0="1.5*" column_1="1.5*" column_2="1*" column_3="57dpi_px" />
+						</Variables>
+						<WorkspaceChain left="10654dpi_px" top="7317dpi_px" />
+						<DocumentWindow columns="1" fullscreen="False" activeTab="3" isActive="False" w="900dpi_px" h="600dpi_px" linkIndex="-1">
+							<Script column="0" file="${project_dir}\objects\boss\Create_0.gml" resource="5bbfc8a5-4b4d-4483-86a4-b4ebd39f6110" subResource="86c2c604-2caf-46f2-8073-17af3927f81e" overridden_title="False" view_readonly="False" />
+							<Script column="0" file="${project_dir}\objects\boss\Draw_77.gml" resource="5bbfc8a5-4b4d-4483-86a4-b4ebd39f6110" subResource="cb8b39b4-dac2-4fc6-a0b4-5f5eb5937ac8" overridden_title="False" view_readonly="False" />
+							<Script column="0" file="${project_dir}\objects\boss\Draw_76.gml" resource="5bbfc8a5-4b4d-4483-86a4-b4ebd39f6110" subResource="b1bdc1e1-15ee-4426-85f1-8b7c0954a2d3" overridden_title="False" view_readonly="False" />
+							<Script column="0" file="${project_dir}\objects\boss\Draw_73.gml" resource="5bbfc8a5-4b4d-4483-86a4-b4ebd39f6110" subResource="a5581845-597a-4d88-8590-a14877700672" overridden_title="False" view_readonly="False" />
+						</DocumentWindow>
+					</ObjectEditor>
+				</Module>
+			</Workspace>
+			<Workspace active="False" chain="False" title="Code" localise_title="CodeWindow_Title" workspace_offset="[0, 0]" workspace_scale="1">
+				<Module Command="DocumentWindow_RestoreLayout" WorkspaceOwner="true">
+					<DocumentWindow columns="1" fullscreen="True" activeTab="3" isActive="False">
+						<Script column="0" file="${project_dir}\objects\boss\Draw_72.gml" resource="5bbfc8a5-4b4d-4483-86a4-b4ebd39f6110" subResource="6f58fdfa-6e73-437b-9bda-6da85decc382" overridden_title="False" view_readonly="False" />
+						<Script column="0" file="${project_dir}\scripts\draw_sprite_htiled\draw_sprite_htiled.gml" resource="6e450aa6-e18f-4e47-8a56-c84ff8afddf9" subResource="00000000-0000-0000-0000-000000000000" overridden_title="False" view_readonly="False" />
+						<Script column="0" file="${project_dir}\scripts\draw_sprite_vtiled\draw_sprite_vtiled.gml" resource="19b501f2-46bb-43c2-9f23-3c49ba43300a" subResource="00000000-0000-0000-0000-000000000000" overridden_title="False" view_readonly="False" />
+						<Script column="0" file="${project_dir}\scripts\draw_sprite_htiled_ext\draw_sprite_htiled_ext.gml" resource="cfb522bf-95c3-4860-9d16-7a56112cd366" subResource="00000000-0000-0000-0000-000000000000" overridden_title="False" view_readonly="False" />
+					</DocumentWindow>
+				</Module>
+			</Workspace>
+		</Workspaces>
+		<Dock state="Expanded" type="eRight" restore_size="305dpi_px" active_tab="0">
+			<DockTab localise_title="ResourceTree_Title" cell_sizes="[894,105]" layout_id="dock_tab_1" layout_guid="7f540043-f24b-4fa2-8bc2-6f50db8a14a9">
+				<Module Command="open_resource_tree">
+					<ResourceWindow left="0px" right="" top="0px" bottom="" width="400px" height="600px" flags="CloseButton, ResizeButton" title="Resources" localise_title="ResourceTree_Title" active_view="Default" Scale="100" />
+				</Module>
+				<Module Command="open_recent_windows">
+					<RecentWindowsWindow left="" right="" top="" bottom="" width="400dpi_px" height="100dpi_px" flags="Default" title="Recent Windows" localise_title="recentwindows_title" />
+				</Module>
+			</DockTab>
+		</Dock>
+		<Dock state="Expanded" type="eBottom" restore_size="201.4113dpi_px" active_tab="4">
+			<DockTab localise_title="OutputPanel_SourceControl" cell_sizes="[1000]" layout_id="dock_tab_3" layout_guid="8dad453f-024a-44fc-a5dc-4216cc26c3a0">
+				<Module Command="open_sc_output_panel">
+					<Window left="0px" right="" top="0px" bottom="" width="900px" height="240px" flags="Default" title="Source Control" localise_title="OutputPanel_SourceControl" />
+				</Module>
+			</DockTab>
+			<DockTab localise_title="Breakpoints" cell_sizes="[1000]" layout_id="dock_tab_4" layout_guid="d8e1d43f-37c9-4b06-8bf4-5acd86ebb24e">
+				<Module Command="open_breakpoint_mgr">
+					<Window left="0px" right="" top="0px" bottom="" width="900px" height="240px" flags="Default" title="Breakpoints" localise_title="Breakpoints" />
+				</Module>
+			</DockTab>
+			<DockTab localise_title="CompileErrors" cell_sizes="[1000]" layout_id="dock_tab_5" layout_guid="2ebc1051-6db7-47da-beb7-29374d5d21f6">
+				<Module Command="show_compile_errors">
+					<Window left="0px" right="" top="0px" bottom="" width="900px" height="240px" flags="Default" title="Compile Errors" localise_title="CompileErrors" />
+				</Module>
+			</DockTab>
+			<DockTab localise_title="SyntaxErrors" cell_sizes="[1000]" layout_id="dock_tab_6" layout_guid="03560dbe-440b-4b53-88b1-d1c398ff2549">
+				<Module Command="show_syntax_errors">
+					<Window left="0px" right="" top="0px" bottom="" width="900px" height="240px" flags="Default" title="Syntax Errors" localise_title="SyntaxErrors" />
+				</Module>
+			</DockTab>
+			<DockTab localise_title="OutputPanel_Title" cell_sizes="[675]" layout_id="dock_tab_7" layout_guid="c2cd8e2f-9e8e-4326-937e-282f84c21883">
+				<Module Command="open_output_panel">
+					<Window left="262px" right="" top="859.5px" bottom="" width="900dpi_px" height="240dpi_px" flags="Default" title="Output" localise_title="OutputPanel_Title" />
+				</Module>
+			</DockTab>
+		</Dock>
+	</Desktop>
+	<Modules>
+		<YoYoStudio.Plugins.CorePlugins.RoomEditorModule>
+			<RoomEditor />
+		</YoYoStudio.Plugins.CorePlugins.RoomEditorModule>
+	</Modules>
+	<FoldRegions>
+		<FoldState docId="a5581845-597a-4d88-8590-a14877700672" foldedRegions="0,1,2,5" />
+		<FoldState docId="26e5012d-11c5-4e5d-a79d-68dd37947a73" foldedRegions="0,1,2,3,4" />
+		<FoldState docId="86c2c604-2caf-46f2-8073-17af3927f81e" foldedRegions="1,3,4" />
+		<FoldState docId="6287d8c7-0b5a-4fbc-93af-1a9868e39bf0" foldedRegions="0,2,3,4,5" />
+		<FoldState docId="229f2ee5-7598-4e98-a253-d9f308176930" foldedRegions="2" />
+		<FoldState docId="23243910-a349-4d6e-ad00-99495bf42915" foldedRegions="0,1,2,3,4,5" />
+		<FoldState docId="6123db41-f82d-429a-95e9-2256ea9de15f" foldedRegions="0,1,2,4" />
+	</FoldRegions>
+</Project>

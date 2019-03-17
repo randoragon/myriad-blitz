@@ -1,77 +1,109 @@
 /// @description scr_BackgroundUpdate(global.realm)
 /// @param global.realm
 
+var a;
+
 switch (argument[0]) {
     case 0: // Menu
-        __background_set( e__BG.Index,  0, bg_Menu0 );
-        __background_set( e__BG.HTiled, 0, 0        );
-        __background_set( e__BG.VTiled, 0, 1        );
-        global.parallax_speed[0, 0] = 0;
-        global.parallax_speed[0, 1] = 0;
-        __background_set( e__BG.Index,  1, bg_Menu1 );
-        __background_set( e__BG.HTiled, 1, 1        );
-        __background_set( e__BG.VTiled, 1, 0        );
-        global.parallax_speed[1, 0] = -1;
-        global.parallax_speed[1, 1] = 0;
-        __background_set( e__BG.Index,  2, bg_Menu2 );
-        __background_set( e__BG.HTiled, 2, 1        );
-        __background_set( e__BG.VTiled, 2, 0        );
-        global.parallax_speed[2, 0] = -2;
-        global.parallax_speed[2, 1] = 0;
-        __background_set( e__BG.Index,  3, bg_Menu3 );
-        __background_set( e__BG.HTiled, 3, 1        );
-        __background_set( e__BG.VTiled, 3, 0        );
-        global.parallax_speed[3, 0] = -3;
-        global.parallax_speed[3, 1] = 0;
-        __background_set( e__BG.Index,  4, bg_Menu4 );
-        __background_set( e__BG.HTiled, 4, 1        );
-        __background_set( e__BG.VTiled, 4, 0        );
-        global.parallax_speed[4, 0] = -4;
-        global.parallax_speed[4, 1] = 0;
-        __background_set( e__BG.Index,  5, bg_Menu5 );
-        __background_set( e__BG.HTiled, 5, 1        );
-        __background_set( e__BG.VTiled, 5, 0        );
-        global.parallax_speed[5, 0] = -5;
-        global.parallax_speed[5, 1] = 0;
-        __background_set( e__BG.Index,  6, bg_Menu6 );
-        __background_set( e__BG.HTiled, 6, 1        );
-        __background_set( e__BG.VTiled, 6, 0        );
-        global.parallax_speed[6, 0] = -6;
-        global.parallax_speed[6, 1] = 0;
-        __background_set( e__BG.Index,  7, -1       );
+		a = 0;
+		global.background_sprite[a]  = bg_Menu0;
+		global.background_htiled[a]  = true;
+		global.background_vtiled[a]  = false;
+		global.background_hspeed[a]  = 0;
+		global.background_vspeed[a]  = 0;
+        
+		a = 1;
+		global.background_sprite[a]  = bg_Menu1;
+		global.background_htiled[a]  = true;
+		global.background_vtiled[a]  = false;
+		global.background_hspeed[a]  = -1;
+		global.background_vspeed[a]  = 0;
+        
+		a = 2;
+		global.background_sprite[a]  = bg_Menu2;
+		global.background_htiled[a]  = true;
+		global.background_vtiled[a]  = false;
+		global.background_hspeed[a]  = -2;
+		global.background_vspeed[a]  = 0;
+		
+		a = 3;
+		global.background_sprite[a]  = bg_Menu3;
+		global.background_htiled[a]  = true;
+		global.background_vtiled[a]  = false;
+		global.background_hspeed[a]  = -3;
+		global.background_vspeed[a]  = 0;
+		
+		a = 4;
+		global.background_sprite[a]  = bg_Menu4;
+		global.background_htiled[a]  = true;
+		global.background_vtiled[a]  = false;
+		global.background_hspeed[a]  = -4;
+		global.background_vspeed[a]  = 0;
+        
+		a = 5;
+		global.background_sprite[a]  = bg_Menu5;
+		global.background_htiled[a]  = true;
+		global.background_vtiled[a]  = false;
+		global.background_hspeed[a]  = -5;
+		global.background_vspeed[a]  = 0;
+        
+		a = 6;
+		global.background_sprite[a]  = bg_Menu6;
+		global.background_htiled[a]  = true;
+		global.background_vtiled[a]  = false;
+		global.background_hspeed[a]  = -6;
+		global.background_vspeed[a]  = 0;
+        
+        a = 7;
+		global.background_sprite[a]  = noone;
     break;
     case 1: // Christmas Realm
-        __background_set( e__BG.Index,  0, bg_Christmas0 );
-        __background_set( e__BG.HTiled, 0, 0             );
-        __background_set( e__BG.VTiled, 0, 1             );
-        global.parallax_speed[0, 0] = 0;
-        global.parallax_speed[0, 1] = 0;
-        __background_set( e__BG.Index,  1, bg_Christmas1 );
-        __background_set( e__BG.HTiled, 1, 1             );
-        __background_set( e__BG.VTiled, 1, 0             );
-        global.parallax_speed[1, 0] = -1;
-        global.parallax_speed[1, 1] = 0;
-        __background_set( e__BG.Index,  2, bg_Christmas2 );
-        __background_set( e__BG.HTiled, 2, 1             );
-        __background_set( e__BG.VTiled, 2, 0             );
-        global.parallax_speed[2, 0] = -2;
-        global.parallax_speed[2, 1] = 0;
-        __background_set( e__BG.Index,  3, bg_Christmas3 );
-        __background_set( e__BG.HTiled, 3, 1             );
-        __background_set( e__BG.VTiled, 3, 0             );
-        global.parallax_speed[3, 0] = -3;
-        global.parallax_speed[3, 1] = 0;
-        __background_set( e__BG.Index,  4, bg_Christmas4 );
-        __background_set( e__BG.HTiled, 4, 1             );
-        __background_set( e__BG.VTiled, 4, 0             );
-        global.parallax_speed[4, 0] = -4;
-        global.parallax_speed[4, 1] = 0;
-        __background_set( e__BG.Index,  5, bg_Christmas5 );
-        __background_set( e__BG.HTiled, 5, 1             );
-        __background_set( e__BG.VTiled, 5, 0             );
-        global.parallax_speed[5, 0] = -6;
-        global.parallax_speed[5, 1] = 0;
-        __background_set( e__BG.Index,  6, -1            );
-        __background_set( e__BG.Index,  7, -1            );
+		a = 0;
+		global.background_sprite[a]  = bg_Christmas0;
+		global.background_htiled[a]  = true;
+		global.background_vtiled[a]  = false;
+		global.background_hspeed[a]  = 0;
+		global.background_vspeed[a]  = 0;
+        
+		a = 1;
+		global.background_sprite[a]  = bg_Christmas1;
+		global.background_htiled[a]  = true;
+		global.background_vtiled[a]  = false;
+		global.background_hspeed[a]  = -1;
+		global.background_vspeed[a]  = 0;
+        
+		a = 2;
+		global.background_sprite[a]  = bg_Christmas2;
+		global.background_htiled[a]  = true;
+		global.background_vtiled[a]  = false;
+		global.background_hspeed[a]  = -2;
+		global.background_vspeed[a]  = 0;
+		
+		a = 3;
+		global.background_sprite[a]  = bg_Christmas3;
+		global.background_htiled[a]  = true;
+		global.background_vtiled[a]  = false;
+		global.background_hspeed[a]  = -3;
+		global.background_vspeed[a]  = 0;
+		
+		a = 4;
+		global.background_sprite[a]  = bg_Christmas4;
+		global.background_htiled[a]  = true;
+		global.background_vtiled[a]  = false;
+		global.background_hspeed[a]  = -4;
+		global.background_vspeed[a]  = 0;
+        
+		a = 5;
+		global.background_sprite[a]  = bg_Christmas5;
+		global.background_htiled[a]  = true;
+		global.background_vtiled[a]  = false;
+		global.background_hspeed[a]  = -6;
+		global.background_vspeed[a]  = 0;
+        
+		a = 6;
+		global.background_sprite[a]  = noone;
+        
+        a = 7;
+		global.background_sprite[a]  = noone;
     break;
 }
