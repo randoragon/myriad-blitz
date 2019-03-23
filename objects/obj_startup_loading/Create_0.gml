@@ -5,7 +5,7 @@
 image_scale(2, 2);
 image_alpha = 0;
 image_speed = 0;
-instance_create(0, 0, obj_randoragon_logo);
+instance_create_layer(0, 0, "Logo", obj_randoragon_logo);
 
 #endregion
 

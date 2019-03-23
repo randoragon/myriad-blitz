@@ -155,6 +155,48 @@ part_type_blend_color_alpha_lt(part, bm_add, c_white, c_white, 0.5, 0);
 
 #region Depth Hierarchy
 
+global.object_layer = ds_map_create();
+layer_set_target_room(rm_Main);
+// Particle Drawers
+global.object_layer[? obj_damage_indicators]  = layer_get_id("Indicators");
+global.object_layer[? obj_player_tparticles]  = layer_get_id("PlayerTopParticles");
+global.object_layer[? obj_player_bparticles]  = layer_get_id("PlayerBotParticles");
+global.object_layer[? obj_ultimate_particles] = layer_get_id("UltimateBurstParticles");
+global.object_layer[? obj_charge_particles]   = layer_get_id("ChargeParticles");
+global.object_layer[? obj_enemy_particles]    = layer_get_id("EnemyParticles");
+global.object_layer[? obj_frag_particles]     = layer_get_id("FragParticles");
+
+// Entities
+global.object_layer[? obj_player]	   = layer_get_id("Player");
+global.object_layer[? obj_wrap_helper] = layer_get_id("PlayerUnderlay");
+global.object_layer[? obj_projectile]  = layer_get_id("Projectiles");
+global.object_layer[? obj_frag]		   = layer_get_id("Frags");
+global.object_layer[? obj_charge]	   = layer_get_id("Charge");
+global.object_layer[? obj_charge]	   = layer_get_id("Charge");
+// -> ultimates
+global.object_layer[? obj_evilflame_ultimate]		= layer_get_id("PlayerUnderlay");
+global.object_layer[? obj_emerald_ultimate]			= layer_get_id("UnderlayEffects1");
+global.object_layer[? obj_emerald_ultimate_flow]	= layer_get_id("UnderlayEffects0");
+global.object_layer[? obj_emerald_ultimate_force]   = layer_get_id("OverlayEffects0");
+// <- end of ultimates
+global.object_layer[? obj_enemy]	   = layer_get_id("Enemy");
+global.object_layer[? obj_eprojectile] = layer_get_id("EnemyProjectiles");
+
+// FX
+global.object_layer[? obj_ultimate_activation] = layer_get_id("UltimateActivation");
+global.object_layer[? obj_screenflash]		   = layer_get_id("ScreenFlash");
+global.object_layer[? obj_shockwave]		   = layer_get_id("Explosions");
+
+// collectibles
+global.object_layer[? obj_present]		   = layer_get_id("Collectibles");
+global.object_layer[? obj_ultimate_pickup] = layer_get_id("UltimateBurstParticles");
+
+// decorations
+global.object_layer[? obj_explosion] = layer_get_id("Explosions");
+global.object_layer[? obj_debris]    = layer_get_id("Debris");
+
+layer_reset_target_room();
+/*
 enum gui_depth {
     // Misc GUI
     popup = -6, 
@@ -172,7 +214,7 @@ enum gui_depth {
     
     // rm_Main GUI
     statboard = -4, 
-    keyboard = -3, 
+    keyboard = -3,
     lore = -3, 
     main_arrow = -3, 
     
@@ -207,7 +249,7 @@ enum general_depth {
     emerald_ultimate_center = 13, 
     emerald_ultimate_flow_bottom = 14
 }
-
+*/
 #endregion
 
 #region Sound Hierarchy

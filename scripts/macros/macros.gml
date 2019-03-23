@@ -1,5 +1,12 @@
 #macro CHRCOUNT 3
 #macro RLMCOUNT 1
+#macro PART_SYSTEM_PLAYERBOT global.part_system[0]
+#macro PART_SYSTEM_DAMAGE_INDICATORS global.part_system[1]
+#macro PART_SYSTEM_FRAG global.part_system[2]
+#macro PART_SYSTEM_CHARGE global.part_system[3]
+#macro PART_SYSTEM_ENEMY global.part_system[4]
+#macro PART_SYSTEM_PLAYERTOP global.part_system[5]
+#macro PART_SYSTEM_ULTIMATE global.part_system[6]
 #macro BORDER_THICKNESS 20
 #macro SURFACE_SCALE (window_get_width() / (room_width - (2 * BORDER_THICKNESS)))
 #macro CANVAS_X __view_get( e__VW.XView, 0 )

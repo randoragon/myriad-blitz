@@ -313,7 +313,7 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 					play_sfx(sfx_button3, 0, 0);
 				break;
 	            case 15:
-					instance_create(lerp(CANVAS_X, CANVAS_XEND, 0.5), lerp(CANVAS_Y, CANVAS_YEND, 0.5), obj_slot_load);
+					instance_create_layer(lerp(CANVAS_X, CANVAS_XEND, 0.5), lerp(CANVAS_Y, CANVAS_YEND, 0.5), "Popups", obj_slot_load);
 					play_sfx(sfx_button3, 0, 0);
 				break;
 	            case 16:

@@ -37,7 +37,7 @@
 
 if (argument_count != 4 && argument_count != 8 && argument_count != 16) { show_message("Invalid number of arguments in fx_wave script!"); exit; }
    
-var a = instance_create(0, 0, obj_oscillator);
+var a = instance_create_depth(0, 0, 0, obj_oscillator);
 if (argument_count >= 8) {
     a.waveform[0, 0] = argument[0];
     a.waveform[1, 0] = argument[1];

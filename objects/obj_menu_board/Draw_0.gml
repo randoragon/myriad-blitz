@@ -1,7 +1,19 @@
-/// @description Skip draw_self()
+/// @description Draw Self
 
-#region Skip draw_self()
+#region GUI_SURFACE set
 
-exit;
+surface_set_target(GUI_SURFACE);
+
+#endregion
+
+#region Draw self
+
+draw_self();
+
+#endregion
+
+#region Reset surface
+
+surface_reset_target();
 
 #endregion

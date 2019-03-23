@@ -401,7 +401,7 @@ if (global.gpspeed != 0 && global.state != 2 && real_step()) {
 			part_type_edit_lt(part, "direction", -image_angle + 170, -image_angle + 190);
 			part_type_edit_lt(part, "size", (0.15 * (1 + status_effect[9])) * image_yscale, (0.25 * (1 + status_effect[9])) * image_yscale, (-0.008 * (1 + status_effect[9])) * image_xscale);
 			part_type_edit_lt(part, "speed", 7 * image_yscale, 11 * image_yscale, 0);
-			part_type_spawn_lt(global.part_system[0], part, 1, x + lengthdir_x(dis,ang), y + lengthdir_y(dis,ang), x + lengthdir_x(dis,ang), y + lengthdir_y(dis,ang), "line", "linear", 1.5);
+			part_type_spawn_lt(PART_SYSTEM_PLAYERBOT, part, 1, x + lengthdir_x(dis,ang), y + lengthdir_y(dis,ang), x + lengthdir_x(dis,ang), y + lengthdir_y(dis,ang), "line", "linear", 1.5);
 		break;
 	}
 }
@@ -510,16 +510,16 @@ if (keyboard_check_pressed(global.keybind[6]) && ultcount > 0 && !is_ultimate_co
 if (flash_clock == 40) {
     ultblink = 45;
         //particle burst
-        part_type_spawn_lt(global.part_system[5], global.player_part[0], 0, x - sprite_xoffset, y - sprite_yoffset, x - sprite_xoffset + sprite_width, y - sprite_yoffset + sprite_height, "ellipse", "invgaussian", 100);
+        part_type_spawn_lt(PART_SYSTEM_PLAYERTOP, global.player_part[0], 0, x - sprite_xoffset, y - sprite_yoffset, x - sprite_xoffset + sprite_width, y - sprite_yoffset + sprite_height, "ellipse", "invgaussian", 100);
 		
         if (global.chrsel == 0 && !TWILIGHT_FURY) {
 			//evilflame's dual clone's burst
-			part_type_spawn_lt(global.part_system[5],global.player_part[0],0,x-sprite_xoffset,-(y-sprite_yoffset)+room_height,x-sprite_xoffset+sprite_width,-(y-sprite_yoffset+sprite_height)+room_height,"ellipse","invgaussian",100);
+			part_type_spawn_lt(PART_SYSTEM_PLAYERTOP, global.player_part[0], 0, x - sprite_xoffset, -(y - sprite_yoffset) + room_height, x - sprite_xoffset + sprite_width, -(y - sprite_yoffset + sprite_height) + room_height, "ellipse", "invgaussian", 100);
         } else if (global.chrsel == 1) {
 			//emerald's current crush burst
 	        var random_x = irandom_range(CANVAS_XEND - 600, CANVAS_XEND - 200);
 	        var random_y = irandom_range(CANVAS_Y + 234, CANVAS_YEND - 234);
-	        part_type_spawn_lt(global.part_system[5], global.player_part[0], 0, x, y, random_x, random_y, "line", "linear", 100);
+	        part_type_spawn_lt(PART_SYSTEM_PLAYERTOP, global.player_part[0], 0, x, y, random_x, random_y, "line", "linear", 100);
         }
 		
     switch(global.chrsel) {
@@ -537,14 +537,12 @@ if (flash_clock == 40) {
 		    }
 	    break;
 	    case 1:
-			obj_ultimate_particles.depth = general_depth.emerald_ultimate_particles;
 			with(obj_enemy) { cooldown = 60; }
 			instance_create(random_x, random_y, obj_emerald_ultimate); //emerald - current crush
 			player_status_add(7, 900,  0);
 			player_status_add(2, 1200, 0);
 		break;
 	    case 2:
-		    obj_ultimate_particles.depth = general_depth.scootomik_ultimate_particles;
 		    player_status_add(8, 30, 0); //der scootomik - chip tuning
 		    global.gpspeed_ultimate = 0.05;
 		    inv = 0;

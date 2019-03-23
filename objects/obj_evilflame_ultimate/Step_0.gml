@@ -179,7 +179,7 @@ if (global.gpspeed != 0) {
 	#region Death
 
 	if (hp <= 0 && image_alpha == 1) {
-		instance_create(x, y, obj_explosion);
+		instance_create_layer(x, y, "Explosions", obj_explosion);
 		instance_destroy();
 	}
 	

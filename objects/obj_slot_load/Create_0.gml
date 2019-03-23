@@ -10,7 +10,6 @@ event_inherited();
 
 image_speed		= 0;
 image_index		= 0;
-depth			= gui_depth.slot_load;
 keyboard_string = "";
 slot[0]			= file_find_first(working_directory+"slots\\*mbslot",0);
 

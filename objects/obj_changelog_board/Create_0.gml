@@ -10,7 +10,7 @@ instance_setup(irandom(image_number - 1), 0.04);
 sprite_index = noone;
 scroll		 = 0;
 scrollv		 = 0;
-osc=fx_wave(3, 4, -3, -4, 1, 30, 0, -1, 3, 4, -3, -4, 3, 45, 0, -1);
+osc			 = fx_wave(3, 4, -3, -4, 1, 30, 0, -1, 3, 4, -3, -4, 3, 45, 0, -1);
 
 if (file_exists(program_directory + "\\changelog.txt")) {
     var file = file_text_open_read(program_directory + "\\changelog.txt");
