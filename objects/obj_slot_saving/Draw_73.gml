@@ -13,12 +13,12 @@ if (phase == 0) {
 	    phase      = 1;
 	    inst_count = 0;
 	    for (var i = 0; i < instance_count; i++) {
-	        if (object_is_ancestor(instance_id_get(i).object_index,obj_save_group)) {
+	        if (object_is_ancestor(instance_id_get(i).object_index, obj_save_group)) {
 	            inst_id[inst_count] = instance_id_get(i);
-	            inst_count         += 1;
+	            inst_count++;
 	        }
 	    }
-	    global.loading = 1;
+	    global.loading = true;
     }
 } else if (phase == 5) {
     if (++intro == 30) {

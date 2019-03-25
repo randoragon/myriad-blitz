@@ -33,6 +33,4 @@ switch(f) {
 	case 1: image_index = global.chrsel + 1; break;
 }
 
-depth = general_depth.present;
-
 #endregion

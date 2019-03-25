@@ -27,7 +27,7 @@ if (phase == 0) {
         file_text_readln(temp_file); //skip slot date
         
         phase			= 1;
-        global.loading	= 1;
+        global.loading	= true;
         global.state			= 1;
         global.transition = 1;
         room_goto(rm_Main);

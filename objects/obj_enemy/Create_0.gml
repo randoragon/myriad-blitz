@@ -8,7 +8,6 @@ event_inherited();
 
 #region Setup
 
-depth              = general_depth.enemy;
 image_speed        = 0;
 time_mark          = global.gptime;
 loot               = ds_map_create();

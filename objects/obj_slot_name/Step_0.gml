@@ -37,7 +37,7 @@ if (keyboard_string != "") {
 	                instance_destroy();
 	            }
 	            instance_destroy();
-	            var n = instance_create(lerp(CANVAS_X, CANVAS_XEND, 0.5), lerp(CANVAS_Y, CANVAS_YEND, 0.5), obj_slot_load);
+	            var n = instance_create_layer(lerp(CANVAS_X, CANVAS_XEND, 0.5), lerp(CANVAS_Y, CANVAS_YEND, 0.5), "Popups", obj_slot_load);
 	            n.page = prevpage;
 	        break;
         }

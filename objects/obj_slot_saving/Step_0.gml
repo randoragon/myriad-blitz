@@ -190,8 +190,9 @@ if (phase == 1) {
 	            if (instance_exists(inst_id[inst_index])) {
 	                with (inst_id[inst_index]) {
 	                    //basic instance variables
+						if (is_undefined(ds_map_find_value(global.save_index, object_get_name(object_index)))) { show_message("GOTCHA BITCH! - " + string(id) + " " + string(object_get_name(object_index))); }
 	                    other.data = 
-	                    object_get_name(object_index) + ";" + 
+	                    string(global.save_index[? object_get_name(object_index)]) + ";" + 
 	                    string(id) + ";" + 
 	                    string(sprite_index) + ";" + 
 	                    string(image_index) + ";" + 
@@ -446,15 +447,23 @@ if (phase == 3 && clock-- <= 0) {
 
 #region Phase 4 - Text File Write
 
-if phase == 4 {
-if clock-- <= 0 {
-file_text_write_string(file, chunk[progress]);
-file_text_writeln(file);
+if (phase == 4) {
+	if (clock-- <= 0) {
+		file_text_write_string(file, chunk[progress]);
+		file_text_writeln(file);
 
-progress += 1;
-clock = interval;
-if progress >= progress_max {phase = 5; data = ""; progress = 0; file_text_close(file); randomize(); random_set_seed(initial_seed); global.loading = 0;}
-}
+		progress += 1;
+		clock = interval;
+		if (progress >= progress_max) {
+			phase = 5;
+			data = "";
+			progress = 0;
+			file_text_close(file);
+			randomize();
+			random_set_seed(initial_seed);
+			global.loading = false;
+		}
+	}
 }
 
 #endregion

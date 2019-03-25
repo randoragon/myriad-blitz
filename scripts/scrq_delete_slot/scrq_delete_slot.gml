@@ -16,7 +16,7 @@ with (obj_slot_load) {
 }
 
 instance_destroy();
-var newinstance = instance_create(CANVAS_XMID, CANVAS_YMID, obj_slot_load);
+var newinstance = instance_create_layer(CANVAS_XMID, CANVAS_YMID, "Popups", obj_slot_load);
 newinstance.page = prevpage;
 
 if (ceil((prevslotcount - 1) / 6) < prevpage) {

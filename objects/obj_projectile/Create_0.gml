@@ -3,7 +3,6 @@
 #region Setup
 
 sprite_index = noone;
-depth        = general_depth.projectile;
 
 #endregion
 

@@ -35,7 +35,7 @@
  * Must be an integer number.
  */
  
-var a = instance_create(0, 0, obj_oscillator);
+var a = instance_create_depth(0, 0, 0, obj_oscillator);
 a.waveform[0, 0] = argument[0];
 a.waveform[1, 0] = argument[1];
 a.waveform[2, 0] = argument[2];

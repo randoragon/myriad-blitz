@@ -1,4 +1,4 @@
-/// @description Auto Save & Wipe
+/// @description Auto Save, Wipe, Cleanup
 
 ini_open(working_directory+"\\userconfig.mbdat");
 ini_write_real("settings", "fullscreen",			   global.fullscreen);
@@ -12,3 +12,8 @@ ini_write_real("settings", "enemy_selection_auto_aim", global.enemy_details_sele
 ini_close();
 
 wipe(all);
+
+if (ds_exists(global.player_status_effects, ds_type_grid)) { ds_grid_destroy(global.player_status_effects); }
+if (ds_exists(global.object_layer, ds_type_map))		   { ds_map_destroy(global.object_layer);		    }
+if (ds_exists(global.save_index, ds_type_map))			   { ds_map_destroy(global.save_index);				}
+if (ds_exists(global.save_name, ds_type_map))			   { ds_map_destroy(global.save_name);				}

@@ -177,7 +177,7 @@ if (phase == 4 && clock-- <= 0) {
 	        var sndid, snd;
 	        repeat(snd_count) {
 	            sndid = string_readln_real(bit, ";");
-	            if (!audio_exists(sndid)) {string_readln(bit, ";"); string_readln(bit, ";"); continue;} 
+	            if (!audio_exists(sndid)) { string_readln(bit, ";"); string_readln(bit, ";"); continue; } 
 	            snd = play_music(sndid, sound_priority.music, 1, string_readln_real(bit, ";") * 100);
 	            audio_sound_set_track_position(snd, string_readln_real(bit, ";"));
 	            audio_sound_gain(snd, 0, 0);
@@ -185,7 +185,7 @@ if (phase == 4 && clock-- <= 0) {
 	        snd_count = string_readln_real(bit, ";");
 	        repeat(snd_count) {
 	            sndid = string_readln_real(bit, ";");
-	            if (!audio_exists(sndid)) {string_readln(bit, ";"); string_readln(bit, ";"); continue;} 
+	            if (!audio_exists(sndid)) { string_readln(bit, ";"); string_readln(bit, ";"); continue; } 
 	            snd = play_sfx(sndid, 0, 0, string_readln_real(bit, ";") * 100);
 	            audio_sound_set_track_position(snd, string_readln_real(bit, ";"));
 	            audio_sound_gain(snd, 0, 0);
@@ -333,8 +333,18 @@ if (phase == 4 && clock-- <= 0) {
 	            }
 	    break;
 	    default: //object loading
-	        var fobj = instance_create(0, 0, asset_get_index(string_readln(bit, ";")));
-        
+			var temporaryobjectname = string_readln(bit, ";");
+			var temporaryobjectindex;
+			switch(slotversion) {
+				default:
+					temporaryobjectindex = asset_get_index(global.save_name[? real(temporaryobjectname)]);
+				break;
+				case "1.1.0": case "1.1.1":
+					temporaryobjectindex = asset_get_index(temporaryobjectname);
+				break;
+			}
+	        var fobj = instance_create_depth(0, 0, 0, temporaryobjectindex);
+			
 	        with (fobj) {
 	            //default variables
 	            previd			 = string_readln_real(bit, ";");
@@ -342,7 +352,7 @@ if (phase == 4 && clock-- <= 0) {
 	            image_index		 = string_readln_real(bit, ";");
 	            image_speed		 = string_readln_real(bit, ";");
 	            prev_image_speed = string_readln_real(bit, ";");
-	            for (var fi = 0; fi<12; fi++) {
+	            for (var fi = 0; fi < 12; fi++) {
 	                alarm[fi]    = string_readln_real(bit, ";");
 	            }
 	            depth			 = string_readln_real(bit, ";");
@@ -688,44 +698,45 @@ if (phase == 4 && clock-- <= 0) {
 #region Phase 5 - Reassigning Pointers
 
 if (phase == 5) {
+	with (all) {
+	    if (object_is_ancestor(object_index, obj_save_group)) {
+	        if (global.enemy_details_selection == previd) {
+	            global.enemy_details_selection = id;
+	        }
+	        switch(object_index) {
+		        case obj_player:
+		            spawn = id;
+		            with (all) {
+		                if (object_is_ancestor(object_index, obj_save_group)) {
+		                    if (other.helper == previd) other.helper = id;
+		                }
+		            }
+		        break;
+		        case obj_projectile: case obj_charge: case obj_eprojectile:
+		            with (all) {
+		                if (object_is_ancestor(object_index, obj_save_group)) {
+		                    if (other.spawn == previd) other.spawn = id;
+		                }
+		            }
+		        break;
+		        case obj_frag:
+		            with (all) {
+		                if (object_is_ancestor(object_index, obj_save_group)) {
+		                    if (other.spawn == previd) other.spawn = id;
+		                    if (other.enemy = previd) other.enemy = id;
+		                }
+		            }
+		        break;
+		        case obj_evilflame_ultimate:
+		            player = instance_find(obj_player, 1);
+		        break;
+	        }
+	    }
+	}
 
-with (all) {
-    if (object_is_ancestor(object_index, obj_save_group)) {
-        if (global.enemy_details_selection == previd) {
-            global.enemy_details_selection = id;
-        }
-        switch(object_index) {
-	        case obj_player:
-	            spawn = id;
-	            with (all) {
-	                if (object_is_ancestor(object_index, obj_save_group)) {
-	                    if (other.helper == previd) other.helper = id;
-	                }
-	            }
-	        break;
-	        case obj_projectile:case obj_charge:case obj_eprojectile:
-	            with (all) {
-	                if (object_is_ancestor(object_index, obj_save_group)) {
-	                    if (other.spawn == previd) other.spawn = id;
-	                }
-	            }
-	        break;
-	        case obj_frag:
-	            with (all) {
-	                if (object_is_ancestor(object_index, obj_save_group)) {
-	                    if (other.spawn == previd) other.spawn = id;
-	                    if (other.enemy = previd) other.enemy = id;
-	                }
-	            }
-	        break;
-	        case obj_evilflame_ultimate:
-	            player = instance_find(obj_player, 1);
-	        break;
-        }
-    }
-}
-
-phase = 6; global.loading = 0; scr_Pause();
+	phase = 6;
+	global.loading = false;
+	scr_Pause();
 }
 
 #endregion

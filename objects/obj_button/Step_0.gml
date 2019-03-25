@@ -296,7 +296,7 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 					ask("Do you want to restart?#Any unsaved progress will be lost.", scrq_do_nothing, scrq_restart);
 				break;
 	            case 11:
-					instance_create_f(x, y, obj_slot_name, 0);
+					instance_create_layer_f(x, y, "Popups", obj_slot_name, 0);
 					play_sfx(sfx_button3, 0, 0);
 				break;
 	            case 12:
@@ -340,7 +340,7 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 					}
 				break;
 	            case 19:
-					instance_create_f(lerp(CANVAS_X, CANVAS_XEND, 0.5), lerp(CANVAS_Y, CANVAS_YEND, 0.5), obj_slot_name, 1);
+					instance_create_layer_f(lerp(CANVAS_X, CANVAS_XEND, 0.5), lerp(CANVAS_Y, CANVAS_YEND, 0.5), "Popups", obj_slot_name, 1);
 					play_sfx(sfx_button3, 0, 0);
 				break;
 	            case 20:

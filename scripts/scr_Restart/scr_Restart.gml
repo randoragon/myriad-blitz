@@ -34,11 +34,11 @@ scr_PlayerDataUpdate(global.chrsel);
 scr_PlayerGetData();
 scr_ParticlesUpdate();
 scr_BackgroundUpdate(global.realm);
-instance_create  (CANVAS_X + 180,  CANVAS_Y  + 583, obj_keyboard);
-instance_create  (CANVAS_X + 683,  CANVAS_Y  + 624, obj_lore);
-instance_create  (CANVAS_X + 1186, CANVAS_Y  + 498, obj_statboard);
-instance_create_f(CANVAS_X + 896,  CANVAS_Y  + 352, obj_button, 6);
-instance_create_f(CANVAS_X + 448,  CANVAS_Y  + 352, obj_button, 5);
+instance_create_layer  (CANVAS_X + 180,  CANVAS_Y + 583, "Boards", obj_keyboard);
+instance_create_layer  (CANVAS_X + 683,  CANVAS_Y + 624, "Boards", obj_lore);
+instance_create_layer  (CANVAS_X + 1186, CANVAS_Y + 498, "Boards", obj_statboard);
+instance_create_layer_f(CANVAS_X + 896,  CANVAS_Y + 352, "Interactables", obj_button, 6);
+instance_create_layer_f(CANVAS_X + 448,  CANVAS_Y + 352, "Interactables", obj_button, 5);
 
 ds_grid_destroy(global.player_status_effects);            // this grid gets recreated in the player's create event so this line destroys the already existing grid to avoid doubles
 with (obj_player) { event_perform(ev_create, 0); } // reset player variables

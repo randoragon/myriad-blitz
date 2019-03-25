@@ -8,7 +8,6 @@ sprite_index = spr_evilflame + global.chrsel;
  image_angle = 0;
            x = CANVAS_XMID;
 		   y = CANVAS_YMID - 32;
-	   depth = general_depth.player;
 		   
 if (!global.loading) {
     scr_PlayerDataUpdate(global.chrsel);

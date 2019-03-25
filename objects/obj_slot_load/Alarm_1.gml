@@ -16,7 +16,7 @@ if (spawncount < 6) {
 		case 5: xx = x - (0.5 * xshift); yy = y - 213 + (3 * yshift); break;
 		case 6: xx = x + (0.5 * xshift); yy = y - 213 + (3 * yshift); break;
 	}
-	with (instance_create(xx, yy, obj_slot)) {
+	with (instance_create_depth(xx, yy, depth - 1, obj_slot)) {
 		slotid      = working_directory+"slots\\"+other.slot[(other.page*6)+other.spawncount-1];
 		name		= other.slotname   [(other.page * 6) + other.spawncount - 1];
 		date		= other.slotdate   [(other.page * 6) + other.spawncount - 1];

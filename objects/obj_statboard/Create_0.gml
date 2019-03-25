@@ -3,11 +3,10 @@
 #region Setup
 
 instance_setup(irandom(image_number - 1), 0.04);
-depth		 = gui_depth.statboard;
 osc			 = fx_wave(3, 4, -3, -4, 1, 30, 0, -1, 3, 4, -3, -4, 3, 45, 0, -1);
 sprite_index = noone;
-button[0]	 = instance_create_f(x + 115, y - 170, obj_button, 21); with (button[0]) { show = 0; image_index = 0;}
-button[1]	 = instance_create_f(x - 87, y - 170, obj_button, 22);  with (button[1]) { customize = 0; }
+button[0]	 = instance_create_depth_f(x + 115, y - 170, depth - 1, obj_button, 21); with (button[0]) { show = 0; image_index = 0;}
+button[1]	 = instance_create_depth_f(x - 87,  y - 170, depth - 1, obj_button, 22); with (button[1]) { customize = 0; }
 
 scr_Stats_Update(1);
 
@@ -21,7 +20,7 @@ n++;
 /*TOP SPEED*/			 listed[n] = 1;
 desc[n] = 
 "No matter how long you accelerate for,"+
-"#this is as fast as your character can go.";
+"#this is the peak of how fast you can move.";
 n++;
 /*ACCELERATION*/		 listed[n] = 0;
 desc[n] = 

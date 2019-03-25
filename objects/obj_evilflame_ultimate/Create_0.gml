@@ -17,7 +17,6 @@ if (player.evilflame_sprite_swap) {
 }
 instance_setup(obj_player.image_index, 0, -obj_player.image_angle, obj_player.image_alpha);
 image_yscale = -1;
-depth = general_depth.wrap_helper;
 hp        = player.hp;
 hpmax     = player.hpmax;
 hpmark    = hp;

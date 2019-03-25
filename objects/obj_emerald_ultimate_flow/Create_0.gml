@@ -14,9 +14,7 @@ size_growth = random_range(2, 15);
 image_alpha = random_range(0.2, 0.5);
 clock       = irandom_range(220, 260);
 if (obj_emerald_ultimate.rot_cycle % 2 == 0) {
-	depth = general_depth.emerald_ultimate_flow_top;
-} else {
-	depth = general_depth.emerald_ultimate_flow_bottom;
+	layer = layer_get_id("UnderlayEffects0");
 }
 
 #endregion

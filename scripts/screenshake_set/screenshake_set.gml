@@ -7,7 +7,7 @@
 
 if (global.screenshake == 0) { exit; }
 
-var screenshake = (instance_exists(obj_screenshake) ? obj_screenshake : instance_create(0, 0, obj_screenshake));
+var screenshake = (instance_exists(obj_screenshake) ? obj_screenshake : instance_create_depth(0, 0, 0, obj_screenshake));
 
 if (argument[1] != 360) {
     screenshake.h_value = clamp(lengthdir_x(argument[0], argument[1]), -20, 20);

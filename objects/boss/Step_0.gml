@@ -101,16 +101,16 @@ window_last_height = window_get_height();
 
 if (!global.loading) {
 	if (part_system_count_pro(global.part_system[1]) > 0) {
-		if (!instance_exists(obj_damage_indicators)) { instance_create(0, 0, obj_damage_indicators); }
+		if (!instance_exists(obj_damage_indicators)) { instance_create_layer(0, 0, "Indicators", obj_damage_indicators); }
 	} else if (instance_exists(obj_damage_indicators)) { wipe(obj_damage_indicators); }
 
 	if (room==rm_Main) {
-		if (!instance_exists(obj_player_tparticles) ) { instance_create(0,0,obj_player_tparticles);  }
-		if (!instance_exists(obj_player_bparticles) ) { instance_create(0,0,obj_player_bparticles);  }
-		if (!instance_exists(obj_charge_particles)  ) { instance_create(0,0,obj_charge_particles);   }
-		if (!instance_exists(obj_ultimate_particles)) { instance_create(0,0,obj_ultimate_particles); }
-		if (!instance_exists(obj_enemy_particles)   ) { instance_create(0,0,obj_enemy_particles);    }
-		if (!instance_exists(obj_frag_particles)    ) { instance_create(0,0,obj_frag_particles);     }
+		if (!instance_exists(obj_player_tparticles) ) { instance_create_layer(0, 0, "PlayerTopParticles",	  obj_player_tparticles);  }
+		if (!instance_exists(obj_player_bparticles) ) { instance_create_layer(0, 0, "PlayerBotParticles",	  obj_player_bparticles);  }
+		if (!instance_exists(obj_charge_particles)  ) { instance_create_layer(0, 0, "ChargeParticles",		  obj_charge_particles);   }
+		if (!instance_exists(obj_ultimate_particles)) { instance_create_layer(0, 0, "UltimateBurstParticles", obj_ultimate_particles); }
+		if (!instance_exists(obj_enemy_particles)   ) { instance_create_layer(0, 0, "EnemyParticles",		  obj_enemy_particles);    }
+		if (!instance_exists(obj_frag_particles)    ) { instance_create_layer(0, 0, "FragParticles",		  obj_frag_particles);     }
 	} else {
 		if (instance_exists(obj_player_tparticles)  ) { wipe(obj_player_tparticles);  }
 		if (instance_exists(obj_player_bparticles)  ) { wipe(obj_player_bparticles);  }

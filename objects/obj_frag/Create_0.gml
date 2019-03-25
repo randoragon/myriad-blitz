@@ -10,6 +10,5 @@ event_inherited();
 
 sprite_index       = noone;
 image_speed        = 0;
-depth              = general_depth.frag;
 
 #endregion

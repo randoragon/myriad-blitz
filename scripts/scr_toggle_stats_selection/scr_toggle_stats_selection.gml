@@ -9,7 +9,7 @@ with (obj_statboard.button[1]) {
     if (customize == 1) {
         with (obj_statboard) {
             for (var i = 0; i < elementid[array_height_2d(elementid) - 1, array_length_2d(elementid, array_height_2d(elementid) - 1) - 1] + 1; i++) {
-                checkbox[i] = instance_create_f(x - 130, -20, obj_button, 23);
+                checkbox[i] = instance_create_depth_f(x - 130, -20, obj_statboard.depth - 1, obj_button, 23);
                 checkbox[i].check = listed[i];
                 if (listed[i] == 1) { checkbox[i].image_index = 2; }
             }

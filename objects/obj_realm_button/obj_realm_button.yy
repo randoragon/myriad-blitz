@@ -5,16 +5,6 @@
     "name": "obj_realm_button",
     "eventList": [
         {
-            "id": "82a436fd-d2f3-44db-b9b3-d87f23e43541",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "53362856-cb2f-44e8-8a25-2e1b35a6a3ee"
-        },
-        {
             "id": "18da177b-a24a-4538-9faf-145f613b9606",
             "modelName": "GMEvent",
             "mvc": "1.0",

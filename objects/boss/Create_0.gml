@@ -10,7 +10,7 @@ window_set_cursor(cr_none);
 math_set_epsilon(0.0001);
 audio_channel_num(32);
 global.kill_count    = 0;
-global.loading       = 0;
+global.loading       = false;
 global.fullscreen    = 1;
 global.screenshake   = 1;
 global.points        = 0;
@@ -157,6 +157,7 @@ part_type_blend_color_alpha_lt(part, bm_add, c_white, c_white, 0.5, 0);
 
 global.object_layer = ds_map_create();
 layer_set_target_room(rm_Main);
+
 // Particle Drawers
 global.object_layer[? obj_damage_indicators]  = layer_get_id("Indicators");
 global.object_layer[? obj_player_tparticles]  = layer_get_id("PlayerTopParticles");
@@ -169,9 +170,8 @@ global.object_layer[? obj_frag_particles]     = layer_get_id("FragParticles");
 // Entities
 global.object_layer[? obj_player]	   = layer_get_id("Player");
 global.object_layer[? obj_wrap_helper] = layer_get_id("PlayerUnderlay");
-global.object_layer[? obj_projectile]  = layer_get_id("Projectiles");
+global.object_layer[? obj_projectile]  = layer_get_id("PlayerProjectiles");
 global.object_layer[? obj_frag]		   = layer_get_id("Frags");
-global.object_layer[? obj_charge]	   = layer_get_id("Charge");
 global.object_layer[? obj_charge]	   = layer_get_id("Charge");
 // -> ultimates
 global.object_layer[? obj_evilflame_ultimate]		= layer_get_id("PlayerUnderlay");
@@ -179,13 +179,14 @@ global.object_layer[? obj_emerald_ultimate]			= layer_get_id("UnderlayEffects1")
 global.object_layer[? obj_emerald_ultimate_flow]	= layer_get_id("UnderlayEffects0");
 global.object_layer[? obj_emerald_ultimate_force]   = layer_get_id("OverlayEffects0");
 // <- end of ultimates
-global.object_layer[? obj_enemy]	   = layer_get_id("Enemy");
+global.object_layer[? obj_enemy]	   = layer_get_id("Enemies");
 global.object_layer[? obj_eprojectile] = layer_get_id("EnemyProjectiles");
 
 // FX
 global.object_layer[? obj_ultimate_activation] = layer_get_id("UltimateActivation");
 global.object_layer[? obj_screenflash]		   = layer_get_id("ScreenFlash");
 global.object_layer[? obj_shockwave]		   = layer_get_id("Explosions");
+global.object_layer[? obj_oscillator]		   = layer_get_id("Player");
 
 // collectibles
 global.object_layer[? obj_present]		   = layer_get_id("Collectibles");
@@ -271,6 +272,69 @@ enum sound_priority {
     player_bullet_hit = 1, 
     player_frag_hit = 0, 
 }
+
+#endregion
+
+#region Save Index Map
+
+global.save_index = ds_map_create();
+global.save_name  = ds_map_create();
+global.save_index[? "boss"]                       = 0;
+global.save_name [? 0 ]                           = "boss";
+global.save_index[? "obj_damage_indicators"]      = 1;
+global.save_name [? 1 ]	                          = "obj_damage_indicators";
+global.save_index[? "obj_player_tparticles"]      = 2;
+global.save_name [? 2 ]	                          = "obj_player_tparticles";
+global.save_index[? "obj_player_bparticles"]      = 3;
+global.save_name [? 3 ]	                          = "obj_player_bparticles";
+global.save_index[? "obj_ultimate_particles"]     = 4;
+global.save_name [? 4 ]	                          = "obj_ultimate_particles";
+global.save_index[? "obj_charge_particles"]       = 5;
+global.save_name [? 5 ]	                          = "obj_charge_particles";
+global.save_index[? "obj_enemy_particles"]        = 6;
+global.save_name [? 6 ]	                          = "obj_enemy_particles";
+global.save_index[? "obj_frag_particles"]         = 7;
+global.save_name [? 7 ]	                          = "obj_frag_particles";
+global.save_index[? "obj_player"]				  = 8;
+global.save_name [? 8 ]	                          = "obj_player";
+global.save_index[? "obj_wrap_helper"]            = 9;
+global.save_name [? 9 ]	                          = "obj_wrap_helper";
+global.save_index[? "obj_projectile"]             = 10;
+global.save_name [? 10]	                          = "obj_projectile";
+global.save_index[? "obj_frag"]                   = 11;
+global.save_name [? 11]	                          = "obj_frag";
+global.save_index[? "obj_charge"]                 = 12;
+global.save_name [? 12]	                          = "obj_charge";
+global.save_index[? "obj_evilflame_ultimate"]     = 13;
+global.save_name [? 13]	                          = "obj_evilflame_ultimate";
+global.save_index[? "obj_emerald_ultimate"]       = 14;
+global.save_name [? 14]	                          = "obj_emerald_ultimate";
+global.save_index[? "obj_emerald_ultimate_flow"]  = 15;
+global.save_name [? 15]	                          = "obj_emerald_ultimate_flow";
+global.save_index[? "obj_emerald_ultimate_force"] = 16;
+global.save_name [? 16]	                          = "obj_emerald_ultimate_force";
+global.save_index[? "obj_enemy"]              = 17;
+global.save_name [? 17]	                          = "obj_enemy";
+global.save_index[? "obj_eprojectile"]            = 18;
+global.save_name [? 18]	                          = "obj_eprojectile";
+global.save_index[? "obj_oscillator"]             = 19;
+global.save_name [? 19]	                          = "obj_oscillator";
+global.save_index[? "obj_screenshake"]            = 20;
+global.save_name [? 20]	                          = "obj_screenshake";
+global.save_index[? "obj_ultimate_activation"]    = 22;
+global.save_name [? 22]	                          = "obj_ultimate_activation";
+global.save_index[? "obj_screenflash"]            = 23;
+global.save_name [? 23]	                          = "obj_screenflash";
+global.save_index[? "obj_shockwave"]              = 24;
+global.save_name [? 24]	                          = "obj_shockwave";
+global.save_index[? "obj_present"]                = 48;
+global.save_name [? 48]	                          = "obj_present";
+global.save_index[? "obj_ultimate_pickup"]        = 49;
+global.save_name [? 49]	                          = "obj_ultimate_pickup";
+global.save_index[? "obj_explosion"]              = 50;
+global.save_name [? 50]	                          = "obj_explosion";
+global.save_index[? "obj_debris"]                 = 53;
+global.save_name [? 53]	                          = "obj_debris";
 
 #endregion
 

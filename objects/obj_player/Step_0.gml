@@ -524,7 +524,6 @@ if (flash_clock == 40) {
 		
     switch(global.chrsel) {
 	    case 0:
-		    obj_ultimate_particles.depth = general_depth.evilflame_ultimate_particles;
 		    if (!TWILIGHT_FURY) {
 		    hp /= 2; hpmax /= 2; hpmark /= 2; hpmark_v /= 2;
 		    instance_create(0, 0, obj_evilflame_ultimate); //evilflame - dual clone
@@ -755,11 +754,11 @@ if (hp <= 0 && image_alpha == 1) {
 				sprite_index=spr_evilflame_ultimate_charging;
 		} else {
 			if (sprite_index == spr_evilflame_ultimate)
-				sprite_index=spr_evilflame;
+				sprite_index = spr_evilflame;
 			else if (sprite_index == spr_evilflame_ultimate_shooting)
-				sprite_index=spr_evilflame_shooting;
+				sprite_index = spr_evilflame_shooting;
 			else if (sprite_index == spr_evilflame_ultimate_charging)
-				sprite_index=spr_evilflame_charging;
+				sprite_index = spr_evilflame_charging;
 		}
 		with(obj_evilflame_ultimate) { instance_destroy(); }
 	}
@@ -769,7 +768,7 @@ if (hp <= 0 && image_alpha == 1) {
 			with(obj_charge) { instance_destroy(); }
 		}
 		if (instance_exists(helper)) {
-			with(helper) { instance_create(x,y,obj_explosion); instance_destroy(); }
+			with(helper) { instance_create(x, y, obj_explosion); instance_destroy(); }
 		}
 		instance_create(x, y, obj_explosion);
 		global.state = 2;

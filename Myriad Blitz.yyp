@@ -1769,6 +1769,14 @@
             }
         },
         {
+            "Key": "6bd8ce69-299f-4b3c-9e45-5530a259030f",
+            "Value": {
+                "id": "c0c90827-e018-433c-9ac7-4330b560dfa4",
+                "resourcePath": "scripts\\instance_create_depth_f\\instance_create_depth_f.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "6c8a8176-0491-45bc-85e6-3edade08fcca",
             "Value": {
                 "configDeltas": [
@@ -2552,6 +2560,14 @@
                 "id": "78b43a20-1551-4f50-b43f-02e7596ee168",
                 "resourcePath": "sprites\\spr_letter\\spr_letter.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "956026b8-040c-46de-afc0-c18f88323c76",
+            "Value": {
+                "id": "3284b6b4-200e-4b3e-8cae-a8f81b1eed9f",
+                "resourcePath": "scripts\\instance_create_layer_f\\instance_create_layer_f.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -4381,6 +4397,8 @@
         "bd3936c3-79fe-4831-aff9-bdcf2db01ee6",
         "029330b1-e555-495d-aff9-3fbefa161e89",
         "38a6001c-97e8-4bac-befc-7c44e45b0635",
+        "956026b8-040c-46de-afc0-c18f88323c76",
+        "6bd8ce69-299f-4b3c-9e45-5530a259030f",
         "2f170549-1463-486b-ab8c-14321b63ed43",
         "98fbb1b5-278e-4aa7-bb63-5946aed5e897",
         "64e7dfee-78ec-453a-abef-278bd861083e",

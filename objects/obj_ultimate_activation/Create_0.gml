@@ -4,7 +4,6 @@
 
 instance_setup(0, 0, 0, 1);
 text        = global.uname;
-depth       = gui_depth.ultimate_text;
 image_alpha = 0;
 
 // Calculate surface dimensions

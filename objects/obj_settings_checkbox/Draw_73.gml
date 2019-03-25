@@ -8,7 +8,7 @@ surface_set_target(GUI_SURFACE);
 
 #region Draw tooltips
 
-if (check == 1) {
+if (check) {
     draw_set_color(rgb(0, 60, 0));
 } else {
     draw_set_color(rgb(60, 0, 0));

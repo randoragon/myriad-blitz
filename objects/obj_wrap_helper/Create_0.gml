@@ -3,7 +3,6 @@
 #region Setup
 
 sprite_index = global.chrsel;
-depth        = general_depth.wrap_helper;
 
 #endregion
 

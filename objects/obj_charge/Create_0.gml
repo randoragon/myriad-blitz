@@ -9,6 +9,5 @@ event_inherited();
 #region Setup
 
 sprite_index       = noone;
-depth              = general_depth.charge;
 
 #endregion

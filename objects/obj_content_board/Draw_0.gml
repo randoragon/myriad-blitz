@@ -1,8 +1,8 @@
 /// @description Draw Self
 
-#region GENERAL_SURFACE set
+#region GUI_SURFACE set
 
-surface_set_target(GENERAL_SURFACE);
+surface_set_target(GUI_SURFACE);
 
 #endregion
 
