@@ -106,4 +106,6 @@ with (instance_create(enemy.x, enemy.y, obj_debris)) {
 }
 
 surface_reset_target();
-surface_free(temp_suf);
+if (surface_exists(temp_suf)) {
+	surface_free(temp_suf);
+}

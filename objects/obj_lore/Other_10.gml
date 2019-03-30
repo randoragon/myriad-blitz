@@ -13,6 +13,9 @@ for (var i = 0; i < image_number; i++) {
 }
 
 surface_reset_target();
-surface_free(mysurface);
+
+if (surface_exists(mysurface)) {
+	surface_free(mysurface);
+}
 
 #endregion

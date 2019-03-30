@@ -17,3 +17,5 @@ if (ds_exists(global.player_status_effects, ds_type_grid)) { ds_grid_destroy(glo
 if (ds_exists(global.object_layer, ds_type_map))		   { ds_map_destroy(global.object_layer);		    }
 if (ds_exists(global.save_index, ds_type_map))			   { ds_map_destroy(global.save_index);				}
 if (ds_exists(global.save_name, ds_type_map))			   { ds_map_destroy(global.save_name);				}
+
+surface_reset_target();

@@ -11,7 +11,11 @@ for (var i = 0; i < image_number; i++) {
 	cut1[i] = sprite_create_from_surface(mysurface, 0, 0, surface_get_width(mysurface), 50, 0, 0, sprite_get_xoffset(sprite_index), sprite_get_yoffset(sprite_index));
 	cut2[i] = sprite_create_from_surface(mysurface, 0, surface_get_height(mysurface) - 70, surface_get_width(mysurface), 70, 0, 0, sprite_get_xoffset(sprite_index), sprite_get_yoffset(sprite_index) - surface_get_height(mysurface) + 70);
 }
+
 surface_reset_target();
-surface_free(mysurface);
+
+if (surface_exists(mysurface)) {
+	surface_free(mysurface);
+}
 
 #endregion

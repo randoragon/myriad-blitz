@@ -24,7 +24,9 @@ if (global.gpspeed != 0) {
 		image_alpha = 1 - ((progress - 50) / 10);
 		if (size >= 11) {
 			instance_destroy();
-			surface_free(suf_mysurface);
+			if (surface_exists(mysurface)) {
+				surface_free(suf_mysurface);
+			}
 		}
 		global.gpspeed_ultimate_activation = clamp(progress / 10, 0.1, 1);
 	}

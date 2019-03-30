@@ -78,6 +78,9 @@ var sprite;
 sprite[0] = sprite_create_from_surface(temp_suf, 0, 0, tiltwidth, round(tiltheight / 2), 0, 0, xoffset, yoffset);
 sprite[1] = sprite_create_from_surface(temp_suf, 0, round(tiltheight / 2), tiltwidth, tiltheight - round(tiltheight / 2), 0, 0, xoffset, yoffset - round(tiltheight / 2));
 surface_reset_target();
-surface_free(temp_suf);
+
+if (surface_exists(temp_suf)) {
+	surface_free(temp_suf);
+}
 
 return sprite;

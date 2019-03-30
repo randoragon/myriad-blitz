@@ -21,11 +21,13 @@ if (f == 8) {
 	}
 }
 
-if (sprite_index == spr_stats_checkbox && image_index == 1) { // this one sprite has semi-transparent parts
-	gpu_set_alphatestref(0);
+if (f != 14 && f != 16 && f != 5 && f != 6) {
+	if (sprite_index == spr_stats_checkbox && image_index == 1) { // this one sprite has semi-transparent parts
+		gpu_set_alphatestref(0);
+	}
+	draw_self();
+	gpu_set_alphatestref(254);
 }
-draw_self();
-gpu_set_alphatestref(254);
 
 // Overlays
 switch(f) {
@@ -39,10 +41,10 @@ switch(f) {
 		draw_sprite(spr_button_pause_ol, f - 9, x, y);
 	break;
 	case 14:
-		if (place_meeting(x, y, boss)) {draw_tooltip("Join Randoragon's#Discord server!", c_white, rgb(83, 122, 222), c_white);}
+		if (place_meeting(x, y, boss)) { draw_tooltip("Join Randoragon's#Discord server!", c_white, rgb(83, 122, 222), c_white); }
 	break;
 	case 16:
-		if (place_meeting(x, y, boss)) {draw_tooltip("Support Waterflame's#awesome music!", rgb(25, 199, 214), c_black, rgb(255, 120, 0));}
+		if (place_meeting(x, y, boss)) { draw_tooltip("Support Waterflame's#awesome music!", rgb(25, 199, 214), c_black, rgb(255, 120, 0)); }
 	break;
 	case 24:
 		draw_set_align(fa_left, fa_middle); draw_set_color(c_black); draw_text_transformed(429, y, string_hash_to_newline("SAVE CHUNK SIZE"), 3, 3, 0);
@@ -272,13 +274,6 @@ if (f == 8 && global.state == 1 && !global.loading && ds_exists(global.player_st
 #region Draw death message, score, character names
 
 if (f == 8 && room == rm_Main && !global.loading) {
-	//CHARACTER NAMES
-	if (global.transition != 1) {
-		draw_set_align(fa_center, fa_bottom);
-		draw_text_outline(GUI_X + 683, GUI_Y + 475, global.name[global.chrsel], 4 - (4*global.transition), 4, 0, c_black, 1, c_black, 1);
-		draw_text_outline(GUI_X + 683, GUI_Y + 471, global.name[global.chrsel], 4 - (4*global.transition), 4, 0, global.color[global.chrsel], 1, color_shift_hsv(global.color[global.chrsel], 0, 0, -170, 1), 1);
-	}
-
 	//SCORE
 	draw_set_align(fa_right, fa_top);
 	draw_text_outline(GUI_XEND - 10, GUI_Y - 80 + (85*global.transition), "score: " + string_format(global.points, -1, 0), 3, 3, 0, c_yellow, 1, c_black, 1);
