@@ -211,6 +211,48 @@
             "value": "0",
             "varName": "os_pause",
             "varType": 3
+        },
+        {
+            "id": "28a8d851-9d7b-44f7-bbca-88642549aa9a",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "",
+            "varName": "about_text",
+            "varType": 2
+        },
+        {
+            "id": "e2a01078-380c-4940-a619-dfb3a493a884",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "help1_text",
+            "varType": 2
+        },
+        {
+            "id": "32f1ba2f-5546-42ea-8548-85258335bb97",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "help2_text",
+            "varType": 2
         }
     ],
     "solid": false,

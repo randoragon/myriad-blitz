@@ -5,15 +5,15 @@ switch (argument[0]) {
     case 0: //Evilflame
         global.lore          = 
         "Is it a bird? Is it a dolphin?" +
-        "#Negative, this fearless flying machine" +
-        "#is a worldwide known demon slayer." +
-        "#It conquered countless challenges" +
-        "#and resisted the most ruthless of" +
-        "#tortures, some involving being shredded" +
-        "#to pieces, other long time exposure" +
-        "#to ultraviolet rays. It is said" +
-        "#to fall into unstoppable fury under" +
-        "#the light of the twilight moon.";
+        "\nNegative, this fearless flying machine" +
+        "\nis a worldwide known demon slayer." +
+        "\nIt conquered countless challenges" +
+        "\nand resisted the most ruthless of" +
+        "\ntortures, some involving being shredded" +
+        "\nto pieces, other long time exposure" +
+        "\nto ultraviolet rays. It is said" +
+        "\nto fall into unstoppable fury under" +
+        "\nthe light of the twilight moon.";
         global.hp            = 720;
         global.bdmg          = 62;
         global.bdef          = 40;
@@ -41,8 +41,8 @@ switch (argument[0]) {
         global.cname         = "BLAZING FIREBALL";
         global.cdesc         = 
         "Spits a giant fireball that homes" +
-        "#into nearby enemies and explodes" +
-        "#into a ring of deadly sparks.";
+        "\ninto nearby enemies and explodes" +
+        "\ninto a ring of deadly sparks.";
         global.cdmg          = 115;
         global.cpen          = 50;
         global.ckb           = 200;
@@ -54,9 +54,9 @@ switch (argument[0]) {
             global.ucooldown = 600;
             global.udesc     = 
             "Divides HP in half and summons" +
-            "#an upside-down copy of itself" +
-            "#that mirrors every action of" +
-            "#the original.";
+            "\nan upside-down copy of itself" +
+            "\nthat mirrors every action of" +
+            "\nthe original.";
         } else {
             global.uname     = "TWILIGHT FURY";
             global.utype     = "SECRET BUFF";
@@ -68,12 +68,12 @@ switch (argument[0]) {
     case 1: //Emerald~
         global.lore          = 
         "Legends speak of a young pony disciple" +
-        "#so powerful, that its mere birth" +
-        "#caused irreversible changes to" +
-        "#the very fabric of the Universe." +
-        "#Adept at using deadly water spells," +
-        "#no one has ever clashed with this" +
-        "#beast and came back unscathed.";
+        "\nso powerful, that its mere birth" +
+        "\ncaused irreversible changes to" +
+        "\nthe very fabric of the Universe." +
+        "\nAdept at using deadly water spells," +
+        "\nno one has ever clashed with this" +
+        "\nbeast and came back unscathed.";
         global.hp            = 525;
         global.bdmg          = 38;
         global.bdef          = 24;
@@ -101,8 +101,8 @@ switch (argument[0]) {
         global.cname         = "ROYAL LASER";
         global.cdesc         = 
         "Releases a piercing laser beam" +
-        "#that deals constant damage to" +
-        "#any enemy it touches.";
+        "\nthat deals constant damage to" +
+        "\nany enemy it touches.";
         global.cdmg          = 1;
         global.cpen          = 100;
         global.ckb           = 0;
@@ -113,22 +113,22 @@ switch (argument[0]) {
         global.ucooldown     = 3600;
         global.udesc         = 
         "Creates a web of water streams" +
-        "#that suck in enemies and most" +
-        "#projectiles for 15 seconds," +
-        "#then crushes everything trapped" +
-        "#inside with extreme pressure." +
-        "#Temporarily weakens the caster" +
-        "#afterwards due to exhaustion.";
+        "\nthat suck in enemies and most" +
+        "\nprojectiles for 15 seconds," +
+        "\nthen crushes everything trapped" +
+        "\ninside with extreme pressure." +
+        "\nTemporarily weakens the caster" +
+        "\nafterwards due to exhaustion.";
     break;
     case 2: //Der Scootomik
         global.lore          = 
         "The most powerful scooter in the universe." +
-        "#It has been infused with ancient metals," +
-        "#making it extremely durable in exchange" +
-        "#for sporadic malfunctioning of its charge." +
-        "#Capable of achieving ludicrous speeds," +
-        "#which allow it to travel around the Earth" +
-        "#to attack its enemies from behind.";
+        "\nIt has been infused with ancient metals," +
+        "\nmaking it extremely durable in exchange" +
+        "\nfor sporadic malfunctioning of its charge." +
+        "\nCapable of achieving ludicrous speeds," +
+        "\nwhich allow it to travel around the Earth" +
+        "\nto attack its enemies from behind.";
         global.hp            = 1080;
         global.bdmg          = 86;
         global.bdef          = 72;
@@ -156,9 +156,9 @@ switch (argument[0]) {
         global.cname         = "BEAMING SPIN";
         global.cdesc         = 
         "Spins very quickly while shooting" +
-        "#beams of light in both directions" +
-        "#and briefly becomes invincible." +
-        "#Activates only 70% of the time.";
+        "\nbeams of light in both directions" +
+        "\nand briefly becomes invincible." +
+        "\nActivates only 70% of the time.";
         global.cdmg          = 8;
         global.cpen          = 95;
         global.ckb           = 100;
@@ -169,20 +169,20 @@ switch (argument[0]) {
         global.ucooldown     = 1500;
         global.udesc         = 
         "Advanced ECU chip engineering" +
-        "#amplifies your engine's output" +
-        "#performance so dramatically" +
-        "#that you're able to sustain" +
-        "#0.00026% of the cosmic speed" +
-        "#limit for a split second.";
+        "\namplifies your engine's output" +
+        "\nperformance so dramatically" +
+        "\nthat you're able to sustain" +
+        "\n0.00026% of the cosmic speed" +
+        "\nlimit for a split second.";
     break;
     default: //Error
         global.lore          = 
         "If you're seeing this, I messed up." +
-        "#Please send me email describing how this" +
-        "#happened or how to replicate the bug to" +
-        "#randoragongamedev@gmail.com" +
-        "##Sorry for the inconvenience," +
-        "#please try restarting your game.";
+        "\nPlease send me email describing how this" +
+        "\nhappened or how to replicate the bug to" +
+        "\nrandoragongamedev@gmail.com" +
+        "\n\nSorry for the inconvenience," +
+        "\nplease try restarting your game.";
         global.hp            = 0;
         global.bdmg          = 0;
         global.bdef          = 0;

@@ -24,7 +24,7 @@ if (global.gpspeed != 0) {
 		image_alpha = 1 - ((progress - 50) / 10);
 		if (size >= 11) {
 			instance_destroy();
-			if (surface_exists(mysurface)) {
+			if (surface_exists(suf_mysurface)) {
 				surface_free(suf_mysurface);
 			}
 		}
@@ -33,8 +33,8 @@ if (global.gpspeed != 0) {
 }
 
 // Update measurement variables
-    uname_width     = (string_width(string_hash_to_newline(text)) + 2) * size * multiplier;
-    uname_height    = (string_height(string_hash_to_newline(text)) + 2) * size * multiplier;
+    uname_width     = (string_width(text) + 2) * size * multiplier;
+    uname_height    = (string_height(text) + 2) * size * multiplier;
     hpadding        = 4 * size * multiplier;
 	vpadding        = size * multiplier;
     image_width     = sprite_get_width(spr_slot_char) * uname_height / sprite_get_height(spr_slot_char);

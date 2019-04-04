@@ -25,7 +25,7 @@ draw_self();
 
 if (string_length(keyboard_string) > 26) { keyboard_string = string_copy(keyboard_string, 1, 26); }
 draw_set_align(fa_left, fa_middle);
-draw_text_transformed(x - 208, y + 16, string_hash_to_newline(string_replace(keyboard_string, "#", "\\#")), 3, 3, 0);
+draw_text_transformed(x - 208, y + 16, keyboard_string, 3, 3, 0);
 
 #endregion
 

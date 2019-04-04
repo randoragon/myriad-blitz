@@ -262,7 +262,7 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 					play_sfx(sfx_button2, 0, 0);
 				break;
 	            case 2:
-					display_message("Lore isn't available yet.#Maybe in the next update... Or not. We'll see.#Sorry for the inconvenience!#Randoragon", scrm_do_nothing);
+					display_message("Lore isn't available yet.\nMaybe in the next update... Or not. We'll see.\nSorry for the inconvenience!\nRandoragon", scrm_do_nothing);
 				break;
 	            case 3:
 					screen_transition(rm_Settings, -1, 30, choose(-1, 1, -2, 2), c_black);
@@ -293,14 +293,14 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 					}
 				break;
 	            case 10:
-					ask("Do you want to restart?#Any unsaved progress will be lost.", scrq_do_nothing, scrq_restart);
+					ask("Do you want to restart?\nAny unsaved progress will be lost.", scrq_do_nothing, scrq_restart);
 				break;
 	            case 11:
 					instance_create_layer_f(x, y, "Popups", obj_slot_name, 0);
 					play_sfx(sfx_button3, 0, 0);
 				break;
 	            case 12:
-					ask("Do you want to quit?#Any unsaved progress will be lost.", scrq_do_nothing, scrq_pause_back);
+					ask("Do you want to quit?\nAny unsaved progress will be lost.", scrq_do_nothing, scrq_pause_back);
 				break;
 	            case 13:
 					image_blend = c_white;
@@ -344,7 +344,7 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 					play_sfx(sfx_button3, 0, 0);
 				break;
 	            case 20:
-					ask("Delete slot#\"" + obj_slot_load.selection_name + "\"?#This change will be permanent.", scrq_do_nothing, scrq_delete_slot);
+					ask("Delete slot\n\"" + obj_slot_load.selection_name + "\"?\nThis change will be permanent.", scrq_do_nothing, scrq_delete_slot);
 				break;
 	            case 21:
 					image_index = 2 * show;

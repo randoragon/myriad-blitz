@@ -41,23 +41,23 @@ switch(f) {
 		draw_sprite(spr_button_pause_ol, f - 9, x, y);
 	break;
 	case 14:
-		if (place_meeting(x, y, boss)) { draw_tooltip("Join Randoragon's#Discord server!", c_white, rgb(83, 122, 222), c_white); }
+		if (place_meeting(x, y, boss)) { draw_tooltip("Join Randoragon's\nDiscord server!", c_white, rgb(83, 122, 222), c_white); }
 	break;
 	case 16:
-		if (place_meeting(x, y, boss)) { draw_tooltip("Support Waterflame's#awesome music!", rgb(25, 199, 214), c_black, rgb(255, 120, 0)); }
+		if (place_meeting(x, y, boss)) { draw_tooltip("Support Waterflame's\nawesome music!", rgb(25, 199, 214), c_black, rgb(255, 120, 0)); }
 	break;
 	case 24:
-		draw_set_align(fa_left, fa_middle); draw_set_color(c_black); draw_text_transformed(429, y, string_hash_to_newline("SAVE CHUNK SIZE"), 3, 3, 0);
-		if (place_meeting(x, y, boss)) { draw_tooltip("Saving & loading will take longer, but#require less processing power."); }
+		draw_set_align(fa_left, fa_middle); draw_set_color(c_black); draw_text_transformed(429, y, "SAVE CHUNK SIZE", 3, 3, 0);
+		if (place_meeting(x, y, boss)) { draw_tooltip("Saving & loading will take longer, but\nrequire less processing power."); }
 	break;
 	case 25:
-		if (place_meeting(x, y, boss)) { draw_tooltip("This is the default setting#sufficient for most machines."); }
+		if (place_meeting(x, y, boss)) { draw_tooltip("This is the default setting\nsufficient for most machines."); }
 	break;
 	case 26:
-		if (place_meeting(x, y, boss)) { draw_tooltip("Sacrifices performance for more speed.#Works best on beefy computers."); }
+		if (place_meeting(x, y, boss)) { draw_tooltip("Sacrifices performance for more speed.\nWorks best on beefy computers."); }
 	break;
 	case 27:
-		if (place_meeting(x, y, boss)) { draw_tooltip("Check out my#other games!", rgb(128, 255, 0), c_dkgray, c_white); }
+		if (place_meeting(x, y, boss)) { draw_tooltip("Check out my\nother games!", rgb(128, 255, 0), c_dkgray, c_white); }
 	break;
 }
 
@@ -254,16 +254,16 @@ if (f == 8 && global.state == 1 && !global.loading && ds_exists(global.player_st
 			} else {
 				timer_text = " - " + chr(8734);
 			}
-			var rec_width = max(2 * string_width(string_hash_to_newline(global.player_status_effect_name[status_id])), 2 * string_width(timer_text), 2 * string_width(string_hash_to_newline(global.player_status_effect_desc[status_id])));
+			var rec_width = max(2 * string_width(global.player_status_effect_name[status_id]), 2 * string_width(timer_text), 2 * string_width(global.player_status_effect_desc[status_id]));
 
-			draw_roundrect(xx - 4, yy + 36, xx + rec_width + 4, yy + 40 + (2 * string_height(string_hash_to_newline(global.player_status_effect_desc[status_id] + "###"))), 0);
+			draw_roundrect(xx - 4, yy + 36, xx + rec_width + 4, yy + 40 + (2 * string_height(global.player_status_effect_desc[status_id] + "\n\n\n")), 0);
 			draw_set_alpha(1);
 			draw_set_color(c_white);
-			draw_text_transformed(xx, yy + 38, string_hash_to_newline(global.player_status_effect_name[status_id]), 2, 2, 0);
+			draw_text_transformed(xx, yy + 38, global.player_status_effect_name[status_id], 2, 2, 0);
 			draw_set_color(c_yellow);
-			draw_text_transformed(xx, yy + 38, string_hash_to_newline("#" + timer_text), 2, 2, 0);
+			draw_text_transformed(xx, yy + 38, "\n" + timer_text, 2, 2, 0);
 			draw_set_color(c_ltgray);
-			draw_text_transformed(xx, yy + 38, string_hash_to_newline("##" + global.player_status_effect_desc[status_id]), 2, 2, 0);
+			draw_text_transformed(xx, yy + 38, "\n\n" + global.player_status_effect_desc[status_id], 2, 2, 0);
 		}
 	}
 	gpu_set_alphatestref(254);
@@ -294,7 +294,7 @@ if (f == 8 && room == rm_Main && !global.loading) {
 		draw_set_alpha(1);
 		draw_set_align(fa_center, fa_top);
 		draw_text_outline(GUI_X + 683, GUI_Y + 300, "GAME OVER!", 4, 4, 0, c_yellow, 1, c_black, 1);
-		draw_text_outline(GUI_X + 683, GUI_Y + 360, "enemies killed: " + string(global.kill_count) + "#final score: " + string(global.points) + "##press space to continue", 2, 2, 0, c_white, 0, c_black, 1);
+		draw_text_outline(GUI_X + 683, GUI_Y + 360, "enemies killed: " + string(global.kill_count) + "\nfinal score: " + string(global.points) + "\n\npress space to continue", 2, 2, 0, c_white, 0, c_black, 1);
 	}
 }
 

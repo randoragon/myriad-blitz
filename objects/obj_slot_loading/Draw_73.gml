@@ -26,9 +26,9 @@ if (phase == 0) {
         file_text_readln(temp_file); //skip slot title
         file_text_readln(temp_file); //skip slot date
         
-        phase			= 1;
-        global.loading	= TRUE;
-        global.state			= 1;
+        phase			  = 1;
+        global.loading	  = TRUE;
+        global.state	  = 1;
         global.transition = 1;
         room_goto(rm_Main);
     }
@@ -59,7 +59,7 @@ if (phase != 0 && phase != 5 && phase != 6) {
     draw_set_color(c_white);
     draw_rectangle(CANVAS_X + 300 - (CANVAS_WIDTH * ((intro - 15) / 15)), CANVAS_Y + 420, CANVAS_X + 300 + ((CANVAS_WIDTH - 600) * percentage) - (CANVAS_WIDTH * ((intro - 15) / 15)), CANVAS_Y + 450, 0);
     draw_set_align(fa_left, fa_top);
-    draw_text_transformed(CANVAS_X + 300 - (CANVAS_WIDTH * ((intro - 15) / 15)), CANVAS_Y + 460, string_hash_to_newline("LOADING " + string(phase) + "/4 " + caption + "... (" + string_format(100 * percentage, -1, 0) + "%)"), 2, 2, 0);
+    draw_text_transformed(CANVAS_X + 300 - (CANVAS_WIDTH * ((intro - 15) / 15)), CANVAS_Y + 460, "LOADING " + string(phase) + "/4 " + caption + "... (" + string_format(100 * percentage, -1, 0) + "%)", 2, 2, 0);
 }
 
 #endregion

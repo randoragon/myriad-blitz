@@ -10,15 +10,15 @@ with (obj_statboard) {
     var b = argument[1];
     var c = argument[2];
 
-    if (datatype[a, b] == 4 && string_count("#", string(value[a, b])) > 0) {
+    if (datatype[a, b] == 4 && string_count("\n", string(value[a, b])) > 0) {
         var valcopy = string(value[a, b]);
-        var lines   = 1 + string_count("#", string(value[a, b]));
+        var lines   = 1 + string_count("\n", string(value[a, b]));
         text[a, b] += string((lines - 1) / 2);
         var lastpos = 1;
         
         for (var i = 0; i < lines; i++) {
             for (var readpos = lastpos; readpos <= string_length(valcopy); readpos++) {
-                if (string_char_at(valcopy, readpos) == "#" || readpos == string_length(valcopy)) {
+                if (string_char_at(valcopy, readpos) == "\n" || readpos == string_length(valcopy)) {
                     value[a, b] = string_copy(valcopy, lastpos, readpos - lastpos + (readpos == string_length(valcopy)));
                     if (i > 0) { text[a, b] = text[a, b - 1]; }
                     datatype[a, b]  = 4;
@@ -31,7 +31,7 @@ with (obj_statboard) {
                     }
                     lastpos = readpos + 1;
                     b++;
-                    if (string_char_at(valcopy, string_length(valcopy)) == "#" && lastpos > string_length(valcopy)) {
+                    if (string_char_at(valcopy, string_length(valcopy)) == "\n" && lastpos > string_length(valcopy)) {
                         value[a, b]     = "";
                         datatype[a, b]  = 4;
                         elementid[a, b] = c;

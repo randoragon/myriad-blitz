@@ -7,8 +7,8 @@ text        = global.uname;
 image_alpha = 0;
 
 // Calculate surface dimensions
-uname_width     = (string_width(string_hash_to_newline(text)) + 2) * 11 * multiplier;
-uname_height    = (string_height(string_hash_to_newline(text)) + 2) * 11 * multiplier;
+uname_width     = (string_width(text) + 2) * 11 * multiplier;
+uname_height    = (string_height(text) + 2) * 11 * multiplier;
 hpadding        = 4 * 11 * multiplier;
 vpadding        = 11 * multiplier;
 image_width     = sprite_get_width(spr_slot_char) * uname_height / sprite_get_height(spr_slot_char);

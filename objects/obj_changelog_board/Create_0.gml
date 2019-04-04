@@ -26,7 +26,7 @@ if (file_exists(program_directory + "\\changelog.txt")) {
         }
         if (string_copy(line, 1, 3) == "///") {
             text[0]      = string_delete(line, 1, 3);
-            section[++i] = string_replace(string_readln(text, ";"), "#", "\\#");
+            section[++i] = string_replace(string_readln(text, ";"), "\n", "\\n");
             date[i]      = text[0];
             l            = 0;
         } else {
@@ -39,7 +39,7 @@ if (file_exists(program_directory + "\\changelog.txt")) {
                 content[0, 3] = "_Discord server invite is in the About section.";
                 break;
             }
-            content[i, l++]   = string_replace(line, "#", "\\#");
+            content[i, l++]   = string_replace(line, "\n", "\\n");
         }
     }
     file_text_close(file);

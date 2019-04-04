@@ -47,7 +47,7 @@ if (phase != 0 && phase != 5) {
     draw_set_color(c_white);
     draw_rectangle(CANVAS_X + 300 - (CANVAS_WIDTH * ((intro - 15) / 15)), CANVAS_Y + 420, CANVAS_X + 300 + ((CANVAS_WIDTH - 600) * percentage) - (CANVAS_WIDTH * ((intro - 15) / 15)), CANVAS_Y + 450, 0);
     draw_set_align(fa_left, fa_top);
-    draw_text_transformed(CANVAS_X + 300 - (CANVAS_WIDTH * ((intro - 15) / 15)), CANVAS_Y + 460, string_hash_to_newline("SAVING " + string(phase) + "/4 " + caption + "... (" + string_format(100 * percentage, -1, 0) + "%)"), 2, 2, 0);
+    draw_text_transformed(CANVAS_X + 300 - (CANVAS_WIDTH * ((intro - 15) / 15)), CANVAS_Y + 460, "SAVING " + string(phase) + "/4 " + caption + "... (" + string_format(100 * percentage, -1, 0) + "%)", 2, 2, 0);
 }
 
 #endregion

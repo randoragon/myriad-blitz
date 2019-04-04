@@ -25,12 +25,12 @@ if (y < ystart + 350) {
 		scrollv = home(scrollv, 0, 1, 0);
 	}
 
-	var linecount = string_count("#", global.lore) + 1;
+	var linecount = string_count("\n", global.lore) + 1;
 	draw_set_align(fa_center, fa_middle);
 	draw_set_color(c_black);
 	for (var i = 0; i < linecount; i++) {
 		if (y - (sprite_height / 2) + 84 + scroll + (i * lineh) >= y - (sprite_height / 2) + 84 - lineh && y - (sprite_height / 2) + 84 + scroll + (i * lineh) <= y + (sprite_height / 2) - 69 + lineh) {
-			draw_text_transformed(x,y-(sprite_height/2)+84+scroll+(i*lineh),string_hash_to_newline(text[i]),2,2,0);
+			draw_text_transformed(x, y - (sprite_height / 2) + 84 + scroll + (i * lineh), text[i], 2, 2, 0);
 		}
 	}
 
@@ -68,7 +68,7 @@ if (x < xstart + 250) {
 	if (osc != -1) {
 		if (scroll < 0) { draw_sprite_ext(spr_scroll_arrow,0,x,y-(sprite_height/2)+64-osc.output[1],osc.output[0],-1,0,-1,1); }
 		
-		if (scroll > -((string_count("#", global.lore) + 1) * 20) + (sprite_height - 146)) {
+		if (scroll > -((string_count("\n", global.lore) + 1) * 20) + (sprite_height - 146)) {
 			draw_sprite_ext(spr_scroll_arrow, 0, x, y + (sprite_height / 2) - 56 + osc.output[1], osc.output[0], 1, 0, -1, 1);
 		}
 	}

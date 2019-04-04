@@ -27,9 +27,9 @@ if (global.chrsel == 0) {
 		ucooldown = 600;
 		global.udesc =
 		"Divides HP in half and summons"+
-		"#an upside-down copy of itself"+
-		"#that mirrors every action of"+
-		"#the original.";
+		"\nan upside-down copy of itself"+
+		"\nthat mirrors every action of"+
+		"\nthe original.";
 		if (instance_exists(obj_statboard)) {
 			scr_Stats_Update(obj_statboard.button[0].show);
 		}

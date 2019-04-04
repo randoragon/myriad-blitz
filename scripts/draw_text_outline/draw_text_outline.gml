@@ -21,17 +21,17 @@ if (argument[8] != -1) {
 }
 
 if (argument[7] == 0 || argument[7] == 1) {
-	draw_text_transformed(argument[0], argument[1] + (argument[9] * argument[4]), string_hash_to_newline(argument[2]), argument[3], argument[4], argument[5]);
+	draw_text_transformed(argument[0], argument[1] + (argument[9] * argument[4]), argument[2], argument[3], argument[4], argument[5]);
 }
 
 if (argument[7] == 1) {
-	draw_text_transformed(argument[0], argument[1] - (argument[9] * argument[4]), string_hash_to_newline(argument[2]), argument[3], argument[4], argument[5]);
-	draw_text_transformed(argument[0] - (argument[9] * argument[3]), argument[1], string_hash_to_newline(argument[2]), argument[3], argument[4], argument[5]);
-	draw_text_transformed(argument[0] + (argument[9] * argument[3]), argument[1], string_hash_to_newline(argument[2]), argument[3], argument[4], argument[5]);
-	draw_text_transformed(argument[0] - (argument[9] * argument[3]), argument[1] - (argument[9] * argument[4]), string_hash_to_newline(argument[2]), argument[3], argument[4], argument[5]);
-	draw_text_transformed(argument[0] + (argument[9] * argument[3]), argument[1] + (argument[9] * argument[4]), string_hash_to_newline(argument[2]), argument[3], argument[4], argument[5]);
-	draw_text_transformed(argument[0] - (argument[9] * argument[3]), argument[1] + (argument[9] * argument[4]), string_hash_to_newline(argument[2]), argument[3], argument[4], argument[5]);
-	draw_text_transformed(argument[0] + (argument[9] * argument[3]), argument[1] - (argument[9] * argument[4]), string_hash_to_newline(argument[2]), argument[3], argument[4], argument[5]);
+	draw_text_transformed(argument[0], argument[1] - (argument[9] * argument[4]), argument[2], argument[3], argument[4], argument[5]);
+	draw_text_transformed(argument[0] - (argument[9] * argument[3]), argument[1], argument[2], argument[3], argument[4], argument[5]);
+	draw_text_transformed(argument[0] + (argument[9] * argument[3]), argument[1], argument[2], argument[3], argument[4], argument[5]);
+	draw_text_transformed(argument[0] - (argument[9] * argument[3]), argument[1] - (argument[9] * argument[4]), argument[2], argument[3], argument[4], argument[5]);
+	draw_text_transformed(argument[0] + (argument[9] * argument[3]), argument[1] + (argument[9] * argument[4]), argument[2], argument[3], argument[4], argument[5]);
+	draw_text_transformed(argument[0] - (argument[9] * argument[3]), argument[1] + (argument[9] * argument[4]), argument[2], argument[3], argument[4], argument[5]);
+	draw_text_transformed(argument[0] + (argument[9] * argument[3]), argument[1] - (argument[9] * argument[4]), argument[2], argument[3], argument[4], argument[5]);
 }
 
 if (argument[6] != -1) {

@@ -61,7 +61,7 @@ if (x < xstart + 360) {
 						draw_self();
 					}
 				}
-			    if (desc[elementid[s, i]] != "" && boss.x >= xoffset + x - (sprite_width / 2) + 45 - 2 && boss.x <= xoffset + x - (sprite_width / 2) + 45 + (2 * string_width(string_hash_to_newline(text[s, i]))) + 2 && boss.y >= y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 0.2) * lineh) + 2 - (lineh / 2) + 2 && boss.y <= y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 0.2) * lineh) + 2 + (lineh / 2) - 2) {
+			    if (desc[elementid[s, i]] != "" && boss.x >= xoffset + x - (sprite_width / 2) + 45 - 2 && boss.x <= xoffset + x - (sprite_width / 2) + 45 + (2 * string_width(text[s, i])) + 2 && boss.y >= y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 0.2) * lineh) + 2 - (lineh / 2) + 2 && boss.y <= y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 0.2) * lineh) + 2 + (lineh / 2) - 2) {
 				    gpu_set_alphatestref(0);
 				    gpu_set_blendmode(bm_add);
 				    draw_text_highlight(xoffset + x-(sprite_width / 2) + 45, y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 0.2) * lineh) + 2, text[s, i], 2, c_black, 0.5, fa_left, fa_middle, 3, 3);
@@ -72,7 +72,7 @@ if (x < xstart + 360) {
 				    draw_set_color(c_white);
 				    gpu_set_alphatestref(254);
 				}
-			    draw_text_transformed(xoffset + x - (sprite_width / 2) + 45, y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 0.2) * lineh) + 2, string_hash_to_newline(text[s, i]), 2, 2, 0);
+			    draw_text_transformed(xoffset + x - (sprite_width / 2) + 45, y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 0.2) * lineh) + 2, text[s, i], 2, 2, 0);
 			    draw_set_color(c_black);
 			    draw_set_halign(fa_right);
 			    draw_text_outline(10 + x + (sprite_width / 2) - 26, y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 0.2) * lineh) + 2, display[s, i], 2, 2, 0, global.color[global.chrsel], 1, c_black, 1);
@@ -91,7 +91,7 @@ if (x < xstart + 360) {
 					draw_self();
 				}
 			    switch(real(string_char_at(text[s, i], 1))) {
-				    case 0: draw_text_transformed(xoffset + x - (sprite_width / 2) + 45, y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 0.2) * lineh) + 2, string_hash_to_newline(value[s, i]), 2, 2, 0); break;
+				    case 0: draw_text_transformed(xoffset + x - (sprite_width / 2) + 45, y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 0.2) * lineh) + 2, value[s, i], 2, 2, 0); break;
 				    case 1: draw_text_outline(xoffset + x - (sprite_width / 2) + 45, y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 0.2) * lineh) + 2, value[s, i], 2, 2, 0, global.color[global.chrsel], 0, c_black, 1); break;
 				    case 2: draw_text_outline(xoffset + x - (sprite_width / 2) + 45, y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 0.2) * lineh) + 2, value[s, i], 2, 2, 0, global.color[global.chrsel], 1, c_black, 1); break;
 			    }
@@ -151,7 +151,7 @@ if (x < xstart + 360) {
 
 		for (var i = 0; i < section_length[s]; i++) {
 			if (datatype[s, i] != 4 && (y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 0.2) * lineh) >= y - (sprite_height / 2) + 125 - lineh && y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 0.2) * lineh) <= y + (sprite_height / 2) - 50)) {
-				if (desc[elementid[s, i]] != "" && boss.x >= xoffset + x - (sprite_width / 2) + 45 - 2 && boss.x <= xoffset + x - (sprite_width / 2) + 45 + (2 * string_width(string_hash_to_newline(text[s, i]))) + 2 && boss.y >= y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 0.2) * lineh) + 2 - (lineh / 2) + 2 && boss.y <= y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 0.2) * lineh) + 2 + (lineh / 2) - 2) {
+				if (desc[elementid[s, i]] != "" && boss.x >= xoffset + x - (sprite_width / 2) + 45 - 2 && boss.x <= xoffset + x - (sprite_width / 2) + 45 + (2 * string_width(text[s, i])) + 2 && boss.y >= y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 0.2) * lineh) + 2 - (lineh / 2) + 2 && boss.y <= y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 0.2) * lineh) + 2 + (lineh / 2) - 2) {
 					draw_tooltip(desc[elementid[s, i]]);
 				}
 			}

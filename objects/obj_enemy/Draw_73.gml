@@ -23,8 +23,8 @@ if (hp > 0 && !obj_player.status_effect[7] && !obj_player.status_effect[8]) {
         draw_rectangle(x - 30, y - (sprite_height / 2) - 6, x + 30, y - (sprite_height / 2), 1);
     } else {
         var text        = string(ceil(hp)) + " / " + string(ceil(hpmax));
-        var text_width  = 2 * string_width(string_hash_to_newline(text));
-        var text_height = 2 * string_height(string_hash_to_newline(text));
+        var text_width  = 2 * string_width(text);
+        var text_height = 2 * string_height(text);
         var hgrowth     = bar_extension * max(0, text_width + 4 - 60) / 2;
         var vgrowth     = bar_extension * max(0, text_height + 4 - 6) / 2;
         draw_set_color(c_black);

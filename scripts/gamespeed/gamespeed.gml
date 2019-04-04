@@ -90,12 +90,12 @@ if (global.gpspeed != 0) {
             }
             /*show_message(
             'OBJECT: '+object_get_name(object_index)+
-            ';#hkb00='+string(hkb00)+'; hkb='+string(hkb)+
-            ';#ahkb00='+string(ahkb00)+'; ahkb='+string(ahkb)+
-            ';#th00='+string(th00)+'; th='+string(abs(hkb/ahkb))+
-            ';#vkb00='+string(vkb00)+'; vkb='+string(vkb)+
-            ';#avkb00='+string(avkb00)+'; avkb='+string(avkb)+
-            ';#tv00='+string(tv00)+'; tv='+string(abs(vkb/avkb))
+            ';\nhkb00='+string(hkb00)+'; hkb='+string(hkb)+
+            ';\nahkb00='+string(ahkb00)+'; ahkb='+string(ahkb)+
+            ';\nth00='+string(th00)+'; th='+string(abs(hkb/ahkb))+
+            ';\nvkb00='+string(vkb00)+'; vkb='+string(vkb)+
+            ';\navkb00='+string(avkb00)+'; avkb='+string(avkb)+
+            ';\ntv00='+string(tv00)+'; tv='+string(abs(vkb/avkb))
             );*/
         }
     }

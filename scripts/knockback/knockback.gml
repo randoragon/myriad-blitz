@@ -51,12 +51,12 @@ if (vkb != 0) {
 }
 
 /*show_message(
-object_get_name(object_index) + ':#' + 
+object_get_name(object_index) + ':\n' + 
 'x = ' + string(x) + 
-';# y = ' + string(y) + 
-';#self.dirkb = ' + string(dirkb) + 
-';#other.dirkb = ' + string(argument[1]) + 
-';# fkb = ' + string(fkb) + 
-';# hkb = ' + string(hkb) + 
-';# vkb = ' + string(vkb) + ';'
+';\n y = ' + string(y) + 
+';\nself.dirkb = ' + string(dirkb) + 
+';\nother.dirkb = ' + string(argument[1]) + 
+';\n fkb = ' + string(fkb) + 
+';\n hkb = ' + string(hkb) + 
+';\n vkb = ' + string(vkb) + ';'
 );

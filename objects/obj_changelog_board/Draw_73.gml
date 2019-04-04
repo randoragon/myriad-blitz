@@ -27,7 +27,7 @@ var distance = 0, yy;
 for (var i = 0; i < array_length_1d(section); i++) {
     yy = y - sprite_yoffset + 50 + scroll + distance;
     if (yy + (3 * 12) >= y - sprite_yoffset + 50 && yy <= y - sprite_yoffset + sprite_height - 70) {
-        if (date[i] == "" || !(boss.x >= x - (0.5 * 3 * string_width(string_hash_to_newline(section[i]))) - 2 && boss.x <= x + (0.5 * 3 * string_width(string_hash_to_newline(section[i]))) && boss.y > yy - 2 && boss.y < yy + (3 * 12) + 2)) {
+        if (date[i] == "" || !(boss.x >= x - (0.5 * 3 * string_width(section[i])) - 2 && boss.x <= x + (0.5 * 3 * string_width(section[i])) && boss.y > yy - 2 && boss.y < yy + (3 * 12) + 2)) {
             draw_text_outline(x, yy, section[i], 3, 3, 0, rgb(0, 200, 255), 1, c_black, 1);
         } else {
             gpu_set_alphatestref(0);
@@ -47,15 +47,15 @@ for (var i = 0; i < array_length_1d(section); i++) {
 	        switch (string_copy(content[i, l], 1, 1)) {
 		        case "<":
 			        draw_set_halign(fa_left);
-			        draw_text_transformed(x - sprite_xoffset + 40, yy + (3 * 12) + section_padding + (l * ((2 * 12) + content_padding)), string_hash_to_newline(string_delete(content[i, l], 1, 1)), 2, 2, 0);
+			        draw_text_transformed(x - sprite_xoffset + 40, yy + (3 * 12) + section_padding + (l * ((2 * 12) + content_padding)), string_delete(content[i, l], 1, 1), 2, 2, 0);
 			        draw_set_halign(fa_center);
 		        break;
 		        case "_":
-					draw_text_transformed(x, yy + (3 * 12) + section_padding + (l * ((2 * 12) + content_padding)), string_hash_to_newline(string_delete(content[i, l], 1, 1)), 2, 2, 0);
+					draw_text_transformed(x, yy + (3 * 12) + section_padding + (l * ((2 * 12) + content_padding)), string_delete(content[i, l], 1, 1), 2, 2, 0);
 		        break;
 		        case ">":
 			        draw_set_halign(fa_right);
-			        draw_text_transformed(x - sprite_xoffset + sprite_width - 40, yy + (3 * 12) + section_padding + (l * ((2 * 12) + content_padding)), string_hash_to_newline(string_delete(content[i, l], 1, 1)), 2, 2, 0);
+			        draw_text_transformed(x - sprite_xoffset + sprite_width - 40, yy + (3 * 12) + section_padding + (l * ((2 * 12) + content_padding)), string_delete(content[i, l], 1, 1), 2, 2, 0);
 			        draw_set_halign(fa_center);
 		        break;
 	        }
@@ -109,7 +109,7 @@ var distance = 0, yy;
 for (var i = 0; i < array_length_1d(section); i++) {
     yy = y - sprite_yoffset + 50 + scroll + distance;
     if (yy + (3 * 12) >= y - sprite_yoffset + 50 && yy <= y - sprite_yoffset + sprite_height - 70) {
-        if (date[i] != "" && (boss.x >= x - (0.5 * 3 * string_width(string_hash_to_newline(section[i]))) - 2 && boss.x <= x + (0.5 * 3 * string_width(string_hash_to_newline(section[i]))) && boss.y > yy - 2 && boss.y < yy + (3 * 12) + 2)) {
+        if (date[i] != "" && (boss.x >= x - (0.5 * 3 * string_width(section[i])) - 2 && boss.x <= x + (0.5 * 3 * string_width(section[i])) && boss.y > yy - 2 && boss.y < yy + (3 * 12) + 2)) {
             draw_tooltip(date[i]);
         }
     }

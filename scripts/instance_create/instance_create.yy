@@ -1,8 +1,8 @@
 {
-    "id": "b6bfc7f8-6f10-4a48-9ead-f30fa1445539",
+    "id": "3a706764-9ab0-4a99-b227-9c114aeee674",
     "modelName": "GMScript",
     "mvc": "1.0",
     "name": "instance_create",
-    "IsCompatibility": true,
+    "IsCompatibility": false,
     "IsDnD": false
 }

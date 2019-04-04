@@ -45,7 +45,7 @@ if (place_meeting(x, y, boss)) {
             obj_slot_load.selection_name = name;
         } else {
             obj_slot_load.selection = slotid;
-            ask("WHOOPS!#This save slot originates from#Myriad Blitz version " + ver + ", which is incompatible#with the version you are running now (" + VER + ").#Loading impossible. Delete the slot?", scrq_reset_slot_selection, scrq_delete_slot);
+            ask("WHOOPS!\nThis save slot originates from\nMyriad Blitz version " + ver + ", which is incompatible\nwith the version you are running now (" + VER + ").\nLoading impossible. Delete the slot?", scrq_reset_slot_selection, scrq_delete_slot);
         }
     }
 }

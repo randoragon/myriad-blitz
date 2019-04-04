@@ -13,7 +13,7 @@ if (global.busy == start_busy) {
 }
 draw_self();
 draw_set_align(fa_left, fa_middle);
-draw_text_transformed(x - (210 * image_xscale), y - (15 * image_yscale), string_hash_to_newline(content), image_xscale * 2, image_yscale * 2, 0);
+draw_text_transformed(x - (210 * image_xscale), y - (15 * image_yscale), content, image_xscale * 2, image_yscale * 2, 0);
 
 #endregion
 
