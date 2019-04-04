@@ -9,7 +9,7 @@ if (place_meeting(x, y, boss) && image_alpha == 1 && global.busy == 0) {
 }
 
 if (place_meeting(x, y, boss) && mouse_check_button_pressed(mb_left) && image_alpha == 1 && global.busy == 0 && !instance_exists(obj_transition)) {
-    grabbed = true;
+    grabbed = TRUE;
 }
 
 if (grabbed && image_alpha == 1 && global.busy == 0) {
@@ -24,7 +24,7 @@ if (mouse_check_button_released(mb_left) && place_meeting(x, y, boss) && image_a
 }
 
 if (!mouse_check_button(mb_left)) {
-    grabbed = false;
+    grabbed = FALSE;
 }
 
 #endregion

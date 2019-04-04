@@ -130,7 +130,7 @@ if (status_effect[10]) {
 }
 
 //final stats calculation
-maxhp      = global.hp * maxhp_factor;
+hpmax      = global.hp * maxhp_factor;
 spd        = global.spd * spd_factor;
 acc        = global.acc * acc_factor;
 counteracc = global.counteracc * counteracc_factor;
@@ -145,7 +145,7 @@ fdmg       = global.fdmg * fdmg_factor;
 cdmg       = global.cdmg * cdmg_factor;
 ctime      = global.ctime * ctime_factor;
 ccooldown  = global.ccooldown * ccooldown_factor;
-invtime    =global.invtime * invtime_factor;
+invtime    = global.invtime * invtime_factor;
 
 #endregion
 
@@ -556,8 +556,8 @@ if (global.state == 1) {
 	if (place_meeting(x, y, obj_present) && instance_place(x, y, obj_present).picked == 0) {
 		with(instance_place(x, y, obj_present)) {
 			switch(f) {
-				case 0: { player_hp(number); picked = true; } break;
-				case 1: { other.charge = other.ctime; other.artcharge = 1; picked = true; other.bar_opacity[2] = 5; } break;
+				case 0: { player_hp(number); picked = TRUE; } break;
+				case 1: { other.charge = other.ctime; other.artcharge = 1; picked = TRUE; other.bar_opacity[2] = 5; } break;
 			}
 			play_sfx(sfx_button4, 0, 0);
 		}

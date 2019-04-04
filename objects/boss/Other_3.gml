@@ -12,10 +12,9 @@ ini_write_real("settings", "enemy_selection_auto_aim", global.enemy_details_sele
 ini_close();
 
 wipe(all);
+global.close_game = TRUE;
 
 if (ds_exists(global.player_status_effects, ds_type_grid)) { ds_grid_destroy(global.player_status_effects); }
 if (ds_exists(global.object_layer, ds_type_map))		   { ds_map_destroy(global.object_layer);		    }
 if (ds_exists(global.save_index, ds_type_map))			   { ds_map_destroy(global.save_index);				}
 if (ds_exists(global.save_name, ds_type_map))			   { ds_map_destroy(global.save_name);				}
-
-surface_reset_target();

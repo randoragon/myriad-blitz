@@ -1,7 +1,7 @@
 {
     "id": "ae856aac-0e55-45f4-b994-55d5721148a1",
     "modelName": "GMFont",
-    "mvc": "1.0",
+    "mvc": "1.1",
     "name": "f_pixeldise",
     "AntiAlias": 0,
     "TTFName": "",
@@ -10,6 +10,7 @@
     "charset": 1,
     "first": 0,
     "fontName": "Pixeldise",
+    "glyphOperations": 0,
     "glyphs": [
         {
             "Key": 32,
@@ -1482,13 +1483,16 @@
             }
         }
     ],
-    "image": null,
+    "hinting": 0,
     "includeTTF": false,
+    "interpreter": 0,
     "italic": false,
     "kerningPairs": [
         
     ],
     "last": 0,
+    "maintainGms1Font": false,
+    "pointRounding": 0,
     "ranges": [
         {
             "x": 32,

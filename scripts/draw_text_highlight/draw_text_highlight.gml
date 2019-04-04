@@ -12,7 +12,6 @@
 
 var xx          = argument[0];
 var yy          = argument[1];
-var text        = argument[2];
 var scale       = argument[3];
 var text_width  = string_width (string_hash_to_newline(argument[2])) * scale;
 var text_height = string_height(string_hash_to_newline(argument[2])) * scale;

@@ -1,3 +1,5 @@
+#macro TRUE bool(true)
+#macro FALSE bool(false)
 #macro CHRCOUNT 3
 #macro RLMCOUNT 1
 #macro PART_SYSTEM_PLAYERBOT global.part_system[0]

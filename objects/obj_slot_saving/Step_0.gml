@@ -461,7 +461,7 @@ if (phase == 4) {
 			file_text_close(file);
 			randomize();
 			random_set_seed(initial_seed);
-			global.loading = false;
+			global.loading = FALSE;
 		}
 	}
 }

@@ -18,7 +18,7 @@ if (phase == 0) {
 	            inst_count++;
 	        }
 	    }
-	    global.loading = true;
+	    global.loading = TRUE;
     }
 } else if (phase == 5) {
     if (++intro == 30) {

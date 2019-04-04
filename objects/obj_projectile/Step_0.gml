@@ -57,7 +57,6 @@ if (place_meeting(x, y, obj_enemy) && instance_place(x, y, obj_enemy).hp > 0) {
         global.enemy_details_selection = ee;
     }
     //spawning frags
-    var angle  = irandom(359);
     var frag_e = 0;
     if (global.chrsel == 0 && e == 2) {
         frag_e = 2;

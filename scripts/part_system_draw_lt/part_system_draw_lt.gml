@@ -5,7 +5,7 @@ var grid       = argument[0];
 var source     = global.part_type_lt_grid[0];
 var oldtonew   = grid[# 0, 1];
 var grid_width = ds_grid_width(grid);
-var part, sprite, percentage;
+var part, percentage;
 
 if (oldtonew == 1) {
     for (var i = 1; i < grid_width; i++) {

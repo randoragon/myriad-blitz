@@ -56,7 +56,7 @@ if (grid[# 0, 4] != -1) {
 }
 
 // create each particle
-var a, life, coords;
+var a, coords;
 repeat (part_count) {
 
     // choose position on the system grid

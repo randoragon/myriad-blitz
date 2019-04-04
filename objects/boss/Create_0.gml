@@ -5,12 +5,13 @@ window_last_width  = window_get_width();
 window_last_height = window_get_height();
 global.general_surface = -1;
 global.gui_surface     = -1;
+global.close_game	   = FALSE;
 application_surface_enable(0);
 window_set_cursor(cr_none);
 math_set_epsilon(0.0001);
 audio_channel_num(32);
 global.kill_count    = 0;
-global.loading       = false;
+global.loading       = FALSE;
 global.fullscreen    = 1;
 global.screenshake   = 1;
 global.points        = 0;
@@ -50,11 +51,12 @@ global.background_sprite_index = array_setup(0,     8);
 global.background_image_speed  = array_setup(0,     8);
 global.background_x            = array_setup(0,     8);
 global.background_y            = array_setup(0,     8);
-global.background_htiled       = array_setup(false, 8);
-global.background_vtiled	   = array_setup(false, 8);
+global.background_htiled       = array_setup(FALSE, 8);
+global.background_vtiled	   = array_setup(FALSE, 8);
 global.background_hspeed	   = array_setup(0,     8);
 global.background_vspeed	   = array_setup(0,     8);
 global.enemy_details_selection = noone;
+global.player_status_effects   = -1;
 
 global.save_chunk_size  = 500;
 global.save_particles   = 1;
@@ -118,7 +120,6 @@ global.part_system[6] = part_system_create_lt(1, 42);
 
 // INDICATOR PARTICLES
 global.part_system[1] = part_system_create_pro(1, 20, 250);
-var charlist = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%"+"\""+"&'.?~";
 var size;
 // importance 1 indicators
 global.indicator_part[0] = part_type_setup_pro(part_ascii, 0, 0, 20, 20);

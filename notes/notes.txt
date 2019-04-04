@@ -1,3 +1,1 @@
-I've revived the save/load system, so that leaves the issue with some depths hanging in the air.
-As for the depth system, all instance layering SHOULD be totally fine, but there's some issues
-with drawing stuff to the screen, like tooltips and such.
+AARGHH, SURFACE STACK BUG, KILL IT!

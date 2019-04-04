@@ -39,6 +39,6 @@ if (global.gpspeed != 0) {
 	vpadding        = size * multiplier;
     image_width     = sprite_get_width(spr_slot_char) * uname_height / sprite_get_height(spr_slot_char);
     image_height    = uname_height;
-    headline_width  = uname_width / 2;
+    // headline_width  = uname_width / 2;
     headline_height = uname_height / 2;
 

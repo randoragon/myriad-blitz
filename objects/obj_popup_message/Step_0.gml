@@ -22,11 +22,11 @@ if (spd < 0 && image_xscale + spd <= 1) {
 #region Button clicking
 
 if (place_meeting(x, y, boss)) {
-	if (mouse_check_button_pressed(mb_left)) { grabbed = true; }
+	if (mouse_check_button_pressed(mb_left)) { grabbed = TRUE; }
 	if (mouse_check_button_released(mb_left) && grabbed) { script_execute(script); } 
 }
 
-if (!mouse_check_button(mb_left)) { grabbed = false; }
+if (!mouse_check_button(mb_left)) { grabbed = FALSE; }
 image_index = grabbed;
 
 #endregion

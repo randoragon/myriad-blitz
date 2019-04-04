@@ -735,7 +735,7 @@ if (phase == 5) {
 	}
 
 	phase = 6;
-	global.loading = false;
+	global.loading = FALSE;
 	scr_Pause();
 }
 

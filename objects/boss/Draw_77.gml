@@ -1,4 +1,4 @@
-/// @description Draw App & GUI Surface
+/// @description Draw GENERAL & GUI Surface
 
 gpu_set_alphatestref(0);
 var border = BORDER_THICKNESS * SURFACE_SCALE;
@@ -35,4 +35,11 @@ surface_set_target(GUI_SURFACE);
 draw_clear_alpha(0, 0);
 surface_reset_target();
 
-
+if (global.close_game) {
+	if (surface_exists(GENERAL_SURFACE)) {
+		surface_free(GENERAL_SURFACE);
+	}
+	if (surface_exists(GUI_SURFACE)) {
+		surface_free(GUI_SURFACE);
+	}
+}

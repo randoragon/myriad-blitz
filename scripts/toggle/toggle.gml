@@ -8,9 +8,9 @@
 var output = argument[0];
 
 if (argument_count >= 3) {
-	for (var i = 1; i <= argument_count - 1; i++) {
+	for (var i = 1; i < argument_count; i++) {
 		if (output == argument[i]) {
-			if (argumentnumber < argument_count - 1) {
+			if (i < argument_count - 1) {
 				output = argument[i + 1];
 			} else {
 				output = argument[1];
@@ -18,13 +18,7 @@ if (argument_count >= 3) {
 		}
 	}
 } else if (argument_count == 1) {
-	if (output == 0) {
-		output = 1;
-	} else {
-		output = 0;
-	}
+	output = !output;
 }
 
-argument[0] = output;
-return argument[0];
-
+return output;

@@ -27,7 +27,6 @@ var a      = argument[2];
 if (argument_count > 3) { var b = argument[3]; }
 if (argument_count > 4) { var c = argument[4]; }
 if (argument_count > 5) { var d = argument[5]; }
-if (argument_count > 6) { var e = argument[6]; }
 
 switch(argument[1]) {
     case "sprite"     : source[# part, 0]  = a; break;
@@ -39,5 +38,5 @@ switch(argument[1]) {
     case "speed"      : source[# part, 13] = a; source[# part, 14] = b; source[# part, 15] = c; break;
     case "blend_mode" : source[# part, 16] = a; break;
     case "color"      : source[# part, 17] = a; source[# part, 18] = b; break;
-    case "alpha"      : source[# part, 19] = a; source[# part, 20]=b; break;
+    case "alpha"      : source[# part, 19] = a; source[# part, 20] = b; break;
 }

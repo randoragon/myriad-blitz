@@ -23,19 +23,19 @@ switch(f) {
 			        if (global.prev_gpspeed != 0) {
 			            vacc = 0.25 / global.prev_gpspeed;
 			        } else {
-			            vac  = 0.25;
+			            vacc  = 0.25;
 			        }
 			    }
 			    lifespan = 180;
 		    break;
-		    case 1: //evilflame charge ring frags
+		    case 1: // evilflame charge ring frags
 			    sprite_index = spr_evilflame_frag;
 				image_speed  = 0;
 			    fdmg         = 10;
 			    speed1       = 5;
 			    lifespan     = 300;
 		    break;
-		    case 2: //evilflame twilight fury frags
+		    case 2: // evilflame twilight fury frags
 			    sprite_index = part_star;
 				image_speed  = 0;
 			    image_alpha  = 0.8;

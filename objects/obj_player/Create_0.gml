@@ -23,7 +23,7 @@ if (!global.loading) {
 
 global.status_effect_count = 11; //this is how many status effects there are in total
 for (var i = global.status_effect_count-1; i >= 0; i--)
-	status_effect[i] = false;
+	status_effect[i] = FALSE;
 
 if (!global.loading) {
 	global.player_status_effects = ds_grid_create(3, 0);

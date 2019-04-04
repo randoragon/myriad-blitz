@@ -11,7 +11,7 @@ if (mouse_check_button_pressed(mb_left) && (place_meeting(x, y, boss) || open) &
 	}
 }
 
-if (global.state == 1) { open = false; }
+if (global.state == 1)  { open  = FALSE; }
 if ( open && alpha < 1) { alpha += 0.02; }
 if (!open && alpha > 0) { alpha -= 0.02; }
 
