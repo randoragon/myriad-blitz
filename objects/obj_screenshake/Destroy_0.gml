@@ -2,7 +2,6 @@
 
 #region Return view to normal
 
-__view_set( e__VW.XView, 0, global.viewxstartpos );
-__view_set( e__VW.YView, 0, global.viewystartpos );
+camera_set_view_pos(view_get_camera(0), global.viewxstartpos, global.viewystartpos)
 
 #endregion

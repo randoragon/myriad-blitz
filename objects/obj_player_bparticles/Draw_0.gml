@@ -2,7 +2,7 @@
  
 #region Skip if loading
  
-if (global.loading == 1) { exit; }
+if (global.loading) { exit; }
 
 #endregion
 

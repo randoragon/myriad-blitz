@@ -3,7 +3,7 @@
     "modelName": "GMSound",
     "mvc": "1.0",
     "name": "sfx_snowman_shoot",
-    "audioGroupGuid": "4c68f0c5-5569-4d9f-b03b-59d940922e19",
+    "audioGroupGuid": "77d66fb1-5db7-43fa-a2ee-b3883c53327c",
     "bitDepth": 1,
     "bitRate": 128,
     "kind": 0,

@@ -65,7 +65,7 @@ switch(f) {
 
 #region Draw player GUI bars
 
-if (f == 8 && instance_exists(obj_player) && global.loading == 0) {
+if (f == 8 && instance_exists(obj_player) && !global.loading) {
     //HP bar
     var target	 = obj_player;
     var hpmark	 = target.hpmark;

@@ -14,10 +14,10 @@ if (argument_count == 1) {
 	}
 } else {
 	if (!argument[0]) {
-		o = __view_get( e__VW.XView, argument[1]) + ((display_mouse_get_x() - window_get_x()) * (__view_get( e__VW.WView, argument[1] ) / window_get_width()));
+		o = camera_get_view_x(view_get_camera(argument[1])) + ((display_mouse_get_x() - window_get_x()) * (camera_get_view_width(view_get_camera(argument[1])) / window_get_width()));
 	} else {
 		if (argument[0]) {
-			o = __view_get( e__VW.YView, argument[1] ) + ((display_mouse_get_y() - window_get_y()) * (__view_get( e__VW.HView, argument[1] ) / window_get_height()));
+			o = camera_get_view_y(view_get_camera(argument[1])) + ((display_mouse_get_y() - window_get_y()) * (camera_get_view_height(view_get_camera(argument[1])) / window_get_height()));
 		}
 	}
 }

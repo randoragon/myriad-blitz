@@ -9,10 +9,11 @@ surface_set_target(GENERAL_SURFACE);
 #region Draw loading bar
 
 if (stage != 0) {
-    progress = (
-		(audio_group_load_progress(SFX) / 100) // sfx loading
-		+ (image_index / (image_number - 1))   // present animation
-		) / 2;
+	var progress = 0;
+	for (var i = 0; i < array_length_1d(audiogroups); i++) { progress += audio_group_load_progress(audiogroups[i]); }
+	progress /= array_length_1d(audiogroups) * 100;
+	progress += image_index / image_number;
+    progress /= 2;
     
     draw_set_color(hsv(90, 193 + (32 * dsin(cycle)), 255));
     draw_rectangle(CANVAS_XMID - sprite_get_xoffset(spr_loading_bar) + 14, 550 - sprite_get_yoffset(spr_loading_bar)+14,CANVAS_XMID-sprite_get_xoffset(spr_loading_bar) + 14 + (progress * 998), 550 - sprite_get_yoffset(spr_loading_bar) + 88, 0);

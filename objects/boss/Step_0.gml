@@ -51,34 +51,33 @@ if (keyboard_check_pressed(vk_f11)) {
 
 #region Audio Management
 
-/*
-The updates should be allowed only to occur while there's an opportunity for the player to change the music sliders. Otherwise things like audio_sound_gain would automatically
-render useless as this step action would constantly reupdate the sound gain in its own way.
-*/
-if (room == rm_Settings || (room == rm_Main && global.gpspeed == 0 && global.state == 1 && global.loading == 0)) {
-    //MUSIC
+/* The updates should be allowed only to occur while there's an opportunity for the player to change the music sliders. Otherwise things like audio_sound_gain would automatically
+ * render useless as this step action would constantly reupdate the sound gain in its own way.
+ */
+if (room == rm_Settings || (room == rm_Main && global.gpspeed == 0 && global.state == 1 && !global.loading)) {
+    // MUSIC
     for (var i = array_length_1d(global.music) - 1; i > -1; i--) {
     if (audio_is_playing(global.music[i]))
-		audio_sound_gain(global.music[i], global.muspercentage/100, 0);
+		audio_sound_gain(global.music[i], global.muspercentage / 100, 0);
     }
     
-    //SFX
+    // SFX
     for(var i = array_length_1d(global.sfx) - 1; i > -1; i--) {
     if (audio_is_playing(global.sfx[i]))
-		audio_sound_gain(global.sfx[i], global.sfxpercentage/100, 0);
+		audio_sound_gain(global.sfx[i], global.sfxpercentage / 100, 0);
     }
 }
 
 if (room != rm_Main) {
-    if (menu_intro == 1 && !audio_is_playing(mus_menu_intro)) {
+    if (menu_intro && !audio_is_playing(mus_menu_intro)) {
         play_music(mus_menu_loop, sound_priority.music, 1);
-        menu_intro = 0;
+        menu_intro = FALSE;
     }
-    if (os_is_paused() && os_pause == 0) {
-        os_pause = 1;
+    if (os_is_paused() && !os_pause) {
+        os_pause = TRUE;
         audio_pause_all();
-    } else if (!os_is_paused() && os_pause == 1) {
-        os_pause = 0;
+    } else if (!os_is_paused() && os_pause) {
+        os_pause = FALSE;
         audio_resume_all();
     }
 }
@@ -120,5 +119,10 @@ if (!global.loading) {
 		if (instance_exists(obj_frag_particles)     ) { wipe(obj_frag_particles);     }
 	}
 }
+
+#endregion
+
+#region Debugging
+
 
 #endregion

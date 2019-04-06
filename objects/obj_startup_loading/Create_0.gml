@@ -5,6 +5,11 @@
 image_scale(2, 2);
 image_alpha = 0;
 image_speed = 0;
+
+// all audiogroups to load initially
+audiogroups[0] = audiogroup_default;
+audiogroups[1] = audiogroup_menu;
+
 instance_create_layer(0, 0, "Logo", obj_randoragon_logo);
 
 #endregion

@@ -163,17 +163,57 @@
                     "id": "4c68f0c5-5569-4d9f-b03b-59d940922e19",
                     "modelName": "GMAudioGroup",
                     "mvc": "1.0",
-                    "groupName": "SFX",
+                    "groupName": "audiogroup_character_evilflame",
                     "targets": 461609314234257646
                 }
             },
             {
                 "Key": 2,
                 "Value": {
-                    "id": "f7318127-83cc-4c50-9233-5bbd5ca79d39",
+                    "id": "dcabbe49-c10a-4bf3-9ba9-f0efa8823a88",
                     "modelName": "GMAudioGroup",
                     "mvc": "1.0",
-                    "groupName": "Music",
+                    "groupName": "audiogroup_menu",
+                    "targets": 461609314234257646
+                }
+            },
+            {
+                "Key": 3,
+                "Value": {
+                    "id": "3832e61b-3b3e-4371-8d30-b647f6b52889",
+                    "modelName": "GMAudioGroup",
+                    "mvc": "1.0",
+                    "groupName": "audiogroup_character_emerald",
+                    "targets": 461609314234257646
+                }
+            },
+            {
+                "Key": 4,
+                "Value": {
+                    "id": "5f70dbb7-2ad1-49f0-b816-d1b1557fb92c",
+                    "modelName": "GMAudioGroup",
+                    "mvc": "1.0",
+                    "groupName": "audiogroup_character_scootomik",
+                    "targets": 461609314234257646
+                }
+            },
+            {
+                "Key": 5,
+                "Value": {
+                    "id": "77d66fb1-5db7-43fa-a2ee-b3883c53327c",
+                    "modelName": "GMAudioGroup",
+                    "mvc": "1.0",
+                    "groupName": "audiogroup_realm_christmas",
+                    "targets": 461609314234257646
+                }
+            },
+            {
+                "Key": 6,
+                "Value": {
+                    "id": "d506cdb2-ecb6-4e64-8ee0-8ef6bcc2759b",
+                    "modelName": "GMAudioGroup",
+                    "mvc": "1.0",
+                    "groupName": "audiogroup_default_gameplay",
                     "targets": 461609314234257646
                 }
             }

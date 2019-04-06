@@ -3,7 +3,7 @@
     "modelName": "GMSound",
     "mvc": "1.0",
     "name": "sfx_scootomik_shoot",
-    "audioGroupGuid": "4c68f0c5-5569-4d9f-b03b-59d940922e19",
+    "audioGroupGuid": "5f70dbb7-2ad1-49f0-b816-d1b1557fb92c",
     "bitDepth": 1,
     "bitRate": 128,
     "kind": 0,

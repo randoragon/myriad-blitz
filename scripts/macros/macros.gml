@@ -11,10 +11,10 @@
 #macro PART_SYSTEM_ULTIMATE global.part_system[6]
 #macro BORDER_THICKNESS 20
 #macro SURFACE_SCALE (window_get_width() / (room_width - (2 * BORDER_THICKNESS)))
-#macro CANVAS_X __view_get( e__VW.XView, 0 )
-#macro CANVAS_Y __view_get( e__VW.YView, 0 )
-#macro CANVAS_WIDTH __view_get( e__VW.WView, 0 )
-#macro CANVAS_HEIGHT __view_get( e__VW.HView, 0 )
+#macro CANVAS_X camera_get_view_x(view_get_camera(0))
+#macro CANVAS_Y camera_get_view_y(view_get_camera(0))
+#macro CANVAS_WIDTH camera_get_view_width(view_get_camera(0))
+#macro CANVAS_HEIGHT camera_get_view_height(view_get_camera(0))
 #macro CANVAS_XEND (CANVAS_X + CANVAS_WIDTH)
 #macro CANVAS_YEND (CANVAS_Y + CANVAS_HEIGHT)
 #macro CANVAS_XMID lerp(CANVAS_X, CANVAS_XEND, 0.5)

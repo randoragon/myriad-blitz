@@ -1,9 +1,11 @@
 /// @description Draw GENERAL & GUI Surface
 
+#region Draw surfaces
+
 gpu_set_alphatestref(0);
 var border = BORDER_THICKNESS * SURFACE_SCALE;
 
-//draw application surface & apply shaders
+// draw application surface & apply shaders
 if (global.shader_conditions == 0 || global.loading) {
     draw_surface_stretched(GENERAL_SURFACE, CANVAS_X - (2 * border), CANVAS_Y - (2 * border), window_get_width() + (2 * border), window_get_height() + (2 * border));
     if (dizzy_alpha > 0) {
@@ -35,6 +37,10 @@ surface_set_target(GUI_SURFACE);
 draw_clear_alpha(0, 0);
 surface_reset_target();
 
+#endregion
+
+#region Free surfaces on game_end
+
 if (global.close_game) {
 	if (surface_exists(GENERAL_SURFACE)) {
 		surface_free(GENERAL_SURFACE);
@@ -43,3 +49,5 @@ if (global.close_game) {
 		surface_free(GUI_SURFACE);
 	}
 }
+
+#endregion

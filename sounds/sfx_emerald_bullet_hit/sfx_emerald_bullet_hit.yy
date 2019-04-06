@@ -3,7 +3,7 @@
     "modelName": "GMSound",
     "mvc": "1.0",
     "name": "sfx_emerald_bullet_hit",
-    "audioGroupGuid": "4c68f0c5-5569-4d9f-b03b-59d940922e19",
+    "audioGroupGuid": "3832e61b-3b3e-4371-8d30-b647f6b52889",
     "bitDepth": 1,
     "bitRate": 128,
     "kind": 0,

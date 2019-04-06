@@ -118,19 +118,33 @@ if (room == rm_Help) {
 
 #endregion
 
-#region obj_transition Management
+#region obj_transition management
 
 with (obj_transition) {
 	if (type == 0) {
-	    progress += 2/time;
+	    progress += 1;
 	    draw_set_color(color);
-	    if (progress <= 1) { draw_set_alpha(progress); } else { draw_set_alpha(2 - progress); }
-	    gpu_set_alphatestref(254);
-	    draw_rectangle(GUI_X, GUI_Y, GUI_XEND, GUI_YEND, 0);
-	    draw_set_alpha(1);
-	    gpu_set_alphatestref(0);
-	    if (progress==1)   { event_perform(ev_other, ev_user0); }
-	    if (progress >= 2) { instance_destroy(); }
+		if (abs(progress - time) > 1) {
+		    if (progress < time - 1) {
+				draw_set_alpha(progress / (time - 1));
+			} else if (progress > time + 1) {
+				draw_set_alpha(2 - (progress / (time + 1)));
+			}
+		    gpu_set_alphatestref(0);
+			gpu_set_blendmode(bm_add);
+		    draw_rectangle(GUI_X, GUI_Y, GUI_XEND, GUI_YEND, 0);
+			gpu_set_blendmode(bm_normal);
+			gpu_set_colorwriteenable(1, 1, 1, 0);
+			draw_rectangle(GUI_X, GUI_Y, GUI_XEND, GUI_YEND, 0);
+			gpu_set_colorwriteenable(1, 1, 1, 1);
+		    draw_set_alpha(1);
+		    gpu_set_alphatestref(254);
+		} else {
+			draw_rectangle(GUI_X, GUI_Y, GUI_XEND, GUI_YEND, 0);
+			if (progress == time) { event_perform(ev_other, ev_user0); }
+		}
+		
+	    if (progress >= 2 * time) { instance_destroy(); }
 	} else if (type == 1) {
 	    progress += CANVAS_WIDTH * 2 / time;
 	    draw_set_color(color);
@@ -141,20 +155,20 @@ with (obj_transition) {
 	    progress += CANVAS_WIDTH * 2 / time;
 	    draw_set_color(color);
 	    draw_rectangle(GUI_X + (2*CANVAS_WIDTH) - progress, GUI_Y, GUI_XEND - progress, GUI_YEND, 0);
-	    if (progress == CANVAS_WIDTH)   { event_perform(ev_other, ev_user0); }
-	    if (progress >= CANVAS_WIDTH*2) { instance_destroy(); }
+	    if (progress == CANVAS_WIDTH)     { event_perform(ev_other, ev_user0); }
+	    if (progress >= CANVAS_WIDTH * 2) { instance_destroy(); }
 	} else if (type == 2) {
 	    progress += CANVAS_HEIGHT * 2 / time;
 	    draw_set_color(color);
 	    draw_rectangle(GUI_X, GUI_Y - CANVAS_HEIGHT + progress, GUI_XEND, GUI_Y + progress, 0);
-	    if (progress == CANVAS_HEIGHT)   { event_perform(ev_other, ev_user0); }
-	    if (progress >= CANVAS_HEIGHT*2) { instance_destroy(); }
+	    if (progress == CANVAS_HEIGHT)     { event_perform(ev_other, ev_user0); }
+	    if (progress >= CANVAS_HEIGHT * 2) { instance_destroy(); }
 	} else if (type == -2) {
 	    progress += CANVAS_HEIGHT * 2 / time;
 	    draw_set_color(color);
 	    draw_rectangle(GUI_X, GUI_Y + (2 * CANVAS_HEIGHT) - progress, GUI_XEND, GUI_YEND - progress, 0);
-	    if (progress == CANVAS_HEIGHT)   { event_perform(ev_other, ev_user0); }
-	    if (progress >= CANVAS_HEIGHT*2) { instance_destroy(); }
+	    if (progress == CANVAS_HEIGHT)     { event_perform(ev_other, ev_user0); }
+	    if (progress >= CANVAS_HEIGHT * 2) { instance_destroy(); }
 	}
 }
 
