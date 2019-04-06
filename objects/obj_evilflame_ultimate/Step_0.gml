@@ -22,7 +22,7 @@ if (global.gpspeed != 0) {
         part_type_edit_lt(global.ultimate_part[0], "direction", -image_angle - 10, -image_angle + 10);
         part_type_edit_lt(global.ultimate_part[0], "size", abs(0.15 * image_yscale), abs(0.25 * image_yscale), -0.008 * image_xscale);
         part_type_edit_lt(global.ultimate_part[0], "speed", 7 * image_yscale, 11 * image_yscale, 0);
-        part_type_spawn_lt(global.part_system[6], global.ultimate_part[0], 4, x + lengthdir_x(dis, ang), y + lengthdir_y(dis, ang), x + lengthdir_x(dis, ang), y + lengthdir_y(dis, ang), "line", "linear", 1.5);
+        part_type_spawn_lt(PART_SYSTEM_ULTIMATE, global.ultimate_part[0], 4, x + lengthdir_x(dis, ang), y + lengthdir_y(dis, ang), x + lengthdir_x(dis, ang), y + lengthdir_y(dis, ang), "line", "linear", 1.5);
     }
 
 	if (hpmark != hp) { hpmark = home(hpmark, hp, hpmark_v * global.gpspeed, 0); } //this is for both Gameplay bars and GUI bars

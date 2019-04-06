@@ -13,15 +13,15 @@ switch(f) {
 	    switch(e) {
 		    case 0:
 			    vspeed1 += vacc * sqr(global.gpspeed);
-			    if (real_step()) { part_type_spawn_ult(global.part_system[2], global.frag_part[0], 2, x, y, x, y, "square", "linear", 1); }
+			    if (real_step()) { part_type_spawn_ult(PART_SYSTEM_FRAG, global.frag_part[0], 2, x, y, x, y, "square", "linear", 1); }
 		    break;
 		    case 1:
-				if (real_step()) { part_type_spawn_ult(global.part_system[2], global.frag_part[1], 2, x, y, x, y, "square", "linear", 1); }
+				if (real_step()) { part_type_spawn_ult(PART_SYSTEM_FRAG, global.frag_part[1], 2, x, y, x, y, "square", "linear", 1); }
 		    break;
 		    case 2:
 			    speed1    += random_range(-0.2, 0.2);
 			    direction += random_range(-2, 2);
-			    if (real_step()) { part_type_spawn_ult(global.part_system[2], global.frag_part[2], 2, x, y, x, y, "square", "linear", 1); }
+			    if (real_step()) { part_type_spawn_ult(PART_SYSTEM_FRAG, global.frag_part[2], 2, x, y, x, y, "square", "linear", 1); }
 		    break;
 	    }
 	    image_angle += 10 * global.gpspeed;
@@ -45,7 +45,7 @@ switch(f) {
 	    }
 	    if (real_step()) {
 	        part_type_edit_ult(global.frag_part[0], "angle", image_angle, image_angle, 0, 0);
-	        part_type_spawn_ult(global.part_system[2], global.frag_part[0], 2, x, y, x, y, "square", "linear", 1);
+	        part_type_spawn_ult(PART_SYSTEM_FRAG, global.frag_part[0], 2, x, y, x, y, "square", "linear", 1);
 	    }
 	    image_angle = direction;
 	break;

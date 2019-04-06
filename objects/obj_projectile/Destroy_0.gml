@@ -6,20 +6,20 @@ if (lifespan <= 0) {
 	switch(f) {
 		case 0:
 			if (e != 2) {
-				disperse_particles(global.part_system[5], x, x, y, y, irandom_range(3, 5), c_orange);
+				disperse_particles(PART_SYSTEM_PLAYERTOP, x, x, y, y, irandom_range(3, 5), c_orange);
 			} else {
-				disperse_particles(global.part_system[5], x, x, y, y, irandom_range(3, 5), rgb(82, 0, 255));
+				disperse_particles(PART_SYSTEM_PLAYERTOP, x, x, y, y, irandom_range(3, 5), rgb(82, 0, 255));
 			}
 		break;
 		case 2:
 			if (e == 0) {
-				disperse_particles(global.part_system[5], x, x, y, y, irandom_range(3, 5), c_yellow);
+				disperse_particles(PART_SYSTEM_PLAYERTOP, x, x, y, y, irandom_range(3, 5), c_yellow);
 			} else if (e == 1) {
-				disperse_particles(global.part_system[5], x, x, y, y, irandom_range(3, 5), c_red);
+				disperse_particles(PART_SYSTEM_PLAYERTOP, x, x, y, y, irandom_range(3, 5), c_red);
 			}
 		break;
 		default:
-			disperse_particles(global.part_system[5], x, x, y, y, irandom_range(3, 5), global.color[global.chrsel]);
+			disperse_particles(PART_SYSTEM_PLAYERTOP, x, x, y, y, irandom_range(3, 5), global.color[global.chrsel]);
 		break;
 	}
 }

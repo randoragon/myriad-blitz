@@ -157,7 +157,7 @@ if (global.gpspeed != 0) {
 
 if (ds_map_exists(loot, "ultimate")) {
     if (real_step()) {
-        part_type_spawn_lt(global.part_system[4], global.enemy_part[0], 5, x - sprite_xoffset, y - sprite_yoffset, x - sprite_xoffset + sprite_width, y - sprite_yoffset + sprite_height, "ellipse", "linear", 1);
+        part_type_spawn_lt(PART_SYSTEM_ENEMY, global.enemy_part[0], 5, x - sprite_xoffset, y - sprite_yoffset, x - sprite_xoffset + sprite_width, y - sprite_yoffset + sprite_height, "ellipse", "linear", 1);
     }
 }
 

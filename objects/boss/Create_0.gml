@@ -97,8 +97,8 @@ part_type_size_orientation_lt(part, 0.1, 0.12, -0.0036, 0, 360, 3, 1);
 part_type_direction_speed_lt(part, 0, 360, 1, 2, -0.02);
 part_type_blend_color_alpha_lt(part, bm_normal, c_white, c_white, 1, 1);
 
-// PLAYER PARTICLES (top)
-global.part_system[5] = part_system_create_lt(1, 0);
+
+PART_SYSTEM_PLAYERTOP = part_system_create_lt(1, 0);
 // ultimate burst particles
 global.player_part[0] = part_type_setup_lt(part_star, 0, 60, 60);
 part = global.player_part[0];
@@ -106,20 +106,15 @@ part_type_size_orientation_lt(part, 0.3, 0.6, -0.005, 0, 360, 4, 1);
 part_type_direction_speed_lt(part, 0, 360, 3, 4, -0.06);
 part_type_blend_color_alpha_lt(part, bm_add, c_white, c_white, 0.8, 0);
 
-// PLAYER PARTICLES (bottom)
-global.part_system[0] = part_system_create_lt(1, 42, 42);
+PART_SYSTEM_PLAYERBOT = part_system_create_lt(1, 42, 42);
 
-// FRAG PARTICLES
-global.part_system[2] = part_system_create_ult(1, 100, 500);
+PART_SYSTEM_FRAG = part_system_create_ult(1, 100, 500);
 
-// CHARGE PARTICLES
-global.part_system[3] = part_system_create_ult(1, 150, 250);
+PART_SYSTEM_CHARGE = part_system_create_ult(1, 150, 250);
 
-// ULTIMATE PARTICLES
-global.part_system[6] = part_system_create_lt(1, 42);
+PART_SYSTEM_ULTIMATE = part_system_create_lt(1, 42);
 
-// INDICATOR PARTICLES
-global.part_system[1] = part_system_create_pro(1, 20, 250);
+PART_SYSTEM_DAMAGE_INDICATORS = part_system_create_pro(1, 20, 250);
 var size;
 // importance 1 indicators
 global.indicator_part[0] = part_type_setup_pro(part_ascii, 0, 0, 20, 20);
@@ -144,7 +139,7 @@ part_type_blend_color_alpha_pro(part, bm_normal, rgb(255, 255, 0), c_red, 1, 1);
 part_type_gravity_pro(part, 0, 0.05, 90, 90);
 
 // ENEMY PARTICLES
-global.part_system[4] = part_system_create_lt(1, 30, 100);
+PART_SYSTEM_ENEMY = part_system_create_lt(1, 30, 100);
 // ultimate loot particles
 global.enemy_part[0] = part_type_setup_lt(part_star, 0, 30, 30);
 part = global.enemy_part[0];

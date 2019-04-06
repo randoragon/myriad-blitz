@@ -20,6 +20,6 @@ for (var i = 1; i <= string_length(input); i++) {
         offset_width = (string_width(string_hash_to_newline(string_copy(input, 1, i - 1))) + 1) * scale; // the combined width of all letters to the left of the current one (+1 for padding between that and the current character)
         xpos         = argument[0] - (string_width(string_hash_to_newline(input)) * scale / 2) + offset_width;
         ypos         = argument[1] - (25 * (argument[3] == 3));
-        part_type_spawn_pro(global.part_system[1], global.indicator_part[argument[3] - 1], 0, xpos, ypos, xpos, ypos, "line", "linear", 1);
+        part_type_spawn_pro(PART_SYSTEM_DAMAGE_INDICATORS, global.indicator_part[argument[3] - 1], 0, xpos, ypos, xpos, ypos, "line", "linear", 1);
     }
 }

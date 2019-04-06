@@ -8,14 +8,14 @@ if (global.loading == 1) { exit; }
 
 #region Draw ultimate particles
 
-if (part_system_count_lt(global.part_system[6]) > 0) {
+if (part_system_count_lt(PART_SYSTEM_ULTIMATE) > 0) {
     surface_set_target(GENERAL_SURFACE);
     gpu_set_alphatestref(0);
     if (global.shader_conditions == 0) {
-        part_system_draw_lt(global.part_system[6]);
+        part_system_draw_lt(PART_SYSTEM_ULTIMATE);
     } else {
         shd_sprite_effect_set(global.shader_conditions);
-        part_system_draw_lt(global.part_system[6]);
+        part_system_draw_lt(PART_SYSTEM_ULTIMATE);
         shader_reset();
     }
     gpu_set_alphatestref(254);
