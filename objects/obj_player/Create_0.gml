@@ -11,6 +11,7 @@ sprite_index = spr_evilflame + global.chrsel;
 		   
 if (!global.loading) {
     scr_PlayerDataUpdate(global.chrsel);
+	scr_PlayerUpdateAudioGroup();
     scr_PlayerGetData();
     scr_ParticlesUpdate();
 	scr_BackgroundUpdate(global.realm);

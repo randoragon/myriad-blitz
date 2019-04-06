@@ -1070,6 +1070,14 @@
             }
         },
         {
+            "Key": "3c08f5b3-58b7-44c3-a523-2b346b50493f",
+            "Value": {
+                "id": "db9061d6-5be1-40b2-ba16-fe936bfe629f",
+                "resourcePath": "views\\3c08f5b3-58b7-44c3-a523-2b346b50493f.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "3cec3222-1b81-4655-bdd7-8e44dd6d135a",
             "Value": {
                 "id": "14818b60-68b9-43c6-8c8e-0d203f78304a",
@@ -1592,6 +1600,14 @@
                 "id": "f7b33730-5443-4961-b24e-40a34aa672ef",
                 "resourcePath": "sprites\\spr_slot\\spr_slot.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "6494a4ed-3d92-4240-a85e-bc3837ae486d",
+            "Value": {
+                "id": "b12e08e7-773f-479e-a21a-4ff21c71140b",
+                "resourcePath": "scripts\\scrt_menu_to_main\\scrt_menu_to_main.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -2423,6 +2439,14 @@
             }
         },
         {
+            "Key": "90cb46e6-af70-46c9-9e03-ebec92a42c97",
+            "Value": {
+                "id": "73624fd9-7bc0-4456-b441-64ac755e72a1",
+                "resourcePath": "scripts\\scr_PlayerUpdateAudioGroup\\scr_PlayerUpdateAudioGroup.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "90d0e94c-5369-4d6c-8d28-37bdb7672551",
             "Value": {
                 "id": "248958de-3a19-4bf9-b755-ca6a644ee73c",
@@ -3032,6 +3056,14 @@
                 "id": "c9904798-25e7-4194-a7d8-918071e8e9b8",
                 "resourcePath": "sounds\\sfx_pause\\sfx_pause.yy",
                 "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "b623fa4d-a080-478c-8589-1b0c03bd32dd",
+            "Value": {
+                "id": "6eecc1c3-c023-4ec1-ac8a-e9f8f149fddc",
+                "resourcePath": "scripts\\scrt_main_to_menu\\scrt_main_to_menu.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -4413,6 +4445,7 @@
         "6f0b775f-3815-4133-bf2d-658dec89c2d1",
         "8a5f4562-9cb6-400f-988d-4d184859f9c3",
         "a8ff5167-4050-4882-ae69-da43d48a2bf9",
+        "90cb46e6-af70-46c9-9e03-ebec92a42c97",
         "2eaec02d-4253-4f13-8e37-9c7375fed8c3",
         "fa752b2a-b7e7-4ffe-96e5-07d7c83177df",
         "2b742068-d66d-4e17-b9d0-2c994bfd29ac",
@@ -4458,6 +4491,8 @@
         "a74bf9f4-5161-4cec-bea2-9e6a75953853",
         "9e84f176-b257-4e67-9e25-3849e6c1f1c6",
         "610f12ab-5450-4ecc-a4e2-f15d04cd436d",
+        "6494a4ed-3d92-4240-a85e-bc3837ae486d",
+        "b623fa4d-a080-478c-8589-1b0c03bd32dd",
         "84f3c6be-180c-4fdb-ade7-469ad6cce488",
         "1935ad38-ea67-4db2-ad85-7e4636deaa4e",
         "63b5a2b0-f13b-4b08-a3d8-1bb5374bc67e",

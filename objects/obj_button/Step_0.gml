@@ -165,32 +165,26 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
     if (place_meeting(x, y, boss) && mouse_check_button_pressed(mb_left) && image_alpha == 1 && !instance_exists(obj_transition)) {
         switch(f) {
         case 5:
-            //previous character
+            // previous character
             if (global.state == 0) {
-            grabbed = 1;
-            image_index = 1;
-            play_sfx(sfx_button1, 0, 0);
-            global.chrsel--;
-            if (global.chrsel < 0) {
-                global.chrsel = CHRCOUNT - 1;
-            }
-            scr_PlayerDataUpdate(global.chrsel);
-            scr_PlayerGetData();
-            scr_ParticlesUpdate();
-            scr_LoreUpdate();
-            scr_Stats_Update(obj_statboard.button[0].show);
+	            grabbed = 1;
+	            image_index = 1;
+	            play_sfx(sfx_button1, 0, 0);
+	            global.chrsel = (global.chrsel == 0)? CHRCOUNT - 1 : global.chrsel - 1;
+	            scr_PlayerDataUpdate(global.chrsel);
+	            scr_PlayerGetData();
+	            scr_ParticlesUpdate();
+	            scr_LoreUpdate();
+				scr_Stats_Update(obj_statboard.button[0].show);
             }
         break;
         case 6:
-            //next character
+            // next character
             if (global.state == 0) {
                 grabbed = 1;
                 image_index = 3;
                 play_sfx(sfx_button1, 0, 0);
-                global.chrsel++;
-                if (global.chrsel > CHRCOUNT - 1) {
-                    global.chrsel = 0;
-                }
+                global.chrsel = (global.chrsel == CHRCOUNT - 1)? 0 : global.chrsel + 1;
                 scr_PlayerDataUpdate(global.chrsel);
                 scr_PlayerGetData();
                 scr_ParticlesUpdate();
@@ -275,9 +269,10 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 					if (room == rm_Main) {
 						if (global.state == 0) {
 							scr_toggle_stats_selection(0);
-							screen_transition(rm_Realms, -1, 30, 0, c_black);
+							screen_transition(rm_Realms, scrt_main_to_menu, 30, 0, c_black);
 							play_sfx(sfx_back, 0, 0);
-							play_music(mus_menu_intro, sound_priority.music, 0); boss.menu_intro = 1;
+							play_music(mus_menu_intro, sound_priority.music, 0);
+							boss.menu_intro = TRUE;
 						}
 					} else {
 						screen_transition(rm_Menu, -1, 30, choose(-1, 1, -2, 2), c_black);
@@ -375,14 +370,12 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
     if (image_alpha == 1) {
         switch(f) {
 	        case 5:
-	            //previous character
+	            // previous character
 	            if (keyboard_check_pressed(global.keybind[1]) && global.state == 0 && room == rm_Main) {
 	                play_sfx(sfx_button1, 0, 0);
-	                global.chrsel--;
-	                if (global.chrsel < 0) {
-	                    global.chrsel = CHRCOUNT - 1;
-	                }
+	                global.chrsel = (global.chrsel == 0)? CHRCOUNT - 1 : global.chrsel - 1;
 	                scr_PlayerDataUpdate(global.chrsel);
+					scr_PlayerUpdateAudioGroup();
 	                scr_PlayerGetData();
 	                scr_ParticlesUpdate();
 	                scr_LoreUpdate();
@@ -394,11 +387,9 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 	            //next character
 	            if (keyboard_check_pressed(global.keybind[3]) && global.state == 0 && room == rm_Main) {
 	                play_sfx(sfx_button1, 0, 0);
-	                global.chrsel++;
-	                if (global.chrsel > CHRCOUNT - 1) {
-	                    global.chrsel = 0;
-	                }
+	                global.chrsel = (global.chrsel == CHRCOUNT - 1)? 0 : global.chrsel + 1;
 	                scr_PlayerDataUpdate(global.chrsel);
+					scr_PlayerUpdateAudioGroup();
 	                scr_PlayerGetData();
 	                scr_ParticlesUpdate();
 	                scr_LoreUpdate();
@@ -412,7 +403,7 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 	                if (room == rm_Main) {
 	                    if (global.state == 0) {
 	                        scr_toggle_stats_selection(0);
-	                        screen_transition(rm_Realms, -1, 30, choose(-1, 1, -2, 2), c_black);
+	                        screen_transition(rm_Realms, scrt_main_to_menu, 30, 0, c_black);
 	                        play_sfx(sfx_back, 0, 0);
 	                        play_music(mus_menu_intro, sound_priority.music, 0);
 	                        boss.menu_intro = 1;
