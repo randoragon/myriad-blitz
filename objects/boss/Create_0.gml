@@ -384,3 +384,14 @@ ds_list_add(global.shd_shine_uni,
 );
 
 #endregion
+
+#region Audio Groups Assignment
+
+global.character_audiogroup[0] = audiogroup_character_evilflame;
+global.character_audiogroup[1] = audiogroup_character_emerald;
+global.character_audiogroup[2] = audiogroup_character_scootomik;
+
+global.realm_audiogroup[0] = audiogroup_menu;
+global.realm_audiogroup[1] = audiogroup_realm_christmas;
+
+#endregion

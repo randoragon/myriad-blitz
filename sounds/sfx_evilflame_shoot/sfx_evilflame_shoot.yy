@@ -5,7 +5,7 @@
     "name": "sfx_evilflame_shoot",
     "audioGroupGuid": "4c68f0c5-5569-4d9f-b03b-59d940922e19",
     "bitDepth": 1,
-    "bitRate": 128,
+    "bitRate": 160,
     "kind": 0,
     "preload": true,
     "sampleRate": 44100,

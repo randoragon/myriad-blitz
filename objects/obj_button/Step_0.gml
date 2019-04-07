@@ -375,7 +375,6 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 	                play_sfx(sfx_button1, 0, 0);
 	                global.chrsel = (global.chrsel == 0)? CHRCOUNT - 1 : global.chrsel - 1;
 	                scr_PlayerDataUpdate(global.chrsel);
-					scr_PlayerUpdateAudioGroup();
 	                scr_PlayerGetData();
 	                scr_ParticlesUpdate();
 	                scr_LoreUpdate();
@@ -389,7 +388,6 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 	                play_sfx(sfx_button1, 0, 0);
 	                global.chrsel = (global.chrsel == CHRCOUNT - 1)? 0 : global.chrsel + 1;
 	                scr_PlayerDataUpdate(global.chrsel);
-					scr_PlayerUpdateAudioGroup();
 	                scr_PlayerGetData();
 	                scr_ParticlesUpdate();
 	                scr_LoreUpdate();
@@ -433,19 +431,8 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
         }
         
         if (((keyboard_check_pressed(vk_enter) || keyboard_check_pressed(vk_space)) || (place_meeting(mousepos(0, -1), mousepos(1, -1), obj_player) && mouse_check_button_pressed(mb_left))) && global.state == 0 && room == rm_Main) {
-            scr_toggle_stats_selection(0);
-            play_sfx(sfx_run_start, 0, 0);
-            play_music(mus_rlm_christmas + global.realm - 1, sound_priority.music, 1);
-            global.state = 1; global.points = 0;
-            randomize();
-            mouse_clear(mb_left);
-            mouse_clear(mb_right);
-            keyboard_clear(vk_space);
-            keyboard_clear(vk_shift);
-            keyboard_clear(ord("W"));
-            keyboard_clear(ord("A"));
-            keyboard_clear(ord("S"));
-            keyboard_clear(ord("D"));
+			scr_PlayerUpdateAudioGroup();
+			// the level starts in the async event when the character audio group finishes loading
         }
     }
 	

@@ -31,7 +31,6 @@ part_system_clear_lt (PART_SYSTEM_ENEMY);
 part_system_clear_lt (PART_SYSTEM_PLAYERTOP);
 part_system_clear_lt (PART_SYSTEM_ULTIMATE);
 scr_PlayerDataUpdate(global.chrsel);
-scr_PlayerUpdateAudioGroup();
 scr_PlayerGetData();
 scr_ParticlesUpdate();
 scr_BackgroundUpdate(global.realm);

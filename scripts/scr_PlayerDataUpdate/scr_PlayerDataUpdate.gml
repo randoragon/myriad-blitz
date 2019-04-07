@@ -73,7 +73,7 @@ switch (argument[0]) {
         "\nthe very fabric of the Universe." +
         "\nAdept at using deadly water spells," +
         "\nno one has ever clashed with this" +
-        "\nbeast and came back unscathed.";
+        "\nbeast and come back unscathed.";
         global.hp            = 525;
         global.bdmg          = 38;
         global.bdef          = 24;

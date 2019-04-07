@@ -111,6 +111,14 @@
             }
         },
         {
+            "Key": "068b28e8-d32f-4c92-84c6-243f4a09b249",
+            "Value": {
+                "id": "403259fa-b6c2-46f7-b041-ca820dc67d2d",
+                "resourcePath": "scripts\\scr_RealmUpdateAudioGroup\\scr_RealmUpdateAudioGroup.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "069d271a-ca90-4832-aeff-2508e19da6df",
             "Value": {
                 "configDeltas": [
@@ -4446,6 +4454,7 @@
         "8a5f4562-9cb6-400f-988d-4d184859f9c3",
         "a8ff5167-4050-4882-ae69-da43d48a2bf9",
         "90cb46e6-af70-46c9-9e03-ebec92a42c97",
+        "068b28e8-d32f-4c92-84c6-243f4a09b249",
         "2eaec02d-4253-4f13-8e37-9c7375fed8c3",
         "fa752b2a-b7e7-4ffe-96e5-07d7c83177df",
         "2b742068-d66d-4e17-b9d0-2c994bfd29ac",

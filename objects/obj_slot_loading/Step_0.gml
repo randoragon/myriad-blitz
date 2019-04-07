@@ -124,6 +124,9 @@ if (phase == 4 && clock-- <= 0) {
 	        global.chrsel					   = string_readln_real(bit, ";");
 	        global.points					   = string_readln_real(bit, ";");
 	        global.realm					   = string_readln_real(bit, ";");
+			scr_PlayerUpdateAudioGroup();
+			scr_RealmUpdateAudioGroup();
+			audio_group_load(audiogroup_default_gameplay);
 	        boss.lastpresent				   = string_readln_real(bit, ";");
 	        global.spawnrate				   = string_readln_real(bit, ";");
 	        global.gpspeed					   = string_readln_real(bit, ";");
@@ -173,23 +176,26 @@ if (phase == 4 && clock-- <= 0) {
 	        global.enemy_details_selection	   = string_readln_real(bit, ";");
 	    break;
 	    case 1:
-	        var snd_count = string_readln_real(bit, ";");
-	        var sndid, snd;
-	        repeat(snd_count) {
-	            sndid = string_readln_real(bit, ";");
-	            if (!audio_exists(sndid)) { string_readln(bit, ";"); string_readln(bit, ";"); continue; } 
-	            snd = play_music(sndid, sound_priority.music, 1, string_readln_real(bit, ";") * 100);
-	            audio_sound_set_track_position(snd, string_readln_real(bit, ";"));
-	            audio_sound_gain(snd, 0, 0);
-	        }
-	        snd_count = string_readln_real(bit, ";");
-	        repeat(snd_count) {
-	            sndid = string_readln_real(bit, ";");
-	            if (!audio_exists(sndid)) { string_readln(bit, ";"); string_readln(bit, ";"); continue; } 
-	            snd = play_sfx(sndid, 0, 0, string_readln_real(bit, ";") * 100);
-	            audio_sound_set_track_position(snd, string_readln_real(bit, ";"));
-	            audio_sound_gain(snd, 0, 0);
-	        }
+			if (audio_group_is_loaded(global.realm_audiogroup[global.realm]) && audio_group_is_loaded(global.character_audiogroup[global.chrsel]) && audio_group_is_loaded(audiogroup_default_gameplay)) {
+				var snd_count = string_readln_real(bit, ";");
+		        var sndid, snd;
+		        repeat(snd_count) {
+		            sndid = string_readln_real(bit, ";");
+		            if (!audio_exists(sndid)) { string_readln(bit, ";"); string_readln(bit, ";"); continue; } 
+		            snd = play_music(sndid, sound_priority.music, 1, string_readln_real(bit, ";") * 100);
+		            audio_sound_set_track_position(snd, string_readln_real(bit, ";"));
+		            audio_sound_gain(snd, 0, 0);
+		        }
+		        snd_count = string_readln_real(bit, ";");
+		        repeat(snd_count) {
+		            sndid = string_readln_real(bit, ";");
+		            if (!audio_exists(sndid)) { string_readln(bit, ";"); string_readln(bit, ";"); continue; } 
+		            snd = play_sfx(sndid, 0, 0, string_readln_real(bit, ";") * 100);
+		            audio_sound_set_track_position(snd, string_readln_real(bit, ";"));
+		            audio_sound_gain(snd, 0, 0);
+				}
+			}
+	        
 	    break;
 	    case 2:
 	        audio_pause_all();
@@ -736,7 +742,7 @@ if (phase == 5) {
 
 	phase = 6;
 	global.loading = FALSE;
-	scr_Pause();
+	scr_Pause();	
 }
 
 #endregion
