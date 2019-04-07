@@ -2034,6 +2034,14 @@
             }
         },
         {
+            "Key": "79a81e01-a2f1-4f48-a86b-c5cd12c31863",
+            "Value": {
+                "id": "d0443caf-c781-45d4-b75b-cef7b7b9e197",
+                "resourcePath": "scripts\\scr_PlayerReset\\scr_PlayerReset.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "7a33df18-5b7d-44da-b0b4-ca0bb0e6a211",
             "Value": {
                 "id": "9c4b27f8-3432-40e0-9fad-95abe43f1c2f",
@@ -4455,6 +4463,7 @@
         "a8ff5167-4050-4882-ae69-da43d48a2bf9",
         "90cb46e6-af70-46c9-9e03-ebec92a42c97",
         "068b28e8-d32f-4c92-84c6-243f4a09b249",
+        "79a81e01-a2f1-4f48-a86b-c5cd12c31863",
         "2eaec02d-4253-4f13-8e37-9c7375fed8c3",
         "fa752b2a-b7e7-4ffe-96e5-07d7c83177df",
         "2b742068-d66d-4e17-b9d0-2c994bfd29ac",

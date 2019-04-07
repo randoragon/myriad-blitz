@@ -69,7 +69,7 @@ if (room == rm_Settings || (room == rm_Main && global.gpspeed == 0 && global.sta
 }
 
 if (room != rm_Main) {
-    if (menu_intro && !audio_is_playing(mus_menu_intro)) {
+    if (audio_group_is_loaded(audiogroup_menu) && menu_intro && !audio_is_playing(mus_menu_intro)) {
         play_music(mus_menu_loop, sound_priority.music, 1);
         menu_intro = FALSE;
     }
@@ -123,6 +123,5 @@ if (!global.loading) {
 #endregion
 
 #region Debugging
-
 
 #endregion

@@ -269,10 +269,9 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 					if (room == rm_Main) {
 						if (global.state == 0) {
 							scr_toggle_stats_selection(0);
+							boss.menu_intro = FALSE;
 							screen_transition(rm_Realms, scrt_main_to_menu, 30, 0, c_black);
 							play_sfx(sfx_back, 0, 0);
-							play_music(mus_menu_intro, sound_priority.music, 0);
-							boss.menu_intro = TRUE;
 						}
 					} else {
 						screen_transition(rm_Menu, -1, 30, choose(-1, 1, -2, 2), c_black);
@@ -401,10 +400,9 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 	                if (room == rm_Main) {
 	                    if (global.state == 0) {
 	                        scr_toggle_stats_selection(0);
+							boss.menu_intro = FALSE;
 	                        screen_transition(rm_Realms, scrt_main_to_menu, 30, 0, c_black);
 	                        play_sfx(sfx_back, 0, 0);
-	                        play_music(mus_menu_intro, sound_priority.music, 0);
-	                        boss.menu_intro = 1;
 	                    }
 	                } else {
 	                    screen_transition(rm_Menu, -1, 30, choose(-1, 1, -2, 2), c_black);
