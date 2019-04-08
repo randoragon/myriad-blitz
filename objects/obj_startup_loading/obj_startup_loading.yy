@@ -96,7 +96,21 @@
             "resourceFilter": 1023,
             "value": "0",
             "varName": "stage",
-            "varType": 0
+            "varType": 1
+        },
+        {
+            "id": "466ef306-0fe6-4e27-a386-97817f9b451e",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "max_stage",
+            "varType": 1
         },
         {
             "id": "14234e02-0a5d-4089-bec3-cad85dc9f2e8",
@@ -111,6 +125,36 @@
             "value": "0",
             "varName": "cycle",
             "varType": 1
+        },
+        {
+            "id": "1664fac5-9260-46ef-8302-524d3ba2ee1a",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "test",
+            "varType": 0
+        },
+        {
+            "id": "90321178-e306-45ea-bd9b-0f6604b4d882",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": [
+                
+            ],
+            "multiselect": true,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "",
+            "varName": "audiogroups",
+            "varType": 6
         }
     ],
     "solid": false,

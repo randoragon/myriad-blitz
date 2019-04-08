@@ -38,11 +38,11 @@ var part;
 switch (global.chrsel) {
     case 0:
         // update systems
-        part_system_edit_lt (PART_SYSTEM_PLAYERTOP, 1, 0  , -1 );
-        part_system_edit_lt (PART_SYSTEM_PLAYERBOT, 1, 42 , 42 );
-        part_system_edit_ult(PART_SYSTEM_FRAG     , 1, 100, 500);
-        part_system_edit_ult(PART_SYSTEM_CHARGE   , 1, 150, 250);
-        part_system_edit_lt (PART_SYSTEM_ULTIMATE , 1, 42 , -1 );
+        part_system_edit_lt(PART_SYSTEM_PLAYERTOP, 1, 0  , -1 );
+        part_system_edit_lt(PART_SYSTEM_PLAYERBOT, 1, 42 , 84 );
+        part_system_edit_ult(PART_SYSTEM_FRAG    , 1, 100, 500);
+        part_system_edit_ult(PART_SYSTEM_CHARGE  , 1, 150, 250);
+        part_system_edit_lt(PART_SYSTEM_ULTIMATE , 1, 0 , -1 );
         
         // evilflame thruster particles
         global.player_part[1] = part_type_setup_lt(part_square, 0, 18, 28);
@@ -98,11 +98,11 @@ switch (global.chrsel) {
 
     case 1:
         // update systems
-        part_system_edit_lt (PART_SYSTEM_PLAYERTOP, 1, 0,   -1 );
-        part_system_edit_lt (PART_SYSTEM_PLAYERBOT, 1, 0,   -1 );
+        part_system_edit_lt(PART_SYSTEM_PLAYERTOP, 1, 0,   -1 );
+        part_system_edit_lt(PART_SYSTEM_PLAYERBOT, 1, 0,   -1 );
         part_system_edit_ult(PART_SYSTEM_FRAG     , 1, 300, 500);
         part_system_edit_ult(PART_SYSTEM_CHARGE   , 1, 0,   -1 );
-        part_system_edit_lt (PART_SYSTEM_ULTIMATE , 1, 0,   -1 );
+        part_system_edit_lt(PART_SYSTEM_ULTIMATE , 1, 0,   -1 );
         
         // emerald frag particles
         global.frag_part[0] = part_type_setup_ult(part_line, 0);

@@ -10,6 +10,8 @@ image_speed = 0;
 audiogroups[0] = audiogroup_default;
 audiogroups[1] = audiogroup_menu;
 
+max_stage = 1 + (array_length_1d(audiogroups) * 2);
+
 instance_create_layer(0, 0, "Logo", obj_randoragon_logo);
 
 #endregion

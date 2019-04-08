@@ -14,24 +14,22 @@ if (global.gpspeed == 0) {
 }
 
 var kbangle = argument[1] % 360;
-if (kbangle < 0) { kbangle += 360 * (-floor(kbangle / 360) + 1); }
-fkb = argument[0];
+if (kbangle < 0) { kbangle += 360; }
+var fkb = argument[0];
 
-if kbangle % 90 != 0 {
+if (kbangle % 90) != 0 {
     var hval = fkb * cos((kbangle % 90) * pi / 180);
     var vval = fkb * sin((kbangle % 90) * pi / 180);
+	if (kbangle > 0   && kbangle < 90)					{ hkb =  hval; vkb = -vval; }
+	if (kbangle > 90  && kbangle < 180)					{ hkb = -vval; vkb = -hval; }
+	if (kbangle > 180 && kbangle < 270)					{ hkb = -hval; vkb =  vval; }
+	if (kbangle > 270 && kbangle < 360 && kbangle != 0) { hkb =  vval; vkb =  hval; }
+} else {
+	if (kbangle == 0)   { hkb = fkb;  vkb = 0;    }
+	if (kbangle == 90)  { hkb = 0;    vkb = -fkb; }
+	if (kbangle == 180) { hkb = -fkb; vkb = 0;    }
+	if (kbangle == 270) { hkb = 0;    vkb = fkb;  }
 }
-
-if (kbangle > 0   && kbangle < 90)  { hkb =  hval; vkb = -vval; }
-if (kbangle > 90  && kbangle < 180) { hkb = -vval; vkb = -hval; }
-if (kbangle > 180 && kbangle < 270) { hkb = -hval; vkb =  vval; }
-if (kbangle > 270 && kbangle < 360 && kbangle != 0) { hkb = vval; vkb = hval; }
-
-if (kbangle == 0)   { hkb = fkb;  vkb = 0;    }
-if (kbangle == 90)  { hkb = 0;    vkb = -fkb; }
-if (kbangle == 180) { hkb = -fkb; vkb = 0;    }
-if (kbangle == 270) { hkb = 0;    vkb = fkb;  }
-
 
 // global.gpspeed correction
 if (hkb != 0) {
@@ -51,12 +49,12 @@ if (vkb != 0) {
 }
 
 /*show_message(
-object_get_name(object_index) + ':\n' + 
-'x = ' + string(x) + 
-';\n y = ' + string(y) + 
-';\nself.dirkb = ' + string(dirkb) + 
-';\nother.dirkb = ' + string(argument[1]) + 
-';\n fkb = ' + string(fkb) + 
-';\n hkb = ' + string(hkb) + 
-';\n vkb = ' + string(vkb) + ';'
+object_get_name(object_index) + ":\n" + 
+"x = " + string(x) + 
+";\n y = " + string(y) + 
+";\nself.dirkb = " + string(kbangle) + 
+";\nother.dirkb = " + string(argument[1]) + 
+";\n fkb = " + string(fkb) + 
+";\n hkb = " + string(hkb) + 
+";\n vkb = " + string(vkb) + ";"
 );

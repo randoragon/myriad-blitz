@@ -22,7 +22,7 @@ if (global.gpspeed != 0) {
         part_type_edit_lt(global.ultimate_part[0], "direction", -image_angle - 10, -image_angle + 10);
         part_type_edit_lt(global.ultimate_part[0], "size", abs(0.15 * image_yscale), abs(0.25 * image_yscale), -0.008 * image_xscale);
         part_type_edit_lt(global.ultimate_part[0], "speed", 7 * image_yscale, 11 * image_yscale, 0);
-        part_type_spawn_lt(PART_SYSTEM_ULTIMATE, global.ultimate_part[0], 4, x + lengthdir_x(dis, ang), y + lengthdir_y(dis, ang), x + lengthdir_x(dis, ang), y + lengthdir_y(dis, ang), "line", "linear", 1.5);
+        part_type_spawn_lt(PART_SYSTEM_PLAYERBOT, global.ultimate_part[0], 4, x + lengthdir_x(dis, ang), y + lengthdir_y(dis, ang), x + lengthdir_x(dis, ang), y + lengthdir_y(dis, ang), "line", "linear", 1.5);
     }
 
 	if (hpmark != hp) { hpmark = home(hpmark, hp, hpmark_v * global.gpspeed, 0); } //this is for both Gameplay bars and GUI bars
@@ -150,14 +150,14 @@ if (global.gpspeed != 0) {
 			    var damage = calculate_damage(enemy.bdmg, enemy.bpen, player.bdef);
 			    var display_damage = ceil(hp) - ceil(hp - damage);
 			    player_hp(-damage, id);
-			    knockback((100 - player.bkbres) * enemy.bkb / 1000, point_direction(enemy.x, enemy.y, x, y), player.counteracc);
+			    with(player) { knockback((100 - bkbres) * enemy.bkb / 1000, -point_direction(enemy.x, enemy.y, other.x, other.y), counteracc); }
 			    indicate(x, y, display_damage, 2, rgb(255, 170, 0), c_red);
-			    with (enemy) {
-			    var damage         = calculate_damage(other.player.bdmg, other.player.bpen, bdef);
-			    var display_damage = ceil(hp) - ceil(hp - damage);
-			    hp                 = clamp(hp - damage, 0, hpmax);
-			    knockback((100 - bkbres) * other.player.bkb / 1000, point_direction(other.x, other.y, x, y), 1);
-			    indicate(x, y, display_damage, 1, rgb(255, 85, 0), c_red);
+			    with(enemy) {
+				    var damage         = calculate_damage(other.player.bdmg, other.player.bpen, bdef);
+				    var display_damage = ceil(hp) - ceil(hp - damage);
+				    hp                 = clamp(hp - damage, 0, hpmax);
+				    knockback((100 - bkbres) * other.player.bkb / 1000, point_direction(other.x, other.y, x, y), 1);
+				    indicate(x, y, display_damage, 1, rgb(255, 85, 0), c_red);
 			    }
 		    }
     
@@ -167,7 +167,7 @@ if (global.gpspeed != 0) {
 			    var damage         = calculate_damage(projectile.pdmg, projectile.ppen, player.pdef);
 			    var display_damage = ceil(hp) - ceil(hp - damage);
 			    player_hp(-damage, id);
-			    knockback((100 - player.pkbres) * projectile.pkb / 1000, point_direction(projectile.x, projectile.y, x, y), player.counteracc);
+			    with(player) { knockback((100 - pkbres) * projectile.pkb / 1000, -point_direction(projectile.x, projectile.y, other.x, other.y), counteracc); }
 			    indicate(projectile.x, projectile.y, display_damage, 2, rgb(255, 170, 0), c_red);
 			    with (projectile) { instance_destroy(); }
 		    }
