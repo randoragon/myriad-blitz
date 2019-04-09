@@ -17,7 +17,6 @@ with (obj_player) {
 	ultblink				= 0;
 	flash_clock				= 0;
 	spawn					= 0;
-	hpmark					= 0;
 	hpmark_v				= 0;
 	helper					= noone;
 	bar_opacity[0]			= 0;

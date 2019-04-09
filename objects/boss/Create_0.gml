@@ -9,6 +9,7 @@ global.close_game	   = FALSE;
 application_surface_enable(0);
 window_set_cursor(cr_none);
 math_set_epsilon(0.0001);
+ds_set_precision(math_get_epsilon());
 audio_channel_num(32);
 global.kill_count    = 0;
 global.loading       = FALSE;
@@ -73,22 +74,22 @@ global.keybind[6]       = ord("E"); // ultimate
 
 #region Global Particles Setup
 
-global.part_type_pro_grid = array_setup(-1, 2);
+global.part_type_pro_grid    = array_setup(-1, 2);
 global.part_type_pro_grid[0] = ds_grid_create(1, 31);
 ds_grid_set(global.part_type_pro_grid[0], 0, 0, -1);
-global.part_type_lt_grid = array_setup(-1, 2);
-global.part_type_lt_grid[0] = ds_grid_create(1, 21);
+global.part_type_lt_grid	 = array_setup(-1, 2);
+global.part_type_lt_grid[0]  = ds_grid_create(1, 21);
 ds_grid_set(global.part_type_lt_grid[0], 0, 0, -1);
-global.part_type_ult_grid = array_setup(-1, 2);
+global.part_type_ult_grid	 = array_setup(-1, 2);
 global.part_type_ult_grid[0] = ds_grid_create(1, 12);
 ds_grid_set(global.part_type_ult_grid[0], 0, 0, -1);
-global.part_system = array_setup(-1, 7);
-global.player_part = array_setup(-1, 1);
+global.part_system    = array_setup(-1, 7);
+global.player_part	  = array_setup(-1, 1);
 global.indicator_part = array_setup(-1, 3);
-global.frag_part = array_setup(-1, 2);
-global.charge_part = array_setup(-1, 1);
-global.ultimate_part = array_setup(-1, 1);
-global.enemy_part = array_setup(-1, 1);
+global.frag_part	  = array_setup(-1, 2);
+global.charge_part	  = array_setup(-1, 1);
+global.ultimate_part  = array_setup(-1, 1);
+global.enemy_part	  = array_setup(-1, 1);
 
 // DISPERSE PARTICLES
 global.disperse_part = part_type_setup_lt(part_square, 0, 30, 30);
