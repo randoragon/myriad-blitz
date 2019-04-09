@@ -10,7 +10,8 @@
         "9e84f176-b257-4e67-9e25-3849e6c1f1c6",
         "610f12ab-5450-4ecc-a4e2-f15d04cd436d",
         "6494a4ed-3d92-4240-a85e-bc3837ae486d",
-        "b623fa4d-a080-478c-8589-1b0c03bd32dd"
+        "b623fa4d-a080-478c-8589-1b0c03bd32dd",
+        "db1c8baa-46bb-4506-9882-e0af76989526"
     ],
     "filterType": "GMScript",
     "folderName": "Transition Scripts",

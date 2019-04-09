@@ -2458,7 +2458,7 @@
             "Key": "90cb46e6-af70-46c9-9e03-ebec92a42c97",
             "Value": {
                 "id": "73624fd9-7bc0-4456-b441-64ac755e72a1",
-                "resourcePath": "scripts\\scr_PlayerUpdateAudioGroup\\scr_PlayerUpdateAudioGroup.yy",
+                "resourcePath": "scripts\\scr_PlayerUpdateGroups\\scr_PlayerUpdateGroups.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -3810,6 +3810,14 @@
             }
         },
         {
+            "Key": "db1c8baa-46bb-4506-9882-e0af76989526",
+            "Value": {
+                "id": "95d72885-c1c0-4343-a7d6-9a27684dc8c1",
+                "resourcePath": "scripts\\scrt_startup_loading_to_menu\\scrt_startup_loading_to_menu.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "db72af34-7d9d-44f4-a68d-9fa2453572c1",
             "Value": {
                 "configDeltas": [
@@ -4511,6 +4519,7 @@
         "610f12ab-5450-4ecc-a4e2-f15d04cd436d",
         "6494a4ed-3d92-4240-a85e-bc3837ae486d",
         "b623fa4d-a080-478c-8589-1b0c03bd32dd",
+        "db1c8baa-46bb-4506-9882-e0af76989526",
         "84f3c6be-180c-4fdb-ade7-469ad6cce488",
         "1935ad38-ea67-4db2-ad85-7e4636deaa4e",
         "63b5a2b0-f13b-4b08-a3d8-1bb5374bc67e",

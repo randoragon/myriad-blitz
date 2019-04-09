@@ -111,36 +111,6 @@
                     "mipsToGenerate": 0,
                     "scaled": false
                 }
-            },
-            {
-                "Key": 8,
-                "Value": {
-                    "id": "058e3553-9b6d-4834-9c28-96f54b95d062",
-                    "modelName": "GMTextureGroup",
-                    "mvc": "1.0",
-                    "groupName": "Christmas Realm GUI",
-                    "targets": 9223372036854775807,
-                    "autocrop": true,
-                    "border": 2,
-                    "groupParent": "00000000-0000-0000-0000-000000000000",
-                    "mipsToGenerate": 0,
-                    "scaled": false
-                }
-            },
-            {
-                "Key": 9,
-                "Value": {
-                    "id": "4610e4af-c1bc-4fd6-984e-eda109ff507d",
-                    "modelName": "GMTextureGroup",
-                    "mvc": "1.0",
-                    "groupName": "Pause Menu",
-                    "targets": 9223372036854775807,
-                    "autocrop": true,
-                    "border": 2,
-                    "groupParent": "00000000-0000-0000-0000-000000000000",
-                    "mipsToGenerate": 0,
-                    "scaled": false
-                }
             }
         ],
         "Checksum": "ࢺ懜璙ᓆ锯翋꤯맫",

@@ -151,38 +151,36 @@ invtime    = global.invtime * invtime_factor;
 
 #region Focus mode
 
-if (room == rm_Main && global.gpspeed != 0 && global.state == 1 && !status_effect[4] && !status_effect[8] && !status_effect[10]) {
-	if (keyboard_check(global.keybind[5])) {
-		bar_opacity[1] = 5;
-		if (instance_exists(obj_evilflame_ultimate)) {
-			obj_evilflame_ultimate.bar_opacity[1] = 5; // dual clone equivalent
+var possible   = bool(room == rm_Main && global.gpspeed != 0 && global.state == 1);
+var allowed    = bool(!status_effect[4] && !status_effect[8] && !status_effect[10]);
+if (possible) {
+	if (allowed) {
+		if (keyboard_check(global.keybind[5])) {
+			bar_opacity[1] = 5;
+			if (instance_exists(obj_evilflame_ultimate)) {
+				obj_evilflame_ultimate.bar_opacity[1] = 5; // dual clone equivalent
+			}
 		}
-	}
-	if (keyboard_check_pressed(global.keybind[5]) && global.gpspeed_focus == 1)
-		focus_state = 1;
-	if (!keyboard_check(global.keybind[5]) && focus_state == 1)
-		focus_state = 2;
+		if (keyboard_check_pressed(global.keybind[5]) && global.gpspeed_focus == 1)
+			focus_state = 1;
+		if (!keyboard_check(global.keybind[5]) && focus_state == 1)
+			focus_state = 2;
 
-	if (focus_state == 1) {
-		if (global.gpspeed_focus > 0.25) {
+		if (focus_state == 1) {
 			global.gpspeed_focus = 0.25;
-		} else {
 			focus = home(focus, 0, global.gpspeed / global.gpspeed_focus, 0);
+			if (focus <= 0) { focus_state = 2; }
+		} else if (focus_state == 2) {
+			if (global.gpspeed_focus < 1) {
+				global.gpspeed_focus = home(global.gpspeed_focus, 1, 0.05 * global.gpspeed / global.gpspeed_focus, 0);
+			} else { focus_state=0; }
+		} else if (focus_state == 0) {
+			focus = home(focus, foctime, 0.1 * global.gpspeed / global.gpspeed_focus, 0);
 		}
-	} else if (focus_state == 2) {
-		if (global.gpspeed_focus < 1) {
-			global.gpspeed_focus = home(global.gpspeed_focus, 1, 0.05 * global.gpspeed / global.gpspeed_focus, 0);
-		} else { focus_state=0; }
-	} else if (focus_state == 0) {
-		focus = home(focus, foctime, 0.1 * global.gpspeed / global.gpspeed_focus, 0);
+	} else { // possible to use, but cannot use (status: dizzy & alike situations)
+		focus_state			 = 0;
+		global.gpspeed_focus = 1;
 	}
-	
-	if (focus <= 0 && focus_state == 1)
-		{ focus_state = 2; }
-}
-else { // cannot use focus mode (status: dizzy & other situations)
-focus_state=0;
-global.gpspeed_focus=1;
 }
 
 #endregion

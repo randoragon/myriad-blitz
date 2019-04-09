@@ -124,7 +124,7 @@ if (phase == 4 && clock-- <= 0) {
 	        global.chrsel					   = string_readln_real(bit, ";");
 	        global.points					   = string_readln_real(bit, ";");
 	        global.realm					   = string_readln_real(bit, ";");
-			scr_PlayerUpdateAudioGroup();
+			scr_PlayerUpdateGroups();
 			scr_RealmUpdateAudioGroup();
 			audio_group_load(audiogroup_default_gameplay);
 	        boss.lastpresent				   = string_readln_real(bit, ";");

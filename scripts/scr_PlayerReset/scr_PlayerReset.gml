@@ -7,7 +7,6 @@ with (obj_player) {
 	yv						= 0;
 	shot					= 0;
 	inv						= 0;
-	focus					= 0;
 	focus_state				= 0;
 	charge					= 0;
 	discharge				= 0;

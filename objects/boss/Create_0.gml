@@ -397,6 +397,8 @@ global.realm_audiogroup[1] = audiogroup_realm_christmas;
 
 #endregion
 
+// Texture Groups are named exactly the same as respective characters and realms, so explicit indexing isn't necessary.
+
 #region Status Effects Setup
 
 global.status_effect_count = 11; //this is how many status effects there are in total

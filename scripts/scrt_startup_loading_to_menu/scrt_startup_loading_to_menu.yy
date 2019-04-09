@@ -1,8 +1,8 @@
 {
-    "id": "90cb46e6-af70-46c9-9e03-ebec92a42c97",
+    "id": "db1c8baa-46bb-4506-9882-e0af76989526",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_PlayerUpdateAudioGroup",
+    "name": "scrt_startup_loading_to_menu",
     "IsCompatibility": false,
     "IsDnD": false
 }

@@ -429,7 +429,7 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
         }
         
         if (((keyboard_check_pressed(vk_enter) || keyboard_check_pressed(vk_space)) || (place_meeting(mousepos(0, -1), mousepos(1, -1), obj_player) && mouse_check_button_pressed(mb_left))) && global.state == 0 && room == rm_Main) {
-			scr_PlayerUpdateAudioGroup();
+			scr_PlayerUpdateGroups();
 			// the level starts in the async event when the character audio group finishes loading
         }
     }
