@@ -2,6 +2,7 @@
 #macro FALSE bool(false)
 #macro CHRCOUNT 3
 #macro RLMCOUNT 1
+#macro TOTAL_COMMON_ENEMY_COUNT (global.realm_enemy_index[RLMCOUNT] - global.realm_enemy_index[1])
 #macro PART_SYSTEM_PLAYERBOT global.part_system[0]
 #macro PART_SYSTEM_DAMAGE_INDICATORS global.part_system[1]
 #macro PART_SYSTEM_FRAG global.part_system[2]

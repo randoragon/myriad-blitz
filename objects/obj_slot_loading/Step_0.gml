@@ -136,7 +136,7 @@ if (phase == 4 && clock-- <= 0) {
 	        global.gpstep					   = string_readln_real(bit, ";");
 	        global.viewxstartpos			   = string_readln_real(bit, ";");
 	        global.viewystartpos			   = string_readln_real(bit, ";");
-	        random_set_seed(string_readln_real(bit, ";"));
+	        new_seed						   = string_readln_real(bit, ";");
 	        global.shader_conditions		   = string_readln_real(bit, ";");
 	        global.enemy_details_selection	   = string_readln_real(bit, ";");
 	        boss.last_ult					   = string_readln_real(bit, ";");
@@ -340,13 +340,17 @@ if (phase == 4 && clock-- <= 0) {
 			var temporaryobjectname = string_readln(bit, ";");
 			var temporaryobjectindex;
 			switch(slotversion) {
+				case "1.1.0": case "1.1.1":
+					temporaryobjectindex = asset_get_index(temporaryobjectname);
+					if (temporaryobjectindex > obj_enemy) {
+						temporaryobjectindex += TOTAL_COMMON_ENEMY_COUNT;
+					}
+				break;
 				default:
 					temporaryobjectindex = asset_get_index(global.save_name[? real(temporaryobjectname)]);
 				break;
-				case "1.1.0": case "1.1.1":
-					temporaryobjectindex = asset_get_index(temporaryobjectname);
-				break;
 			}
+			
 	        var fobj = instance_create_depth(0, 0, 0, temporaryobjectindex);
 			
 	        with (fobj) {
@@ -514,39 +518,140 @@ if (phase == 4 && clock-- <= 0) {
 		                    afterimage_ds_grid = ds_grid_import(afterimage_ds_grid, afterimage_data);
 		                }
 		            break;
-		            case obj_enemy:
-		                cooldown			= string_readln_real(bit, ";");
-		                time_mark			= string_readln_real(bit, ";");
-		                f					= string_readln_real(bit, ";");
-		                beh					= string_readln_real(bit, ";");
-		                intro				= string_readln_real(bit, ";");
-		                touchable			= string_readln_real(bit, ";");
-		                hp					= string_readln_real(bit, ";");
-		                hpmax				= string_readln_real(bit, ";");
-		                bdmg				= string_readln_real(bit, ";");
-		                bdef				= string_readln_real(bit, ";");
-		                bpen				= string_readln_real(bit, ";");
-		                bkb					= string_readln_real(bit, ";");
-		                bkbres				= string_readln_real(bit, ";");
-		                pdmg				= string_readln_real(bit, ";");
-		                pdef				= string_readln_real(bit, ";");
-		                ppen				= string_readln_real(bit, ";");
-		                pkb					= string_readln_real(bit, ";");
-		                pkbres				= string_readln_real(bit, ";");
-		                fdef				= string_readln_real(bit, ";");
-		                cdef				= string_readln_real(bit, ";");
-		                udef				= string_readln_real(bit, ";");
-		                fkbres				= string_readln_real(bit, ";");
-		                ckbres				= string_readln_real(bit, ";");
-		                ukbres				= string_readln_real(bit, ";");
-		                bar_extension		= string_readln_real(bit, ";");
-		                var afterimage_data = other.line[++other.progress];
-		                if (afterimage_data != "") {
-		                    afterimage_ds_grid = ds_grid_create(0, 0);
-		                    afterimage_ds_grid = ds_grid_import(afterimage_ds_grid, afterimage_data);
-		                }
-		                loot = ds_map_create();
-		                ds_map_read(loot, other.line[++other.progress]);
+					case obj_enemy_christmas_rocket_elf: case obj_enemy_christmas_crow:
+						cooldown			= string_readln_real(bit, ";");
+						time_mark			= string_readln_real(bit, ";");
+				        beh					= string_readln_real(bit, ";");
+				        intro				= string_readln_real(bit, ";");
+				        touchable			= string_readln_real(bit, ";");
+				        hp					= string_readln_real(bit, ";");
+				        hpmax				= string_readln_real(bit, ";");
+				        bdmg				= string_readln_real(bit, ";");
+				        bdef				= string_readln_real(bit, ";");
+				        bpen				= string_readln_real(bit, ";");
+				        bkb					= string_readln_real(bit, ";");
+				        bkbres				= string_readln_real(bit, ";");
+				        pdef				= string_readln_real(bit, ";");
+				        pkbres				= string_readln_real(bit, ";");
+				        fdef				= string_readln_real(bit, ";");
+				        cdef				= string_readln_real(bit, ";");
+				        udef				= string_readln_real(bit, ";");
+				        fkbres				= string_readln_real(bit, ";");
+				        ckbres				= string_readln_real(bit, ";");
+				        ukbres				= string_readln_real(bit, ";");
+				        bar_extension		= string_readln_real(bit, ";");
+						var afterimage_data = other.line[++other.progress];
+				        if (afterimage_data != "") {
+				            afterimage_ds_grid = ds_grid_create(0, 0);
+				            afterimage_ds_grid = ds_grid_import(afterimage_ds_grid, afterimage_data);
+				        }
+				        loot = ds_map_create();
+				        ds_map_read(loot, other.line[++other.progress]);
+					break;
+					case obj_enemy_christmas_snowman: case obj_enemy_christmas_gingerbread_man: case obj_enemy_christmas_reindeer:
+						cooldown			= string_readln_real(bit, ";");
+						time_mark			= string_readln_real(bit, ";");
+				        beh					= string_readln_real(bit, ";");
+				        intro				= string_readln_real(bit, ";");
+				        touchable			= string_readln_real(bit, ";");
+				        hp					= string_readln_real(bit, ";");
+				        hpmax				= string_readln_real(bit, ";");
+				        bdmg				= string_readln_real(bit, ";");
+				        bdef				= string_readln_real(bit, ";");
+				        bpen				= string_readln_real(bit, ";");
+				        bkb					= string_readln_real(bit, ";");
+				        bkbres				= string_readln_real(bit, ";");
+						pdmg				= string_readln_real(bit, ";");
+				        pdef				= string_readln_real(bit, ";");
+						ppen				= string_readln_real(bit, ";");
+						pkb					= string_readln_real(bit, ";");
+				        pkbres				= string_readln_real(bit, ";");
+				        fdef				= string_readln_real(bit, ";");
+				        cdef				= string_readln_real(bit, ";");
+				        udef				= string_readln_real(bit, ";");
+				        fkbres				= string_readln_real(bit, ";");
+				        ckbres				= string_readln_real(bit, ";");
+				        ukbres				= string_readln_real(bit, ";");
+				        bar_extension		= string_readln_real(bit, ";");
+						var afterimage_data = other.line[++other.progress];
+				        if (afterimage_data != "") {
+				            afterimage_ds_grid = ds_grid_create(0, 0);
+				            afterimage_ds_grid = ds_grid_import(afterimage_ds_grid, afterimage_data);
+				        }
+				        loot = ds_map_create();
+				        ds_map_read(loot, other.line[++other.progress]);
+					break;
+		            case obj_enemy: // this stays for backwards compatibility reasons (versions pre 1.2.0)
+			            var cooldown_		= string_readln_real(bit, ";");
+			            var time_mark_		= string_readln_real(bit, ";");
+			            f					= string_readln_real(bit, ";");
+						var destination_instance = instance_create(x, y, obj_enemy_christmas_rocket_elf + f);
+						var afterimage_data = other.line[++other.progress];
+						var other_other_line_ = other.line[++other.progress];
+						with(destination_instance) {
+							previd			 = other.previd;
+							sprite_index	 = other.sprite_index;
+							image_index		 = other.image_index;
+							image_speed		 = other.image_speed;
+							prev_image_speed = other.prev_image_speed;
+							for (var fi = 0; fi < 12; fi++) {
+								alarm[fi]    = other.alarm[fi];
+							}
+							depth			 = other.depth;
+							image_alpha		 = other.image_alpha;
+							image_angle		 = other.image_angle;
+							image_blend		 = other.image_blend;
+							image_xscale	 = other.image_xscale;
+							image_yscale	 = other.image_yscale;
+							mask_index		 = other.mask_index;
+							direction		 = other.direction;
+							x				 = other.x;
+							y				 = other.y;
+							xprevious		 = other.xprevious;
+							yprevious		 = other.yprevious;
+							xstart			 = other.xstart;
+							ystart			 = other.ystart;
+							hkb  = other.hkb;
+							vkb  = other.vkb;
+							ahkb = other.ahkb;
+							avkb = other.avkb;
+							hspeed1 = other.hspeed1;
+							vspeed1 = other.vspeed1;
+							speed1  = other.speed1;
+							
+							cooldown			= cooldown_;
+							time_mark			= time_mark_;
+				            beh					= string_readln_real(bit, ";");
+				            intro				= string_readln_real(bit, ";");
+				            touchable			= string_readln_real(bit, ";");
+				            hp					= string_readln_real(bit, ";");
+				            hpmax				= string_readln_real(bit, ";");
+				            bdmg				= string_readln_real(bit, ";");
+				            bdef				= string_readln_real(bit, ";");
+				            bpen				= string_readln_real(bit, ";");
+				            bkb					= string_readln_real(bit, ";");
+				            bkbres				= string_readln_real(bit, ";");
+							if (other.f == 2 || other.f == 3 || other.f == 4) { pdmg = string_readln_real(bit, ";"); } else { string_readln_real(bit, ";"); }
+				            pdef				= string_readln_real(bit, ";");
+				            if (other.f == 2 || other.f == 3 || other.f == 4) { ppen = string_readln_real(bit, ";");
+																				pkb  = string_readln_real(bit, ";"); } else { string_readln_real(bit, ";"); string_readln_real(bit, ";"); }
+				            pkbres				= string_readln_real(bit, ";");
+				            fdef				= string_readln_real(bit, ";");
+				            cdef				= string_readln_real(bit, ";");
+				            udef				= string_readln_real(bit, ";");
+				            fkbres				= string_readln_real(bit, ";");
+				            ckbres				= string_readln_real(bit, ";");
+				            ukbres				= string_readln_real(bit, ";");
+				            bar_extension		= string_readln_real(bit, ";");
+				            
+				            if (afterimage_data != "") {
+				                afterimage_ds_grid = ds_grid_create(0, 0);
+				                afterimage_ds_grid = ds_grid_import(afterimage_ds_grid, afterimage_data);
+				            }
+				            loot = ds_map_create();
+				            ds_map_read(loot, other_other_line_);
+						}
+						instance_destroy(self, false);
 		            break;
 		            case obj_eprojectile:
 		                spawn				= string_readln_real(bit, ";");
@@ -732,6 +837,7 @@ if (phase == 5) {
 
 	phase = 6;
 	global.loading = FALSE;
+	random_set_seed(new_seed);
 	scr_Pause();	
 }
 

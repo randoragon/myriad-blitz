@@ -19,8 +19,8 @@ grid = ds_grid_create(width, height);
 
 if (width != 0 && height != 0) {
     var line, data_type;
-    for (var i = 0; i < height; i+=1) {
-        for (var j = 0; j < width; j+=1) {
+    for (var i = 0; i < height; i++) {
+        for (var j = 0; j < width; j++) {
             line = string_readln(data, separator);
             data_type = real(string_char_at(line, 1));
             if (data_type == 0) {

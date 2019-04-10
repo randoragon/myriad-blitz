@@ -10,8 +10,8 @@ if (phase == 1) {
 	            fullname = working_directory + "slots\\" + fname + ".mbslot";
 	            var retry=1;
 	            while (file_exists(fullname)) {
-	            retry++;
-	            fullname = working_directory + "slots\\" + fname + string(retry) + ".mbslot";
+		            retry++;
+		            fullname = working_directory + "slots\\" + fname + string(retry) + ".mbslot";
 	            }
             
 	            line[0] = slot_name;
@@ -186,10 +186,10 @@ if (phase == 1) {
 	            line[19] = data + separator;
 	            progress = 16;
 	        break;
-	        case 16: //instances and inst_count
+	        case 16: // instances and inst_count
 	            if (instance_exists(inst_id[inst_index])) {
 	                with (inst_id[inst_index]) {
-	                    //basic instance variables
+	                    // basic instance variables
 						if (is_undefined(ds_map_find_value(global.save_index, object_get_name(object_index)))) { show_message("GOTCHA BITCH! - " + string(id) + " " + string(object_get_name(object_index))); }
 	                    other.data = 
 	                    string(global.save_index[? object_get_name(object_index)]) + ";" + 
@@ -267,9 +267,20 @@ if (phase == 1) {
 		                        string(spawn) + ";" + string(f) + ";" + string(e) + ";" + string(charge) + ";" + string(rot) + ";" + 
 		                        string(cdmg) + ";" + string(cpen) + ";" + string(ckb) + ";" + string(target) + ";";
 		                    break;
-		                    case obj_enemy:
+		                    case obj_enemy_christmas_rocket_elf: case obj_enemy_christmas_crow:
 		                        other.data += 
-		                        string(cooldown) + ";" + string(time_mark) + ";" + string(f) + ";" + 
+		                        string(cooldown) + ";" + string(time_mark) + ";" +
+		                        string(beh) + ";" + string(intro) + ";" + string(touchable) + ";" + 
+		                        string(hp) + ";" + string(hpmax) + ";" + 
+		                        string(bdmg) + ";" + string(bdef) + ";" + string(bpen) + ";" + string(bkb) + ";" + string(bkbres) + ";" + 
+		                        string(pdef) + ";" + string(pkbres) + ";" + 
+		                        string(fdef) + ";" + string(cdef) + ";" + string(udef) + ";" + 
+		                        string(fkbres) + ";" + string(ckbres) + ";" + string(ukbres) + ";" + 
+		                        string(bar_extension) + ";";
+		                    break;
+							case obj_enemy_christmas_snowman: case obj_enemy_christmas_gingerbread_man: case obj_enemy_christmas_reindeer:
+								other.data += 
+		                        string(cooldown) + ";" + string(time_mark) + ";" +
 		                        string(beh) + ";" + string(intro) + ";" + string(touchable) + ";" + 
 		                        string(hp) + ";" + string(hpmax) + ";" + 
 		                        string(bdmg) + ";" + string(bdef) + ";" + string(bpen) + ";" + string(bkb) + ";" + string(bkbres) + ";" + 
@@ -277,7 +288,7 @@ if (phase == 1) {
 		                        string(fdef) + ";" + string(cdef) + ";" + string(udef) + ";" + 
 		                        string(fkbres) + ";" + string(ckbres) + ";" + string(ukbres) + ";" + 
 		                        string(bar_extension) + ";";
-		                    break;
+							break;
 		                    case obj_eprojectile:
 		                        other.data += 
 		                        string(spawn) + ";" + string(f) + ";" + string(acc) + ";" + string(rot) + ";" + string(pdmg) + ";" + string(ppen) + ";" + string(pkb) + ";" + 
@@ -349,7 +360,7 @@ if (phase == 1) {
 		                        }
 		                        other.line[array_length_1d(other.line)] = other.data + other.separator;
 		                    break;
-		                    case obj_enemy:
+		                    case obj_enemy_christmas_rocket_elf: case obj_enemy_christmas_crow: case obj_enemy_christmas_snowman: case obj_enemy_christmas_gingerbread_man: case obj_enemy_christmas_reindeer:
 		                        if (ds_exists(afterimage_ds_grid, ds_type_grid)) {
 		                            other.data = ds_grid_export(afterimage_ds_grid);
 		                        } else {
