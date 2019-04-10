@@ -7,8 +7,10 @@ image_xscale = 1 - (2 * global.left_handed_mode);
 if (room == rm_Main) {
 
     if (global.state == 1 && global.gpspeed != 0 && !global.loading) {
-        if (instance_number(obj_enemy) < 5 + (global.points / 40000) + (5 * instance_exists(obj_emerald_ultimate)) && irandom(3600) < global.spawnrate && global.gpstep >= 1) {
-            instance_create_f(CANVAS_XEND + 96, CANVAS_Y + irandom_range(64, 656), obj_enemy, irandom(4));
+        if (instance_number(obj_enemy) < 5 + (global.points / 40000) + (5 * instance_exists(obj_emerald_ultimate)) && irandom(3600) < global.spawnrate && real_step()) {
+			var rangemin = global.realm_enemy_index[global.realm];
+			var rangemax = global.realm_enemy_index[global.realm + 1] - 1;
+            instance_create(CANVAS_XEND + 96, CANVAS_Y + irandom_range(64, 656), irandom_range(rangemin, rangemax));
         }
         global.spawnrate += 0.0165 * global.gpspeed;
         if (global.points - lastpresent >= 8000) {

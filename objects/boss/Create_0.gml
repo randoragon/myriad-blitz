@@ -150,6 +150,17 @@ part_type_blend_color_alpha_lt(part, bm_add, c_white, c_white, 0.5, 0);
 
 #endregion
 
+#region Realm (Common) Enemies Setup
+
+global.realm_enemy_index	= array_setup(noone, RLMCOUNT + 1);
+global.realm_enemy_index[1] = obj_enemy_christmas_rocket_elf;
+
+// last value indexes an object ID past the last existing enemy!!!
+var last_realm_enemy_count  = 5;
+global.realm_enemy_index[2] = global.realm_enemy_index[1] + last_realm_enemy_count;
+
+#endregion
+
 #region Depth Hierarchy
 
 global.object_layer = ds_map_create();
@@ -176,7 +187,11 @@ global.object_layer[? obj_emerald_ultimate]			= layer_get_id("UnderlayEffects1")
 global.object_layer[? obj_emerald_ultimate_flow]	= layer_get_id("UnderlayEffects0");
 global.object_layer[? obj_emerald_ultimate_force]   = layer_get_id("OverlayEffects0");
 // <- end of ultimates
-global.object_layer[? obj_enemy]	   = layer_get_id("Enemies");
+for (var i = 1; i < RLMCOUNT + 1; i++) {
+	for (var j = global.realm_enemy_index[i]; j < global.realm_enemy_index[i + 1]; j++) {
+		global.object_layer[? j]	   = layer_get_id("Enemies");
+	}
+}
 global.object_layer[? obj_eprojectile] = layer_get_id("EnemyProjectiles");
 
 // FX

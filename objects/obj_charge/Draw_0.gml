@@ -66,8 +66,8 @@ if (f == 1) {
         for (var i = 0; i < buff_length / 4; i++) {
             buffer_seek(buff, buffer_seek_start, 4 * i)
             with (buffer_read(buff, buffer_u32)) {
-                if (object_index != obj_enemy) {
-                    show_message("Critical Bug!\nPlease send the following error code to the developer:" + string(object_index) + "\n(contact: randoragongamedev@gmail.com)");
+                if (!object_is_ancestor(object_index, obj_enemy)) {
+                    show_message("Critical Bug!\nPlease send me the following error code, if you could:" + string(object_index) + "\n(contact: randoragongamedev@gmail.com)");
                 }
                 var damage = calculate_damage(other.cdmg, other.cpen, cdef);
                 var display_damage = ceil(hp) - ceil(hp - damage);

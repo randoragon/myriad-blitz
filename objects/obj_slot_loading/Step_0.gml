@@ -15,10 +15,8 @@ if (phase == 1 && clock-- <= 0) {
         clock        = interval;
         progress     = 0;
         progress_max = array_length_1d(chunk);
-        with (all) {
-            if (object_is_ancestor(object_index, obj_save_group)) {
-                instance_destroy();
-            }
+        with (obj_save_group) {
+			instance_destroy();
         }
     }
 }
@@ -704,39 +702,31 @@ if (phase == 4 && clock-- <= 0) {
 #region Phase 5 - Reassigning Pointers
 
 if (phase == 5) {
-	with (all) {
-	    if (object_is_ancestor(object_index, obj_save_group)) {
-	        if (global.enemy_details_selection == previd) {
-	            global.enemy_details_selection = id;
-	        }
-	        switch(object_index) {
-		        case obj_player:
-		            spawn = id;
-		            with (all) {
-		                if (object_is_ancestor(object_index, obj_save_group)) {
-		                    if (other.helper == previd) other.helper = id;
-		                }
-		            }
-		        break;
-		        case obj_projectile: case obj_charge: case obj_eprojectile:
-		            with (all) {
-		                if (object_is_ancestor(object_index, obj_save_group)) {
-		                    if (other.spawn == previd) other.spawn = id;
-		                }
-		            }
-		        break;
-		        case obj_frag:
-		            with (all) {
-		                if (object_is_ancestor(object_index, obj_save_group)) {
-		                    if (other.spawn == previd) other.spawn = id;
-		                    if (other.enemy = previd) other.enemy = id;
-		                }
-		            }
-		        break;
-		        case obj_evilflame_ultimate:
-		            player = instance_find(obj_player, 1);
-		        break;
-	        }
+	with (obj_save_group) {
+	    if (global.enemy_details_selection == previd) {
+	        global.enemy_details_selection = id;
+	    }
+	    switch(object_index) {
+		    case obj_player:
+		        spawn = id;
+		        with (obj_save_group) {
+	                if (other.helper == previd) other.helper = id;
+		        }
+		    break;
+		    case obj_projectile: case obj_charge: case obj_eprojectile:
+		        with (obj_save_group) {
+		            if (other.spawn == previd) other.spawn = id;
+		        }
+		    break;
+		    case obj_frag:
+		        with (obj_save_group) {
+		            if (other.spawn == previd) other.spawn = id;
+		            if (other.enemy = previd) other.enemy = id;
+		        }
+		    break;
+		    case obj_evilflame_ultimate:
+		        player = instance_find(obj_player, 1);
+		    break;
 	    }
 	}
 

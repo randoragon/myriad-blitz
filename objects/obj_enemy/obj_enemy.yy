@@ -5,16 +5,6 @@
     "name": "obj_enemy",
     "eventList": [
         {
-            "id": "6d384d04-5c27-452e-bfbf-365d2b0e0491",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "52614610-61a6-492b-b651-5ec5519bc3ec"
-        },
-        {
             "id": "3fe7a021-db6b-43f5-83db-7122f72be99d",
             "modelName": "GMEvent",
             "mvc": "1.0",
@@ -25,16 +15,6 @@
             "m_owner": "52614610-61a6-492b-b651-5ec5519bc3ec"
         },
         {
-            "id": "f1f06615-c383-48c7-b721-07e348b15689",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 3,
-            "m_owner": "52614610-61a6-492b-b651-5ec5519bc3ec"
-        },
-        {
             "id": "72b7bc97-42ff-4998-aa1f-cf3439c630f9",
             "modelName": "GMEvent",
             "mvc": "1.0",
@@ -42,26 +22,6 @@
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 11,
             "eventtype": 7,
-            "m_owner": "52614610-61a6-492b-b651-5ec5519bc3ec"
-        },
-        {
-            "id": "958ca857-20ab-41e0-87ec-bbb9daa0a340",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 10,
-            "eventtype": 7,
-            "m_owner": "52614610-61a6-492b-b651-5ec5519bc3ec"
-        },
-        {
-            "id": "6ae0fcae-c9fb-4c17-aa5c-cc3128956d1e",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 76,
-            "eventtype": 8,
             "m_owner": "52614610-61a6-492b-b651-5ec5519bc3ec"
         },
         {
@@ -187,6 +147,20 @@
             "value": "0",
             "varName": "bar_extension",
             "varType": 0
+        },
+        {
+            "id": "7f1a35aa-ac86-444c-8f58-c0af63808bcc",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "intro",
+            "varType": 1
         }
     ],
     "solid": false,

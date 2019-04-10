@@ -4,6 +4,8 @@
 // This function works like sine, but it treats the graph as if the function was ragged, with straight lines /\/
 
 var val = argument[0] % 360;
+val += (val < 0)? 360 : 0;
+
 if (val <= 90) {
     return lerp(0, 1, val / 90);
 } else if (val <= 180) {
