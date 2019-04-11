@@ -36,7 +36,7 @@ n++;
 desc[n] = 
 "Each hit you take is followed by a brief"+
 "\nperiod of invincibility. This value"+
-"\ndeclares how long that global.state lasts.";
+"\ndeclares how long that state lasts.";
 n++;
 /*FOCUS TIME*/			 listed[n] = 0;
 desc[n] = 

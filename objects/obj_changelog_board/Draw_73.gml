@@ -28,7 +28,7 @@ for (var i = 0; i < array_length_1d(section); i++) {
     yy = y - sprite_yoffset + 50 + scroll + distance;
     if (yy + (3 * 12) >= y - sprite_yoffset + 50 && yy <= y - sprite_yoffset + sprite_height - 70) {
         if (date[i] == "" || !(boss.x >= x - (0.5 * 3 * string_width(section[i])) - 2 && boss.x <= x + (0.5 * 3 * string_width(section[i])) && boss.y > yy - 2 && boss.y < yy + (3 * 12) + 2)) {
-            draw_text_outline(x, yy, section[i], 3, 3, 0, rgb(0, 200, 255), 2, c_black);
+            draw_text_outline(x, yy, section[i], 3, 3, rgb(0, 200, 255), 2, c_black);
         } else {
             gpu_set_alphatestref(0);
             gpu_set_blendmode(bm_add);
@@ -38,7 +38,7 @@ for (var i = 0; i < array_length_1d(section); i++) {
             draw_text_highlight(x, yy, section[i], 3, c_black, 0.3, fa_center, fa_top, 6, 6);
             gpu_set_colorwriteenable(1, 1, 1, 1);
             gpu_set_alphatestref(254);
-            draw_text_outline(x, yy, section[i], 3, 3, 0, rgb(0, 255, 255), 2, c_black);
+            draw_text_outline(x, yy, section[i], 3, 3, rgb(0, 255, 255), 2, c_black);
         }
     }
     for (var l = 0; l < array_length_2d(content, i); l++) {
