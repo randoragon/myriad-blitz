@@ -14,8 +14,14 @@ if (f == 0 && global.gpspeed != 0) {
 		if (target < -4) {
 			target++;
 		} else {
-			if (!instance_exists(target) || target.object_index != obj_enemy) {
-				target = instance_nearest(x, y, obj_enemy);
+			if (!instance_exists(target) || !object_is_ancestor(target.object_index, obj_enemy)) {
+				var dist = 999999;
+				with(obj_enemy) {
+					if (distance_to_point(other.x, other.y) < dist) {
+						dist = distance_to_object(other);
+						other.target = id;
+					}
+				}
 			} else if (instance_exists(target)) {
 				direction = home(direction, point_direction(x, y, target.x, target.y), 2 * global.gpspeed, 1);
 			}
@@ -25,7 +31,7 @@ if (f == 0 && global.gpspeed != 0) {
 			part_type_spawn_ult(PART_SYSTEM_CHARGE, global.charge_part[0], 3, x - 30, y - 30, x + 30, y + 30, "ellipse", "linear", 1.5);
 		}
 		if (place_meeting(x, y, obj_enemy) && instance_place(x, y, obj_enemy).hp > 0) {
-			with (instance_place(x,y,obj_enemy)) {
+			with (instance_place(x, y, obj_enemy)) {
 				var damage = calculate_damage(other.cdmg, other.cpen, cdef);
 				var display_damage = ceil(hp) - ceil(hp - damage);
 				hp = clamp(hp - damage, 0, hpmax);
@@ -45,8 +51,14 @@ if (f == 0 && global.gpspeed != 0) {
 		if (target < -4) {
 			target++;
 		} else {
-			if (!instance_exists(target) || target.object_index != obj_enemy) {
-				target = instance_nearest(x, y, obj_enemy);
+			if (!instance_exists(target) || !object_is_ancestor(target.object_index, obj_enemy)) {
+				var dist = 999999;
+				with(obj_enemy) {
+					if (distance_to_point(other.x, other.y) < dist) {
+						dist = distance_to_object(other);
+						other.target = id;
+					}
+				}
 			} else if (instance_exists(target)) {
 				direction = home(direction, point_direction(x, y, target.x, target.y), 5 * global.gpspeed, 1);
 			}

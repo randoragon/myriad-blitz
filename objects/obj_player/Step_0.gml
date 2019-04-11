@@ -494,7 +494,7 @@ if (global.state==1 && global.gpspeed!=0) {
 
 //activation conditions and immediate effect
 var is_ultimate_cooldown  = status_effect[6];
-var is_evilflame_ultimate = (global.chrsel == 0 && (instance_exists(obj_evilflame_ultimate) || evilflame_twilight_fury == 1));
+var is_evilflame_ultimate = (global.chrsel == 0 && (instance_exists(obj_evilflame_ultimate) || evilflame_twilight_fury));
 var is_emerald_ultimate   = (global.chrsel == 1 && instance_exists(obj_emerald_ultimate));
 var is_scootomik_ultimate = (global.chrsel == 2 && obj_player.status_effect[8]);
 var are_all_ultimates_off = !is_evilflame_ultimate && !is_emerald_ultimate && !is_scootomik_ultimate;
@@ -523,14 +523,14 @@ if (flash_clock == 40) {
     switch(global.chrsel) {
 	    case 0:
 		    if (!TWILIGHT_FURY) {
-		    hp /= 2; hpmax /= 2; hpmark /= 2; hpmark_v /= 2;
-		    instance_create(0, 0, obj_evilflame_ultimate); //evilflame - dual clone
-		    player_status_add(5, -2, 0);
+			    hp /= 2; global.hp /= 2; hpmax /= 2; hpmark /= 2; hpmark_v /= 2;
+			    instance_create(0, 0, obj_evilflame_ultimate); //evilflame - dual clone
+			    player_status_add(5, -2, 0);
 		    } else {
-		    evilflame_twilight_fury = 1;
-		    sprite_index = spr_evilflame_fury;
-		    player_status_add(9,  3600, 0); //evilflame - twilight fury
-		    player_status_add(10, 3600, 0);
+			    evilflame_twilight_fury = TRUE;
+			    sprite_index = spr_evilflame_fury;
+			    player_status_add(9,  3600, 0); //evilflame - twilight fury
+			    player_status_add(10, 3600, 0);
 		    }
 	    break;
 	    case 1:

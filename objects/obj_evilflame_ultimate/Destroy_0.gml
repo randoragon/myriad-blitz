@@ -9,5 +9,6 @@ player_status_add(5, 0, 0);
 
 // Restore player full hp
 player.hpmax *= 2;
+global.hp    *= 2;
 
 #endregion

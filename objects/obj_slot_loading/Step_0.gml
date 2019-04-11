@@ -443,8 +443,8 @@ if (phase == 4 && clock-- <= 0) {
 		                focus					= string_readln_real(bit, ";");
 		                foctime					= string_readln_real(bit, ";");
 		                focus_state				= string_readln_real(bit, ";");
-		                evilflame_sprite_swap   = string_readln_real(bit, ";");
-		                evilflame_twilight_fury = string_readln_real(bit, ";");
+		                evilflame_sprite_swap   = bool(string_readln_real(bit, ";"));
+		                evilflame_twilight_fury = bool(string_readln_real(bit, ";"));
 		                status_effect[0]		= string_readln_real(bit, ";");
 		                status_effect[1]		= string_readln_real(bit, ";");
 		                status_effect[2]		= string_readln_real(bit, ";");

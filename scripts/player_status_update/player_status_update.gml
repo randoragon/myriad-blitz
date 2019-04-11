@@ -30,7 +30,7 @@ if (ds_grid_get_min(global.player_status_effects, 1, 0, 1, ds_grid_height(global
                 case 9:
                     player_status_add(6, 1200, 0);
                     player_status_add(4, 600,  1);
-                    obj_player.evilflame_twilight_fury = 0;
+                    obj_player.evilflame_twilight_fury = FALSE;
                     obj_player.sprite_index = spr_evilflame;
                 break;
             }

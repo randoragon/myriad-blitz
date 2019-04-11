@@ -1,9 +1,15 @@
 /// @description Size & Stage Control
 
+#region Surface check
+
 // Check surface
 if (!surface_exists(suf_mysurface)) {
 	suf_mysurface = surface_create(mysurface_width, mysurface_height);
 }
+
+#endregion
+
+#region Size & stage control
 
 if (global.gpspeed != 0) {
 	progress++;
@@ -32,7 +38,10 @@ if (global.gpspeed != 0) {
 	}
 }
 
-// Update measurement variables
+#endregion
+
+#region Update measurement variables
+
     uname_width     = (string_width(text) + 2) * size * multiplier;
     uname_height    = (string_height(text) + 2) * size * multiplier;
     hpadding        = 4 * size * multiplier;
@@ -42,3 +51,4 @@ if (global.gpspeed != 0) {
     // headline_width  = uname_width / 2;
     headline_height = uname_height / 2;
 
+#endregion
