@@ -75,7 +75,7 @@ if (x < xstart + 360) {
 			    draw_text_transformed(xoffset + x - (sprite_width / 2) + 45, y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 0.2) * lineh) + 2, text[s, i], 2, 2, 0);
 			    draw_set_color(c_black);
 			    draw_set_halign(fa_right);
-			    draw_text_outline(10 + x + (sprite_width / 2) - 26, y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 0.2) * lineh) + 2, display[s, i], 2, 2, 0, global.color[global.chrsel], 1, c_black, 1);
+			    draw_text_outline(10 + x + (sprite_width / 2) - 26, y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 0.2) * lineh) + 2, display[s, i], 2, 2, 0, global.color[global.chrsel], 2, c_black);
 			    draw_set_halign(fa_left);
 		    }
 		    if (datatype[s, i] == 1 || datatype[s, i] == 2) && (y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 1.2) * lineh) >= y - (sprite_height / 2) + 125 - lineh && y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 1.2) * lineh) <= y + (sprite_height / 2) - 50) {
@@ -92,8 +92,8 @@ if (x < xstart + 360) {
 				}
 			    switch(real(string_char_at(text[s, i], 1))) {
 				    case 0: draw_text_transformed(xoffset + x - (sprite_width / 2) + 45, y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 0.2) * lineh) + 2, value[s, i], 2, 2, 0); break;
-				    case 1: draw_text_outline(xoffset + x - (sprite_width / 2) + 45, y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 0.2) * lineh) + 2, value[s, i], 2, 2, 0, global.color[global.chrsel], 0, c_black, 1); break;
-				    case 2: draw_text_outline(xoffset + x - (sprite_width / 2) + 45, y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 0.2) * lineh) + 2, value[s, i], 2, 2, 0, global.color[global.chrsel], 1, c_black, 1); break;
+				    case 1: draw_text_outline(xoffset + x - (sprite_width / 2) + 45, y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 0.2) * lineh) + 2, value[s, i], 2, 2, 0, global.color[global.chrsel], 0, c_black); break;
+				    case 2: draw_text_outline(xoffset + x - (sprite_width / 2) + 45, y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 0.2) * lineh) + 2, value[s, i], 2, 2, 0, global.color[global.chrsel], 2, c_black); break;
 			    }
 		    }
 		}

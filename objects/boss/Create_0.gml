@@ -409,6 +409,13 @@ ds_list_add(global.shd_shine_uni,
 	shader_get_uniform(shd_shine, "whitelist_box")
 );
 
+global.shd_outline_uni = ds_list_create();
+ds_list_add(global.shd_outline_uni,
+	shader_get_uniform(shd_outline, "pixel_size"),
+	shader_get_uniform(shd_outline, "color"),
+	shader_get_uniform(shd_outline, "rough")
+);
+
 #endregion
 
 #region Audio Groups Assignment

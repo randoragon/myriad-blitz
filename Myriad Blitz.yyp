@@ -2633,6 +2633,14 @@
             }
         },
         {
+            "Key": "985c8cd6-0117-4309-8862-5efd09b4a5f5",
+            "Value": {
+                "id": "93d25e89-c556-47fc-a846-0aba44736de8",
+                "resourcePath": "shaders\\shd_outline\\shd_outline.yy",
+                "resourceType": "GMShader"
+            }
+        },
+        {
             "Key": "98bf0595-b6af-4fa0-864b-bfd34384b6a2",
             "Value": {
                 "id": "92ac8223-1d60-4ade-b3d2-80b10195fceb",

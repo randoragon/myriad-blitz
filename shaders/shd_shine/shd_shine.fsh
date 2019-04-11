@@ -39,26 +39,6 @@ void main()
             tmp_color.rgb *= blend_factor;
         }
     }
-	
-    // add rough outline
-    /*
-    if (tmp_color.a==0.) {
-    float alpha = 
-    clamp(
-    ceil(texture2D(gm_BaseTexture, vec2(pixel_position.x + pixel_size.x, pixel_position.y)).a) +  //adjacent edges
-    ceil(texture2D(gm_BaseTexture, vec2(pixel_position.x, pixel_position.y + pixel_size.y)).a) + 
-    ceil(texture2D(gm_BaseTexture, vec2(pixel_position.x - pixel_size.x, pixel_position.y)).a) + 
-    ceil(texture2D(gm_BaseTexture, vec2(pixel_position.x, pixel_position.y - pixel_size.y)).a) + 
-    
-    ceil(texture2D(gm_BaseTexture, vec2(pixel_position.x - pixel_size.x, pixel_position.y - pixel_size.y)).a) +  //corner pieces
-    ceil(texture2D(gm_BaseTexture, vec2(pixel_position.x - pixel_size.x, pixel_position.y + pixel_size.y)).a) + 
-    ceil(texture2D(gm_BaseTexture, vec2(pixel_position.x + pixel_size.x, pixel_position.y - pixel_size.y)).a) + 
-    ceil(texture2D(gm_BaseTexture, vec2(pixel_position.x + pixel_size.x, pixel_position.y + pixel_size.y)).a), 
-    0.0, 1.0);
-    if(alpha >= 1.0) {
-    tmp_color = vec4(0.0, 0.0, 0.0, color_blend.a);
-    }
-    }*/
     
     // final output
     gl_FragColor = tmp_color;

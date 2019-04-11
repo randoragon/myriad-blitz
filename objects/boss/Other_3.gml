@@ -66,3 +66,4 @@ if (ds_exists(global.shd_sprite_effect_uni, ds_type_list))				{ ds_list_destroy(
 if (ds_exists(global.shd_background_effect_uni, ds_type_list))			{ ds_list_destroy(global.shd_background_effect_uni);		  }
 if (ds_exists(global.shd_application_surface_effect_uni, ds_type_list)) { ds_list_destroy(global.shd_application_surface_effect_uni); }
 if (ds_exists(global.shd_shine_uni, ds_type_list))						{ ds_list_destroy(global.shd_shine_uni);					  }
+if (ds_exists(global.shd_outline_uni, ds_type_list))					{ ds_list_destroy(global.shd_outline_uni);					  }

@@ -1,7 +1,0 @@
-switch(f) {
-	case 0: // Rocket Elf
-	case 1: // Crow
-	case 2: // Snowman
-	case 3: // Gingerbread Man
-	case 4: // Reindeer
-}

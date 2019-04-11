@@ -27,7 +27,8 @@ if (room == rm_About) {
     (2 * (boss.x >= 703 - 5 - (0.5 * 3 * string_width("Mahlarian"))			   && boss.x <= 703 + 5 + (0.5 * 3 * string_width("Mahlarian"))			   && boss.y >= 200 + (8 * 3 * 12) - 5 && boss.y <= 200 + (8 * 3 * 12) + 32)) +
     (3 * (boss.x >= 703 - 5 - (0.5 * 3 * string_width("My Discord Community")) && boss.x <= 703 + 5 + (0.5 * 3 * string_width("My Discord Community")) && boss.y >= 200 + (9 * 3 * 12) - 5 && boss.y <= 200 + (9 * 3 * 12) + 32));
     //Randoragon
-    draw_text_outline(703, 200 + (2 * 3 * 12), "Randoragon", 3, 3, 0, rgb(128, 255, 0), 1, c_black, 1);
+    draw_text_outline(703, 200 + (2 * 3 * 12), "Randoragon", 3, 3, 0, rgb(128, 255, 0), 2, c_black);
+	
     //Waterflame
     if (highlight == 1) {
         gpu_set_alphatestref(0);
@@ -38,11 +39,11 @@ if (room == rm_About) {
 		draw_text_highlight(703, 200 + (5 * 3 * 12), "Waterflame", 3, c_black, 0.5, fa_center, fa_top, 7, 7);
 		gpu_set_colorwriteenable(1, 1, 1, 1);
 		gpu_set_alphatestref(254);
-        draw_text_outline(703, 200 + (5 * 3 * 12), "Waterflame", 3, 3, 0, rgb(0,165,255), 1, c_black, 1);
+        draw_text_outline(703, 200 + (5 * 3 * 12), "Waterflame", 3, 3, 0, rgb(0,165,255), 2, c_black);
         draw_tooltip("Menu Song: "+"\"Battletown\"\n"+"Christmas Realm: "+"\"8-bit Jingle Twist\"");
         draw_set_align(fa_center, fa_top);
     } else {
-        draw_text_outline(703, 200 + (5 * 3 * 12), "Waterflame", 3, 3, 0, rgb(0, 135, 205), 1, c_black, 1);
+        draw_text_outline(703, 200 + (5 * 3 * 12), "Waterflame", 3, 3, 0, rgb(0, 135, 205), 2, c_black);
     }
     //Mahlarian
     if (highlight == 2) {
@@ -54,11 +55,11 @@ if (room == rm_About) {
 		draw_text_highlight(703, 200 + (8 * 3 * 12), "Mahlarian", 3, c_black, 0.5, fa_center, fa_top, 7, 7);
         gpu_set_alphatestref(254);
 		gpu_set_colorwriteenable(1, 1, 1, 1);
-        draw_text_outline(703, 200 + (8 * 3 * 12), "Mahlarian", 3, 3, 0, rgb(255, 0, 255), 1, c_black, 1);
+        draw_text_outline(703, 200 + (8 * 3 * 12), "Mahlarian", 3, 3, 0, rgb(255, 0, 255), 2, c_black);
         draw_tooltip("For useful suggestions, tips,\nplaytesting and being a good friend.");
         draw_set_align(fa_center, fa_top);
     } else {
-        draw_text_outline(703, 200 + (8 * 3 * 12), "Mahlarian", 3, 3, 0, rgb(255, 0, 234), 1, c_black, 1);
+        draw_text_outline(703, 200 + (8 * 3 * 12), "Mahlarian", 3, 3, 0, rgb(255, 0, 234), 2, c_black);
     }
     //Discord Community
     if (highlight == 3) {
@@ -70,11 +71,11 @@ if (room == rm_About) {
 		draw_text_highlight(703, 200 + (9 * 3 * 12), "My Discord Community", 3, c_black, 0.5, fa_center, fa_top, 7, 7);
 		gpu_set_colorwriteenable(1, 1, 1, 1);
         gpu_set_alphatestref(254);
-        draw_text_outline(703, 200 + (9 * 3 * 12), "My Discord Community", 3, 3, 0, c_white, 1, c_black, 1);
+        draw_text_outline(703, 200 + (9 * 3 * 12), "My Discord Community", 3, 3, 0, c_white, 2, c_black);
         draw_tooltip("For partaking in polls, supporting my work\nand patiently waiting for delayed updates <3");
         draw_set_align(fa_center, fa_top);
     } else {
-        draw_text_outline(703, 200 + (9 * 3 * 12), "My Discord Community", 3, 3, 0, c_ltgray, 1, c_black, 1);
+        draw_text_outline(703, 200 + (9 * 3 * 12), "My Discord Community", 3, 3, 0, c_ltgray, 2, c_black);
     }
     draw_sprite_ext(spr_logo, 0, 703, 180, 0.4, 0.4, 0, c_white, 1);
 }
@@ -110,7 +111,7 @@ if (room == rm_Help) {
     "\nwhich is guaranteed to spawn exactly once every 100 killed enemies." +
     "\nYou'll recognize this enemy by unique star particles it emits.";
     
-    draw_text_outline(CANVAS_XMID, 164, sections, 3, 3, 0, rgb(0, 200, 255), 1, c_black, 1);
+    draw_text_outline(CANVAS_XMID, 164, sections, 3, 3, 0, rgb(0, 200, 255), 2, c_black);
     draw_set_color(c_black);
     draw_text_transformed(CANVAS_XMID, 164 + (1 * 3 * 12), help1, 2, 2, 0);
     draw_text_transformed(CANVAS_XMID, 164 + (7 * 3 * 12), help2, 2, 2, 0);

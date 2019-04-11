@@ -81,8 +81,8 @@ if (x < xstart + 250) {
 //CHARACTER NAMES
 if (global.transition != 1) {
 	draw_set_align(fa_center, fa_bottom);
-	draw_text_outline(GUI_X + 683, GUI_Y + 475, global.name[global.chrsel], 4 - (4*global.transition), 4, 0, c_black, 1, c_black, 1);
-	draw_text_outline(GUI_X + 683, GUI_Y + 471, global.name[global.chrsel], 4 - (4*global.transition), 4, 0, global.color[global.chrsel], 1, color_shift_hsv(global.color[global.chrsel], 0, 0, -170, 1), 1);
+	draw_text_outline(GUI_X + 683, GUI_Y + 475, global.name[global.chrsel], 4 - (4 * global.transition), 4, 0, c_black, 2, c_black);
+	draw_text_outline(GUI_X + 683, GUI_Y + 471, global.name[global.chrsel], 4 - (4 * global.transition), 4, 0, global.color[global.chrsel], 2, color_shift_hsv(global.color[global.chrsel], 0, 0, -170, 1));
 }
 	
 #endregion
