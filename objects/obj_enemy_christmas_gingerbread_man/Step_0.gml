@@ -32,29 +32,100 @@ if (global.gpspeed != 0) {
     
     //STANDARD BEHAVIOR
     if (intro == 0 && beh > 0 && !instance_exists(obj_emerald_ultimate)) {
-		if (cooldown == 0) {
-	        xx        = irandom_range(CANVAS_X + 512, CANVAS_XEND - 10 - (0.5 * sprite_width));
-	        yy        = irandom_range(CANVAS_Y + 10 + (0.5 * sprite_height), CANVAS_YEND - (sprite_height * 0.5) - 10);
-	        cooldown  = irandom_range(80, 160);
-	        direction = point_direction(x, y, xx, yy);
-	        speed1    = distance_to_point(xx, yy) / cooldown;
-	    } else {
-	        cooldown = max(cooldown - global.gpspeed, 0);
-	    }
+		/*  STATES
+		 *	0  - movement
+		 *	1  - attack 1 (begin)
+		 *	2  - attack 2 (spawn bullets)
+		 *  3  - free movement
+		 *  4  - attack 3 (wait for the animation to finish)
+		 *	5  - evasion (avoiding obj_projectile)
+		 *	6  - super attack 1 (begin)
+		 *  7  - super attack 2 (charge)
+		 *  8  - super attack 3 (shoot one)
+		 *  9 - super attack 5  (wait for the animation to finish)
+		 */
+		switch (state) {
+			case 0: // movement
+				var xx, yy;
+				xx = irandom_range(CANVAS_X + 512, CANVAS_XEND - 10 - (0.5 * sprite_width));
+				yy = irandom_range(CANVAS_Y + 10 + (0.5 * sprite_height), CANVAS_YEND - (sprite_height * 0.5) - 10);
+				cooldown = irandom_range(80, 160);
+				fly_towards(x, y, xx, yy, cooldown);
+				state = 3;
+			break;
+			case 1: // regular attack 1
+				speed1 = 0; // stop "flying"
+				sprite_index = spr_gingerbread_man_attack;
+				image_index  = 0;
+				state = 2;
+			break;
+			case 2: // regular attack 2
+				if (image_index >= 8 && image_index <= 9 && real_step()) {
+					repeat (irandom_range(2, 4)) {
+						play_sfx(sfx_gingerbread_man_shoot, sound_priority.enemy_shoot, 0, global.sound_gpspeed * 100);
+						spawn_bullet(x, y, obj_eprojectile, 1, 0, -1, id);
+					}
+					state = choose(4);
+				}
+			break;
+			case 3: // free movement
+				cooldown = max(cooldown - global.gpspeed, 0);
+				if (cooldown == 0) { state = (superattack_cooldown-- <= 0)? choose(1, 6, 6) : 1; }
+			break;
+			case 4: // regular attack 3
+				if (image_index >= image_number - 1) {
+					sprite_index = spr_gingerbread_man;
+					image_index  = 0;
+					state		 = 0;
+				}
+			break;
+			case 6: // super attack 1
+				speed1 = 0; // stop "flying"
+				sprite_index = spr_gingerbread_man_attack;
+				image_index  = 0;
+				state = 7;
+			break;
+			case 7: // super attack 2
 				
-	    if (cooldown == 0) {
-	        if (irandom(24) == 0) {
-	            cooldown = -1;
-	            beh      = 0;
-	            speed1   = 0;
-	            hspeed1  = irandom_range(-7, -16);
-	        } else {
-	            repeat (irandom_range(2, 4)) {
-	                play_sfx(sfx_gingerbread_man_shoot, sound_priority.enemy_shoot, 0, global.sound_gpspeed * 100);
-	                spawn_bullet(x, y, obj_eprojectile, 1, 0, -1, id);
-	            }
-	        }
-	    }
+				if (image_index >= 2 && image_index <= 3 && real_step()) {
+					sprite_index = spr_gingerbread_man_attack_float;
+					image_index = 0;
+					jitterx = x;
+					jittery = y;
+					state   = 8;
+					superattack_projectilecount = irandom_range(3, 5);
+					superattack_jittervalue = 0;
+				}
+			break;
+			case 8: // super attack 3
+				superattack_jittervalue += global.gpspeed * 1/30;
+				var jittervalue = 2.5 * sin(superattack_jittervalue * pi / 2);
+				if (real_step()) {
+					x = jitterx + random_range(-jittervalue, jittervalue);
+					y = jittery + random_range(-jittervalue, jittervalue);
+				}
+				if ((image_index % image_number) >= 4 && (image_index % image_number) < 5 && real_step() && !superattack_projectileshot) {
+					play_sfx(sfx_gingerbread_man_shoot, sound_priority.enemy_shoot, 0, global.sound_gpspeed * 100);
+					var p = spawn_bullet(x, y - 40, obj_eprojectile, 1, 0, -1, id);
+					superattack_projectileshot = TRUE;
+					var dir = point_direction(p.x, p.y, obj_player.x, obj_player.y);
+					p.direction = irandom_range(dir - 90, dir + 90);
+					if (--superattack_projectilecount <= 0) {
+						x = jitterx;
+						y = jittery;
+						state = 9;
+					}
+				} else if ((image_index % image_number < 4 || image_index % image_number > 5) && superattack_projectileshot) {
+					superattack_projectileshot = FALSE;
+				}
+			break;
+			case 9: // super attack 4
+				sprite_index = spr_gingerbread_man;
+				image_index = 0;
+				superattack_cooldown = irandom_range(3, 6);
+				state = 0;
+			break;
+		}
     } else if (instance_exists(obj_emerald_ultimate) && global.gpspeed != 0) {
 		// getting sucked in by emerald's current crush
         var prev_dir = direction;

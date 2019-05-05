@@ -745,11 +745,11 @@ if (hp <= 0 && image_alpha == 1) {
 		bar_yoffset[2] = obj_evilflame_ultimate.bar_yoffset[2];
 		if (evilflame_sprite_swap == 1) {
 			if (sprite_index == spr_evilflame)
-				sprite_index=spr_evilflame_ultimate;
+				sprite_index = spr_evilflame_ultimate;
 			else if (sprite_index == spr_evilflame_shooting)
-				sprite_index=spr_evilflame_ultimate_shooting;
+				sprite_index = spr_evilflame_ultimate_shooting;
 			else if (sprite_index == spr_evilflame_charging)
-				sprite_index=spr_evilflame_ultimate_charging;
+				sprite_index = spr_evilflame_ultimate_charging;
 		} else {
 			if (sprite_index == spr_evilflame_ultimate)
 				sprite_index = spr_evilflame;

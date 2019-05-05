@@ -57,7 +57,7 @@ if (angle > 0 && angle < 90) {
     yoffset   = argument[4] * (sprite_get_width(argument[0]) - sprite_get_xoffset(argument[0]));
     top_edge  = argument[3] - yoffset;
 }
-
+ 
 top_edge %= h;
 while (top_edge < tborder) { top_edge += h; }
 while (top_edge > tborder) { top_edge -= h; }
