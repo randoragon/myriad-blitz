@@ -126,4 +126,6 @@ if (!global.loading) {
 
 #region Debugging
 
+if (keyboard_check_pressed(ord("G"))) { instance_create(CANVAS_XEND, CANVAS_YMID, obj_enemy_christmas_gingerbread_man); }
+
 #endregion

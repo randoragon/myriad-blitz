@@ -147,7 +147,12 @@ part = global.enemy_part[0];
 part_type_size_orientation_lt(part, 0.3, 0.5, 0, 0, 360, 3, 1);
 part_type_direction_speed_lt(part, 0, 360, 0.2, 0.5, 0);
 part_type_blend_color_alpha_lt(part, bm_add, c_white, c_white, 0.5, 0);
-
+// gingerbread man superattack particles
+global.enemy_part[1] = part_type_setup_lt(part_line, 0, 30, 45);
+part = global.enemy_part[1];
+part_type_size_orientation_lt(part, 0.3, 0.5, -0.05, 0, 360, 3, 1);
+part_type_direction_speed_lt(part, 0, 360, 2, 4, 0);
+part_type_blend_color_alpha_lt(part, bm_add, $FFFF50, c_white, 0.75, 0);
 #endregion
 
 #region Realm (Common) Enemies Setup

@@ -111,6 +111,34 @@
             "value": "0",
             "varName": "superattack_projectileshot",
             "varType": 3
+        },
+        {
+            "id": "67a4b2c7-e9c0-4415-a047-78090d2f1e18",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "jitterx",
+            "varType": 0
+        },
+        {
+            "id": "c191223f-33e6-483b-bdc8-3a1439252abc",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "jittery",
+            "varType": 0
         }
     ],
     "solid": false,

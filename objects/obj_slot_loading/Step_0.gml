@@ -573,6 +573,25 @@ if (phase == 4 && clock-- <= 0) {
 				        ckbres				= string_readln_real(bit, ";");
 				        ukbres				= string_readln_real(bit, ";");
 				        bar_extension		= string_readln_real(bit, ";");
+						if (object_index == obj_enemy_christmas_gingerbread_man) {
+							if (other.slotversion != "1.1.0" && other.slotversion != "1.1.1") {
+								state						= string_readln_real(bit, ";");
+								superattack_cooldown		= string_readln_real(bit, ";");
+								superattack_jittervalue		= string_readln_real(bit, ";");
+								superattack_projectilecount	= string_readln_real(bit, ";");
+								superattack_projectileshot	= bool(string_readln_real(bit, ";"));
+								jitterx						= string_readln_real(bit, ";");
+								jittery						= string_readln_real(bit, ";");
+							} else {
+								state						= 0;
+								superattack_cooldown		= 0;
+								superattack_jittervalue		= 0;
+								superattack_projectilecount	= 0;
+								superattack_projectileshot	= FALSE;
+								jitterx						= 0;
+								jittery						= 0;
+							}
+						}
 						var afterimage_data = other.line[++other.progress];
 				        if (afterimage_data != "") {
 				            afterimage_ds_grid = ds_grid_create(0, 0);

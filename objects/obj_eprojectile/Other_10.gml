@@ -17,8 +17,6 @@ switch(f) {
 	case 1:
 		sprite_index = spr_bolt;
 		instance_setup(irandom(image_number - 1), 0.25 * global.gpspeed, irandom(360), 1);
-		direction = clamp(point_direction(x, y, obj_player.x, obj_player.y) + irandom_range(-45, 45), 120, 240);
-		speed1    = random_range(1, 2);
 		lifespan  = 1800;
 	break;
 	case 2:

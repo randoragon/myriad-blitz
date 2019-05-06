@@ -61,10 +61,10 @@ if (global.gpspeed != 0) {
 			break;
 			case 2: // regular attack 2
 				if (image_index >= 8 && image_index <= 9 && real_step()) {
-					repeat (irandom_range(2, 4)) {
-						play_sfx(sfx_gingerbread_man_shoot, sound_priority.enemy_shoot, 0, global.sound_gpspeed * 100);
-						spawn_bullet(x, y, obj_eprojectile, 1, 0, -1, id);
-					}
+					play_sfx(sfx_gingerbread_man_shoot, sound_priority.enemy_shoot, 0, global.sound_gpspeed * 100);
+					var p = spawn_bullet(x, y, obj_eprojectile, 1, 0, -1, id);
+					p.speed1 = random_range(3, 4);
+					p.direction = clamp(point_direction(x, y, obj_player.x, obj_player.y) + irandom_range(-10, 10), 120, 240);
 					state = choose(4);
 				}
 			break;
@@ -103,19 +103,20 @@ if (global.gpspeed != 0) {
 				if (real_step()) {
 					x = jitterx + random_range(-jittervalue, jittervalue);
 					y = jittery + random_range(-jittervalue, jittervalue);
+					part_type_spawn_lt(PART_SYSTEM_ENEMY, global.enemy_part[1], 0.5, x, y - 40, x, y - 40, ps_shape_line, ps_distr_linear, 1);
 				}
-				if ((image_index % image_number) >= 4 && (image_index % image_number) < 5 && real_step() && !superattack_projectileshot) {
+				if ((image_index) >= 4 && (image_index) < 5 && real_step() && !superattack_projectileshot) {
 					play_sfx(sfx_gingerbread_man_shoot, sound_priority.enemy_shoot, 0, global.sound_gpspeed * 100);
 					var p = spawn_bullet(x, y - 40, obj_eprojectile, 1, 0, -1, id);
 					superattack_projectileshot = TRUE;
-					var dir = point_direction(p.x, p.y, obj_player.x, obj_player.y);
-					p.direction = irandom_range(dir - 90, dir + 90);
+					p.direction = clamp(point_direction(x, y, obj_player.x, obj_player.y) + irandom_range(-45, 45), 120, 240);
+					p.speed1    = random_range(1, 2);
 					if (--superattack_projectilecount <= 0) {
 						x = jitterx;
 						y = jittery;
 						state = 9;
 					}
-				} else if ((image_index % image_number < 4 || image_index % image_number > 5) && superattack_projectileshot) {
+				} else if (((image_index) < 4 || (image_index) > 5) && superattack_projectileshot) {
 					superattack_projectileshot = FALSE;
 				}
 			break;

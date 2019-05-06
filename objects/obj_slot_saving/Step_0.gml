@@ -278,7 +278,7 @@ if (phase == 1) {
 		                        string(fkbres) + ";" + string(ckbres) + ";" + string(ukbres) + ";" + 
 		                        string(bar_extension) + ";";
 		                    break;
-							case obj_enemy_christmas_snowman: case obj_enemy_christmas_gingerbread_man: case obj_enemy_christmas_reindeer:
+							case obj_enemy_christmas_snowman: case obj_enemy_christmas_reindeer:
 								other.data += 
 		                        string(cooldown) + ";" + string(time_mark) + ";" +
 		                        string(beh) + ";" + string(intro) + ";" + string(touchable) + ";" + 
@@ -288,6 +288,18 @@ if (phase == 1) {
 		                        string(fdef) + ";" + string(cdef) + ";" + string(udef) + ";" + 
 		                        string(fkbres) + ";" + string(ckbres) + ";" + string(ukbres) + ";" + 
 		                        string(bar_extension) + ";";
+							break;
+							case obj_enemy_christmas_gingerbread_man:
+								other.data += 
+		                        string(cooldown) + ";" + string(time_mark) + ";" +
+		                        string(beh) + ";" + string(intro) + ";" + string(touchable) + ";" + 
+		                        string(hp) + ";" + string(hpmax) + ";" + 
+		                        string(bdmg) + ";" + string(bdef) + ";" + string(bpen) + ";" + string(bkb) + ";" + string(bkbres) + ";" + 
+		                        string(pdmg) + ";" + string(pdef) + ";" + string(ppen) + ";" + string(pkb) + ";" + string(pkbres) + ";" + 
+		                        string(fdef) + ";" + string(cdef) + ";" + string(udef) + ";" + 
+		                        string(fkbres) + ";" + string(ckbres) + ";" + string(ukbres) + ";" +
+		                        string(bar_extension) + ";" +
+								string(state) + ";" + string(superattack_cooldown) + ";" + string(superattack_jittervalue) + ";" + string(superattack_projectilecount) + ";" + string(superattack_projectileshot) + ";" + string(jitterx) + ";" + string(jittery) + ";";
 							break;
 		                    case obj_eprojectile:
 		                        other.data += 
