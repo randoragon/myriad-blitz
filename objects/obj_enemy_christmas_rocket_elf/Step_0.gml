@@ -26,30 +26,87 @@ if (global.gpspeed != 0) {
         }
         if (!(x > CANVAS_XEND - 10 - (0.5 * sprite_width) || y > CANVAS_YEND - (sprite_height * 0.5) - 10 || y < CANVAS_Y + 10 + (0.5 * sprite_height))) {
             intro = 0;
-			if (beh == 0) { hspeed1 = irandom_range(-2, -6); }
         }
     }
     
     //STANDARD BEHAVIOR
-    if (intro == 0 && beh > 0 && !instance_exists(obj_emerald_ultimate)) {
-		if (cooldown == 0) {
-	        xx        = irandom_range(CANVAS_X + 512,CANVAS_XEND - 10 - (0.5 * sprite_width));
-	        yy        = irandom_range(CANVAS_Y + 10 + (0.5 * sprite_height), CANVAS_YEND - (sprite_height * 0.5) - 10);
-	        cooldown  = irandom_range(50, 100);
-	        direction = point_direction(x, y, xx, yy);
-	        speed1    = distance_to_point(xx, yy) / cooldown;
-	    } else {
-	        cooldown = max(cooldown - global.gpspeed, 0);
-	    }
+    if (intro == 0 && !instance_exists(obj_emerald_ultimate)) {
+		/*  STATES
+		 *	0  - choose movement or evasion
+		 *  1  - free flight (attack monitoring)
+		 *  2  - attack 1 (stop homing in, start charging)
+		 *  3  - attack 2 (shoot out for the player)
+		 *  4  - do nothing (while charging forward)
+		 */
+		var chargespd = 15;
+		 
+		switch (state) {
+			case 0: // choose movement or evasion
+				var xx, yy;
+				state = 1;
+				if (state == 1) {
+					if (irandom(1)) {
+						xx = irandom_range(CANVAS_X + 512, CANVAS_XEND - 10 - (0.5 * sprite_width));
+						yy = irandom_range(CANVAS_Y + 10 + (0.5 * sprite_height), CANVAS_YEND - (sprite_height * 0.5) - 10);
+						cooldown = irandom_range(80, 160);
+					} else {
+						var playerx, playery, playerxv, playeryv, chargespd, mvtime;
+						playerx   = obj_player.x;
+						playery   = obj_player.y;
+						playerxv  = (obj_player.xv != 0)? global.spd : 0;
+						playeryv  = (obj_player.yv != 0)? global.spd : 0;
+						mvtime    = irandom_range(60, 90); // 1 - 1.5 seconds
+					
+						var playerx1, playery1; // player coordinates after mvtime
+						playerx1 = playerx + (playerxv * mvtime);
+						playery1 = playery + (playeryv * mvtime);
+					
+						xx = clamp(playerx1 + (mvtime * chargespd), CANVAS_X + 512, CANVAS_XEND - 10 - (0.5 * sprite_width));
+						yy = clamp(playery1, CANVAS_Y + 10 + (0.5 * sprite_height), CANVAS_YEND - (sprite_height * 0.5) - 10);
+						cooldown = mvtime - 40;
+					}
+					fly_towards(x, y, xx, yy, cooldown);
+				}
+			break;
+			case 1: // free flight
+				cooldown = max(cooldown - global.gpspeed, 0);
+				if (cooldown == 0) {
+					speed1 = 0;
+					state = 0;
+				}
+				var playerx, playery, playerxv, playeryv, chargespd;
+				playerx   = obj_player.x;
+				playery   = obj_player.y;
+				playerxv  = (obj_player.xv != 0)? global.spd : 0;
+				playeryv  = (obj_player.yv != 0)? global.spd : 0;
+					
+				var t = 0;
+				while (x - (t * chargespd) > CANVAS_X - sprite_width) {
+					var playerfx = playerx + (t * playerxv);
+					var fx		 = x - (t * chargespd);
+					if (abs(playerfx - fx) < 30 && abs((playery + (t * playeryv)) - y) < 30) {
+						speed1 = 0;
+						state = 2;
+						break;
+					}
+					t += 5;
+				}
 				
-	    if (cooldown == 0) {
-	        if (irandom(14) == 0) {
-	            cooldown = -1;
-	            beh      = 0;
-	            speed1   = 0;
-	            hspeed1  = irandom_range(-10, -20);
-	        }
-	    }
+			break;
+			case 2: // attack 1
+				sprite_index = spr_rocket_elf_charge;
+				image_index  = 0;
+				state = 3;
+			break;
+			case 3: // attack 2
+				if (image_index + image_speed >= image_number) {
+					sprite_index = spr_rocket_elf_charge_loop;
+					image_speed *= 2;
+					hspeed1 = -chargespd;
+					state = 4;
+				}
+			break;
+		}
     } else if (instance_exists(obj_emerald_ultimate) && global.gpspeed != 0) {
 		// getting sucked in by emerald's current crush
         var prev_dir = direction;
@@ -117,10 +174,12 @@ if (global.gpspeed != 0 && intro == 2 && image_alpha > 0) || global.state == 2 {
 
 // touchable switch
 if (x <= -sprite_width + sprite_xoffset)			{ touchable = FALSE; }
-if (x >= -sprite_width + sprite_xoffset)			{ touchable = TRUE; }
+if (x >= -sprite_width + sprite_xoffset)			{ touchable = TRUE;  }
 if (obj_player.status_effect[8] && image_alpha < 1) { touchable = FALSE; }
 
 // out of room boundaries kill
-if (x < (-2 * sprite_width) + sprite_xoffset && !obj_player.status_effect[8]) { instance_destroy(); }
+if (x < (-2 * sprite_width) + sprite_xoffset && !obj_player.status_effect[8]) {
+	instance_destroy();
+}
 
 #endregion

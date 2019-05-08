@@ -540,6 +540,13 @@ if (phase == 4 && clock-- <= 0) {
 				        ckbres				= string_readln_real(bit, ";");
 				        ukbres				= string_readln_real(bit, ";");
 				        bar_extension		= string_readln_real(bit, ";");
+						if (object_index == obj_enemy_christmas_rocket_elf) {
+							if (other.slotversion != "1.1.0" && other.slotversion != "1.1.1") {
+								state = string_readln_real(bit, ";");
+							} else {
+								state = 0;
+							}
+						}
 						var afterimage_data = other.line[++other.progress];
 				        if (afterimage_data != "") {
 				            afterimage_ds_grid = ds_grid_create(0, 0);

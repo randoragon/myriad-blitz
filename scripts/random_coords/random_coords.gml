@@ -56,7 +56,7 @@ switch (argument[4]) {
 			    var angle = random(360);
 			    var r1	  = (xmax-xmin) / 2;
 			    var r2	  = (ymax-ymin) / 2;
-			    var dist  = random(1) * r1 * r2 / sqrt(sqr(r1 * dsin(angle)) + sqr(r2 * dcos(angle)));
+			    var dist  = random(1) * r1 * r2 / sqrt(abs(sqr(r1 * dsin(angle)) + sqr(r2 * dcos(angle))));
 			    xx		  = mean(xmin, xmax) + lengthdir_x(dist, angle);
 			    yy		  = mean(ymin, ymax) + lengthdir_y(dist, angle);
 		    break;

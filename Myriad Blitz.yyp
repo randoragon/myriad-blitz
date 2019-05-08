@@ -1102,6 +1102,14 @@
             }
         },
         {
+            "Key": "3ecd810e-e656-4593-b97b-21984491a79d",
+            "Value": {
+                "id": "8e580974-bb0e-43db-b610-7ff32aa3bd7d",
+                "resourcePath": "sprites\\spr_rocket_elf_charge_loop\\spr_rocket_elf_charge_loop.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "3f09ff7c-8d25-4184-9730-ae1a574165d4",
             "Value": {
                 "configDeltas": [
@@ -4277,6 +4285,14 @@
                 ],
                 "id": "c9041b1b-5bc5-466c-8548-8b1546a8b2c5",
                 "resourcePath": "sprites\\part_square\\part_square.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "f3625b02-e11f-436a-8a9e-a77822e35089",
+            "Value": {
+                "id": "a2dea151-c1ec-4adb-bbdf-7c9f251da6da",
+                "resourcePath": "sprites\\spr_rocket_elf_charge\\spr_rocket_elf_charge.yy",
                 "resourceType": "GMSprite"
             }
         },

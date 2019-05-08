@@ -267,7 +267,7 @@ if (phase == 1) {
 		                        string(spawn) + ";" + string(f) + ";" + string(e) + ";" + string(charge) + ";" + string(rot) + ";" + 
 		                        string(cdmg) + ";" + string(cpen) + ";" + string(ckb) + ";" + string(target) + ";";
 		                    break;
-		                    case obj_enemy_christmas_rocket_elf: case obj_enemy_christmas_crow:
+		                    case obj_enemy_christmas_crow:
 		                        other.data += 
 		                        string(cooldown) + ";" + string(time_mark) + ";" +
 		                        string(beh) + ";" + string(intro) + ";" + string(touchable) + ";" + 
@@ -278,6 +278,17 @@ if (phase == 1) {
 		                        string(fkbres) + ";" + string(ckbres) + ";" + string(ukbres) + ";" + 
 		                        string(bar_extension) + ";";
 		                    break;
+							case obj_enemy_christmas_rocket_elf:
+								other.data += 
+		                        string(cooldown) + ";" + string(time_mark) + ";" +
+		                        string(beh) + ";" + string(intro) + ";" + string(touchable) + ";" + 
+		                        string(hp) + ";" + string(hpmax) + ";" + 
+		                        string(bdmg) + ";" + string(bdef) + ";" + string(bpen) + ";" + string(bkb) + ";" + string(bkbres) + ";" + 
+		                        string(pdef) + ";" + string(pkbres) + ";" + 
+		                        string(fdef) + ";" + string(cdef) + ";" + string(udef) + ";" + 
+		                        string(fkbres) + ";" + string(ckbres) + ";" + string(ukbres) + ";" + 
+		                        string(bar_extension) + ";" + string(state) + ";";
+							break;
 							case obj_enemy_christmas_snowman: case obj_enemy_christmas_reindeer:
 								other.data += 
 		                        string(cooldown) + ";" + string(time_mark) + ";" +
