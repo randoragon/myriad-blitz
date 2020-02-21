@@ -334,11 +334,15 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 					}
 				break;
 	            case 19:
-					instance_create_layer_f(lerp(CANVAS_X, CANVAS_XEND, 0.5), lerp(CANVAS_Y, CANVAS_YEND, 0.5), "Popups", obj_slot_name, 1);
-					play_sfx(sfx_button3, 0, 0);
+					if (image_index != 2) {
+						instance_create_layer_f(lerp(CANVAS_X, CANVAS_XEND, 0.5), lerp(CANVAS_Y, CANVAS_YEND, 0.5), "Popups", obj_slot_name, 1);
+						play_sfx(sfx_button3, 0, 0);
+					}
 				break;
 	            case 20:
-					ask("Delete slot\n\"" + obj_slot_load.selection_name + "\"?\nThis change will be permanent.", scrq_do_nothing, scrq_delete_slot);
+					if (image_index != 2) {
+						ask("Delete slot\n\"" + obj_slot_load.selection_name + "\"?\nThis change will be permanent.", scrq_do_nothing, scrq_delete_slot);
+					}
 				break;
 	            case 21:
 					image_index = 2 * show;
