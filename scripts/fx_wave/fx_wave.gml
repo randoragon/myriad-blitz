@@ -16,7 +16,7 @@
 /// @param xduration
 /// @param yduration
 
-/*  Cycles SHOULD be dividable by 4
+/*  Cycles SHOULD be divisible by 4
  * 
  * Waveforms:
  *     1) straight line  /

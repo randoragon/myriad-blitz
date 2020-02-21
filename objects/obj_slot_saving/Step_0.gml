@@ -276,7 +276,7 @@ if (phase == 1) {
 		                        string(pdef) + ";" + string(pkbres) + ";" + 
 		                        string(fdef) + ";" + string(cdef) + ";" + string(udef) + ";" + 
 		                        string(fkbres) + ";" + string(ckbres) + ";" + string(ukbres) + ";" + 
-		                        string(bar_extension) + ";";
+		                        string(bar_extension) + ";" + string(state) + ";" + string(prev_bd) + ";";
 		                    break;
 							case obj_enemy_christmas_rocket_elf:
 								other.data += 

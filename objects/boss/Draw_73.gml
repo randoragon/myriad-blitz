@@ -33,10 +33,10 @@ if (room == rm_About) {
     if (highlight == 1) {
         gpu_set_alphatestref(0);
 		gpu_set_blendmode(bm_add);
-        draw_text_highlight(703, 200 + (5 * 3 * 12), "Waterflame", 3, c_black, 0.5, fa_center, fa_top, 7, 7);
+        draw_text_highlight(703, 200 + (5 * 3 * 12), "Waterflame", 3, c_black, 0.25, fa_center, fa_top, 7, 7);
 		gpu_set_colorwriteenable(1, 1, 1, 0);
 		gpu_set_blendmode(bm_normal);
-		draw_text_highlight(703, 200 + (5 * 3 * 12), "Waterflame", 3, c_black, 0.5, fa_center, fa_top, 7, 7);
+		draw_text_highlight(703, 200 + (5 * 3 * 12), "Waterflame", 3, c_black, 0.25, fa_center, fa_top, 7, 7);
 		gpu_set_colorwriteenable(1, 1, 1, 1);
 		gpu_set_alphatestref(254);
         draw_text_outline(703, 200 + (5 * 3 * 12), "Waterflame", 3, 3, rgb(0,165,255), 2, c_black);
@@ -49,10 +49,10 @@ if (room == rm_About) {
     if (highlight == 2) {
         gpu_set_alphatestref(0);
 		gpu_set_blendmode(bm_add);
-        draw_text_highlight(703, 200 + (8 * 3 * 12), "Mahlarian", 3, c_black, 0.5, fa_center, fa_top, 7, 7);
+        draw_text_highlight(703, 200 + (8 * 3 * 12), "Mahlarian", 3, c_black, 0.25, fa_center, fa_top, 7, 7);
 		gpu_set_colorwriteenable(1, 1, 1, 0);
 		gpu_set_blendmode(bm_normal);
-		draw_text_highlight(703, 200 + (8 * 3 * 12), "Mahlarian", 3, c_black, 0.5, fa_center, fa_top, 7, 7);
+		draw_text_highlight(703, 200 + (8 * 3 * 12), "Mahlarian", 3, c_black, 0.25, fa_center, fa_top, 7, 7);
         gpu_set_alphatestref(254);
 		gpu_set_colorwriteenable(1, 1, 1, 1);
         draw_text_outline(703, 200 + (8 * 3 * 12), "Mahlarian", 3, 3, rgb(255, 0, 255), 2, c_black);
@@ -65,10 +65,10 @@ if (room == rm_About) {
     if (highlight == 3) {
         gpu_set_alphatestref(0);
 		gpu_set_blendmode(bm_add);
-        draw_text_highlight(703, 200 + (9 * 3 * 12), "My Discord Community", 3, c_black, 0.5, fa_center, fa_top, 7, 7);
+        draw_text_highlight(703, 200 + (9 * 3 * 12), "My Discord Community", 3, c_black, 0.25, fa_center, fa_top, 7, 7);
 		gpu_set_blendmode(bm_normal);
 		gpu_set_colorwriteenable(1, 1, 1, 0);
-		draw_text_highlight(703, 200 + (9 * 3 * 12), "My Discord Community", 3, c_black, 0.5, fa_center, fa_top, 7, 7);
+		draw_text_highlight(703, 200 + (9 * 3 * 12), "My Discord Community", 3, c_black, 0.25, fa_center, fa_top, 7, 7);
 		gpu_set_colorwriteenable(1, 1, 1, 1);
         gpu_set_alphatestref(254);
         draw_text_outline(703, 200 + (9 * 3 * 12), "My Discord Community", 3, 3, c_white, 2, c_black);

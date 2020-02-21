@@ -43,30 +43,28 @@ if (global.gpspeed != 0) {
 		switch (state) {
 			case 0: // choose movement or evasion
 				var xx, yy;
-				state = 1;
-				if (state == 1) {
-					if (irandom(1)) {
-						xx = irandom_range(CANVAS_X + 512, CANVAS_XEND - 10 - (0.5 * sprite_width));
-						yy = irandom_range(CANVAS_Y + 10 + (0.5 * sprite_height), CANVAS_YEND - (sprite_height * 0.5) - 10);
-						cooldown = irandom_range(80, 160);
-					} else {
-						var playerx, playery, playerxv, playeryv, chargespd, mvtime;
-						playerx   = obj_player.x;
-						playery   = obj_player.y;
-						playerxv  = (obj_player.xv != 0)? global.spd : 0;
-						playeryv  = (obj_player.yv != 0)? global.spd : 0;
-						mvtime    = irandom_range(60, 90); // 1 - 1.5 seconds
+				if (irandom(1)) {
+					xx = irandom_range(CANVAS_X + 512, CANVAS_XEND - 10 - (0.5 * sprite_width));
+					yy = irandom_range(CANVAS_Y + 10 + (0.5 * sprite_height), CANVAS_YEND - (sprite_height * 0.5) - 10);
+					cooldown = irandom_range(80, 160);
+				} else {
+					var playerx, playery, playerxv, playeryv, chargespd, mvtime;
+					playerx   = obj_player.x;
+					playery   = obj_player.y;
+					playerxv  = (obj_player.xv != 0)? global.spd : 0;
+					playeryv  = (obj_player.yv != 0)? global.spd : 0;
+					mvtime    = irandom_range(60, 90); // 1 - 1.5 seconds
 					
-						var playerx1, playery1; // player coordinates after mvtime
-						playerx1 = playerx + (playerxv * mvtime);
-						playery1 = playery + (playeryv * mvtime);
+					var playerx1, playery1; // player coordinates after mvtime
+					playerx1 = playerx + (playerxv * mvtime);
+					playery1 = playery + (playeryv * mvtime);
 					
-						xx = clamp(playerx1 + (mvtime * chargespd), CANVAS_X + 512, CANVAS_XEND - 10 - (0.5 * sprite_width));
-						yy = clamp(playery1, CANVAS_Y + 10 + (0.5 * sprite_height), CANVAS_YEND - (sprite_height * 0.5) - 10);
-						cooldown = mvtime - 40;
-					}
-					fly_towards(x, y, xx, yy, cooldown);
+					xx = clamp(playerx1 + (mvtime * chargespd), CANVAS_X + 512, CANVAS_XEND - 10 - (0.5 * sprite_width));
+					yy = clamp(playery1, CANVAS_Y + 10 + (0.5 * sprite_height), CANVAS_YEND - (sprite_height * 0.5) - 10);
+					cooldown = mvtime - 40;
 				}
+				fly_towards(x, y, xx, yy, cooldown);
+				state = 1;
 			break;
 			case 1: // free flight
 				cooldown = max(cooldown - global.gpspeed, 0);

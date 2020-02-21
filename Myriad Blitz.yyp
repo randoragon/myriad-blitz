@@ -1627,6 +1627,14 @@
             }
         },
         {
+            "Key": "64678794-70d5-4699-8257-fb134e70d336",
+            "Value": {
+                "id": "d63bb03c-c8ed-407e-b3cd-34ab02f939ed",
+                "resourcePath": "sprites\\spr_crow_attack\\spr_crow_attack.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "6494a4ed-3d92-4240-a85e-bc3837ae486d",
             "Value": {
                 "id": "b12e08e7-773f-479e-a21a-4ff21c71140b",
@@ -3402,6 +3410,14 @@
                 "id": "d935eb87-1438-4fcd-af55-47f434bd1620",
                 "resourcePath": "scripts\\part_system_create_lt\\part_system_create_lt.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "c42d6e15-d37c-46cd-af75-662ae8d978e8",
+            "Value": {
+                "id": "d16dd30f-fcd7-4d1f-9a17-48267aa4d4a6",
+                "resourcePath": "sprites\\spr_crow_hover\\spr_crow_hover.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

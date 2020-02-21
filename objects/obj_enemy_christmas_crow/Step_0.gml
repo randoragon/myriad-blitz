@@ -32,24 +32,109 @@ if (global.gpspeed != 0) {
     
     //STANDARD BEHAVIOR
     if (intro == 0 && beh > 0 && !instance_exists(obj_emerald_ultimate)) {
-		if (cooldown == 0) {
-	        xx        = irandom_range(CANVAS_X + 512, CANVAS_XEND - 10 - (0.5 * sprite_width));
-	        yy        = irandom_range(CANVAS_Y + 10 + (0.5 * sprite_height), CANVAS_YEND - (sprite_height * 0.5) - 10);
-	        cooldown  = irandom_range(20, 70);
-	        direction = point_direction(x, y, xx, yy);
-	        speed1    = distance_to_point(xx, yy) / cooldown;
-	    } else {
-	        cooldown = max(cooldown - global.gpspeed, 0);
-	    }
-				
-	    if (cooldown == 0) {
-	        if (irandom(19) == 0) {
-	            cooldown = -1;
-	            beh      = 0;
-	            speed1   = 0;
-	            hspeed1  = irandom_range(-8, -15);
-	        }
-	    }
+		/*  STATES
+		 *	0  - choose movement or evasion
+		 *  1  - free flight (attack monitoring)
+		 *  2  - attack 1 (hover in place and get ready)
+		 *  3  - attack 2 (shoot out)
+		 *  4  - attack 3 (stop, start pulling back)
+		 *  5  - attack 4 (free flight)
+		 */
+		var chargespd = 15;
+		 
+		switch (state) {
+			case 0: // choose movement or evasion
+				if (abs(y - obj_player.y) < 40 && x > obj_player.x + 50 && irandom(x - obj_player.x) < 400) {
+					cooldown = 20;
+					state = 2;
+				} else {
+					if (irandom(10) < 5) {
+						var xx, yy;
+						xx = irandom_range(CANVAS_X + 512, CANVAS_XEND - 10 - (0.5 * sprite_width));
+						yy = irandom_range(CANVAS_Y + 10 + (0.5 * sprite_height), CANVAS_YEND - (sprite_height * 0.5) - 10);
+						cooldown = irandom_range(50, 110);
+						fly_towards(x, y, xx, yy, cooldown);
+					} else {
+						var playerx, playery, playerxv, playeryv, chargespd, mvtime;
+						playerx   = obj_player.x;
+						playery   = obj_player.y;
+						playerxv  = (obj_player.xv != 0)? global.spd : 0;
+						playeryv  = (obj_player.yv != 0)? global.spd : 0;
+						mvtime    = irandom_range(45, 60); // 0.75 - 1 seconds
+					
+						var playerx1, playery1; // player coordinates after mvtime
+						playerx1 = playerx + (playerxv * mvtime);
+						playery1 = playery + (playeryv * mvtime);
+					
+						xx = clamp(playerx1 + (mvtime * chargespd), CANVAS_X + 512, CANVAS_XEND - 10 - (0.5 * sprite_width));
+						yy = clamp(playery1, CANVAS_Y + 10 + (0.5 * sprite_height), CANVAS_YEND - (sprite_height * 0.5) - 10);
+						cooldown = mvtime - 20;
+						
+						fly_towards(x, y, xx, yy, cooldown);
+					}
+					state = 1;
+				}
+			break;
+			case 1: // free flight
+				cooldown = max(cooldown - global.gpspeed, 0);
+				if (cooldown == 0) {
+					speed1 = 0;
+					if (abs(y - obj_player.y) < 20 && x > obj_player.x + 50 && irandom(x - obj_player.x) < 400) {
+						cooldown = 20;
+						state = 2;
+					} else {
+						state = 0;
+					}
+				}
+			break;
+			case 2: // attack 1
+				sprite_index = spr_crow_hover;
+				image_index  = 0;
+				cooldown = max(cooldown - global.gpspeed, 0);
+				state = (cooldown == 0)? 3 : 2;
+			break;
+			case 3: // attack 2
+				sprite_index = spr_crow_attack;
+				prev_bd = bdef;
+				bdef = 0xffffff;
+				hspeed1 = -chargespd;
+				cooldown = floor((x - 100) / chargespd);
+				state = 4;
+			break;
+			case 4: // attack 3
+				cooldown = max(cooldown - global.gpspeed, 0);
+				if (cooldown == 0) {
+					sprite_index = spr_crow_hover;
+					bdef = prev_bd;
+					image_index = 0;
+					hspeed1 = 0;
+					cooldown = 40;
+					state = 5;
+				}
+			break;
+			case 5: // attack 4
+				cooldown = max(cooldown - global.gpspeed, 0);
+				if (cooldown == 0) {
+					prev_bd = bdmg;
+					bdmg = 1;
+					var xx, yy;
+					xx = irandom_range(CANVAS_X + 512, CANVAS_XEND - 10 - (0.5 * sprite_width));
+					yy = clamp((y > obj_player.y)? irandom_range(y + 50, y + 300) : irandom_range(y - 300, y - 50), CANVAS_Y + 10 + (0.5 * sprite_height), CANVAS_YEND - (sprite_height * 0.5) - 10);
+					cooldown = ceil(xx) / 5;
+					fly_towards(x, y, xx, yy, cooldown);
+					state = 6;
+				}
+			break;
+			case 6:
+				cooldown = max(cooldown - global.gpspeed, 0);
+				if (cooldown == 0) {
+					speed1 = 0;
+					bdmg = prev_bd;
+					sprite_index = spr_crow;
+					state = 0;
+				}
+			break;
+		}
     } else if (instance_exists(obj_emerald_ultimate) && global.gpspeed != 0) {
 		// getting sucked in by emerald's current crush
         var prev_dir = direction;
