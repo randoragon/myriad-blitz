@@ -1,1 +1,1 @@
-boss.layer = layer_get_id("Mouse");
+layers_swallow();

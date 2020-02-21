@@ -1,8 +1,8 @@
 {
-    "id": "4c2d082a-516b-478b-8e18-e5314db9e9cb",
+    "id": "5db7eee1-725b-4ae6-aaef-d1d2f4db1f0d",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "draw_tooltip",
+    "name": "layers_swallow",
     "IsCompatibility": false,
     "IsDnD": false
 }

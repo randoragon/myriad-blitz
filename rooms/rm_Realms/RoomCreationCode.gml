@@ -1,2 +1,2 @@
-boss.layer = layer_get_id("Mouse");
+layers_swallow();
 scr_BackgroundUpdate(0);

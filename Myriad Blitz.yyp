@@ -1296,6 +1296,14 @@
             }
         },
         {
+            "Key": "4c2d082a-516b-478b-8e18-e5314db9e9cb",
+            "Value": {
+                "id": "4ff35368-4883-41a4-beaa-f96e18b8acab",
+                "resourcePath": "scripts\\draw_tooltip\\draw_tooltip.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "4d2156e8-6d61-4c7e-bb17-0d3e7de6faa7",
             "Value": {
                 "id": "d035911c-2590-4887-82b9-77f451e1c680",
@@ -1503,6 +1511,14 @@
                 "id": "7aee8419-704b-4828-94b5-921c871d8878",
                 "resourcePath": "sprites\\spr_evilflame_fury_shooting\\spr_evilflame_fury_shooting.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "5db7eee1-725b-4ae6-aaef-d1d2f4db1f0d",
+            "Value": {
+                "id": "17e7fb70-4061-4ca9-8c5c-1280a4218370",
+                "resourcePath": "scripts\\layers_swallow\\layers_swallow.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -2225,7 +2241,7 @@
             "Key": "7e3fdb23-9e79-4935-b5a3-b4b4b55e038c",
             "Value": {
                 "id": "48a2c93e-f200-4c72-a8dc-3e1f7a7c5b98",
-                "resourcePath": "scripts\\draw_tooltip\\draw_tooltip.yy",
+                "resourcePath": "scripts\\draw_tooltip_raw\\draw_tooltip_raw.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -2468,6 +2484,14 @@
                 "id": "9f1228ad-6d24-4b37-9e60-6db7a36590e3",
                 "resourcePath": "views\\8eb470d2-2916-44b1-a17a-c5686a9abb8d.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "8ee60255-a4c3-4366-b7d1-9bfc8c174009",
+            "Value": {
+                "id": "ea5a46fe-476b-4ef8-920f-af04d42d7ed3",
+                "resourcePath": "objects\\obj_tooltip\\obj_tooltip.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -4576,6 +4600,7 @@
         "c066281e-1165-4e5a-8c6a-e63f6e58bc74",
         "cdf3f173-3c90-4e3a-aba7-b4cb52ce2381",
         "7e3fdb23-9e79-4935-b5a3-b4b4b55e038c",
+        "4c2d082a-516b-478b-8e18-e5314db9e9cb",
         "218692e6-5b16-4c2f-81d8-8673a638ebc9",
         "3a706764-9ab0-4a99-b227-9c114aeee674",
         "98bf0595-b6af-4fa0-864b-bfd34384b6a2",
@@ -4592,6 +4617,7 @@
         "90cb46e6-af70-46c9-9e03-ebec92a42c97",
         "068b28e8-d32f-4c92-84c6-243f4a09b249",
         "79a81e01-a2f1-4f48-a86b-c5cd12c31863",
+        "5db7eee1-725b-4ae6-aaef-d1d2f4db1f0d",
         "2eaec02d-4253-4f13-8e37-9c7375fed8c3",
         "fa752b2a-b7e7-4ffe-96e5-07d7c83177df",
         "2b742068-d66d-4e17-b9d0-2c994bfd29ac",

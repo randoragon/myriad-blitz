@@ -17,7 +17,8 @@
         "a8ff5167-4050-4882-ae69-da43d48a2bf9",
         "90cb46e6-af70-46c9-9e03-ebec92a42c97",
         "068b28e8-d32f-4c92-84c6-243f4a09b249",
-        "79a81e01-a2f1-4f48-a86b-c5cd12c31863"
+        "79a81e01-a2f1-4f48-a86b-c5cd12c31863",
+        "5db7eee1-725b-4ae6-aaef-d1d2f4db1f0d"
     ],
     "filterType": "GMScript",
     "folderName": "Setups & Updates",

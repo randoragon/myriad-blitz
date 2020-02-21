@@ -1,8 +1,8 @@
 {
-    "id": "4c2d082a-516b-478b-8e18-e5314db9e9cb",
+    "id": "7e3fdb23-9e79-4935-b5a3-b4b4b55e038c",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "draw_tooltip",
+    "name": "draw_tooltip_raw",
     "IsCompatibility": false,
     "IsDnD": false
 }

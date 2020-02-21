@@ -40,7 +40,7 @@ if (room == rm_About) {
 		gpu_set_colorwriteenable(1, 1, 1, 1);
 		gpu_set_alphatestref(254);
         draw_text_outline(703, 200 + (5 * 3 * 12), "Waterflame", 3, 3, rgb(0,165,255), 2, c_black);
-        draw_tooltip("Menu Song: "+"\"Battletown\"\n"+"Christmas Realm: "+"\"8-bit Jingle Twist\"");
+        draw_tooltip_raw("Menu Song: "+"\"Battletown\"\n"+"Christmas Realm: "+"\"8-bit Jingle Twist\"");
         draw_set_align(fa_center, fa_top);
     } else {
         draw_text_outline(703, 200 + (5 * 3 * 12), "Waterflame", 3, 3, rgb(0, 135, 205), 2, c_black);
@@ -56,7 +56,7 @@ if (room == rm_About) {
         gpu_set_alphatestref(254);
 		gpu_set_colorwriteenable(1, 1, 1, 1);
         draw_text_outline(703, 200 + (8 * 3 * 12), "Mahlarian", 3, 3, rgb(255, 0, 255), 2, c_black);
-        draw_tooltip("For useful suggestions, tips,\nplaytesting and being a good friend.");
+        draw_tooltip_raw("For useful suggestions, tips,\nplaytesting and being a good friend.");
         draw_set_align(fa_center, fa_top);
     } else {
         draw_text_outline(703, 200 + (8 * 3 * 12), "Mahlarian", 3, 3, rgb(255, 0, 234), 2, c_black);
@@ -72,7 +72,7 @@ if (room == rm_About) {
 		gpu_set_colorwriteenable(1, 1, 1, 1);
         gpu_set_alphatestref(254);
         draw_text_outline(703, 200 + (9 * 3 * 12), "My Discord Community", 3, 3, c_white, 2, c_black);
-        draw_tooltip("For partaking in polls, supporting my work\nand patiently waiting for delayed updates <3");
+        draw_tooltip_raw("For partaking in polls, supporting my work\nand patiently waiting for delayed updates <3");
         draw_set_align(fa_center, fa_top);
     } else {
         draw_text_outline(703, 200 + (9 * 3 * 12), "My Discord Community", 3, 3, c_ltgray, 2, c_black);
