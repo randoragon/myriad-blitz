@@ -14,7 +14,7 @@ surface_set_target(GENERAL_SURFACE);
 
 #region Draw self & apply shaders
 
-if (sprite_index == spr_bolt) {
+if (sprite_index == spr_bolt || sprite_index == spr_bolt2) {
     gpu_set_alphatestref(0);
 }
 
@@ -34,7 +34,7 @@ if (global.shader_conditions == 0) {
     shader_reset();
 }
 
-if (sprite_index == spr_bolt) {
+if (sprite_index == spr_bolt || sprite_index == spr_bolt2) {
     gpu_set_alphatestref(254);
 }
 

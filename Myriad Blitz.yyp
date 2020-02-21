@@ -1212,6 +1212,14 @@
             }
         },
         {
+            "Key": "43701006-e2b7-4c7e-b0f7-73bad0219e16",
+            "Value": {
+                "id": "301004bc-34dd-4942-9640-6f1b09d471fb",
+                "resourcePath": "sprites\\spr_bolt2\\spr_bolt2.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "44a0cd77-dec5-4adb-b8ae-f2caa631afd3",
             "Value": {
                 "configDeltas": [

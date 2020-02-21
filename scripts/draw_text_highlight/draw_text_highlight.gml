@@ -26,39 +26,39 @@ switch (argument[6]) {
     case fa_left:
         switch (argument[7]) {
             case fa_top:
-                draw_rectangle(xx - hborder, yy + (3 * scale) - vborder, xx + text_width - 1 - scale + hborder, yy + text_height - 1 - (2 * scale) + vborder, 0);
+                draw_rectangle(xx - hborder, yy + (2 * scale) - vborder, xx + text_width - 1 - scale + hborder, yy + text_height - 1 - (3 * scale) + vborder, 0);
             break;
             case fa_middle:
-                draw_rectangle(xx - hborder, yy - (text_height/2) + (3 * scale) - vborder, xx + text_width - 1 - scale + hborder, yy + (text_height/2) - 1 - (2 * scale) + vborder, 0);
+                draw_rectangle(xx - hborder, yy - (text_height/2) + (2 * scale) - vborder, xx + text_width - 1 - scale + hborder, yy + (text_height/2) - 1 - (3 * scale) + vborder, 0);
             break;
             case fa_bottom:
-                draw_rectangle(xx - hborder, yy - text_height + (3 * scale) - vborder, xx + text_width - 1 - scale + hborder, yy - (2 * scale) + vborder, 0);
+                draw_rectangle(xx - hborder, yy - text_height + (2 * scale) - vborder, xx + text_width - 1 - scale + hborder, yy - (3 * scale) + vborder, 0);
             break;
         }
     break;
     case fa_center:
         switch (argument[7]) {
             case fa_top:
-                draw_rectangle(xx - (text_width/2) - hborder, yy + (3 * scale) - vborder, xx + (text_width/2) - 1 - scale + hborder, yy + text_height - 1 - (2 * scale) + vborder, 0);
+                draw_rectangle(xx - (text_width/2) + 1 - hborder, yy + (2 * scale) - vborder, xx + (text_width/2) - scale + hborder, yy + text_height - 1 - (3 * scale) + vborder, 0);
             break;
             case fa_middle:
-                draw_rectangle(xx - (text_width/2) - hborder, yy - (text_height/2) + (3 * scale) - vborder, xx + (text_width/2) - 1 - scale + hborder, yy + (text_height/2) - 1 - (2 * scale) + vborder, 0);
+                draw_rectangle(xx - (text_width/2) + 1 - hborder, yy - (text_height/2) + (2 * scale) - vborder, xx + (text_width/2) - scale + hborder, yy + (text_height/2) - 1 - (3 * scale) + vborder, 0);
             break;
             case fa_bottom:
-                draw_rectangle(xx - (text_width/2) - hborder, yy - text_height + (3 * scale) - vborder, xx + (text_width/2) - 1 - scale + hborder, yy - (2 * scale) + vborder, 0);
+                draw_rectangle(xx - (text_width/2) + 1 - hborder, yy - text_height + (2 * scale) - vborder, xx + (text_width/2) - scale + hborder, yy - (3 * scale) + vborder, 0);
             break;
         }
     break;
     case fa_right:
         switch (argument[7]) {
             case fa_top:
-                draw_rectangle(xx - text_width - hborder, yy + (3 * scale) - vborder, xx - 1 - scale + hborder, yy + text_height - 1 - (2 * scale) + vborder, 0);
+                draw_rectangle(xx - text_width - hborder, yy + (2 * scale) - vborder, xx - 1 - scale + hborder, yy + text_height - 1 - (3 * scale) + vborder, 0);
             break;
             case fa_middle:
-                draw_rectangle(xx - text_width - hborder, yy - (text_height/2) + (3 * scale) - vborder, xx - 1 - scale + hborder, yy + (text_height/2) - 1 - (2 * scale) + vborder, 0);
+                draw_rectangle(xx - text_width - hborder, yy - (text_height/2) + (2 * scale) - vborder, xx - 1 - scale + hborder, yy + (text_height/2) - 1 - (3 * scale) + vborder, 0);
             break;
             case fa_bottom:
-                draw_rectangle(xx - text_width - hborder, yy - text_height + (3 * scale) - vborder, xx - 1 - scale + hborder, yy - (2 * scale) + vborder, 0);
+                draw_rectangle(xx - text_width - hborder, yy - text_height + (2 * scale) - vborder, xx - 1 - scale + hborder, yy - (3 * scale) + vborder, 0);
             break;
         }
     break;    

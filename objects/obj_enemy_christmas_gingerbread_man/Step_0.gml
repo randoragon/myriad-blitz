@@ -62,7 +62,7 @@ if (global.gpspeed != 0) {
 			case 2: // regular attack 2
 				if (image_index >= 8 && image_index <= 9 && real_step()) {
 					play_sfx(sfx_gingerbread_man_shoot, sound_priority.enemy_shoot, 0, global.sound_gpspeed * 100);
-					var p = spawn_bullet(x, y, obj_eprojectile, 1, 0, -1, id);
+					var p = spawn_bullet(x, y, obj_eprojectile, 1, 1, -1, id);
 					p.speed1 = random_range(3, 4);
 					p.direction = clamp(point_direction(x, y, obj_player.x, obj_player.y) + irandom_range(-10, 10), 120, 240);
 					state = choose(4);

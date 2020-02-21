@@ -88,18 +88,20 @@ if (argument[6] == 1 || argument[6] == 2) {
 	surface_free(suf1);
 	
 	var xorig, yorig;
+	var xscale = argument[3], yscale = argument[4];
 	switch(prevhalign) {
-		case fa_left:   xorig = 0;											break;
-		case fa_center: xorig = -surface_get_width(suf2) * argument[3] / 2; break;
-		case fa_right:  xorig = -surface_get_width(suf2) * argument[3];		break;
+		case fa_left:   xorig = 0;										break;
+		case fa_center: xorig = -surface_get_width(suf2) * xscale / 2;	break;
+		case fa_right:  xorig = -surface_get_width(suf2) * xscale;		break;
 	}
 
 	switch(prevvalign) {
-		case fa_top:    yorig = 0;											 break;
-		case fa_middle: yorig = -surface_get_height(suf2) * argument[4] / 2; break;
-		case fa_bottom: yorig = -surface_get_height(suf2) * argument[4];	 break;
+		case fa_top:    yorig = 0;										break;
+		case fa_middle: yorig = -surface_get_height(suf2) * yscale / 2; break;
+		case fa_bottom: yorig = -surface_get_height(suf2) * yscale;		break;
 	}
-
+	
+	yorig -= yscale;
 	
 	draw_surface_stretched(suf2, xx + xorig, yy + yorig, argument[3] * surface_get_width(suf2), argument[4] * surface_get_height(suf2));
 	surface_free(suf2);
