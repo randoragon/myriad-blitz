@@ -74,85 +74,133 @@ global.keybind[6]       = ord("E"); // ultimate
 
 #region Global Particles Setup
 
-global.part_type_pro_grid    = array_setup(-1, 2);
-global.part_type_pro_grid[0] = ds_grid_create(1, 31);
-ds_grid_set(global.part_type_pro_grid[0], 0, 0, -1);
-global.part_type_lt_grid	 = array_setup(-1, 2);
-global.part_type_lt_grid[0]  = ds_grid_create(1, 21);
-ds_grid_set(global.part_type_lt_grid[0], 0, 0, -1);
-global.part_type_ult_grid	 = array_setup(-1, 2);
-global.part_type_ult_grid[0] = ds_grid_create(1, 12);
-ds_grid_set(global.part_type_ult_grid[0], 0, 0, -1);
-global.part_system    = array_setup(-1, 7);
-global.player_part	  = array_setup(-1, 1);
-global.indicator_part = array_setup(-1, 3);
-global.frag_part	  = array_setup(-1, 2);
-global.charge_part	  = array_setup(-1, 1);
-global.ultimate_part  = array_setup(-1, 1);
-global.enemy_part	  = array_setup(-1, 1);
+global.part_system = [];
+global.part_type   = [];
 
-// DISPERSE PARTICLES
-global.disperse_part = part_type_setup_lt(part_square, 0, 30, 30);
-var part = global.disperse_part;
+global.part_type_pro_slots = -1;
+global.part_type_lt_slots = -1;
+global.part_type_ult_slots = -1;
+
+// PARTICLE SYSTEMS
+PART_SYSTEM_ULTIMATE		  = part_system_create_lt(1, 42);
+PART_SYSTEM_PLAYERTOP		  = part_system_create_lt(1, 6);
+PART_SYSTEM_PLAYERBOT		  = part_system_create_lt(1, 42, 42);
+PART_SYSTEM_FRAG			  = part_system_create_ult(1, 100, 500);
+PART_SYSTEM_CHARGE			  = part_system_create_ult(1, 150, 250);
+PART_SYSTEM_DAMAGE_INDICATORS = part_system_create_pro(1, 20, 250);
+PART_SYSTEM_ENEMY			  = part_system_create_lt(1, 30, 100);
+
+// PARTICLE TYPES
+// 0. disperse particles
+global.part_type[0] = part_type_create_lt(part_square, 0, 30, 30);
+var part = global.part_type[0];
 part_type_size_orientation_lt(part, 0.1, 0.12, -0.0036, 0, 360, 3, 1);
 part_type_direction_speed_lt(part, 0, 360, 1, 2, -0.02);
 part_type_blend_color_alpha_lt(part, bm_normal, c_white, c_white, 1, 1);
 
-
-PART_SYSTEM_PLAYERTOP = part_system_create_lt(1, 0);
-// ultimate burst particles
-global.player_part[0] = part_type_setup_lt(part_star, 0, 60, 60);
-part = global.player_part[0];
+// 1. ultimate burst particles
+global.part_type[1] = part_type_create_lt(part_star, 0, 60, 60);
+part = global.part_type[1];
 part_type_size_orientation_lt(part, 0.3, 0.6, -0.005, 0, 360, 4, 1);
 part_type_direction_speed_lt(part, 0, 360, 3, 4, -0.06);
 part_type_blend_color_alpha_lt(part, bm_add, c_white, c_white, 0.8, 0);
 
-PART_SYSTEM_PLAYERBOT = part_system_create_lt(1, 42, 42);
-
-PART_SYSTEM_FRAG = part_system_create_ult(1, 100, 500);
-
-PART_SYSTEM_CHARGE = part_system_create_ult(1, 150, 250);
-
-PART_SYSTEM_ULTIMATE = part_system_create_lt(1, 42);
-
-PART_SYSTEM_DAMAGE_INDICATORS = part_system_create_pro(1, 20, 250);
+// 2. importance 1 indicators
 var size;
-// importance 1 indicators
-global.indicator_part[0] = part_type_setup_pro(part_ascii, 0, 0, 20, 20);
-part = global.indicator_part[0];
+global.part_type[2] = part_type_create_pro(part_ascii, 0, 0, 20, 20);
+part = global.part_type[2];
 size = max(sprite_get_width(part_ascii), sprite_get_height(part_ascii));
 part_type_size_orientation_pro(part, 2*size, 2*size, 0, 0, 0, 0, 0, 0, 0);
 part_type_direction_speed_pro(part, 0, 0, 0, 0, 0, 0, 0, 0);
 part_type_blend_color_alpha_pro(part, bm_normal, rgb(255, 85, 0), c_red, 1, 1);
 part_type_gravity_pro(part, 4, -0.4, 90, 90);
-// importance 2 indicators
-global.indicator_part[1] = part_type_setup_pro(part_ascii, 0, 0, 40, 40);
-part = global.indicator_part[1];
+
+// 3. importance 2 indicators
+global.part_type[3] = part_type_create_pro(part_ascii, 0, 0, 40, 40);
+part = global.part_type[3];
 part_type_size_orientation_pro(part, 4*size, 4*size, -size/20, 0, -10, 10, 0, 0, 0);
 part_type_direction_speed_pro(part, 270, 270, 0, 0, 0, 0, 0, 0.5);
 part_type_blend_color_alpha_pro(part, bm_normal, rgb(255, 170, 0), c_red, 1, 1);
-// importance 3 indicators
-global.indicator_part[2] = part_type_setup_pro(part_ascii, 0, 0, 70, 80);
-part = global.indicator_part[2];
+
+// 4. importance 3 indicators
+global.part_type[4] = part_type_create_pro(part_ascii, 0, 0, 70, 80);
+part = global.part_type[4];
 part_type_size_orientation_pro(part, 5*size, 5*size, -size/40, 10, 40, 40, -0.5, 0, 0);
 part_type_direction_speed_pro(part, 268, 272, 0, 1, 2, 2, 0, 0);
 part_type_blend_color_alpha_pro(part, bm_normal, rgb(255, 255, 0), c_red, 1, 1);
 part_type_gravity_pro(part, 0, 0.05, 90, 90);
 
-// ENEMY PARTICLES
-PART_SYSTEM_ENEMY = part_system_create_lt(1, 30, 100);
-// ultimate loot particles
-global.enemy_part[0] = part_type_setup_lt(part_star, 0, 30, 30);
-part = global.enemy_part[0];
+// 5. enemy ultimate loot particles
+global.part_type[5] = part_type_create_lt(part_star, 0, 30, 30);
+part = global.part_type[5];
 part_type_size_orientation_lt(part, 0.3, 0.5, 0, 0, 360, 3, 1);
 part_type_direction_speed_lt(part, 0, 360, 0.2, 0.5, 0);
 part_type_blend_color_alpha_lt(part, bm_add, c_white, c_white, 0.5, 0);
-// gingerbread man superattack particles
-global.enemy_part[1] = part_type_setup_lt(part_line, 0, 30, 45);
-part = global.enemy_part[1];
+
+// 6. enemy gingerbread man superattack particles
+global.part_type[6] = part_type_create_lt(part_line, 0, 30, 45);
+part = global.part_type[6];
 part_type_size_orientation_lt(part, 0.3, 0.5, -0.05, 0, 360, 3, 1);
 part_type_direction_speed_lt(part, 0, 360, 2, 4, 0);
 part_type_blend_color_alpha_lt(part, bm_add, $FFFF50, c_white, 0.75, 0);
+
+// 7. evilflame thruster particles
+global.part_type[7] = part_type_create_lt(part_square, 0, 18, 28);
+part = global.part_type[7];
+part_type_size_orientation_lt(part, 0.15, 0.25, -0.008, 0, 0, 0, 0);
+part_type_direction_speed_lt(part, 170, 190, 7, 11, 0);
+part_type_blend_color_alpha_lt(part, bm_add, rgb(255, 140, 0), rgb(255, 140, 0), 0.7, 0.7);
+
+// 8. evilflame fury thruster particles
+global.part_type[8] = part_type_create_lt(part_star, 0, 18, 28);
+part = global.part_type[8];
+part_type_size_orientation_lt(part, 0.3, 0.5, -0.02, 0, 0, 0, 0);
+part_type_direction_speed_lt(part, 170, 190, 7, 11, 0);
+part_type_blend_color_alpha_lt(part, bm_add, c_white, rgb(83, 0, 255), 0.7, 0.7);
+
+// 9. evilflame frag particles
+global.part_type[9] = part_type_create_ult(part_square, 0);
+part = global.part_type[9];
+part_type_size_orientation_ult(part, 0.04, 0.04, -0.02, 0, 0, 0);
+part_type_blend_color_alpha_ult(part, bm_add, rgb(255, 140, 0), 0.7, 0);
+
+// 10. evilflame charge frag ring particles
+global.part_type[10] = part_type_create_ult(part_square, 0);
+part = global.part_type[10];
+part_type_size_orientation_ult(part, 0.05, 0.06, -0.005, 0, 0, 0);
+part_type_blend_color_alpha_ult(part, bm_add, rgb(255, 140, 0), 0.7, 0);
+
+// 11. evilflame fury frag particles
+global.part_type[11] = part_type_create_ult(part_star, 0);
+part = global.part_type[11];
+part_type_size_orientation_ult(part, 0.25, 0.35, -0.035, 0, 0, 0);
+part_type_blend_color_alpha_ult(part, bm_add, rgb(175, 100, 255), 0.6, -0.15);
+
+// 12. evilflame charge particles
+global.part_type[12] = part_type_create_ult(part_square, 0);
+part = global.part_type[12];
+part_type_size_orientation_ult(part, 0.2, 0.35, -0.007, 0, 0, 0);
+part_type_blend_color_alpha_ult(part, bm_add, rgb(255, 140, 0), 0.7, 0);
+
+// 13. evilflame fury charge particles
+global.part_type[13] = part_type_create_ult(part_star, 0);
+part = global.part_type[13];
+part_type_size_orientation_ult(part, 0.3, 0.4, -0.01, 0, 0, 0);
+part_type_blend_color_alpha_ult(part, bm_add, rgb(200, 145, 255), 0.6, -0.02);
+
+// 14. evilflame dual clone thruster particles
+global.part_type[14] = part_type_create_lt(part_square, 0, 18, 28);
+part = global.part_type[14];
+part_type_size_orientation_lt(part, 0.15, 0.25, -0.008, 0, 0, 0, 0);
+part_type_direction_speed_lt(part, 170, 190, 7, 11, 0);
+part_type_blend_color_alpha_lt(part, bm_add, rgb(255, 140, 0), rgb(255, 140, 0), 0.7, 0.7);
+
+// 15. emerald frag particles
+global.part_type[15] = part_type_create_ult(part_line, 0);
+part = global.part_type[15];
+part_type_size_orientation_ult(part, 0.3, 0.3, -0.0625, 0, 0, 0);
+part_type_blend_color_alpha_ult(part, bm_normal, rgb(0, 255, 132), 1, 0);
+
 #endregion
 
 #region Realm (Common) Enemies Setup
@@ -292,76 +340,216 @@ enum sound_priority {
 
 #endregion
 
-#region Save Index Map
+#region Object Save Map
 
-global.save_index = ds_map_create();
-global.save_name  = ds_map_create();
-global.save_index[? "boss"]									= 0;
-global.save_name [? 0 ]										= "boss";
-global.save_index[? "obj_damage_indicators"]				= 1;
-global.save_name [? 1 ]										= "obj_damage_indicators";
-global.save_index[? "obj_player_tparticles"]				= 2;
-global.save_name [? 2 ]										= "obj_player_tparticles";
-global.save_index[? "obj_player_bparticles"]				= 3;
-global.save_name [? 3 ]										= "obj_player_bparticles";
-global.save_index[? "obj_ultimate_particles"]				= 4;
-global.save_name [? 4 ]										= "obj_ultimate_particles";
-global.save_index[? "obj_charge_particles"]					= 5;
-global.save_name [? 5 ]										= "obj_charge_particles";
-global.save_index[? "obj_enemy_particles"]					= 6;
-global.save_name [? 6 ]										= "obj_enemy_particles";
-global.save_index[? "obj_frag_particles"]					= 7;
-global.save_name [? 7 ]										= "obj_frag_particles";
-global.save_index[? "obj_player"]							= 8;
-global.save_name [? 8 ]										= "obj_player";
-global.save_index[? "obj_wrap_helper"]						= 9;
-global.save_name [? 9 ]										= "obj_wrap_helper";
-global.save_index[? "obj_projectile"]						= 10;
-global.save_name [? 10]										= "obj_projectile";
-global.save_index[? "obj_frag"]								= 11;
-global.save_name [? 11]										= "obj_frag";
-global.save_index[? "obj_charge"]							= 12;
-global.save_name [? 12]										= "obj_charge";
-global.save_index[? "obj_evilflame_ultimate"]				= 13;
-global.save_name [? 13]										= "obj_evilflame_ultimate";
-global.save_index[? "obj_emerald_ultimate"]					= 14;
-global.save_name [? 14]										= "obj_emerald_ultimate";
-global.save_index[? "obj_emerald_ultimate_flow"]			= 15;
-global.save_name [? 15]										= "obj_emerald_ultimate_flow";
-global.save_index[? "obj_emerald_ultimate_force"]			= 16;
-global.save_name [? 16]										= "obj_emerald_ultimate_force";
-global.save_index[? "obj_enemy"]							= 17;			 // these two stay for backwards compatibility reasons
-global.save_name [? 17]										= "obj_enemy"; // these two stay for backwards compatibility reasons
-global.save_index[? "obj_eprojectile"]						= 18;
-global.save_name [? 18]										= "obj_eprojectile";
-global.save_index[? "obj_oscillator"]						= 19;
-global.save_name [? 19]										= "obj_oscillator";
-global.save_index[? "obj_screenshake"]						= 20;
-global.save_name [? 20]										= "obj_screenshake";
-global.save_index[? "obj_ultimate_activation"]				= 22;
-global.save_name [? 22]										= "obj_ultimate_activation";
-global.save_index[? "obj_screenflash"]						= 23;
-global.save_name [? 23]										= "obj_screenflash";
-global.save_index[? "obj_shockwave"]						= 24;
-global.save_name [? 24]										= "obj_shockwave";
-global.save_index[? "obj_present"]							= 48;
-global.save_name [? 48]										= "obj_present";
-global.save_index[? "obj_ultimate_pickup"]					= 49;
-global.save_name [? 49]										= "obj_ultimate_pickup";
-global.save_index[? "obj_explosion"]						= 50;
-global.save_name [? 50]										= "obj_explosion";
-global.save_index[? "obj_debris"]							= 53;
-global.save_name [? 53]										= "obj_debris";
-global.save_index[? "obj_enemy_christmas_rocket_elf"]		= 21;
-global.save_name [? 21]										=	"obj_enemy_christmas_rocket_elf";
-global.save_index[? "obj_enemy_christmas_crow"]				= 25;
-global.save_name [? 25]										=	"obj_enemy_christmas_crow";
-global.save_index[? "obj_enemy_christmas_snowman"]			= 26;
-global.save_name [? 26]										=	"obj_enemy_christmas_snowman";
-global.save_index[? "obj_enemy_christmas_gingerbread_man"]  = 27;
-global.save_name [? 27]										=	"obj_enemy_christmas_gingerbread_man";
-global.save_index[? "obj_enemy_christmas_reindeer"]		    = 28;
-global.save_name [? 28]										=	"obj_enemy_christmas_reindeer";
+global.save_oindex = ds_map_create();
+global.save_oname  = ds_map_create();
+global.save_oindex[? "boss"]                                = 0;
+global.save_oname [? 0 ]                                    = "boss";
+global.save_oindex[? "obj_damage_indicators"]               = 1;
+global.save_oname [? 1 ]                                    = "obj_damage_indicators";
+global.save_oindex[? "obj_player_tparticles"]               = 2;
+global.save_oname [? 2 ]                                    = "obj_player_tparticles";
+global.save_oindex[? "obj_player_bparticles"]               = 3;
+global.save_oname [? 3 ]                                    = "obj_player_bparticles";
+global.save_oindex[? "obj_ultimate_particles"]              = 4;
+global.save_oname [? 4 ]                                    = "obj_ultimate_particles";
+global.save_oindex[? "obj_charge_particles"]                = 5;
+global.save_oname [? 5 ]                                    = "obj_charge_particles";
+global.save_oindex[? "obj_enemy_particles"]                 = 6;
+global.save_oname [? 6 ]                                    = "obj_enemy_particles";
+global.save_oindex[? "obj_frag_particles"]                  = 7;
+global.save_oname [? 7 ]                                    = "obj_frag_particles";
+global.save_oindex[? "obj_player"]                          = 8;
+global.save_oname [? 8 ]                                    = "obj_player";
+global.save_oindex[? "obj_wrap_helper"]                     = 9;
+global.save_oname [? 9 ]                                    = "obj_wrap_helper";
+global.save_oindex[? "obj_projectile"]                      = 10;
+global.save_oname [? 10]                                    = "obj_projectile";
+global.save_oindex[? "obj_frag"]                            = 11;
+global.save_oname [? 11]                                    = "obj_frag";
+global.save_oindex[? "obj_charge"]                          = 12;
+global.save_oname [? 12]                                    = "obj_charge";
+global.save_oindex[? "obj_evilflame_ultimate"]              = 13;
+global.save_oname [? 13]                                    = "obj_evilflame_ultimate";
+global.save_oindex[? "obj_emerald_ultimate"]                = 14;
+global.save_oname [? 14]                                    = "obj_emerald_ultimate";
+global.save_oindex[? "obj_emerald_ultimate_flow"]           = 15;
+global.save_oname [? 15]                                    = "obj_emerald_ultimate_flow";
+global.save_oindex[? "obj_emerald_ultimate_force"]          = 16;
+global.save_oname [? 16]                                    = "obj_emerald_ultimate_force";
+global.save_oindex[? "obj_enemy"]                           = 17;          // these two stay for backwards compatibility reasons
+global.save_oname [? 17]                                    = "obj_enemy"; // these two stay for backwards compatibility reasons
+global.save_oindex[? "obj_eprojectile"]                     = 18;
+global.save_oname [? 18]                                    = "obj_eprojectile";
+global.save_oindex[? "obj_oscillator"]                      = 19;
+global.save_oname [? 19]                                    = "obj_oscillator";
+global.save_oindex[? "obj_screenshake"]                     = 20;
+global.save_oname [? 20]                                    = "obj_screenshake";
+global.save_oindex[? "obj_ultimate_activation"]             = 22;
+global.save_oname [? 22]                                    = "obj_ultimate_activation";
+global.save_oindex[? "obj_screenflash"]                     = 23;
+global.save_oname [? 23]                                    = "obj_screenflash";
+global.save_oindex[? "obj_shockwave"]                       = 24;
+global.save_oname [? 24]                                    = "obj_shockwave";
+global.save_oindex[? "obj_present"]                         = 48;
+global.save_oname [? 48]                                    = "obj_present";
+global.save_oindex[? "obj_ultimate_pickup"]                 = 49;
+global.save_oname [? 49]                                    = "obj_ultimate_pickup";
+global.save_oindex[? "obj_explosion"]                       = 50;
+global.save_oname [? 50]                                    = "obj_explosion";
+global.save_oindex[? "obj_debris"]                          = 53;
+global.save_oname [? 53]                                    = "obj_debris";
+global.save_oindex[? "obj_enemy_christmas_rocket_elf"]      = 21;
+global.save_oname [? 21]                                    = "obj_enemy_christmas_rocket_elf";
+global.save_oindex[? "obj_enemy_christmas_crow"]            = 25;
+global.save_oname [? 25]                                    = "obj_enemy_christmas_crow";
+global.save_oindex[? "obj_enemy_christmas_snowman"]         = 26;
+global.save_oname [? 26]                                    = "obj_enemy_christmas_snowman";
+global.save_oindex[? "obj_enemy_christmas_gingerbread_man"] = 27;
+global.save_oname [? 27]                                    = "obj_enemy_christmas_gingerbread_man";
+global.save_oindex[? "obj_enemy_christmas_reindeer"]        = 28;
+global.save_oname [? 28]                                    = "obj_enemy_christmas_reindeer";
+
+// Sanity check
+var i = 0;
+while (object_exists(i)) {
+	if (object_is_ancestor(i, obj_save_group)) {
+		var oname = object_get_name(i);
+		if (!ds_map_exists(global.save_oindex, oname)) {
+			show_debug_message("WARNING: object	name \"" + string(oname) + "\" (object_index=" + string(i) + ") not found in global.save_oindex!");
+		}
+	}
+	i++;
+}
+
+#endregion
+
+#region Save Sprite Map
+
+global.save_sindex = ds_map_create();
+global.save_sname  = ds_map_create();
+global.save_sindex [? "none"]			                  = -1;
+global.save_sname  [? -1]                                 = "none";
+global.save_sindex [? "spr_evilflame"]                    = 0;
+global.save_sname  [? 0]                                  = "spr_evilflame";
+global.save_sindex [? "spr_emerald"]                      = 1;
+global.save_sname  [? 1]                                  = "spr_emerald";
+global.save_sindex [? "spr_scootomik"]                    = 2;
+global.save_sname  [? 2]                                  = "spr_scootomik";
+global.save_sindex [? "spr_evilflame_shooting"]           = 3;
+global.save_sname  [? 3]                                  = "spr_evilflame_shooting";
+global.save_sindex [? "spr_emerald_shooting"]             = 4;
+global.save_sname  [? 4]                                  = "spr_emerald_shooting";
+global.save_sindex [? "spr_scootomik_shooting"]           = 5;
+global.save_sname  [? 5]                                  = "spr_scootomik_shooting";
+global.save_sindex [? "spr_evilflame_charging"]           = 6;
+global.save_sname  [? 6]                                  = "spr_evilflame_charging";
+global.save_sindex [? "spr_emerald_charging"]             = 7;
+global.save_sname  [? 7]                                  = "spr_emerald_charging";
+global.save_sindex [? "spr_scootomik_charging"]           = 8;
+global.save_sname  [? 8]                                  = "spr_scootomik_charging";
+global.save_sindex [? "spr_evilflame_active_charge"]      = 9;
+global.save_sname  [? 9]                                  = "spr_evilflame_active_charge";
+global.save_sindex [? "spr_emerald_active_charge"]        = 10;
+global.save_sname  [? 10]                                 = "spr_emerald_active_charge";
+global.save_sindex [? "spr_scootomik_active_charge"]      = 11;
+global.save_sname  [? 11]                                 = "spr_scootomik_active_charge";
+global.save_sindex [? "spr_evilflame_hitbox"]             = 12;
+global.save_sname  [? 12]                                 = "spr_evilflame_hitbox";
+global.save_sindex [? "spr_emerald_hitbox"]               = 13;
+global.save_sname  [? 13]                                 = "spr_emerald_hitbox";
+global.save_sindex [? "spr_scootomik_hitbox"]             = 14;
+global.save_sname  [? 14]                                 = "spr_scootomik_hitbox";
+global.save_sindex [? "spr_evilflame_bullet"]             = 15;
+global.save_sname  [? 15]                                 = "spr_evilflame_bullet";
+global.save_sindex [? "spr_emerald_bullet"]               = 16;
+global.save_sname  [? 16]                                 = "spr_emerald_bullet";
+global.save_sindex [? "spr_scootomik_bullet"]             = 17;
+global.save_sname  [? 17]                                 = "spr_scootomik_bullet";
+global.save_sindex [? "spr_evilflame_frag"]               = 18;
+global.save_sname  [? 18]                                 = "spr_evilflame_frag";
+global.save_sindex [? "spr_emerald_frag"]                 = 19;
+global.save_sname  [? 19]                                 = "spr_emerald_frag";
+global.save_sindex [? "spr_scootomik_frag"]               = 20;
+global.save_sname  [? 20]                                 = "spr_scootomik_frag";
+global.save_sindex [? "spr_evilflame_charge"]             = 21;
+global.save_sname  [? 21]                                 = "spr_evilflame_charge";
+global.save_sindex [? "spr_emerald_charge"]               = 22;
+global.save_sname  [? 22]                                 = "spr_emerald_charge";
+global.save_sindex [? "spr_scootomik_charge"]             = 23;
+global.save_sname  [? 23]                                 = "spr_scootomik_charge";
+global.save_sindex [? "spr_evilflame_ultimate"]           = 24;
+global.save_sname  [? 24]                                 = "spr_evilflame_ultimate";
+global.save_sindex [? "spr_evilflame_ultimate_shooting"]  = 25;
+global.save_sname  [? 25]                                 = "spr_evilflame_ultimate_shooting";
+global.save_sindex [? "spr_evilflame_ultimate_charging"]  = 26;
+global.save_sname  [? 26]                                 = "spr_evilflame_ultimate_charging";
+global.save_sindex [? "spr_evilflame_fury"]               = 27;
+global.save_sname  [? 27]                                 = "spr_evilflame_fury";
+global.save_sindex [? "spr_evilflame_fury_shooting"]      = 28;
+global.save_sname  [? 28]                                 = "spr_evilflame_fury_shooting";
+global.save_sindex [? "spr_evilflame_fury_charging"]      = 29;
+global.save_sname  [? 29]                                 = "spr_evilflame_fury_charging";
+global.save_sindex [? "spr_evilflame_fury_charge_hitbox"] = 30;
+global.save_sname  [? 30]                                 = "spr_evilflame_fury_charge_hitbox";
+global.save_sindex [? "spr_emerald_ultimate_center"]      = 31;
+global.save_sname  [? 31]                                 = "spr_emerald_ultimate_center";
+global.save_sindex [? "spr_emerald_ultimate_flow"]        = 32;
+global.save_sname  [? 32]                                 = "spr_emerald_ultimate_flow";
+global.save_sindex [? "spr_scootomik_ultimate_overlay"]   = 33;
+global.save_sname  [? 33]                                 = "spr_scootomik_ultimate_overlay";
+global.save_sindex [? "spr_scootomik_ultimate_throttle"]  = 34;
+global.save_sname  [? 34]                                 = "spr_scootomik_ultimate_throttle";
+global.save_sindex [? "spr_rocket_elf"]                   = 35;
+global.save_sname  [? 35]                                 = "spr_rocket_elf";
+global.save_sindex [? "spr_snowman"]                      = 36;
+global.save_sname  [? 36]                                 = "spr_snowman";
+global.save_sindex [? "spr_crow"]                         = 37;
+global.save_sname  [? 37]                                 = "spr_crow";
+global.save_sindex [? "spr_reindeer"]                     = 38;
+global.save_sname  [? 38]                                 = "spr_reindeer";
+global.save_sindex [? "spr_gingerbread_man"]              = 39;
+global.save_sname  [? 39]                                 = "spr_gingerbread_man";
+global.save_sindex [? "spr_snowball"]                     = 40;
+global.save_sname  [? 40]                                 = "spr_snowball";
+global.save_sindex [? "spr_bolt"]                         = 41;
+global.save_sname  [? 41]                                 = "spr_bolt";
+global.save_sindex [? "spr_laser"]                        = 42;
+global.save_sname  [? 42]                                 = "spr_laser";
+// 43-96
+global.save_sindex [? "spr_present"]                      = 97;
+global.save_sname  [? 97]                                 = "spr_present";
+global.save_sindex [? "spr_ultimate"]                      = 98;
+global.save_sname  [? 98]                                 = "spr_ultimate";
+// 99-104
+global.save_sindex [? "spr_explosion"]                    = 105;
+global.save_sname  [? 105]                                = "spr_explosion";
+// 106-108
+global.save_sindex [? "part_square"]                      = 109;
+global.save_sname  [? 109]                                = "part_square";
+global.save_sindex [? "part_line"]                        = 110;
+global.save_sname  [? 110]                                = "part_line";
+global.save_sindex [? "part_star"]                        = 111;
+global.save_sname  [? 111]                                = "part_star";
+global.save_sindex [? "part_ascii"]                       = 112;
+global.save_sname  [? 112]                                = "part_ascii";
+
+// Sanity check (does NOT detect all necessary sprites!)
+// It's possible that some objects use sprites that are never set as
+// the starting sprite and thus are inaccessible via object_get_sprite().
+var i = 0;
+while (object_exists(i)) {
+	if (object_is_ancestor(i, obj_save_group)) {
+		var sindex = object_get_sprite(i);
+		if (sindex == -1) { i++; continue; }
+		var sname  = sprite_get_name(sindex);
+		if (!ds_map_exists(global.save_sindex, sname)) {
+			show_debug_message("WARNING: sprite	name \"" + string(sname) + "\" (sprite_index=" + string(sindex) + ") not found in global.save_sindex!");
+		}
+	}
+	i++;
+}
 
 #endregion
 

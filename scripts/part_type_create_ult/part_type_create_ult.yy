@@ -1,8 +1,8 @@
 {
-    "id": "e51875a8-d8bb-4612-876e-bc935e6381fd",
+    "id": "f23c6adf-9061-4857-b35c-3161fbadd767",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "part_type_remove_pro",
+    "name": "part_type_create_ult",
     "IsCompatibility": false,
     "IsDnD": false
 }

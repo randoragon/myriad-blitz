@@ -28,7 +28,7 @@ if (f == 0 && global.gpspeed != 0) {
 			image_angle = direction;
 		}
 		if (real_step()) {
-			part_type_spawn_ult(PART_SYSTEM_CHARGE, global.charge_part[0], 3, x - 30, y - 30, x + 30, y + 30, "ellipse", "linear", 1.5);
+			part_type_spawn_ult(PART_SYSTEM_CHARGE, PART_TYPE_P_EVILFLAME_CHARGE, 3, x - 30, y - 30, x + 30, y + 30, "ellipse", "linear", 1.5);
 		}
 		if (place_meeting(x, y, obj_enemy) && instance_place(x, y, obj_enemy).hp > 0) {
 			with (instance_place(x, y, obj_enemy)) {
@@ -65,7 +65,7 @@ if (f == 0 && global.gpspeed != 0) {
 			image_angle = direction;
 		}
 		if (real_step()) {
-			part_type_spawn_ult(PART_SYSTEM_CHARGE, global.charge_part[1], 3, x - 6, y - 6, x + 6, y + 6, "ellipse", "linear", 1);
+			part_type_spawn_ult(PART_SYSTEM_CHARGE, PART_TYPE_P_EVILFLAME_FURY_CHARGE, 3, x - 6, y - 6, x + 6, y + 6, "ellipse", "linear", 1);
 		}
 		if (place_meeting(x, y, obj_enemy) && instance_place(x, y, obj_enemy).hp > 0) {
 			with (instance_place(x, y, obj_enemy)) {

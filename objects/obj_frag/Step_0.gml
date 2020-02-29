@@ -10,23 +10,25 @@ if (global.loading) { exit; }
 
 switch(f) {
 	case 0:
+		// Evilflame
 	    switch(e) {
 		    case 0:
 			    vspeed1 += vacc * sqr(global.gpspeed);
-			    if (real_step()) { part_type_spawn_ult(PART_SYSTEM_FRAG, global.frag_part[0], 2, x, y, x, y, "square", "linear", 1); }
+			    if (real_step()) { part_type_spawn_ult(PART_SYSTEM_FRAG, PART_TYPE_P_EVILFLAME_FRAG, 2, x, y, x, y, "square", "linear", 1); }
 		    break;
 		    case 1:
-				if (real_step()) { part_type_spawn_ult(PART_SYSTEM_FRAG, global.frag_part[1], 2, x, y, x, y, "square", "linear", 1); }
+				if (real_step()) { part_type_spawn_ult(PART_SYSTEM_FRAG, PART_TYPE_P_EVILFLAME_CHARGE_RING, 2, x, y, x, y, "square", "linear", 1); }
 		    break;
 		    case 2:
 			    speed1    += random_range(-0.2, 0.2);
 			    direction += random_range(-2, 2);
-			    if (real_step()) { part_type_spawn_ult(PART_SYSTEM_FRAG, global.frag_part[2], 2, x, y, x, y, "square", "linear", 1); }
+			    if (real_step()) { part_type_spawn_ult(PART_SYSTEM_FRAG, PART_TYPE_P_EVILFLAME_FURY_FRAG, 2, x, y, x, y, "square", "linear", 1); }
 		    break;
 	    }
 	    image_angle += 10 * global.gpspeed;
 	break;
 	case 1:
+		// Emerald
 	    if (!instance_exists(obj_emerald_ultimate)) {
 		    if (enemyharm < 1) {
 				enemyharm = min(enemyharm + (0.08 * global.gpspeed), 1);
@@ -44,8 +46,8 @@ switch(f) {
 			}
 	    }
 	    if (real_step()) {
-	        part_type_edit_ult(global.frag_part[0], "angle", image_angle, image_angle, 0, 0);
-	        part_type_spawn_ult(PART_SYSTEM_FRAG, global.frag_part[0], 2, x, y, x, y, "square", "linear", 1);
+	        part_type_edit_ult(PART_TYPE_P_EMERALD_FRAG, "angle", image_angle, image_angle, 0, 0);
+	        part_type_spawn_ult(PART_SYSTEM_FRAG, PART_TYPE_P_EMERALD_FRAG, 2, x, y, x, y, "square", "linear", 1);
 	    }
 	    image_angle = direction;
 	break;

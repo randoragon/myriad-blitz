@@ -1,15 +1,14 @@
-/// @description part_type_gravity_pro(part, speed, acceleration, dir_min, dir_max)
-/// @param part
+/// @description part_type_gravity_pro(part_id, speed, acceleration, dir_min, dir_max)
+/// @param part_id
 /// @param speed
 /// @param acceleration
 /// @param dir_min
 /// @param dir_max
 
-var grid = global.part_type_pro_grid[0];
-var a    = argument[0];
-var b    = 22;
+var part = global.part_type[argument[0]];
+var a = 22;
 
-grid[# a, b++] = argument[1];
-grid[# a, b++] = argument[2];
-grid[# a, b++] = argument[3];
-grid[# a, b]   = argument[4];
+part[| a++] = argument[1];
+part[| a++] = argument[2];
+part[| a++] = argument[3];
+part[| a]   = argument[4];

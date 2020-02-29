@@ -1,5 +1,5 @@
-/// @description part_type_edit_ult(part, trait, val1, ...)
-/// @param part
+/// @description part_type_edit_ult(part_id, trait, val1, ...)
+/// @param part_id
 /// @param trait
 /// @param val1
 /// @param ...
@@ -16,19 +16,19 @@
  * "alpha" (a, incr)
  */
 
-var source = global.part_type_ult_grid[0];
 var part   = argument[0];
+var source = global.part_type[part];
 var a      = argument[2];
 
 if (argument_count > 4) { var c = argument[4]; }
 if (argument_count > 3) { var b = argument[3]; }
 
 switch(argument[1]) {
-    case "sprite"     : source[# part, 0]  = a; break;
-    case "image_index": source[# part, 1]  = a; break;
-    case "size"       : source[# part, 2]  = a; source[# part, 3]  = b; source[# part, 4] = c; break;
-    case "angle"      : source[# part, 5]  = a; source[# part, 6]  = b; source[# part, 7] = c; break;
-    case "blend_mode" : source[# part, 8]  = a; break;
-    case "color"      : source[# part, 9]  = a; break;
-    case "alpha"      : source[# part, 10] = a; source[# part, 11] = b; break;
+    case "sprite"     : source[| 0]  = a; break;
+    case "image_index": source[| 1]  = a; break;
+    case "size"       : source[| 2]  = a; source[| 3]  = b; source[| 4] = c; break;
+    case "angle"      : source[| 5]  = a; source[| 6]  = b; source[| 7] = c; break;
+    case "blend_mode" : source[| 8]  = a; break;
+    case "color"      : source[| 9]  = a; break;
+    case "alpha"      : source[| 10] = a; source[| 11] = b; break;
 }

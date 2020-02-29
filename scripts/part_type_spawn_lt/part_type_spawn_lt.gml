@@ -1,6 +1,6 @@
-/// @description part_type_spawn_lt(system, part, spawn_slot, xmin, ymin, xmax, ymax, shape, distr, amount)
+/// @description part_type_spawn_lt(system, part_id, spawn_slot, xmin, ymin, xmax, ymax, shape, distr, amount)
 /// @param system
-/// @param part
+/// @param part_id
 /// @param spawn_slot
 /// @param xmin
 /// @param ymin
@@ -22,11 +22,11 @@
  * THERE IS ONLY ONE SPAWN SLOT LIST FOR ALL **LITE** PARTICLES
  */
 
-var grid         = argument[0];
+var grid = argument[0];
 if (grid[# 0, 4] != -1 && grid[# 0, 4] <= part_system_count_lt(grid)) { exit; }
-var source       = global.part_type_lt_grid[0];
-var slot_list    = global.part_type_lt_grid[1];
-var part         = argument[1];
+var slot_list = global.part_type_lt_slots;
+var part      = argument[1];
+var source	  = global.part_type[part];
 
 var xmin = argument[3];
 var ymin = argument[4];
@@ -36,8 +36,8 @@ var ymax = argument[6];
 if (argument[9] % 1 != 0) {
     // create or resize the current slot_list for further calculations
     if (!ds_exists(slot_list, ds_type_list)) {
-        global.part_type_lt_grid[1] = ds_list_create();
-        slot_list                   = global.part_type_lt_grid[1];
+        global.part_type_lt_slots = ds_list_create();
+        slot_list                   = global.part_type_lt_slots;
         slot_list[| argument[2]]    = argument[9];
     } else if (ds_list_size(slot_list) < argument[2] + 1 || is_undefined(slot_list[| argument[2]])) {
         slot_list[| argument[2]] =  argument[9];
@@ -72,17 +72,17 @@ repeat(part_count) {
     coords = random_coords(xmin, ymin, xmax, ymax, argument[7], argument[8]);
     
     grid[# a, 0] = part; // part_id
-    grid[# a, 1] = source[# part, 1]; // subimg
-    life         = irandom_range(source[# part, 2], source[# part, 3]);
+    grid[# a, 1] = source[| 1]; // subimg
+    life         = irandom_range(source[| 2], source[| 3]);
     grid[# a, 2] = life; // life
     grid[# a, 3] = life; // life_start
-    grid[# a, 4] = random_range(source[# part, 4], source[# part, 5]); // size
-    grid[# a, 5] = irandom_range(source[# part, 7], source[# part, 8]); // angle
-    grid[# a, 6] = random_range(source[# part, 11], source[# part, 12]); // direction
-    grid[# a, 7] = random_range(source[# part, 13], source[# part, 14]); // speed
+    grid[# a, 4] = random_range(source[| 4], source[| 5]); // size
+    grid[# a, 5] = irandom_range(source[| 7], source[| 8]); // angle
+    grid[# a, 6] = random_range(source[| 11], source[| 12]); // direction
+    grid[# a, 7] = random_range(source[| 13], source[| 14]); // speed
     grid[# a, 8] = coords[0]; // x
     grid[# a, 9] = coords[1]; // y
-    if (source[# part, 10] == 1) {
+    if (source[| 10] == 1) {
         grid[# a, 10] = choose(1, -1);
     } else {
         grid[# a, 10] = 0; // rotation_dir

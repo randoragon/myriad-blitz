@@ -116,85 +116,47 @@ if (phase == 1) {
 	            line[12] = data + separator;
 	            progress = 9;
 	        break;
-	        case 9: //particle types, spawn slots, type pointers
-	            if (ds_exists(global.part_type_pro_grid[0], ds_type_grid)) {
-	                data = ds_grid_export(global.part_type_pro_grid[0]);
-	            } else {
-	                data = "";
-	            }
-	            line[13] = data + separator;
-	            progress = 10;
-	        break;
-	        case 10:
-	            if (global.save_particles && ds_exists(global.part_type_pro_grid[1], ds_type_list)) {
-	                data = ds_list_write(global.part_type_pro_grid[1]);
+	        case 9: // particle spawn slots
+	            if (global.save_particles && ds_exists(global.part_type_pro_slots, ds_type_list)) {
+	                data = ds_list_write(global.part_type_pro_slots);
 	            } else {
 	                data = "";
 	            }
 	            line[14] = data + separator;
-	            progress = 11;
+	            progress = 10;
 	        break;
-	        case 11:
-	            if (ds_exists(global.part_type_lt_grid[0], ds_type_grid)) {
-	                data = ds_grid_export(global.part_type_lt_grid[0]);
-	            } else {
-	                data = "";
-	            }
-	            line[15] = data + separator;
-	            progress = 12;
-	        break;
-	        case 12:
-	            if (global.save_particles && ds_exists(global.part_type_lt_grid[1], ds_type_list)) {
-	                data = ds_list_write(global.part_type_lt_grid[1]);
+	        case 10:
+	            if (global.save_particles && ds_exists(global.part_type_lt_slots, ds_type_list)) {
+	                data = ds_list_write(global.part_type_lt_slots);
 	            } else {
 	                data = "";
 	            }
 	            line[16] = data + separator;
-	            progress = 13;
+	            progress = 11;
 	        break;
-	        case 13:
-	            if (ds_exists(global.part_type_ult_grid[0], ds_type_grid)) {
-	                data = ds_grid_export(global.part_type_ult_grid[0]);
-	            } else {
-	                data = "";
-	            }
-	            line[17] = data + separator;
-	            progress = 14;
-	        break;
-	        case 14:
-	            if (global.save_particles && ds_exists(global.part_type_ult_grid[1], ds_type_list)) {
-	                data = ds_list_write(global.part_type_ult_grid[1]); 
+	        case 11:
+	            if (global.save_particles && ds_exists(global.part_type_ult_slots, ds_type_list)) {
+	                data = ds_list_write(global.part_type_ult_slots); 
 	            } else {
 	                data = "";
 	            }
 	            line[18] = data + separator;
-	            progress = 15;
+	            progress = 12;
 	        break;
-	        case 15:
-	            data = string(global.player_part[0]) + ";"; //disperse particles are always present so there's no need to check
-	            switch(global.chrsel) {
-		            case 0:
-		                data += string(global.player_part[1]) + ";" + string(global.player_part[2]) + ";" + 
-		                string(global.frag_part[0]) + ";" + string(global.frag_part[1]) + ";" + string(global.frag_part[2]) + ";" + 
-		                string(global.charge_part[0]) + ";" + string(global.charge_part[1]) + ";" + 
-		                string(global.ultimate_part[0]) + ";";
-		            break;
-		            case 1:
-		                data += string(global.frag_part[0]) + ";";
-		            break;
-	            }
-	            line[19] = data + separator;
-	            progress = 16;
-	        break;
-	        case 16: // instances and inst_count
+	        case 12: // instances and inst_count
 	            if (instance_exists(inst_id[inst_index])) {
 	                with (inst_id[inst_index]) {
+						
+						// security checks
+						if (sprite_index != -1 && !ds_map_exists(global.save_sindex, sprite_get_name(sprite_index))) {
+							show_debug_message("FATAL ERROR: sprite name \"" + sprite_get_name(sprite_index) + "\" (sprite_index=" + string(sprite_index) + ") is not mapped in global.save_sindex!");
+						}
+						
 	                    // basic instance variables
-						if (is_undefined(ds_map_find_value(global.save_index, object_get_name(object_index)))) { show_message("GOTCHA BITCH! - " + string(id) + " " + string(object_get_name(object_index))); }
 	                    other.data = 
-	                    string(global.save_index[? object_get_name(object_index)]) + ";" + 
+	                    string(global.save_oindex[? object_get_name(object_index)]) + ";" + 
 	                    string(id) + ";" + 
-	                    string(sprite_index) + ";" + 
+	                    string((sprite_index != -1)? global.save_sindex[? sprite_get_name(sprite_index)] : -1) + ";" + 
 	                    string(image_index) + ";" + 
 	                    string(image_speed) + ";" + 
 	                    string(prev_image_speed) + ";" + 
@@ -208,8 +170,8 @@ if (phase == 1) {
 	                    string(direction) + ";" + 
 	                    string(x) + ";" + string(y) + ";" + 
 	                    string(xprevious) + ";" + string(yprevious) + ";" + 
-	                    string(xstart) + ";" + string(ystart) + ";"
-                    
+	                    string(xstart) + ";" + string(ystart) + ";";
+						
 	                    if (object_is_ancestor(object_index, obj_knockback_physics)) {
 	                        other.data += 
 	                        string(hkb) + ";" + string(vkb) + ";" + 
@@ -315,7 +277,7 @@ if (phase == 1) {
 		                    case obj_eprojectile:
 		                        other.data += 
 		                        string(spawn) + ";" + string(f) + ";" + string(acc) + ";" + string(rot) + ";" + string(pdmg) + ";" + string(ppen) + ";" + string(pkb) + ";" + 
-		                        string(lifespan) + ";";
+		                        string(lifespan) + ";" + string(e) + ";";
 		                    break;
 		                    case obj_oscillator:
 		                        other.data += 
@@ -374,8 +336,8 @@ if (phase == 1) {
                     
 	                    //write eventual ds data
 	                    switch(object_index) {
-		                    case obj_player:case obj_wrap_helper:case obj_projectile:case obj_frag:case obj_charge:
-		                    case obj_eprojectile:case obj_present:case obj_explosion:case obj_debris:
+		                    case obj_player: case obj_wrap_helper: case obj_projectile: case obj_frag: case obj_charge:
+		                    case obj_eprojectile: case obj_present: case obj_explosion: case obj_debris:
 		                        if (ds_exists(afterimage_ds_grid, ds_type_grid)) {
 		                            other.data = ds_grid_export(afterimage_ds_grid);
 		                        } else {
@@ -398,7 +360,7 @@ if (phase == 1) {
 	            }
 	            inst_index += 1;
 	            if (inst_index == array_length_1d(inst_id)) {
-	                progress = 17;
+	                progress = 13;
 	            }
 	        break;
         }

@@ -1,16 +1,24 @@
-/// @description part_type_count_lt(part, system)
-/// @param part
-/// @param system
+/// @description part_type_count_lt(part_id, 'part_system)
+/// @param part_id
+/// @param part_system
 
 // Returns how many of one particle type are in a system.
-// Works on all part systems.
 
-var grid  = argument[1];
-var part  = argument[0];
+// This function works for all particle systems and types (pro, lt, ult).
+
+// If no particle system is given, all are checked.
+
 var count = 0;
 
-for (var i = 1; i < ds_grid_width(grid); i++) {
-    if (grid[# i, 0] == part) { count++; }
+if (argument_count == 2) {
+	var grid = argument[1];
+	for (var i = 1; i < ds_grid_width(argument[1]); i++) {
+	    if (grid[# i, 0] == argument[0]) { count++; }
+	}
+} else {
+	for (var i = 0; i < array_length_1d(global.part_system); i++) {
+		count += part_type_count_lt(argument[0], global.part_system[i]);
+	}
 }
 
 return count;

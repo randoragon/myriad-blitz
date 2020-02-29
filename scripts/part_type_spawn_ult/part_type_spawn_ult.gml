@@ -1,6 +1,6 @@
-/// @description part_type_spawn_ult(system, part, spawn_slot, xmin, ymin, xmax, ymax, shape, distr, amount)
+/// @description part_type_spawn_ult(system, part_id, spawn_slot, xmin, ymin, xmax, ymax, shape, distr, amount)
 /// @param system
-/// @param part
+/// @param part_id
 /// @param spawn_slot
 /// @param xmin
 /// @param ymin
@@ -22,11 +22,11 @@
  * THERE IS ONLY ONE SPAWN SLOT LIST FOR ALL **LITE** PARTICLES
  */
 
-var grid         = argument[0];
+var grid = argument[0];
 if (grid[# 0, 4] != -1 && grid[# 0, 4] <= part_system_count_ult(grid)) { exit; }
-var source       = global.part_type_ult_grid[0];
-var slot_list    = global.part_type_ult_grid[1];
-var part         = argument[1];
+var slot_list = global.part_type_ult_slots;
+var part      = argument[1];
+var source	  = global.part_type[part];
 
 var xmin = argument[3];
 var ymin = argument[4];
@@ -36,8 +36,8 @@ var ymax = argument[6];
 if (argument[9] % 1 != 0) {
     // create or resize the current slot_list for further calculations
     if (!ds_exists(slot_list, ds_type_list)) {
-        global.part_type_ult_grid[1] = ds_list_create();
-        slot_list                    = global.part_type_ult_grid[1];
+        global.part_type_ult_slots = ds_list_create();
+        slot_list                    = global.part_type_ult_slots;
         slot_list[| argument[2]]     = argument[9];
     } else if (ds_list_size(slot_list) < argument[2] + 1 || is_undefined(slot_list[| argument[2]])) {
         slot_list[| argument[2]] =  argument[9];
@@ -72,9 +72,9 @@ repeat (part_count) {
     coords = random_coords(xmin, ymin, xmax, ymax, argument[7], argument[8]);
     
     grid[# a, 0] = part; // part_id
-    grid[# a, 1] = random_range(source[# part, 2], source[# part, 3]); // size
-    grid[# a, 2] = random_range(source[# part, 5], source[# part, 6]); // angle
-    grid[# a, 3] = source[# part, 10]; // alpha
+    grid[# a, 1] = random_range(source[| 2], source[| 3]); // size
+    grid[# a, 2] = random_range(source[| 5], source[| 6]); // angle
+    grid[# a, 3] = source[| 10]; // alpha
     grid[# a, 4] = coords[0]; // x
     grid[# a, 5] = coords[1]; // y
 }

@@ -103,7 +103,7 @@ if (global.gpspeed != 0) {
 				if (real_step()) {
 					x = jitterx + random_range(-jittervalue, jittervalue);
 					y = jittery + random_range(-jittervalue, jittervalue);
-					part_type_spawn_lt(PART_SYSTEM_ENEMY, global.enemy_part[1], 0.5, x, y - 40, x, y - 40, ps_shape_line, ps_distr_linear, 1);
+					part_type_spawn_lt(PART_SYSTEM_ENEMY, PART_TYPE_E_GINGERBREAD_MAN_SUPER, 0.5, x, y - 40, x, y - 40, ps_shape_line, ps_distr_linear, 1);
 				}
 				if ((image_index) >= 4 && (image_index) < 5 && real_step() && !superattack_projectileshot) {
 					play_sfx(sfx_gingerbread_man_shoot, sound_priority.enemy_shoot, 0, global.sound_gpspeed * 100);
@@ -148,7 +148,7 @@ if (global.gpspeed != 0) {
 
 if (ds_map_exists(loot, "ultimate")) {
     if (real_step()) {
-        part_type_spawn_lt(PART_SYSTEM_ENEMY, global.enemy_part[0], 5, x - sprite_xoffset, y - sprite_yoffset, x - sprite_xoffset + sprite_width, y - sprite_yoffset + sprite_height, "ellipse", "linear", 1);
+        part_type_spawn_lt(PART_SYSTEM_ENEMY, PART_TYPE_E_ULTIMATE_LOOT, 5, x - sprite_xoffset, y - sprite_yoffset, x - sprite_xoffset + sprite_width, y - sprite_yoffset + sprite_height, "ellipse", "linear", 1);
     }
 }
 

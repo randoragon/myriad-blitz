@@ -267,6 +267,20 @@
             "value": "0",
             "varName": "new_seed",
             "varType": 0
+        },
+        {
+            "id": "df33efcc-ad16-46b2-bf5e-0bdd01a46b2a",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "\"\"",
+            "varName": "slotversion",
+            "varType": 2
         }
     ],
     "solid": false,

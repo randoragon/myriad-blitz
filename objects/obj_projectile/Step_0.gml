@@ -34,7 +34,7 @@ switch(f) {
 		    speed1 = max(speed1 - (0.08 * global.gpspeed), 1);
 		    direction += random_range(-2, 2) * global.gpspeed;
 		    if (real_step()) {
-				part_type_spawn_ult(PART_SYSTEM_FRAG, global.frag_part[2], 6, x, y, x, y, "square", "linear", 1);
+				part_type_spawn_ult(PART_SYSTEM_FRAG, PART_TYPE_P_EVILFLAME_FURY_FRAG, 6, x, y, x, y, "square", "linear", 1);
 			}
 	    break;
 	    }

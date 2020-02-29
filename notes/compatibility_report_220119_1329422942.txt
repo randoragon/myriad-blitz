@@ -116,8 +116,8 @@ Converting GML script: ${project_dir}\scripts\part_system_remove_pro\part_system
 Converted description /// @description part_system_remove_pro(system)
 /// @param system
 
-Converting GML script: ${project_dir}\scripts\part_type_setup_pro\part_type_setup_pro.gml
-Converted description /// @description part_type_setup_pro(sprite,subimg,imgspd,life_min,life_max);
+Converting GML script: ${project_dir}\scripts\part_type_create_pro\part_type_create_pro.gml
+Converted description /// @description part_type_create_pro(sprite,subimg,imgspd,life_min,life_max);
 /// @param sprite
 /// @param subimg
 /// @param imgspd
@@ -242,8 +242,8 @@ Converting GML script: ${project_dir}\scripts\part_system_remove_lt\part_system_
 Converted description /// @description part_system_remove_lt(system)
 /// @param system
 
-Converting GML script: ${project_dir}\scripts\part_type_setup_lt\part_type_setup_lt.gml
-Converted description /// @description part_type_setup_lt(sprite,subimg,life_min,life_max);
+Converting GML script: ${project_dir}\scripts\part_type_create_lt\part_type_create_lt.gml
+Converted description /// @description part_type_create_lt(sprite,subimg,life_min,life_max);
 /// @param sprite
 /// @param subimg
 /// @param life_min
@@ -354,8 +354,8 @@ Converting GML script: ${project_dir}\scripts\part_system_remove_ult\part_system
 Converted description /// @description part_system_remove_ult(system)
 /// @param system
 
-Converting GML script: ${project_dir}\scripts\part_type_setup_ult\part_type_setup_ult.gml
-Converted description /// @description part_type_setup_ult(sprite,subimg);
+Converting GML script: ${project_dir}\scripts\part_type_create_ult\part_type_create_ult.gml
+Converted description /// @description part_type_create_ult(sprite,subimg);
 /// @param sprite
 /// @param subimg
 

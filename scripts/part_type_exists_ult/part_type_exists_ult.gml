@@ -1,10 +1,21 @@
-/// @description part_type_exists_ult(part)
-/// @param part
+/// @description part_type_exists_ult(part_id, 'part_system)
+/// @param part_id
+/// @param part_system
 
-var grid = global.part_type_ult_grid[0];
+// Checks whether or not a given particle type exists,
+// i.e. is being updated and drawn to the screen.
 
-if (argument[0] != -1) {
-    return (ds_grid_width(grid) > argument[0] && grid[# argument[0], 0] != -1);
+// This function works for all particle systems and types (pro, lt, ult).
+
+// If no particle system is given, all are checked.
+
+if (argument_count == 2) {
+	return ds_grid_value_exists(argument[1], 1, 0, ds_grid_width(argument[1])-1, 0, argument[0]);
 } else {
-    return -1;
+	for (var i = 0; i < array_length_1d(global.part_system); i++) {
+		if (part_type_exists_ult(argument[0], global.part_system[i])) {
+			return TRUE;
+		}
+	}
+	return FALSE;
 }
