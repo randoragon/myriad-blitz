@@ -137,7 +137,8 @@ if (f == 8 && instance_exists(obj_player) && !global.loading) {
         draw_text_outline(GUI_X + 26, GUI_Y + 78, "CHARGE", 2, 2, color, 0, c_black);
     }
     
-    if (instance_exists(obj_evilflame_ultimate) && global.chrsel == 0) { // EVILFLAME'S DUAL CLONE ALTERNATIVE
+	// DUAL CLONE ALTERNATIVE
+    if (instance_exists(obj_evilflame_ultimate) && global.chrsel == PLAYER_EVILFLAME) {
         var target = obj_evilflame_ultimate;
         
         //HP Bar

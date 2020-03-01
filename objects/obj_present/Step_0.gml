@@ -48,7 +48,7 @@ if (!picked) {
 
 	// dual clone alternative
 	if (instance_exists(obj_evilflame_ultimate)) {
-		if (global.chrsel == 0) {
+		if (global.chrsel == PLAYER_EVILFLAME) {
 			var player_distance = distance_to_object(obj_evilflame_ultimate);
 			if (player_distance <= 50) {
 				x = home(x, obj_evilflame_ultimate.x, (50 - player_distance) / 25, 0);

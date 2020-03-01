@@ -58,12 +58,12 @@ if (place_meeting(x, y, obj_enemy) && instance_place(x, y, obj_enemy).hp > 0) {
     }
     //spawning frags
     var frag_e = 0;
-    if (global.chrsel == 0 && e == 2) {
+    if (global.chrsel == PLAYER_EVILFLAME && e == 2) {
         frag_e = 2;
-    } else if(global.chrsel == 2 && e == 1) {
+    } else if(global.chrsel == PLAYER_DER_SCOOTOMIK && e == 1) {
         frag_e = 1;
     }
-    spawn_bullet_ring(x, y, obj_frag,global.chrsel, frag_e, ee.id, spawn, irandom_range(floor(fmin), ceil(fmax)), 0);
+    spawn_bullet_ring(x, y, obj_frag, global.chrsel, frag_e, ee.id, spawn, irandom_range(floor(fmin), ceil(fmax)), 0);
     instance_destroy();
 }
 

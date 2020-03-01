@@ -8,7 +8,7 @@ if (global.loading) { exit; }
 
 #region Health bar
 
-if (hp > 0 && !obj_player.status_effect[7] && !obj_player.status_effect[8]) {
+if (hp > 0 && !STATUS_EFFECT_CURRENT_CRUSH && !STATUS_EFFECT_CHIP_TUNING) {
     surface_set_target(GUI_SURFACE);
     if (bar_extension == 0) {
         draw_set_color(c_black);

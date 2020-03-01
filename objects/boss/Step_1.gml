@@ -31,23 +31,27 @@ if (!global.loading) {
 #region global.shader_conditions Management
 
 if (room == rm_Main && instance_exists(obj_player) && !global.loading) {
-	global.shader_conditions=0;
+	global.shader_conditions = 0;
 
-//focus mode
-if (obj_player.focus_state!=0)
-	global.shader_conditions |= 1;
+	// focus mode
+	if (obj_player.focus_state != 0) {
+		global.shader_conditions |= 1;
+	}
 
-//ultimate activation
-if (instance_exists(obj_ultimate_activation) && obj_player.flash_clock <= 40)
-	global.shader_conditions |= 2;
+	// ultimate activation
+	if (instance_exists(obj_ultimate_activation) && obj_player.flash_clock <= 40) {
+		global.shader_conditions |= 2;
+	}
 
-//chip tuning
-if (obj_player.status_effect[8])
-	global.shader_conditions |= 4;
+	// chip tuning
+	if (STATUS_EFFECT_CHIP_TUNING) {
+		global.shader_conditions |= 4;
+	}
 	
-//current crush
-if (obj_player.status_effect[7])
-	global.shader_conditions |= 8;
+	// current crush
+	if (STATUS_EFFECT_CURRENT_CRUSH) {
+		global.shader_conditions |= 8;
+	}
 }
 
 #endregion

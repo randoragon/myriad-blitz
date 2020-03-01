@@ -89,6 +89,14 @@
 
 #endregion
 
+#region
+
+#macro PLAYER_EVILFLAME 0
+#macro PLAYER_EMERALD 1
+#macro PLAYER_DER_SCOOTOMIK 2
+
+#endregion
+
 #region Backwards Compatibility
 
 #macro VER1_1_1_BG_MENU0 1

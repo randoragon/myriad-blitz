@@ -170,10 +170,11 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 	            grabbed = 1;
 	            image_index = 1;
 	            play_sfx(sfx_button1, 0, 0);
+				var prev_chrsel = global.chrsel;
 	            global.chrsel = (global.chrsel == 0)? CHRCOUNT - 1 : global.chrsel - 1;
 	            scr_PlayerDataUpdate(global.chrsel);
 	            scr_PlayerGetData();
-	            scr_ParticlesUpdate();
+	            scr_ParticlesUpdate(prev_chrsel, global.chrsel);
 	            scr_LoreUpdate();
 				scr_Stats_Update(obj_statboard.button[0].show);
             }
@@ -184,10 +185,11 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
                 grabbed = 1;
                 image_index = 3;
                 play_sfx(sfx_button1, 0, 0);
+				var prev_chrsel = global.chrsel;
                 global.chrsel = (global.chrsel == CHRCOUNT - 1)? 0 : global.chrsel + 1;
                 scr_PlayerDataUpdate(global.chrsel);
                 scr_PlayerGetData();
-                scr_ParticlesUpdate();
+                scr_ParticlesUpdate(prev_chrsel, global.chrsel);
                 scr_LoreUpdate();
                 scr_Stats_Update(obj_statboard.button[0].show);
             }

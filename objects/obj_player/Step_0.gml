@@ -8,8 +8,8 @@ if (global.loading) { exit; }
 
 #region Stats control
 
-// Twilight fury stats check
-if (global.chrsel == 0) {
+// Twilight Fury stats check
+if (global.chrsel == PLAYER_EVILFLAME) {
 	if (global.uname == "DUAL CLONE" && TWILIGHT_FURY) {
 		global.uname = "TWILIGHT FURY";
 		global.utype = "SECRET BUFF";
@@ -56,17 +56,15 @@ var ctime_factor      = 1;
 var ccooldown_factor  = 1;
 var invtime_factor    = 1;
 
-//status: exhausted
-if (status_effect[0]) {
+if (STATUS_EFFECT_EXHAUSTED) {
     spd_factor        *= 0.5;
     acc_factor        *= 0.5;
     counteracc_factor *= 0.5;
 }
 
-//status: magic fatigue
-if (status_effect[1]) {
+if (STATUS_EFFECT_MAGIC_FATIGUE) {
     switch(global.chrsel) {
-	    case 1:
+	    case PLAYER_EMERALD:
 	        pdmg_factor  *= 0.5;
 	        sspd_factor  *= 0.8;
 	        fdmg_factor  *= 0.5;
@@ -76,22 +74,19 @@ if (status_effect[1]) {
     }
 }
 
-//status: paralyzed
-if (status_effect[3]) {
+if (STATUS_EFFECT_PARALYZED) {
     spd_factor        *= 0.2;
     acc_factor        *= 4;
     counteracc_factor *= 0.125;
 }
 
-//status: current crush
-if (status_effect[7]) {
+if (STATUS_EFFECT_CURRENT_CRUSH) {
     if (global.gpspeed != 0 && !audio_is_playing(sfx_emerald_ultimate_loop)) {
         play_sfx(sfx_emerald_ultimate_loop, sound_priority.emerald_ultimate_loop, 0, global.sound_gpspeed * 100);
     }
 }
 
-//status: chip tuning
-if (status_effect[8]) {
+if (STATUS_EFFECT_CHIP_TUNING) {
     bdmg_factor       *= sqrt(sqr(xv) + sqr(yv)) / spd;
     spd_factor        *= 2;
     acc_factor        *= 4;
@@ -102,8 +97,7 @@ if (status_effect[8]) {
     }
 }
 
-//status: twilight fury
-if (status_effect[9]) {
+if (STATUS_EFFECT_TWILIGHT_FURY) {
     maxhp_factor      *= 0.75;
     pspd_factor       *= 0.75;
     sacc_factor       *= 0.4;
@@ -119,8 +113,7 @@ if (status_effect[9]) {
     fdmg_factor       *= 1.5;
 }
 
-//status: berserk
-if (status_effect[10]) {
+if (STATUS_EFFECT_BERSERK) {
     bdmg_factor *= 1.25;
     pdmg_factor *= 1.25;
     cdmg_factor *= 1.25;
@@ -152,7 +145,7 @@ invtime    = global.invtime * invtime_factor;
 #region Focus mode
 
 var possible   = bool(room == rm_Main && global.gpspeed != 0 && global.state == 1);
-var allowed    = bool(!status_effect[4] && !status_effect[8] && !status_effect[10]);
+var allowed    = bool(!STATUS_EFFECT_DIZZY && !STATUS_EFFECT_CHIP_TUNING && !STATUS_EFFECT_BERSERK);
 if (possible) {
 	if (allowed) {
 		if (keyboard_check(global.keybind[5])) {
@@ -200,7 +193,7 @@ flash_clock -= (flash_clock > 0);
 
 image_scale(2 - global.transition, 2 - global.transition);
 var gpspd;
-if (status_effect[8] && global.gpspeed != 0) {
+if (STATUS_EFFECT_CHIP_TUNING && global.gpspeed != 0) {
 	gpspd = global.gpspeed / global.gpspeed_ultimate;
 } else {
     gpspd = global.gpspeed;
@@ -251,17 +244,17 @@ if (global.state == 1 && gpspd != 0) {
         }
     }
     
-    if (!(global.chrsel == 2 && instance_exists(obj_charge)) && gpspd != 0) {
+    if (!(global.chrsel == PLAYER_EMERALD && instance_exists(obj_charge)) && gpspd != 0) {
         image_angle = -2 * yv / gpspd;
     }
 
     gpspd = global.gpspeed;
-    var charge_sprite_lock = ((charge > 0 && artcharge == 0) || ((global.chrsel == 1 || global.chrsel == 2) && instance_exists(obj_charge)));
-    var can_shoot = (discharge > 0 || !mouse_check_button(mb_right)) && !charge_sprite_lock && !((global.chrsel == 1) && status_effect[2]);
+    var charge_sprite_lock = ((charge > 0 && artcharge == 0) || ((global.chrsel == PLAYER_EMERALD || global.chrsel == PLAYER_DER_SCOOTOMIK) && instance_exists(obj_charge)));
+    var can_shoot = (discharge > 0 || !mouse_check_button(mb_right)) && !charge_sprite_lock && !(global.chrsel == PLAYER_EMERALD && STATUS_EFFECT_SPELL_DRIED);
     if (can_shoot) {
         // is shooting event:
 		var is_shooting = (keyboard_check(global.keybind[4]) || (mouse_check_button(mb_left) && (!place_meeting(boss.x, boss.y, obj_button) || instance_place(boss.x, boss.y, obj_button).image_alpha == 0)));
-        if(is_shooting || status_effect[10]) {
+        if(is_shooting || STATUS_EFFECT_BERSERK) {
             if (evilflame_sprite_swap) {
                 if (sprite_index != spr_evilflame_ultimate_shooting) {
                     sprite_index = spr_evilflame_ultimate_shooting;
@@ -278,9 +271,20 @@ if (global.state == 1 && gpspd != 0) {
 				var xoffset, yoffset, xoffset2, yoffset2;
                 switch(global.chrsel)
                 {
-                    case 0: xoffset = 32 * image_xscale; yoffset = -7  * image_yscale; break;
-                    case 1: xoffset = 30 * image_xscale; yoffset = -19 * image_yscale; break;
-                    case 2: xoffset = 31 * image_xscale; yoffset = -17 * image_yscale; xoffset2 = -39 * image_xscale; yoffset2 = -4 * image_yscale; break;
+                    case PLAYER_EVILFLAME:
+						xoffset = 32 * image_xscale;
+						yoffset = -7 * image_yscale;
+					break;
+                    case PLAYER_EMERALD:
+						xoffset = 30 * image_xscale;
+						yoffset = -19 * image_yscale;
+					break;
+                    case PLAYER_DER_SCOOTOMIK:
+						xoffset = 31 * image_xscale;
+						yoffset = -17 * image_yscale;
+						xoffset2 = -39 * image_xscale;
+						yoffset2 = -4 * image_yscale;
+					break;
                 }
                 var angle = image_angle + point_direction(0, 0, xoffset, yoffset);
 				angle    %= 360;
@@ -292,17 +296,20 @@ if (global.state == 1 && gpspd != 0) {
                     xx = x;
                 }
                 var e = 0;
-                if (global.chrsel == 0 && status_effect[9]) {
+                if (global.chrsel == PLAYER_EVILFLAME && STATUS_EFFECT_TWILIGHT_FURY) {
                     e = 2;
                 }
                 spawn_bullet(xx + lengthdir_x(l, angle), y + lengthdir_y(l, angle), obj_projectile, global.chrsel, e, -1, id);
-                if (global.chrsel == 2) { //scootomik's second bullet
+				
+				// scootomik's second bullet
+                if (global.chrsel == PLAYER_DER_SCOOTOMIK) {
                     var angle = image_angle + point_direction(0, 0, xoffset2, yoffset2); angle %= 360;
                     var l     = sqrt(sqr(xoffset2) + sqr(yoffset2));
 					var is_helper_in_shooting_position = (x + xoffset2 < CANVAS_X && instance_exists(helper));
 					var xx = is_helper_in_shooting_position ? helper.x : x;
                     spawn_bullet(xx + lengthdir_x(l, angle), y + lengthdir_y(l, angle), obj_projectile, 2, 1, -1, id);
                 }
+				
                 shot += ceil((60 / sspd) / gpspd);
             } else {
                 shot--;
@@ -337,7 +344,7 @@ if (global.state == 1 && gpspd != 0) {
 
 #region Wrapping movement
 
-if (global.chrsel == 2 && global.state == 1) {
+if (global.chrsel == PLAYER_DER_SCOOTOMIK && global.state == 1) {
 	
     //teleport the player to the other side
     if (x + sprite_width-sprite_xoffset > CANVAS_XEND + (sprite_width / 2)) {
@@ -390,8 +397,8 @@ if (global.chrsel == 2 && global.state == 1) {
 
 if (global.gpspeed != 0 && global.state != 2 && real_step()) {
 	switch(global.chrsel) {
-		case 0:
-			var xoffset = -22; var yoffset = 1 - (2 * status_effect[9]);                   // this is the distance from the center of the sprite to the point from which the particles are supposed to pour out
+		case PLAYER_EVILFLAME:
+			var xoffset = -22; var yoffset = 1 - (2 * STATUS_EFFECT_TWILIGHT_FURY);        // this is the distance from the center of the sprite to the point from which the particles are supposed to pour out
 			var dis     = sqrt(sqr(xoffset * image_xscale) + sqr(yoffset * image_yscale)); // this is to calculate distance from the center of the sprite to the point from which the particles are supposed to pour out
 			var ang     = point_direction(0, 0, xoffset, yoffset) + image_angle;           // this is the angle between the center of the sprite and the particle point, player tilt included
 			var status  = STATUS_EFFECT_TWILIGHT_FURY;
@@ -411,8 +418,8 @@ if (global.gpspeed != 0 && global.state != 2 && real_step()) {
 if (global.state==1 && global.gpspeed!=0) {
 	if (artcharge == 1) { charge = ctime };
 	
-	var does_emerald_laser_exist = (global.chrsel == 1 && instance_exists(obj_charge));
-	var is_spell_dried = (global.chrsel == 1 && status_effect[2]);
+	var does_emerald_laser_exist = (global.chrsel == PLAYER_EMERALD && instance_exists(obj_charge));
+	var is_spell_dried = (global.chrsel == PLAYER_EMERALD && STATUS_EFFECT_SPELL_DRIED);
 	if (mouse_check_button(mb_right) && global.state == 1 && !does_emerald_laser_exist && !is_spell_dried) {
 		//charging
 		bar_opacity[2] = 5;
@@ -429,8 +436,8 @@ if (global.state==1 && global.gpspeed!=0) {
 		}
 	}
 
-	//launching charge
-	var does_emerald_laser_exist = (instance_exists(obj_charge) && (global.chrsel == 1));
+	// launching charge
+	var does_emerald_laser_exist = (instance_exists(obj_charge) && (global.chrsel == PLAYER_EMERALD));
 	if (mouse_check_button(mb_right) && charge > 0 && !does_emerald_laser_exist) {
 		if (charge >= ctime) {
 			cb = 1;
@@ -445,7 +452,7 @@ if (global.state==1 && global.gpspeed!=0) {
 		}
 	}
 
-	//resetting charging progress
+	// resetting charging progress
 	if (charge > 0 && !mouse_check_button(mb_right) && global.gpspeed != 0 && charge < ctime) {
 		charge = 0;
 		bar_opacity[2] = 0;
@@ -457,10 +464,10 @@ if (global.state==1 && global.gpspeed!=0) {
 			sprite_index = spr_evilflame + global.chrsel;
 	}
 
-	//spawning the charge
+	// spawning the charge
 	if (cb == 1) {
 		switch(global.chrsel) {
-			case 0:
+			case PLAYER_EVILFLAME:
 				cb = 0;
 				if (!evilflame_twilight_fury) {
 					knockback(10, 180 + image_angle, 1);
@@ -469,7 +476,7 @@ if (global.state==1 && global.gpspeed!=0) {
 					spawn_bullet(irandom_range(CANVAS_X, CANVAS_XEND), CANVAS_Y - 50, obj_charge, global.chrsel, 2, -1, id);
 				}
 			break;
-			case 2:
+			case PLAYER_DER_SCOOTOMIK:
 				cb = 0;
 				if (irandom(99) < 30) {
 					indicate(x, y, "FIZZLED!", 2, c_white, c_yellow);
@@ -492,11 +499,11 @@ if (global.state==1 && global.gpspeed!=0) {
 
 #region Ultimate activation
 
-//activation conditions and immediate effect
-var is_ultimate_cooldown  = status_effect[6];
-var is_evilflame_ultimate = (global.chrsel == 0 && (instance_exists(obj_evilflame_ultimate) || evilflame_twilight_fury));
-var is_emerald_ultimate   = (global.chrsel == 1 && instance_exists(obj_emerald_ultimate));
-var is_scootomik_ultimate = (global.chrsel == 2 && obj_player.status_effect[8]);
+// activation conditions and immediate effect
+var is_ultimate_cooldown  = STATUS_EFFECT_ULTIMATE_COOLDOWN;
+var is_evilflame_ultimate = (global.chrsel == PLAYER_EVILFLAME && (instance_exists(obj_evilflame_ultimate) || evilflame_twilight_fury));
+var is_emerald_ultimate   = (global.chrsel == PLAYER_EMERALD && instance_exists(obj_emerald_ultimate));
+var is_scootomik_ultimate = (global.chrsel == PLAYER_DER_SCOOTOMIK && STATUS_EFFECT_CHIP_TUNING);
 var are_all_ultimates_off = !is_evilflame_ultimate && !is_emerald_ultimate && !is_scootomik_ultimate;
 if (keyboard_check_pressed(global.keybind[6]) && ultcount > 0 && !is_ultimate_cooldown && are_all_ultimates_off && global.state == 1 && global.gpspeed != 0 && !instance_exists(obj_ultimate_activation)) {
     ultcount--;
@@ -504,24 +511,24 @@ if (keyboard_check_pressed(global.keybind[6]) && ultcount > 0 && !is_ultimate_co
     flash_clock = 50;
 }
 
-//actual execution start
+// actual execution start
 if (flash_clock == 40) {
     ultblink = 45;
-        //particle burst
+        // particle burst
         part_type_spawn_lt(PART_SYSTEM_PLAYERTOP, PART_TYPE_ULTIMATE_BURST, 0, x - sprite_xoffset, y - sprite_yoffset, x - sprite_xoffset + sprite_width, y - sprite_yoffset + sprite_height, "ellipse", "invgaussian", 100);
 		
-        if (global.chrsel == 0 && !TWILIGHT_FURY) {
-			//evilflame's dual clone's burst
+        if (global.chrsel == PLAYER_EVILFLAME && !TWILIGHT_FURY) {
+			// evilflame's dual clone's burst
 			part_type_spawn_lt(PART_SYSTEM_PLAYERTOP, PART_TYPE_ULTIMATE_BURST, 0, x - sprite_xoffset, -(y - sprite_yoffset) + room_height, x - sprite_xoffset + sprite_width, -(y - sprite_yoffset + sprite_height) + room_height, "ellipse", "invgaussian", 100);
-        } else if (global.chrsel == 1) {
-			//emerald's current crush burst
+        } else if (global.chrsel == PLAYER_EMERALD) {
+			// emerald's current crush burst
 	        var random_x = irandom_range(CANVAS_XEND - 600, CANVAS_XEND - 200);
 	        var random_y = irandom_range(CANVAS_Y + 234, CANVAS_YEND - 234);
 	        part_type_spawn_lt(PART_SYSTEM_PLAYERTOP, PART_TYPE_ULTIMATE_BURST, 0, x, y, random_x, random_y, "line", "linear", 100);
         }
 		
     switch(global.chrsel) {
-	    case 0:
+	    case PLAYER_EVILFLAME:
 		    if (!TWILIGHT_FURY) {
 			    hp /= 2; global.hp /= 2; hpmax /= 2; hpmark /= 2; hpmark_v /= 2;
 			    instance_create(0, 0, obj_evilflame_ultimate); //evilflame - dual clone
@@ -533,13 +540,13 @@ if (flash_clock == 40) {
 			    player_status_add(10, 3600, 0);
 		    }
 	    break;
-	    case 1:
+	    case PLAYER_EMERALD:
 			with(obj_enemy) { cooldown = 60; }
 			instance_create(random_x, random_y, obj_emerald_ultimate); //emerald - current crush
 			player_status_add(7, 900,  0);
 			player_status_add(2, 1200, 0);
 		break;
-	    case 2:
+	    case PLAYER_DER_SCOOTOMIK:
 		    player_status_add(8, 30, 0); //der scootomik - chip tuning
 		    global.gpspeed_ultimate = 0.05;
 		    inv = 0;
@@ -578,7 +585,7 @@ if (global.state == 1) {
     if (inv > 0 && global.gpspeed != 0) {
         inv = max(inv - 1, 0);
     }
-    if ((global.chrsel == 2 && instance_exists(obj_charge) || instance_exists(obj_ultimate_activation)) && inv <= 0) {
+    if ((global.chrsel == PLAYER_DER_SCOOTOMIK && instance_exists(obj_charge) || instance_exists(obj_ultimate_activation)) && inv <= 0) {
         inv = 1;
     }
     
@@ -587,7 +594,7 @@ if (global.state == 1) {
         //contact damage
         if (place_meeting(x, y, obj_enemy) && (!place_meeting(x, y, obj_eprojectile) || (distance_to_object(instance_place(x, y, obj_eprojectile)) > distance_to_object(instance_place(x, y, obj_enemy)))) && instance_place(x, y, obj_enemy).touchable == 1 && instance_place(x, y, obj_enemy).hp > 0) {
             var enemy = instance_place(x, y, obj_enemy);
-            if (!status_effect[8]) {
+            if (!STATUS_EFFECT_CHIP_TUNING) {
                 var damage = calculate_damage(enemy.bdmg, enemy.bpen, bdef);
                 var display_damage = ceil(hp) - ceil(hp - damage);
                 player_hp(-damage);
@@ -625,7 +632,7 @@ if (global.state == 1) {
         //eprojectile damage
         if (place_meeting(x, y, obj_eprojectile) && (!place_meeting(x, y, obj_enemy) || distance_to_object(instance_place(x, y, obj_enemy)) > distance_to_object(instance_place(x, y, obj_eprojectile)) || instance_place(x, y, obj_enemy).touchable == 0)) {
             var projectile = instance_place(x, y, obj_eprojectile);
-            if (!status_effect[8]) {
+            if (!STATUS_EFFECT_CHIP_TUNING) {
                 var damage = calculate_damage(projectile.pdmg, projectile.ppen, pdef);
                 var display_damage = ceil(hp) - ceil(hp - damage);
                 player_hp(-damage);
@@ -645,15 +652,15 @@ if (global.state == 1) {
         }
     }
     
-    //////////HELPER ALTERNATIVE
+    ////////// HELPER ALTERNATIVE
     if (instance_exists(obj_wrap_helper) && instance_exists(helper)) {
         var hx = helper.x; var hy = helper.y;
         if ((place_meeting(hx, hy, obj_enemy) || place_meeting(hx, hy, obj_eprojectile)) && hp > 0 && inv == 0 && global.gpspeed != 0) {
             inv = round(invtime / global.gpspeed); play_sfx(sfx_player_hurt, 0, 0);
-            //helper contact damage
+            // helper contact damage
             if (place_meeting(hx, hy, obj_enemy) && (!place_meeting(hx, hy, obj_eprojectile) || (distance_to_object(instance_place(hx, hy, obj_eprojectile)) > distance_to_object(instance_place(hx, hy, obj_enemy)))) && instance_place(hx, hy, obj_enemy).touchable == 1 && instance_place(hx, hy, obj_enemy).hp > 0) {
                 var enemy = instance_place(hx, hy, obj_enemy);
-                if (!status_effect[8]) {
+                if (!STATUS_EFFECT_CHIP_TUNING) {
                     var damage = calculate_damage(enemy.bdmg, enemy.bpen, bdef);
                     var display_damage = ceil(hp) - ceil(hp - damage);
                     player_hp(-damage);
@@ -688,10 +695,10 @@ if (global.state == 1) {
                 }
             }
             
-            //helper eprojectile damage
+            // helper eprojectile damage
             if (place_meeting(hx, hy, obj_eprojectile) && (!place_meeting(hx, hy, obj_enemy) || distance_to_object(instance_place(hx, hy, obj_enemy)) > distance_to_object(instance_place(hx, hy, obj_eprojectile)) || instance_place(hx, hy, obj_enemy).touchable == 0)) {
                 var projectile = instance_place(hx, hy, obj_eprojectile);
-                if (!status_effect[8]) {
+                if (!STATUS_EFFECT_CHIP_TUNING) {
                     var damage = calculate_damage(projectile.pdmg, projectile.ppen, pdef);
                     var display_damage = ceil(hp) - ceil(hp-damage);
                     player_hp(-damage);
@@ -762,7 +769,7 @@ if (hp <= 0 && image_alpha == 1) {
 	}
 	else {
 		image_alpha = 0;
-		if (global.chrsel == 1) {
+		if (global.chrsel == PLAYER_EMERALD) {
 			with(obj_charge) { instance_destroy(); }
 		}
 		if (instance_exists(helper)) {

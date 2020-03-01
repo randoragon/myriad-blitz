@@ -2,7 +2,7 @@
 /// @param character_index
 
 switch (argument[0]) {
-    case 0: //Evilflame
+    case PLAYER_EVILFLAME:
         global.lore          = 
         "Is it a bird? Is it a dolphin?" +
         "\nNegative, this fearless flying machine" +
@@ -65,7 +65,7 @@ switch (argument[0]) {
             "Borrows the power of stars...";
         }
     break;
-    case 1: //Emerald~
+    case PLAYER_EMERALD:
         global.lore          = 
         "Legends speak of a young pony disciple" +
         "\nso powerful, that its mere birth" +
@@ -120,7 +120,7 @@ switch (argument[0]) {
         "\nTemporarily weakens the caster" +
         "\nafterwards due to exhaustion.";
     break;
-    case 2: //Der Scootomik
+    case PLAYER_DER_SCOOTOMIK:
         global.lore          = 
         "The most powerful scooter in the universe." +
         "\nIt has been infused with ancient metals," +
