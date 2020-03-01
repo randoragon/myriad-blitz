@@ -48,10 +48,10 @@ if (global.gpspeed != 0) {
 		part_type_spawn_lt(PART_SYSTEM_ULTIMATE, PART_TYPE_ULTIMATE_BURST, 0, x - 20, y - 20, x + 20, y + 20, "ellipse", "invgaussian", 100);
 		with (obj_emerald_ultimate_flow) { scale_stage = 3; }
 
-		player_status_add(6, obj_player.ucooldown, 0);
-		player_status_add(0, 900, 1);
-		player_status_add(1, 900, 1);
-		player_status_add(4, 300, 1);
+		player_status_add(STATUS_EFFECT_ULTIMATE_COOLDOWN, obj_player.ucooldown, 0);
+		player_status_add(STATUS_EFFECT_EXHAUSTED, 900, 1);
+		player_status_add(STATUS_EFFECT_MAGIC_FATIGUE, 900, 1);
+		player_status_add(STATUS_EFFECT_DIZZY, 300, 1);
 		screenflash_set(0, 0, 60, -1, c_white, 0.75);
 		fx_shockwave(x, y, sqrt(sqr(CANVAS_WIDTH) + sqr(CANVAS_HEIGHT)), 5, 60, c_white, depth, 0.8);
 		audio_stop_sound(sfx_emerald_ultimate_loop);

@@ -378,10 +378,11 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 	            // previous character
 	            if (keyboard_check_pressed(global.keybind[1]) && global.state == 0 && room == rm_Main) {
 	                play_sfx(sfx_button1, 0, 0);
+					var prev_chrsel = global.chrsel;
 	                global.chrsel = (global.chrsel == 0)? CHRCOUNT - 1 : global.chrsel - 1;
 	                scr_PlayerDataUpdate(global.chrsel);
 	                scr_PlayerGetData();
-	                scr_ParticlesUpdate();
+	                scr_ParticlesUpdate(prev_chrsel, global.chrsel);
 	                scr_LoreUpdate();
 	                scr_Stats_Update(obj_statboard.button[0].show);
 	            }
@@ -391,10 +392,11 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 	            //next character
 	            if (keyboard_check_pressed(global.keybind[3]) && global.state == 0 && room == rm_Main) {
 	                play_sfx(sfx_button1, 0, 0);
+					var prev_chrsel = global.chrsel;
 	                global.chrsel = (global.chrsel == CHRCOUNT - 1)? 0 : global.chrsel + 1;
 	                scr_PlayerDataUpdate(global.chrsel);
 	                scr_PlayerGetData();
-	                scr_ParticlesUpdate();
+	                scr_ParticlesUpdate(prev_chrsel, global.chrsel);
 	                scr_LoreUpdate();
 	                scr_Stats_Update(obj_statboard.button[0].show);
 	            }

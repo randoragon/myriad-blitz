@@ -517,7 +517,19 @@ global.save_sindex [? "spr_bolt"]                         = 41;
 global.save_sname  [? 41]                                 = "spr_bolt";
 global.save_sindex [? "spr_laser"]                        = 42;
 global.save_sname  [? 42]                                 = "spr_laser";
-// 43-96
+global.save_sindex [? "spr_gingerbread_man_attack"]	      = 43;
+global.save_sname  [? 43]                                 = "spr_gingerbread_man_attack";
+global.save_sindex [? "spr_gingerbread_man_attack_float"] = 44;
+global.save_sname  [? 44]                                 = "spr_gingerbread_man_attack_float";
+global.save_sindex [? "spr_rocket_elf_charge"]			  = 45;
+global.save_sname  [? 45]                                 = "spr_rocket_elf_charge";
+global.save_sindex [? "spr_rocket_elf_charge_loop"]		  = 46;
+global.save_sname  [? 46]                                 = "spr_rocket_elf_charge_loop";
+global.save_sindex [? "spr_crow_hover"]					  = 47;
+global.save_sname  [? 47]                                 = "spr_crow_hover";
+global.save_sindex [? "spr_crow_attack"]				  = 48;
+global.save_sname  [? 48]                                 = "spr_crow_attack";
+// 49-96
 global.save_sindex [? "spr_present"]                      = 97;
 global.save_sname  [? 97]                                 = "spr_present";
 global.save_sindex [? "spr_ultimate"]                      = 98;

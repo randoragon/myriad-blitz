@@ -32,7 +32,7 @@ part_system_clear_lt (PART_SYSTEM_PLAYERTOP);
 part_system_clear_lt (PART_SYSTEM_ULTIMATE);
 scr_PlayerDataUpdate(global.chrsel);
 scr_PlayerGetData();
-scr_ParticlesUpdate();
+scr_ParticlesUpdate(0, global.chrsel);
 scr_BackgroundUpdate(global.realm);
 instance_create_layer  (CANVAS_X + 180,  CANVAS_Y + 583, "Boards", obj_keyboard);
 instance_create_layer  (CANVAS_X + 683,  CANVAS_Y + 624, "Boards", obj_lore);

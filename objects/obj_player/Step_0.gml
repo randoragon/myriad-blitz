@@ -532,22 +532,22 @@ if (flash_clock == 40) {
 		    if (!TWILIGHT_FURY) {
 			    hp /= 2; global.hp /= 2; hpmax /= 2; hpmark /= 2; hpmark_v /= 2;
 			    instance_create(0, 0, obj_evilflame_ultimate); //evilflame - dual clone
-			    player_status_add(5, -2, 0);
+			    player_status_add(STATUS_EFFECT_DUAL_CLONE, -2, 0);
 		    } else {
 			    evilflame_twilight_fury = TRUE;
 			    sprite_index = spr_evilflame_fury;
-			    player_status_add(9,  3600, 0); //evilflame - twilight fury
-			    player_status_add(10, 3600, 0);
+			    player_status_add(STATUS_EFFECT_TWILIGHT_FURY, 3600, 0); //evilflame - twilight fury
+			    player_status_add(STATUS_EFFECT_BERSERK, 3600, 0);
 		    }
 	    break;
 	    case PLAYER_EMERALD:
 			with(obj_enemy) { cooldown = 60; }
 			instance_create(random_x, random_y, obj_emerald_ultimate); //emerald - current crush
-			player_status_add(7, 900,  0);
-			player_status_add(2, 1200, 0);
+			player_status_add(STATUS_EFFECT_CURRENT_CRUSH, 900, 0);
+			player_status_add(STATUS_EFFECT_SPELL_DRIED, 1200, 0);
 		break;
 	    case PLAYER_DER_SCOOTOMIK:
-		    player_status_add(8, 30, 0); //der scootomik - chip tuning
+		    player_status_add(STATUS_EFFECT_CHIP_TUNING, 30, 0); //der scootomik - chip tuning
 		    global.gpspeed_ultimate = 0.05;
 		    inv = 0;
 	    break;

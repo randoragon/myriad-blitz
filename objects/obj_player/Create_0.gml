@@ -12,7 +12,7 @@ sprite_index = spr_evilflame + global.chrsel;
 if (!global.loading) { // this code is run everytime the run resets
     scr_PlayerDataUpdate(global.chrsel);
     scr_PlayerGetData();
-    scr_ParticlesUpdate();
+    scr_ParticlesUpdate(0, global.chrsel);
 	scr_BackgroundUpdate(global.realm);
     image_scale(2, 2);
 }
