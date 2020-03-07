@@ -175,6 +175,56 @@ switch (argument[0]) {
         "\n0.00026% of the cosmic speed" +
         "\nlimit for a split second.";
     break;
+	case PLAYER_BOBILEUSZ:
+        global.lore          = 
+        "It's Bobileusz. Deal with it." +
+        "\nWe're all gonna die.";
+        global.hp            = 420;
+        global.bdmg          = 40;
+        global.bdef          = 72;
+        global.bpen          = 0;
+        global.bkb           = 120;
+        global.bkbres        = 85;
+        global.acc           = 0.77;
+        global.counteracc    = 0.86;
+        global.spd           = 16;
+        global.invtime       = 85;
+        global.foctime       = 240;
+        global.pdmg          = 15;
+        global.pdef          = 65;
+        global.ppen          = 33;
+        global.pkb           = 60;
+        global.pkbres        = 90;
+        global.pspd          = 40;
+        global.sacc          = 1;
+        global.sspd          = 6;
+        global.fmin          = 2;
+        global.fmax          = 5;
+        global.fdmg          = 5;
+        global.fpen          = 75;
+        global.fkb           = 0;
+        global.cname         = "GEAR SHIFT";
+        global.cdesc         = 
+        "Hold up or down prior to releasing" +
+        "\nthe charge to shift accordingly." +
+        "\nAllows you to be perfectly balanced," +
+        "\nas everything should be.";
+        global.cdmg          = 8;
+        global.cpen          = 95;
+        global.ckb           = 100;
+        global.ctime         = 30;
+        global.ccooldown     = 1600;
+        global.uname         = "PRISMATIC GLACIER";
+        global.utype         = "BUFF";
+        global.ucooldown     = 1500;
+        global.udesc         = 
+        "Stores up power for an instantaneous" +
+        "\nrelease of immense frost energy," +
+        "\nallowing much greater masses of" +
+        "\nwater to be frozen solid, forming" +
+        "\nnumerous glacial prisms that greatly" +
+        "\namplify your offensive capabilities.";
+    break;
     default: //Error
         global.lore          = 
         "If you're seeing this, I messed up." +

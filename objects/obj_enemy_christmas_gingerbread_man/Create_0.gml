@@ -10,7 +10,7 @@ event_inherited();
 
 image_scale(1, 1);
 image_index = irandom(image_number);
-image_speed	= 0.2 * global.gpspeed;
+image_speed	= global.gpspeed;
 
 time_mark = global.gptime;
 loot      = ds_map_create();

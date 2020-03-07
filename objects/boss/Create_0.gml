@@ -34,17 +34,25 @@ global.state             = 0;
 global.viewxstartpos     = 0;
 global.viewystartpos     = 0;
 global.shader_conditions = 0;
-global.chrsel			 = 0;
+global.transition     = 0;
+
+#region Players Setup
+
+global.chrsel = 0;
 scr_PlayerDataUpdate(global.chrsel);
 global.color = array_setup(c_white, CHRCOUNT);
 global.color[0] = c_aqua;
 global.color[1] = hsv(110, 255, 255);
 global.color[2] = hsv(40, 60, 200);
+global.color[3] = hsv(143, 230, 255);
 global.name     = array_setup("<failed to fetch name>", CHRCOUNT);
 global.name[0]  = "Evilflame";
 global.name[1]  = "Emerald~";
 global.name[2]  = "Der Scootomik";
-global.transition     = 0;
+global.name[3]  = "Bobileusz";
+
+#endregion
+
 global.realm_name[1]  = "Christmas Realm";
 global.realm_name[0]  = "Menu";
 global.background_sprite       = array_setup(noone, 8);
@@ -628,6 +636,7 @@ ds_list_add(global.shd_outline_uni,
 global.character_audiogroup[0] = audiogroup_character_evilflame;
 global.character_audiogroup[1] = audiogroup_character_emerald;
 global.character_audiogroup[2] = audiogroup_character_scootomik;
+global.character_audiogroup[3] = audiogroup_character_bobileusz;
 
 global.realm_audiogroup[0] = audiogroup_menu;
 global.realm_audiogroup[1] = audiogroup_realm_christmas;

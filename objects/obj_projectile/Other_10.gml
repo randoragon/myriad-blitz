@@ -13,17 +13,30 @@ fmax = spawn.fmax;
 
 switch(e) {
 	case 0:
-	    sprite_index = spr_evilflame_bullet + global.chrsel;
-	    direction    = spawn.image_angle + random_range(-45 * (1 - sacc), 45 * (1 - sacc));
-	    speed1       = pspd;
-	    image_angle  = direction;
-	    image_speed  = 0;
-		lifespan     = 120;
-	    image_scale(2, 2);
+		switch(f) {
+			case PLAYER_BOBILEUSZ: // bobileusz's bullets are animated and have different scale than usual bullets
+				sprite_index = spr_bobileusz_bullet;
+				direction    = spawn.image_angle + random_range(-45 * (1 - sacc), 45 * (1 - sacc));
+			    speed1       = pspd;
+			    image_angle  = direction;
+			    image_speed  = 1;
+				lifespan     = 120;
+			    image_scale(1, 1);
+			break;
+			default:
+				sprite_index = spr_evilflame_bullet + global.chrsel;
+			    direction    = spawn.image_angle + random_range(-45 * (1 - sacc), 45 * (1 - sacc));
+			    speed1       = pspd;
+			    image_angle  = direction;
+			    image_speed  = 0;
+				lifespan     = 120;
+			    image_scale(2, 2);
+			break;
+		}
 	break;
 	case 1:
 	    switch(f) {
-		    case 0: //evilflame's dual clone bullet
+		    case PLAYER_EVILFLAME: //evilflame's dual clone bullet
 			    sprite_index = spr_evilflame_bullet;
 			    direction    = -spawn.image_angle + random_range(-45 * (1 - sacc), 45 * (1 - sacc));
 			    speed1       = pspd;
@@ -32,7 +45,7 @@ switch(e) {
 				lifespan     = 120;
 			    image_scale(2, 2);			
 		    break;
-		    case 2: //scootomik's second bullet
+		    case PLAYER_DER_SCOOTOMIK: //scootomik's second bullet
 			    sprite_index = spr_scootomik_bullet;
 			    image_index  = 1;
 			    image_speed  = 0;
@@ -46,7 +59,7 @@ switch(e) {
 	break;
 	case 2:
 	    switch(f) {
-		    case 0: //evilflame twilight fury
+		    case PLAYER_EVILFLAME: //evilflame twilight fury
 			    sprite_index = part_star;
 			    direction    = spawn.image_angle + random_range(-45 * (1 - sacc),45 * (1 - sacc));
 			    speed1       = pspd;

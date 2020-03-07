@@ -100,7 +100,7 @@ bar_extension = home(bar_extension, (global.enemy_details_selection == id), 0.2,
 
 //classic death
 if (hp <= 0) {
-	if (!STATUS_EFFECT_CHIP_TUNING) {
+	if (!IS_STATUS_EFFECT_CHIP_TUNING) {
 		intro = 2;
 	} else {
 		image_alpha -= 0.4 * global.gpspeed;
@@ -127,9 +127,9 @@ if (global.gpspeed != 0 && intro == 2 && image_alpha > 0) || global.state == 2 {
 // touchable switch
 if (x <= -sprite_width + sprite_xoffset)			{ touchable = FALSE; }
 if (x >= -sprite_width + sprite_xoffset)			{ touchable = TRUE; }
-if (STATUS_EFFECT_CHIP_TUNING && image_alpha < 1)   { touchable = FALSE; }
+if (IS_STATUS_EFFECT_CHIP_TUNING && image_alpha < 1)   { touchable = FALSE; }
 
 // out of room boundaries kill
-if (x < (-2 * sprite_width) + sprite_xoffset && !STATUS_EFFECT_CHIP_TUNING) { instance_destroy(); }
+if (x < (-2 * sprite_width) + sprite_xoffset && !IS_STATUS_EFFECT_CHIP_TUNING) { instance_destroy(); }
 
 #endregion

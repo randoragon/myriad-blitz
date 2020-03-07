@@ -111,6 +111,21 @@
                     "mipsToGenerate": 0,
                     "scaled": false
                 }
+            },
+            {
+                "Key": 8,
+                "Value": {
+                    "id": "3e6509a5-c8c9-4ccf-812b-9d40f5055f0e",
+                    "modelName": "GMTextureGroup",
+                    "mvc": "1.0",
+                    "groupName": "Bobileusz",
+                    "targets": 461609314234257646,
+                    "autocrop": true,
+                    "border": 2,
+                    "groupParent": "00000000-0000-0000-0000-000000000000",
+                    "mipsToGenerate": 0,
+                    "scaled": true
+                }
             }
         ],
         "Checksum": "ࢺ懜璙ᓆ锯翋꤯맫",
@@ -123,7 +138,8 @@
     }
 }←1225f6b0-ac20-43bd-a82e-be73fa0b6f4f|{
     "scaled": false,
-    "targets": 461609314234257646
+    "targets": 461609314234257646,
+    "groupParent": "00000000-0000-0000-0000-000000000000"
 }←7fa50043-cea6-4cd0-9521-a8ba8c6ea9f0|{
     "audioGroups": {
         "Additions": [
@@ -184,6 +200,16 @@
                     "modelName": "GMAudioGroup",
                     "mvc": "1.0",
                     "groupName": "audiogroup_default_gameplay",
+                    "targets": 461609314234257646
+                }
+            },
+            {
+                "Key": 7,
+                "Value": {
+                    "id": "c3940253-4dee-4996-b024-cb97b2ec1419",
+                    "modelName": "GMAudioGroup",
+                    "mvc": "1.0",
+                    "groupName": "audiogroup_character_bobileusz",
                     "targets": 461609314234257646
                 }
             }

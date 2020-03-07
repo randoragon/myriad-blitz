@@ -26,7 +26,7 @@ if (room == rm_Main) {
     }
     
     if (instance_exists(obj_player) && global.gpspeed != 0) {
-        dizzy_alpha = home(dizzy_alpha, STATUS_EFFECT_DIZZY * 0.5, 0.0025, 0);
+        dizzy_alpha = home(dizzy_alpha, IS_STATUS_EFFECT_DIZZY * 0.5, 0.0025, 0);
     }
 }
 

@@ -3,7 +3,7 @@
     "modelName": "GMSound",
     "mvc": "1.0",
     "name": "sfx_emerald_ultimate_loop",
-    "audioGroupGuid": "3832e61b-3b3e-4371-8d30-b647f6b52889",
+    "audioGroupGuid": "c3940253-4dee-4996-b024-cb97b2ec1419",
     "bitDepth": 1,
     "bitRate": 128,
     "kind": 0,

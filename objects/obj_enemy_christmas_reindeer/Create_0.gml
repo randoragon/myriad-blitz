@@ -10,16 +10,16 @@ event_inherited();
 
 image_scale(1, 1);
 image_index = irandom(image_number);
-image_speed	= random_range(0.15, 0.2) * global.gpspeed;
+image_speed	= random_range(0.75, 1) * global.gpspeed;
 y = clamp(y, 100, 556);
 
 if (global.gpspeed != 0) {
-	hspeed1 = -25 * image_speed / global.gpspeed;
+	hspeed1 = -5 * image_speed / global.gpspeed;
 } else {
 	if (global.prev_gpspeed != 0) {
-		hspeed1 = -25 * image_speed / global.prev_gpspeed;
+		hspeed1 = -5 * image_speed / global.prev_gpspeed;
 	} else {
-		hspeed1 = -25 * image_speed;
+		hspeed1 = -5 * image_speed;
 	}
 }
 

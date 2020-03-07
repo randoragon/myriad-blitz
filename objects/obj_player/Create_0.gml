@@ -2,7 +2,7 @@
 
 #region General
       spawn = id;
- image_speed = 0.4 * global.gpspeed;
+ image_speed = global.gpspeed;
 sprite_index = spr_evilflame + global.chrsel;
  image_alpha = 1;
  image_angle = 0;

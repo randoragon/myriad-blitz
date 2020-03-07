@@ -6,7 +6,8 @@
     "children": [
         "069d271a-ca90-4832-aeff-2508e19da6df",
         "930a1430-68e5-4b28-ac64-a70adfbb4c18",
-        "14898020-f671-4286-a314-35e6261e2a87"
+        "14898020-f671-4286-a314-35e6261e2a87",
+        "4040650e-d3a1-4b8e-aba7-14d1f769bbbf"
     ],
     "filterType": "GMSprite",
     "folderName": "active charge sprites",

@@ -578,6 +578,14 @@
             }
         },
         {
+            "Key": "21e7e94e-197e-43e2-add3-69d1a0a344ce",
+            "Value": {
+                "id": "2fd5708c-4b76-4c64-b256-c114c1136fed",
+                "resourcePath": "sprites\\spr_bobileusz_charging\\spr_bobileusz_charging.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "21eb372e-4f29-47da-bdf4-65ac8f205407",
             "Value": {
                 "id": "d7239930-77cf-493f-b55f-657552248790",
@@ -968,6 +976,14 @@
             }
         },
         {
+            "Key": "377ade01-94ec-44c0-8b0b-ce089091713a",
+            "Value": {
+                "id": "c8f48a63-57bb-4330-b64f-ebdb4b1b14ae",
+                "resourcePath": "sprites\\spr_bobileusz_charge\\spr_bobileusz_charge.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "37f205eb-14f4-426c-b9db-b9a0e9b27e1b",
             "Value": {
                 "id": "58b48f4f-67c5-4297-84f0-c3acac505057",
@@ -1134,6 +1150,14 @@
                 "id": "48577705-325b-4a8c-81ff-bf4dde8031ab",
                 "resourcePath": "scripts\\shd_shine_set\\shd_shine_set.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "4040650e-d3a1-4b8e-aba7-14d1f769bbbf",
+            "Value": {
+                "id": "2247e7f7-69e6-459c-b363-4ba99a3bd47e",
+                "resourcePath": "sprites\\spr_bobileusz_active_charge\\spr_bobileusz_active_charge.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1392,6 +1416,14 @@
                 "id": "72eefdab-41dc-4faa-b660-8e210f1d3f55",
                 "resourcePath": "sounds\\sfx_reindeer_shoot\\sfx_reindeer_shoot.yy",
                 "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "55564b17-8c61-4963-bda0-8dcde2f128b2",
+            "Value": {
+                "id": "c8143b2e-c10b-44b3-af5c-a28582bfef0b",
+                "resourcePath": "sprites\\spr_bobileusz_bullet\\spr_bobileusz_bullet.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -2635,6 +2667,14 @@
             }
         },
         {
+            "Key": "95883afa-da17-40aa-adec-1904bc46a82f",
+            "Value": {
+                "id": "e22fc97f-6ea2-43d4-a030-819b7a88cdb3",
+                "resourcePath": "sprites\\spr_bobileusz_hitbox\\spr_bobileusz_hitbox.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "95bab02c-8690-4ec1-be2d-020469442cd7",
             "Value": {
                 "id": "8c8f1764-2893-4de9-aa41-075cf4a755c4",
@@ -2737,6 +2777,14 @@
                 "id": "ae647a62-7c34-4d3c-a2ed-0a8f26e82f11",
                 "resourcePath": "scripts\\color_shift_hsv\\color_shift_hsv.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "9a0281f6-907f-4e45-b7c3-7e9dbafb0764",
+            "Value": {
+                "id": "b92a5bdb-ec60-41e9-819a-41df6bb0c4db",
+                "resourcePath": "sprites\\spr_bobileusz\\spr_bobileusz.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -3534,6 +3582,14 @@
             }
         },
         {
+            "Key": "c743ddcf-3f3d-44e9-91c3-a420ff5e7b88",
+            "Value": {
+                "id": "084956ea-e858-4957-ab19-30fa9727d2be",
+                "resourcePath": "sprites\\spr_bobileusz_frag\\spr_bobileusz_frag.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "c75170c2-4fa9-4749-a391-67d91facc121",
             "Value": {
                 "configDeltas": [
@@ -4283,6 +4339,14 @@
                 "id": "69c0a50d-ee19-4f14-a4c4-32ac992356db",
                 "resourcePath": "sounds\\sfx_ultimate_activation\\sfx_ultimate_activation.yy",
                 "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "eee6124c-e440-454d-8512-98a2b610ae39",
+            "Value": {
+                "id": "9af8be3d-0062-4b92-9f9d-0acc2e34a4d4",
+                "resourcePath": "sprites\\spr_bobileusz_shooting\\spr_bobileusz_shooting.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

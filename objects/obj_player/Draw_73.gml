@@ -8,7 +8,7 @@ if (global.loading) { exit; }
 
 #region Draw gameplay bars
 
-if (global.state == 1 && !STATUS_EFFECT_CHIP_TUNING) {
+if (global.state == 1 && !IS_STATUS_EFFECT_CHIP_TUNING) {
     surface_set_target(GUI_SURFACE);
     var self_or_helper = self;
     gpu_set_alphatestref(0);

@@ -44,12 +44,12 @@ if (room == rm_Main && instance_exists(obj_player) && !global.loading) {
 	}
 
 	// chip tuning
-	if (STATUS_EFFECT_CHIP_TUNING) {
+	if (IS_STATUS_EFFECT_CHIP_TUNING) {
 		global.shader_conditions |= 4;
 	}
 	
 	// current crush
-	if (STATUS_EFFECT_CURRENT_CRUSH) {
+	if (IS_STATUS_EFFECT_CURRENT_CRUSH) {
 		global.shader_conditions |= 8;
 	}
 }

@@ -6,7 +6,8 @@
     "children": [
         "68f57c51-8f12-41ba-97af-b6efed32532b",
         "00ebea0e-caaf-4b2c-bb1e-bd49565eb9e7",
-        "d270f5a9-8b2f-4083-8e14-2bd0f4ff92fc"
+        "d270f5a9-8b2f-4083-8e14-2bd0f4ff92fc",
+        "377ade01-94ec-44c0-8b0b-ce089091713a"
     ],
     "filterType": "GMSprite",
     "folderName": "charge shots",

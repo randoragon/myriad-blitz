@@ -13,7 +13,7 @@ with (obj_frag)       { speed1 /= 2; }
 
 image_scale(0, 0);
 rot         = choose(5, -5);
-image_speed = 0.5 * global.gpspeed;
+image_speed = global.gpspeed;
 rot_cycle   = irandom(360);
 
 #endregion

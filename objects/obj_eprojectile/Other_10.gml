@@ -21,7 +21,7 @@ switch(f) {
 	break;
 	case 2:
 		image_scale(2, 2);
-		instance_setup(0, 1 * global.gpspeed, 0, 1);
+		instance_setup(0, global.gpspeed, 0, 1);
 		sprite_index = spr_laser;
 		hspeed1      = -10;
 		lifespan     = 300;

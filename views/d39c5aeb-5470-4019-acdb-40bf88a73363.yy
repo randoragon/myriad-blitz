@@ -6,7 +6,8 @@
     "children": [
         "2e554eb9-e845-447a-bbc9-92bc988e2af8",
         "cef09fee-eb00-4f88-b05d-cd3da1673d31",
-        "338f37f5-16d6-4f57-a7af-42c060d222e6"
+        "338f37f5-16d6-4f57-a7af-42c060d222e6",
+        "c743ddcf-3f3d-44e9-91c3-a420ff5e7b88"
     ],
     "filterType": "GMSprite",
     "folderName": "frag bullets",
