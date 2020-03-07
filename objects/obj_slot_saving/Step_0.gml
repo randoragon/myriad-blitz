@@ -147,16 +147,24 @@ if (phase == 1) {
 	            if (instance_exists(inst_id[inst_index])) {
 	                with (inst_id[inst_index]) {
 						
-						// security checks
-						if (sprite_index != -1 && !ds_map_exists(global.save_sindex, sprite_get_name(sprite_index))) {
-							show_debug_message("FATAL ERROR: sprite name \"" + sprite_get_name(sprite_index) + "\" (sprite_index=" + string(sprite_index) + ") is not mapped in global.save_sindex!");
+						// cache this so that values remain in tact when gameplay continues after saving
+						var _sprite_index = sprite_index;
+		
+						// handle exceptional cases
+						if (object_index == obj_debris && custom_sprite == 2) {
+							_sprite_index = -1;
 						}
 						
+						// security check
+						if (_sprite_index != -1 && !ds_map_exists(global.save_sindex, sprite_get_name(_sprite_index))) {
+							show_debug_message("WARNING: object name \"" + object_get_name(object_index) + "\", sprite name \"" + sprite_get_name(_sprite_index) + "\" (_sprite_index=" + string(_sprite_index) + ") is not mapped in global.save_sindex!");
+						}
+		
 	                    // basic instance variables
 	                    other.data = 
 	                    string(global.save_oindex[? object_get_name(object_index)]) + ";" + 
 	                    string(id) + ";" + 
-	                    string((sprite_index != -1)? global.save_sindex[? sprite_get_name(sprite_index)] : -1) + ";" + 
+	                    string((_sprite_index != -1)? global.save_sindex[? sprite_get_name(_sprite_index)] : -1) + ";" + 
 	                    string(image_index) + ";" + 
 	                    string(image_speed) + ";" + 
 	                    string(prev_image_speed) + ";" + 
@@ -326,7 +334,7 @@ if (phase == 1) {
 		                    break;
 		                    case obj_debris:
 		                        other.data += 
-		                        string(split_sprite) + ";" + string(split_sprite_index) + ";" + string(split_sprite_xscale) + ";" + 
+		                        string((split_sprite != -1)? global.save_sindex[? sprite_get_name(split_sprite)] : -1) + ";" + string(split_sprite_index) + ";" + string(split_sprite_xscale) + ";" + 
 		                        string(split_sprite_yscale) + ";" + string(split_sprite_color) + ";" + string(split_sprite_alpha) + ";" + 
 		                        string(split_angle) + ";" + string(split_part) + ";" + 
 		                        string(custom_sprite) + ";";
@@ -337,17 +345,58 @@ if (phase == 1) {
 	                    //write eventual ds data
 	                    switch(object_index) {
 		                    case obj_player: case obj_wrap_helper: case obj_projectile: case obj_frag: case obj_charge:
-		                    case obj_eprojectile: case obj_present: case obj_explosion: case obj_debris:
+		                    case obj_eprojectile: case obj_present: case obj_explosion:
 		                        if (ds_exists(afterimage_ds_grid, ds_type_grid)) {
-		                            other.data = ds_grid_export(afterimage_ds_grid);
+									// convert sprites into global indices
+									var afterimage2 = ds_grid_create(0, 0);
+									ds_grid_copy(afterimage2, afterimage_ds_grid);
+									for (var fi = 1; fi < ds_grid_width(afterimage2); fi++) {
+										afterimage2[# fi, 0] = global.save_sindex[? sprite_get_name(afterimage2[# fi, 0])];
+									}
+		                            other.data = ds_grid_export(afterimage2);
+									ds_grid_destroy(afterimage2);
 		                        } else {
 		                            other.data = "";
 		                        }
 		                        other.line[array_length_1d(other.line)] = other.data + other.separator;
 		                    break;
+							case obj_debris:
+								// debris's afterimage grid needs additional tinkering prior to saving
+								// due to the possibility of existence of temporary sprites created from surfaces
+								// which possess sprite indices that are not mapped globally in global.save_s* variables
+								if (ds_exists(afterimage_ds_grid, ds_type_grid)) {
+									var afterimage2 = ds_grid_create(0, 0);
+									ds_grid_copy(afterimage2, afterimage_ds_grid);
+									if (custom_sprite != 2) {
+										for (var fi = 1; fi < ds_grid_width(afterimage2); fi++) {
+											afterimage2[# fi, 0] = global.save_sindex[? sprite_get_name(afterimage2[# fi, 0])];
+										}
+									} else {
+										// erase any sprite indice information, as it will be recreated during loading
+										// from the information stored in other instance variables.
+										// Setting cells to "1" follows the afterimage_grid convention of storing all data
+										// as strings, with real numbers beginning with a "0", and strings beginning with "1",
+										// so setting all values to "1" is equivalent to setting everything to an empty string.
+										// (The very first cell, [0,0], is used for something else, so it can't be erased)
+										ds_grid_set_region(afterimage2, 1, 0, ds_grid_width(afterimage2)-1, 0, "1");
+									}
+		                            other.data = ds_grid_export(afterimage2);
+									ds_grid_destroy(afterimage2);
+		                        } else {
+		                            other.data = "";
+		                        }
+		                        other.line[array_length_1d(other.line)] = other.data + other.separator;
+							break;
 		                    case obj_enemy_christmas_rocket_elf: case obj_enemy_christmas_crow: case obj_enemy_christmas_snowman: case obj_enemy_christmas_gingerbread_man: case obj_enemy_christmas_reindeer:
 		                        if (ds_exists(afterimage_ds_grid, ds_type_grid)) {
-		                            other.data = ds_grid_export(afterimage_ds_grid);
+		                            // convert sprites into global indices
+									var afterimage2 = ds_grid_create(0, 0);
+									ds_grid_copy(afterimage2, afterimage_ds_grid);
+									for (var fi = 1; fi < ds_grid_width(afterimage2); fi++) {
+										afterimage2[# fi, 0] = global.save_sindex[? sprite_get_name(afterimage2[# fi, 0])];
+									}
+		                            other.data = ds_grid_export(afterimage2);
+									ds_grid_destroy(afterimage2);
 		                        } else {
 		                            other.data = "";
 		                        }

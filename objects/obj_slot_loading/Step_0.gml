@@ -403,6 +403,10 @@ if (phase == 4 && clock-- <= 0) {
 			                if (afterimage_data != "") {
 			                    afterimage_ds_grid  = ds_grid_create(0, 0);
 			                    afterimage_ds_grid  = ds_grid_import(afterimage_ds_grid, afterimage_data);
+								// switch global indices to sprite indices
+								for (var fi = 1; fi < ds_grid_width(afterimage_ds_grid); fi++) {
+									afterimage_ds_grid[# fi, 0] = asset_get_index(global.save_sname[? afterimage_ds_grid[# fi, 0]]);
+								}
 			                }
 			            break;
 			            case obj_projectile:
@@ -423,6 +427,10 @@ if (phase == 4 && clock-- <= 0) {
 			                if (afterimage_data != "") {
 			                    afterimage_ds_grid = ds_grid_create(0, 0);
 			                    afterimage_ds_grid = ds_grid_import(afterimage_ds_grid, afterimage_data);
+								// switch global indices to sprite indices
+								for (var fi = 1; fi < ds_grid_width(afterimage_ds_grid); fi++) {
+									afterimage_ds_grid[# fi, 0] = asset_get_index(global.save_sname[? afterimage_ds_grid[# fi, 0]]);
+								}
 			                }
 			            break;
 			            case obj_frag:
@@ -443,6 +451,10 @@ if (phase == 4 && clock-- <= 0) {
 			                if (afterimage_data != "") {
 			                    afterimage_ds_grid = ds_grid_create(0, 0);
 			                    afterimage_ds_grid = ds_grid_import(afterimage_ds_grid, afterimage_data);
+								// switch global indices to sprite indices
+								for (var fi = 1; fi < ds_grid_width(afterimage_ds_grid); fi++) {
+									afterimage_ds_grid[# fi, 0] = asset_get_index(global.save_sname[? afterimage_ds_grid[# fi, 0]]);
+								}
 			                }
 			            break;
 			            case obj_charge:
@@ -459,6 +471,10 @@ if (phase == 4 && clock-- <= 0) {
 			                if (afterimage_data != "") {
 			                    afterimage_ds_grid = ds_grid_create(0, 0);
 			                    afterimage_ds_grid = ds_grid_import(afterimage_ds_grid, afterimage_data);
+								// switch global indices to sprite indices
+								for (var fi = 1; fi < ds_grid_width(afterimage_ds_grid); fi++) {
+									afterimage_ds_grid[# fi, 0] = asset_get_index(global.save_sname[? afterimage_ds_grid[# fi, 0]]);
+								}
 			                }
 			            break;
 						case obj_enemy_christmas_rocket_elf: case obj_enemy_christmas_crow:
@@ -492,6 +508,10 @@ if (phase == 4 && clock-- <= 0) {
 					        if (afterimage_data != "") {
 					            afterimage_ds_grid = ds_grid_create(0, 0);
 					            afterimage_ds_grid = ds_grid_import(afterimage_ds_grid, afterimage_data);
+								// switch global indices to sprite indices
+								for (var fi = 1; fi < ds_grid_width(afterimage_ds_grid); fi++) {
+									afterimage_ds_grid[# fi, 0] = asset_get_index(global.save_sname[? afterimage_ds_grid[# fi, 0]]);
+								}
 					        }
 					        loot = ds_map_create();
 					        ds_map_read(loot, other.line[++other.progress]);
@@ -535,6 +555,10 @@ if (phase == 4 && clock-- <= 0) {
 					        if (afterimage_data != "") {
 					            afterimage_ds_grid = ds_grid_create(0, 0);
 					            afterimage_ds_grid = ds_grid_import(afterimage_ds_grid, afterimage_data);
+								// switch global indices to sprite indices
+								for (var fi = 1; fi < ds_grid_width(afterimage_ds_grid); fi++) {
+									afterimage_ds_grid[# fi, 0] = asset_get_index(global.save_sname[? afterimage_ds_grid[# fi, 0]]);
+								}
 					        }
 					        loot = ds_map_create();
 					        ds_map_read(loot, other.line[++other.progress]);
@@ -605,6 +629,10 @@ if (phase == 4 && clock-- <= 0) {
 					            if (afterimage_data != "") {
 					                afterimage_ds_grid = ds_grid_create(0, 0);
 					                afterimage_ds_grid = ds_grid_import(afterimage_ds_grid, afterimage_data);
+									// switch global indices to sprite indices
+									for (var fi = 1; fi < ds_grid_width(afterimage_ds_grid); fi++) {
+										afterimage_ds_grid[# fi, 0] = asset_get_index(global.save_sname[? afterimage_ds_grid[# fi, 0]]);
+									}
 					            }
 					            loot = ds_map_create();
 					            ds_map_read(loot, other_other_line_);
@@ -625,6 +653,10 @@ if (phase == 4 && clock-- <= 0) {
 			                if (afterimage_data != "") {
 			                    afterimage_ds_grid = ds_grid_create(0, 0);
 			                    afterimage_ds_grid = ds_grid_import(afterimage_ds_grid, afterimage_data);
+								// switch global indices to sprite indices
+								for (var fi = 1; fi < ds_grid_width(afterimage_ds_grid); fi++) {
+									afterimage_ds_grid[# fi, 0] = asset_get_index(global.save_sname[? afterimage_ds_grid[# fi, 0]]);
+								}
 			                }
 			            break;
 			            case obj_oscillator:
@@ -670,6 +702,10 @@ if (phase == 4 && clock-- <= 0) {
 			                if (afterimage_data != "") {
 			                    afterimage_ds_grid = ds_grid_create(0, 0);
 			                    afterimage_ds_grid = ds_grid_import(afterimage_ds_grid, afterimage_data);
+								// switch global indices to sprite indices
+								for (var fi = 1; fi < ds_grid_width(afterimage_ds_grid); fi++) {
+									afterimage_ds_grid[# fi, 0] = asset_get_index(global.save_sname[? afterimage_ds_grid[# fi, 0]]);
+								}
 			                }
 			            break;
 			            case obj_ultimate_activation:
@@ -719,7 +755,7 @@ if (phase == 4 && clock-- <= 0) {
 			                clock = string_readln_real(bit, ";");
 			            break;
 			            case obj_debris:
-			                split_sprite		= string_readln_real(bit, ";");
+			                split_sprite		= asset_get_index(global.save_sname[? string_readln_real(bit, ";")]);
 			                split_sprite_index	= string_readln_real(bit, ";");
 			                split_sprite_xscale = string_readln_real(bit, ";");
 			                split_sprite_yscale = string_readln_real(bit, ";");
@@ -744,6 +780,10 @@ if (phase == 4 && clock-- <= 0) {
 			                if (afterimage_data != "") {
 			                    afterimage_ds_grid = ds_grid_create(0, 0);
 			                    afterimage_ds_grid = ds_grid_import(afterimage_ds_grid, afterimage_data);
+								// switch global indices to sprite indices
+								for (var fi = 1; fi < ds_grid_width(afterimage_ds_grid); fi++) {
+									afterimage_ds_grid[# fi, 0] = asset_get_index(global.save_sname[? afterimage_ds_grid[# fi, 0]]);
+								}
 			                }
 			            break;
 		            }

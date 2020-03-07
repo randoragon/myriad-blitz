@@ -14,7 +14,7 @@ surface_set_target(GENERAL_SURFACE);
 
 #region Blazing Fireball
 
-if (f == 0 && e != 2) {
+if (f == PLAYER_EVILFLAME && e != 2) {
     if (global.shader_conditions == 0) {
         draw_self();
     } else {
@@ -28,7 +28,7 @@ if (f == 0 && e != 2) {
 
 #region Royal Laser
 
-if (f == 1) {
+if (f == PLAYER_EMERALD) {
     //register enemy hits if on global.gpstep
     if (real_step()) {
         var buff = buffer_create(4, buffer_grow, 4);

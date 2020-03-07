@@ -7,7 +7,7 @@ cpen = spawn.cpen;
 ckb  = spawn.ckb;
 
 switch(f) {
-	case 0:
+	case PLAYER_EVILFLAME:
 	    switch(e) {
 		    case 0:
 			    sprite_index = spr_evilflame_charge;
@@ -42,14 +42,14 @@ switch(f) {
 		    break;
 	    }
 	break;
-	case 1:
+	case PLAYER_EMERALD:
 	    sprite_index       = spr_emerald_charge;
 	    spawn.sprite_index = spr_emerald_active_charge;
 	    image_speed        = global.gpspeed;
 		charge             = 180;
 	    image_scale(1, 1);
 	break;
-	case 2:
+	case PLAYER_DER_SCOOTOMIK:
 	    sprite_index       = -1;
 	    spawn.sprite_index = spr_scootomik_active_charge;
 	    visible            = 0;

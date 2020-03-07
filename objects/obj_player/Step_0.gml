@@ -244,7 +244,7 @@ if (global.state == 1 && gpspd != 0) {
         }
     }
     
-    if (!(global.chrsel == PLAYER_EMERALD && instance_exists(obj_charge)) && gpspd != 0) {
+    if (!(global.chrsel == PLAYER_DER_SCOOTOMIK && instance_exists(obj_charge)) && gpspd != 0) {
         image_angle = -2 * yv / gpspd;
     }
 

@@ -189,6 +189,20 @@
             "value": "-1",
             "varName": "afterimage_ds_grid",
             "varType": 1
+        },
+        {
+            "id": "46607d60-f19f-4584-bc37-81bf6e54e902",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "custom_sprite",
+            "varType": 1
         }
     ],
     "solid": false,

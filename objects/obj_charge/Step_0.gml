@@ -8,7 +8,7 @@ event_inherited();
 
 #region Blazing Fireball
 
-if (f == 0 && global.gpspeed != 0) {
+if (f == PLAYER_EVILFLAME && global.gpspeed != 0) {
 	if (e != 2) {
 		//DEFAULT FIREBALL
 		if (target < -4) {
@@ -89,7 +89,7 @@ if (f == 0 && global.gpspeed != 0) {
 
 #region Beaming Spin
 
-if (f == 2 && global.gpspeed != 0) {
+if (f == PLAYER_DER_SCOOTOMIK && global.gpspeed != 0) {
 	if (charge > 0) {
 		spawn.image_angle -= 12 * global.gpspeed;
 		if (instance_exists(spawn.helper)) {

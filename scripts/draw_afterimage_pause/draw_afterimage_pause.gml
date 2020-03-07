@@ -5,6 +5,10 @@
 
 var grid = afterimage_ds_grid;
 
+if (!ds_exists(grid, ds_type_grid)) {
+	exit;
+}
+
 // draw the afterimage
 gpu_set_alphatestref(floor(ds_grid_get_min(grid, 1, 7, ds_grid_width(grid)-1, 7) * draw_get_alpha() * 255));
 for (var i=1; i<ds_grid_width(grid); i+=argument[0]+1) {
