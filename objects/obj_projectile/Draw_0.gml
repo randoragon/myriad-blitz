@@ -14,7 +14,7 @@ surface_set_target(GENERAL_SURFACE);
 
 #region Draw self & apply shaders
 
-if (f == 0 && e == 2) {
+if ((f == PLAYER_EVILFLAME && e == 2) || f == PLAYER_BOBILEUSZ) {
     gpu_set_blendmode(bm_add);
 }
 gpu_set_alphatestref(0);

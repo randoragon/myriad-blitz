@@ -230,7 +230,7 @@ if (phase == 1) {
 		                        string(enemy) + ";" + string(enemyharm) + ";" + 
 		                        string(vacc) + ";" + string(hacc) + ";" + 
 		                        string(fmin) + ";" + string(fmax) + ";" + string(fdmg) + ";" + string(fpen) + ";" + string(fkb) + ";" + 
-		                        string(lifespan) + ";";
+		                        string(lifespan) + ";" + string(bulletdir) + ";";
 		                    break;
 		                    case obj_charge:
 		                        other.data += 

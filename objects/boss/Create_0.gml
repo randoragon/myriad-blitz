@@ -34,7 +34,21 @@ global.state             = 0;
 global.viewxstartpos     = 0;
 global.viewystartpos     = 0;
 global.shader_conditions = 0;
-global.transition     = 0;
+global.transition       = 0;
+global.save_chunk_size  = 500;
+global.save_particles   = 1;
+global.left_handed_mode = 0;
+global.keybind[0]	    = ord("W"); // move upwards
+global.keybind[1]       = ord("A"); // move left
+global.keybind[2]       = ord("S"); // move downwards
+global.keybind[3]       = ord("D"); // move right
+global.keybind[4]       = vk_space; // shoot
+global.keybind[5]       = vk_shift; // focus
+global.keybind[6]       = ord("E"); // ultimate
+global.enemy_details_selection = noone;
+global.player_status_effects   = -1;
+
+#endregion
 
 #region Players Setup
 
@@ -53,6 +67,8 @@ global.name[3]  = "Bobileusz";
 
 #endregion
 
+#region Realms Setup
+
 global.realm_name[1]  = "Christmas Realm";
 global.realm_name[0]  = "Menu";
 global.background_sprite       = array_setup(noone, 8);
@@ -64,19 +80,6 @@ global.background_htiled       = array_setup(FALSE, 8);
 global.background_vtiled	   = array_setup(FALSE, 8);
 global.background_hspeed	   = array_setup(0,     8);
 global.background_vspeed	   = array_setup(0,     8);
-global.enemy_details_selection = noone;
-global.player_status_effects   = -1;
-
-global.save_chunk_size  = 500;
-global.save_particles   = 1;
-global.left_handed_mode = 0;
-global.keybind[0]	    = ord("W"); // move upwards
-global.keybind[1]       = ord("A"); // move left
-global.keybind[2]       = ord("S"); // move downwards
-global.keybind[3]       = ord("D"); // move right
-global.keybind[4]       = vk_space; // shoot
-global.keybind[5]       = vk_shift; // focus
-global.keybind[6]       = ord("E"); // ultimate
 	
 #endregion
 
@@ -618,7 +621,6 @@ ds_list_add(global.shd_shine_uni,
 	shader_get_uniform(shd_shine, "size"), 
 	shader_get_uniform(shd_shine, "suf_size"), 
 	shader_get_uniform(shd_shine, "color_blend"), 
-	shader_get_uniform(shd_shine, "pixel_size"), 
 	shader_get_uniform(shd_shine, "whitelist_box")
 );
 
@@ -627,6 +629,20 @@ ds_list_add(global.shd_outline_uni,
 	shader_get_uniform(shd_outline, "pixel_size"),
 	shader_get_uniform(shd_outline, "color"),
 	shader_get_uniform(shd_outline, "rough")
+);
+
+global.shd_quadrangle_uni = ds_list_create();
+ds_list_add(global.shd_quadrangle_uni,
+	shader_get_uniform(shd_quadrangle, "uvs"),
+	shader_get_uniform(shd_quadrangle, "dimensions"),
+	shader_get_uniform(shd_quadrangle, "A"),
+	shader_get_uniform(shd_quadrangle, "B"),
+	shader_get_uniform(shd_quadrangle, "C"),
+	shader_get_uniform(shd_quadrangle, "D"),
+	shader_get_uniform(shd_quadrangle, "color"),
+	shader_get_uniform(shd_quadrangle, "trim"),
+	shader_get_uniform(shd_quadrangle, "overwrite_color"),
+	shader_get_uniform(shd_quadrangle, "overwrite_alpha"),
 );
 
 #endregion

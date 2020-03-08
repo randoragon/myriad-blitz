@@ -28,7 +28,7 @@ if (instance_exists(obj_emerald_ultimate) && global.gpspeed != 0) {
 #region Bullet behavior
 
 switch(f) {
-	case 0:
+	case PLAYER_EVILFLAME:
 	    switch(e) { //evilflame fury bullets
 	    case 2:
 		    speed1 = max(speed1 - (0.08 * global.gpspeed), 1);
@@ -56,14 +56,28 @@ if (place_meeting(x, y, obj_enemy) && instance_place(x, y, obj_enemy).hp > 0) {
     if (global.enemy_details_selection_auto_aim) {
         global.enemy_details_selection = ee;
     }
-    //spawning frags
-    var frag_e = 0;
-    if (global.chrsel == PLAYER_EVILFLAME && e == 2) {
-        frag_e = 2;
-    } else if(global.chrsel == PLAYER_DER_SCOOTOMIK && e == 1) {
-        frag_e = 1;
-    }
-    spawn_bullet_ring(x, y, obj_frag, global.chrsel, frag_e, ee.id, spawn, irandom_range(floor(fmin), ceil(fmax)), 0);
+	
+    // spawning frags
+	switch (global.chrsel) {
+		case PLAYER_EVILFLAME:
+			spawn_bullet_ring(x, y, obj_frag, global.chrsel, (e == 2)? 2 : 0, ee.id, spawn, self, irandom_range(floor(fmin), ceil(fmax)), 0);
+		break;
+		case PLAYER_DER_SCOOTOMIK:
+			spawn_bullet_ring(x, y, obj_frag, global.chrsel, (e == 1)? 1 : 0, ee.id, spawn, self, irandom_range(floor(fmin), ceil(fmax)), 0);
+		break;
+		case PLAYER_BOBILEUSZ:
+			var newfrag = spawn_bullet(x, y, obj_frag, PLAYER_BOBILEUSZ, 0, ee.id, spawn);
+			newfrag.bulletdir = direction;
+			var newfrag = spawn_bullet(x, y, obj_frag, PLAYER_BOBILEUSZ, 1, ee.id, spawn);
+			newfrag.bulletdir = direction;
+			var newfrag = spawn_bullet(x, y, obj_frag, PLAYER_BOBILEUSZ, 2, ee.id, spawn);
+			newfrag.bulletdir = direction;
+		break;
+		default:
+			spawn_bullet_ring(x, y, obj_frag, global.chrsel, 0, ee.id, spawn, self, irandom_range(floor(fmin), ceil(fmax)), 0);
+		break;
+	}	
+  
     instance_destroy();
 }
 

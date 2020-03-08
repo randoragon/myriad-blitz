@@ -7,7 +7,6 @@ uniform float time;
 uniform vec2 size;
 uniform vec2 suf_size;
 uniform vec4 color_blend;
-uniform vec2 pixel_size;
 uniform vec4 whitelist_box;
 
 vec4 blend_colors(vec4 val1, vec4 val2) {

@@ -403,6 +403,20 @@
             "value": "0",
             "varName": "status_effect",
             "varType": 6
+        },
+        {
+            "id": "688318c2-08d8-430c-a954-3bf076e66a94",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "state",
+            "varType": 1
         }
     ],
     "solid": false,

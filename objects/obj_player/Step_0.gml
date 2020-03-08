@@ -244,6 +244,7 @@ if (global.state == 1 && gpspd != 0) {
         }
     }
     
+	// allow obj_charge to spin Scootomik during Beaming Spin
     if (!(global.chrsel == PLAYER_DER_SCOOTOMIK && instance_exists(obj_charge)) && gpspd != 0) {
         image_angle = -2 * yv / gpspd;
     }
@@ -302,7 +303,10 @@ if (global.state == 1 && gpspd != 0) {
                 var e = 0;
                 if (global.chrsel == PLAYER_EVILFLAME && IS_STATUS_EFFECT_TWILIGHT_FURY) {
                     e = 2;
-                }
+                } else if (global.chrsel == PLAYER_BOBILEUSZ) {
+					e = state;
+					state = (state + 1) % 4;
+				}
                 spawn_bullet(xx + lengthdir_x(l, angle), y + lengthdir_y(l, angle), obj_projectile, global.chrsel, e, -1, id);
 				
 				// scootomik's second bullet

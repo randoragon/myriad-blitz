@@ -335,6 +335,14 @@
             }
         },
         {
+            "Key": "1237143e-8ac5-4dae-8907-419d7f5da92c",
+            "Value": {
+                "id": "dd314caa-6133-4db1-a45a-d5659895face",
+                "resourcePath": "scripts\\shd_quadrangle_set\\shd_quadrangle_set.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "123e6a25-b982-4e87-91d3-acb91e1bd6c0",
             "Value": {
                 "id": "4f280e61-6f7a-43e1-99c0-758d602820f4",
@@ -607,6 +615,14 @@
                 "id": "ba6cbfce-3138-4395-bfdb-8f9f457d5ed3",
                 "resourcePath": "objects\\obj_emerald_ultimate_flow\\obj_emerald_ultimate_flow.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "22cbcfc6-9aad-4db7-b690-07c7600137d3",
+            "Value": {
+                "id": "9781cc0f-55d2-494c-af29-2139febe0045",
+                "resourcePath": "shaders\\shd_quadrangle\\shd_quadrangle.yy",
+                "resourceType": "GMShader"
             }
         },
         {
@@ -4698,10 +4714,12 @@
         "d1898ebe-7a31-40a6-a840-705003b879bc",
         "69e083c3-c07c-4c25-b515-da11943a18da",
         "69960846-edc0-4f4f-97e8-4ea736442b14",
+        "bdb388a0-b545-40af-8fd1-c3db5df9a8c8",
         "a0125457-8ac8-418a-b095-66bd533b96b0",
         "26c96dc3-d0a0-4577-b4d2-9cc795833889",
         "157e119d-70ae-4347-9bb8-d746c9c809fc",
         "3f56273e-54ea-4ed0-b167-3fd0c7854fbe",
+        "1237143e-8ac5-4dae-8907-419d7f5da92c",
         "b0877ba5-1114-431d-9339-2f9178f283b9",
         "e95000e1-e714-4d1b-80bb-1c78026a82f8",
         "8318c3d7-6fa1-4399-922a-250ff9b923a1",
@@ -4739,7 +4757,6 @@
         "85505055-98d2-456a-884b-462aa758f6fd",
         "81a6c016-6b86-4f97-b561-b478967586bc",
         "6cbc7bc8-9e5b-4cc1-bbf2-96b885f2aed7",
-        "bdb388a0-b545-40af-8fd1-c3db5df9a8c8",
         "5a5a1add-5b64-4490-8610-e7a7db8a903b"
     ],
     "tutorial": ""

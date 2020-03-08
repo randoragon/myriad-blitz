@@ -65,7 +65,7 @@ void main()
     tmp_color.rgb += u_brightnessIntensity;
     
     // velocity lines
-    if (u_velocityLines==1) {
+    if (u_velocityLines == 1) {
         float rand = random_float(vec2(150. * fract(acos(mod((u_gptime + 600.) / 60.0, 2.0 * Pi))), v_vTexcoord.y));
         if (mod(rand, 0.02) < 0.005) {
             tmp_color.rgb += (rand * 0.2) - 0.1;

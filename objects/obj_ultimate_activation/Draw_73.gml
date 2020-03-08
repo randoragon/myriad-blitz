@@ -27,7 +27,6 @@ shd_shine_set(
 	image_width + hpadding + uname_width, headline_height + vpadding + uname_height, 
 	mysurface_width, mysurface_height,
 	color_get_red(global.color[global.chrsel]) / 255.0, color_get_green(global.color[global.chrsel]) / 255.0, color_get_blue(global.color[global.chrsel])/255.0, image_alpha,
-	texel_width * size * multiplier, texel_height * size * multiplier,
 	0.0, (headline_height + vpadding) / mysurface_height, (image_width) / mysurface_width, 1.0);
 draw_surface(suf_mysurface, CANVAS_XMID - ((image_width + hpadding + uname_width) / 2), CANVAS_YMID - ((headline_height + vpadding + uname_height) / 2));
 gpu_set_alphatestref(254);

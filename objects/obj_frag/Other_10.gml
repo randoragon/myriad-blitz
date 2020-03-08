@@ -10,7 +10,7 @@ fkb       = spawn.fkb;
 enemyharm = 0;
 
 switch(f) {
-	case 0:
+	case PLAYER_EVILFLAME:
 	    switch(e) {
 		    case 0:
 			    sprite_index = spr_evilflame_frag;
@@ -45,7 +45,7 @@ switch(f) {
 		    break;
 	    }
 	break;
-	case 1:
+	case PLAYER_EMERALD:
 	    sprite_index = spr_emerald_frag;
 		image_speed  = 0;
 	    speed1       = 8;
@@ -56,7 +56,7 @@ switch(f) {
 			lifespan = 1200;
 		}
 	break;
-	case 2:
+	case PLAYER_DER_SCOOTOMIK:
 	    switch(e) {
 	    case 0:
 		    sprite_index = spr_scootomik_frag;
@@ -99,6 +99,18 @@ switch(f) {
 		    lifespan     = 120;
 	    break;
 	    }
+	break;
+	case PLAYER_BOBILEUSZ:
+	    sprite_index = spr_bobileusz_frag;
+		image_speed  = global.gpspeed;
+	    speed1       = spawn.pspd;
+	    lifespan	 = 120;
+		switch(e) {
+			case 0: direction = (bulletdir - 20); break;
+			case 1: direction =  bulletdir;		  break;
+			case 2: direction = (bulletdir + 20); break;
+		}
+		image_angle = direction;
 	break;
 }
 

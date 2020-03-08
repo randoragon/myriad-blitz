@@ -49,14 +49,14 @@ if (arg >= 4 && arg <= 7) { // chip tuning
     }
 }
 
-shader_set_uniform_f(ds_list_find_value(global.shd_application_surface_effect_uni, 0),  u_waveAmplitude_x, u_waveAmplitude_y);
-shader_set_uniform_f(ds_list_find_value(global.shd_application_surface_effect_uni, 1),  u_waveClock_x, u_waveClock_y);
-shader_set_uniform_f(ds_list_find_value(global.shd_application_surface_effect_uni, 2),  u_wavingSpeed_x, u_wavingSpeed_y);
-shader_set_uniform_f(ds_list_find_value(global.shd_application_surface_effect_uni, 3),  u_waveLength_x, u_waveLength_y);
-shader_set_uniform_f(ds_list_find_value(global.shd_application_surface_effect_uni, 4),  u_blendIntensity);
-shader_set_uniform_f(ds_list_find_value(global.shd_application_surface_effect_uni, 5),  color_get_red(u_colorBlend) / 255, color_get_green(u_colorBlend) / 255, color_get_blue(u_colorBlend) / 255);
-shader_set_uniform_f(ds_list_find_value(global.shd_application_surface_effect_uni, 6),  u_gptime);
-shader_set_uniform_f(ds_list_find_value(global.shd_application_surface_effect_uni, 7),  u_contrastIntensity);
-shader_set_uniform_f(ds_list_find_value(global.shd_application_surface_effect_uni, 8),  u_desaturationIntensity);
-shader_set_uniform_f(ds_list_find_value(global.shd_application_surface_effect_uni, 9),  u_brightnessIntensity);
-shader_set_uniform_f(ds_list_find_value(global.shd_application_surface_effect_uni, 10), u_velocityLines);
+shader_set_uniform_f(global.shd_application_surface_effect_uni[| 0],  u_waveAmplitude_x, u_waveAmplitude_y);
+shader_set_uniform_f(global.shd_application_surface_effect_uni[| 1],  u_waveClock_x, u_waveClock_y);
+shader_set_uniform_f(global.shd_application_surface_effect_uni[| 2],  u_wavingSpeed_x, u_wavingSpeed_y);
+shader_set_uniform_f(global.shd_application_surface_effect_uni[| 3],  u_waveLength_x, u_waveLength_y);
+shader_set_uniform_f(global.shd_application_surface_effect_uni[| 4],  u_blendIntensity);
+shader_set_uniform_f(global.shd_application_surface_effect_uni[| 5],  color_get_red(u_colorBlend) / 255, color_get_green(u_colorBlend) / 255, color_get_blue(u_colorBlend) / 255);
+shader_set_uniform_f(global.shd_application_surface_effect_uni[| 6],  u_gptime);
+shader_set_uniform_f(global.shd_application_surface_effect_uni[| 7],  u_contrastIntensity);
+shader_set_uniform_f(global.shd_application_surface_effect_uni[| 8],  u_desaturationIntensity);
+shader_set_uniform_f(global.shd_application_surface_effect_uni[| 9],  u_brightnessIntensity);
+shader_set_uniform_f(global.shd_application_surface_effect_uni[| 10], u_velocityLines);

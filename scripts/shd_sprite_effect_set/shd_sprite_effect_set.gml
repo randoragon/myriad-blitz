@@ -37,11 +37,11 @@ if (arg == 1) { 													// focus mode
 	if (fps > 50 && global.gpspeed != 0) { u_flickerInterval = 3; }
 }
 
-shader_set_uniform_f(ds_list_find_value(global.shd_sprite_effect_uni, 0), u_gpspeed);
-shader_set_uniform_f(ds_list_find_value(global.shd_sprite_effect_uni, 1), u_gptime);
-shader_set_uniform_f(ds_list_find_value(global.shd_sprite_effect_uni, 2), u_contrastIntensity);
-shader_set_uniform_f(ds_list_find_value(global.shd_sprite_effect_uni, 3), u_minColorAvg);
-shader_set_uniform_f(ds_list_find_value(global.shd_sprite_effect_uni, 4), u_maxColorAvg);
-shader_set_uniform_f(ds_list_find_value(global.shd_sprite_effect_uni, 5), u_desaturationIntensity);
-shader_set_uniform_f(ds_list_find_value(global.shd_sprite_effect_uni, 6), u_brightnessIntensity);
-shader_set_uniform_f(ds_list_find_value(global.shd_sprite_effect_uni, 7), u_flickerInterval);
+shader_set_uniform_f(global.shd_sprite_effect_uni[| 0], u_gpspeed);
+shader_set_uniform_f(global.shd_sprite_effect_uni[| 1], u_gptime);
+shader_set_uniform_f(global.shd_sprite_effect_uni[| 2], u_contrastIntensity);
+shader_set_uniform_f(global.shd_sprite_effect_uni[| 3], u_minColorAvg);
+shader_set_uniform_f(global.shd_sprite_effect_uni[| 4], u_maxColorAvg);
+shader_set_uniform_f(global.shd_sprite_effect_uni[| 5], u_desaturationIntensity);
+shader_set_uniform_f(global.shd_sprite_effect_uni[| 6], u_brightnessIntensity);
+shader_set_uniform_f(global.shd_sprite_effect_uni[| 7], u_flickerInterval);
