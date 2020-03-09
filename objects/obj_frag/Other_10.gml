@@ -102,16 +102,15 @@ switch(f) {
 	break;
 	case PLAYER_BOBILEUSZ:
 	    sprite_index = spr_bobileusz_frag;
-		image_speed  = global.gpspeed;
-	    speed1       = spawn.pspd;
+		image_speed  = 0;
+	    speed1       = spawn.pspd * 0.6;
 	    lifespan	 = 120;
-		switch(e) {
-			case 0: direction = (bulletdir - 20); break;
-			case 1: direction =  bulletdir;		  break;
-			case 2: direction = (bulletdir + 20); break;
-		}
-		image_angle = direction;
+		image_blend  = hsv(irandom(255), 255, 255);
+		fadeout      = 10;
 	break;
 }
+
+// Remember fadeout's initial value for potential later calculations
+fadeoutmax = fadeout;
 
 #endregion

@@ -58,15 +58,14 @@ switch(f) {
 	break;
 	case PLAYER_BOBILEUSZ:
 		sprite_index = spr_bobileusz_bullet;
-		var offset = (e == 0 || e == 2)? 0 : ((e == 1)? 20 : -20);
-		direction    = spawn.image_angle + offset + random_range(-10 * (1 - sacc), 10 * (1 - sacc));
-		image_index  = irandom(8);
-		image_speed  = global.gpspeed;
+		direction = spawn.image_angle + random_range(-45 * (1 - sacc), 45 * (1 - sacc));
+		image_speed  = 0;
+		image_blend  = rgb(255, 255, 128);
 		speed1       = pspd;
-		image_angle  = direction;
 		image_speed  = 0;
 		lifespan     = 120;
-		image_scale(2, 2);
+		fadeout 	 = 10;
+		image_scale(1, 1);
 	break;
 	default:
 		sprite_index = spr_evilflame_bullet + global.chrsel;
@@ -84,5 +83,8 @@ if (instance_exists(obj_emerald_ultimate)) {
 	lifespan += irandom_range(-10, 10);
 	speed1 /= 2;
 }
+
+// Remember fadeout's initial value for potential later calculations
+fadeoutmax = fadeout;
 
 #endregion

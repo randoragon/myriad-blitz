@@ -223,6 +223,48 @@
             "value": "0",
             "varName": "bulletdir",
             "varType": 0
+        },
+        {
+            "id": "4f0e5f41-cbf9-4868-9bd0-4b1145c50f69",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "fadeout",
+            "varType": 0
+        },
+        {
+            "id": "8fdb09e3-e665-4623-a38d-c664310ee1c1",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "fadeoutmax",
+            "varType": 1
+        },
+        {
+            "id": "dca28dad-c23e-4069-9a8e-3b78379c77c0",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "fading",
+            "varType": 3
         }
     ],
     "solid": false,

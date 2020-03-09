@@ -65,17 +65,29 @@ if (place_meeting(x, y, obj_enemy) && instance_place(x, y, obj_enemy).hp > 0 && 
     knockback((100 - ee.fkbres) * fkb / 1000, point_direction(x, y, x, y), 1);
     indicate(x, y, display_damage, 1, rgb(255, 85, 0), c_red);
     play_sfx(sfx_evilflame_frag_hit + (global.chrsel * 4), sound_priority.player_frag_hit, 0, global.sound_gpspeed * 100);
-    instance_destroy();
+    fading = TRUE;
 }
 
 #endregion
 
 #region Despawn
 
-lifespan -= global.gpspeed;
-if (lifespan <= 0 || y > CANVAS_YEND + sprite_yoffset + 128 || y < -sprite_height + sprite_yoffset - 128 || x < -sprite_width + sprite_xoffset - 128 || x > CANVAS_XEND + sprite_xoffset + 128) {
-	instance_destroy();
-	exit;
+var out_of_bounds = (y > CANVAS_YEND + sprite_yoffset + 128 || y < -sprite_height + sprite_yoffset - 128 || x < -sprite_width + sprite_xoffset - 128 || x > CANVAS_XEND + sprite_xoffset + 128);
+
+if (!fading) {
+	lifespan -= global.gpspeed;
+	if (lifespan <= 0 || out_of_bounds) {
+		if (fadeout == 0) {
+			instance_destroy();
+		} else {
+			fading = TRUE;
+		}
+	}
+} else {
+	fadeout -= global.gpspeed;
+	if (fadeout <= 0 || out_of_bounds) {
+		instance_destroy();
+	}
 }
 
 #endregion

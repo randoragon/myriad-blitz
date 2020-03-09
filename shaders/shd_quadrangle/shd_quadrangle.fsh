@@ -26,30 +26,77 @@ uniform int overwrite_alpha;
 // transparency get trimmed on the actual texture pages,
 // so the texture page dimensions differ from sprite dimensions.
 
+// Determinant of a 3D matrix
+float det(vec3 u, vec3 v, vec3 w)
+{
+	return (u.x * v.y * w.z) + (u.y * v.z * w.x) + (u.z * v.x * w.y) - (u.z * v.y * w.x) - (u.x * v.z * w.y) - (u.y *v.x * w.z);
+}
+
+// Determinant of a 2D matrix
+float det(vec2 u, vec2 v)
+{
+	return (u.x * v.y) - (u.y * v.x);
+}
+
+// Checks on which line side lies a point
+float plside(vec2 l1, vec2 l2, vec2 p)
+{
+	return sign(det(vec3(l1.x, l1.y, 1.), vec3(l2.x, l2.y, 1.), vec3(p.x, p.y, 1.)));
+}
+
+bool doVectorsIntersect(vec2 u0, vec2 u1, vec2 v0, vec2 v1)
+{
+	// Vectors intersect when one of 5 conditions is fulfilled (this reflects the return code below):
+	/* (1) v1 and v0 are on opposite sides of vector u, and u1 and u0 are on opposite sides of vector v
+	 * (2) v0 lies on u
+	 * (3) v1 lies on u
+	 * (4) u0 lies on v
+	 * (5) u1 lies on v
+	 */
+	return (plside(u0, u1, v0) != plside(u0, u1, v1) && plside(v0, v1, u0) != plside(v0, v1, u1))
+	|| (plside(u0, u1, v0) == 0. && v0.x >= min(u0.x, u1.x) && v0.x <= max(u0.x, u1.x) && v0.y >= min(u0.y, u1.y) && v0.y <= max(u0.y, u1.y))
+	|| (plside(u0, u1, v1) == 0. && v1.x >= min(u0.x, u1.x) && v1.x <= max(u0.x, u1.x) && v1.y >= min(u0.y, u1.y) && v1.y <= max(u0.y, u1.y))
+	|| (plside(v0, v1, u0) == 0. && u0.x >= min(v0.x, v1.x) && u0.x <= max(v0.x, v1.x) && u0.y >= min(v0.y, v1.y) && u0.y <= max(v0.y, v1.y))
+	|| (plside(v0, v1, u1) == 0. && u1.x >= min(v0.x, v1.x) && u1.x <= max(v0.x, v1.x) && u1.y >= min(v0.y, v1.y) && u1.y <= max(v0.y, v1.y));
+}
+
 void main()
 {
 	vec4 P = texture2D(gm_BaseTexture, v_vTexcoord);
 	
-	// the method is simple
-	// We're going to check if the point lies on the same side of every
-	// single line that is formed by quadrangle sides, that is
-	// AB, BC, CD and DA. Sides are treated like vectors, so AB!=BA.
-	// A point will lie on the quadrangle if and only if
-	// it either lies on a line, or is to the right or left of every single line.
-	// A point does not lie on the quadrangle if it's to the right of
-	// any side, and simultaneously to the left of any other side.
+	// Method used: Ray Casting
+	// Read about it here: https://stackoverflow.com/a/218081
 	
-	// convert point coordinates to pixels
+	// Convert point coordinates to pixels
 	float Px = dimensions.x * (v_vTexcoord.x - uvs.x) / (uvs.z - uvs.x);
 	float Py = dimensions.y * (v_vTexcoord.y - uvs.y) / (uvs.w - uvs.x);
 	
-	float AB, BC, CD, DA;
-	AB = sign(((Px - A.x) * (B.y - A.y)) - ((Py - A.y) * (B.x - A.x)));
-	BC = sign(((Px - B.x) * (C.y - B.y)) - ((Py - B.y) * (C.x - B.x)));
-	CD = sign(((Px - C.x) * (D.y - C.y)) - ((Py - C.y) * (D.x - C.x)));
-	DA = sign(((Px - D.x) * (A.y - D.y)) - ((Py - D.y) * (A.x - D.x)));
+	// This variable will hold the final result
+	bool within;
 	
-	if (AB * BC != -1. && AB * CD != -1. && AB * DA != -1. && BC * CD != -1. && BC * DA != -1. && CD * DA != -1.) {
+	// Check if point is even worth using the ray-casting method on
+	float xmin = min(A.x, min(B.x, min(C.x, D.x)));
+	float xmax = max(A.x, max(B.x, max(C.x, D.x)));
+	float ymin = min(A.y, min(B.y, min(C.y, D.y)));
+	float ymax = max(A.y, max(B.y, max(C.y, D.y)));
+	within = (Px >= xmin && Px <= xmax && Py >= ymin && Py <= ymax);
+	
+	if (within) {
+		// Pick any point outside the quadrangle as ray starting point
+		vec2 R = vec2(xmin - 1., Py);
+	
+		// Count the number of intersections with quadrangle sides
+		float intersections = 0.;
+		intersections += (doVectorsIntersect(R, vec2(Px, Py), A, B)? 1. : 0.);
+		intersections += (doVectorsIntersect(R, vec2(Px, Py), B, C)? 1. : 0.);
+		intersections += (doVectorsIntersect(R, vec2(Px, Py), C, D)? 1. : 0.);
+		intersections += (doVectorsIntersect(R, vec2(Px, Py), D, A)? 1. : 0.);
+	
+		// If the number of intersections is odd, the point lies within
+		within = (mod(intersections, 2.) == 1.);
+	}
+	
+	if (within) {
 		P.rgb = (overwrite_color)? color.rgb : P.rgb;
 		if (overwrite_alpha == 0) {
 			P.a *= color.a;

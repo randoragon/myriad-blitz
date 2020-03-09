@@ -24,19 +24,18 @@ if (instance_exists(obj_emerald_ultimate) && global.gpspeed != 0) {
 
 #endregion
 
-
 #region Bullet behavior
 
 switch(f) {
 	case PLAYER_EVILFLAME:
 	    switch(e) { //evilflame fury bullets
-	    case 2:
-		    speed1 = max(speed1 - (0.08 * global.gpspeed), 1);
-		    direction += random_range(-2, 2) * global.gpspeed;
-		    if (real_step()) {
-				part_type_spawn_ult(PART_SYSTEM_FRAG, PART_TYPE_P_EVILFLAME_FURY_FRAG, 6, x, y, x, y, "square", "linear", 1);
-			}
-	    break;
+		    case 2:
+			    speed1 = max(speed1 - (0.08 * global.gpspeed), 1);
+			    direction += random_range(-2, 2) * global.gpspeed;
+			    if (real_step()) {
+					part_type_spawn_ult(PART_SYSTEM_FRAG, PART_TYPE_P_EVILFLAME_FURY_FRAG, 6, x, y, x, y, "square", "linear", 1);
+				}
+		    break;
 	    }
 	break;
 }
@@ -45,7 +44,7 @@ switch(f) {
 
 #region Dealing damage & spawning frags
 
-if (place_meeting(x, y, obj_enemy) && instance_place(x, y, obj_enemy).hp > 0) {
+if (!fading && place_meeting(x, y, obj_enemy) && instance_place(x, y, obj_enemy).hp > 0) {
     var ee = instance_place(x, y, obj_enemy);
     var damage = calculate_damage(pdmg, ppen, ee.pdef / sspd);
     var display_damage = ceil(ee.hp) - ceil(ee.hp - damage);
@@ -60,35 +59,50 @@ if (place_meeting(x, y, obj_enemy) && instance_place(x, y, obj_enemy).hp > 0) {
     // spawning frags
 	switch (global.chrsel) {
 		case PLAYER_EVILFLAME:
-			spawn_bullet_ring(x, y, obj_frag, global.chrsel, (e == 2)? 2 : 0, ee.id, spawn, self, irandom_range(floor(fmin), ceil(fmax)), 0);
+			spawn_bullet_ring(x, y, obj_frag, PLAYER_EVILFLAME, (e == 2)? 2 : 0, ee.id, spawn, irandom_range(floor(fmin), ceil(fmax)), 0);
 		break;
 		case PLAYER_DER_SCOOTOMIK:
-			spawn_bullet_ring(x, y, obj_frag, global.chrsel, (e == 1)? 1 : 0, ee.id, spawn, self, irandom_range(floor(fmin), ceil(fmax)), 0);
+			spawn_bullet_ring(x, y, obj_frag, PLAYER_DER_SCOOTOMIK, (e == 1)? 1 : 0, ee.id, spawn, irandom_range(floor(fmin), ceil(fmax)), 0);
 		break;
 		case PLAYER_BOBILEUSZ:
-			var newfrag = spawn_bullet(x, y, obj_frag, PLAYER_BOBILEUSZ, 0, ee.id, spawn);
-			newfrag.bulletdir = direction;
-			var newfrag = spawn_bullet(x, y, obj_frag, PLAYER_BOBILEUSZ, 1, ee.id, spawn);
-			newfrag.bulletdir = direction;
-			var newfrag = spawn_bullet(x, y, obj_frag, PLAYER_BOBILEUSZ, 2, ee.id, spawn);
-			newfrag.bulletdir = direction;
+			if (!irandom(20)) {
+				var frag = spawn_bullet(x, y, obj_frag, PLAYER_BOBILEUSZ, 0, ee.id, spawn);
+				var randir = irandom_range(direction - 35, direction + 35);
+				frag.xstart = lengthdir_x(irandom_range(50, 200), randir + 180);
+				frag.ystart = lengthdir_y(irandom_range(50, 200), randir + 180);
+				frag.direction = point_direction(frag.xstart, frag.ystart, ee.x, ee.y);
+			}
 		break;
 		default:
-			spawn_bullet_ring(x, y, obj_frag, global.chrsel, 0, ee.id, spawn, self, irandom_range(floor(fmin), ceil(fmax)), 0);
+			spawn_bullet_ring(x, y, obj_frag, global.chrsel, 0, ee.id, spawn, irandom_range(floor(fmin), ceil(fmax)), 0);
 		break;
 	}	
-  
-    instance_destroy();
+	
+    fading = TRUE;
 }
 
 #endregion
 
-#region Despawn & rotate
+#region Despawn & rotate & fading
 
 image_angle += rot * global.gpspeed;
-lifespan -= global.gpspeed;
-if (lifespan <= 0 || y > CANVAS_YEND + sprite_yoffset + 128 || y < -sprite_height + sprite_yoffset - 128 || x < -sprite_width + sprite_xoffset - 128 || x > CANVAS_XEND + sprite_xoffset + 128) {
-	instance_destroy();
+
+var out_of_bounds = (y > CANVAS_YEND + sprite_yoffset + 128 || y < -sprite_height + sprite_yoffset - 128 || x < -sprite_width + sprite_xoffset - 128 || x > CANVAS_XEND + sprite_xoffset + 128);
+
+if (!fading) {
+	lifespan -= global.gpspeed;
+	if (lifespan <= 0 || out_of_bounds) {
+		if (fadeout == 0) {
+			instance_destroy();
+		} else {
+			fading = TRUE;
+		}
+	}
+} else {
+	fadeout -= global.gpspeed;
+	if (fadeout <= 0 || out_of_bounds) {
+		instance_destroy();
+	}
 }
 
 #endregion

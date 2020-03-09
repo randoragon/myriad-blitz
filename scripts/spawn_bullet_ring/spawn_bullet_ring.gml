@@ -1,4 +1,4 @@
-/// @description spawn_bullet_ring(x, y, obj, f, e, enemy, spawn, direction, count, random);
+/// @description spawn_bullet_ring(x, y, obj, f, e, enemy, spawn, count, random);
 /// @param x
 /// @param y
 /// @param obj
@@ -18,7 +18,6 @@ for (var b = 0; b < argument[8]; b++) {
     newinstance.e		  = argument[4];
     newinstance.enemy	  = argument[5];
     newinstance.spawn	  = argument[6];
-	newinstance.bulletdir = argument[7];
     if (argument[9]) {
         newinstance.direction = irandom(359);
     } else {

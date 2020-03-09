@@ -167,6 +167,48 @@
             "value": "-1",
             "varName": "afterimage_ds_grid",
             "varType": 1
+        },
+        {
+            "id": "37600aff-f38a-4af6-a329-c12b5de2714d",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "fadeout",
+            "varType": 1
+        },
+        {
+            "id": "7088d6f7-dbe1-4564-b315-f46b011189b5",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "fadeoutmax",
+            "varType": 1
+        },
+        {
+            "id": "e10d48ca-8403-48b1-be7c-b39a1a39b0f1",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "fading",
+            "varType": 3
         }
     ],
     "solid": false,

@@ -179,29 +179,29 @@ switch (argument[0]) {
         global.lore          = 
         "It's Bobileusz. Deal with it." +
         "\nWe're all gonna die.";
-        global.hp            = 420;
-        global.bdmg          = 40;
-        global.bdef          = 72;
-        global.bpen          = 0;
-        global.bkb           = 120;
-        global.bkbres        = 85;
-        global.acc           = 0.77;
-        global.counteracc    = 0.86;
-        global.spd           = 16;
-        global.invtime       = 85;
-        global.foctime       = 240;
-        global.pdmg          = 6;
-        global.pdef          = 65;
-        global.ppen          = 33;
-        global.pkb           = 60;
-        global.pkbres        = 90;
+        global.hp            = 580;
+        global.bdmg          = 64;
+        global.bdef          = 23;
+        global.bpen          = 0.2;
+        global.bkb           = 75;
+        global.bkbres        = 70;
+        global.acc           = 1;
+        global.counteracc    = 1;
+        global.spd           = 13;
+        global.invtime       = 69;
+        global.foctime       = 220;
+        global.pdmg          = 4.5;
+        global.pdef          = 25;
+        global.ppen          = 25;
+        global.pkb           = 0;
+        global.pkbres        = 80;
         global.pspd          = 30;
-        global.sacc          = 0;
+        global.sacc          = 0.8;
         global.sspd          = 24;
-        global.fmin          = 2;
-        global.fmax          = 5;
-        global.fdmg          = 5;
-        global.fpen          = 75;
+        global.fmin          = 0;
+        global.fmax          = 1;
+        global.fdmg          = 40;
+        global.fpen          = 25;
         global.fkb           = 0;
         global.cname         = "GEAR SHIFT";
         global.cdesc         = 
@@ -209,14 +209,14 @@ switch (argument[0]) {
         "\nthe charge to shift accordingly." +
         "\nAllows you to be perfectly balanced," +
         "\nas everything should be.";
-        global.cdmg          = 8;
-        global.cpen          = 95;
-        global.ckb           = 100;
-        global.ctime         = 30;
-        global.ccooldown     = 1600;
+        global.cdmg          = 0;
+        global.cpen          = 0;
+        global.ckb           = 0;
+        global.ctime         = 1;
+        global.ccooldown     = 800;
         global.uname         = "PRISMATIC GLACIER";
         global.utype         = "BUFF";
-        global.ucooldown     = 1500;
+        global.ucooldown     = 3600;
         global.udesc         = 
         "Stores up power for an instantaneous" +
         "\nrelease of immense frost energy," +

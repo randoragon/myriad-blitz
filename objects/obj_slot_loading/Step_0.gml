@@ -447,7 +447,6 @@ if (phase == 4 && clock-- <= 0) {
 			                fpen				= string_readln_real(bit, ";");
 			                fkb					= string_readln_real(bit, ";");
 			                lifespan			= string_readln_real(bit, ";");
-							bulletdir			= string_readln_real(bit, ";");
 			                var afterimage_data = other.line[++other.progress];
 			                if (afterimage_data != "") {
 			                    afterimage_ds_grid = ds_grid_create(0, 0);
