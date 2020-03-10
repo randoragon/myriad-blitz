@@ -213,7 +213,7 @@ switch (argument[0]) {
         global.cpen          = 0;
         global.ckb           = 0;
         global.ctime         = 1;
-        global.ccooldown     = 800;
+        global.ccooldown     = 330;
         global.uname         = "PRISMATIC GLACIER";
         global.utype         = "BUFF";
         global.ucooldown     = 3600;

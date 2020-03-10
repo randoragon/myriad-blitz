@@ -663,7 +663,7 @@ global.realm_audiogroup[1] = audiogroup_realm_christmas;
 
 #region Status Effects Setup
 
-global.status_effect_count = 11; //this is how many status effects there are in total
+global.status_effect_count = 21; //this is how many status effects there are in total
 
 global.player_status_effect_name = array_setup("", global.status_effect_count - 1);
 global.player_status_effect_desc = array_setup("", global.status_effect_count - 1);
@@ -722,5 +722,55 @@ global.player_status_effect_name[10] = "BERSERK";
 global.player_status_effect_desc[10] = 
 @"An uncontrollable fury
 takes over your body!";
+
+global.player_status_effect_name[11] = "GEAR 1";
+global.player_status_effect_desc[11] = 
+@"Speed++++
+Damage----";
+
+global.player_status_effect_name[12] = "GEAR 2";
+global.player_status_effect_desc[12] = 
+@"Speed+++
+Damage---";
+
+global.player_status_effect_name[13] = "GEAR 3";
+global.player_status_effect_desc[13] = 
+@"Speed++
+Damage--";
+
+global.player_status_effect_name[14] = "GEAR 4";
+global.player_status_effect_desc[14] = 
+@"Speed+
+Damage-";
+
+global.player_status_effect_name[15] = "GEAR 5";
+global.player_status_effect_desc[15] = 
+@"The default gear.
+All stats normal.";
+
+global.player_status_effect_name[16] = "GEAR 6";
+global.player_status_effect_desc[16] = 
+@"Speed-
+Damage+";
+
+global.player_status_effect_name[17] = "GEAR 7";
+global.player_status_effect_desc[17] = 
+@"Speed--
+Damage++";
+
+global.player_status_effect_name[18] = "GEAR 8";
+global.player_status_effect_desc[18] = 
+@"Speed---
+Damage+++";
+
+global.player_status_effect_name[19] = "GEAR 9";
+global.player_status_effect_desc[19] = 
+@"Speed----
+Damage++++";
+
+global.player_status_effect_name[20] = "GEAR 10";
+global.player_status_effect_desc[20] = 
+@"Speed-----
+Damage+++++";
 
 #endregion

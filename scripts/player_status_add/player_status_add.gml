@@ -31,17 +31,3 @@ global.player_status_effects[# 2, 0] = argument[1];
 // update player status_effect array
 obj_player.status_effect[argument[0]] = TRUE;
 
-/* STATUS EFFECTS:
- * 0 - Exhausted
- * 1 - Magic Fatigue
- * 2 - Spell-Dried
- * 3 - Paralyzed
- * 4 - Dizzy
- * 5 - Dual Clone
- * 6 - Ultimate Cooldown
- * 7 - Current Crush
- * 8 - Chip Tuning
- * 9 - Twilight Fury
- * 10 - Berserk
- */
-

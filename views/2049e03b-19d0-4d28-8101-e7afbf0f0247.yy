@@ -15,7 +15,17 @@
         "a029e794-b76b-44ad-a11f-648cc444232d",
         "b4aa8994-06d3-49ba-bf5b-437dcfb1e55a",
         "1ad75984-6035-49d6-8b05-02a19a6dad1d",
-        "47876bdc-9f43-4fe4-b9d5-b6f1c6d1fec1"
+        "47876bdc-9f43-4fe4-b9d5-b6f1c6d1fec1",
+        "98f8ed0f-3d72-4814-ab61-b7eab1964c15",
+        "9f45ce97-5a38-498d-9600-4e4a84141da8",
+        "420fffbd-53cd-41c3-80a2-f6e448246ee7",
+        "c62d3877-81c7-4db9-870b-16d15f2fe42d",
+        "52e75106-1e6d-4942-9948-11884441b12c",
+        "f330224c-6f37-4de1-88b2-78f4e3fedbb9",
+        "e6b40e0f-61a9-4516-a231-603cf89feec9",
+        "6660802f-370b-45a7-b688-eefa878cde17",
+        "19242f5e-ff27-4245-b911-46c76887f7ba",
+        "8ae1c2a2-a83b-4b18-8252-ee76d16729bc"
     ],
     "filterType": "GMSprite",
     "folderName": "status_effects",

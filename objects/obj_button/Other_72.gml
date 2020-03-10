@@ -15,4 +15,8 @@ if (async_load != -1 && async_load[? "type"] == "audiogroup_load" && async_load[
 	keyboard_clear(ord("S"));
 	keyboard_clear(ord("D"));
 	randomize();
+	
+	if (global.chrsel == PLAYER_BOBILEUSZ) {
+		player_status_add(STATUS_EFFECT_GEAR1, -2, 0);
+	}
 }

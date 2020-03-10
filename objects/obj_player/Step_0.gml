@@ -423,12 +423,13 @@ if (global.gpspeed != 0 && global.state != 2 && real_step()) {
 
 #region Charge
 
-if (global.state==1 && global.gpspeed!=0) {
+if (global.state == 1 && global.gpspeed != 0) {
 	if (artcharge == 1) { charge = ctime };
 	
 	var does_emerald_laser_exist = (global.chrsel == PLAYER_EMERALD && instance_exists(obj_charge));
 	var is_spell_dried = (global.chrsel == PLAYER_EMERALD && IS_STATUS_EFFECT_SPELL_DRIED);
-	if (mouse_check_button(mb_right) && global.state == 1 && !does_emerald_laser_exist && !is_spell_dried) {
+	var bobileusz_is_valid = (global.chrsel == PLAYER_BOBILEUSZ && ((keyboard_check(global.keybind[0]) && !status_effect[STATUS_EFFECT_GEAR10]) || (keyboard_check(global.keybind[2]) && !status_effect[STATUS_EFFECT_GEAR1])));
+	if (mouse_check_button(mb_right) && global.state == 1 && !does_emerald_laser_exist && !is_spell_dried && bobileusz_is_valid) {
 		//charging
 		bar_opacity[2] = 5;
 		if (discharge == 0) {
@@ -439,14 +440,14 @@ if (global.state==1 && global.gpspeed!=0) {
 			} else if (sprite_index < spr_evilflame_charging)
 				sprite_index = spr_evilflame_charging + global.chrsel;
 			charge = min(charge + global.gpspeed, ctime);
-			if (!audio_is_playing(sfx_charging))
+			// do not play the charging sound for immediate charges
+			if (ctime != 1 && !audio_is_playing(sfx_charging))
 				play_sfx(sfx_charging, sound_priority.player_charging, 0, global.sound_gpspeed * 100);
 		}
 	}
 
 	// launching charge
-	var does_emerald_laser_exist = (instance_exists(obj_charge) && (global.chrsel == PLAYER_EMERALD));
-	if (mouse_check_button(mb_right) && charge > 0 && !does_emerald_laser_exist) {
+	if (mouse_check_button(mb_right) && charge > 0 && !does_emerald_laser_exist && bobileusz_is_valid) {
 		if (charge >= ctime) {
 			cb = 1;
 			play_sfx(sfx_evilflame_charge_shot + (global.chrsel * 4), sound_priority.player_charge_shot, 0, global.sound_gpspeed * 100);
@@ -492,6 +493,26 @@ if (global.state==1 && global.gpspeed!=0) {
 				} else {
 					spawn_bullet(x + 20, y, obj_charge, global.chrsel, 0, -1, id);
 				}
+			break;
+			case PLAYER_BOBILEUSZ:
+				cb = 0;
+				var gear = 0;
+				for (var i = STATUS_EFFECT_GEAR1; i < STATUS_EFFECT_GEAR10 + 1; i++) {
+					if (status_effect[i]) {
+						gear = i - STATUS_EFFECT_GEAR1;
+						player_status_add(i, 0, 0);
+						break;
+					}
+				}
+				var prevgear = gear;
+				if (keyboard_check(global.keybind[0])) {
+					gear++;
+					indicate(x, y - 50, "GEAR UP!", 2, hsv(100 + (156 * prevgear/10), 255, 255), hsv(100 + (155 * gear/10), 255, 255));
+				} else if (keyboard_check(global.keybind[2])) {
+					gear--;
+					indicate(x, y - 50, "GEAR DOWN!", 2, hsv(100 + (156 * prevgear/10), 255, 255), hsv(100 + (155 * gear/10), 255, 255));
+				}
+				player_status_add(STATUS_EFFECT_GEAR1 + gear, -2, 0);
 			break;
 			default:
 				spawn_bullet(x + 20, y, obj_charge, global.chrsel, 0, -1, id);
