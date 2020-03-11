@@ -38,15 +38,20 @@ global.transition       = 0;
 global.save_chunk_size  = 500;
 global.save_particles   = 1;
 global.left_handed_mode = 0;
-global.keybind[0]	    = ord("W"); // move upwards
-global.keybind[1]       = ord("A"); // move left
-global.keybind[2]       = ord("S"); // move downwards
-global.keybind[3]       = ord("D"); // move right
-global.keybind[4]       = vk_space; // shoot
-global.keybind[5]       = vk_shift; // focus
-global.keybind[6]       = ord("E"); // ultimate
 global.enemy_details_selection = noone;
 global.player_status_effects   = -1;
+
+#endregion
+
+#region keybinds
+
+KEYBIND_UP	     = ord("W");
+KEYBIND_LEFT     = ord("A");
+KEYBIND_DOWN     = ord("S");
+KEYBIND_RIGHT    = ord("D");
+KEYBIND_SHOOT    = vk_space;
+KEYBIND_FOCUS    = vk_shift;
+KEYBIND_ULTIMATE = ord("E");
 
 #endregion
 
@@ -100,6 +105,7 @@ PART_SYSTEM_FRAG			  = part_system_create_ult(1, 100, 500);
 PART_SYSTEM_CHARGE			  = part_system_create_ult(1, 150, 250);
 PART_SYSTEM_DAMAGE_INDICATORS = part_system_create_pro(1, 20, 250);
 PART_SYSTEM_ENEMY			  = part_system_create_lt(1, 30, 100);
+PART_SYSTEM_MINION			  = part_system_create_lt(1, 100, 100);
 
 // PARTICLE TYPES
 // 0. disperse particles
@@ -238,6 +244,7 @@ global.object_layer[? obj_ultimate_particles] = layer_get_id("UltimateBurstParti
 global.object_layer[? obj_charge_particles]   = layer_get_id("ChargeParticles");
 global.object_layer[? obj_enemy_particles]    = layer_get_id("EnemyParticles");
 global.object_layer[? obj_frag_particles]     = layer_get_id("FragParticles");
+global.object_layer[? obj_minion_particles]   = layer_get_id("MinionParticles");
 
 // Entities
 global.object_layer[? obj_player]	   = layer_get_id("Player");
@@ -245,6 +252,7 @@ global.object_layer[? obj_wrap_helper] = layer_get_id("PlayerUnderlay");
 global.object_layer[? obj_projectile]  = layer_get_id("PlayerProjectiles");
 global.object_layer[? obj_frag]		   = layer_get_id("Frags");
 global.object_layer[? obj_charge]	   = layer_get_id("Charge");
+global.object_layer[? obj_minion]	   = layer_get_id("Minions");
 // -> ultimates
 global.object_layer[? obj_evilflame_ultimate]		= layer_get_id("PlayerUnderlay");
 global.object_layer[? obj_emerald_ultimate]			= layer_get_id("UnderlayEffects1");
@@ -273,60 +281,7 @@ global.object_layer[? obj_explosion] = layer_get_id("Explosions");
 global.object_layer[? obj_debris]    = layer_get_id("Debris");
 
 layer_reset_target_room();
-/*
-enum gui_depth {
-    // Misc GUI
-    popup = -6, 
-    back_button = -4, 
-    settings_checkbox = -4, 
-    pause_menu = -4, 
-    pause_button = -3, 
-    
-    // rm_Realms GUI
-    slot_name = -5, 
-    slot = -2, 
-    slot_load_button = -2, 
-    slot_load = -1, 
-    realm_button = 0, 
-    
-    // rm_Main GUI
-    statboard = -4, 
-    keyboard = -3,
-    lore = -3, 
-    main_arrow = -3, 
-    
-    // Gameplay Overlays
-    ultimate_text = -1, 
-    damage_indicators = 0
-}
 
-enum general_depth {
-    // Gameplay
-    ultimate_pickup = -6, 
-    emerald_ultimate_flow_top = -5, 
-    projectile = -4, 
-    scootomik_ultimate = -3, 
-    scootomik_ultimate_particles = -2, 
-    player_tparticles = -1, // also particles for projectiles
-    player = 0, // also draws hp_bar in Draw_End
-    wrap_helper = 1, 
-    player_bparticles = 2, 
-    evilflame_ultimate_particles = 2, 
-    emerald_ultimate_particles = 2, 
-    eprojectile = 3, 
-    charge = 4, 
-    charge_particles = 5, 
-    enemy_particles = 6, 
-    enemy = 7, // also draws hp_bar in Draw_End
-    frag = 8, 
-    frag_particles = 9, 
-    present = 10, 
-    explosion = 11, 
-    debris = 12, 
-    emerald_ultimate_center = 13, 
-    emerald_ultimate_flow_bottom = 14
-}
-*/
 #endregion
 
 #region Sound Hierarchy

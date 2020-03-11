@@ -30,7 +30,7 @@ if (global.gpspeed != 0) {
 // resuming after pause when holding down shift to get into focus mode immediately
 if (global.gpspeed == 0) {
     with (obj_player) {
-        if (keyboard_check(global.keybind[5]) && focus_state == 0 && new_gpspeed == 1) {
+        if (keyboard_check(KEYBIND_FOCUS) && focus_state == 0 && new_gpspeed == 1) {
             focus_state = 1;
         }
     }

@@ -34,7 +34,7 @@ if (global.gpspeed != 0) {
 	var can_shoot = discharge > 0 || !mouse_check_button(mb_right);
 	if (can_shoot) {
 		// is shooting event:
-		var is_shooting = keyboard_check(global.keybind[4]) || (mouse_check_button(mb_left) && (!place_meeting(boss.x, boss.y, obj_button) || instance_place(boss.x, boss.y, obj_button).image_alpha == 0));
+		var is_shooting = keyboard_check(KEYBIND_SHOOT) || (mouse_check_button(mb_left) && (!place_meeting(boss.x, boss.y, obj_button) || instance_place(boss.x, boss.y, obj_button).image_alpha == 0));
 		if (is_shooting) {
 			if (player.evilflame_sprite_swap) {
 				sprite_index = spr_evilflame_shooting;

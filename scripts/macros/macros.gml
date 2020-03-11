@@ -18,6 +18,18 @@
 
 #endregion
 
+#region Controls
+
+#macro KEYBIND_UP global.keybind[0]
+#macro KEYBIND_LEFT global.keybind[1]
+#macro KEYBIND_DOWN global.keybind[2]
+#macro KEYBIND_RIGHT global.keybind[3]
+#macro KEYBIND_SHOOT global.keybind[4]
+#macro KEYBIND_FOCUS global.keybind[5]
+#macro KEYBIND_ULTIMATE global.keybind[6]
+
+#endregion
+
 #region Pixel Measurements
 
 #macro BORDER_THICKNESS 20
@@ -57,6 +69,7 @@
 #macro PART_SYSTEM_ENEMY global.part_system[4]
 #macro PART_SYSTEM_PLAYERTOP global.part_system[5]
 #macro PART_SYSTEM_ULTIMATE global.part_system[6]
+#macro PART_SYSTEM_MINION global.part_system[7]
 
 #macro PART_TYPE_DISPERSE 0
 #macro PART_TYPE_ULTIMATE_BURST 1
@@ -132,6 +145,12 @@
 #macro PLAYER_EMERALD 1
 #macro PLAYER_DER_SCOOTOMIK 2
 #macro PLAYER_BOBILEUSZ 3
+
+#endregion
+
+#region Minions
+
+#macro MINION_BOBILEUSZ_BOTTLE 0
 
 #endregion
 

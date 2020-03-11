@@ -76,9 +76,7 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
     
 	#endregion
 	
-	
     if (place_meeting(x, y, boss) && image_alpha == 1) {
-		
 		#region On mouse hover
 		
         switch(f) {
@@ -120,9 +118,7 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
         }
 		
 		#endregion
-		
     } else {
-		
 		#region Idle global.state (not hovering)
 		
         switch(f) {
@@ -157,7 +153,6 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
         }
 		
 		#endregion
-		
     }
     
     #region On mouse press
@@ -376,7 +371,7 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
         switch(f) {
 	        case 5:
 	            // previous character
-	            if (keyboard_check_pressed(global.keybind[1]) && global.state == 0 && room == rm_Main) {
+	            if (keyboard_check_pressed(KEYBIND_LEFT) && global.state == 0 && room == rm_Main) {
 	                play_sfx(sfx_button1, 0, 0);
 					var prev_chrsel = global.chrsel;
 	                global.chrsel = (global.chrsel == 0)? CHRCOUNT - 1 : global.chrsel - 1;
@@ -386,11 +381,11 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 	                scr_LoreUpdate();
 	                scr_Stats_Update(obj_statboard.button[0].show);
 	            }
-	            if (keyboard_check(global.keybind[1])) {image_index = 1;}
+	            if (keyboard_check(KEYBIND_LEFT)) {image_index = 1;}
 	        break;
 	        case 6:
 	            //next character
-	            if (keyboard_check_pressed(global.keybind[3]) && global.state == 0 && room == rm_Main) {
+	            if (keyboard_check_pressed(KEYBIND_RIGHT) && global.state == 0 && room == rm_Main) {
 	                play_sfx(sfx_button1, 0, 0);
 					var prev_chrsel = global.chrsel;
 	                global.chrsel = (global.chrsel == CHRCOUNT - 1)? 0 : global.chrsel + 1;
@@ -400,7 +395,7 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 	                scr_LoreUpdate();
 	                scr_Stats_Update(obj_statboard.button[0].show);
 	            }
-	            if (keyboard_check(global.keybind[3])) {image_index = 3;}
+	            if (keyboard_check(KEYBIND_RIGHT)) {image_index = 3;}
 	        break;
 	        case 7:
 	            //back button
@@ -444,4 +439,3 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 	
 	#endregion
 }
-

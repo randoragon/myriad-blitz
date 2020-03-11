@@ -3,19 +3,19 @@
 global.left_handed_mode = toggle(global.left_handed_mode);
 
 if (global.left_handed_mode) {
-    global.keybind[0] = vk_up;      // move upwards
-    global.keybind[1] = vk_left;    // move left
-    global.keybind[2] = vk_down;    // move downwards
-    global.keybind[3] = vk_right;   // move right
-    global.keybind[4] = vk_control; // shoot
-    global.keybind[5] = vk_shift;   //focus
-    global.keybind[6] = vk_enter;   //ultimate
+    KEYBIND_UP = vk_up;
+    KEYBIND_LEFT = vk_left;
+    KEYBIND_DOWN = vk_down;
+    KEYBIND_RIGHT = vk_right;
+    KEYBIND_SHOOT = vk_control;
+    KEYBIND_FOCUS = vk_shift;
+    KEYBIND_ULTIMATE = vk_enter;
 } else {
-    global.keybind[0] = ord("W");   // move upwards
-    global.keybind[1] = ord("A");   // move left
-    global.keybind[2] = ord("S");   // move downwards
-    global.keybind[3] = ord("D");   // move right
-    global.keybind[4] = vk_space;   // shoot
-    global.keybind[5] = vk_shift;   // focus
-    global.keybind[6] = ord("E");   // ultimate
+    KEYBIND_UP = ord("W");
+    KEYBIND_LEFT = ord("A");
+    KEYBIND_DOWN = ord("S");
+    KEYBIND_RIGHT = ord("D");
+    KEYBIND_SHOOT = vk_space;
+    KEYBIND_FOCUS = vk_shift;
+    KEYBIND_ULTIMATE = ord("E");
 }

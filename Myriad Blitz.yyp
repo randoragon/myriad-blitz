@@ -33,6 +33,14 @@
     },
     "resources": [
         {
+            "Key": "0032f0ff-7b28-43f8-86b4-e97cff1b46de",
+            "Value": {
+                "id": "a742ee57-d6df-419d-adbc-3eba46a8b778",
+                "resourcePath": "objects\\obj_minion_particles\\obj_minion_particles.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "00eb1195-be3f-4d0f-828e-9c2bdeef9d3f",
             "Value": {
                 "id": "465c5b6a-0de1-4ec4-9510-31f352b290ad",
@@ -2433,11 +2441,27 @@
             }
         },
         {
+            "Key": "863432eb-7781-4ec4-b084-8eeccdc98524",
+            "Value": {
+                "id": "61b9aa73-a953-4d51-9e5e-e18f336ce742",
+                "resourcePath": "objects\\obj_minion\\obj_minion.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "86447633-a3d8-4038-a8fd-76a05dd9468c",
             "Value": {
                 "id": "b6aa4f96-4a4d-42a5-acd1-1d72e256c556",
                 "resourcePath": "scripts\\knockback\\knockback.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "86c7e23c-2c28-4ca0-a89a-c0755db60905",
+            "Value": {
+                "id": "23914bbf-9302-4792-bd20-df053aec6175",
+                "resourcePath": "views\\86c7e23c-2c28-4ca0-a89a-c0755db60905.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -3379,6 +3403,14 @@
                 "id": "11a9d329-48f1-47b3-9378-6ef33ec00e5e",
                 "resourcePath": "sprites\\spr_slot_char\\spr_slot_char.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "b99f39d4-ac09-44c8-9d75-d0c3fce088ab",
+            "Value": {
+                "id": "01240ee2-ff9f-437d-99b6-395299484c97",
+                "resourcePath": "scripts\\spawn_minion\\spawn_minion.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -4422,6 +4454,14 @@
             }
         },
         {
+            "Key": "edaf918d-eced-4577-a944-39774fbed578",
+            "Value": {
+                "id": "9fae75cd-19e9-4623-9b62-027c1dddb384",
+                "resourcePath": "sprites\\spr_bobileusz_bottle\\spr_bobileusz_bottle.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "eee50fc8-134e-4c56-bfea-c0aa9a1023a5",
             "Value": {
                 "id": "69c0a50d-ee19-4f14-a4c4-32ac992356db",
@@ -4782,6 +4822,7 @@
         "c55c82f0-8762-4560-8a38-20af7177de9f",
         "d8b7d3ce-9d42-444b-872b-c0f665cf02a5",
         "616d99b4-ff08-49af-8644-46062ba5047b",
+        "b99f39d4-ac09-44c8-9d75-d0c3fce088ab",
         "d486dc5c-2717-45d7-a966-f57ae77a871d",
         "3745ea63-2346-48f7-a042-5207e39932e6",
         "10f91b7c-27cc-4ec8-87c4-acbc2a35d512",

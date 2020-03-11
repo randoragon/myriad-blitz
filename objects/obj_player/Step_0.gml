@@ -122,6 +122,99 @@ if (IS_STATUS_EFFECT_BERSERK) {
     pdef_factor *= 0.5;
 }
 
+// TODO
+if (IS_STATUS_EFFECT_GEAR1) {
+	bdmg_factor *= 1;
+	pdmg_factor *= 1;
+	sspd_factor *= 1;
+	fdmg_factor *= 1;
+	bdef_factor *= 1;
+	pdef_factor *= 1;
+	spd_factor  *= 1;
+	acc_factor  *= 1;
+} else if (IS_STATUS_EFFECT_GEAR2) {
+	bdmg_factor *= 1;
+	pdmg_factor *= 1;
+	sspd_factor *= 1;
+	fdmg_factor *= 1;
+	bdef_factor *= 1;
+	pdef_factor *= 1;
+	spd_factor  *= 1;
+	acc_factor  *= 1;
+} else if (IS_STATUS_EFFECT_GEAR3) {
+	bdmg_factor *= 1;
+	pdmg_factor *= 1;
+	sspd_factor *= 1;
+	fdmg_factor *= 1;
+	bdef_factor *= 1;
+	pdef_factor *= 1;
+	spd_factor  *= 1;
+	acc_factor  *= 1;
+} else if (IS_STATUS_EFFECT_GEAR4) {
+	bdmg_factor *= 1;
+	pdmg_factor *= 1;
+	sspd_factor *= 1;
+	fdmg_factor *= 1;
+	bdef_factor *= 1;
+	pdef_factor *= 1;
+	spd_factor  *= 1;
+	acc_factor  *= 1;
+} else if (IS_STATUS_EFFECT_GEAR5) {
+	bdmg_factor *= 1;
+	pdmg_factor *= 1;
+	sspd_factor *= 1;
+	fdmg_factor *= 1;
+	bdef_factor *= 1;
+	pdef_factor *= 1;
+	spd_factor  *= 1;
+	acc_factor  *= 1;
+} else if (IS_STATUS_EFFECT_GEAR6) {
+	bdmg_factor *= 1;
+	pdmg_factor *= 1;
+	sspd_factor *= 1;
+	fdmg_factor *= 1;
+	bdef_factor *= 1;
+	pdef_factor *= 1;
+	spd_factor  *= 1;
+	acc_factor  *= 1;
+} else if (IS_STATUS_EFFECT_GEAR7) {
+	bdmg_factor *= 1;
+	pdmg_factor *= 1;
+	sspd_factor *= 1;
+	fdmg_factor *= 1;
+	bdef_factor *= 1;
+	pdef_factor *= 1;
+	spd_factor  *= 1;
+	acc_factor  *= 1;
+} else if (IS_STATUS_EFFECT_GEAR8) {
+	bdmg_factor *= 1;
+	pdmg_factor *= 1;
+	sspd_factor *= 1;
+	fdmg_factor *= 1;
+	bdef_factor *= 1;
+	pdef_factor *= 1;
+	spd_factor  *= 1;
+	acc_factor  *= 1;
+} else if (IS_STATUS_EFFECT_GEAR9) {
+	bdmg_factor *= 1;
+	pdmg_factor *= 1;
+	sspd_factor *= 1;
+	fdmg_factor *= 1;
+	bdef_factor *= 1;
+	pdef_factor *= 1;
+	spd_factor  *= 1;
+	acc_factor  *= 1;
+} else if (IS_STATUS_EFFECT_GEAR10) {
+	bdmg_factor *= 1;
+	pdmg_factor *= 1;
+	sspd_factor *= 1;
+	fdmg_factor *= 1;
+	bdef_factor *= 1;
+	pdef_factor *= 1;
+	spd_factor  *= 1;
+	acc_factor  *= 1;
+}
+
 //final stats calculation
 hpmax      = global.hp * maxhp_factor;
 spd        = global.spd * spd_factor;
@@ -148,15 +241,15 @@ var possible   = bool(room == rm_Main && global.gpspeed != 0 && global.state == 
 var allowed    = bool(!IS_STATUS_EFFECT_DIZZY && !IS_STATUS_EFFECT_CHIP_TUNING && !IS_STATUS_EFFECT_BERSERK);
 if (possible) {
 	if (allowed) {
-		if (keyboard_check(global.keybind[5])) {
+		if (keyboard_check(KEYBIND_FOCUS)) {
 			bar_opacity[1] = 5;
 			if (instance_exists(obj_evilflame_ultimate)) {
 				obj_evilflame_ultimate.bar_opacity[1] = 5; // dual clone equivalent
 			}
 		}
-		if (keyboard_check_pressed(global.keybind[5]) && global.gpspeed_focus == 1)
+		if (keyboard_check_pressed(KEYBIND_FOCUS) && global.gpspeed_focus == 1)
 			focus_state = 1;
-		if (!keyboard_check(global.keybind[5]) && focus_state == 1)
+		if (!keyboard_check(KEYBIND_FOCUS) && focus_state == 1)
 			focus_state = 2;
 
 		if (focus_state == 1) {
@@ -200,16 +293,16 @@ if (IS_STATUS_EFFECT_CHIP_TUNING && global.gpspeed != 0) {
 }
 
 if (global.state == 1 && gpspd != 0) {
-    if (keyboard_check(global.keybind[0])) {
+    if (keyboard_check(KEYBIND_UP)) {
         yv = clamp(yv - (acc * sqr(gpspd)), -spd * gpspd, spd * gpspd);
     }
-    if (keyboard_check(global.keybind[2])) {
+    if (keyboard_check(KEYBIND_DOWN)) {
         yv = clamp(yv + (acc * sqr(gpspd)), -spd * gpspd, spd * gpspd);
     }
-    if (keyboard_check(global.keybind[1])) {
+    if (keyboard_check(KEYBIND_LEFT)) {
         xv = clamp(xv - (acc * sqr(gpspd)), -spd * gpspd, spd * gpspd);
     }
-    if (keyboard_check(global.keybind[3])) {
+    if (keyboard_check(KEYBIND_RIGHT)) {
         xv = clamp(xv + (acc * sqr(gpspd)), -spd * gpspd, spd * gpspd);
     }
 	
@@ -228,7 +321,7 @@ if (global.state == 1 && gpspd != 0) {
         yv = 0;
     }
     
-    if (!(keyboard_check(global.keybind[0]) || keyboard_check(global.keybind[2]))) {
+    if (!(keyboard_check(KEYBIND_UP) || keyboard_check(KEYBIND_DOWN))) {
         if (yv > 0) {
             yv = clamp(yv - (counteracc * sqr(gpspd)), 0, spd * gpspd);
         } else 
@@ -236,7 +329,7 @@ if (global.state == 1 && gpspd != 0) {
             yv = clamp(yv + (counteracc * sqr(gpspd)), -spd * gpspd, 0);
         }
     }
-    if (!(keyboard_check(global.keybind[1]) || keyboard_check(global.keybind[3]))) {
+    if (!(keyboard_check(KEYBIND_LEFT) || keyboard_check(KEYBIND_RIGHT))) {
         if (xv > 0) {
             xv = clamp(xv - (counteracc * sqr(gpspd)), 0, spd * gpspd);
         } else if (xv<0) {
@@ -254,7 +347,7 @@ if (global.state == 1 && gpspd != 0) {
     var can_shoot = (discharge > 0 || !mouse_check_button(mb_right)) && !charge_sprite_lock && !(global.chrsel == PLAYER_EMERALD && IS_STATUS_EFFECT_SPELL_DRIED);
     if (can_shoot) {
         // is shooting event:
-		var is_shooting = (keyboard_check(global.keybind[4]) || (mouse_check_button(mb_left) && (!place_meeting(boss.x, boss.y, obj_button) || instance_place(boss.x, boss.y, obj_button).image_alpha == 0)));
+		var is_shooting = (keyboard_check(KEYBIND_SHOOT) || (mouse_check_button(mb_left) && (!place_meeting(boss.x, boss.y, obj_button) || instance_place(boss.x, boss.y, obj_button).image_alpha == 0)));
         if(is_shooting || IS_STATUS_EFFECT_BERSERK) {
             if (evilflame_sprite_swap) {
                 if (sprite_index != spr_evilflame_ultimate_shooting) {
@@ -428,7 +521,7 @@ if (global.state == 1 && global.gpspeed != 0) {
 	
 	var does_emerald_laser_exist = (global.chrsel == PLAYER_EMERALD && instance_exists(obj_charge));
 	var is_spell_dried = (global.chrsel == PLAYER_EMERALD && IS_STATUS_EFFECT_SPELL_DRIED);
-	var bobileusz_is_valid = (global.chrsel == PLAYER_BOBILEUSZ && ((keyboard_check(global.keybind[0]) && !status_effect[STATUS_EFFECT_GEAR10]) || (keyboard_check(global.keybind[2]) && !status_effect[STATUS_EFFECT_GEAR1])));
+	var bobileusz_is_valid = (global.chrsel == PLAYER_BOBILEUSZ && ((keyboard_check(KEYBIND_UP) && !status_effect[STATUS_EFFECT_GEAR10]) || (keyboard_check(KEYBIND_DOWN) && !status_effect[STATUS_EFFECT_GEAR1])));
 	if (mouse_check_button(mb_right) && global.state == 1 && !does_emerald_laser_exist && !is_spell_dried && bobileusz_is_valid) {
 		//charging
 		bar_opacity[2] = 5;
@@ -505,10 +598,10 @@ if (global.state == 1 && global.gpspeed != 0) {
 					}
 				}
 				var prevgear = gear;
-				if (keyboard_check(global.keybind[0])) {
+				if (keyboard_check(KEYBIND_UP)) {
 					gear++;
 					indicate(x, y - 50, "GEAR UP!", 2, hsv(100 + (156 * prevgear/10), 255, 255), hsv(100 + (155 * gear/10), 255, 255));
-				} else if (keyboard_check(global.keybind[2])) {
+				} else if (keyboard_check(KEYBIND_DOWN)) {
 					gear--;
 					indicate(x, y - 50, "GEAR DOWN!", 2, hsv(100 + (156 * prevgear/10), 255, 255), hsv(100 + (155 * gear/10), 255, 255));
 				}
@@ -534,7 +627,7 @@ var is_evilflame_ultimate = (global.chrsel == PLAYER_EVILFLAME && (instance_exis
 var is_emerald_ultimate   = (global.chrsel == PLAYER_EMERALD && instance_exists(obj_emerald_ultimate));
 var is_scootomik_ultimate = (global.chrsel == PLAYER_DER_SCOOTOMIK && IS_STATUS_EFFECT_CHIP_TUNING);
 var are_all_ultimates_off = !is_evilflame_ultimate && !is_emerald_ultimate && !is_scootomik_ultimate;
-if (keyboard_check_pressed(global.keybind[6]) && ultcount > 0 && !is_ultimate_cooldown && are_all_ultimates_off && global.state == 1 && global.gpspeed != 0 && !instance_exists(obj_ultimate_activation)) {
+if (keyboard_check_pressed(KEYBIND_ULTIMATE) && ultcount > 0 && !is_ultimate_cooldown && are_all_ultimates_off && global.state == 1 && global.gpspeed != 0 && !instance_exists(obj_ultimate_activation)) {
     ultcount--;
     instance_create(0, 0, obj_ultimate_activation);
     flash_clock = 50;
