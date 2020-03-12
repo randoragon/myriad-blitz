@@ -15,9 +15,6 @@ if (!global.loading) { // this code is run everytime the run resets
     scr_ParticlesUpdate(0, global.chrsel);
 	scr_BackgroundUpdate(global.realm);
     image_scale(2, 2);
-	// the state variable can be used for anything, really
-	// for example, Bobileusz uses it to alter between projectile shooting angles
-	state = 0;
 }
 
 #endregion

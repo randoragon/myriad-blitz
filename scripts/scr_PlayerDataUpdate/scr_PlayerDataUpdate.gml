@@ -190,7 +190,7 @@ switch (argument[0]) {
         global.spd           = 13;
         global.invtime       = 69;
         global.foctime       = 220;
-        global.pdmg          = 4.5;
+        global.pdmg          = 5.2;
         global.pdef          = 25;
         global.ppen          = 25;
         global.pkb           = 0;

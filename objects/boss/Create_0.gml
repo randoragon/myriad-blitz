@@ -218,6 +218,13 @@ part = global.part_type[15];
 part_type_size_orientation_ult(part, 0.3, 0.3, -0.0625, 0, 0, 0);
 part_type_blend_color_alpha_ult(part, bm_normal, rgb(0, 255, 132), 1, 0);
 
+// 16. bobileusz water particles
+global.part_type[16] = part_type_create_lt(part_circle, 0, 15, 30);
+part = global.part_type[16];
+part_type_size_orientation_lt(part, 0.05, 0.1, -0.0015, 0, 0, 0, 0);
+part_type_direction_speed_lt(part, 0, 360, 0, 0.4, 0);
+part_type_blend_color_alpha_lt(part, bm_add, rgb(255, 255, 255), rgb(25, 165, 255), 1, 0.75);
+
 #endregion
 
 #region Realm (Common) Enemies Setup
@@ -352,22 +359,14 @@ global.save_oindex[? "obj_oscillator"]                      = 19;
 global.save_oname [? 19]                                    = "obj_oscillator";
 global.save_oindex[? "obj_screenshake"]                     = 20;
 global.save_oname [? 20]                                    = "obj_screenshake";
+global.save_oindex[? "obj_minion"]				            = 21;
+global.save_oname [? 21]                                    = "obj_minion";
 global.save_oindex[? "obj_ultimate_activation"]             = 22;
 global.save_oname [? 22]                                    = "obj_ultimate_activation";
 global.save_oindex[? "obj_screenflash"]                     = 23;
 global.save_oname [? 23]                                    = "obj_screenflash";
 global.save_oindex[? "obj_shockwave"]                       = 24;
 global.save_oname [? 24]                                    = "obj_shockwave";
-global.save_oindex[? "obj_present"]                         = 48;
-global.save_oname [? 48]                                    = "obj_present";
-global.save_oindex[? "obj_ultimate_pickup"]                 = 49;
-global.save_oname [? 49]                                    = "obj_ultimate_pickup";
-global.save_oindex[? "obj_explosion"]                       = 50;
-global.save_oname [? 50]                                    = "obj_explosion";
-global.save_oindex[? "obj_debris"]                          = 53;
-global.save_oname [? 53]                                    = "obj_debris";
-global.save_oindex[? "obj_enemy_christmas_rocket_elf"]      = 21;
-global.save_oname [? 21]                                    = "obj_enemy_christmas_rocket_elf";
 global.save_oindex[? "obj_enemy_christmas_crow"]            = 25;
 global.save_oname [? 25]                                    = "obj_enemy_christmas_crow";
 global.save_oindex[? "obj_enemy_christmas_snowman"]         = 26;
@@ -376,6 +375,18 @@ global.save_oindex[? "obj_enemy_christmas_gingerbread_man"] = 27;
 global.save_oname [? 27]                                    = "obj_enemy_christmas_gingerbread_man";
 global.save_oindex[? "obj_enemy_christmas_reindeer"]        = 28;
 global.save_oname [? 28]                                    = "obj_enemy_christmas_reindeer";
+global.save_oindex[? "obj_enemy_christmas_rocket_elf"]      = 29;
+global.save_oname [? 29]                                    = "obj_enemy_christmas_rocket_elf";
+// 30-47
+global.save_oindex[? "obj_present"]                         = 48;
+global.save_oname [? 48]                                    = "obj_present";
+global.save_oindex[? "obj_ultimate_pickup"]                 = 49;
+global.save_oname [? 49]                                    = "obj_ultimate_pickup";
+global.save_oindex[? "obj_explosion"]                       = 50;
+global.save_oname [? 50]                                    = "obj_explosion";
+// 51-52
+global.save_oindex[? "obj_debris"]                          = 53;
+global.save_oname [? 53]                                    = "obj_debris";
 
 // Sanity check
 var i = 0;
@@ -495,7 +506,23 @@ global.save_sindex [? "spr_crow_hover"]					  = 47;
 global.save_sname  [? 47]                                 = "spr_crow_hover";
 global.save_sindex [? "spr_crow_attack"]				  = 48;
 global.save_sname  [? 48]                                 = "spr_crow_attack";
-// 49-96
+global.save_sindex [? "spr_bobileusz"]					  = 49;
+global.save_sname  [? 49]                                 = "spr_bobileusz";
+global.save_sindex [? "spr_bobileusz_shooting"]			  = 50;
+global.save_sname  [? 50]                                 = "spr_bobileusz_shooting";
+global.save_sindex [? "spr_bobileusz_charging"]			  = 51;
+global.save_sname  [? 51]                                 = "spr_bobileusz_charging";
+global.save_sindex [? "spr_bobileusz_active_charge"]	  = 52;
+global.save_sname  [? 52]                                 = "spr_bobileusz_active_charge";
+global.save_sindex [? "spr_bobileusz_bullet"]			  = 53;
+global.save_sname  [? 53]                                 = "spr_bobileusz_bullet";
+global.save_sindex [? "spr_bobileusz_frag"]				  = 54;
+global.save_sname  [? 54]                                 = "spr_bobileusz_frag";
+global.save_sindex [? "spr_bobileusz_bottle"]			  = 55;
+global.save_sname  [? 55]                                 = "spr_bobileusz_bottle";
+global.save_sindex [? "part_circle"]					  = 56;
+global.save_sname  [? 56]                                 = "part_circle";
+// 57-96
 global.save_sindex [? "spr_present"]                      = 97;
 global.save_sname  [? 97]                                 = "spr_present";
 global.save_sindex [? "spr_ultimate"]                      = 98;

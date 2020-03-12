@@ -8,7 +8,7 @@ event_inherited();
 
 #region Setup
 
-sprite_index       = noone;
-image_speed        = 0;
+sprite_index = noone;
+image_speed  = 0;
 
 #endregion

@@ -101,12 +101,21 @@ switch(f) {
 	    }
 	break;
 	case PLAYER_BOBILEUSZ:
-	    sprite_index = spr_bobileusz_frag;
-		image_speed  = 0;
-	    speed1       = spawn.pspd * 0.6;
-	    lifespan	 = 120;
-		image_blend  = hsv(irandom(255), 255, 255);
-		fadeout      = 10;
+		if (e == 0) {
+		    sprite_index = spr_bobileusz_frag;
+			image_speed  = 0;
+		    speed1       = spawn.pspd * 0.6;
+		    lifespan	 = 120;
+			image_blend  = hsv(irandom(255), 255, 255);
+			fadeout      = 10;
+		} else {
+			sprite_index = spr_bobileusz_icicle;
+			image_angle  = direction;
+			image_speed  = 0;
+			image_index  = irandom(3);
+		    speed1       = 10;
+		    lifespan	 = 120;
+		}
 	break;
 }
 

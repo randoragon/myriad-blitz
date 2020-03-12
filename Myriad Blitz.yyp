@@ -1008,14 +1008,6 @@
             }
         },
         {
-            "Key": "377ade01-94ec-44c0-8b0b-ce089091713a",
-            "Value": {
-                "id": "c8f48a63-57bb-4330-b64f-ebdb4b1b14ae",
-                "resourcePath": "sprites\\spr_bobileusz_charge\\spr_bobileusz_charge.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "37f205eb-14f4-426c-b9db-b9a0e9b27e1b",
             "Value": {
                 "id": "58b48f4f-67c5-4297-84f0-c3acac505057",
@@ -1302,6 +1294,14 @@
                 ],
                 "id": "ebed451c-7086-4cce-b097-0a908b013f89",
                 "resourcePath": "sprites\\spr_scootomik_bullet\\spr_scootomik_bullet.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "45aa39ee-f83b-4c9f-bb39-84940aa683b1",
+            "Value": {
+                "id": "8e625f22-3c0b-491a-9333-abf9ec29a610",
+                "resourcePath": "sprites\\spr_bobileusz_icicle\\spr_bobileusz_icicle.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -3218,6 +3218,14 @@
                 "id": "2d19c9ec-61c6-4287-ae7f-a4e5da9bb8cd",
                 "resourcePath": "scripts\\part_system_update_ult\\part_system_update_ult.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "adb9d670-4950-43d2-b7dd-46ea590b3564",
+            "Value": {
+                "id": "58c34b23-e6bb-4731-90bb-6caed37f2bfd",
+                "resourcePath": "sprites\\part_circle\\part_circle.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

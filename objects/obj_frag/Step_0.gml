@@ -9,8 +9,7 @@ if (global.loading) { exit; }
 #region Frag behavior
 
 switch(f) {
-	case 0:
-		// Evilflame
+	case PLAYER_EVILFLAME:
 	    switch(e) {
 		    case 0:
 			    vspeed1 += vacc * sqr(global.gpspeed);
@@ -27,8 +26,7 @@ switch(f) {
 	    }
 	    image_angle += 10 * global.gpspeed;
 	break;
-	case 1:
-		// Emerald
+	case PLAYER_EMERALD:
 	    if (!instance_exists(obj_emerald_ultimate)) {
 		    if (enemyharm < 1) {
 				enemyharm = min(enemyharm + (0.08 * global.gpspeed), 1);
@@ -40,9 +38,9 @@ switch(f) {
 	    else {
 		    direction = home(direction, point_direction(x, y, obj_emerald_ultimate.x, obj_emerald_ultimate.y), clamp((500 - distance_to_point(obj_emerald_ultimate.x, obj_emerald_ultimate.y)) * 0.05, 1, 15) * global.gpspeed, 1);
 		    if (angle_difference(direction, point_direction(x, y, obj_emerald_ultimate.x, obj_emerald_ultimate.y)) >= 180) {
-				speed1 -= 0.1 * global.gpspeed;
+				speed1 -= 0.1 * sqr(global.gpspeed);
 			} else {
-				speed1 += 0.025 * global.gpspeed;
+				speed1 += 0.025 * sqr(global.gpspeed);
 			}
 	    }
 	    if (real_step()) {
@@ -50,6 +48,12 @@ switch(f) {
 	        part_type_spawn_ult(PART_SYSTEM_FRAG, PART_TYPE_P_EMERALD_FRAG, 2, x, y, x, y, "square", "linear", 1);
 	    }
 	    image_angle = direction;
+	break;
+	case PLAYER_BOBILEUSZ:
+		if (e == 1) {
+			vspeed1 += 0.1 * sqr(global.gpspeed);
+			image_angle = point_direction(x, y, x + lengthdir_x(speed1, direction), y + lengthdir_y(speed1, direction) + vspeed1);
+		}
 	break;
 }
 
@@ -91,6 +95,7 @@ if (!fading) {
 }
 
 #endregion
+
 
 #region Inherit parent event
 

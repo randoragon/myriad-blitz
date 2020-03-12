@@ -88,7 +88,7 @@ if (room != rm_Main) {
 
 #region GUI && aspect ratio Fix
 
-var ratio = 16/9;
+var ratio = 16 / 9;
 if (abs(window_get_width() - window_last_width) > 1 && abs(window_get_height() - window_last_height) < 1)
 	window_set_size(window_get_width(), round(window_get_width() / ratio));
 else if (abs(window_get_height() - window_last_height) > 1 || abs(window_get_width() - window_last_width) > 1)
@@ -105,13 +105,14 @@ if (!global.loading) {
 		if (!instance_exists(obj_damage_indicators)) { instance_create_layer(0, 0, "Indicators", obj_damage_indicators); }
 	} else if (instance_exists(obj_damage_indicators)) { wipe(obj_damage_indicators); }
 
-	if (room==rm_Main) {
+	if (room == rm_Main) {
 		if (!instance_exists(obj_player_tparticles) ) { instance_create_layer(0, 0, "PlayerTopParticles",	  obj_player_tparticles);  }
 		if (!instance_exists(obj_player_bparticles) ) { instance_create_layer(0, 0, "PlayerBotParticles",	  obj_player_bparticles);  }
 		if (!instance_exists(obj_charge_particles)  ) { instance_create_layer(0, 0, "ChargeParticles",		  obj_charge_particles);   }
 		if (!instance_exists(obj_ultimate_particles)) { instance_create_layer(0, 0, "UltimateBurstParticles", obj_ultimate_particles); }
 		if (!instance_exists(obj_enemy_particles)   ) { instance_create_layer(0, 0, "EnemyParticles",		  obj_enemy_particles);    }
 		if (!instance_exists(obj_frag_particles)    ) { instance_create_layer(0, 0, "FragParticles",		  obj_frag_particles);     }
+		if (!instance_exists(obj_minion_particles)  ) { instance_create_layer(0, 0, "MinionParticles",		  obj_minion_particles);   }
 	} else {
 		if (instance_exists(obj_player_tparticles)  ) { wipe(obj_player_tparticles);  }
 		if (instance_exists(obj_player_bparticles)  ) { wipe(obj_player_bparticles);  }
@@ -119,14 +120,8 @@ if (!global.loading) {
 		if (instance_exists(obj_ultimate_particles) ) { wipe(obj_ultimate_particles); }
 		if (instance_exists(obj_enemy_particles)    ) { wipe(obj_enemy_particles);    }
 		if (instance_exists(obj_frag_particles)     ) { wipe(obj_frag_particles);     }
+		if (instance_exists(obj_minion_particles)   ) { wipe(obj_minion_particles);   }
 	}
 }
-
-#endregion
-
-#region Debugging
-
-if (keyboard_check_pressed(ord("G"))) { instance_create(CANVAS_XEND, CANVAS_YMID, obj_enemy_christmas_gingerbread_man); }
-if (keyboard_check_pressed(ord("R"))) { instance_create(CANVAS_XEND, CANVAS_YMID, obj_enemy_christmas_rocket_elf); }
 
 #endregion

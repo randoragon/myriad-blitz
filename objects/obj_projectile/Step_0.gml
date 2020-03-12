@@ -28,7 +28,7 @@ if (instance_exists(obj_emerald_ultimate) && global.gpspeed != 0) {
 
 switch(f) {
 	case PLAYER_EVILFLAME:
-	    switch(e) { //evilflame fury bullets
+	    switch(e) { // Evilflame fury bullets
 		    case 2:
 			    speed1 = max(speed1 - (0.08 * global.gpspeed), 1);
 			    direction += random_range(-2, 2) * global.gpspeed;
@@ -37,6 +37,14 @@ switch(f) {
 				}
 		    break;
 	    }
+	break;
+	case PLAYER_BOBILEUSZ:
+		if (e == 1) {
+			vspeed1 += global.gpspeed * 0.1;
+			if (real_step()) {
+				part_type_spawn_lt(PART_SYSTEM_MINION, PART_TYPE_P_BOBILEUSZ_WATER, 0, x-3, y-3, x+3, y+3, "ellipse", "gaussian", 3);
+			}
+		}
 	break;
 }
 
@@ -56,8 +64,7 @@ if (!fading && place_meeting(x, y, obj_enemy) && instance_place(x, y, obj_enemy)
         global.enemy_details_selection = ee;
     }
 	
-    // spawning frags
-	switch (global.chrsel) {
+	switch(global.chrsel) {
 		case PLAYER_EVILFLAME:
 			spawn_bullet_ring(x, y, obj_frag, PLAYER_EVILFLAME, (e == 2)? 2 : 0, ee.id, spawn, irandom_range(floor(fmin), ceil(fmax)), 0);
 		break;

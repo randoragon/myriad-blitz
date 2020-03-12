@@ -45,7 +45,6 @@ switch(f) {
 		sprite_index = spr_scootomik_bullet;
 		image_speed  = 0;
 		speed1       = pspd;
-		image_angle  = direction;
 		lifespan     = 120;
 		image_scale(2, 2);	
 		if (e == 0) {
@@ -55,17 +54,27 @@ switch(f) {
 			image_index  = 1;
 			direction = (spawn.image_angle + random_range(-45 * (1 - sacc), 45 * (1 - sacc)) + 180) % 360;		
 		}
+		image_angle  = direction;
 	break;
 	case PLAYER_BOBILEUSZ:
-		sprite_index = spr_bobileusz_bullet;
-		direction = spawn.image_angle + random_range(-45 * (1 - sacc), 45 * (1 - sacc));
-		image_speed  = 0;
-		image_blend  = rgb(255, 255, 128);
-		speed1       = pspd;
-		image_speed  = 0;
-		lifespan     = 120;
-		fadeout 	 = 10;
-		image_scale(1, 1);
+		if (e == 0) {
+			sprite_index = spr_bobileusz_bullet;
+			direction	 = spawn.image_angle + random_range(-45 * (1 - sacc), 45 * (1 - sacc));
+			image_speed  = 0;
+			image_blend  = rgb(255, 255, 128);
+			speed1       = pspd;
+			image_speed  = 0;
+			lifespan     = 120;
+			fadeout 	 = 10;
+		} else {
+			sprite_index = -1;
+			direction	 = spawn.image_angle + point_direction(0, 0, 5, -6) + random_range(-10, 10);
+			image_speed  = 0;
+			speed1       = random_range(7, 9);
+			vspeed1		 = 0;
+			image_speed  = 0;
+			lifespan     = irandom_range(90, 120);
+		}
 	break;
 	default:
 		sprite_index = spr_evilflame_bullet + global.chrsel;
@@ -78,7 +87,7 @@ switch(f) {
 	break;
 }
 
-// emerald's current crush
+// Emerald's current crush
 if (instance_exists(obj_emerald_ultimate)) {
 	lifespan += irandom_range(-10, 10);
 	speed1 /= 2;

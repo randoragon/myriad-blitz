@@ -14,7 +14,7 @@ surface_set_target(GENERAL_SURFACE);
 
 #region Prerequisites
 
-if (f == PLAYER_BOBILEUSZ) {
+if (f == PLAYER_BOBILEUSZ && e == 0) {
 	var length = 60;
 	var angle  = 5;
 	var d = point_distance(xstart, ystart, x, y);
