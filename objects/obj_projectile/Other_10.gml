@@ -18,21 +18,21 @@ switch(f) {
 		switch (e) {
 			case 0:
 				sprite_index = spr_evilflame_bullet;
-			    direction    = spawn.image_angle + random_range(-45 * (1 - sacc), 45 * (1 - sacc));
+			    direction    = spawn.image_angle + random_range(-45 * clamp(1 - sacc, 0, 1), 45 * clamp(1 - sacc, 0, 1));
 			    image_angle  = direction;
 				lifespan     = 120;
 			    image_scale(2, 2);
 			break;
 			case 1: // dual clone bullet
 			    sprite_index = spr_evilflame_bullet;
-			    direction    = -spawn.image_angle + random_range(-45 * (1 - sacc), 45 * (1 - sacc));
+			    direction    = -spawn.image_angle + random_range(-45 * clamp(1 - sacc, 0, 1), 45 * clamp(1 - sacc, 0, 1));
 			    image_angle  = direction;
 				lifespan     = 120;
 			    image_scale(2, 2);	
 			break;
 			case 2: // twilight fury
 			    sprite_index = part_star;
-			    direction    = spawn.image_angle + random_range(-45 * (1 - sacc),45 * (1 - sacc));
+			    direction    = spawn.image_angle + random_range(-45 * clamp(1 - sacc, 0, 1),45 * clamp(1 - sacc, 0, 1));
 			    rot          = random_range(-5, 5);
 			    image_angle  = irandom(359);
 			    image_alpha  = 0.7;
@@ -49,17 +49,17 @@ switch(f) {
 		image_scale(2, 2);	
 		if (e == 0) {
 			image_index  = 0;
-			direction = spawn.image_angle + random_range(-45 * (1 - sacc), 45 * (1 - sacc));
+			direction = spawn.image_angle + random_range(-45 * clamp(1 - sacc, 0, 1), 45 * clamp(1 - sacc, 0, 1));
 		} else {
 			image_index  = 1;
-			direction = (spawn.image_angle + random_range(-45 * (1 - sacc), 45 * (1 - sacc)) + 180) % 360;		
+			direction = (spawn.image_angle + random_range(-45 * clamp(1 - sacc, 0, 1), 45 * clamp(1 - sacc, 0, 1)) + 180) % 360;		
 		}
 		image_angle  = direction;
 	break;
 	case PLAYER_BOBILEUSZ:
 		if (e == 0) {
 			sprite_index = spr_bobileusz_bullet;
-			direction	 = spawn.image_angle + random_range(-45 * (1 - sacc), 45 * (1 - sacc));
+			direction	 = spawn.image_angle + random_range(-45 * clamp(1 - sacc, 0, 1), 45 * clamp(1 - sacc, 0, 1));
 			image_speed  = 0;
 			image_blend  = rgb(255, 255, 128);
 			speed1       = pspd;
@@ -78,7 +78,7 @@ switch(f) {
 	break;
 	default:
 		sprite_index = spr_evilflame_bullet + global.chrsel;
-		direction    = spawn.image_angle + random_range(-45 * (1 - sacc), 45 * (1 - sacc));
+		direction    = spawn.image_angle + random_range(-45 * clamp(1 - sacc, 0, 1), 45 * clamp(1 - sacc, 0, 1));
 		speed1       = pspd;
 		image_angle  = direction;
 		image_speed  = 0;

@@ -49,12 +49,6 @@ if (global.gpspeed != 0) {
         if (instance_exists(obj_evilflame_ultimate) && obj_evilflame_ultimate.inv > 0) {
             obj_evilflame_ultimate.inv=round(obj_evilflame_ultimate.inv * global.prev_gpspeed / global.gpspeed);
         }
-        if (shot > 0) {
-            shot *= global.prev_gpspeed / global.gpspeed;
-        }
-        if (instance_exists(obj_evilflame_ultimate) && obj_evilflame_ultimate.shot > 0) {
-            obj_evilflame_ultimate.shot = round(obj_evilflame_ultimate.shot * global.prev_gpspeed / global.gpspeed);
-        }
         if (xv != 0) {
             xv *= global.gpspeed / global.prev_gpspeed;
         }

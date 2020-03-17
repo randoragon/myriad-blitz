@@ -4,7 +4,6 @@
 
 if (!global.loading && room != rm_Startup) {
     surface_set_target(GENERAL_SURFACE);
-    gpu_set_alphatestenable(1);
     gpu_set_alphatestref(0);
 	
     if (global.shader_conditions != 0) {

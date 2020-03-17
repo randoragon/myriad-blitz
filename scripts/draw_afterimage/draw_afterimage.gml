@@ -24,8 +24,8 @@ var grid = afterimage_ds_grid;
 // create grid if it hasn't been created yet
 if (!ds_exists(grid, ds_type_grid)) {
     afterimage_ds_grid = ds_grid_create(1, 8);
-    grid               = afterimage_ds_grid;
-    grid[# 0, 0]       = 0;
+    grid         = afterimage_ds_grid;
+    grid[# 0, 0] = 0;
 }
 
 // add current frame to the grid
@@ -38,7 +38,7 @@ if (grid[# 0, 0] <= 0) {
         ds_grid_set_region(grid, 0, 1, 0, 7, 0);
         grid[# 0, 0] = _rateCount;
     }
-    var new_column        = ds_grid_width(grid) - 1;
+    var new_column = ds_grid_width(grid) - 1;
     grid[# new_column, 0] = sprite_index;
     grid[# new_column, 1] = image_index;
     grid[# new_column, 2] = x;

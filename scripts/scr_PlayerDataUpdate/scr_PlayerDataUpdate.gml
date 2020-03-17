@@ -181,7 +181,7 @@ switch (argument[0]) {
         "\nWe're all gonna die.";
         global.hp            = 580;
         global.bdmg          = 64;
-        global.bdef          = 23;
+        global.bdef          = 25;
         global.bpen          = 0.2;
         global.bkb           = 75;
         global.bkbres        = 70;
@@ -213,7 +213,7 @@ switch (argument[0]) {
         global.cpen          = 0;
         global.ckb           = 0;
         global.ctime         = 1;
-        global.ccooldown     = 330;
+        global.ccooldown     = 15; //330;
         global.uname         = "PRISMATIC GLACIER";
         global.utype         = "BUFF";
         global.ucooldown     = 3600;
@@ -268,4 +268,12 @@ switch (argument[0]) {
         global.ucooldown     = 0;
         global.udesc         = "description unavailable";
     break;
+}
+
+// Don't allow shooting speed above framerate
+// This is a feature that could potentially exist, but
+// it would need a separate implementation if I ever want
+// to do it.
+if (global.sspd > 60) {
+	show_message("ERROR! Shooting speed should not be set above framerate (60).\nEither add support for it, or tone it down a little.");
 }

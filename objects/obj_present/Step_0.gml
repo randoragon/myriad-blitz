@@ -30,7 +30,7 @@ switch (wave_cycle) {
 
 #region Home into the player/wrap_helper/dual_clone
 
-if (!picked) {
+if (global.state == 1 && !picked) {
 	var player_distance = distance_to_object(obj_player);
 	if (player_distance <= 50) {
 		x = home(x, obj_player.x, (50 - player_distance) / 25, 0);

@@ -795,6 +795,14 @@
             }
         },
         {
+            "Key": "2c785595-2588-4465-bca6-6f4d7e019d82",
+            "Value": {
+                "id": "360eaeeb-6aa3-4611-832b-7feb2ecabe2f",
+                "resourcePath": "scripts\\find_multiplier\\find_multiplier.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "2cab2794-6e2a-454f-b453-81b907692137",
             "Value": {
                 "id": "5c609a40-cd3c-4a6b-83b0-c86dfa79fce6",
@@ -4740,6 +4748,7 @@
         "729081a9-6f43-4d03-8a59-5df8b974fc3d",
         "422cefc4-2d76-4614-89c2-49140be4c045",
         "c66537b0-7ffe-426f-a483-7a3ccdda8f7d",
+        "2c785595-2588-4465-bca6-6f4d7e019d82",
         "7b190c0c-c6e9-4d2e-b22e-b92bf9881511",
         "a4cac5b7-8b92-4139-a688-57cbf3e6ab1f",
         "aa5b3dd6-bcc1-402e-8e5d-679e1ebe5d70",

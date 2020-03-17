@@ -49,9 +49,9 @@ if (global.gpspeed != 0) {
 				angle      %= 360;
 				var l       = sqrt(sqr(xoffset) + sqr(yoffset));
 				spawn_bullet(x + lengthdir_x(l, angle), y + lengthdir_y(l, angle), obj_projectile, 0, 1, -1, player);
-				shot += ceil((60 / player.sspd) / global.gpspeed);
+				shot += 60 / player.sspd;
 			} else {
-				shot--;
+				shot -= global.gpspeed;
 			}
 		} else { //can shoot but doesn't shoot:
 			if (!player.evilflame_sprite_swap) {
@@ -59,10 +59,10 @@ if (global.gpspeed != 0) {
 			} else {
 				if (sprite_index == spr_evilflame_shooting) { sprite_index = spr_evilflame; }
 			}
-			shot = home(shot, 0, 1);
+			shot = home(shot, 0, global.gpspeed);
 		}
 	} else { // can't shoot:
-		shot = home(shot, 0, 1, 0);
+		shot = home(shot, 0, 1, global.gpspeed);
 	}
 
 	//charge

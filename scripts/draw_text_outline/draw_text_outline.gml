@@ -53,6 +53,7 @@ draw_set_color(prevcolor);
 //#####################################################################
 
 if (argument[6] == 1 || argument[6] == 2) {
+	var prevalpharef = gpu_get_alphatestref();
 	var xx	   = argument[0];
 	var yy	   = argument[1];
 	var text   = argument[2];
@@ -103,6 +104,7 @@ if (argument[6] == 1 || argument[6] == 2) {
 	
 	yorig -= yscale;
 	
+	gpu_set_alphatestref(prevalpharef);
 	draw_surface_stretched(suf2, xx + xorig, yy + yorig, argument[3] * surface_get_width(suf2), argument[4] * surface_get_height(suf2));
 	surface_free(suf2);
 } else {

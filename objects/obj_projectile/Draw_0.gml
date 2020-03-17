@@ -10,8 +10,15 @@ if (global.loading) { exit; }
 
 if (f == PLAYER_BOBILEUSZ) {
 	if (e == 0) {
-		var length = 60;
-		var angle  = 7;
+		var gear;
+		for (var i = STATUS_EFFECT_GEAR1; i < STATUS_EFFECT_GEAR10 + 1; i++) {
+			if (obj_player.status_effect[i]) {
+				gear = i - STATUS_EFFECT_GEAR1 + 1;
+				break;
+			}
+		}
+		var length = 90 - (gear * 2);
+		var angle  = 4 + (gear / 2);
 		var d = point_distance(xstart, ystart, x, y);
 		var l1 = d / dcos(angle / 2);
 		var l2 = (d + length) / dcos(angle / 2);

@@ -15,8 +15,15 @@ surface_set_target(GENERAL_SURFACE);
 #region Prerequisites
 
 if (f == PLAYER_BOBILEUSZ && e == 0) {
-	var length = 60;
-	var angle  = 5;
+	var gear;
+	for (var i = STATUS_EFFECT_GEAR1; i < STATUS_EFFECT_GEAR10 + 1; i++) {
+		if (obj_player.status_effect[i]) {
+			gear = i - STATUS_EFFECT_GEAR1 + 1;
+			break;
+		}
+	}
+	var length = 80 - (gear * 2);
+	var angle  = 5 + (gear / 2);
 	var d = point_distance(xstart, ystart, x, y);
 	var l1 = d / dcos(angle / 2);
 	var l2 = (d + length) / dcos(angle / 2);

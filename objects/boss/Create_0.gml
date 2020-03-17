@@ -1,6 +1,7 @@
 #region Miscellaneous Setup
 
 gml_release_mode(false);
+gpu_set_alphatestenable(1);
 window_last_width  = window_get_width();
 window_last_height = window_get_height();
 global.general_surface = -1;
@@ -43,7 +44,7 @@ global.player_status_effects   = -1;
 
 #endregion
 
-#region keybinds
+#region Keybinds
 
 KEYBIND_UP	     = ord("W");
 KEYBIND_LEFT     = ord("A");
@@ -707,23 +708,27 @@ takes over your body!";
 
 global.player_status_effect_name[11] = "GEAR 1";
 global.player_status_effect_desc[11] = 
-@"Speed++++
-Damage----";
+@"Damage 50%
+Defense 400%
+Speed 30%";
 
 global.player_status_effect_name[12] = "GEAR 2";
 global.player_status_effect_desc[12] = 
-@"Speed+++
-Damage---";
+@"Damage 70%
+Defense 250%
+Speed 50%";
 
 global.player_status_effect_name[13] = "GEAR 3";
 global.player_status_effect_desc[13] = 
-@"Speed++
-Damage--";
+@"Damage 80%
+Defense 200%
+Speed 65%";
 
 global.player_status_effect_name[14] = "GEAR 4";
 global.player_status_effect_desc[14] = 
-@"Speed+
-Damage-";
+@"Damage 90%
+Defense 150%
+Speed 80%";
 
 global.player_status_effect_name[15] = "GEAR 5";
 global.player_status_effect_desc[15] = 
@@ -732,27 +737,32 @@ All stats normal.";
 
 global.player_status_effect_name[16] = "GEAR 6";
 global.player_status_effect_desc[16] = 
-@"Speed-
-Damage+";
+@"Damage 107.5%
+Defense 90%
+Speed 130%";
 
 global.player_status_effect_name[17] = "GEAR 7";
 global.player_status_effect_desc[17] = 
-@"Speed--
-Damage++";
+@"Damage 115%
+Defense 70%
+Speed 160%";
 
 global.player_status_effect_name[18] = "GEAR 8";
 global.player_status_effect_desc[18] = 
-@"Speed---
-Damage+++";
+@"Damage 122.5%
+Defense 50%
+Speed 200%";
 
 global.player_status_effect_name[19] = "GEAR 9";
 global.player_status_effect_desc[19] = 
-@"Speed----
-Damage++++";
+@"Damage 130%
+Defense 30%
+Speed 250%";
 
 global.player_status_effect_name[20] = "GEAR 10";
 global.player_status_effect_desc[20] = 
-@"Speed-----
-Damage+++++";
+@"Damage 150%
+Defense 10%
+Speed 300%";
 
 #endregion

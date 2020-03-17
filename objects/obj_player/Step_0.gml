@@ -122,97 +122,87 @@ if (IS_STATUS_EFFECT_BERSERK) {
     pdef_factor *= 0.5;
 }
 
-// TODO
 if (IS_STATUS_EFFECT_GEAR1) {
-	bdmg_factor *= 1;
-	pdmg_factor *= 1;
-	sspd_factor *= 1;
-	fdmg_factor *= 1;
-	bdef_factor *= 1;
-	pdef_factor *= 1;
-	spd_factor  *= 1;
-	acc_factor  *= 1;
+	bdmg_factor *= 0.5;
+	pdmg_factor *= 0.5;
+	fdmg_factor *= 0.5;
+	bdef_factor *= 4;
+	pdef_factor *= 4;
+	spd_factor  *= 0.3;
+	acc_factor  *= 0.8;
+	sacc_factor  = find_multiplier(global.sacc * sacc_factor, 1, 0.5);
 } else if (IS_STATUS_EFFECT_GEAR2) {
-	bdmg_factor *= 1;
-	pdmg_factor *= 1;
-	sspd_factor *= 1;
-	fdmg_factor *= 1;
-	bdef_factor *= 1;
-	pdef_factor *= 1;
-	spd_factor  *= 1;
-	acc_factor  *= 1;
+	bdmg_factor *= 0.7;
+	pdmg_factor *= 0.7;
+	fdmg_factor *= 0.7;
+	bdef_factor *= 2.5;
+	pdef_factor *= 2.5;
+	spd_factor  *= 0.5;
+	acc_factor  *= 0.8;
+	sacc_factor  = find_multiplier(global.sacc * sacc_factor, 1, 0.3);
 } else if (IS_STATUS_EFFECT_GEAR3) {
-	bdmg_factor *= 1;
-	pdmg_factor *= 1;
-	sspd_factor *= 1;
-	fdmg_factor *= 1;
-	bdef_factor *= 1;
-	pdef_factor *= 1;
-	spd_factor  *= 1;
-	acc_factor  *= 1;
+	bdmg_factor *= 0.8;
+	pdmg_factor *= 0.8;
+	fdmg_factor *= 0.8;
+	bdef_factor *= 2;
+	pdef_factor *= 2;
+	spd_factor  *= 0.65;
+	acc_factor  *= 0.9;
+	sacc_factor  = find_multiplier(global.sacc * sacc_factor, 1, 0.2);
 } else if (IS_STATUS_EFFECT_GEAR4) {
-	bdmg_factor *= 1;
-	pdmg_factor *= 1;
-	sspd_factor *= 1;
-	fdmg_factor *= 1;
-	bdef_factor *= 1;
-	pdef_factor *= 1;
-	spd_factor  *= 1;
-	acc_factor  *= 1;
-} else if (IS_STATUS_EFFECT_GEAR5) {
-	bdmg_factor *= 1;
-	pdmg_factor *= 1;
-	sspd_factor *= 1;
-	fdmg_factor *= 1;
-	bdef_factor *= 1;
-	pdef_factor *= 1;
-	spd_factor  *= 1;
-	acc_factor  *= 1;
+	bdmg_factor *= 0.9;
+	pdmg_factor *= 0.9;
+	fdmg_factor *= 0.9;
+	bdef_factor *= 1.5;
+	pdef_factor *= 1.5;
+	spd_factor  *= 0.8;
+	acc_factor  *= 0.9;
+	sacc_factor  = find_multiplier(global.sacc * sacc_factor, 1, 0.1);
 } else if (IS_STATUS_EFFECT_GEAR6) {
-	bdmg_factor *= 1;
-	pdmg_factor *= 1;
-	sspd_factor *= 1;
-	fdmg_factor *= 1;
-	bdef_factor *= 1;
-	pdef_factor *= 1;
-	spd_factor  *= 1;
-	acc_factor  *= 1;
+	bdmg_factor *= 1.075;
+	pdmg_factor *= 1.075;
+	fdmg_factor *= 1.075;
+	bdef_factor *= 0.9;
+	pdef_factor *= 0.9;
+	spd_factor  *= 1.3;
+	acc_factor  *= 1.3;
+	sacc_factor  = find_multiplier(global.sacc * sacc_factor, 1, -0.1);
 } else if (IS_STATUS_EFFECT_GEAR7) {
-	bdmg_factor *= 1;
-	pdmg_factor *= 1;
-	sspd_factor *= 1;
-	fdmg_factor *= 1;
-	bdef_factor *= 1;
-	pdef_factor *= 1;
-	spd_factor  *= 1;
-	acc_factor  *= 1;
+	bdmg_factor *= 1.15;
+	pdmg_factor *= 1.15;
+	fdmg_factor *= 1.15;
+	bdef_factor *= 0.7;
+	pdef_factor *= 0.7;
+	spd_factor  *= 1.6;
+	acc_factor  *= 1.6;
+	sacc_factor  = find_multiplier(global.sacc * sacc_factor, 1, -0.2);
 } else if (IS_STATUS_EFFECT_GEAR8) {
-	bdmg_factor *= 1;
-	pdmg_factor *= 1;
-	sspd_factor *= 1;
-	fdmg_factor *= 1;
-	bdef_factor *= 1;
-	pdef_factor *= 1;
-	spd_factor  *= 1;
-	acc_factor  *= 1;
+	bdmg_factor *= 1.225;
+	pdmg_factor *= 1.225;
+	fdmg_factor *= 1.225;
+	bdef_factor *= 0.5;
+	pdef_factor *= 0.5;
+	spd_factor  *= 2;
+	acc_factor  *= 2;
+	sacc_factor  = find_multiplier(global.sacc * sacc_factor, 1, -0.3);
 } else if (IS_STATUS_EFFECT_GEAR9) {
-	bdmg_factor *= 1;
-	pdmg_factor *= 1;
-	sspd_factor *= 1;
-	fdmg_factor *= 1;
-	bdef_factor *= 1;
-	pdef_factor *= 1;
-	spd_factor  *= 1;
-	acc_factor  *= 1;
+	bdmg_factor *= 1.3;
+	pdmg_factor *= 1.3;
+	fdmg_factor *= 1.3;
+	bdef_factor *= 0.3;
+	pdef_factor *= 0.3;
+	spd_factor  *= 2.5;
+	acc_factor  *= 2;
+	sacc_factor  = find_multiplier(global.sacc * sacc_factor, 1, -0.4);
 } else if (IS_STATUS_EFFECT_GEAR10) {
-	bdmg_factor *= 1;
-	pdmg_factor *= 1;
-	sspd_factor *= 1;
-	fdmg_factor *= 1;
-	bdef_factor *= 1;
-	pdef_factor *= 1;
-	spd_factor  *= 1;
-	acc_factor  *= 1;
+	bdmg_factor *= 1.5;
+	pdmg_factor *= 1.5;
+	fdmg_factor *= 1.5;
+	bdef_factor *= 0.1;
+	pdef_factor *= 0.1;
+	spd_factor  *= 3;
+	acc_factor  *= 2.5;
+	sacc_factor  = find_multiplier(global.sacc * sacc_factor, 1, -0.5);
 }
 
 //final stats calculation
@@ -408,9 +398,9 @@ if (global.state == 1 && gpspd != 0) {
                     spawn_bullet(xx + lengthdir_x(l, angle), y + lengthdir_y(l, angle), obj_projectile, PLAYER_DER_SCOOTOMIK, 1, -1, id);
                 }
 				
-                shot += ceil((60 / sspd) / gpspd);
+                shot += 60 / sspd;
             } else {
-                shot--;
+                shot -= gpspd;
             }
         } else { //can shoot but doesn't shoot:
             if (sprite_index > CHRCOUNT - 1) {
@@ -422,7 +412,7 @@ if (global.state == 1 && gpspd != 0) {
                     sprite_index = spr_evilflame + global.chrsel;
                 }
             }
-            shot = home(shot, 0, 1);
+            shot = home(shot, 0, gpspd);
         }
     } else { //can't shoot:
         if (sprite_index > spr_evilflame + CHRCOUNT - 1 && !charge_sprite_lock) {
@@ -434,7 +424,7 @@ if (global.state == 1 && gpspd != 0) {
                 sprite_index = spr_evilflame + global.chrsel;
             }
         }
-    shot = home(shot, 0, 1, 0);
+    shot = home(shot, 0, 1, gpspd);
     }
 }
 
