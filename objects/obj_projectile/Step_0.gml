@@ -94,7 +94,18 @@ if (!fading && place_meeting(x, y, obj_enemy) && instance_place(x, y, obj_enemy)
 
 image_angle += rot * global.gpspeed;
 
-var out_of_bounds = (y > CANVAS_YEND + sprite_yoffset + 128 || y < -sprite_height + sprite_yoffset - 128 || x < -sprite_width + sprite_xoffset - 128 || x > CANVAS_XEND + sprite_xoffset + 128);
+var out_of_bounds;
+switch(global.chrsel) {
+	case PLAYER_BOBILEUSZ:
+		// Light rays don't have typical sprite resources, so the easiest way to determine
+		// whether they're out of bounds is putting a cap on the X coordinate.
+		// Water shots don't need a bounds check at all, since their lifespan is very short.
+		out_of_bounds = (x > CANVAS_XEND + 250);
+	break;
+	default:
+		out_of_bounds = (y > CANVAS_YEND + sprite_yoffset + 128 || y < -sprite_height + sprite_yoffset - 128 || x < -sprite_width + sprite_xoffset - 128 || x > CANVAS_XEND + sprite_xoffset + 128);
+	break;
+}
 
 if (!fading) {
 	lifespan -= global.gpspeed;

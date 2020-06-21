@@ -209,6 +209,34 @@
             "value": "0",
             "varName": "fading",
             "varType": 3
+        },
+        {
+            "id": "2aecfccc-2095-445d-859f-c899a3e39a80",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "suf1",
+            "varType": 1
+        },
+        {
+            "id": "0925b68c-9ff5-4c1a-8c2a-2bdf0617f1f5",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "suf2",
+            "varType": 1
         }
     ],
     "solid": false,

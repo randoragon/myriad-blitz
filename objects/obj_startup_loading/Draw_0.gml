@@ -16,7 +16,7 @@ if (stage != 0) {
 	var den2 = image_number;
 	var precision = 0.0001;
 	var progress = ceil(((num1 * den2) + (num2 * den1)) / (2 * den1 * den2 * precision)) * precision;
-	if (test < progress) { test = progress; }// else { show_message("CHOTTO MATTE, MATE! Decrease from " + string(test) + " to " + string(progress)); }
+	if (test < progress) { test = progress; }
     
     draw_set_color(hsv(90, 193 + (32 * dsin(cycle)), 255));
     draw_rectangle(CANVAS_XMID - sprite_get_xoffset(spr_loading_bar) + 14, 550 - sprite_get_yoffset(spr_loading_bar) + 14, CANVAS_XMID - sprite_get_xoffset(spr_loading_bar) + 14 + (progress * 1000), 550 - sprite_get_yoffset(spr_loading_bar) + 88, 0);
