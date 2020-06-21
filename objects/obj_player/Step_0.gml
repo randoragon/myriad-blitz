@@ -661,7 +661,7 @@ if (flash_clock == 40) {
 	    break;
 		case PLAYER_BOBILEUSZ:
 			instance_create(random_x, random_y, obj_bobileusz_ultimate);
-			player_status_add(STATUS_EFFECT_PRISMATIC_GLACIER, 600, 0);
+			player_status_add(STATUS_EFFECT_PRISMATIC_GLACIER, 630, 0);
     }
 }
 

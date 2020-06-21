@@ -226,6 +226,13 @@ part_type_size_orientation_lt(part, 0.05, 0.1, -0.0015, 0, 0, 0, 0);
 part_type_direction_speed_lt(part, 0, 360, 0, 0.4, 0);
 part_type_blend_color_alpha_lt(part, bm_add, rgb(255, 255, 255), rgb(25, 165, 255), 1, 0.75);
 
+// 17. bobileusz snowflake particles
+global.part_type[17] = part_type_create_lt(part_snowflake, 0, 45, 60);
+part = global.part_type[17];
+part_type_size_orientation_lt(part, 0.3, 0.6, -0.005, 0, 360, 4, 1);
+part_type_direction_speed_lt(part, 0, 360, 3, 4, -0.06);
+part_type_blend_color_alpha_lt(part, bm_add, c_white, c_white, 0.8, 0);
+
 #endregion
 
 #region Realm (Common) Enemies Setup
@@ -528,7 +535,9 @@ global.save_sindex [? "part_circle"]					  = 56;
 global.save_sname  [? 56]                                 = "part_circle";
 global.save_sindex [? "spr_bobileusz_ultimate"]			  = 57;
 global.save_sname  [? 57]                                 = "spr_bobileusz_ultimate";
-// 58-96
+global.save_sindex [? "part_snowflake"]					  = 58;
+global.save_sname  [? 58]                                 = "part_snowflake";
+// 59-96
 global.save_sindex [? "spr_present"]                      = 97;
 global.save_sname  [? 97]                                 = "spr_present";
 global.save_sindex [? "spr_ultimate"]                      = 98;

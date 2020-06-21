@@ -297,6 +297,14 @@
             }
         },
         {
+            "Key": "117c9d03-799a-49d7-8276-d11973eb664a",
+            "Value": {
+                "id": "ff995b4b-d059-41ea-bd8c-5971940fdf3c",
+                "resourcePath": "sprites\\part_snowflake\\part_snowflake.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "118957c7-63c6-4eba-bd94-97640d0fe17c",
             "Value": {
                 "id": "19691d41-5571-4015-91c8-91d5857392fb",
