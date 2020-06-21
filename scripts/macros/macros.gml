@@ -1,6 +1,6 @@
 #region Game Metadata
 
-#macro VER "1.2.0"
+#macro VER "1.2.0 beta"
 #macro DEV "Randoragon"
 #macro ENGINE "GameMaker: Studio"
 #macro COPYRIGHT "All rights reserved."
@@ -114,6 +114,7 @@
 #macro STATUS_EFFECT_GEAR8 18
 #macro STATUS_EFFECT_GEAR9 19
 #macro STATUS_EFFECT_GEAR10 20
+#macro STATUS_EFFECT_PRISMATIC_GLACIER 21
 
 #macro IS_STATUS_EFFECT_EXHAUSTED obj_player.status_effect[STATUS_EFFECT_EXHAUSTED]
 #macro IS_STATUS_EFFECT_MAGIC_FATIGUE obj_player.status_effect[STATUS_EFFECT_MAGIC_FATIGUE]

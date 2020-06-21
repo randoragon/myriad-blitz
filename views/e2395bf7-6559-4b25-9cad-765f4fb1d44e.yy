@@ -14,7 +14,8 @@
         "cbd48c6f-458c-4074-9c63-94740329affe",
         "97f31903-b213-48bb-be30-05cd577225bf",
         "f8b90fd6-1d91-4935-9166-9b1d691f6a5f",
-        "5c647738-5439-4b38-8b7d-073d11e31db6"
+        "5c647738-5439-4b38-8b7d-073d11e31db6",
+        "6aa84327-5db9-4f40-9759-7bb96a4e86ec"
     ],
     "filterType": "GMSprite",
     "folderName": "ultimates",

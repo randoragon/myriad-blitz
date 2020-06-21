@@ -1889,6 +1889,14 @@
             }
         },
         {
+            "Key": "6aa84327-5db9-4f40-9759-7bb96a4e86ec",
+            "Value": {
+                "id": "df973ae2-31fe-465d-ab04-e6cc794c322e",
+                "resourcePath": "sprites\\spr_bobileusz_ultimate\\spr_bobileusz_ultimate.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "6bc7b3ca-1f51-4744-9a63-ec117f22b51c",
             "Value": {
                 "id": "70d22db3-a69e-49b5-a24c-bbacc5132c28",
@@ -3132,6 +3140,14 @@
             }
         },
         {
+            "Key": "a89486f2-fdb7-406b-a150-b6ce2fd0204b",
+            "Value": {
+                "id": "9a5daa9e-39f0-4377-b1d6-73da6019a09f",
+                "resourcePath": "sprites\\spr_status_prismatic_glacier\\spr_status_prismatic_glacier.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "a8ff5167-4050-4882-ae69-da43d48a2bf9",
             "Value": {
                 "id": "79b9bd6a-11bd-4c0c-a4f2-606b67aebaea",
@@ -3891,6 +3907,14 @@
                 "id": "1c8f6c4b-ddef-4823-b3ff-7f6cc9791686",
                 "resourcePath": "sprites\\spr_emerald_frag\\spr_emerald_frag.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "cf7d6a06-9530-4f63-a6a2-9d4f83428cdf",
+            "Value": {
+                "id": "0064631e-d829-4fbc-99de-02bbc9b4bf87",
+                "resourcePath": "objects\\obj_bobileusz_ultimate\\obj_bobileusz_ultimate.yy",
+                "resourceType": "GMObject"
             }
         },
         {

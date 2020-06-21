@@ -25,7 +25,8 @@
         "e6b40e0f-61a9-4516-a231-603cf89feec9",
         "6660802f-370b-45a7-b688-eefa878cde17",
         "19242f5e-ff27-4245-b911-46c76887f7ba",
-        "8ae1c2a2-a83b-4b18-8252-ee76d16729bc"
+        "8ae1c2a2-a83b-4b18-8252-ee76d16729bc",
+        "a89486f2-fdb7-406b-a150-b6ce2fd0204b"
     ],
     "filterType": "GMSprite",
     "folderName": "status_effects",

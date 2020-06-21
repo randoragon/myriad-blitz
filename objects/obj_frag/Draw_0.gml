@@ -15,7 +15,7 @@ surface_set_target(GENERAL_SURFACE);
 #region Prerequisites
 
 if (f == PLAYER_BOBILEUSZ && e == 0) {
-	var gear;
+	var gear = 5;
 	for (var i = STATUS_EFFECT_GEAR1; i < STATUS_EFFECT_GEAR10 + 1; i++) {
 		if (obj_player.status_effect[i]) {
 			gear = i - STATUS_EFFECT_GEAR1 + 1;

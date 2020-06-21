@@ -266,6 +266,7 @@ global.object_layer[? obj_evilflame_ultimate]		= layer_get_id("PlayerUnderlay");
 global.object_layer[? obj_emerald_ultimate]			= layer_get_id("UnderlayEffects1");
 global.object_layer[? obj_emerald_ultimate_flow]	= layer_get_id("UnderlayEffects0");
 global.object_layer[? obj_emerald_ultimate_force]   = layer_get_id("OverlayEffects0");
+global.object_layer[? obj_bobileusz_ultimate]		= layer_get_id("Minions");
 // <- end of ultimates
 for (var i = 1; i < RLMCOUNT + 1; i++) {
 	for (var j = global.realm_enemy_index[i]; j < global.realm_enemy_index[i + 1]; j++) {
@@ -378,7 +379,9 @@ global.save_oindex[? "obj_enemy_christmas_reindeer"]        = 28;
 global.save_oname [? 28]                                    = "obj_enemy_christmas_reindeer";
 global.save_oindex[? "obj_enemy_christmas_rocket_elf"]      = 29;
 global.save_oname [? 29]                                    = "obj_enemy_christmas_rocket_elf";
-// 30-47
+global.save_oindex[? "obj_bobileusz_ultimate"]				= 30;
+global.save_oname [? 30]                                    = "obj_bobileusz_ultimate";
+// 31-47
 global.save_oindex[? "obj_present"]                         = 48;
 global.save_oname [? 48]                                    = "obj_present";
 global.save_oindex[? "obj_ultimate_pickup"]                 = 49;
@@ -523,7 +526,9 @@ global.save_sindex [? "spr_bobileusz_bottle"]			  = 55;
 global.save_sname  [? 55]                                 = "spr_bobileusz_bottle";
 global.save_sindex [? "part_circle"]					  = 56;
 global.save_sname  [? 56]                                 = "part_circle";
-// 57-96
+global.save_sindex [? "spr_bobileusz_ultimate"]			  = 57;
+global.save_sname  [? 57]                                 = "spr_bobileusz_ultimate";
+// 58-96
 global.save_sindex [? "spr_present"]                      = 97;
 global.save_sname  [? 97]                                 = "spr_present";
 global.save_sindex [? "spr_ultimate"]                      = 98;
@@ -764,5 +769,10 @@ global.player_status_effect_desc[20] =
 @"Damage 150%
 Defense 10%
 Speed 300%";
+
+global.player_status_effect_name[21] = "PRISMATIC GLACIER";
+global.player_status_effect_desc[21] = 
+@"Break down light to
+break down enemies.";
 
 #endregion
