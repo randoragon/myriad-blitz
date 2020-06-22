@@ -1,8 +1,8 @@
 {
-    "id": "cab4e331-dc62-4811-b000-8b2f0200e0fc",
+    "id": "e4c839ce-b12e-45b8-be55-a8534fbff995",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "surface_map_capture",
+    "name": "surface_page_clear",
     "IsCompatibility": false,
     "IsDnD": false
 }

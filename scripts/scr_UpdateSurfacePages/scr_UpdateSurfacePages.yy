@@ -1,8 +1,8 @@
 {
-    "id": "ef6835d6-6102-44c0-8a67-ece083f513b1",
+    "id": "c1047ff5-07b5-4285-b524-208c3b58f6bc",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "surface_map_allocate",
+    "name": "scr_UpdateSurfacePages",
     "IsCompatibility": false,
     "IsDnD": false
 }

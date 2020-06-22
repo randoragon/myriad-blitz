@@ -2,7 +2,7 @@
 
 if (async_load != -1 && async_load[? "type"] == "audiogroup_load" && async_load[? "group_id"] == global.character_audiogroup[global.chrsel] && !global.loading && global.state == 0) {
 	scr_toggle_stats_selection(0);
-	scr_SurfaceMapUpdate();
+	scr_UpdateSurfacePages();
 	play_sfx(sfx_run_start, 0, 0);
 	play_music(mus_rlm_christmas + global.realm - 1, sound_priority.music, 1);
 	global.state = 1;

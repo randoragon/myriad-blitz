@@ -792,9 +792,8 @@ break down enemies.";
 
 #endregion
 
-#region Surface Maps Setup
+#region Surface Pages/Pools Setup
 
-global.surface_maps = ds_list_create();
-global.surface_map_free = ds_list_create();
+global.surface_pages = ds_map_create();
 
 #endregion

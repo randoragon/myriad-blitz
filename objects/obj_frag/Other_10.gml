@@ -108,8 +108,8 @@ switch(f) {
 		    lifespan	 = 120;
 			image_blend  = hsv(irandom(255), 255, 255);
 			fadeout      = 10;
-			suf1		    = global.surface_maps[| 0]; // see scr_SurfaceMapUpdate
-			surface_overlay = surface_map_capture(250);
+			suf1		    = surface_page_index("projectile", 0); // see scr_SurfaceMapUpdate
+			surface_overlay = surface_page_capture("projectile", 250);
 		} else {
 			sprite_index = spr_bobileusz_icicle;
 			image_angle  = direction;

@@ -103,6 +103,14 @@
             }
         },
         {
+            "Key": "05de99ff-4f5a-4b10-8915-d6de47ddb5a2",
+            "Value": {
+                "id": "b3559868-a6f9-4b0c-ab4c-b3cee01bb621",
+                "resourcePath": "scripts\\surface_page_clearall\\surface_page_clearall.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "05eb6626-a7e2-4c32-aa99-7a85b098ac8e",
             "Value": {
                 "id": "5b1d3d84-a288-43a9-8d45-abd9e926d009",
@@ -2406,6 +2414,14 @@
             }
         },
         {
+            "Key": "82b7208d-9290-4682-8f3d-9288cd23a501",
+            "Value": {
+                "id": "b595bd6a-cf28-4cd1-86e6-ce7b2bf93040",
+                "resourcePath": "scripts\\surface_page_index\\surface_page_index.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "8318c3d7-6fa1-4399-922a-250ff9b923a1",
             "Value": {
                 "id": "6f6deed4-602f-4f13-8a16-d19f1edbee59",
@@ -3500,6 +3516,14 @@
             }
         },
         {
+            "Key": "bb15704a-33b2-417f-a448-db113d53dfae",
+            "Value": {
+                "id": "8f1e6c79-c583-4106-be53-b9a433fa75cd",
+                "resourcePath": "scripts\\surface_page_create\\surface_page_create.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "bb818b2c-7ea5-4927-8312-8f17d19b3c02",
             "Value": {
                 "id": "d3296990-5021-4e6c-94e8-4abcd65dd9e7",
@@ -3597,7 +3621,7 @@
             "Key": "c1047ff5-07b5-4285-b524-208c3b58f6bc",
             "Value": {
                 "id": "ae711bdd-2e75-4685-8a60-bfb9228a9525",
-                "resourcePath": "scripts\\scr_SurfaceMapUpdate\\scr_SurfaceMapUpdate.yy",
+                "resourcePath": "scripts\\scr_UpdateSurfacePages\\scr_UpdateSurfacePages.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -3672,7 +3696,7 @@
             "Key": "c49cedb6-f966-45b1-9aef-ee74091aad5f",
             "Value": {
                 "id": "93793751-43a0-4290-a1bc-80fab6d61d24",
-                "resourcePath": "scripts\\surface_map_release\\surface_map_release.yy",
+                "resourcePath": "scripts\\surface_page_release\\surface_page_release.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -3850,7 +3874,7 @@
             "Key": "cab4e331-dc62-4811-b000-8b2f0200e0fc",
             "Value": {
                 "id": "d2da91b0-5371-481e-b9f5-350e25eb81db",
-                "resourcePath": "scripts\\surface_map_capture\\surface_map_capture.yy",
+                "resourcePath": "scripts\\surface_page_capture\\surface_page_capture.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -4362,7 +4386,7 @@
             "Key": "e4c839ce-b12e-45b8-be55-a8534fbff995",
             "Value": {
                 "id": "572e7fcc-8021-411a-b50d-ded464a74901",
-                "resourcePath": "scripts\\surface_map_clear\\surface_map_clear.yy",
+                "resourcePath": "scripts\\surface_page_clear\\surface_page_clear.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -4577,7 +4601,7 @@
             "Key": "ef6835d6-6102-44c0-8a67-ece083f513b1",
             "Value": {
                 "id": "39fd4674-183c-43a5-888a-0ad792c20830",
-                "resourcePath": "scripts\\surface_map_allocate\\surface_map_allocate.yy",
+                "resourcePath": "scripts\\surface_page_allocate\\surface_page_allocate.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -4976,10 +5000,13 @@
         "81a6c016-6b86-4f97-b561-b478967586bc",
         "6cbc7bc8-9e5b-4cc1-bbf2-96b885f2aed7",
         "5a5a1add-5b64-4490-8610-e7a7db8a903b",
+        "bb15704a-33b2-417f-a448-db113d53dfae",
         "cab4e331-dc62-4811-b000-8b2f0200e0fc",
         "c49cedb6-f966-45b1-9aef-ee74091aad5f",
         "ef6835d6-6102-44c0-8a67-ece083f513b1",
         "e4c839ce-b12e-45b8-be55-a8534fbff995",
+        "05de99ff-4f5a-4b10-8915-d6de47ddb5a2",
+        "82b7208d-9290-4682-8f3d-9288cd23a501",
         "c1047ff5-07b5-4285-b524-208c3b58f6bc"
     ],
     "tutorial": ""

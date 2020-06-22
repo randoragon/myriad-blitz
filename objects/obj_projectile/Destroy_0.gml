@@ -21,7 +21,7 @@ if (lifespan <= 0) {
 		case PLAYER_BOBILEUSZ:
 			if (e == 0) {
 				disperse_particles(PART_SYSTEM_PLAYERTOP_LT, x, x, y, y, irandom_range(3, 5), rgb(255, 255, 128));
-				surface_map_release(surface_overlay);
+				surface_page_release("projectile", surface_overlay);
 			} else {
 				disperse_particles(PART_SYSTEM_PLAYERTOP_LT, x, x, y, y, irandom_range(3, 5), rgb(25, 165, 255));
 			}

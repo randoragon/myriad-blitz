@@ -23,7 +23,7 @@ if (lifespan <= 0) {
 		break;
 		case PLAYER_BOBILEUSZ:
 			if (e == 0) {
-				surface_map_release(surface_overlay);
+				surface_page_release("projectile", surface_overlay);
 			}
 			disperse_particles(PART_SYSTEM_PLAYERTOP_LT, x, x, y, y, irandom_range(3, 5), c_white);
 		break;
