@@ -116,34 +116,43 @@ if (phase == 1) {
 	            line[12] = data + separator;
 	            progress = 9;
 	        break;
-	        case 9: // particle spawn slots
+			case 9:
+	            if (global.save_particles && ds_exists(PART_SYSTEM_MINION_LT, ds_type_grid)) {
+	                data = ds_grid_export(PART_SYSTEM_MINION_LT);
+	            } else {
+	                data = "";
+	            }
+	            line[13] = data + separator;
+	            progress = 10;
+	        break;
+	        case 10: // particle spawn slots
 	            if (global.save_particles && ds_exists(global.part_type_pro_slots, ds_type_list)) {
 	                data = ds_list_write(global.part_type_pro_slots);
 	            } else {
 	                data = "";
 	            }
-	            line[14] = data + separator;
-	            progress = 10;
+	            line[15] = data + separator;
+	            progress = 11;
 	        break;
-	        case 10:
+	        case 11:
 	            if (global.save_particles && ds_exists(global.part_type_lt_slots, ds_type_list)) {
 	                data = ds_list_write(global.part_type_lt_slots);
 	            } else {
 	                data = "";
 	            }
-	            line[16] = data + separator;
-	            progress = 11;
+	            line[17] = data + separator;
+	            progress = 12;
 	        break;
-	        case 11:
+	        case 12:
 	            if (global.save_particles && ds_exists(global.part_type_ult_slots, ds_type_list)) {
 	                data = ds_list_write(global.part_type_ult_slots); 
 	            } else {
 	                data = "";
 	            }
-	            line[18] = data + separator;
-	            progress = 12;
+	            line[19] = data + separator;
+	            progress = 13;
 	        break;
-	        case 12: // instances and inst_count
+	        case 13: // instances and inst_count
 	            if (instance_exists(inst_id[inst_index])) {
 	                with (inst_id[inst_index]) {
 						
@@ -210,18 +219,20 @@ if (phase == 1) {
 		                        string(hpmark) + ";" + string(hpmark_v) + ";" + 
 		                        string(helper) + ";" + 
 		                        string(focus) + ";" + string(foctime) + ";" + string(focus_state) + ";" + 
-		                        string(evilflame_sprite_swap) + ";" + string(evilflame_twilight_fury) + ";" + 
-		                        string(status_effect[0]) + ";" + string(status_effect[1]) + ";" + string(status_effect[2]) + ";" + 
-		                        string(status_effect[3]) + ";" + string(status_effect[4]) + ";" + string(status_effect[5]) + ";" + 
-		                        string(status_effect[6]) + ";" + string(status_effect[7]) + ";" + string(status_effect[8]) + ";" + 
-		                        string(status_effect[9]) + ";" + string(status_effect[10]) + ";";
+		                        string(evilflame_sprite_swap) + ";" + string(evilflame_twilight_fury) + ";";
+								for (var i = 0; i < global.status_effect_count; i++) {
+									other.data += string(status_effect[i]) + ";";
+								}
 		                    break;
 		                    case obj_projectile:
 		                        other.data += 
 		                        string(spawn) + ";" + 
 		                        string(f) + ";" + string(e) + ";" + 
 		                        string(pdmg) + ";" + string(ppen) + ";" + string(pkb) + ";" + string(pspd) + ";" + string(sacc) + ";" + string(sspd) + ";" + 
-		                         + string(fmin) + ";" + string(fmax) + ";" + string(rot) + ";" + string(lifespan) + ";";
+		                        string(fmin) + ";" + string(fmax) + ";" + string(rot) + ";" + string(lifespan) + ";" + 
+								string(fadeout) + ";" + string(fadeoutmax) + ";" + string(fading) + ";" +
+								string(surface_overlay_x) + ";" + string(surface_overlay_y) + ";" + string(surface_overlay_xscale) + ";" +string(surface_overlay_yscale) + ";" + 
+								string(surface_overlay_angle) + ";" + string(surface_overlay_alpha) + ";";
 		                    break;
 		                    case obj_frag:
 		                        other.data += 
@@ -230,13 +241,20 @@ if (phase == 1) {
 		                        string(enemy) + ";" + string(enemyharm) + ";" + 
 		                        string(vacc) + ";" + string(hacc) + ";" + 
 		                        string(fmin) + ";" + string(fmax) + ";" + string(fdmg) + ";" + string(fpen) + ";" + string(fkb) + ";" + 
-		                        string(lifespan) + ";";
+		                        string(lifespan) + ";" +
+								string(fadeout) + ";" + string(fadeoutmax) + ";" + string(fading) + ";" +
+								string(surface_overlay_x) + ";" + string(surface_overlay_y) + ";" + string(surface_overlay_xscale) + ";" +string(surface_overlay_yscale) + ";" + 
+								string(surface_overlay_angle) + ";" + string(surface_overlay_alpha) + ";";
 		                    break;
 		                    case obj_charge:
 		                        other.data += 
 		                        string(spawn) + ";" + string(f) + ";" + string(e) + ";" + string(charge) + ";" + string(rot) + ";" + 
 		                        string(cdmg) + ";" + string(cpen) + ";" + string(ckb) + ";" + string(target) + ";";
 		                    break;
+							case obj_minion:
+								other.data +=
+								string(f) + ";" + string(e) + ";" + string(state) + ";" + string(spawn) + ";" + string(cooldown) + ";";
+							break;
 		                    case obj_enemy_christmas_crow:
 		                        other.data += 
 		                        string(cooldown) + ";" + string(time_mark) + ";" +
@@ -332,6 +350,13 @@ if (phase == 1) {
 		                        other.data += 
 		                        string(clock) + ";";
 		                    break;
+							case obj_bobileusz_ultimate:
+		                        other.data += 
+		                        string(tx) + ";" + string(ty) + ";" +
+								string(progress) + ";" + string(goal) + ";" + 
+								string(lifespan) + ";" + string(lifespan_max) + ";" + 
+								string(prev_angle) + ";" + string(debuffs) + ";";
+		                    break;
 		                    case obj_debris:
 		                        other.data += 
 		                        string((split_sprite != -1)? global.save_sindex[? sprite_get_name(split_sprite)] : -1) + ";" + string(split_sprite_index) + ";" + string(split_sprite_xscale) + ";" + 
@@ -345,7 +370,7 @@ if (phase == 1) {
 	                    //write eventual ds data
 	                    switch(object_index) {
 		                    case obj_player: case obj_wrap_helper: case obj_projectile: case obj_frag: case obj_charge:
-		                    case obj_eprojectile: case obj_present: case obj_explosion:
+		                    case obj_eprojectile: case obj_present: case obj_explosion: case obj_bobileusz_ultimate:
 		                        if (ds_exists(afterimage_ds_grid, ds_type_grid)) {
 									// convert sprites into global indices
 									var afterimage2 = ds_grid_create(0, 0);
@@ -409,7 +434,7 @@ if (phase == 1) {
 	            }
 	            inst_index += 1;
 	            if (inst_index == array_length_1d(inst_id)) {
-	                progress = 13;
+	                progress = 14;
 	            }
 	        break;
         }

@@ -211,20 +211,6 @@
             "varType": 1
         },
         {
-            "id": "eac7770f-eb7a-4fd0-bd42-6d40b18ba76d",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": null,
-            "multiselect": false,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 1023,
-            "value": "0",
-            "varName": "bulletdir",
-            "varType": 0
-        },
-        {
             "id": "4f0e5f41-cbf9-4868-9bd0-4b1145c50f69",
             "modelName": "GMObjectProperty",
             "mvc": "1.0",

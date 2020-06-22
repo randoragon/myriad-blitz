@@ -593,7 +593,11 @@ global.save_sindex [? "part_snowflake"]					  = 58;
 global.save_sname  [? 58]                                 = "part_snowflake";
 global.save_sindex [? "part_flash"]						  = 59;
 global.save_sname  [? 59]                                 = "part_flash";
-// 60-96
+global.save_sindex[? "spr_bobileusz_icicle"]			  = 60;
+global.save_sname [? 60]                                  = "spr_bobileusz_icicle";
+global.save_sindex [? "spr_bolt2"]                         = 61;
+global.save_sname  [? 61]                                 = "spr_bolt2";
+// 62-96
 global.save_sindex [? "spr_present"]                      = 97;
 global.save_sname  [? 97]                                 = "spr_present";
 global.save_sindex [? "spr_ultimate"]                      = 98;

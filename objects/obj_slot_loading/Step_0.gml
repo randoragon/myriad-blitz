@@ -230,6 +230,7 @@ if (phase == 4 && clock-- <= 0) {
 		        if (ds_exists(PART_SYSTEM_ENEMY_LT			   , ds_type_grid)) { part_system_clear_lt (PART_SYSTEM_ENEMY_LT);				}
 		        if (ds_exists(PART_SYSTEM_PLAYERTOP_LT		   , ds_type_grid)) { part_system_clear_lt (PART_SYSTEM_PLAYERTOP_LT);			}
 		        if (ds_exists(PART_SYSTEM_ULTIMATE_LT		   , ds_type_grid)) { part_system_clear_lt (PART_SYSTEM_ULTIMATE_LT);			}
+				if (ds_exists(PART_SYSTEM_MINION_LT	   	       , ds_type_grid)) { part_system_clear_lt (PART_SYSTEM_MINION_LT);				}
 		        if (ds_exists(global.part_type_pro_slots, ds_type_list)) { ds_list_destroy(global.part_type_pro_slots); }
 		        if (ds_exists(global.part_type_lt_slots , ds_type_list)) { ds_list_destroy(global.part_type_lt_slots);  }
 		        if (ds_exists(global.part_type_ult_slots, ds_type_list)) { ds_list_destroy(global.part_type_ult_slots); }
@@ -269,23 +270,32 @@ if (phase == 4 && clock-- <= 0) {
 		        }
 		    break;
 		    case 11:
-		        if (bit[0] != "") {
-		        global.part_type_pro_slots = ds_list_create();
-		        ds_list_read(global.part_type_pro_slots, bit[0]);
-		        }
+				if (bit[0] != "") {
+			        ds_grid_import(PART_SYSTEM_MINION_LT, bit[0]);
+			    }
 		    break;
 		    case 12:
-		        if (bit[0] != "") {
-		        global.part_type_lt_slots = ds_list_create();
-		        ds_list_read(global.part_type_lt_slots, bit[0]);
-		        }
+				if (bit[0] != "") {
+					if (bit[0] != "") {
+					    global.part_type_pro_slots = ds_list_create();
+					    ds_list_read(global.part_type_pro_slots, bit[0]);
+				    }
+			    }
 		    break;
 		    case 13:
-		        if (bit[0] != "") {
-		            global.part_type_ult_slots = ds_list_create();
-		            ds_list_read(global.part_type_ult_slots, bit[0]);
-		        }
+				if (bit[0] != "") {
+					if (bit[0] != "") {
+					    global.part_type_lt_slots = ds_list_create();
+					    ds_list_read(global.part_type_lt_slots, bit[0]);
+				    }
+			    }
 		    break;
+			case 14:
+				if (bit[0] != "") {
+			        global.part_type_ult_slots = ds_list_create();
+			        ds_list_read(global.part_type_ult_slots, bit[0]);
+			    }
+			break;
 		    default: //object loading
 				var temporaryobjectname  = string_readln(bit, ";");
 				var temporaryobjectindex = asset_get_index(global.save_oname[? real(temporaryobjectname)]);
@@ -388,17 +398,10 @@ if (phase == 4 && clock-- <= 0) {
 			                focus_state				= string_readln_real(bit, ";");
 			                evilflame_sprite_swap   = bool(string_readln_real(bit, ";"));
 			                evilflame_twilight_fury = bool(string_readln_real(bit, ";"));
-			                status_effect[0]		= string_readln_real(bit, ";");
-			                status_effect[1]		= string_readln_real(bit, ";");
-			                status_effect[2]		= string_readln_real(bit, ";");
-			                status_effect[3]		= string_readln_real(bit, ";");
-			                status_effect[4]		= string_readln_real(bit, ";");
-			                status_effect[5]		= string_readln_real(bit, ";");
-			                status_effect[6]		= string_readln_real(bit, ";");
-			                status_effect[7]		= string_readln_real(bit, ";");
-			                status_effect[8]		= string_readln_real(bit, ";");
-			                status_effect[9]		= string_readln_real(bit, ";");
-			                status_effect[10]		= string_readln_real(bit, ";");
+							for (var i = 0; i < global.status_effect_count; i++) {
+								status_effect[i] = string_readln_real(bit, ";");
+							}
+							
 			                var afterimage_data		= other.line[++other.progress];
 			                if (afterimage_data != "") {
 			                    afterimage_ds_grid  = ds_grid_create(0, 0);
@@ -410,19 +413,28 @@ if (phase == 4 && clock-- <= 0) {
 			                }
 			            break;
 			            case obj_projectile:
-			                spawn				= string_readln_real(bit, ";");
-			                f					= string_readln_real(bit, ";");
-			                e					= string_readln_real(bit, ";");
-			                pdmg				= string_readln_real(bit, ";");
-			                ppen				= string_readln_real(bit, ";");
-			                pkb					= string_readln_real(bit, ";");
-			                pspd				= string_readln_real(bit, ";");
-			                sacc				= string_readln_real(bit, ";");
-			                sspd				= string_readln_real(bit, ";");
-			                fmin				= string_readln_real(bit, ";");
-			                fmax				= string_readln_real(bit, ";");
-			                rot					= string_readln_real(bit, ";");
-			                lifespan			= string_readln_real(bit, ";");
+			                spawn	 = string_readln_real(bit, ";");
+			                f		 = string_readln_real(bit, ";");
+			                e		 = string_readln_real(bit, ";");
+			                pdmg	 = string_readln_real(bit, ";");
+			                ppen	 = string_readln_real(bit, ";");
+			                pkb		 = string_readln_real(bit, ";");
+			                pspd	 = string_readln_real(bit, ";");
+			                sacc	 = string_readln_real(bit, ";");
+			                sspd	 = string_readln_real(bit, ";");
+			                fmin	 = string_readln_real(bit, ";");
+			                fmax	 = string_readln_real(bit, ";");
+			                rot		 = string_readln_real(bit, ";");
+			                lifespan = string_readln_real(bit, ";");
+							fadeout				= string_readln_real(bit, ";");
+							fadeoutmax			= string_readln_real(bit, ";");
+							fading				= string_readln_real(bit, ";");					
+							surface_overlay_x	= string_readln_real(bit, ";");
+							surface_overlay_y	= string_readln_real(bit, ";");
+							surface_overlay_xscale = string_readln_real(bit, ";");
+							surface_overlay_yscale = string_readln_real(bit, ";");
+							surface_overlay_angle  = string_readln_real(bit, ";");
+							surface_overlay_alpha  = string_readln_real(bit, ";");
 			                var afterimage_data = other.line[++other.progress];
 			                if (afterimage_data != "") {
 			                    afterimage_ds_grid = ds_grid_create(0, 0);
@@ -447,6 +459,15 @@ if (phase == 4 && clock-- <= 0) {
 			                fpen				= string_readln_real(bit, ";");
 			                fkb					= string_readln_real(bit, ";");
 			                lifespan			= string_readln_real(bit, ";");
+							fadeout				= string_readln_real(bit, ";");
+							fadeoutmax			= string_readln_real(bit, ";");
+							fading				= string_readln_real(bit, ";");					
+							surface_overlay_x	= string_readln_real(bit, ";");
+							surface_overlay_y	= string_readln_real(bit, ";");
+							surface_overlay_xscale = string_readln_real(bit, ";");
+							surface_overlay_yscale = string_readln_real(bit, ";");
+							surface_overlay_angle  = string_readln_real(bit, ";");
+							surface_overlay_alpha  = string_readln_real(bit, ";");
 			                var afterimage_data = other.line[++other.progress];
 			                if (afterimage_data != "") {
 			                    afterimage_ds_grid = ds_grid_create(0, 0);
@@ -477,6 +498,13 @@ if (phase == 4 && clock-- <= 0) {
 								}
 			                }
 			            break;
+						case obj_minion:
+							f		 = string_readln_real(bit, ";");
+							e		 = string_readln_real(bit, ";");
+							state	 = string_readln_real(bit, ";");
+							spawn	 = string_readln_real(bit, ";");
+							cooldown = string_readln_real(bit, ";");
+						break;
 						case obj_enemy_christmas_rocket_elf: case obj_enemy_christmas_crow:
 							cooldown			= string_readln_real(bit, ";");
 							time_mark			= string_readln_real(bit, ";");
@@ -499,7 +527,7 @@ if (phase == 4 && clock-- <= 0) {
 					        ckbres				= string_readln_real(bit, ";");
 					        ukbres				= string_readln_real(bit, ";");
 					        bar_extension		= string_readln_real(bit, ";");
-							state = string_readln_real(bit, ";");
+							state				= string_readln_real(bit, ";");
 							if (object_index == obj_enemy_christmas_crow) {
 								prev_bd = string_readln_real(bit, ";");
 							}
@@ -563,82 +591,6 @@ if (phase == 4 && clock-- <= 0) {
 					        loot = ds_map_create();
 					        ds_map_read(loot, other.line[++other.progress]);
 						break;
-			            case obj_enemy: // this stays for backwards compatibility reasons (versions pre 1.2.0)
-				            var cooldown_		= string_readln_real(bit, ";");
-				            var time_mark_		= string_readln_real(bit, ";");
-				            f					= string_readln_real(bit, ";");
-							var destination_instance = instance_create(x, y, obj_enemy_christmas_rocket_elf + f);
-							var afterimage_data = other.line[++other.progress];
-							var other_other_line_ = other.line[++other.progress];
-							with(destination_instance) {
-								previd			 = other.previd;
-								sprite_index	 = other.sprite_index;
-								image_index		 = other.image_index;
-								image_speed		 = other.image_speed;
-								prev_image_speed = other.prev_image_speed;
-								for (var fi = 0; fi < 12; fi++) {
-									alarm[fi]    = other.alarm[fi];
-								}
-								depth			 = other.depth;
-								image_alpha		 = other.image_alpha;
-								image_angle		 = other.image_angle;
-								image_blend		 = other.image_blend;
-								image_xscale	 = other.image_xscale;
-								image_yscale	 = other.image_yscale;
-								mask_index		 = other.mask_index;
-								direction		 = other.direction;
-								x				 = other.x;
-								y				 = other.y;
-								xprevious		 = other.xprevious;
-								yprevious		 = other.yprevious;
-								xstart			 = other.xstart;
-								ystart			 = other.ystart;
-								hkb  = other.hkb;
-								vkb  = other.vkb;
-								ahkb = other.ahkb;
-								avkb = other.avkb;
-								hspeed1 = other.hspeed1;
-								vspeed1 = other.vspeed1;
-								speed1  = other.speed1;
-							
-								cooldown			= cooldown_;
-								time_mark			= time_mark_;
-					            beh					= string_readln_real(bit, ";");
-					            intro				= string_readln_real(bit, ";");
-					            touchable			= string_readln_real(bit, ";");
-					            hp					= string_readln_real(bit, ";");
-					            hpmax				= string_readln_real(bit, ";");
-					            bdmg				= string_readln_real(bit, ";");
-					            bdef				= string_readln_real(bit, ";");
-					            bpen				= string_readln_real(bit, ";");
-					            bkb					= string_readln_real(bit, ";");
-					            bkbres				= string_readln_real(bit, ";");
-								if (other.f == 2 || other.f == 3 || other.f == 4) { pdmg = string_readln_real(bit, ";"); } else { string_readln_real(bit, ";"); }
-					            pdef				= string_readln_real(bit, ";");
-					            if (other.f == 2 || other.f == 3 || other.f == 4) { ppen = string_readln_real(bit, ";");
-																					pkb  = string_readln_real(bit, ";"); } else { string_readln_real(bit, ";"); string_readln_real(bit, ";"); }
-					            pkbres				= string_readln_real(bit, ";");
-					            fdef				= string_readln_real(bit, ";");
-					            cdef				= string_readln_real(bit, ";");
-					            udef				= string_readln_real(bit, ";");
-					            fkbres				= string_readln_real(bit, ";");
-					            ckbres				= string_readln_real(bit, ";");
-					            ukbres				= string_readln_real(bit, ";");
-					            bar_extension		= string_readln_real(bit, ";");
-				            
-					            if (afterimage_data != "") {
-					                afterimage_ds_grid = ds_grid_create(0, 0);
-					                afterimage_ds_grid = ds_grid_import(afterimage_ds_grid, afterimage_data);
-									// switch global indices to sprite indices
-									for (var fi = 1; fi < ds_grid_width(afterimage_ds_grid); fi++) {
-										afterimage_ds_grid[# fi, 0] = asset_get_index(global.save_sname[? afterimage_ds_grid[# fi, 0]]);
-									}
-					            }
-					            loot = ds_map_create();
-					            ds_map_read(loot, other_other_line_);
-							}
-							instance_destroy(self, false);
-			            break;
 			            case obj_eprojectile:
 			                spawn				= string_readln_real(bit, ";");
 			                f					= string_readln_real(bit, ";");
@@ -754,6 +706,15 @@ if (phase == 4 && clock-- <= 0) {
 			            case obj_emerald_ultimate_force:
 			                clock = string_readln_real(bit, ";");
 			            break;
+						case obj_bobileusz_ultimate:
+							tx			= string_readln_real(bit, ";");
+							ty			= string_readln_real(bit, ";");
+							progress	= string_readln_real(bit, ";");
+							goal		= string_readln_real(bit, ";");
+							lifespan	= string_readln_real(bit, ";");
+							prev_angle	= string_readln_real(bit, ";");
+							debuffs		= string_readln_real(bit, ";");
+						break;
 			            case obj_debris:
 			                split_sprite		= asset_get_index(global.save_sname[? string_readln_real(bit, ";")]);
 			                split_sprite_index	= string_readln_real(bit, ";");
@@ -809,6 +770,7 @@ if (phase == 4 && clock-- <= 0) {
 #region Phase 5 - Reassigning Pointers
 
 if (phase == 5) {
+	scr_UpdateSurfacePages();
 	with (obj_save_group) {
 	    if (global.enemy_details_selection == previd) {
 	        global.enemy_details_selection = id;
@@ -820,7 +782,16 @@ if (phase == 5) {
 	                if (other.helper == previd) other.helper = id;
 		        }
 		    break;
-		    case obj_projectile: case obj_charge: case obj_eprojectile:
+		    case obj_projectile:
+				with (obj_save_group) {
+		            if (other.spawn == previd) other.spawn = id;
+		        }
+				if (global.chrsel == PLAYER_BOBILEUSZ) {
+					suf1 = surface_page_index("projectile", 0);
+					surface_overlay = surface_page_capture("projectile", 250);
+				}
+			break;
+			case obj_charge: case obj_eprojectile:
 		        with (obj_save_group) {
 		            if (other.spawn == previd) other.spawn = id;
 		        }
@@ -830,6 +801,10 @@ if (phase == 5) {
 		            if (other.spawn == previd) other.spawn = id;
 		            if (other.enemy = previd) other.enemy = id;
 		        }
+				if (global.chrsel == PLAYER_BOBILEUSZ) {
+					suf1 = surface_page_index("projectile", 0);
+					surface_overlay = surface_page_capture("projectile", 250);
+				}
 		    break;
 		    case obj_evilflame_ultimate:
 		        player = instance_find(obj_player, 1);

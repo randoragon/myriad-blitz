@@ -1,5 +1,11 @@
 /// @description scr_SurfaceMapUpdate()
 
+// Beware that this script is run in two occassions:
+// 1) at the start of a run
+// 2) at the end of slot loading
+//
+// Take great care what you put into it, especially with respect to 2).
+
 surface_page_clearall();
 
 switch(global.chrsel) {

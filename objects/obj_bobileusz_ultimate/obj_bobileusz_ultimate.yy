@@ -175,6 +175,20 @@
             "value": "0",
             "varName": "debuffs",
             "varType": 3
+        },
+        {
+            "id": "4d28fcbb-16a0-4b6a-8c6c-d51b3603fab7",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "-1",
+            "varName": "afterimage_ds_grid",
+            "varType": 1
         }
     ],
     "solid": false,

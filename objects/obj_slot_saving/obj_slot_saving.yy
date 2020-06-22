@@ -106,7 +106,7 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "13",
+            "value": "14",
             "varName": "progress_max",
             "varType": 1
         },

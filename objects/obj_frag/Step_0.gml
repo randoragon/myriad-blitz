@@ -67,7 +67,6 @@ switch(f) {
 				hue = (abs(hue - hues[i-1]) < abs(hue - hues[i]))? i-1 : i % 8;
 				parttype = PART_TYPE_P_BOBILEUSZ_FLASH_RED_ULT + hue;
 				part_type_spawn_ult(PART_SYSTEM_FRAG_ULT, parttype, 1, x - 50, y - 15, x + 40, y + 15, "square", "linear", 1);
-				show_debug_message(part_type_count_ult(parttype));
 			}
 		}
 	break;
