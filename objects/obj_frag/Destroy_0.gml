@@ -22,6 +22,10 @@ if (lifespan <= 0) {
 			}
 		break;
 		case PLAYER_BOBILEUSZ:
+			if (e == 0) {
+				surface_map_release(suf1);
+				surface_map_release(surface_overlay);
+			}
 			disperse_particles(PART_SYSTEM_PLAYERTOP, x, x, y, y, irandom_range(3, 5), c_white);
 		break;
 	}

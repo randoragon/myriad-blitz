@@ -108,6 +108,8 @@ switch(f) {
 		    lifespan	 = 120;
 			image_blend  = hsv(irandom(255), 255, 255);
 			fadeout      = 10;
+			suf1		    = surface_map_capture(250);
+			surface_overlay = surface_map_capture(250);
 		} else {
 			sprite_index = spr_bobileusz_icicle;
 			image_angle  = direction;

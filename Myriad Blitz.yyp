@@ -2010,6 +2010,14 @@
             }
         },
         {
+            "Key": "6e943b98-0902-4f46-96ed-239dcffc11c8",
+            "Value": {
+                "id": "27fd2980-0351-4387-a3a5-3e9021d2a5fe",
+                "resourcePath": "sprites\\spr_bobileusz_frag\\spr_bobileusz_frag.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "6f0b775f-3815-4133-bf2d-658dec89c2d1",
             "Value": {
                 "id": "c99478c4-cade-475e-8e12-26c690d4504b",
@@ -3754,14 +3762,6 @@
                 ],
                 "id": "e20077ac-6683-4f6b-bc46-8959e341119a",
                 "resourcePath": "sprites\\spr_emerald_shooting\\spr_emerald_shooting.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "c743ddcf-3f3d-44e9-91c3-a420ff5e7b88",
-            "Value": {
-                "id": "084956ea-e858-4957-ab19-30fa9727d2be",
-                "resourcePath": "sprites\\spr_bobileusz_frag\\spr_bobileusz_frag.yy",
                 "resourceType": "GMSprite"
             }
         },

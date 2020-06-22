@@ -32,7 +32,7 @@ if (f == PLAYER_BOBILEUSZ) {
 		surface_set_target(suf1);
 		draw_clear_alpha(c_white, 1);
 		surface_reset_target();
-		surface_set_target(suf2);
+		surface_set_target(surface_overlay);
 		draw_clear_alpha(0, 0);
 		var tex = texture_get_uvs(surface_get_texture(suf1));
 		var w   = surface_get_width(suf1);
@@ -42,11 +42,15 @@ if (f == PLAYER_BOBILEUSZ) {
 		draw_surface(suf1, 0, 0);
 		surface_reset_target();
 		shader_reset();
-		if (sprite_exists(sprite_index) && sprite_index != spr_bobileusz_bullet) {
-			sprite_delete(sprite_index);
-		}
-		sprite_index = sprite_create_from_surface(suf2, 0, 0, w, h, 0, 0, abs(mean(A[0] - x0, B[0] - x0)), abs(mean(A[1] - y0, B[1] - y0)));
-		sprite_collision_mask(sprite_index, 0, 0, 0, 0, w, h, bboxkind_precise, 0);
+		surface_overlay_x = x - mean(A[0] - x0, B[0] - x0);
+		surface_overlay_y = y - mean(A[1] - y0, B[1] - y0);
+		
+		// Calculate collision mask
+		image_xscale = point_distance(mean(A[0], B[0]), mean(A[1], B[1]), mean(D[0], C[0]), mean(D[1], C[1]));
+		image_yscale = point_distance(mean(A[0], D[0]), mean(A[1], D[1]), mean(B[0], C[0]), mean(B[1], C[1]));
+		image_angle = direction;
+		image_xscale /= sprite_get_width(sprite_index);
+		image_yscale /= sprite_get_height(sprite_index);
 	} else {
 		exit;
 	}
@@ -75,6 +79,9 @@ if ((f == PLAYER_EVILFLAME && e == 2) || f == PLAYER_BOBILEUSZ) {
 if (global.shader_conditions == 0) {
     draw_afterimage_remove();
     draw_self();
+	if (surface_exists(surface_overlay)) {
+		draw_surface_ext(surface_overlay, surface_overlay_x, surface_overlay_y, surface_overlay_xscale, surface_overlay_yscale, surface_overlay_angle, c_white, surface_overlay_alpha);
+	}
 } else {
     shd_sprite_effect_set(global.shader_conditions);
     if (global.shader_conditions >= 4 && global.shader_conditions <= 7) {
@@ -85,6 +92,9 @@ if (global.shader_conditions == 0) {
         }
     }
     draw_self();
+	if (surface_exists(surface_overlay)) {
+		draw_surface_ext(surface_overlay, surface_overlay_x, surface_overlay_y, surface_overlay_xscale, surface_overlay_yscale, surface_overlay_angle, c_white, surface_overlay_alpha);
+	}
     shader_reset();
 }
 
