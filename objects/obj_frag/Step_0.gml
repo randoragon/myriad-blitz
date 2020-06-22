@@ -51,6 +51,7 @@ switch(f) {
 	break;
 	case PLAYER_BOBILEUSZ:
 		if (e == 1) {
+			part_type_spawn_ult(PART_SYSTEM_FRAG, PART_TYPE_P_BOBILEUSZ_ICICLE, 0, x-6, y-6, x+6, y+6, "ellipse", "linear", 5);
 			vspeed1 += 0.1 * sqr(global.gpspeed);
 			image_angle = point_direction(x, y, x + lengthdir_x(speed1, direction), y + lengthdir_y(speed1, direction) + vspeed1);
 		}

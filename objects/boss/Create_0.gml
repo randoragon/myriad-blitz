@@ -233,6 +233,12 @@ part_type_size_orientation_lt(part, 0.3, 0.6, -0.005, 0, 360, 4, 1);
 part_type_direction_speed_lt(part, 0, 360, 3, 4, -0.06);
 part_type_blend_color_alpha_lt(part, bm_add, c_white, c_white, 0.8, 0);
 
+// 18. bobileusz icicle particles
+global.part_type[18] = part_type_create_ult(part_circle, 0, 3, 7);
+part = global.part_type[18];
+part_type_size_orientation_ult(part, 0.02, 0.03, -0.004, 0, 0, 0);
+part_type_blend_color_alpha_ult(part, bm_normal, rgb(113, 129, 227), 1, 0.75);
+
 #endregion
 
 #region Realm (Common) Enemies Setup
