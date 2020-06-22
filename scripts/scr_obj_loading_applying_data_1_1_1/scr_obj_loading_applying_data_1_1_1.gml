@@ -107,49 +107,49 @@ switch(progress) {
 	    global.player_status_effects = ds_grid_import(global.player_status_effects, line[progress]);
 	break;
 	case 4: //part systems, types and spawn slots
-	    if (ds_exists(PART_SYSTEM_PLAYERBOT		   , ds_type_grid)) { part_system_clear_lt (PART_SYSTEM_PLAYERBOT);			}
-	    if (ds_exists(PART_SYSTEM_DAMAGE_INDICATORS, ds_type_grid)) { part_system_clear_pro(PART_SYSTEM_DAMAGE_INDICATORS); }
-	    if (ds_exists(PART_SYSTEM_FRAG			   , ds_type_grid)) { part_system_clear_ult(PART_SYSTEM_FRAG);				}
-	    if (ds_exists(PART_SYSTEM_CHARGE		   , ds_type_grid)) { part_system_clear_ult(PART_SYSTEM_CHARGE);			}
-	    if (ds_exists(PART_SYSTEM_ENEMY			   , ds_type_grid)) { part_system_clear_lt (PART_SYSTEM_ENEMY);				}
-	    if (ds_exists(PART_SYSTEM_PLAYERTOP		   , ds_type_grid)) { part_system_clear_lt (PART_SYSTEM_PLAYERTOP);			}
-	    if (ds_exists(PART_SYSTEM_ULTIMATE		   , ds_type_grid)) { part_system_clear_lt (PART_SYSTEM_ULTIMATE);			}
+	    if (ds_exists(PART_SYSTEM_PLAYERBOT_LT		   , ds_type_grid)) { part_system_clear_lt (PART_SYSTEM_PLAYERBOT_LT);			}
+	    if (ds_exists(PART_SYSTEM_DAMAGE_INDICATORS_PRO, ds_type_grid)) { part_system_clear_pro(PART_SYSTEM_DAMAGE_INDICATORS_PRO); }
+	    if (ds_exists(PART_SYSTEM_FRAG_ULT			   , ds_type_grid)) { part_system_clear_ult(PART_SYSTEM_FRAG_ULT);				}
+	    if (ds_exists(PART_SYSTEM_CHARGE_ULT		   , ds_type_grid)) { part_system_clear_ult(PART_SYSTEM_CHARGE_ULT);			}
+	    if (ds_exists(PART_SYSTEM_ENEMY_LT			   , ds_type_grid)) { part_system_clear_lt (PART_SYSTEM_ENEMY_LT);				}
+	    if (ds_exists(PART_SYSTEM_PLAYERTOP_LT		   , ds_type_grid)) { part_system_clear_lt (PART_SYSTEM_PLAYERTOP_LT);			}
+	    if (ds_exists(PART_SYSTEM_ULTIMATE_LT		   , ds_type_grid)) { part_system_clear_lt (PART_SYSTEM_ULTIMATE_LT);			}
 	    if (ds_exists(global.part_type_pro_slots, ds_type_list)) { ds_list_destroy(global.part_type_pro_slots); }
 	    if (ds_exists(global.part_type_lt_slots , ds_type_list)) { ds_list_destroy(global.part_type_lt_slots);  }
 	    if (ds_exists(global.part_type_ult_slots, ds_type_list)) { ds_list_destroy(global.part_type_ult_slots); }
         
 	    if (bit[0] != "") {
-	        ds_grid_import(PART_SYSTEM_PLAYERBOT, bit[0]);
+	        ds_grid_import(PART_SYSTEM_PLAYERBOT_LT, bit[0]);
 	    }
 	break;
 	case 5:
 	    if (bit[0] != "") {
-	        ds_grid_import(PART_SYSTEM_DAMAGE_INDICATORS, bit[0]);
+	        ds_grid_import(PART_SYSTEM_DAMAGE_INDICATORS_PRO, bit[0]);
 	    }
 	break;
 	case 6:
 	    if (bit[0] != "") {
-	        ds_grid_import(PART_SYSTEM_FRAG, bit[0]);
+	        ds_grid_import(PART_SYSTEM_FRAG_ULT, bit[0]);
 	    }
 	break;
 	case 7:
 	    if (bit[0] != "") {
-	        ds_grid_import(PART_SYSTEM_CHARGE, bit[0]);
+	        ds_grid_import(PART_SYSTEM_CHARGE_ULT, bit[0]);
 	    }
 	break;
 	case 8:
 	    if (bit[0] != "") {
-	        ds_grid_import(PART_SYSTEM_ENEMY, bit[0]);
+	        ds_grid_import(PART_SYSTEM_ENEMY_LT, bit[0]);
 	    }
 	break;
 	case 9:
 	    if (bit[0] != "") {
-	        ds_grid_import(PART_SYSTEM_PLAYERTOP, bit[0]);
+	        ds_grid_import(PART_SYSTEM_PLAYERTOP_LT, bit[0]);
 	    }
 	break;
 	case 10:
 	    if (bit[0] != "") {
-	        ds_grid_import(PART_SYSTEM_ULTIMATE, bit[0]);
+	        ds_grid_import(PART_SYSTEM_ULTIMATE_LT, bit[0]);
 	    }
 	break;
 	case 11:
@@ -169,15 +169,15 @@ switch(progress) {
 				// - indicators 3
 				// method of identification: life_max
 				switch (ptgrid[# i, 4]) {
-					case 20: mapping[? i] = PART_TYPE_INDICATORS_1; break;
-					case 40: mapping[? i] = PART_TYPE_INDICATORS_2; break;
-					case 80: mapping[? i] = PART_TYPE_INDICATORS_3; break;
+					case 20: mapping[? i] = PART_TYPE_INDICATORS_1_PRO; break;
+					case 40: mapping[? i] = PART_TYPE_INDICATORS_2_PRO; break;
+					case 80: mapping[? i] = PART_TYPE_INDICATORS_3_PRO; break;
 				}
 			}
 				
 			// Remap all particle IDs from arbitrary indices to global values implemented after 1.1.1
 			var part_system;
-			part_system = PART_SYSTEM_DAMAGE_INDICATORS;
+			part_system = PART_SYSTEM_DAMAGE_INDICATORS_PRO;
 			for (var i = 1; i < ds_grid_width(part_system); i++) {
 				part_system[# i, 0] = (ds_map_exists(mapping, part_system[# i, 0]))? mapping[? part_system[# i, 0]] : -1;
 			}
@@ -211,28 +211,28 @@ switch(progress) {
 				// - evilflame fury thruster
 				// method of identification: alpha1, sprite
 				switch (ptgrid[# i, 19]) {
-					case 1: mapping[? i] = PART_TYPE_DISPERSE; break;
-					case 0.8: mapping[? i] = PART_TYPE_ULTIMATE_BURST; break;
-					case 0.5: mapping[? i] = PART_TYPE_E_ULTIMATE_LOOT; break;
-					case 0.7: mapping[? i] = (ptgrid[# i, 0] == part_square)? PART_TYPE_P_EVILFLAME_THRUSTER : PART_TYPE_P_EVILFLAME_FURY_THRUSTER; break;
+					case 1: mapping[? i] = PART_TYPE_DISPERSE_LT; break;
+					case 0.8: mapping[? i] = PART_TYPE_ULTIMATE_BURST_LT; break;
+					case 0.5: mapping[? i] = PART_TYPE_E_ULTIMATE_LOOT_LT; break;
+					case 0.7: mapping[? i] = (ptgrid[# i, 0] == part_square)? PART_TYPE_P_EVILFLAME_THRUSTER_LT : PART_TYPE_P_EVILFLAME_FURY_THRUSTER_LT; break;
 				}
 			}
 				
 			// Remap all particle IDs from arbitrary indices to global values implemented after 1.1.1
 			var part_system;
-			part_system = PART_SYSTEM_ULTIMATE;
+			part_system = PART_SYSTEM_ULTIMATE_LT;
 			for (var i = 1; i < ds_grid_width(part_system); i++) {
 				part_system[# i, 0] = (ds_map_exists(mapping, part_system[# i, 0]))? mapping[? part_system[# i, 0]] : -1;
 			}
-			part_system = PART_SYSTEM_PLAYERTOP;
+			part_system = PART_SYSTEM_PLAYERTOP_LT;
 			for (var i = 1; i < ds_grid_width(part_system); i++) {
 				part_system[# i, 0] = (ds_map_exists(mapping, part_system[# i, 0]))? mapping[? part_system[# i, 0]] : -1;
 			}
-			part_system = PART_SYSTEM_PLAYERBOT;
+			part_system = PART_SYSTEM_PLAYERBOT_LT;
 			for (var i = 1; i < ds_grid_width(part_system); i++) {
 				part_system[# i, 0] = (ds_map_exists(mapping, part_system[# i, 0]))? mapping[? part_system[# i, 0]] : -1;
 			}
-			part_system = PART_SYSTEM_ENEMY;
+			part_system = PART_SYSTEM_ENEMY_LT;
 			for (var i = 1; i < ds_grid_width(part_system); i++) {
 				part_system[# i, 0] = (ds_map_exists(mapping, part_system[# i, 0]))? mapping[? part_system[# i, 0]] : -1;
 			}
@@ -267,22 +267,22 @@ switch(progress) {
 				// - emerald frags
 				// method of identification: size_incr
 				switch (ptgrid[# i, 4]) {
-					case -0.02: mapping[? i] = PART_TYPE_P_EVILFLAME_FRAG; break;
-					case -0.005: mapping[? i] = PART_TYPE_P_EVILFLAME_CHARGE_RING; break;
-					case -0.035: mapping[? i] = PART_TYPE_P_EVILFLAME_FURY_FRAG; break;
-					case -0.007: mapping[? i] = PART_TYPE_P_EVILFLAME_CHARGE; break;
-					case -0.01: mapping[? i] = PART_TYPE_P_EVILFLAME_FURY_CHARGE; break;
-					case -0.0625: mapping[? i] = PART_TYPE_P_EMERALD_FRAG; break;
+					case -0.02: mapping[? i] = PART_TYPE_P_EVILFLAME_FRAG_ULT; break;
+					case -0.005: mapping[? i] = PART_TYPE_P_EVILFLAME_CHARGE_ULT_RING_ULT; break;
+					case -0.035: mapping[? i] = PART_TYPE_P_EVILFLAME_FURY_FRAG_ULT; break;
+					case -0.007: mapping[? i] = PART_TYPE_P_EVILFLAME_CHARGE_ULT; break;
+					case -0.01: mapping[? i] = PART_TYPE_P_EVILFLAME_FURY_CHARGE_ULT; break;
+					case -0.0625: mapping[? i] = PART_TYPE_P_EMERALD_FRAG_ULT; break;
 				}
 			}
 				
 			// Remap all particle IDs from arbitrary indices to global values implemented after 1.1.1
 			var part_system;
-			part_system = PART_SYSTEM_FRAG;
+			part_system = PART_SYSTEM_FRAG_ULT;
 			for (var i = 1; i < ds_grid_width(part_system); i++) {
 				part_system[# i, 0] = (ds_map_exists(mapping, part_system[# i, 0]))? mapping[? part_system[# i, 0]] : -1;
 			}
-			part_system = PART_SYSTEM_CHARGE;
+			part_system = PART_SYSTEM_CHARGE_ULT;
 			for (var i = 1; i < ds_grid_width(part_system); i++) {
 				part_system[# i, 0] = (ds_map_exists(mapping, part_system[# i, 0]))? mapping[? part_system[# i, 0]] : -1;
 			}

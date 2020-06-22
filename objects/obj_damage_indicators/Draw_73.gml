@@ -8,14 +8,14 @@ if (global.loading) { exit; }
 
 #region Draw damage particles
 
-if (part_system_count_pro(PART_SYSTEM_DAMAGE_INDICATORS) > 0) {
+if (part_system_count_pro(PART_SYSTEM_DAMAGE_INDICATORS_PRO) > 0) {
     surface_set_target(GUI_SURFACE);
     gpu_set_alphatestref(0);
     if (global.shader_conditions == 0) {
-        part_system_draw_pro(PART_SYSTEM_DAMAGE_INDICATORS);
+        part_system_draw_pro(PART_SYSTEM_DAMAGE_INDICATORS_PRO);
     } else {
         shd_sprite_effect_set(global.shader_conditions);
-        part_system_draw_pro(PART_SYSTEM_DAMAGE_INDICATORS);
+        part_system_draw_pro(PART_SYSTEM_DAMAGE_INDICATORS_PRO);
         shader_reset();
     }
     gpu_set_alphatestref(254);

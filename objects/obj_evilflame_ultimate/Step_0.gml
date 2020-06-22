@@ -19,10 +19,10 @@ if (global.gpspeed != 0) {
         var xoffset = -22; var yoffset = -1;											// this is the distance from the center of the sprite to the point from which the particles are supposed to pour out
         var dis     = sqrt(sqr(xoffset * image_xscale) + sqr(yoffset * image_yscale));  // this is to calculate distance from the center of the sprite to the point from which the particles are supposed to pour out
         var ang     = point_direction(0, 0, xoffset, yoffset) + image_angle;			// this is the angle between the center of the sprite and the particle point, player tilt included
-        part_type_edit_lt(PART_TYPE_P_EVILFLAME_DUAL_CLONE_THRUSTER, "direction", -image_angle - 10, -image_angle + 10);
-        part_type_edit_lt(PART_TYPE_P_EVILFLAME_DUAL_CLONE_THRUSTER, "size", abs(0.15 * image_yscale), abs(0.25 * image_yscale), -0.008 * image_xscale);
-        part_type_edit_lt(PART_TYPE_P_EVILFLAME_DUAL_CLONE_THRUSTER, "speed", 7 * image_yscale, 11 * image_yscale, 0);
-        part_type_spawn_lt(PART_SYSTEM_PLAYERBOT, PART_TYPE_P_EVILFLAME_DUAL_CLONE_THRUSTER, 4, x + lengthdir_x(dis, ang), y + lengthdir_y(dis, ang), x + lengthdir_x(dis, ang), y + lengthdir_y(dis, ang), "line", "linear", 1.5);
+        part_type_edit_lt(PART_TYPE_P_EVILFLAME_DUAL_CLONE_THRUSTER_LT, "direction", -image_angle - 10, -image_angle + 10);
+        part_type_edit_lt(PART_TYPE_P_EVILFLAME_DUAL_CLONE_THRUSTER_LT, "size", abs(0.15 * image_yscale), abs(0.25 * image_yscale), -0.008 * image_xscale);
+        part_type_edit_lt(PART_TYPE_P_EVILFLAME_DUAL_CLONE_THRUSTER_LT, "speed", 7 * image_yscale, 11 * image_yscale, 0);
+        part_type_spawn_lt(PART_SYSTEM_PLAYERBOT_LT, PART_TYPE_P_EVILFLAME_DUAL_CLONE_THRUSTER_LT, 4, x + lengthdir_x(dis, ang), y + lengthdir_y(dis, ang), x + lengthdir_x(dis, ang), y + lengthdir_y(dis, ang), "line", "linear", 1.5);
     }
 
 	if (hpmark != hp) { hpmark = home(hpmark, hp, hpmark_v * global.gpspeed, 0); } //this is for both Gameplay bars and GUI bars

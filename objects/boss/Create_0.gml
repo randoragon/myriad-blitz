@@ -99,14 +99,14 @@ global.part_type_lt_slots = -1;
 global.part_type_ult_slots = -1;
 
 // PARTICLE SYSTEMS
-PART_SYSTEM_ULTIMATE		  = part_system_create_lt(1, 42);
-PART_SYSTEM_PLAYERTOP		  = part_system_create_lt(1, 6);
-PART_SYSTEM_PLAYERBOT		  = part_system_create_lt(1, 42, 42);
-PART_SYSTEM_FRAG			  = part_system_create_ult(1, 100, 500);
-PART_SYSTEM_CHARGE			  = part_system_create_ult(1, 150, 250);
-PART_SYSTEM_DAMAGE_INDICATORS = part_system_create_pro(1, 20, 250);
-PART_SYSTEM_ENEMY			  = part_system_create_lt(1, 30, 100);
-PART_SYSTEM_MINION			  = part_system_create_lt(1, 100, 100);
+PART_SYSTEM_ULTIMATE_LT			  = part_system_create_lt(1, 42);
+PART_SYSTEM_PLAYERTOP_LT		  = part_system_create_lt(1, 6);
+PART_SYSTEM_PLAYERBOT_LT		  = part_system_create_lt(1, 42, 42);
+PART_SYSTEM_FRAG_ULT			  = part_system_create_ult(1, 100, 500);
+PART_SYSTEM_CHARGE_ULT			  = part_system_create_ult(1, 150, 250);
+PART_SYSTEM_DAMAGE_INDICATORS_PRO = part_system_create_pro(1, 20, 250);
+PART_SYSTEM_ENEMY_LT			  = part_system_create_lt(1, 30, 100);
+PART_SYSTEM_MINION_LT			  = part_system_create_lt(1, 100, 100);
 
 // PARTICLE TYPES
 // 0. disperse particles

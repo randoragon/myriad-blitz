@@ -13,15 +13,15 @@ switch(f) {
 	    switch(e) {
 		    case 0:
 			    vspeed1 += vacc * sqr(global.gpspeed);
-			    if (real_step()) { part_type_spawn_ult(PART_SYSTEM_FRAG, PART_TYPE_P_EVILFLAME_FRAG, 2, x, y, x, y, "square", "linear", 1); }
+			    if (real_step()) { part_type_spawn_ult(PART_SYSTEM_FRAG_ULT, PART_TYPE_P_EVILFLAME_FRAG_ULT, 2, x, y, x, y, "square", "linear", 1); }
 		    break;
 		    case 1:
-				if (real_step()) { part_type_spawn_ult(PART_SYSTEM_FRAG, PART_TYPE_P_EVILFLAME_CHARGE_RING, 2, x, y, x, y, "square", "linear", 1); }
+				if (real_step()) { part_type_spawn_ult(PART_SYSTEM_FRAG_ULT, PART_TYPE_P_EVILFLAME_CHARGE_ULT_RING_ULT, 2, x, y, x, y, "square", "linear", 1); }
 		    break;
 		    case 2:
 			    speed1    += random_range(-0.2, 0.2);
 			    direction += random_range(-2, 2);
-			    if (real_step()) { part_type_spawn_ult(PART_SYSTEM_FRAG, PART_TYPE_P_EVILFLAME_FURY_FRAG, 2, x, y, x, y, "square", "linear", 1); }
+			    if (real_step()) { part_type_spawn_ult(PART_SYSTEM_FRAG_ULT, PART_TYPE_P_EVILFLAME_FURY_FRAG_ULT, 2, x, y, x, y, "square", "linear", 1); }
 		    break;
 	    }
 	    image_angle += 10 * global.gpspeed;
@@ -44,14 +44,14 @@ switch(f) {
 			}
 	    }
 	    if (real_step()) {
-	        part_type_edit_ult(PART_TYPE_P_EMERALD_FRAG, "angle", image_angle, image_angle, 0, 0);
-	        part_type_spawn_ult(PART_SYSTEM_FRAG, PART_TYPE_P_EMERALD_FRAG, 2, x, y, x, y, "square", "linear", 1);
+	        part_type_edit_ult(PART_TYPE_P_EMERALD_FRAG_ULT, "angle", image_angle, image_angle, 0, 0);
+	        part_type_spawn_ult(PART_SYSTEM_FRAG_ULT, PART_TYPE_P_EMERALD_FRAG_ULT, 2, x, y, x, y, "square", "linear", 1);
 	    }
 	    image_angle = direction;
 	break;
 	case PLAYER_BOBILEUSZ:
 		if (e == 1) {
-			part_type_spawn_ult(PART_SYSTEM_FRAG, PART_TYPE_P_BOBILEUSZ_ICICLE, 0, x-6, y-6, x+6, y+6, "ellipse", "linear", 5);
+			part_type_spawn_ult(PART_SYSTEM_FRAG_ULT, PART_TYPE_P_BOBILEUSZ_ICICLE_ULT, 0, x-6, y-6, x+6, y+6, "ellipse", "linear", 5);
 			vspeed1 += 0.1 * sqr(global.gpspeed);
 			image_angle = point_direction(x, y, x + lengthdir_x(speed1, direction), y + lengthdir_y(speed1, direction) + vspeed1);
 		}

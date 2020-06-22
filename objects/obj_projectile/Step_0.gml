@@ -33,7 +33,7 @@ switch(f) {
 			    speed1 = max(speed1 - (0.08 * global.gpspeed), 1);
 			    direction += random_range(-2, 2) * global.gpspeed;
 			    if (real_step()) {
-					part_type_spawn_ult(PART_SYSTEM_FRAG, PART_TYPE_P_EVILFLAME_FURY_FRAG, 6, x, y, x, y, "square", "linear", 1);
+					part_type_spawn_ult(PART_SYSTEM_FRAG_ULT, PART_TYPE_P_EVILFLAME_FURY_FRAG_ULT, 6, x, y, x, y, "square", "linear", 1);
 				}
 		    break;
 	    }
@@ -42,7 +42,7 @@ switch(f) {
 		if (e == 1) {
 			vspeed1 += global.gpspeed * 0.1;
 			if (real_step()) {
-				part_type_spawn_lt(PART_SYSTEM_MINION, PART_TYPE_P_BOBILEUSZ_WATER, 0, x-3, y-3, x+3, y+3, "ellipse", "gaussian", 3);
+				part_type_spawn_lt(PART_SYSTEM_MINION_LT, PART_TYPE_P_BOBILEUSZ_WATER_LT, 0, x-3, y-3, x+3, y+3, "ellipse", "gaussian", 3);
 			}
 		}
 	break;

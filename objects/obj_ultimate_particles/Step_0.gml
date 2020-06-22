@@ -8,7 +8,7 @@ if (global.loading) { exit; }
 
 #region Update system
 
-if (part_system_count_lt(PART_SYSTEM_ULTIMATE) > 0)
-	part_system_update_lt(PART_SYSTEM_ULTIMATE, global.gpspeed);
+if (part_system_count_lt(PART_SYSTEM_ULTIMATE_LT) > 0)
+	part_system_update_lt(PART_SYSTEM_ULTIMATE_LT, global.gpspeed);
 
 #endregion

@@ -490,11 +490,11 @@ if (global.gpspeed != 0 && global.state != 2 && real_step()) {
 			var dis     = sqrt(sqr(xoffset * image_xscale) + sqr(yoffset * image_yscale)); // this is to calculate distance from the center of the sprite to the point from which the particles are supposed to pour out
 			var ang     = point_direction(0, 0, xoffset, yoffset) + image_angle;           // this is the angle between the center of the sprite and the particle point, player tilt included
 			var status  = IS_STATUS_EFFECT_TWILIGHT_FURY;
-			var part    = (status)? PART_TYPE_P_EVILFLAME_FURY_THRUSTER : PART_TYPE_P_EVILFLAME_THRUSTER;
+			var part    = (status)? PART_TYPE_P_EVILFLAME_FURY_THRUSTER_LT : PART_TYPE_P_EVILFLAME_THRUSTER_LT;
 			part_type_edit_lt(part, "direction", -image_angle + 170, -image_angle + 190);
 			part_type_edit_lt(part, "size", (0.15 * (1 + status)) * image_yscale, (0.25 * (1 + status)) * image_yscale, (-0.008 * (1 + status)) * image_xscale);
 			part_type_edit_lt(part, "speed", 7 * image_yscale, 11 * image_yscale, 0);
-			part_type_spawn_lt(PART_SYSTEM_PLAYERBOT, part, 1, x + lengthdir_x(dis,ang), y + lengthdir_y(dis,ang), x + lengthdir_x(dis,ang), y + lengthdir_y(dis,ang), "line", "linear", 1.5);
+			part_type_spawn_lt(PART_SYSTEM_PLAYERBOT_LT, part, 1, x + lengthdir_x(dis,ang), y + lengthdir_y(dis,ang), x + lengthdir_x(dis,ang), y + lengthdir_y(dis,ang), "line", "linear", 1.5);
 		break;
 	}
 }
@@ -625,14 +625,14 @@ if (keyboard_check_pressed(KEYBIND_ULTIMATE) && ultcount > 0 && !is_ultimate_coo
 if (flash_clock == 40) {
     ultblink = 45;
         // particle burst
-        part_type_spawn_lt(PART_SYSTEM_PLAYERTOP, PART_TYPE_ULTIMATE_BURST, 0, x - sprite_xoffset, y - sprite_yoffset, x - sprite_xoffset + sprite_width, y - sprite_yoffset + sprite_height, "ellipse", "invgaussian", 100);
+        part_type_spawn_lt(PART_SYSTEM_PLAYERTOP_LT, PART_TYPE_ULTIMATE_BURST_LT, 0, x - sprite_xoffset, y - sprite_yoffset, x - sprite_xoffset + sprite_width, y - sprite_yoffset + sprite_height, "ellipse", "invgaussian", 100);
 		
         if (global.chrsel == PLAYER_EVILFLAME && !TWILIGHT_FURY) {
-			part_type_spawn_lt(PART_SYSTEM_PLAYERTOP, PART_TYPE_ULTIMATE_BURST, 0, x - sprite_xoffset, -(y - sprite_yoffset) + room_height, x - sprite_xoffset + sprite_width, -(y - sprite_yoffset + sprite_height) + room_height, "ellipse", "invgaussian", 100);
+			part_type_spawn_lt(PART_SYSTEM_PLAYERTOP_LT, PART_TYPE_ULTIMATE_BURST_LT, 0, x - sprite_xoffset, -(y - sprite_yoffset) + room_height, x - sprite_xoffset + sprite_width, -(y - sprite_yoffset + sprite_height) + room_height, "ellipse", "invgaussian", 100);
         } else if (global.chrsel == PLAYER_EMERALD || global.chrsel == PLAYER_BOBILEUSZ) {
 	        var random_x = irandom_range(CANVAS_XEND - 600, CANVAS_XEND - 200);
 	        var random_y = irandom_range(CANVAS_Y + 234, CANVAS_YEND - 234);
-	        part_type_spawn_lt(PART_SYSTEM_PLAYERTOP, PART_TYPE_ULTIMATE_BURST, 0, x, y, random_x, random_y, "line", "linear", 100);
+	        part_type_spawn_lt(PART_SYSTEM_PLAYERTOP_LT, PART_TYPE_ULTIMATE_BURST_LT, 0, x, y, random_x, random_y, "line", "linear", 100);
         }
 		
     switch(global.chrsel) {

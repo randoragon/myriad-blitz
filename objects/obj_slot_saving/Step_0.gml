@@ -54,8 +54,8 @@ if (phase == 1) {
 	            progress = 2;
 	        break;
 	        case 2: //particle systems
-	            if (global.save_particles && ds_exists(PART_SYSTEM_PLAYERBOT, ds_type_grid)) {
-	                data = ds_grid_export(PART_SYSTEM_PLAYERBOT);
+	            if (global.save_particles && ds_exists(PART_SYSTEM_PLAYERBOT_LT, ds_type_grid)) {
+	                data = ds_grid_export(PART_SYSTEM_PLAYERBOT_LT);
 	            } else {
 	                data = "";
 	            }
@@ -63,8 +63,8 @@ if (phase == 1) {
 	            progress = 3;
 	        break;
 	        case 3:
-	            if (global.save_particles && ds_exists(PART_SYSTEM_DAMAGE_INDICATORS, ds_type_grid)) {
-	                data = ds_grid_export(PART_SYSTEM_DAMAGE_INDICATORS);
+	            if (global.save_particles && ds_exists(PART_SYSTEM_DAMAGE_INDICATORS_PRO, ds_type_grid)) {
+	                data = ds_grid_export(PART_SYSTEM_DAMAGE_INDICATORS_PRO);
 	            } else {
 	                data = "";
 	            }
@@ -72,8 +72,8 @@ if (phase == 1) {
 	            progress = 4;
 	        break;
 	        case 4:
-	            if (global.save_particles && ds_exists(PART_SYSTEM_FRAG, ds_type_grid)) {
-	                data = ds_grid_export(PART_SYSTEM_FRAG);
+	            if (global.save_particles && ds_exists(PART_SYSTEM_FRAG_ULT, ds_type_grid)) {
+	                data = ds_grid_export(PART_SYSTEM_FRAG_ULT);
 	            } else {
 	                data = "";
 	            }
@@ -81,8 +81,8 @@ if (phase == 1) {
 	            progress = 5;
 	        break;
 	        case 5:
-	            if (global.save_particles && ds_exists(PART_SYSTEM_CHARGE, ds_type_grid)) {
-	                data = ds_grid_export(PART_SYSTEM_CHARGE);
+	            if (global.save_particles && ds_exists(PART_SYSTEM_CHARGE_ULT, ds_type_grid)) {
+	                data = ds_grid_export(PART_SYSTEM_CHARGE_ULT);
 	            } else {
 	                data = "";
 	            }
@@ -90,8 +90,8 @@ if (phase == 1) {
 	            progress = 6;
 	        break;
 	        case 6:
-	            if (global.save_particles && ds_exists(PART_SYSTEM_ENEMY, ds_type_grid)) {
-	                data = ds_grid_export(PART_SYSTEM_ENEMY);
+	            if (global.save_particles && ds_exists(PART_SYSTEM_ENEMY_LT, ds_type_grid)) {
+	                data = ds_grid_export(PART_SYSTEM_ENEMY_LT);
 	            } else {
 	                data = "";
 	            }
@@ -99,8 +99,8 @@ if (phase == 1) {
 	            progress = 7;
 	        break;
 	        case 7:
-	            if (global.save_particles && ds_exists(PART_SYSTEM_PLAYERTOP, ds_type_grid)) {
-	                data = ds_grid_export(PART_SYSTEM_PLAYERTOP);
+	            if (global.save_particles && ds_exists(PART_SYSTEM_PLAYERTOP_LT, ds_type_grid)) {
+	                data = ds_grid_export(PART_SYSTEM_PLAYERTOP_LT);
 	            } else {
 	                data = "";
 	            }
@@ -108,8 +108,8 @@ if (phase == 1) {
 	            progress = 8;
 	        break;
 	        case 8:
-	            if (global.save_particles && ds_exists(PART_SYSTEM_ULTIMATE, ds_type_grid)) {
-	                data = ds_grid_export(PART_SYSTEM_ULTIMATE);
+	            if (global.save_particles && ds_exists(PART_SYSTEM_ULTIMATE_LT, ds_type_grid)) {
+	                data = ds_grid_export(PART_SYSTEM_ULTIMATE_LT);
 	            } else {
 	                data = "";
 	            }

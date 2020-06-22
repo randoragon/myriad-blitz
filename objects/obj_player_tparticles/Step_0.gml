@@ -8,7 +8,7 @@ if (global.loading) { exit; }
 
 #region Update system
 
-if (part_system_count_lt(PART_SYSTEM_PLAYERTOP) > 0)
-	part_system_update_lt(PART_SYSTEM_PLAYERTOP, global.gpspeed);
+if (part_system_count_lt(PART_SYSTEM_PLAYERTOP_LT) > 0)
+	part_system_update_lt(PART_SYSTEM_PLAYERTOP_LT, global.gpspeed);
 
 #endregion

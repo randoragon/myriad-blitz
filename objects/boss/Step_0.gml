@@ -101,7 +101,7 @@ window_last_height = window_get_height();
 #region Manage Particle Drawers && Update Particle Systems
 
 if (!global.loading) {
-	if (part_system_count_pro(PART_SYSTEM_DAMAGE_INDICATORS) > 0) {
+	if (part_system_count_pro(PART_SYSTEM_DAMAGE_INDICATORS_PRO) > 0) {
 		if (!instance_exists(obj_damage_indicators)) { instance_create_layer(0, 0, "Indicators", obj_damage_indicators); }
 	} else if (instance_exists(obj_damage_indicators)) { wipe(obj_damage_indicators); }
 

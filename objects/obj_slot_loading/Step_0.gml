@@ -223,49 +223,49 @@ if (phase == 4 && clock-- <= 0) {
 		        global.player_status_effects = ds_grid_import(global.player_status_effects, line[progress]);
 		    break;
 		    case 4: //part systems, types and spawn slots
-		        if (ds_exists(PART_SYSTEM_PLAYERBOT		   , ds_type_grid)) { part_system_clear_lt (PART_SYSTEM_PLAYERBOT);			}
-		        if (ds_exists(PART_SYSTEM_DAMAGE_INDICATORS, ds_type_grid)) { part_system_clear_pro(PART_SYSTEM_DAMAGE_INDICATORS); }
-		        if (ds_exists(PART_SYSTEM_FRAG			   , ds_type_grid)) { part_system_clear_ult(PART_SYSTEM_FRAG);				}
-		        if (ds_exists(PART_SYSTEM_CHARGE		   , ds_type_grid)) { part_system_clear_ult(PART_SYSTEM_CHARGE);			}
-		        if (ds_exists(PART_SYSTEM_ENEMY			   , ds_type_grid)) { part_system_clear_lt (PART_SYSTEM_ENEMY);				}
-		        if (ds_exists(PART_SYSTEM_PLAYERTOP		   , ds_type_grid)) { part_system_clear_lt (PART_SYSTEM_PLAYERTOP);			}
-		        if (ds_exists(PART_SYSTEM_ULTIMATE		   , ds_type_grid)) { part_system_clear_lt (PART_SYSTEM_ULTIMATE);			}
+		        if (ds_exists(PART_SYSTEM_PLAYERBOT_LT		   , ds_type_grid)) { part_system_clear_lt (PART_SYSTEM_PLAYERBOT_LT);			}
+		        if (ds_exists(PART_SYSTEM_DAMAGE_INDICATORS_PRO, ds_type_grid)) { part_system_clear_pro(PART_SYSTEM_DAMAGE_INDICATORS_PRO); }
+		        if (ds_exists(PART_SYSTEM_FRAG_ULT			   , ds_type_grid)) { part_system_clear_ult(PART_SYSTEM_FRAG_ULT);				}
+		        if (ds_exists(PART_SYSTEM_CHARGE_ULT		   , ds_type_grid)) { part_system_clear_ult(PART_SYSTEM_CHARGE_ULT);			}
+		        if (ds_exists(PART_SYSTEM_ENEMY_LT			   , ds_type_grid)) { part_system_clear_lt (PART_SYSTEM_ENEMY_LT);				}
+		        if (ds_exists(PART_SYSTEM_PLAYERTOP_LT		   , ds_type_grid)) { part_system_clear_lt (PART_SYSTEM_PLAYERTOP_LT);			}
+		        if (ds_exists(PART_SYSTEM_ULTIMATE_LT		   , ds_type_grid)) { part_system_clear_lt (PART_SYSTEM_ULTIMATE_LT);			}
 		        if (ds_exists(global.part_type_pro_slots, ds_type_list)) { ds_list_destroy(global.part_type_pro_slots); }
 		        if (ds_exists(global.part_type_lt_slots , ds_type_list)) { ds_list_destroy(global.part_type_lt_slots);  }
 		        if (ds_exists(global.part_type_ult_slots, ds_type_list)) { ds_list_destroy(global.part_type_ult_slots); }
         
 		        if (bit[0] != "") {
-		            ds_grid_import(PART_SYSTEM_PLAYERBOT, bit[0]);
+		            ds_grid_import(PART_SYSTEM_PLAYERBOT_LT, bit[0]);
 		        }
 		    break;
 		    case 5:
 		        if (bit[0] != "") {
-		            ds_grid_import(PART_SYSTEM_DAMAGE_INDICATORS, bit[0]);
+		            ds_grid_import(PART_SYSTEM_DAMAGE_INDICATORS_PRO, bit[0]);
 		        }
 		    break;
 		    case 6:
 		        if (bit[0] != "") {
-		            ds_grid_import(PART_SYSTEM_FRAG, bit[0]);
+		            ds_grid_import(PART_SYSTEM_FRAG_ULT, bit[0]);
 		        }
 		    break;
 		    case 7:
 		        if (bit[0] != "") {
-		            ds_grid_import(PART_SYSTEM_CHARGE, bit[0]);
+		            ds_grid_import(PART_SYSTEM_CHARGE_ULT, bit[0]);
 		        }
 		    break;
 		    case 8:
 		        if (bit[0] != "") {
-		            ds_grid_import(PART_SYSTEM_ENEMY, bit[0]);
+		            ds_grid_import(PART_SYSTEM_ENEMY_LT, bit[0]);
 		        }
 		    break;
 		    case 9:
 		        if (bit[0] != "") {
-		            ds_grid_import(PART_SYSTEM_PLAYERTOP, bit[0]);
+		            ds_grid_import(PART_SYSTEM_PLAYERTOP_LT, bit[0]);
 		        }
 		    break;
 		    case 10:
 		        if (bit[0] != "") {
-		            ds_grid_import(PART_SYSTEM_ULTIMATE, bit[0]);
+		            ds_grid_import(PART_SYSTEM_ULTIMATE_LT, bit[0]);
 		        }
 		    break;
 		    case 11:

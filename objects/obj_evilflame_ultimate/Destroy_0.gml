@@ -3,7 +3,7 @@
 #region Cleanup
 
 // Clear ultimate particles
-part_type_wipe_lt(PART_TYPE_P_EVILFLAME_DUAL_CLONE_THRUSTER, PART_SYSTEM_ULTIMATE);
+part_type_wipe_lt(PART_TYPE_P_EVILFLAME_DUAL_CLONE_THRUSTER_LT, PART_SYSTEM_ULTIMATE_LT);
 player_status_add(STATUS_EFFECT_ULTIMATE_COOLDOWN, 600, 0);
 player_status_add(STATUS_EFFECT_DUAL_CLONE, 0, 0);
 

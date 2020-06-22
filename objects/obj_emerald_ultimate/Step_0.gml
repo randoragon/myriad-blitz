@@ -44,8 +44,8 @@ if (global.gpspeed != 0) {
 	lifespan -= global.gpspeed;
 	if (lifespan <= 0) {
 		//particle burst
-		part_type_edit_lt(PART_TYPE_ULTIMATE_BURST, "angle", 0, 360, choose(-1, 1) * 4, 0, 1);
-		part_type_spawn_lt(PART_SYSTEM_ULTIMATE, PART_TYPE_ULTIMATE_BURST, 0, x - 20, y - 20, x + 20, y + 20, "ellipse", "invgaussian", 100);
+		part_type_edit_lt(PART_TYPE_ULTIMATE_BURST_LT, "angle", 0, 360, choose(-1, 1) * 4, 0, 1);
+		part_type_spawn_lt(PART_SYSTEM_ULTIMATE_LT, PART_TYPE_ULTIMATE_BURST_LT, 0, x - 20, y - 20, x + 20, y + 20, "ellipse", "invgaussian", 100);
 		with (obj_emerald_ultimate_flow) { scale_stage = 3; }
 
 		player_status_add(STATUS_EFFECT_ULTIMATE_COOLDOWN, obj_player.ucooldown, 0);
