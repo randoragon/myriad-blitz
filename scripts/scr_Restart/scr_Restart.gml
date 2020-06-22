@@ -30,9 +30,11 @@ part_system_clear_ult(PART_SYSTEM_CHARGE_ULT);
 part_system_clear_lt (PART_SYSTEM_ENEMY_LT);
 part_system_clear_lt (PART_SYSTEM_PLAYERTOP_LT);
 part_system_clear_lt (PART_SYSTEM_ULTIMATE_LT);
+part_system_clear_lt (PART_SYSTEM_MINION_LT);
 scr_PlayerDataUpdate(global.chrsel);
 scr_PlayerGetData();
 scr_ParticlesUpdate(0, global.chrsel);
+scr_UpdateSurfacePages();
 scr_BackgroundUpdate(global.realm);
 instance_create_layer  (CANVAS_X + 180,  CANVAS_Y + 583, "Boards", obj_keyboard);
 instance_create_layer  (CANVAS_X + 683,  CANVAS_Y + 624, "Boards", obj_lore);
@@ -41,5 +43,10 @@ instance_create_layer_f(CANVAS_X + 896,  CANVAS_Y + 352, "Interactables", obj_bu
 instance_create_layer_f(CANVAS_X + 448,  CANVAS_Y + 352, "Interactables", obj_button, 5);
 
 scr_PlayerReset(); // reset player variables
+if (global.chrsel == PLAYER_BOBILEUSZ) {
+	player_status_add(STATUS_EFFECT_GEAR5, -2, 0);
+	spawn_minion(500, 500, MINION_BOBILEUSZ_BOTTLE, 0, obj_player);
+}
+
 if (global.gpspeed == 0) { obj_player.prev_image_speed = 1; }
 audio_stop_sound(mus_rlm_christmas + global.realm - 1);
