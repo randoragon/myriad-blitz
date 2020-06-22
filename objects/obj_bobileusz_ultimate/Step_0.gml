@@ -31,7 +31,12 @@ if (global.gpspeed != 0) {
 
 	// Lifespan deterioration
 	lifespan -= global.gpspeed;
-	if (lifespan <= 0) {
+	if (lifespan < 240 && !debuffs) {
+		player_status_add(STATUS_EFFECT_DIZZY, 1020, 1);
+		debuffs = TRUE;
+	} else if (lifespan <= 0) {
+		player_status_add(STATUS_EFFECT_EXHAUSTED, 960, 1);
+		player_status_add(STATUS_EFFECT_ULTIMATE_COOLDOWN, obj_player.ucooldown, 0);
 		instance_destroy();
 	}
 }

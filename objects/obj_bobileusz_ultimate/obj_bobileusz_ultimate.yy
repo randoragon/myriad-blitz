@@ -130,7 +130,7 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "630",
+            "value": "930",
             "varName": "lifespan",
             "varType": 0
         },
@@ -144,7 +144,7 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "630",
+            "value": "930",
             "varName": "lifespan_max",
             "varType": 0
         },
@@ -161,6 +161,20 @@
             "value": "0",
             "varName": "prev_angle",
             "varType": 0
+        },
+        {
+            "id": "459e4d84-9213-4784-977e-3fe16c53087d",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "debuffs",
+            "varType": 3
         }
     ],
     "solid": false,
