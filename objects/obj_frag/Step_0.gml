@@ -61,7 +61,7 @@ switch(f) {
 
 #region Dealing damage
 
-if (place_meeting(x, y, obj_enemy) && instance_place(x, y, obj_enemy).hp > 0 && (enemy != instance_place(x, y, obj_enemy).id || enemyharm == 1)) {
+if (!fading && place_meeting(x, y, obj_enemy) && instance_place(x, y, obj_enemy).hp > 0 && (enemy != instance_place(x, y, obj_enemy).id || enemyharm == 1)) {
     var ee = instance_place(x, y, obj_enemy);
     var damage = calculate_damage(fdmg, fpen, ee.fdef / (mean(fmin, fmax) * spawn.sspd));
     var display_damage = ceil(ee.hp) - ceil(ee.hp - damage);
