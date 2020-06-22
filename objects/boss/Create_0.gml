@@ -666,7 +666,7 @@ global.realm_audiogroup[1] = audiogroup_realm_christmas;
 
 #region Status Effects Setup
 
-global.status_effect_count = 21; //this is how many status effects there are in total
+global.status_effect_count = 22; //this is how many status effects there are in total
 
 global.player_status_effect_name = array_setup("", global.status_effect_count - 1);
 global.player_status_effect_desc = array_setup("", global.status_effect_count - 1);

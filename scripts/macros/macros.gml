@@ -139,6 +139,7 @@
 #macro IS_STATUS_EFFECT_GEAR8 obj_player.status_effect[STATUS_EFFECT_GEAR8]
 #macro IS_STATUS_EFFECT_GEAR9 obj_player.status_effect[STATUS_EFFECT_GEAR9]
 #macro IS_STATUS_EFFECT_GEAR10 obj_player.status_effect[STATUS_EFFECT_GEAR10]
+#macro IS_STATUS_EFFECT_PRISMATIC_GLACIER obj_player.status_effect[STATUS_EFFECT_PRISMATIC_GLACIER]
 
 #endregion
 

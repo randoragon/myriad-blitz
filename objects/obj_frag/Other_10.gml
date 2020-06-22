@@ -110,13 +110,33 @@ switch(f) {
 			fadeout      = 10;
 			suf1		    = surface_page_index("projectile", 0); // see scr_SurfaceMapUpdate
 			surface_overlay = surface_page_capture("projectile", 250);
-		} else {
+		} else if (e == 1) {
 			sprite_index = spr_bobileusz_icicle;
 			image_angle  = direction;
 			image_speed  = 0;
 			image_index  = irandom(3);
 		    speed1       = 10;
 		    lifespan	 = 120;
+		} else if (e == 2) {
+		    sprite_index = spr_bobileusz_frag;
+			image_speed  = 0;
+		    speed1       = spawn.pspd * 1.4;
+		    lifespan	 = 80;
+			var gear	 = 5;
+			for (var i = STATUS_EFFECT_GEAR1; i < STATUS_EFFECT_GEAR10 + 1; i++) {
+				if (obj_player.status_effect[i]) {
+					gear = i - STATUS_EFFECT_GEAR1 + 1;
+					break;
+				}
+			}
+			var dirmin	 = direction - (gear * 2);
+			var dirmax	 = direction + (gear * 2);
+			direction	 = random_range(dirmin, dirmax);
+			var hue		 = (dirmax - direction) / (dirmax - dirmin) * 255;
+			image_blend  = hsv(hue, 255, 255);
+			fadeout      = 10;
+			suf1		    = surface_page_index("projectile", 0); // see scr_SurfaceMapUpdate
+			surface_overlay = surface_page_capture("projectile", 250);
 		}
 	break;
 }

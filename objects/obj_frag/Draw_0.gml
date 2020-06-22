@@ -14,7 +14,7 @@ surface_set_target(GENERAL_SURFACE);
 
 #region Prerequisites
 
-if (f == PLAYER_BOBILEUSZ && e == 0) {
+if (f == PLAYER_BOBILEUSZ && (e == 0 || e == 2)) {
 	var gear = 5;
 	for (var i = STATUS_EFFECT_GEAR1; i < STATUS_EFFECT_GEAR10 + 1; i++) {
 		if (obj_player.status_effect[i]) {
@@ -22,24 +22,25 @@ if (f == PLAYER_BOBILEUSZ && e == 0) {
 			break;
 		}
 	}
-	var length = 90 - (gear * 2);
-	var angle  = 4 + (gear / 2);
-	var d = point_distance(xstart, ystart, x, y);
-	var l1 = d / dcos(angle / 2);
-	var l2 = (d + length) / dcos(angle / 2);
-	var A = [xstart + lengthdir_x(l1, direction - angle / 2), ystart + lengthdir_y(l1, direction - angle / 2)];
-	var B = [xstart + lengthdir_x(l1, direction + angle / 2), ystart + lengthdir_y(l1, direction + angle / 2)];
-	var C = [xstart + lengthdir_x(l2, direction + angle / 2), ystart + lengthdir_y(l2, direction + angle / 2)];
-	var D = [xstart + lengthdir_x(l2, direction - angle / 2), ystart + lengthdir_y(l2, direction - angle / 2)];
+	var length, angle, d, l1, l2, A, B, C, D, x0, y0, tex, w, h, alpha;
+	length = (e == 0)? 90 - (gear * 2) : 130 - (gear * 2);
+	angle  = (e == 0)? 4 + (gear / 2)  : gear;
+	d = point_distance(xstart, ystart, x, y);
+	l1 = d / dcos(angle / 2);
+	l2 = (d + length) / dcos(angle / 2);
+	A = [xstart + lengthdir_x(l1, direction - angle / 2), ystart + lengthdir_y(l1, direction - angle / 2)];
+	B = [xstart + lengthdir_x(l1, direction + angle / 2), ystart + lengthdir_y(l1, direction + angle / 2)];
+	C = [xstart + lengthdir_x(l2, direction + angle / 2), ystart + lengthdir_y(l2, direction + angle / 2)];
+	D = [xstart + lengthdir_x(l2, direction - angle / 2), ystart + lengthdir_y(l2, direction - angle / 2)];
 	
-	var x0 = min(A[0], B[0], C[0], D[0]);
-	var y0 = min(A[1], B[1], C[1], D[1]);
+	x0 = min(A[0], B[0], C[0], D[0]);
+	y0 = min(A[1], B[1], C[1], D[1]);
 	surface_set_target(surface_overlay);
 	draw_clear_alpha(0, 0);
-	var tex = texture_get_uvs(surface_get_texture(suf1));
-	var w   = surface_get_width(suf1);
-	var h   = surface_get_height(suf1);
-	var alpha = (0.7 + (0.15 * sin(global.gptime * 1.5))) * (fadeout / fadeoutmax);
+	tex = texture_get_uvs(surface_get_texture(suf1));
+	w   = surface_get_width(suf1);
+	h   = surface_get_height(suf1);
+	alpha = (0.7 + (0.15 * sin(global.gptime * 1.5))) * (fadeout / fadeoutmax);
 	shd_quadrangle_set(tex, w, h, A[0] - x0, A[1] - y0, B[0] - x0, B[1] - y0, C[0] - x0, C[1] - y0, D[0] - x0, D[1] - y0, image_blend, alpha, 1, 2);
 	draw_surface(suf1, 0, 0);
 	surface_reset_target();

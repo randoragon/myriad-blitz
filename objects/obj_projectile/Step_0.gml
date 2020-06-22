@@ -39,11 +39,24 @@ switch(f) {
 	    }
 	break;
 	case PLAYER_BOBILEUSZ:
-		if (e == 1) {
-			vspeed1 += global.gpspeed * 0.1;
-			if (real_step()) {
-				part_type_spawn_lt(PART_SYSTEM_MINION_LT, PART_TYPE_P_BOBILEUSZ_WATER_LT, 0, x-3, y-3, x+3, y+3, "ellipse", "gaussian", 3);
-			}
+		switch(e) {
+			case 0:
+				if (!fading && place_meeting(x, y, obj_bobileusz_ultimate)) {
+					repeat(irandom_range(2, 5)) {
+						var frag = spawn_bullet(obj_bobileusz_ultimate.x, y, obj_frag, PLAYER_BOBILEUSZ, 2, noone, spawn);
+						frag.direction = direction;
+						frag.xstart = obj_bobileusz_ultimate.x;
+						frag.ystart = obj_bobileusz_ultimate.y;
+					}
+					fading = TRUE;
+				}
+			break;
+			case 1:
+				vspeed1 += global.gpspeed * 0.1;
+				if (real_step()) {
+					part_type_spawn_lt(PART_SYSTEM_MINION_LT, PART_TYPE_P_BOBILEUSZ_WATER_LT, 0, x-3, y-3, x+3, y+3, "ellipse", "gaussian", 3);
+				}
+			break;
 		}
 	break;
 }

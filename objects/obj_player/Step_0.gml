@@ -205,6 +205,10 @@ if (IS_STATUS_EFFECT_GEAR1) {
 	sacc_factor  = find_multiplier(global.sacc * sacc_factor, 1, -0.5);
 }
 
+if (IS_STATUS_EFFECT_PRISMATIC_GLACIER) {
+    fdmg_factor = 0.25;
+}
+
 //final stats calculation
 hpmax      = global.hp * maxhp_factor;
 spd        = global.spd * spd_factor;
