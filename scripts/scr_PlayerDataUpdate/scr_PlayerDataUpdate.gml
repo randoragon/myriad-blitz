@@ -2,6 +2,7 @@
 /// @param character_index
 
 switch (argument[0]) {
+	#region Evilflame
     case PLAYER_EVILFLAME:
         global.lore          = 
         "Is it a bird? Is it a dolphin?" +
@@ -65,6 +66,8 @@ switch (argument[0]) {
             "Borrows the power of stars...";
         }
     break;
+	#endregion
+	#region Emerald~
     case PLAYER_EMERALD:
         global.lore          = 
         "Legends speak of a young pony disciple" +
@@ -120,6 +123,8 @@ switch (argument[0]) {
         "\nTemporarily weakens the caster" +
         "\nafterwards due to exhaustion.";
     break;
+	#endregion
+	#region Der Scootomik
     case PLAYER_DER_SCOOTOMIK:
         global.lore          = 
         "The most powerful scooter in the universe." +
@@ -175,6 +180,8 @@ switch (argument[0]) {
         "\n0.00026% of the cosmic speed" +
         "\nlimit for a split second.";
     break;
+	#endregion
+	#region Bobileusz
 	case PLAYER_BOBILEUSZ:
         global.lore          = 
         "It's Bobileusz. Deal with it." +
@@ -190,7 +197,7 @@ switch (argument[0]) {
         global.spd           = 13;
         global.invtime       = 69;
         global.foctime       = 220;
-        global.pdmg          = 5.2;
+        global.pdmg          = 4.5;
         global.pdef          = 25;
         global.ppen          = 25;
         global.pkb           = 0;
@@ -213,7 +220,7 @@ switch (argument[0]) {
         global.cpen          = 0;
         global.ckb           = 0;
         global.ctime         = 1;
-        global.ccooldown     = 15; //330;
+        global.ccooldown     = 330;
         global.uname         = "PRISMATIC GLACIER";
         global.utype         = "BUFF";
         global.ucooldown     = 3600;
@@ -225,6 +232,9 @@ switch (argument[0]) {
         "\nnumerous glacial prisms that greatly" +
         "\namplify your offensive capabilities.";
     break;
+	#endregion
+	
+	#region Error fallback
     default: //Error
         global.lore          = 
         "If you're seeing this, I messed up." +
@@ -268,6 +278,7 @@ switch (argument[0]) {
         global.ucooldown     = 0;
         global.udesc         = "description unavailable";
     break;
+	#endregion
 }
 
 // Don't allow shooting speed above framerate

@@ -779,24 +779,28 @@ takes over your body!";
 global.player_status_effect_name[11] = "GEAR 1";
 global.player_status_effect_desc[11] = 
 @"Damage 50%
+Penetration 300%
 Defense 400%
 Speed 30%";
 
 global.player_status_effect_name[12] = "GEAR 2";
 global.player_status_effect_desc[12] = 
 @"Damage 70%
+Penetration 200%
 Defense 250%
 Speed 50%";
 
 global.player_status_effect_name[13] = "GEAR 3";
 global.player_status_effect_desc[13] = 
 @"Damage 80%
+Penetration 150%
 Defense 200%
 Speed 65%";
 
 global.player_status_effect_name[14] = "GEAR 4";
 global.player_status_effect_desc[14] = 
 @"Damage 90%
+Penetration 125%
 Defense 150%
 Speed 80%";
 
@@ -808,30 +812,35 @@ All stats normal.";
 global.player_status_effect_name[16] = "GEAR 6";
 global.player_status_effect_desc[16] = 
 @"Damage 107.5%
+Penetration 90%
 Defense 90%
 Speed 130%";
 
 global.player_status_effect_name[17] = "GEAR 7";
 global.player_status_effect_desc[17] = 
 @"Damage 115%
+Penetration 75%
 Defense 70%
 Speed 160%";
 
 global.player_status_effect_name[18] = "GEAR 8";
 global.player_status_effect_desc[18] = 
-@"Damage 122.5%
+@"Damage 120%
+Penetration 50%
 Defense 50%
 Speed 200%";
 
 global.player_status_effect_name[19] = "GEAR 9";
 global.player_status_effect_desc[19] = 
-@"Damage 130%
+@"Damage 125%
+Penetration 25%
 Defense 30%
 Speed 250%";
 
 global.player_status_effect_name[20] = "GEAR 10";
 global.player_status_effect_desc[20] = 
-@"Damage 150%
+@"Damage 130%
+Penetration 0%
 Defense 10%
 Speed 300%";
 
