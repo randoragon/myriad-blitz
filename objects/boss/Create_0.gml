@@ -234,10 +234,58 @@ part_type_direction_speed_lt(part, 0, 360, 3, 4, -0.06);
 part_type_blend_color_alpha_lt(part, bm_add, c_white, c_white, 0.8, 0);
 
 // 18. bobileusz icicle particles
-global.part_type[18] = part_type_create_ult(part_circle, 0, 3, 7);
+global.part_type[18] = part_type_create_ult(part_circle, 0);
 part = global.part_type[18];
 part_type_size_orientation_ult(part, 0.02, 0.03, -0.004, 0, 0, 0);
-part_type_blend_color_alpha_ult(part, bm_normal, rgb(113, 129, 227), 1, 0.75);
+part_type_blend_color_alpha_ult(part, bm_normal, rgb(113, 129, 227), 1, 0);
+
+// 19. bobileusz flash particles red
+global.part_type[19] = part_type_create_ult(part_flash, 0);
+part = global.part_type[19];
+part_type_size_orientation_ult(part, 0.1, 0.3, -0.004, 0, 360, 3);
+part_type_blend_color_alpha_ult(part, bm_add, hsv(0, 255, 255), 0.9, 0);
+
+// 20. bobileusz flash particles orange
+global.part_type[20] = part_type_create_ult(part_flash, 0);
+part = global.part_type[20];
+part_type_size_orientation_ult(part, 0.1, 0.3, -0.004, 0, 360, 3);
+part_type_blend_color_alpha_ult(part, bm_add, hsv(21, 255, 255), 0.9, 0);
+
+// 21. bobileusz flash particles yellow
+global.part_type[21] = part_type_create_ult(part_flash, 0);
+part = global.part_type[21];
+part_type_size_orientation_ult(part, 0.1, 0.3, -0.004, 0, 360, 3);
+part_type_blend_color_alpha_ult(part, bm_add, hsv(43, 255, 255), 0.9, 0);
+
+// 22. bobileusz flash particles green
+global.part_type[22] = part_type_create_ult(part_flash, 0);
+part = global.part_type[22];
+part_type_size_orientation_ult(part, 0.1, 0.3, -0.004, 0, 360, 3);
+part_type_blend_color_alpha_ult(part, bm_add, hsv(80, 255, 255), 0.9, 0);
+
+// 23. bobileusz flash particles cyan
+global.part_type[23] = part_type_create_ult(part_flash, 0);
+part = global.part_type[23];
+part_type_size_orientation_ult(part, 0.1, 0.3, -0.004, 0, 360, 3);
+part_type_blend_color_alpha_ult(part, bm_add, hsv(122, 255, 255), 0.9, 0);
+
+// 24. bobileusz flash particles blue
+global.part_type[24] = part_type_create_ult(part_flash, 0);
+part = global.part_type[24];
+part_type_size_orientation_ult(part, 0.1, 0.3, -0.004, 0, 360, 3);
+part_type_blend_color_alpha_ult(part, bm_add, hsv(163, 255, 255), 0.9, 0);
+
+// 25. bobileusz flash particles purple
+global.part_type[25] = part_type_create_ult(part_flash, 0);
+part = global.part_type[25];
+part_type_size_orientation_ult(part, 0.1, 0.3, -0.004, 0, 360, 3);
+part_type_blend_color_alpha_ult(part, bm_add, hsv(197, 255, 255), 0.9, 0);
+
+// 26. bobileusz flash particles magenta
+global.part_type[26] = part_type_create_ult(part_flash, 0);
+part = global.part_type[26];
+part_type_size_orientation_ult(part, 0.1, 0.3, -0.004, 0, 360, 3);
+part_type_blend_color_alpha_ult(part, bm_add, hsv(223, 255, 255), 0.9, 0);
 
 #endregion
 
@@ -543,7 +591,9 @@ global.save_sindex [? "spr_bobileusz_ultimate"]			  = 57;
 global.save_sname  [? 57]                                 = "spr_bobileusz_ultimate";
 global.save_sindex [? "part_snowflake"]					  = 58;
 global.save_sname  [? 58]                                 = "part_snowflake";
-// 59-96
+global.save_sindex [? "part_flash"]						  = 59;
+global.save_sname  [? 59]                                 = "part_flash";
+// 60-96
 global.save_sindex [? "spr_present"]                      = 97;
 global.save_sname  [? 97]                                 = "spr_present";
 global.save_sindex [? "spr_ultimate"]                      = 98;

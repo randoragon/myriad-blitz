@@ -4566,6 +4566,14 @@
             }
         },
         {
+            "Key": "ec775dd0-046e-4ca0-b760-a9c58f224807",
+            "Value": {
+                "id": "488babc5-3c3b-4ec3-a40f-5c2bbbe47fbd",
+                "resourcePath": "sprites\\part_flash\\part_flash.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "edaf918d-eced-4577-a944-39774fbed578",
             "Value": {
                 "id": "9fae75cd-19e9-4623-9b62-027c1dddb384",

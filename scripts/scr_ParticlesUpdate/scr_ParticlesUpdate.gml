@@ -42,7 +42,7 @@ switch(to) {
 	case PLAYER_BOBILEUSZ:
 		part_system_edit_lt(PART_SYSTEM_PLAYERTOP_LT, 1, 0, -1);
         part_system_edit_lt(PART_SYSTEM_PLAYERBOT_LT, 1, 0, -1);
-        part_system_edit_ult(PART_SYSTEM_FRAG_ULT, 1, 300, 500);
+        part_system_edit_ult(PART_SYSTEM_FRAG_ULT, 1, 400, 750);
         part_system_edit_ult(PART_SYSTEM_CHARGE_ULT, 1, 0, -1);
         part_system_edit_lt(PART_SYSTEM_ULTIMATE_LT, 1, 0, -1);
 		part_system_edit_lt(PART_SYSTEM_MINION_LT, 1, 100, -1);

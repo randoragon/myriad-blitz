@@ -51,9 +51,24 @@ switch(f) {
 	break;
 	case PLAYER_BOBILEUSZ:
 		if (e == 1) {
-			part_type_spawn_ult(PART_SYSTEM_FRAG_ULT, PART_TYPE_P_BOBILEUSZ_ICICLE_ULT, 0, x-6, y-6, x+6, y+6, "ellipse", "linear", 5);
+			if (real_step()) {
+				part_type_spawn_ult(PART_SYSTEM_FRAG_ULT, PART_TYPE_P_BOBILEUSZ_ICICLE_ULT, 0, x-6, y-6, x+6, y+6, "ellipse", "linear", 5);
+			}
 			vspeed1 += 0.1 * sqr(global.gpspeed);
 			image_angle = point_direction(x, y, x + lengthdir_x(speed1, direction), y + lengthdir_y(speed1, direction) + vspeed1);
+		} else if (e == 2) {
+			if (real_step()) {
+				var parttype, hue, hues, i;
+				hue  = color_get_hue(image_blend);
+				hues = [0, 21, 43, 80, 122, 163, 197, 223, 255];
+				for (i = 0; i < array_length_1d(hues); i++) {
+					if (hues[i] > hue) { break; }
+				}
+				hue = (abs(hue - hues[i-1]) < abs(hue - hues[i]))? i-1 : i % 8;
+				parttype = PART_TYPE_P_BOBILEUSZ_FLASH_RED_ULT + hue;
+				part_type_spawn_ult(PART_SYSTEM_FRAG_ULT, parttype, 1, x - 50, y - 15, x + 40, y + 15, "square", "linear", 1);
+				show_debug_message(part_type_count_ult(parttype));
+			}
 		}
 	break;
 }
