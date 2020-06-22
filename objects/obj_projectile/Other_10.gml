@@ -66,7 +66,7 @@ switch(f) {
 			image_speed  = 0;
 			lifespan     = 120;
 			fadeout 	 = 10;
-			suf1		    = surface_map_capture(250);
+			suf1		    = global.surface_maps[| 0]; // see scr_SurfaceMapUpdate
 			surface_overlay = surface_map_capture(250);
 		} else {
 			sprite_index = -1;

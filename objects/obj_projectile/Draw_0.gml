@@ -29,9 +29,6 @@ if (f == PLAYER_BOBILEUSZ) {
 	
 		var x0 = min(A[0], B[0], C[0], D[0]);
 		var y0 = min(A[1], B[1], C[1], D[1]);
-		surface_set_target(suf1);
-		draw_clear_alpha(c_white, 1);
-		surface_reset_target();
 		surface_set_target(surface_overlay);
 		draw_clear_alpha(0, 0);
 		var tex = texture_get_uvs(surface_get_texture(suf1));
