@@ -164,7 +164,7 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
             if (global.state == 0) {
 	            grabbed = 1;
 	            image_index = 1;
-	            play_sfx(sfx_button1, 0, 0);
+	            play_sfx(sfx_button1, 0);
 				var prev_chrsel = global.chrsel;
 	            global.chrsel = (global.chrsel == 0)? CHRCOUNT - 1 : global.chrsel - 1;
 	            scr_PlayerDataUpdate(global.chrsel);
@@ -179,7 +179,7 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
             if (global.state == 0) {
                 grabbed = 1;
                 image_index = 3;
-                play_sfx(sfx_button1, 0, 0);
+                play_sfx(sfx_button1, 0);
 				var prev_chrsel = global.chrsel;
                 global.chrsel = (global.chrsel == CHRCOUNT - 1)? 0 : global.chrsel + 1;
                 scr_PlayerDataUpdate(global.chrsel);
@@ -189,13 +189,13 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
                 scr_Stats_Update(obj_statboard.button[0].show);
             }
         break;
-        case 8: if (global.state == 1 && global.transition == 1) {grabbed = 1; if (global.gpspeed_state != 0) {scr_Pause();} else {play_sfx(sfx_pause, 0, 0); global.gpspeed_state = 1; wipe(obj_sound_bar); audio_resume_all();}} break;
-        case 21: play_sfx(sfx_button1, 0, 0); show = toggle(show); scr_toggle_stats_selection(0); scr_Stats_Update(show); ini_open(working_directory + "userconfig.mbdat"); ini_write_real("shown_stats", "show", show); ini_close(); grabbed = 1; break;
-        case 22: play_sfx(sfx_button1, 0, 0); scr_toggle_stats_selection(toggle(customize)); if (customize == 0 && obj_statboard.button[0].show == 0) scr_Stats_Update(0); grabbed = 1; break;
+        case 8: if (global.state == 1 && global.transition == 1) {grabbed = 1; if (global.gpspeed_state != 0) {scr_Pause();} else {play_sfx(sfx_pause, 0); global.gpspeed_state = 1; wipe(obj_sound_bar); audio_resume_all();}} break;
+        case 21: play_sfx(sfx_button1, 0); show = toggle(show); scr_toggle_stats_selection(0); scr_Stats_Update(show); ini_open(working_directory + "userconfig.mbdat"); ini_write_real("shown_stats", "show", show); ini_close(); grabbed = 1; break;
+        case 22: play_sfx(sfx_button1, 0); scr_toggle_stats_selection(toggle(customize)); if (customize == 0 && obj_statboard.button[0].show == 0) scr_Stats_Update(0); grabbed = 1; break;
         case 23: check = toggle(check); grabbed = 1; break;
-        case 24: play_sfx(sfx_button1, 0, 0); global.save_chunk_size = 200; break;
-        case 25: play_sfx(sfx_button1, 0, 0); global.save_chunk_size = 500; break;
-        case 26: play_sfx(sfx_button1, 0, 0); global.save_chunk_size = 1500; break;
+        case 24: play_sfx(sfx_button1, 0); global.save_chunk_size = 200; break;
+        case 25: play_sfx(sfx_button1, 0); global.save_chunk_size = 500; break;
+        case 26: play_sfx(sfx_button1, 0); global.save_chunk_size = 1500; break;
         default: grabbed = 1; break;
         }
     }
@@ -246,18 +246,18 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
             switch(f) {
 	            case 0:
 					screen_transition(rm_Realms, -1, 30, choose(-1, 1, -2, 2), c_black);
-					play_sfx(sfx_button2, 0, 0);
+					play_sfx(sfx_button2, 0);
 				break;
 	            case 1:
 					screen_transition(rm_Help, -1, 30, choose(-1, 1, -2, 2), c_black);
-					play_sfx(sfx_button2, 0, 0);
+					play_sfx(sfx_button2, 0);
 				break;
 	            case 2:
 					display_message("Lore isn't available yet.\nMaybe in the next update... Or not. We'll see.\nSorry for the inconvenience!\nRandoragon", scrm_do_nothing);
 				break;
 	            case 3:
 					screen_transition(rm_Settings, -1, 30, choose(-1, 1, -2, 2), c_black);
-					play_sfx(sfx_button2, 0, 0);
+					play_sfx(sfx_button2, 0);
 				break;
 	            case 4:
 					ask("Quit the game?", scrq_do_nothing, scrq_exit);
@@ -268,18 +268,18 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 							scr_toggle_stats_selection(0);
 							boss.menu_intro = FALSE;
 							screen_transition(rm_Realms, scrt_main_to_menu, 30, 0, c_black);
-							play_sfx(sfx_back, 0, 0);
+							play_sfx(sfx_back, 0);
 						}
 					} else {
 						screen_transition(rm_Menu, -1, 30, choose(-1, 1, -2, 2), c_black);
-						play_sfx(sfx_back, 0, 0);
+						play_sfx(sfx_back, 0);
 					}
 				break;
 	            case 9:
 					if (global.gpspeed_state == 0) {
 						global.gpspeed_state = 1;
 						wipe(obj_sound_bar);
-						play_sfx(sfx_pause, 0, 0);
+						play_sfx(sfx_pause, 0);
 						audio_resume_all();
 					}
 				break;
@@ -288,7 +288,7 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 				break;
 	            case 11:
 					instance_create_layer_f(x, y, "Popups", obj_slot_name, 0);
-					play_sfx(sfx_button3, 0, 0);
+					play_sfx(sfx_button3, 0);
 				break;
 	            case 12:
 					ask("Do you want to quit?\nAny unsaved progress will be lost.", scrq_do_nothing, scrq_pause_back);
@@ -296,21 +296,21 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 	            case 13:
 					image_blend = c_white;
 					screen_transition(rm_About, -1, 30, choose(-1, 1, -2, 2), c_black);
-					play_sfx(sfx_button4, 0, 0);
+					play_sfx(sfx_button4, 0);
 				break;
 	            case 14:
 					image_blend = c_white;
 					url_open_ext("https://discord.gg/YqJYzMS", "_blank");
-					play_sfx(sfx_button3, 0, 0);
+					play_sfx(sfx_button3, 0);
 				break;
 	            case 15:
 					instance_create_layer(lerp(CANVAS_X, CANVAS_XEND, 0.5), lerp(CANVAS_Y, CANVAS_YEND, 0.5), "Popups", obj_slot_load);
-					play_sfx(sfx_button3, 0, 0);
+					play_sfx(sfx_button3, 0);
 				break;
 	            case 16:
 					image_blend = c_white;
 					url_open_ext("https://www.waterflamemusic.com/", "_blank");
-					play_sfx(sfx_button3, 0, 0);
+					play_sfx(sfx_button3, 0);
 				break;
 	            case 17:
 					if (image_blend != c_gray) {
@@ -318,7 +318,7 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 						with(obj_slot) { phase = 2; }
 						obj_slot_load.spawncount = 0;
 						obj_slot_load.alarm[1] = 1;
-						play_sfx(sfx_button1, 0, 0);
+						play_sfx(sfx_button1, 0);
 					}
 				break;
 	            case 18:
@@ -327,13 +327,13 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 						with(obj_slot) { phase = 2; }
 						obj_slot_load.spawncount = 7;
 						obj_slot_load.alarm[0] = 1;
-						play_sfx(sfx_button1, 0, 0);
+						play_sfx(sfx_button1, 0);
 					}
 				break;
 	            case 19:
 					if (image_index != 2) {
 						instance_create_layer_f(lerp(CANVAS_X, CANVAS_XEND, 0.5), lerp(CANVAS_Y, CANVAS_YEND, 0.5), "Popups", obj_slot_name, 1);
-						play_sfx(sfx_button3, 0, 0);
+						play_sfx(sfx_button3, 0);
 					}
 				break;
 	            case 20:
@@ -357,7 +357,7 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 	            case 27:
 					image_blend = c_white;
 					url_open_ext("https://www.gamejolt.com/@RandoragonGameDev", "_blank");
-					play_sfx(sfx_button3, 0, 0);
+					play_sfx(sfx_button3, 0);
 				break;
             }
         }
@@ -372,7 +372,7 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 	        case 5:
 	            // previous character
 	            if (keyboard_check_pressed(KEYBIND_LEFT) && global.state == 0 && room == rm_Main) {
-	                play_sfx(sfx_button1, 0, 0);
+	                play_sfx(sfx_button1, 0);
 					var prev_chrsel = global.chrsel;
 	                global.chrsel = (global.chrsel == 0)? CHRCOUNT - 1 : global.chrsel - 1;
 	                scr_PlayerDataUpdate(global.chrsel);
@@ -386,7 +386,7 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 	        case 6:
 	            //next character
 	            if (keyboard_check_pressed(KEYBIND_RIGHT) && global.state == 0 && room == rm_Main) {
-	                play_sfx(sfx_button1, 0, 0);
+	                play_sfx(sfx_button1, 0);
 					var prev_chrsel = global.chrsel;
 	                global.chrsel = (global.chrsel == CHRCOUNT - 1)? 0 : global.chrsel + 1;
 	                scr_PlayerDataUpdate(global.chrsel);
@@ -405,11 +405,11 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 	                        scr_toggle_stats_selection(0);
 							boss.menu_intro = FALSE;
 	                        screen_transition(rm_Realms, scrt_main_to_menu, 30, 0, c_black);
-	                        play_sfx(sfx_back, 0, 0);
+	                        play_sfx(sfx_back, 0);
 	                    }
 	                } else {
 	                    screen_transition(rm_Menu, -1, 30, choose(-1, 1, -2, 2), c_black);
-	                    play_sfx(sfx_back, 0, 0);
+	                    play_sfx(sfx_back, 0);
 	                }
 	            }
 	        break;
@@ -422,7 +422,7 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 	                if (global.gpspeed_state != 0) {
 	                    scr_Pause();
 	                } else {
-	                    play_sfx(sfx_pause, 0, 0);
+	                    play_sfx(sfx_pause, 0);
 	                    global.gpspeed_state = 1;
 	                    wipe(obj_sound_bar)
 	                    audio_resume_all();

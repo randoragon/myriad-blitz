@@ -6,7 +6,7 @@ if ((place_meeting(x, y, boss) || (boss.x >= x + 25 - 2 && boss.x <= x + 25 + (3
 	if (script_exists(script)) {
 		script_execute(script);
 		check = toggle(check);
-		play_sfx(sfx_button3, 0, 0);
+		play_sfx(sfx_button3, 0);
 	}
 }
 

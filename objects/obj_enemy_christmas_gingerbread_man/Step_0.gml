@@ -61,7 +61,7 @@ if (global.gpspeed != 0) {
 			break;
 			case 2: // regular attack 2
 				if (image_index >= 8 && image_index <= 9 && real_step()) {
-					play_sfx(sfx_gingerbread_man_shoot, sound_priority.enemy_shoot, 0, global.sound_gpspeed * 100);
+					play_sfx(sfx_gingerbread_man_shoot, 0, global.sound_gpspeed * 100);
 					var p = spawn_bullet(x, y, obj_eprojectile, 1, 1, -1, id);
 					p.speed1 = random_range(3, 4);
 					p.direction = clamp(point_direction(x, y, obj_player.x, obj_player.y) + irandom_range(-10, 10), 120, 240);
@@ -106,7 +106,7 @@ if (global.gpspeed != 0) {
 					part_type_spawn_lt(PART_SYSTEM_ENEMY_LT, PART_TYPE_E_GINGERBREAD_MAN_SUPER_LT, 0.5, x, y - 40, x, y - 40, ps_shape_line, ps_distr_linear, 1);
 				}
 				if ((image_index) >= 4 && (image_index) < 5 && real_step() && !superattack_projectileshot) {
-					play_sfx(sfx_gingerbread_man_shoot, sound_priority.enemy_shoot, 0, global.sound_gpspeed * 100);
+					play_sfx(sfx_gingerbread_man_shoot, 0, global.sound_gpspeed * 100);
 					var p = spawn_bullet(x, y - 40, obj_eprojectile, 1, 0, -1, id);
 					superattack_projectileshot = TRUE;
 					p.direction = clamp(point_direction(x, y, obj_player.x, obj_player.y) + irandom_range(-45, 45), 120, 240);

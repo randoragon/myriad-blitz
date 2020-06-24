@@ -20,7 +20,7 @@ if (keyboard_check_pressed(vk_escape) || (boss.x >= x + 284 && boss.x <= x + 331
 	wipe(button[1]);
 	wipe(button[2]);
 	wipe(button[3]);
-	play_sfx(sfx_button3, 0, 0);
+	play_sfx(sfx_button3, 0);
 	instance_destroy();
 }
 

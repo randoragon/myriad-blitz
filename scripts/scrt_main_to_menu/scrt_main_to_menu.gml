@@ -22,6 +22,6 @@ texture_prefetch("Menu");
 if (!audio_group_is_loaded(audiogroup_menu)) {
 	progress -= 1;
 } else {
-	play_music(mus_menu_intro, sound_priority.music, 0);
+	play_music(mus_menu_intro, 0);
 	boss.menu_intro = TRUE;
 }

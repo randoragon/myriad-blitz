@@ -34,7 +34,7 @@ if (room == rm_Main) {
 
 #region Hotkeys
 if (keyboard_check_pressed(vk_space) && global.state == 2) {
-    play_sfx(sfx_button4, 0, 0);
+    play_sfx(sfx_button4, 0);
     screen_transition(-1, scrt_back, 20, choose(-1, 1, -2, 2), c_black);
 }
 if (keyboard_check_pressed(vk_f11)) {
@@ -72,7 +72,7 @@ if (room == rm_Settings || (room == rm_Main && global.gpspeed == 0 && global.sta
 
 if (room != rm_Main) {
     if (audio_group_is_loaded(audiogroup_menu) && menu_intro && !audio_is_playing(mus_menu_intro)) {
-        play_music(mus_menu_loop, sound_priority.music, 1);
+        play_music(mus_menu_loop, 1);
         menu_intro = FALSE;
     }
     if (os_is_paused() && !os_pause) {

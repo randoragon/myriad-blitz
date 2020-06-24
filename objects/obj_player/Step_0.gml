@@ -85,7 +85,7 @@ if (IS_STATUS_EFFECT_PARALYZED) {
 
 if (IS_STATUS_EFFECT_CURRENT_CRUSH) {
     if (global.gpspeed != 0 && !audio_is_playing(sfx_emerald_ultimate_loop)) {
-        play_sfx(sfx_emerald_ultimate_loop, sound_priority.emerald_ultimate_loop, 0, global.sound_gpspeed * 100);
+        play_sfx(sfx_emerald_ultimate_loop, 0, global.sound_gpspeed * 100);
     }
 }
 
@@ -96,7 +96,7 @@ if (IS_STATUS_EFFECT_CHIP_TUNING) {
     counteracc_factor *= 4;
     invtime_factor     = 0;
     if (global.gpspeed != 0 && !audio_is_playing(sfx_scootomik_ultimate_loop)) {
-        play_sfx(sfx_scootomik_ultimate_loop, sound_priority.scootomik_ultimate_loop, 0, 100);
+        play_sfx(sfx_scootomik_ultimate_loop, 0);
     }
 }
 
@@ -377,7 +377,7 @@ if (global.state == 1 && gpspd != 0) {
                 sprite_index = spr_evilflame_shooting + global.chrsel;
             }
             if (shot <= 0) {
-                play_sfx(sfx_evilflame_shoot + (global.chrsel * 4), sound_priority.player_shoot, 0, global.sound_gpspeed * 100);
+                play_sfx(sfx_evilflame_shoot + (global.chrsel * 4), 0, global.sound_gpspeed * 100);
 				var xoffset, yoffset, xoffset2, yoffset2;
                 switch(global.chrsel)
                 {
@@ -548,7 +548,7 @@ if (global.state == 1 && global.gpspeed != 0) {
 			charge = min(charge + global.gpspeed, ctime);
 			// do not play the charging sound for immediate charges
 			if (ctime != 1 && !audio_is_playing(sfx_charging))
-				play_sfx(sfx_charging, sound_priority.player_charging, 0, global.sound_gpspeed * 100);
+				play_sfx(sfx_charging, 0, global.sound_gpspeed * 100);
 		}
 	}
 
@@ -556,7 +556,7 @@ if (global.state == 1 && global.gpspeed != 0) {
 	if (mouse_check_button(mb_right) && charge > 0 && !does_emerald_laser_exist && !bobileusz_invalid) {
 		if (charge >= ctime) {
 			cb = 1;
-			play_sfx(sfx_evilflame_charge_shot + (global.chrsel * 4), sound_priority.player_charge_shot, 0, global.sound_gpspeed * 100);
+			play_sfx(sfx_evilflame_charge_shot + (global.chrsel * 4), 0, global.sound_gpspeed * 100);
 			charge = 0;
 			if (artcharge == 0) {
 				discharge = ccooldown;
@@ -701,7 +701,7 @@ if (global.state == 1) {
 				case 0: { player_hp(number); picked = TRUE; } break;
 				case 1: { other.charge = other.ctime; other.artcharge = 1; picked = TRUE; other.bar_opacity[2] = 5; } break;
 			}
-			play_sfx(sfx_button4, 0, 0);
+			play_sfx(sfx_button4, 0);
 		}
 	} else if (instance_exists(obj_wrap_helper) && instance_exists(helper) && place_meeting(helper.x, helper.y, obj_present) && instance_place(helper.x, helper.y, obj_present).picked == 0) {
 		with(instance_place(helper.x, helper.y, obj_present)) {
@@ -709,7 +709,7 @@ if (global.state == 1) {
 			case 0: { other.hpmark = other.hp;    other.hp = home(other.hp,global.hp,number,0); picked = 1; } break;
 			case 1: { other.charge = other.ctime; other.artcharge = 1; picked = 1; } break;
 		}
-		play_sfx(sfx_button4,0,0);
+		play_sfx(sfx_button4, 0);
 		}
 	}
 }
@@ -739,9 +739,9 @@ if (global.state == 1) {
                 knockback((100 - bkbres) * enemy.bkb / 1000, point_direction(enemy.x, enemy.y, x, y), counteracc);
                 indicate(x, y, display_damage, 2, rgb(255, 170, 0), c_red);
                 if (hp > 0) {
-                    play_sfx(sfx_player_hurt,  sound_priority.player_hurt,  0, global.sound_gpspeed * 100);
+                    play_sfx(sfx_player_hurt, 0, global.sound_gpspeed * 100);
                 } else {
-                    play_sfx(sfx_player_death, sound_priority.player_death, 0, global.sound_gpspeed * 100);
+                    play_sfx(sfx_player_death, 0, global.sound_gpspeed * 100);
                 }
                 with(enemy) {
                     var damage = calculate_damage(other.bdmg, other.bpen, bdef);
@@ -777,9 +777,9 @@ if (global.state == 1) {
                 knockback((100 - pkbres) * projectile.pkb / 1000, point_direction(projectile.x, projectile.y, x, y), counteracc);
                 indicate(projectile.x, projectile.y, display_damage, 2, rgb(255, 170, 0), c_red);
                 if (hp > 0) {
-                    play_sfx(sfx_player_hurt,  sound_priority.player_hurt,  0, global.sound_gpspeed * 100);
+                    play_sfx(sfx_player_hurt, 0, global.sound_gpspeed * 100);
                 } else {
-                    play_sfx(sfx_player_death, sound_priority.player_death, 0, global.sound_gpspeed * 100);
+                    play_sfx(sfx_player_death, 0, global.sound_gpspeed * 100);
                 }
             }
             with (projectile) {
@@ -793,7 +793,7 @@ if (global.state == 1) {
     if (instance_exists(obj_wrap_helper) && instance_exists(helper)) {
         var hx = helper.x; var hy = helper.y;
         if ((place_meeting(hx, hy, obj_enemy) || place_meeting(hx, hy, obj_eprojectile)) && hp > 0 && inv == 0 && global.gpspeed != 0) {
-            inv = round(invtime / global.gpspeed); play_sfx(sfx_player_hurt, 0, 0);
+            inv = round(invtime / global.gpspeed); play_sfx(sfx_player_hurt, 0);
             // helper contact damage
             if (place_meeting(hx, hy, obj_enemy) && (!place_meeting(hx, hy, obj_eprojectile) || (distance_to_object(instance_place(hx, hy, obj_eprojectile)) > distance_to_object(instance_place(hx, hy, obj_enemy)))) && instance_place(hx, hy, obj_enemy).touchable == 1 && instance_place(hx, hy, obj_enemy).hp > 0) {
                 var enemy = instance_place(hx, hy, obj_enemy);
@@ -805,9 +805,9 @@ if (global.state == 1) {
                     knockback((100 - bkbres) * enemy.bkb / 1000, point_direction(enemy.x, enemy.y, hx, hy), counteracc);
                     indicate(hx, hy, display_damage, 2, rgb(255, 170, 0), c_red);
                     if (hp > 0) {
-                        play_sfx(sfx_player_hurt,  sound_priority.player_hurt,  0, global.sound_gpspeed * 100);
+                        play_sfx(sfx_player_hurt, 0, global.sound_gpspeed * 100);
                     } else {
-                        play_sfx(sfx_player_death, sound_priority.player_death, 0, global.sound_gpspeed * 100);
+                        play_sfx(sfx_player_death, 0, global.sound_gpspeed * 100);
                     }
                     with (enemy) {
                         var damage = calculate_damage(other.bdmg, other.bpen, bdef);
@@ -843,9 +843,9 @@ if (global.state == 1) {
                     knockback((100 - pkbres) * projectile.pkb / 1000, point_direction(projectile.x, projectile.y, hx, hy), counteracc);
                     indicate(projectile.x, projectile.y, display_damage, 2, rgb(255, 170, 0), c_red);
                     if (hp > 0) {
-                        play_sfx(sfx_player_hurt,  sound_priority.player_hurt,  0, global.sound_gpspeed * 100);
+                        play_sfx(sfx_player_hurt, 0, global.sound_gpspeed * 100);
                     } else {
-                        play_sfx(sfx_player_death, sound_priority.player_death, 0, global.sound_gpspeed * 100);
+                        play_sfx(sfx_player_death, 0, global.sound_gpspeed * 100);
                     }
                 }
                 with (projectile) {

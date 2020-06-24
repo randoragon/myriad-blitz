@@ -33,7 +33,7 @@ if (global.gpspeed != 0) {
     //STANDARD BEHAVIOR
     if (intro == 0 && beh > 0 && !instance_exists(obj_emerald_ultimate)) {
 		if (irandom(90) == 0 && global.gpstep >= 1) {
-	        play_sfx(sfx_reindeer_shoot, sound_priority.enemy_shoot, 0, global.sound_gpspeed * 100);
+	        play_sfx(sfx_reindeer_shoot, 0, global.sound_gpspeed * 100);
 	        spawn_bullet(x - 41, y - 21, obj_eprojectile, 2, 0, -1, id);
 	    }
 	    vspeed1 = 2 * linsin(5 * (global.gptime - time_mark));

@@ -33,6 +33,46 @@
             "enumb": 73,
             "eventtype": 8,
             "m_owner": "abb7df42-bae2-4201-a288-dcb3e93832f2"
+        },
+        {
+            "id": "d8d3c957-f1c5-473f-983d-bca33448e957",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 10,
+            "eventtype": 7,
+            "m_owner": "abb7df42-bae2-4201-a288-dcb3e93832f2"
+        },
+        {
+            "id": "845339e5-b235-4981-af4c-d643fa3d64df",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 11,
+            "eventtype": 7,
+            "m_owner": "abb7df42-bae2-4201-a288-dcb3e93832f2"
+        },
+        {
+            "id": "9af09bd3-b07a-4a19-8ddb-0bc442f3775b",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 12,
+            "m_owner": "abb7df42-bae2-4201-a288-dcb3e93832f2"
+        },
+        {
+            "id": "bc2899f1-f23a-4d81-9803-e05c282cb1fc",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 2,
+            "m_owner": "abb7df42-bae2-4201-a288-dcb3e93832f2"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
@@ -111,34 +151,6 @@
             "varType": 1
         },
         {
-            "id": "d2f38d8a-5d77-4507-aa6b-f907bf60bdee",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": null,
-            "multiselect": false,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 1023,
-            "value": "0",
-            "varName": "inst_index",
-            "varType": 1
-        },
-        {
-            "id": "704150ff-6e6c-4e36-a9eb-06ab29e56d31",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": null,
-            "multiselect": false,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 1023,
-            "value": "-4",
-            "varName": "inst_count",
-            "varType": 1
-        },
-        {
             "id": "cc56e480-183c-4acb-96cc-c632346af053",
             "modelName": "GMObjectProperty",
             "mvc": "1.0",
@@ -152,23 +164,7 @@
             "resourceFilter": 1023,
             "value": "\"\"",
             "varName": "line",
-            "varType": 6
-        },
-        {
-            "id": "64cf304d-64f6-4850-9a05-b81a3febaa7e",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": [
-                "\"\""
-            ],
-            "multiselect": true,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 1023,
-            "value": "\"\"",
-            "varName": "chunk",
-            "varType": 6
+            "varType": 2
         },
         {
             "id": "f2477e7d-9ba7-4c3f-8bc5-2f9fb7682d9b",
@@ -199,20 +195,6 @@
             "varType": 1
         },
         {
-            "id": "b397dd34-1a54-41b0-b5cc-5053428723e6",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": null,
-            "multiselect": false,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 1023,
-            "value": "0",
-            "varName": "interval",
-            "varType": 1
-        },
-        {
             "id": "7fb8bb96-4014-4b39-aaa1-df534369f018",
             "modelName": "GMObjectProperty",
             "mvc": "1.0",
@@ -223,7 +205,7 @@
             "rangeMin": 0,
             "resourceFilter": 1023,
             "value": "\"\"",
-            "varName": "fname",
+            "varName": "fpath",
             "varType": 2
         },
         {
@@ -281,6 +263,62 @@
             "value": "\"\"",
             "varName": "slotversion",
             "varType": 2
+        },
+        {
+            "id": "a138391c-30f0-4eed-80f1-a086e1e5d60a",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "data",
+            "varType": 2
+        },
+        {
+            "id": "d351118a-13eb-4f56-9bb8-18d23dda9ae5",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "\"\"",
+            "varName": "to_read",
+            "varType": 2
+        },
+        {
+            "id": "56d01d28-fa7e-496f-853f-3b770952a365",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "-1",
+            "varName": "audio_groups",
+            "varType": 1
+        },
+        {
+            "id": "99e32fe0-f254-4913-809d-2beb9d6b16e9",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "audio_groups_timeout",
+            "varType": 3
         }
     ],
     "solid": false,

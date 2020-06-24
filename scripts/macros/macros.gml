@@ -60,6 +60,19 @@
 
 #endregion
 
+#region Save Data IDs
+
+#macro SAVE_DATA_HEADER 0
+#macro SAVE_DATA_GLOBALS 1
+#macro SAVE_DATA_SOUND 2
+#macro SAVE_DATA_STATUS_EFFECTS 3
+#macro SAVE_DATA_PART_SYSTEM 4
+#macro SAVE_DATA_PART_SLOTS 5
+#macro SAVE_DATA_INSTANCE 6
+#macro SAVE_DATA_AFTERIMAGE 7
+
+#endregion
+
 #region Particles
 
 #macro PART_SYSTEM_PLAYERBOT_LT global.part_system[0]

@@ -33,6 +33,16 @@
             "enumb": 73,
             "eventtype": 8,
             "m_owner": "b5e599d0-e662-4606-94ac-b37ac0aa13e3"
+        },
+        {
+            "id": "8d82e2dd-f06a-4c6c-a956-17f776cf2ed7",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 12,
+            "m_owner": "b5e599d0-e662-4606-94ac-b37ac0aa13e3"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
@@ -106,98 +116,8 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "14",
+            "value": "0",
             "varName": "progress_max",
-            "varType": 1
-        },
-        {
-            "id": "990b9a62-d611-4092-92f9-8b41d8b08335",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": [
-                "-4"
-            ],
-            "multiselect": true,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 1023,
-            "value": "-4",
-            "varName": "inst_id",
-            "varType": 6
-        },
-        {
-            "id": "4c6427b8-f528-488c-b54f-cede6fc75438",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": null,
-            "multiselect": false,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 1023,
-            "value": "0",
-            "varName": "inst_index",
-            "varType": 1
-        },
-        {
-            "id": "18afbd01-1cec-4eeb-a62e-67c697a30d82",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": null,
-            "multiselect": false,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 1023,
-            "value": "-4",
-            "varName": "inst_count",
-            "varType": 1
-        },
-        {
-            "id": "8b44c189-793e-4184-9b70-132094b5ffd6",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": [
-                "\"\""
-            ],
-            "multiselect": true,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 1023,
-            "value": "\"\"",
-            "varName": "line",
-            "varType": 6
-        },
-        {
-            "id": "b6e0ebfe-6ae9-4296-9c5a-d10e29281be1",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": [
-                "\"\""
-            ],
-            "multiselect": true,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 1023,
-            "value": "\"\"",
-            "varName": "chunk",
-            "varType": 6
-        },
-        {
-            "id": "a7a389f0-c9d4-4652-b9ee-96734d6f955b",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": null,
-            "multiselect": false,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 1023,
-            "value": "0",
-            "varName": "chunk_length",
             "varType": 1
         },
         {
@@ -238,51 +158,9 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "1",
+            "value": "0",
             "varName": "clock",
             "varType": 1
-        },
-        {
-            "id": "892bdc01-7feb-4072-9ec9-6978291e7143",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": null,
-            "multiselect": false,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 1023,
-            "value": "0",
-            "varName": "interval",
-            "varType": 1
-        },
-        {
-            "id": "d1630172-f738-47cd-9224-fb92dcfd71f7",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": null,
-            "multiselect": false,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 1023,
-            "value": "\"\"",
-            "varName": "slot_name",
-            "varType": 2
-        },
-        {
-            "id": "d5b0e331-203b-4506-97b1-c0872884ed06",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": null,
-            "multiselect": false,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 1023,
-            "value": "\"\"",
-            "varName": "fname",
-            "varType": 2
         },
         {
             "id": "588bdb6e-f571-4dda-abc5-89de106956b4",
@@ -295,21 +173,7 @@
             "rangeMin": 0,
             "resourceFilter": 1023,
             "value": "\"\"",
-            "varName": "fullname",
-            "varType": 2
-        },
-        {
-            "id": "5fa3b981-bfcd-4243-a56c-454f8ad8453d",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": null,
-            "multiselect": false,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 1023,
-            "value": "\"\"",
-            "varName": "save_key",
+            "varName": "fpath",
             "varType": 2
         },
         {
@@ -327,6 +191,20 @@
             "varType": 1
         },
         {
+            "id": "5fa3b981-bfcd-4243-a56c-454f8ad8453d",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "\"\"",
+            "varName": "save_key",
+            "varType": 2
+        },
+        {
             "id": "99fa1186-8b74-4aca-8655-e41fc60310fc",
             "modelName": "GMObjectProperty",
             "mvc": "1.0",
@@ -338,6 +216,34 @@
             "resourceFilter": 1023,
             "value": "0",
             "varName": "initial_seed",
+            "varType": 1
+        },
+        {
+            "id": "d25a354e-0e90-4549-bc51-88f7d813d301",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "\"\"",
+            "varName": "slotname",
+            "varType": 2
+        },
+        {
+            "id": "c98d0164-ab39-4d25-a19d-3116148f111f",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "-1",
+            "varName": "queue",
             "varType": 1
         }
     ],

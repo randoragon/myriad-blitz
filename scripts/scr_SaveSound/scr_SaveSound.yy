@@ -1,8 +1,8 @@
 {
-    "id": "9e84f176-b257-4e67-9e25-3849e6c1f1c6",
+    "id": "a9b420be-fdb9-48e6-aecf-92423b20747e",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scrt_finish_slot_loading",
+    "name": "scr_SaveSound",
     "IsCompatibility": false,
     "IsDnD": false
 }

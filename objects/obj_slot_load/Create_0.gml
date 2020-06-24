@@ -26,21 +26,43 @@ if (slot[0] != "") {
     }
     until (slot[slotcount] == "");
     
-    var f, data;
+    var f, data, datatype;
     for(var i = 0; i < slotcount; i++) {
         f = file_text_open_read(working_directory + "slots\\" + slot[i]);
         file_text_readln(f); // skip disclaimer
         slotname[i] = file_text_readbit(f);
         slotdate[i] = file_text_readbit(f);
         
-        data[0]		   = flip_decode(file_text_readbit(f), slotdate[i]); // this loads only the first line of the file, which means it's not obvious that the info we want to fetch will be there (due to chunks), but we only want the first 4 variables, so it's physically impossible for it to be further than within the first 200 lines (min. chunk size).
-        slotversion[i] = string_readln(data, ";");
-        slotchar[i]    = -1;
-        slotchar[i]    = string_readln_real(data, ";");
-        slotpoints[i]  = -1;
-        slotpoints[i]  = string_readln_real(data, ";");
-        slotrealm[i]   = -1;
-        slotrealm[i]   = string_readln_real(data, ";");
+		/* Only slot name and datetime are stored unencrypted in the save file.
+		 * Thus, to extract information about slot version, character, points and realm
+		 * we need to decrypt part of the slot file. Fortunately, all of these
+		 * are guaranteed to be stored within the first line of the file.
+		 */
+        data[0]		   = flip_decode(file_text_readbit(f), slotdate[i]);
+		datatype	   = string_readln(data, ";");
+		if (datatype == "1.1.0" || datatype == "1.1.1") {
+			// Slot comes from old versions before SAVE_DATA types were a thing
+			slotversion[i] = datatype;
+			slotchar[i]    = CHRCOUNT;
+	        slotchar[i]    = string_readln_real(data, ";");
+	        slotpoints[i]  = 0;
+	        slotpoints[i]  = string_readln_real(data, ";");
+	        slotrealm[i]   = RLMCOUNT;
+	        slotrealm[i]   = string_readln_real(data, ";");
+		} else if (datatype != string(SAVE_DATA_GLOBALS)) {
+			slotversion[i] = "ERROR";
+	        slotchar[i]    = CHRCOUNT;
+	        slotpoints[i]  = 0;
+	        slotrealm[i]   = RLMCOUNT;
+		} else {
+	        slotversion[i] = string_readln(data, ";");
+	        slotchar[i]    = CHRCOUNT;
+	        slotchar[i]    = string_readln_real(data, ";");
+	        slotpoints[i]  = 0;
+	        slotpoints[i]  = string_readln_real(data, ";");
+	        slotrealm[i]   = RLMCOUNT;
+	        slotrealm[i]   = string_readln_real(data, ";");
+		}
         file_text_close(f);
     }
     spawncount = 7;

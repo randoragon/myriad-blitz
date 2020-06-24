@@ -42,7 +42,7 @@ if (global.gpspeed != 0) {
 				sprite_index = spr_evilflame_ultimate_shooting;
 			}
 			if (shot <= 0) {
-				play_sfx(sfx_evilflame_shoot, sound_priority.player_shoot, 0, global.sound_gpspeed * 100);
+				play_sfx(sfx_evilflame_shoot, 0, global.sound_gpspeed * 100);
 				var xoffset = 32 * image_xscale;
 				var yoffset = -7 * image_yscale;
 				var angle   = image_angle + point_direction(0, 0, xoffset, yoffset);
@@ -77,7 +77,7 @@ if (global.gpspeed != 0) {
 				}
 				charge = min(charge + global.gpspeed, ctime);
 				if (!audio_is_playing(sfx_charging)) {
-					play_sfx(sfx_charging, sound_priority.player_charging, 0, global.sound_gpspeed * 100);
+					play_sfx(sfx_charging, 0, global.sound_gpspeed * 100);
 				}
 			}
 		}
@@ -85,7 +85,7 @@ if (global.gpspeed != 0) {
 		if (mouse_check_button(mb_right) && charge > 0) {
 			if (charge >= ctime) {
 				cb = 1;
-				play_sfx(sfx_evilflame_charge_shot, sound_priority.player_charge_shot, 0, global.sound_gpspeed * 100);
+				play_sfx(sfx_evilflame_charge_shot, 0, global.sound_gpspeed * 100);
 				charge = 0;
 				if (artcharge == 0) {
 					discharge = ccooldown;
@@ -134,7 +134,7 @@ if (global.gpspeed != 0) {
 						other.bar_opacity[2] = 5;
 					break;
 				}
-				play_sfx(sfx_button4, 0, 0);
+				play_sfx(sfx_button4, 0);
 			}
 		}
 	    //TAKING DAMAGE
@@ -142,7 +142,7 @@ if (global.gpspeed != 0) {
 	    if ((place_meeting(x, y, obj_enemy) || place_meeting(x, y, obj_eprojectile)) && hp > 0 && inv == 0) {
 			
 		    inv = round(invtime / global.gpspeed);
-			play_sfx(sfx_player_hurt, sound_priority.player_hurt, 0, global.sound_gpspeed * 100);
+			play_sfx(sfx_player_hurt, 0, global.sound_gpspeed * 100);
     
 		    //contact damage
 		    if (place_meeting(x, y, obj_enemy) && (!place_meeting(x, y, obj_eprojectile) || (distance_to_object(instance_place(x, y, obj_eprojectile)) > distance_to_object(instance_place(x, y, obj_enemy)))) && instance_place(x, y, obj_enemy).touchable == 1) {

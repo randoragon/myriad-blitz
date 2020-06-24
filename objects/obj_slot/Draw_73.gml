@@ -10,7 +10,7 @@ surface_set_target(GUI_SURFACE);
 
 draw_self();
 draw_set_align(fa_center, fa_top);
-if (!version_check(ver)) {
+if (!version_check(VER, ver)) {
 	draw_set_color(c_red);
 } else {
 	draw_set_color(c_black);

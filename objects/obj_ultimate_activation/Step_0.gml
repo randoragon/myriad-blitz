@@ -18,7 +18,7 @@ if (global.gpspeed != 0) {
 		image_alpha                        = progress / 10;
 		global.gpspeed_ultimate_activation = clamp(1 - (progress / 10), 0.1, 1);
 		if (size >= 5) {
-			play_sfx(sfx_ultimate_activation, sound_priority.ultimate_activation, 0);
+			play_sfx(sfx_ultimate_activation, 0);
 			stage = 1;
 		}
 	} else if (stage == 1) {

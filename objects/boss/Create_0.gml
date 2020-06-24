@@ -1,5 +1,6 @@
 #region Miscellaneous Setup
 
+global.versions = ["1.1.0", "1.1.1", "1.2.0 beta"];
 gml_release_mode(false);
 gpu_set_alphatestenable(1);
 window_last_width  = window_get_width();
@@ -60,12 +61,12 @@ KEYBIND_ULTIMATE = ord("E");
 
 global.chrsel = 0;
 scr_PlayerDataUpdate(global.chrsel);
-global.color = array_setup(c_white, CHRCOUNT);
+global.color = array_setup(c_white, CHRCOUNT + 1);
 global.color[0] = c_aqua;
 global.color[1] = hsv(110, 255, 255);
 global.color[2] = hsv(40, 60, 200);
 global.color[3] = hsv(143, 230, 255);
-global.name     = array_setup("<failed to fetch name>", CHRCOUNT);
+global.name     = array_setup("<failed to fetch name>", CHRCOUNT + 1);
 global.name[0]  = "Evilflame";
 global.name[1]  = "Emerald~";
 global.name[2]  = "Der Scootomik";
@@ -75,10 +76,11 @@ global.name[3]  = "Bobileusz";
 
 #region Realms Setup
 
-global.realm_name[1]  = "Christmas Realm";
+global.realm_name	  = array_setup("<failed to fetch name>", RLMCOUNT + 1);
 global.realm_name[0]  = "Menu";
+global.realm_name[1]  = "Christmas Realm";
 global.background_sprite       = array_setup(noone, 8);
-global.background_sprite_index = array_setup(0,     8);
+global.background_image_index = array_setup(0,     8);
 global.background_image_speed  = array_setup(0,     8);
 global.background_x            = array_setup(0,     8);
 global.background_y            = array_setup(0,     8);
@@ -354,25 +356,136 @@ layer_reset_target_room();
 
 #endregion
 
+#region Audio Save Map
+
+global.save_aindex = ds_map_create();
+global.save_aname  = ds_map_create();
+global.save_aindex[? "mus_menu_intro"]				= 0;
+global.save_aname[? 0]								= "mus_menu_intro";
+global.save_aindex[? "mus_menu_menu"]				= 1;
+global.save_aname[? 1]								= "mus_menu_loop";
+global.save_aindex[? "mus_rlm_christmas"]			= 2;
+global.save_aname[? 2]								= "mus_rlm_christmas";
+global.save_aindex[? "sfx_evilflame_shoot"]			= 3;
+global.save_aname[? 3]								= "sfx_evilflame_shoot";
+global.save_aindex[? "sfx_evilflame_charge_shot"]	= 4;
+global.save_aname[? 4]								= "sfx_evilflame_charge_shot";
+global.save_aindex[? "sfx_evilflame_bullet_hit"]	= 5;
+global.save_aname[? 5]								= "sfx_evilflame_bullet_hit";
+global.save_aindex[? "sfx_evilflame_frag_hit"]		= 6;
+global.save_aname[? 6]								= "sfx_evilflame_frag_hit";
+global.save_aindex[? "sfx_emerald_shoot"]			= 7;
+global.save_aname[? 7]								= "sfx_emerald_shoot";
+global.save_aindex[? "sfx_emerald_charge_shot"]		= 8;
+global.save_aname[? 8]								= "sfx_emerald_charge_shot";
+global.save_aindex[? "sfx_emerald_bullet_hit"]		= 9;
+global.save_aname[? 9]								= "sfx_emerald_bullet_hit";
+global.save_aindex[? "sfx_emerald_frag_hit"]		= 10;
+global.save_aname[? 10]								= "sfx_emerald_frag_hit";
+global.save_aindex[? "sfx_scootomik_shoot"]			= 11;
+global.save_aname[? 11]								= "sfx_scootomik_shoot";
+global.save_aindex[? "sfx_scootomik_charge_shot"]	= 12;
+global.save_aname[? 12]								= "sfx_scootomik_charge_shot";
+global.save_aindex[? "sfx_scootomik_bullet_hit"]	= 13;
+global.save_aname[? 13]								= "sfx_scootomik_bullet_hit";
+global.save_aindex[? "sfx_scootomik_frag_hit"]		= 14;
+global.save_aname[? 14]								= "sfx_scootomik_frag_hit";
+global.save_aindex[? "sfx_explosion1"]				= 15;
+global.save_aname[? 15]								= "sfx_explosion1";
+global.save_aindex[? "sfx_explosion2"]				= 16;
+global.save_aname[? 16]								= "sfx_explosion2";
+global.save_aindex[? "sfx_explosion3"]				= 17;
+global.save_aname[? 17]								= "sfx_explosion3";
+global.save_aindex[? "sfx_player_hurt"]				= 18;
+global.save_aname[? 18]								= "sfx_player_hurt";
+global.save_aindex[? "sfx_player_death"]			= 19;
+global.save_aname[? 19]								= "sfx_player_death";
+global.save_aindex[? "sfx_charging"]				= 20;
+global.save_aname[? 20]								= "sfx_charging";
+global.save_aindex[? "sfx_ultimate_activation"]		= 21;
+global.save_aname[? 21]								= "sfx_ultimate_activation";
+global.save_aindex[? "sfx_button1"]					= 22;
+global.save_aname[? 22]								= "sfx_button1";
+global.save_aindex[? "sfx_button2"]					= 23;
+global.save_aname[? 23]								= "sfx_button2";
+global.save_aindex[? "sfx_button3"]					= 24;
+global.save_aname[? 24]								= "sfx_button3";
+global.save_aindex[? "sfx_button4"]					= 25;
+global.save_aname[? 25]								= "sfx_button4";
+global.save_aindex[? "sfx_run_start"]				= 26;
+global.save_aname[? 26]								= "sfx_run_start";
+global.save_aindex[? "sfx_pause"]					= 27;
+global.save_aname[? 27]								= "sfx_pause";
+global.save_aindex[? "sfx_popup"]					= 28;
+global.save_aname[? 28]								= "sfx_popup";
+global.save_aindex[? "sfx_popup_decline"]			= 29;
+global.save_aname[? 29]								= "sfx_popup_decline";
+global.save_aindex[? "sfx_slot_delete"]				= 30;
+global.save_aname[? 30]								= "sfx_slot_delete";
+global.save_aindex[? "sfx_back"]					= 31;
+global.save_aname[? 31]								= "sfx_back";
+global.save_aindex[? "sfx_gingerbread_man_shoot"]	= 32;
+global.save_aname[? 32]								= "sfx_gingerbread_man_shoot";
+global.save_aindex[? "sfx_reindeer_shoot"]			= 33;
+global.save_aname[? 33]								= "sfx_reindeer_shoot";
+global.save_aindex[? "sfx_snowman_shoot"]			= 34;
+global.save_aname[? 34]								= "sfx_snowman_shoot";
+global.save_aindex[? "sfx_scootomik_ultimate_loop"] = 35;
+global.save_aname[? 35]								= "sfx_scootomik_ultimate_loop";
+global.save_aindex[? "sfx_emerald_ultimate_loop"]	= 36;
+global.save_aname[? 36]								= "sfx_emerald_ultimate_loop";
+global.save_aindex[? "sfx_bobileusz_shoot"]			= 37;
+global.save_aname[? 37]								= "sfx_bobileusz_shoot";
+global.save_aindex[? "sfx_bobileusz_charge_shot"]	= 38;
+global.save_aname[? 38]								= "sfx_bobileusz_charge_shot";
+global.save_aindex[? "sfx_bobileusz_bullet_hit"]	= 39;
+global.save_aname[? 39]								= "sfx_bobileusz_bullet_hit";
+global.save_aindex[? "sfx_bobileusz_frag_hit"]		= 40;
+global.save_aname[? 40]								= "sfx_bobileusz_frag_hit";
+
+#endregion
+
 #region Sound Hierarchy
 
-enum sound_priority {
-    music = 100, 
-    
-    // gameplay sfx
-    player_death = 10, 
-    emerald_ultimate_loop = 9, 
-    scootomik_ultimate_loop = 9, 
-    player_charge_shot = 8, 
-    ultimate_activation = 7, 
-    player_hurt = 6, 
-    explosion = 5, 
-    player_charging = 4, 
-    enemy_shoot = 3, 
-    player_shoot = 2, 
-    player_bullet_hit = 1, 
-    player_frag_hit = 0, 
-}
+global.sound_priority = ds_map_create();
+global.sound_priority[? "music"] = 100;
+global.sound_priority[? "sfx"]   = 0;
+
+// General SFX
+global.sound_priority[? "sfx_explosion1" ] = 5;
+global.sound_priority[? "sfx_explosion2" ] = 5;
+global.sound_priority[? "sfx_explosion3" ] = 5;
+global.sound_priority[? "sfx_player_hurt" ] = 10;
+global.sound_priority[? "sfx_player_death"] = 10;
+global.sound_priority[? "sfx_charging"] = 4;
+global.sound_priority[? "sfx_ultimate_activation"] = 7;
+
+// Characters
+global.sound_priority[? "sfx_evilflame_shoot"] = 2;
+global.sound_priority[? "sfx_emerald_shoot"]   = 2;
+global.sound_priority[? "sfx_scootomik_shoot"] = 2;
+global.sound_priority[? "sfx_bobileusz_shoot"] = 2;
+global.sound_priority[? "sfx_evilflame_charge_shot"] = 8;
+global.sound_priority[? "sfx_emerald_charge_shot"]   = 8;
+global.sound_priority[? "sfx_scootomik_charge_shot"] = 8;
+global.sound_priority[? "sfx_bobileusz_charge_shot"] = 8;
+global.sound_priority[? "sfx_evilflame_bullet_hit"] = 1;
+global.sound_priority[? "sfx_emerald_bullet_hit"]   = 1;
+global.sound_priority[? "sfx_scootomik_bullet_hit"] = 1;
+global.sound_priority[? "sfx_bobileusz_bullet_hit"] = 1;
+global.sound_priority[? "sfx_evilflame_frag_hit"] = 0;
+global.sound_priority[? "sfx_emerald_frag_hit"]   = 0;
+global.sound_priority[? "sfx_scootomik_frag_hit"] = 0;
+global.sound_priority[? "sfx_bobileusz_frag_hit"] = 0;
+
+// Christmas Realm
+global.sound_priority[? "sfx_gingerbread_man_shoot"] = 3;
+global.sound_priority[? "sfx_reindeer_shoot"]		   = 3;
+global.sound_priority[? "sfx_snowman_shoot"]         = 3;
+
+// Misc
+global.sound_priority[? "sfx_emerald_ultimate_loop"] = 9;
+global.sound_priority[? "sfx_scootomik_ultimate_loop"] = 9;
 
 #endregion
 
@@ -593,11 +706,23 @@ global.save_sindex [? "part_snowflake"]					  = 58;
 global.save_sname  [? 58]                                 = "part_snowflake";
 global.save_sindex [? "part_flash"]						  = 59;
 global.save_sname  [? 59]                                 = "part_flash";
-global.save_sindex[? "spr_bobileusz_icicle"]			  = 60;
-global.save_sname [? 60]                                  = "spr_bobileusz_icicle";
-global.save_sindex [? "spr_bolt2"]                         = 61;
+global.save_sindex [? "spr_bobileusz_icicle"]			  = 60;
+global.save_sname  [? 60]                                  = "spr_bobileusz_icicle";
+global.save_sindex [? "spr_bolt2"]                        = 61;
 global.save_sname  [? 61]                                 = "spr_bolt2";
-// 62-96
+global.save_sindex [? "bg_Christmas0"]	                  = 62;
+global.save_sname  [? 62]                                 = "bg_Christmas0";
+global.save_sindex [? "bg_Christmas1"]	                  = 63;
+global.save_sname  [? 63]                                 = "bg_Christmas1";
+global.save_sindex [? "bg_Christmas2"]	                  = 64;
+global.save_sname  [? 64]                                 = "bg_Christmas2";
+global.save_sindex [? "bg_Christmas3"]	                  = 65;
+global.save_sname  [? 65]                                 = "bg_Christmas3";
+global.save_sindex [? "bg_Christmas4"]	                  = 66;
+global.save_sname  [? 66]                                 = "bg_Christmas4";
+global.save_sindex [? "bg_Christmas5"]	                  = 67;
+global.save_sname  [? 67]                                 = "bg_Christmas5";
+// 68-96
 global.save_sindex [? "spr_present"]                      = 97;
 global.save_sname  [? 97]                                 = "spr_present";
 global.save_sindex [? "spr_ultimate"]                      = 98;
@@ -706,11 +831,13 @@ ds_list_add(global.shd_quadrangle_uni,
 
 #region Audio Groups Assignment
 
+global.character_audiogroup    = array_setup(-1, CHRCOUNT + 1);
 global.character_audiogroup[0] = audiogroup_character_evilflame;
 global.character_audiogroup[1] = audiogroup_character_emerald;
 global.character_audiogroup[2] = audiogroup_character_scootomik;
 global.character_audiogroup[3] = audiogroup_character_bobileusz;
 
+global.realm_audiogroup    = array_setup(-1, RLMCOUNT + 1);
 global.realm_audiogroup[0] = audiogroup_menu;
 global.realm_audiogroup[1] = audiogroup_realm_christmas;
 

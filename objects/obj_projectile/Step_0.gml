@@ -72,7 +72,7 @@ if (!fading && place_meeting(x, y, obj_enemy) && instance_place(x, y, obj_enemy)
     ee.hp = clamp(ee.hp - damage, 0, ee.hpmax);
     knockback((100 - ee.pkbres) * pkb / 1000, point_direction(x, y, x, y), 1);
     indicate(x, y, display_damage, 1, rgb(255, 85, 0), c_red);
-    play_sfx(sfx_evilflame_bullet_hit + (global.chrsel * 4), sound_priority.player_bullet_hit, 0, global.sound_gpspeed * 100);
+    play_sfx(sfx_evilflame_bullet_hit + (global.chrsel * 4), 0, global.sound_gpspeed * 100);
     if (global.enemy_details_selection_auto_aim) {
         global.enemy_details_selection = ee;
     }

@@ -37,15 +37,18 @@ if (phase == 1) {
 #region Button functionality
 if (place_meeting(x, y, boss)) {
     if (mouse_check_button_pressed(mb_left)) {
-        if (version_check(ver)) {
-            play_sfx(sfx_button4, 0, 0);
+		if (ver == "ERROR") {
+			obj_slot_load.selection = slotid;
+            ask("NICE TRY!\nThis save slot is badly corrupt.\nIf you are confident this is the game's fault,\nsend a bug report. Loading impossible.\nDelete the slot?", scrq_reset_slot_selection, scrq_delete_slot);
+		} else if (version_check(VER, ver)) {
+            play_sfx(sfx_button4, 0);
             with(obj_slot) { grabbed = 0; }
             grabbed = 1;
             obj_slot_load.selection = slotid;
             obj_slot_load.selection_name = name;
         } else {
             obj_slot_load.selection = slotid;
-            ask("WHOOPS!\nThis save slot originates from\nMyriad Blitz version " + ver + ", which is incompatible\nwith the version you are running now (" + VER + ").\nLoading impossible. Delete the slot?", scrq_reset_slot_selection, scrq_delete_slot);
+            ask("GUESS AGAIN!\nThis save slot originates from\nMyriad Blitz version " + ver + ", which is incompatible\nwith the version you are running now (" + VER + ").\nLoading impossible. Delete the slot?", scrq_reset_slot_selection, scrq_delete_slot);
         }
     }
 }

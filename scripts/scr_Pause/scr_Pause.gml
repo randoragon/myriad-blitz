@@ -2,7 +2,7 @@
 
 global.gpspeed_state = 0;
 audio_pause_all();
-play_sfx(sfx_pause, 0, 0);
+play_sfx(sfx_pause, 0);
 
 var d = layer_get_depth(layer_get_id("Pause")) - 1;
 

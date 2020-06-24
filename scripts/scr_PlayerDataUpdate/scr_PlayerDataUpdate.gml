@@ -1,7 +1,9 @@
 /// @description scr_PlayerDataUpdate(character_index);
 /// @param character_index
 
-switch (argument[0]) {
+var arg = argument[0];
+
+switch (arg) {
 	#region Evilflame
     case PLAYER_EVILFLAME:
         global.lore          = 

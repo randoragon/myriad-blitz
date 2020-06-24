@@ -1,6 +1,6 @@
 /// @description scrq_delete_slot();
 
-play_sfx(sfx_slot_delete, 0, 0);
+play_sfx(sfx_slot_delete, 0);
 
 var prevpage      = obj_slot_load.page;
 var prevslotcount = array_length_1d(obj_slot_load.slot)-1;

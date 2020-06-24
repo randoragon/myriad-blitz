@@ -24,7 +24,7 @@ if (stage != 0 && stage <= array_length_1d(audiogroups) * 2) {
 }
 
 if (audio_group_is_loaded(audiogroup_menu) && !audio_is_playing(mus_menu_intro) && !audio_is_playing(mus_menu_loop)) {
-	play_music(mus_menu_intro, sound_priority.music, 0);
+	play_music(mus_menu_intro, 0);
 	boss.menu_intro = TRUE;
 }
 

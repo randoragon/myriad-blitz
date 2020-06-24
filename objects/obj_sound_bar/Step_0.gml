@@ -19,9 +19,9 @@ if (global.busy == 0) {
 	if (mouse_check_button_released(mb_left) && grabbed == 1) {
 		grabbed = 0;
 		if (!f) {
-			play_music(sfx_button4, sound_priority.music, 0, 100);
+			play_music(sfx_button4, 0);
 		} else {
-			play_sfx(sfx_button4, 0, 0, 100);
+			play_sfx(sfx_button4, 0);
 		}
 	}
 }

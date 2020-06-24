@@ -1,6 +1,7 @@
-/// @description scr_obj_loading_applying_data_1_1_1()
+/// @description scr_obj_loading_applying_data_legacy()
 
 // The legacy method of loading slot files, with old particle system and backgrounds.
+// Works only for 1.1.0 and 1.1.1 slots
 
 var bit; bit[0] = line[progress];
     
@@ -35,7 +36,7 @@ switch(progress) {
 		for (var i = 0; i < 8; i++) {
 			var bgspr = string_readln_real(bit, ";");
 			global.background_sprite[i]		  = (bgspr != -1 ? bgspr - VER1_1_1_BG_CHRISTMAS0 + bg_Christmas0 : noone);
-			global.background_sprite_index[i] = 0;
+			global.background_image_index[i] = 0;
 			global.background_image_speed[i]  = 0;
 			global.background_x[i]			  = CANVAS_X;
 			global.background_y[i]			  = CANVAS_Y;
@@ -53,7 +54,7 @@ switch(progress) {
 		    repeat(snd_count) {
 		        sndid = string_readln_real(bit, ";");
 		        if (!audio_exists(sndid)) { string_readln(bit, ";"); string_readln(bit, ";"); continue; } 
-		        snd = play_music(sndid, sound_priority.music, 1, string_readln_real(bit, ";") * 100);
+		        snd = play_music(sndid, 1, string_readln_real(bit, ";") * 100);
 		        audio_sound_set_track_position(snd, string_readln_real(bit, ";"));
 		        audio_sound_gain(snd, 0, 0);
 		    }
@@ -61,7 +62,7 @@ switch(progress) {
 		    repeat(snd_count) {
 		        sndid = string_readln_real(bit, ";");
 		        if (!audio_exists(sndid)) { string_readln(bit, ";"); string_readln(bit, ";"); continue; } 
-		        snd = play_sfx(sndid, 0, 0, string_readln_real(bit, ";") * 100);
+		        snd = play_sfx(sndid, 0, string_readln_real(bit, ";") * 100);
 		        audio_sound_set_track_position(snd, string_readln_real(bit, ";"));
 		        audio_sound_gain(snd, 0, 0);
 			}

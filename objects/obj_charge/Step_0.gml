@@ -123,7 +123,7 @@ if (f == PLAYER_DER_SCOOTOMIK && global.gpspeed != 0) {
 			spawn_bullet(xx + lengthdir_x(l, angle), spawn.y + lengthdir_y(l, angle), obj_frag, 2, 3, -1, spawn.id);
 		}
 		if (real_step()) {
-			play_sfx(sfx_scootomik_frag_hit, sound_priority.player_frag_hit, 0, global.sound_gpspeed * 100);
+			play_sfx(sfx_scootomik_frag_hit, 0, global.sound_gpspeed * 100);
 		}
 		charge -= global.gpspeed;
 	} else {
