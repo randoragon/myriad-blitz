@@ -27,7 +27,7 @@ if (keyboard_check_pressed(vk_escape) || (boss.x >= x + 284 && boss.x <= x + 331
 if (selection != "") {
 	if (boss.x >= x - 329 && boss.x <= x - 280 && boss.y >= y + 195 && boss.y <= y + 241 && mouse_check_button_pressed(mb_left)) { grabbed = 1; }
 	if (boss.x >= x - 329 && boss.x <= x - 280 && boss.y >= y + 195 && boss.y <= y + 241 && grabbed == 1 && mouse_check_button_released(mb_left)) {
-	    scr_Load(selection);
+	    scr_Load(selection, selection_ver);
 	    wipe(obj_slot);
 		wipe(button[0]);
 		wipe(button[1]);

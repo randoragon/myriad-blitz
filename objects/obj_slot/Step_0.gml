@@ -46,6 +46,7 @@ if (place_meeting(x, y, boss)) {
             grabbed = 1;
             obj_slot_load.selection = slotid;
             obj_slot_load.selection_name = name;
+			obj_slot_load.selection_ver  = ver;
         } else {
             obj_slot_load.selection = slotid;
             ask("GUESS AGAIN!\nThis save slot originates from\nMyriad Blitz version " + ver + ", which is incompatible\nwith the version you are running now (" + VER + ").\nLoading impossible. Delete the slot?", scrq_reset_slot_selection, scrq_delete_slot);
