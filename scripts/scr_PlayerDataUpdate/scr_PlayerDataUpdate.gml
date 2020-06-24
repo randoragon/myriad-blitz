@@ -186,8 +186,17 @@ switch (arg) {
 	#region Bobileusz
 	case PLAYER_BOBILEUSZ:
         global.lore          = 
-        "It's Bobileusz. Deal with it." +
-        "\nWe're all gonna die.";
+        "Old fairy tales speak of a young engineer" +
+		"\nwith a remarkable aversion to mathematics" +
+		"\nwho set out to craft the perfect vehicle." +
+		"\nAlas, frustrated with micro adjustments" +
+		"\nbeyond his predictions, the young engineer" +
+		"\ninvented the derailleur, which bestowed his" +
+		"\ncreation with the power to remain flexible." +
+		"\nHe then passed, but his cold spirit is said" +
+		"\nto be fueling the bike to this day. Also, in" +
+		"\nspare time it likes to hide in the bottle" +
+		"\nand spit on its enemies.";
         global.hp            = 580;
         global.bdmg          = 64;
         global.bdef          = 25;
@@ -214,9 +223,9 @@ switch (arg) {
         global.fkb           = 0;
         global.cname         = "GEAR SHIFT";
         global.cdesc         = 
-        "Hold up or down prior to releasing" +
+        "Hold up or down before releasing" +
         "\nthe charge to shift accordingly." +
-        "\nAllows you to be perfectly balanced," +
+        "\nYou can be perfectly balanced," +
         "\nas everything should be.";
         global.cdmg          = 0;
         global.cpen          = 0;
@@ -227,12 +236,11 @@ switch (arg) {
         global.utype         = "BUFF";
         global.ucooldown     = 3600;
         global.udesc         = 
-        "Stores up power for an instantaneous" +
-        "\nrelease of immense frost energy," +
-        "\nallowing much greater masses of" +
-        "\nwater to be frozen solid, forming" +
-        "\nnumerous glacial prisms that greatly" +
-        "\namplify your offensive capabilities.";
+        "Summons a magical prism of ice" +
+        "\nwhich follows your movements" +
+        "\nand disperses projectiles into" +
+        "\na ruthless rainbow shower of" +
+		"\ndisintegration rays.";
     break;
 	#endregion
 	
