@@ -906,8 +906,13 @@ if (hp <= 0 && image_alpha == 1) {
 	}
 	else {
 		image_alpha = 0;
-		if (global.chrsel == PLAYER_EMERALD) {
-			with(obj_charge) { instance_destroy(); }
+		switch(global.chrsel) {
+			case PLAYER_EMERALD:
+				with(obj_charge) { instance_destroy(); }
+			break;
+			case PLAYER_BOBILEUSZ:
+				with(obj_minion) { instance_destroy(); }
+			break;
 		}
 		if (instance_exists(helper)) {
 			with(helper) { instance_create(x, y, obj_explosion); instance_destroy(); }
