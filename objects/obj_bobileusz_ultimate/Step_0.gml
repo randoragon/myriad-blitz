@@ -14,7 +14,7 @@ if (global.gpspeed != 0) {
 		prev_angle = image_angle % 360;
 		tx = obj_player.x + 100 + irandom_range(-10, 10);
 		ty = obj_player.y - 16 + irandom_range(-10, 10);
-		goal = irandom_range(60, 120);
+		goal = irandom_range(45, 90);
 		progress = 0;
 	} else {
 		progress += global.gpspeed;

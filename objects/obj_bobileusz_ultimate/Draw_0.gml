@@ -11,7 +11,7 @@ if (global.loading) { exit; }
 surface_set_target(GENERAL_SURFACE);
 
 if (global.gpspeed != 0) {
-    draw_afterimage(3, 0.5, 1, 0, 2);
+    draw_afterimage(4, 0.3, 1, 0, 2);
 } else {
     draw_afterimage_pause(0);
 }
