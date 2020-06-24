@@ -534,7 +534,7 @@ if (global.state == 1 && global.gpspeed != 0) {
 	
 	var does_emerald_laser_exist = (global.chrsel == PLAYER_EMERALD && instance_exists(obj_charge));
 	var is_spell_dried = (global.chrsel == PLAYER_EMERALD && IS_STATUS_EFFECT_SPELL_DRIED);
-	var bobileusz_invalid = (global.chrsel == PLAYER_BOBILEUSZ && ((keyboard_check(KEYBIND_UP) && status_effect[STATUS_EFFECT_GEAR10]) || (keyboard_check(KEYBIND_DOWN) && status_effect[STATUS_EFFECT_GEAR1])));
+	var bobileusz_invalid = (global.chrsel == PLAYER_BOBILEUSZ && (!(keyboard_check(KEYBIND_UP) ^^ keyboard_check(KEYBIND_DOWN)) || ((keyboard_check(KEYBIND_UP) && status_effect[STATUS_EFFECT_GEAR10]) || (keyboard_check(KEYBIND_DOWN) && status_effect[STATUS_EFFECT_GEAR1]))));
 	if (mouse_check_button(mb_right) && global.state == 1 && !does_emerald_laser_exist && !is_spell_dried && !bobileusz_invalid) {
 		//charging
 		bar_opacity[2] = 5;
@@ -611,13 +611,8 @@ if (global.state == 1 && global.gpspeed != 0) {
 					}
 				}
 				var prevgear = gear;
-				if (keyboard_check(KEYBIND_UP)) {
-					gear++;
-					indicate(x, y - 50, "GEAR UP!", 2, hsv(100 + (156 * prevgear/10), 255, 255), hsv(100 + (155 * gear/10), 255, 255));
-				} else if (keyboard_check(KEYBIND_DOWN)) {
-					gear--;
-					indicate(x, y - 50, "GEAR DOWN!", 2, hsv(100 + (156 * prevgear/10), 255, 255), hsv(100 + (155 * gear/10), 255, 255));
-				}
+				gear = gear + keyboard_check(KEYBIND_UP) - keyboard_check(KEYBIND_DOWN);
+				indicate(x, y - 50, "GEAR " + string(gear + 1), 2, hsv(100 + (156 * prevgear/10), 255, 255), hsv(100 + (155 * gear/10), 255, 255));
 				player_status_add(STATUS_EFFECT_GEAR1 + gear, -2, 0);
 			break;
 			default:
