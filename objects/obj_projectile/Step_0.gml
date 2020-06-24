@@ -48,6 +48,7 @@ switch(f) {
 						frag.xstart = obj_bobileusz_ultimate.x;
 						frag.ystart = obj_bobileusz_ultimate.y;
 					}
+					play_sfx(sfx_bobileusz_prism_shot, 0, random_range(90, 110));
 					fading = TRUE;
 				}
 			break;

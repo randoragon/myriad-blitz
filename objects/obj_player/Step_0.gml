@@ -686,6 +686,7 @@ if (flash_clock == 40) {
 		    inv = 0;
 	    break;
 		case PLAYER_BOBILEUSZ:
+			play_sfx(choose(sfx_bobileusz_prism_idle1, sfx_bobileusz_prism_idle2, sfx_bobileusz_prism_idle3), 0);
 			instance_create(random_x, random_y, obj_bobileusz_ultimate);
 			player_status_add(STATUS_EFFECT_PRISMATIC_GLACIER, 930, 0);
     }

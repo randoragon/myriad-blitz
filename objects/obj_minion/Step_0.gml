@@ -22,6 +22,7 @@ switch(f) {
 			if (cooldown >= 12 && cooldown - global.gpspeed < 12) {
 				var l2 = 5 * sqrt(2);
 				spawn_bullet(x + (spawn.image_xscale * scale * lengthdir_x(l2, dir + 10)), y + (spawn.image_yscale * scale * lengthdir_y(l2, dir + 10)), obj_projectile, PLAYER_BOBILEUSZ, 1, -1, spawn);
+				play_sfx(sfx_bobileusz_bottle_fire, 0, random_range(95, 105));
 			}
 		} else {
 			image_scale(spawn.image_xscale, spawn.image_yscale);

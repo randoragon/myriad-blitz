@@ -486,6 +486,12 @@ global.sound_priority[? "sfx_snowman_shoot"]         = 3;
 // Misc
 global.sound_priority[? "sfx_emerald_ultimate_loop"] = 9;
 global.sound_priority[? "sfx_scootomik_ultimate_loop"] = 9;
+global.sound_priority[? "sfx_bobileusz_prism_shot"]   = 2;
+global.sound_priority[? "sfx_bobileusz_prism_idle1"]  = 9;
+global.sound_priority[? "sfx_bobileusz_prism_idle2"]  = 9;
+global.sound_priority[? "sfx_bobileusz_prism_idle3"]  = 9;
+global.sound_priority[? "sfx_bobileusz_bottle_fire"]  = 3;
+global.sound_priority[? "sfx_bobileusz_icicle_burst"] = 3;
 
 #endregion
 
