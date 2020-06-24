@@ -3,6 +3,10 @@
 
 var args = argument[0];
 
+if (!global.save_particles) {
+	exit;
+}
+
 var type = string_readln(args);
 
 switch(type) {

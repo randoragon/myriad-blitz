@@ -3,7 +3,7 @@
 
 var args = argument[0];
 
-if (!ds_exists(args[@ 2], ds_type_grid)) {
+if (!global.save_particles || !ds_exists(args[@ 2], ds_type_grid)) {
 	exit;
 }
 

@@ -56,7 +56,7 @@ switch(f) {
 			}
 			vspeed1 += 0.1 * sqr(global.gpspeed);
 			image_angle = point_direction(x, y, x + lengthdir_x(speed1, direction), y + lengthdir_y(speed1, direction) + vspeed1);
-		} else if (e == 2) {
+		} else {
 			if (real_step()) {
 				var parttype, hue, hues, i;
 				hue  = color_get_hue(image_blend);
