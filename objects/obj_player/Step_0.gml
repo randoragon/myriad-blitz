@@ -535,10 +535,9 @@ if (global.state == 1 && global.gpspeed != 0) {
 	var does_emerald_laser_exist = (global.chrsel == PLAYER_EMERALD && instance_exists(obj_charge));
 	var is_spell_dried = (global.chrsel == PLAYER_EMERALD && IS_STATUS_EFFECT_SPELL_DRIED);
 	var bobileusz_invalid = (global.chrsel == PLAYER_BOBILEUSZ && (!(keyboard_check(KEYBIND_UP) ^^ keyboard_check(KEYBIND_DOWN)) || ((keyboard_check(KEYBIND_UP) && status_effect[STATUS_EFFECT_GEAR10]) || (keyboard_check(KEYBIND_DOWN) && status_effect[STATUS_EFFECT_GEAR1]))));
-	if (mouse_check_button(mb_right) && global.state == 1 && !does_emerald_laser_exist && !is_spell_dried && !bobileusz_invalid) {
-		//charging
-		bar_opacity[2] = 5;
-		if (discharge == 0) {
+	if (mouse_check_button(mb_right) && global.state == 1 && !does_emerald_laser_exist && !is_spell_dried) {	
+		// Charging
+		if (discharge == 0 && !bobileusz_invalid) {
 			if (evilflame_sprite_swap) {
 				sprite_index = spr_evilflame_ultimate_charging;
 			} else if (evilflame_twilight_fury) {
@@ -549,6 +548,11 @@ if (global.state == 1 && global.gpspeed != 0) {
 			// do not play the charging sound for immediate charges
 			if (ctime != 1 && !audio_is_playing(sfx_charging))
 				play_sfx(sfx_charging, 0, global.sound_gpspeed * 100);
+		}
+		
+		// Make charge gameplay bar visible
+		if (charge + discharge != 0) {
+			bar_opacity[2] = 5;
 		}
 	}
 
