@@ -131,8 +131,8 @@ if (IS_STATUS_EFFECT_GEAR1) {
 	fdmg_factor *= 0.5;
 	ppen_factor *= 3;
 	fpen_factor *= 3;
-	bdef_factor *= 4;
-	pdef_factor *= 4;
+	bdef_factor *= 3;
+	pdef_factor *= 3;
 	spd_factor  *= 0.3;
 	acc_factor  *= 0.8;
 	sacc_factor  = find_multiplier(global.sacc * sacc_factor, 1, 0.5);

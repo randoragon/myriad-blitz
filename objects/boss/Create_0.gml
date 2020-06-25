@@ -917,7 +917,7 @@ global.player_status_effect_name[11] = "GEAR 1";
 global.player_status_effect_desc[11] = 
 @"Damage 50%
 Penetration 300%
-Defense 400%
+Defense 300%
 Speed 30%";
 
 global.player_status_effect_name[12] = "GEAR 2";
