@@ -12,7 +12,7 @@ with (obj_player) {
 	discharge				= 0;
 	artcharge				= FALSE;
 	cb						= FALSE;
-	ultcount				= 1;
+	ultcount				= 0;
 	ultblink				= 0;
 	flash_clock				= 0;
 	spawn					= 0;
@@ -26,5 +26,5 @@ with (obj_player) {
 	bar_yoffset[2]			= 36;
 	evilflame_sprite_swap	= FALSE;
 	evilflame_twilight_fury = FALSE;
-	afterimage_ds_grid		= - 1;
+	afterimage_ds_grid		= -1;
 }
