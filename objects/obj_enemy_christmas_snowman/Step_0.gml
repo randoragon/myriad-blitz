@@ -53,10 +53,8 @@ if (global.gpspeed != 0) {
 			    speed1   = 0;
 			    hspeed1  = irandom_range(-3, -8);
 			} else {
-			    repeat (irandom_range(1, 3)) {
-			        play_sfx(sfx_snowman_shoot, 0, global.sound_gpspeed * 100);
-			        spawn_bullet(x - 20, y + 16, obj_eprojectile, 0, 0, -1, id);
-			    }
+			    play_sfx(sfx_snowman_shoot, 0, global.sound_gpspeed * 100);
+			    spawn_bullet(x - 20, y + 16, obj_eprojectile, 0, 0, -1, id);
 			}
 		}
     } else if (instance_exists(obj_emerald_ultimate) && global.gpspeed != 0) {

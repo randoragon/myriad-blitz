@@ -4,15 +4,32 @@
 
 switch(f) {
 	case 0:
-	    var size     = random_range(1, 1.1);
+		var size, tx, ty, lastd;
+	    size = random_range(1, 1.1);
 		image_scale(size, size);
 		instance_setup(0, 0, irandom(360), 1);
 		sprite_index = spr_snowball;
+		tx			 = obj_player.x;
+		ty			 = obj_player.y;
 		acc          = GRAVITY;
-		hspeed1      = random_range(-6, -10);
-		vspeed1      = random_range(0, -0.2);
-		rot          = random_range(-5, 5);
-		lifespan     = 600;
+		speed1		 = 15;
+		/* Calculating the exact angle is VERY cumbersome, approximate instead.
+		 * Keep track of the closest solution to the distance equation.
+		 */
+		lastd = 0xFFFFFFFF;
+		for (var dx, sy, t, a = 180 - 45; a < 180 + 20; a += 2) {
+			dx = abs(x - tx);
+			t  = abs(dx / speed1 / dcos(a));
+			sy = y - (speed1 * dsin(a) * t) + (acc * t * (t + 1) / 2);
+			if (abs(ty - sy) < lastd) {
+				direction = a;
+				lastd = abs(ty - sy);
+			}
+		}
+		// Prevent aim-bot abuse
+		direction += irandom_range(-8, 8);
+		rot        = random_range(-5, 5);
+		lifespan   = 600;
 	break;
 	case 1:
 		sprite_index = (e == 0)? spr_bolt : spr_bolt2;
