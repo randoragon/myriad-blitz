@@ -8,7 +8,7 @@ switch(f) {
 		image_scale(size, size);
 		instance_setup(0, 0, irandom(360), 1);
 		sprite_index = spr_snowball;
-		acc          = random_range(0.05, 0.2);
+		acc          = GRAVITY;
 		hspeed1      = random_range(-6, -10);
 		vspeed1      = random_range(0, -0.2);
 		rot          = random_range(-5, 5);

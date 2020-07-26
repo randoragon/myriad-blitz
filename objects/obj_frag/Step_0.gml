@@ -12,7 +12,7 @@ switch(f) {
 	case PLAYER_EVILFLAME:
 	    switch(e) {
 		    case 0:
-			    vspeed1 += vacc * sqr(global.gpspeed);
+			    vspeed1 += vacc * global.gpspeed;
 			    if (real_step()) { part_type_spawn_ult(PART_SYSTEM_FRAG_ULT, PART_TYPE_P_EVILFLAME_FRAG_ULT, 2, x, y, x, y, "square", "linear", 1); }
 		    break;
 		    case 1:

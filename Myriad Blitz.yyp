@@ -1206,6 +1206,14 @@
             }
         },
         {
+            "Key": "3dceac89-9170-40da-a6ae-a8feb58a32b0",
+            "Value": {
+                "id": "d9986386-a7d2-4373-a4c4-c240e3d9a7c0",
+                "resourcePath": "scripts\\shoot_vspeed\\shoot_vspeed.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "3ecd810e-e656-4593-b97b-21984491a79d",
             "Value": {
                 "id": "8e580974-bb0e-43db-b610-7ff32aa3bd7d",
@@ -5157,6 +5165,7 @@
         "422cefc4-2d76-4614-89c2-49140be4c045",
         "c66537b0-7ffe-426f-a483-7a3ccdda8f7d",
         "2c785595-2588-4465-bca6-6f4d7e019d82",
+        "3dceac89-9170-40da-a6ae-a8feb58a32b0",
         "7b190c0c-c6e9-4d2e-b22e-b92bf9881511",
         "a4cac5b7-8b92-4139-a688-57cbf3e6ab1f",
         "aa5b3dd6-bcc1-402e-8e5d-679e1ebe5d70",

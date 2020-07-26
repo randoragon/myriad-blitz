@@ -17,16 +17,8 @@ switch(f) {
 				image_speed  = 0;
 			    hspeed1      = choose(1, -1) * random(4);
 			    vspeed1      = random_range(-1, -3);
-			    if (global.gpspeed != 0) {
-			        vacc = 0.25 / global.gpspeed;
-			    } else {
-			        if (global.prev_gpspeed != 0) {
-			            vacc = 0.25 / global.prev_gpspeed;
-			        } else {
-			            vacc  = 0.25;
-			        }
-			    }
-			    lifespan = 180;
+			    vacc		 = GRAVITY;
+			    lifespan     = 180;
 		    break;
 		    case 1: // evilflame charge ring frags
 			    sprite_index = spr_evilflame_frag;
