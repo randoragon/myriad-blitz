@@ -21,6 +21,8 @@ function version_check() {
 		case "1.2.0 beta":
 			compat = ["1.1.0", "1.1.1"];
 		break;
+		case "1.2.0":
+			compat = ["1.1.0", "1.1.1", "1.2.0 beta"];
 	}
 
 	for (var i = 0; i < array_length_1d(compat); i++) {
