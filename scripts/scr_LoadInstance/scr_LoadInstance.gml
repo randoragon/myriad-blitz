@@ -111,6 +111,15 @@ function scr_LoadInstance() {
 			for (var i = 0; i < global.status_effect_count; i++) {
 				o.status_effect[i] = string_readln_real(args);
 			}
+			
+			if (version_ge(VER, "1.2.0")) {
+				o.bar_opacity[0] = string_readln_real(args);
+				o.bar_opacity[1] = string_readln_real(args);
+				o.bar_opacity[2] = string_readln_real(args);
+				o.bar_yoffset[0] = string_readln_real(args);
+				o.bar_yoffset[1] = string_readln_real(args);
+				o.bar_yoffset[2] = string_readln_real(args);
+			}
 		break;
 		case obj_projectile:
 			o.spawn	 = string_readln_real(args);

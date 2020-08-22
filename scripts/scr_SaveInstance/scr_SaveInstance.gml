@@ -121,6 +121,15 @@ function scr_SaveInstance() {
 			for (var i = 0; i < global.status_effect_count; i++) {
 				save_append(args, o.status_effect[i]);
 			}
+			
+			if (version_ge(VER, "1.2.0")) {
+				save_append(args, o.bar_opacity[0]);
+		        save_append(args, o.bar_opacity[1]);
+		        save_append(args, o.bar_opacity[2]);
+		        save_append(args, o.bar_yoffset[0]);
+		        save_append(args, o.bar_yoffset[1]);
+		        save_append(args, o.bar_yoffset[2]);
+			}
 		break;
 		case obj_projectile:
 			save_append(args, o.spawn);
