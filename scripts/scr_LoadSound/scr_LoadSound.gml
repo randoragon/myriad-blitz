@@ -3,6 +3,7 @@
 function scr_LoadSound() {
 
 	var args = argument[0];
+	var ver  = args[1];
 
 	var aindex, apitch, apos, snd;
 

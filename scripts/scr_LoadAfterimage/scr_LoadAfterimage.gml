@@ -3,6 +3,7 @@
 function scr_LoadAfterimage() {
 
 	var args = argument[0];
+	var ver  = args[1];
 
 	// Read former instance id
 	var oldid, newid, obj;

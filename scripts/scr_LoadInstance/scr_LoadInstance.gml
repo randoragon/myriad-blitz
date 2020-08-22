@@ -3,6 +3,7 @@
 function scr_LoadInstance() {
 
 	var args = argument[0];
+	var ver  = args[1];
 
 	// Read object index
 	var oindex = string_readln_real(args);
@@ -112,7 +113,7 @@ function scr_LoadInstance() {
 				o.status_effect[i] = string_readln_real(args);
 			}
 			
-			if (version_ge(VER, "1.2.0")) {
+			if (version_ge(ver, "1.2.0")) {
 				o.bar_opacity[0] = string_readln_real(args);
 				o.bar_opacity[1] = string_readln_real(args);
 				o.bar_opacity[2] = string_readln_real(args);

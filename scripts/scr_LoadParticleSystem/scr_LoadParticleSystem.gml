@@ -3,6 +3,7 @@
 function scr_LoadParticleSystem() {
 
 	var args = argument[0];
+	var ver  = args[1];
 
 	if (!global.save_particles) {
 		exit;
