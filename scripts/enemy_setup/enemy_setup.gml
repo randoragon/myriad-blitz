@@ -4,8 +4,12 @@
 /// @param behmin
 /// @param behmax
 /// @param intro
+function enemy_setup() {
 
-sprite_index = argument[0];
-image_scale(argument[1], argument[1]);
-beh   = irandom_range(argument[2], argument[3]);
-intro = argument[4];
+	sprite_index = argument[0];
+	image_scale(argument[1], argument[1]);
+	beh   = irandom_range(argument[2], argument[3]);
+	intro = argument[4];
+
+
+}

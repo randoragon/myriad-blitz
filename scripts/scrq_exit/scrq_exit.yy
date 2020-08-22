@@ -1,8 +1,12 @@
 {
-    "id": "e536a73c-e822-4857-92ce-a228321e8352",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scrq_exit",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Question Scripts",
+    "path": "folders/Scripts/Question Scripts.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "scrq_exit",
+  "tags": [],
+  "resourceType": "GMScript",
 }

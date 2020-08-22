@@ -1,8 +1,12 @@
 {
-    "id": "a5b0953e-500d-45bd-838e-519f0a8dddaf",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_LoadAfterimage",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Loading",
+    "path": "folders/Scripts/Saving_Loading/Loading.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "scr_LoadAfterimage",
+  "tags": [],
+  "resourceType": "GMScript",
 }

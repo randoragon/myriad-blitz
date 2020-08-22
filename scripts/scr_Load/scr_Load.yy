@@ -1,8 +1,12 @@
 {
-    "id": "fa752b2a-b7e7-4ffe-96e5-07d7c83177df",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_Load",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Saving_Loading",
+    "path": "folders/Scripts/Saving_Loading.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "scr_Load",
+  "tags": [],
+  "resourceType": "GMScript",
 }

@@ -5,12 +5,16 @@
 /// @param color2
 /// @param alpha1
 /// @param alpha2
+function part_type_blend_color_alpha_pro() {
 
-var part = global.part_type[argument[0]];
-var a = 26;
+	var part = global.part_type[argument[0]];
+	var a = 26;
 
-part[| a++] = argument[1];
-part[| a++] = argument[2];
-part[| a++] = argument[3];
-part[| a++] = argument[4];
-part[| a]   = argument[5];
+	part[| a++] = argument[1];
+	part[| a++] = argument[2];
+	part[| a++] = argument[3];
+	part[| a++] = argument[4];
+	part[| a]   = argument[5];
+
+
+}

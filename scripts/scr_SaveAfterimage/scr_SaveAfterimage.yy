@@ -1,8 +1,12 @@
 {
-    "id": "ccb871d6-61c7-4bf7-85c7-be78f3225dae",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_SaveAfterimage",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Saving",
+    "path": "folders/Scripts/Saving_Loading/Saving.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "scr_SaveAfterimage",
+  "tags": [],
+  "resourceType": "GMScript",
 }

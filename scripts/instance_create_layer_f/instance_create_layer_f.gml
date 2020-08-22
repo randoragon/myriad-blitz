@@ -4,12 +4,17 @@
 /// @param layer
 /// @param object_index
 /// @param value
+function instance_create_layer_f() {
 
-var newinstance = instance_create_layer(argument[0], argument[1], argument[2], argument[3]);
+	var newinstance = instance_create_layer(argument[0], argument[1], argument[2], argument[3]);
 
-with (newinstance) {
-	f = argument[4];
+	with (newinstance) {
+		f = argument[4];
+	}
+
+	return newinstance;
+
+
+
+
 }
-
-return newinstance;
-

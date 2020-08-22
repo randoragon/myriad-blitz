@@ -1,8 +1,12 @@
 {
-    "id": "c9af26bf-aa66-4767-97bf-9dafb096f64a",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "player_status_add",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Gameplay",
+    "path": "folders/Scripts/Gameplay.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "player_status_add",
+  "tags": [],
+  "resourceType": "GMScript",
 }

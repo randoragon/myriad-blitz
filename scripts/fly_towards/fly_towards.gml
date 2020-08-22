@@ -4,6 +4,10 @@
 /// @param x1
 /// @param y1
 /// @param time
+function fly_towards() {
 
-direction = point_direction(argument[0], argument[1], argument[2], argument[3]);
-speed1    = distance_to_point(argument[2], argument[3]) / argument[4];
+	direction = point_direction(argument[0], argument[1], argument[2], argument[3]);
+	speed1    = distance_to_point(argument[2], argument[3]) / argument[4];
+
+
+}

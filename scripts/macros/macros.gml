@@ -1,3 +1,4 @@
+function macros() {
 #region Game Metadata
 
 #macro VER "1.2.0 beta"
@@ -187,3 +188,6 @@
 #macro VER1_1_1_BG_CHRISTMAS0 8
 
 #endregion
+
+
+}

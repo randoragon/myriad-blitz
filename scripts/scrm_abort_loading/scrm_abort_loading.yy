@@ -1,8 +1,12 @@
 {
-    "id": "e262f4df-273e-4572-8c93-ab0de189e288",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scrm_abort_loading",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Message Scripts",
+    "path": "folders/Scripts/Message Scripts.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "scrm_abort_loading",
+  "tags": [],
+  "resourceType": "GMScript",
 }

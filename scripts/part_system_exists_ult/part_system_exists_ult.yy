@@ -1,8 +1,12 @@
 {
-    "id": "6562f509-0fd2-46be-bf0f-a84b0d2afeea",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "part_system_exists_ult",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Ultra Light",
+    "path": "folders/Scripts/Custom Particles/Ultra Light.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "part_system_exists_ult",
+  "tags": [],
+  "resourceType": "GMScript",
 }

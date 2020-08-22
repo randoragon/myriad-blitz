@@ -1,8 +1,12 @@
 {
-    "id": "422cefc4-2d76-4614-89c2-49140be4c045",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "invgaussian_random",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Helpers",
+    "path": "folders/Scripts/Helpers.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "invgaussian_random",
+  "tags": [],
+  "resourceType": "GMScript",
 }

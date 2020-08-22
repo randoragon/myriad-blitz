@@ -4,11 +4,15 @@
 /// @param acceleration
 /// @param dir_min
 /// @param dir_max
+function part_type_gravity_pro() {
 
-var part = global.part_type[argument[0]];
-var a = 22;
+	var part = global.part_type[argument[0]];
+	var a = 22;
 
-part[| a++] = argument[1];
-part[| a++] = argument[2];
-part[| a++] = argument[3];
-part[| a]   = argument[4];
+	part[| a++] = argument[1];
+	part[| a++] = argument[2];
+	part[| a++] = argument[3];
+	part[| a]   = argument[4];
+
+
+}

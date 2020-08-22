@@ -1,8 +1,12 @@
 {
-    "id": "98bf0595-b6af-4fa0-864b-bfd34384b6a2",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "enemy_setup",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Setups & Updates",
+    "path": "folders/Scripts/Setups & Updates.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "enemy_setup",
+  "tags": [],
+  "resourceType": "GMScript",
 }

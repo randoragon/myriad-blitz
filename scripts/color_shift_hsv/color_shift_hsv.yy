@@ -1,8 +1,12 @@
 {
-    "id": "99f57c09-704f-49ed-9641-898ed6e7094e",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "color_shift_hsv",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Little Helpers",
+    "path": "folders/Scripts/Helpers/Little Helpers.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "color_shift_hsv",
+  "tags": [],
+  "resourceType": "GMScript",
 }

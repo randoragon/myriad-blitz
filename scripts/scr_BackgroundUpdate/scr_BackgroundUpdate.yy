@@ -1,8 +1,12 @@
 {
-    "id": "3b7053cb-3e73-43b5-9b00-390208d75730",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_BackgroundUpdate",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Setups & Updates",
+    "path": "folders/Scripts/Setups & Updates.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "scr_BackgroundUpdate",
+  "tags": [],
+  "resourceType": "GMScript",
 }

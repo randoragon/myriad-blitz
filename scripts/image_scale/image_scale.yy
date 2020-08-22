@@ -1,8 +1,12 @@
 {
-    "id": "029330b1-e555-495d-aff9-3fbefa161e89",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "image_scale",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Shorteners",
+    "path": "folders/Scripts/Helpers/Shorteners.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "image_scale",
+  "tags": [],
+  "resourceType": "GMScript",
 }

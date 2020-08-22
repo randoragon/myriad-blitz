@@ -1,8 +1,12 @@
 {
-    "id": "82b7208d-9290-4682-8f3d-9288cd23a501",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "surface_page_index",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Surface Pages",
+    "path": "folders/Scripts/Surface Pages.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "surface_page_index",
+  "tags": [],
+  "resourceType": "GMScript",
 }

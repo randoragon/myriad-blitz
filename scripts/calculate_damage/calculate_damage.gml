@@ -2,5 +2,9 @@
 /// @param dmg
 /// @param pen
 /// @param def
+function calculate_damage() {
 
-return max(min(argument[0] - ((100 - argument[1]) * argument[2] / 100), argument[0]) * random_range(0.9, 1.1), 1);
+	return max(min(argument[0] - ((100 - argument[1]) * argument[2] / 100), argument[0]) * random_range(0.9, 1.1), 1);
+
+
+}

@@ -1,8 +1,12 @@
 {
-    "id": "55b649df-b6fd-4fe4-81c7-ca0f7e6ab9d6",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "stats_main",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Setups & Updates",
+    "path": "folders/Scripts/Setups & Updates.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "stats_main",
+  "tags": [],
+  "resourceType": "GMScript",
 }

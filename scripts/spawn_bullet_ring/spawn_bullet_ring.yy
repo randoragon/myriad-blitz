@@ -1,8 +1,12 @@
 {
-    "id": "616d99b4-ff08-49af-8644-46062ba5047b",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "spawn_bullet_ring",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Gameplay",
+    "path": "folders/Scripts/Gameplay.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "spawn_bullet_ring",
+  "tags": [],
+  "resourceType": "GMScript",
 }

@@ -7,16 +7,20 @@
 /// @param ang_max
 /// @param ang_incr
 /// @param random_rot_dir
+function part_type_size_orientation_lt() {
 
-// random_rot_dir is a boolean value that determines whether to randomize the direction of angle spin.
+	// random_rot_dir is a boolean value that determines whether to randomize the direction of angle spin.
 
-var part = global.part_type[argument[0]];
-var a = 4;
+	var part = global.part_type[argument[0]];
+	var a = 4;
 
-part[| a++] = argument[1];
-part[| a++] = argument[2];
-part[| a++] = argument[3];
-part[| a++] = argument[4];
-part[| a++] = argument[5];
-part[| a++] = argument[6];
-part[| a]   = argument[7];
+	part[| a++] = argument[1];
+	part[| a++] = argument[2];
+	part[| a++] = argument[3];
+	part[| a++] = argument[4];
+	part[| a++] = argument[5];
+	part[| a++] = argument[6];
+	part[| a]   = argument[7];
+
+
+}

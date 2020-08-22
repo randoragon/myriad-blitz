@@ -1,8 +1,12 @@
 {
-    "id": "dd97e7de-6115-46ab-9c4b-d97475476aae",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "part_system_remove_lt",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Light",
+    "path": "folders/Scripts/Custom Particles/Light.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "part_system_remove_lt",
+  "tags": [],
+  "resourceType": "GMScript",
 }

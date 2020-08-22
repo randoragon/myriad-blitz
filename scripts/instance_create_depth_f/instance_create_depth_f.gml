@@ -4,12 +4,17 @@
 /// @param depth
 /// @param object_index
 /// @param value
+function instance_create_depth_f() {
 
-var newinstance = instance_create_depth(argument[0], argument[1], argument[2], argument[3]);
+	var newinstance = instance_create_depth(argument[0], argument[1], argument[2], argument[3]);
 
-with (newinstance) {
-	f = argument[4];
+	with (newinstance) {
+		f = argument[4];
+	}
+
+	return newinstance;
+
+
+
+
 }
-
-return newinstance;
-

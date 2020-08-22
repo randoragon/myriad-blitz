@@ -12,10 +12,15 @@
 /// @param [y1]
 /// @param [x2]
 /// @param [y2]
+function shd_shine_set() {
 
-shader_set(shd_shine);
-shader_set_uniform_f(global.shd_shine_uni[| 0], argument[0]);
-shader_set_uniform_f(global.shd_shine_uni[| 1], argument[1], argument[2]);
-shader_set_uniform_f(global.shd_shine_uni[| 2], argument[3], argument[4]);
-shader_set_uniform_f(global.shd_shine_uni[| 3], argument[5], argument[6], argument[7], argument[8]);
-shader_set_uniform_f(global.shd_shine_uni[| 4], argument[9], argument[10], argument[11], argument[12]);
+	shader_set(shd_shine);
+	shader_set_uniform_f(global.shd_shine_uni[| 0], argument[0]);
+	shader_set_uniform_f(global.shd_shine_uni[| 1], argument[1], argument[2]);
+	shader_set_uniform_f(global.shd_shine_uni[| 2], argument[3], argument[4]);
+	shader_set_uniform_f(global.shd_shine_uni[| 3], argument[5], argument[6], argument[7], argument[8]);
+	shader_set_uniform_f(global.shd_shine_uni[| 4], argument[9], argument[10], argument[11], argument[12]);
+
+
+
+}

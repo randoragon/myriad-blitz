@@ -1,8 +1,12 @@
 {
-    "id": "df07c023-93b9-421b-984d-39665467ea1a",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "array_setup",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Little Helpers",
+    "path": "folders/Scripts/Helpers/Little Helpers.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "array_setup",
+  "tags": [],
+  "resourceType": "GMScript",
 }

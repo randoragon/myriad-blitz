@@ -4,11 +4,15 @@
 /// @param color
 /// @param alpha
 /// @param alpha_incr
+function part_type_blend_color_alpha_ult() {
 
-var part = global.part_type[argument[0]];
-var a = 8;
+	var part = global.part_type[argument[0]];
+	var a = 8;
 
-part[| a++] = argument[1];
-part[| a++] = argument[2];
-part[| a++] = argument[3];
-part[| a]   = argument[4];
+	part[| a++] = argument[1];
+	part[| a++] = argument[2];
+	part[| a++] = argument[3];
+	part[| a]   = argument[4];
+
+
+}

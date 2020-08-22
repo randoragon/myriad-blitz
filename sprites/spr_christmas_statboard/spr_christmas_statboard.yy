@@ -1,114 +1,89 @@
 {
-    "id": "889b160d-91bd-43b9-910c-0d3509d8a310",
-    "modelName": "GMSprite",
-    "mvc": "1.12",
-    "name": "spr_christmas_statboard",
-    "For3D": false,
-    "HTile": false,
-    "VTile": false,
-    "bbox_bottom": 519,
-    "bbox_left": 7,
-    "bbox_right": 359,
-    "bbox_top": 2,
-    "bboxmode": 0,
-    "colkind": 1,
-    "coltolerance": 0,
-    "edgeFiltering": false,
-    "frames": [
-        {
-            "id": "637a13ba-7e8e-4d00-8bd2-44a85aaaf837",
-            "modelName": "GMSpriteFrame",
-            "mvc": "1.0",
-            "SpriteId": "889b160d-91bd-43b9-910c-0d3509d8a310",
-            "compositeImage": {
-                "id": "10ec9298-c9fd-472b-80b1-a5c996700ca0",
-                "modelName": "GMSpriteImage",
-                "mvc": "1.0",
-                "FrameId": "637a13ba-7e8e-4d00-8bd2-44a85aaaf837",
-                "LayerId": "00000000-0000-0000-0000-000000000000"
-            },
-            "images": [
-                {
-                    "id": "e96b4c17-5800-4b01-955a-dd9f9dfd1a05",
-                    "modelName": "GMSpriteImage",
-                    "mvc": "1.0",
-                    "FrameId": "637a13ba-7e8e-4d00-8bd2-44a85aaaf837",
-                    "LayerId": "0daee3d0-6323-4d12-8199-2f239af85ea8"
-                }
-            ]
-        },
-        {
-            "id": "bc3ad842-456c-4715-bf48-fa2296b2065b",
-            "modelName": "GMSpriteFrame",
-            "mvc": "1.0",
-            "SpriteId": "889b160d-91bd-43b9-910c-0d3509d8a310",
-            "compositeImage": {
-                "id": "d8908f42-b5e1-43ea-adf9-fc0bc02efb73",
-                "modelName": "GMSpriteImage",
-                "mvc": "1.0",
-                "FrameId": "bc3ad842-456c-4715-bf48-fa2296b2065b",
-                "LayerId": "00000000-0000-0000-0000-000000000000"
-            },
-            "images": [
-                {
-                    "id": "25a9293f-d6db-4086-8783-7e945f98755c",
-                    "modelName": "GMSpriteImage",
-                    "mvc": "1.0",
-                    "FrameId": "bc3ad842-456c-4715-bf48-fa2296b2065b",
-                    "LayerId": "0daee3d0-6323-4d12-8199-2f239af85ea8"
-                }
-            ]
-        },
-        {
-            "id": "e4283e6f-b661-43c2-99a6-1850c7cc175d",
-            "modelName": "GMSpriteFrame",
-            "mvc": "1.0",
-            "SpriteId": "889b160d-91bd-43b9-910c-0d3509d8a310",
-            "compositeImage": {
-                "id": "df273471-c79d-4c16-bb77-b1383f18e9b0",
-                "modelName": "GMSpriteImage",
-                "mvc": "1.0",
-                "FrameId": "e4283e6f-b661-43c2-99a6-1850c7cc175d",
-                "LayerId": "00000000-0000-0000-0000-000000000000"
-            },
-            "images": [
-                {
-                    "id": "01393079-d87c-404d-9153-fd5dc95d4530",
-                    "modelName": "GMSpriteImage",
-                    "mvc": "1.0",
-                    "FrameId": "e4283e6f-b661-43c2-99a6-1850c7cc175d",
-                    "LayerId": "0daee3d0-6323-4d12-8199-2f239af85ea8"
-                }
-            ]
-        }
-    ],
-    "gridX": 0,
-    "gridY": 0,
-    "height": 520,
-    "layers": [
-        {
-            "id": "0daee3d0-6323-4d12-8199-2f239af85ea8",
-            "modelName": "GMImageLayer",
-            "mvc": "1.0",
-            "SpriteId": "889b160d-91bd-43b9-910c-0d3509d8a310",
-            "blendMode": 0,
-            "isLocked": false,
-            "name": "default",
-            "opacity": 100,
-            "visible": true
-        }
-    ],
-    "origin": 0,
-    "originLocked": false,
-    "playbackSpeed": 1,
+  "ConfigValues": {
+    "ProjectInfo": {"textureGroupId":"{\"name\":\"Default\",\"path\":\"texturegroups/Default\"}",},
+  },
+  "textureGroupId": {
+    "name": "Christmas Realm",
+    "path": "texturegroups/Christmas Realm",
+  },
+  "bboxMode": 0,
+  "collisionKind": 1,
+  "type": 0,
+  "origin": 4,
+  "preMultiplyAlpha": false,
+  "edgeFiltering": false,
+  "collisionTolerance": 0,
+  "swfPrecision": 2.525,
+  "bbox_left": 7,
+  "bbox_right": 359,
+  "bbox_top": 2,
+  "bbox_bottom": 519,
+  "HTile": false,
+  "VTile": false,
+  "For3D": false,
+  "width": 360,
+  "height": 520,
+  "swatchColours": null,
+  "gridX": 0,
+  "gridY": 0,
+  "frames": [
+    {"compositeImage":{"FrameId":{"name":"637a13ba-7e8e-4d00-8bd2-44a85aaaf837","path":"sprites/spr_christmas_statboard/spr_christmas_statboard.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"637a13ba-7e8e-4d00-8bd2-44a85aaaf837","path":"sprites/spr_christmas_statboard/spr_christmas_statboard.yy",},"LayerId":{"name":"0daee3d0-6323-4d12-8199-2f239af85ea8","path":"sprites/spr_christmas_statboard/spr_christmas_statboard.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_christmas_statboard","path":"sprites/spr_christmas_statboard/spr_christmas_statboard.yy",},"resourceVersion":"1.0","name":"637a13ba-7e8e-4d00-8bd2-44a85aaaf837","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"bc3ad842-456c-4715-bf48-fa2296b2065b","path":"sprites/spr_christmas_statboard/spr_christmas_statboard.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"bc3ad842-456c-4715-bf48-fa2296b2065b","path":"sprites/spr_christmas_statboard/spr_christmas_statboard.yy",},"LayerId":{"name":"0daee3d0-6323-4d12-8199-2f239af85ea8","path":"sprites/spr_christmas_statboard/spr_christmas_statboard.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_christmas_statboard","path":"sprites/spr_christmas_statboard/spr_christmas_statboard.yy",},"resourceVersion":"1.0","name":"bc3ad842-456c-4715-bf48-fa2296b2065b","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"e4283e6f-b661-43c2-99a6-1850c7cc175d","path":"sprites/spr_christmas_statboard/spr_christmas_statboard.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"e4283e6f-b661-43c2-99a6-1850c7cc175d","path":"sprites/spr_christmas_statboard/spr_christmas_statboard.yy",},"LayerId":{"name":"0daee3d0-6323-4d12-8199-2f239af85ea8","path":"sprites/spr_christmas_statboard/spr_christmas_statboard.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_christmas_statboard","path":"sprites/spr_christmas_statboard/spr_christmas_statboard.yy",},"resourceVersion":"1.0","name":"e4283e6f-b661-43c2-99a6-1850c7cc175d","tags":[],"resourceType":"GMSpriteFrame",},
+  ],
+  "sequence": {
+    "spriteId": {"name":"spr_christmas_statboard","path":"sprites/spr_christmas_statboard/spr_christmas_statboard.yy",},
+    "timeUnits": 1,
+    "playback": 1,
+    "playbackSpeed": 1.0,
     "playbackSpeedType": 1,
-    "premultiplyAlpha": false,
-    "sepmasks": false,
-    "swatchColours": null,
-    "swfPrecision": 2.525,
-    "textureGroupId": "3c422b5c-bf8b-47e0-bff9-7e686f93a3d3",
-    "type": 0,
-    "width": 360,
-    "xorig": 180,
-    "yorig": 260
+    "autoRecord": true,
+    "volume": 1.0,
+    "length": 3.0,
+    "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
+    "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
+    "tracks": [
+      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+            {"id":"7967694c-5e95-4c4d-9940-45314b12f7ae","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"637a13ba-7e8e-4d00-8bd2-44a85aaaf837","path":"sprites/spr_christmas_statboard/spr_christmas_statboard.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"a360947c-768a-4733-bd83-ac1c1c8feca1","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"bc3ad842-456c-4715-bf48-fa2296b2065b","path":"sprites/spr_christmas_statboard/spr_christmas_statboard.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"1ef2bdd8-372a-42c1-a176-1e9a41bc1046","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"e4283e6f-b661-43c2-99a6-1850c7cc175d","path":"sprites/spr_christmas_statboard/spr_christmas_statboard.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+    ],
+    "visibleRange": {"x":0.0,"y":0.0,},
+    "lockOrigin": false,
+    "showBackdrop": true,
+    "showBackdropImage": false,
+    "backdropImagePath": "",
+    "backdropImageOpacity": 0.5,
+    "backdropWidth": 1920,
+    "backdropHeight": 1080,
+    "backdropXOffset": 0.0,
+    "backdropYOffset": 0.0,
+    "xorigin": 180,
+    "yorigin": 260,
+    "eventToFunction": {},
+    "eventStubScript": null,
+    "parent": {"name":"spr_christmas_statboard","path":"sprites/spr_christmas_statboard/spr_christmas_statboard.yy",},
+    "resourceVersion": "1.3",
+    "name": "",
+    "tags": [],
+    "resourceType": "GMSequence",
+  },
+  "layers": [
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"0daee3d0-6323-4d12-8199-2f239af85ea8","tags":[],"resourceType":"GMImageLayer",},
+  ],
+  "parent": {
+    "name": "realm GUI",
+    "path": "folders/Sprites/realm GUI.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "spr_christmas_statboard",
+  "tags": [],
+  "resourceType": "GMSprite",
 }

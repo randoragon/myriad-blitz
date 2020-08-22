@@ -1,8 +1,12 @@
 {
-    "id": "c1b3b1e1-7cbb-4746-bf9c-d3f2cd8a5f5e",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_ParticlesUpdate",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Setups & Updates",
+    "path": "folders/Scripts/Setups & Updates.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "scr_ParticlesUpdate",
+  "tags": [],
+  "resourceType": "GMScript",
 }

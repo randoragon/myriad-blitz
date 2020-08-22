@@ -3,12 +3,17 @@
 /// @param y
 /// @param object_index
 /// @param value
+function instance_create_f() {
 
-var newinstance = instance_create(argument[0], argument[1], argument[2]);
+	var newinstance = instance_create(argument[0], argument[1], argument[2]);
 
-with (newinstance) {
-	f = argument[3];
+	with (newinstance) {
+		f = argument[3];
+	}
+
+	return newinstance;
+
+
+
+
 }
-
-return newinstance;
-

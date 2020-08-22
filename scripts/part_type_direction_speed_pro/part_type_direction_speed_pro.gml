@@ -8,15 +8,19 @@
 /// @param speed_max
 /// @param speed_incr
 /// @param speed_wiggle
+function part_type_direction_speed_pro() {
 
-var part = global.part_type[argument[0]];
-var a = 14;
+	var part = global.part_type[argument[0]];
+	var a = 14;
 
-part[| a++] = argument[1];
-part[| a++] = argument[2];
-part[| a++] = argument[3];
-part[| a++] = argument[4];
-part[| a++] = argument[5];
-part[| a++] = argument[6];
-part[| a++] = argument[7];
-part[| a]   = argument[8];
+	part[| a++] = argument[1];
+	part[| a++] = argument[2];
+	part[| a++] = argument[3];
+	part[| a++] = argument[4];
+	part[| a++] = argument[5];
+	part[| a++] = argument[6];
+	part[| a++] = argument[7];
+	part[| a]   = argument[8];
+
+
+}

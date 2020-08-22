@@ -1,8 +1,12 @@
 {
-    "id": "81a6c016-6b86-4f97-b561-b478967586bc",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scrc_enemy_details_selection_auto_aim",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Checkbox Scripts",
+    "path": "folders/Scripts/Checkbox Scripts.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "scrc_enemy_details_selection_auto_aim",
+  "tags": [],
+  "resourceType": "GMScript",
 }

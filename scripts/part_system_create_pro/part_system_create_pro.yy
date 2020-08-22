@@ -1,8 +1,12 @@
 {
-    "id": "7b190c0c-c6e9-4d2e-b22e-b92bf9881511",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "part_system_create_pro",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Pro",
+    "path": "folders/Scripts/Custom Particles/Pro.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "part_system_create_pro",
+  "tags": [],
+  "resourceType": "GMScript",
 }
