@@ -11,3 +11,19 @@ ds_map_destroy(loot);
 draw_afterimage_remove();
 
 #endregion
+
+#region Clean lingering instance IDs related to this instance
+
+with(obj_eprojectile) {
+	if (spawn == other.id) {
+		spawn = noone;
+	}
+}
+
+with(obj_frag) {
+	if (enemy == other.id) {
+		enemy = noone;
+	}
+}
+
+#endregion
