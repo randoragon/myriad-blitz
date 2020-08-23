@@ -442,6 +442,18 @@ global.save_aindex[? "sfx_bobileusz_bullet_hit"]	= 39;
 global.save_aname[? 39]								= "sfx_bobileusz_bullet_hit";
 global.save_aindex[? "sfx_bobileusz_frag_hit"]		= 40;
 global.save_aname[? 40]								= "sfx_bobileusz_frag_hit";
+global.save_aindex[? "sfx_bobileusz_bottle_fire"]	= 41;
+global.save_aname[? 41]								= "sfx_bobileusz_bottle_fire";
+global.save_aindex[? "sfx_bobileusz_icicle_burst"]	= 42;
+global.save_aname[? 42]								= "sfx_bobileusz_icicle_burst";
+global.save_aindex[? "sfx_bobileusz_prism_idle1"]	= 43;
+global.save_aname[? 43]								= "sfx_bobileusz_prism_idle1";
+global.save_aindex[? "sfx_bobileusz_prism_idle2"]	= 44;
+global.save_aname[? 44]								= "sfx_bobileusz_prism_idle2";
+global.save_aindex[? "sfx_bobileusz_prism_idle3"]	= 45;
+global.save_aname[? 45]								= "sfx_bobileusz_prism_idle3";
+global.save_aindex[? "sfx_bobileusz_prism_shot"]	= 46;
+global.save_aname[? 46]								= "sfx_bobileusz_prism_shot";
 
 #endregion
 

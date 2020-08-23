@@ -22,9 +22,13 @@ with(obj_save_group) {
 		    }
 		break;
 		case obj_projectile:
+			var found = FALSE;
 			with(obj_save_group) {
-		        if (other.spawn == previd) { other.spawn = id; }
+		        if (other.spawn == previd) { other.spawn = id; found = TRUE; }
 		    }
+			if (!found && spawn != noone) {
+				show_debug_message("WARNING: no spawn id found for " + object_get_name(object_index) + ", previd=" + string(spawn));
+			}
 			
 			if (global.chrsel == PLAYER_BOBILEUSZ) {
 				suf1 = surface_page_index("projectile", 0);
@@ -32,15 +36,26 @@ with(obj_save_group) {
 			}
 		break;
 		case obj_charge: case obj_eprojectile:
+			var found = FALSE;
 		    with(obj_save_group) {
-		        if (other.spawn == previd) { other.spawn = id; }
+		        if (other.spawn == previd) { other.spawn = id; found = TRUE; }
 		    }
+			if (!found && spawn != noone) {
+				show_debug_message("WARNING: no spawn id found for " + object_get_name(object_index) + ", previd=" + string(spawn));
+			}
 		break;
 		case obj_frag:
+			var found1 = FALSE, found2 = FALSE;
 		    with(obj_save_group) {
-		        if (other.spawn == previd) { other.spawn = id; }
-		        if (other.enemy = previd) { other.enemy = id; }
+		        if (other.spawn == previd) { other.spawn = id; found1 = TRUE; }
+		        if (other.enemy = previd) { other.enemy = id; found2 = TRUE; }
 		    }
+			if (!found1 && spawn != noone) {
+				show_debug_message("WARNING: no spawn id found for " + object_get_name(object_index) + ", previd=" + string(spawn));
+			}
+			if (!found2 && enemy != noone) {
+				show_debug_message("WARNING: no enemy id found for " + object_get_name(object_index) + ", previd=" + string(enemy));
+			}
 			
 			if (global.chrsel == PLAYER_BOBILEUSZ) {
 				suf1 = surface_page_index("projectile", 0);
