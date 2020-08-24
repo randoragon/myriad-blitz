@@ -28,6 +28,22 @@ function scr_LoadInstance() {
 	for (var i = 0; i < 12; i++) {
 		o.alarm[i] = string_readln_real(args);
 	}
+	if (version_ge(ver, "1.2.0")) {
+		var lname = string_readln(args);
+		if (layer_exists(lname)) {
+			layer_add_instance(lname, o);
+		} else {
+			show_debug_message("WARNING: unknown layer name \"" + lname + "\" for " + object_get_name(obj));
+			o.layer = -1;
+		}
+	} else {
+		if (ds_map_exists(global.object_layer, obj)) {
+			layer_add_instance(global.object_layer[? obj], o);
+		} else {
+			show_debug_message("WARNING: \"" + object_get_name(obj) + "\" not found in object_layer map");
+			o.layer = -1;
+		}
+	}
 	o.depth			 = string_readln_real(args);
 	o.image_alpha	 = string_readln_real(args);
 	o.image_angle	 = string_readln_real(args);

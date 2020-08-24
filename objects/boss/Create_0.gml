@@ -331,6 +331,7 @@ global.object_layer[? obj_emerald_ultimate_flow]	= layer_get_id("UnderlayEffects
 global.object_layer[? obj_emerald_ultimate_force]   = layer_get_id("OverlayEffects0");
 global.object_layer[? obj_bobileusz_ultimate]		= layer_get_id("Minions");
 // <- end of ultimates
+global.object_layer[? obj_enemy]				    = layer_get_id("Enemies"); /* for legacy slot loading */
 for (var i = 1; i < RLMCOUNT + 1; i++) {
 	for (var j = global.realm_enemy_index[i]; j < global.realm_enemy_index[i + 1]; j++) {
 		global.object_layer[? j]	   = layer_get_id("Enemies");
