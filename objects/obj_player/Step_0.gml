@@ -475,7 +475,7 @@ if (global.chrsel == PLAYER_DER_SCOOTOMIK && global.state == 1) {
 			helper.sprite_index = sprite_index;
 			helper.image_index  = image_index;
 		} else {
-		    helper = obj_wrap_helper;
+		    helper = instance_find(obj_wrap_helper, 0);
 		    helper.x            = x - CANVAS_WIDTH;
 		    helper.y            = y;
 		    helper.sprite_index = sprite_index;
@@ -491,7 +491,7 @@ if (global.chrsel == PLAYER_DER_SCOOTOMIK && global.state == 1) {
 			helper.sprite_index = sprite_index;
 			helper.image_index  = image_index;
 		} else {
-		    helper = obj_wrap_helper;
+		    helper = instance_find(obj_wrap_helper, 0);
 		    helper.x            = x + CANVAS_WIDTH;
 		    helper.y            = y;
 		    helper.sprite_index = sprite_index;

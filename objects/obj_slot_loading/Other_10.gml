@@ -17,9 +17,13 @@ with(obj_save_group) {
 	switch(object_index) {
 		case obj_player:
 		    spawn = id;
-		    with(obj_save_group) {
-	            if (other.helper == previd) { other.helper = id; }
-		    }
+			if (version_ge(other.slotversion, "1.2.0")) {
+			    with(obj_save_group) {
+		            if (other.helper == previd) { other.helper = id; }
+			    }
+			} else {
+				helper = instance_find(obj_wrap_helper, 0);
+			}
 		break;
 		case obj_projectile:
 			var found = FALSE;

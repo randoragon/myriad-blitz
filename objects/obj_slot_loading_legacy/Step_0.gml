@@ -129,9 +129,7 @@ if (phase == 5) {
 	    switch(object_index) {
 		    case obj_player:
 		        spawn = id;
-		        with (obj_save_group) {
-	                if (other.helper == previd) other.helper = id;
-		        }
+		        helper = instance_find(obj_wrap_helper, 0);
 		    break;
 		    case obj_projectile:
 				with (obj_save_group) {
