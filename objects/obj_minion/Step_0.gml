@@ -12,7 +12,7 @@ switch(f) {
 	case MINION_BOBILEUSZ_BOTTLE:
 		// cache commonly used values
 		var xoffset = 5;
-		var yoffset = -6 + (spawn.image_index >= 4 && spawn.image_index < 6);
+		var yoffset = -6 + (spawn.sprite_index != spr_bobileusz_shooting ? (spawn.image_index >= 4 && spawn.image_index < 6) : (spawn.image_index >= 8 && spawn.image_index < 12));
 		var dir = spawn.image_angle + point_direction(0, 0, xoffset, yoffset);
 		var l = sqrt(sqr(xoffset) + sqr(yoffset));
 		
