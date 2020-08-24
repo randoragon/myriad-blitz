@@ -193,7 +193,7 @@ function scr_PlayerDataUpdate() {
 			"\nAlas, frustrated with micro adjustments" +
 			"\nbeyond his predictions, the young engineer" +
 			"\ninvented the derailleur, which bestowed his" +
-			"\ncreation with the power to remain flexible." +
+			"\ncreation with the power to be flexible." +
 			"\nHe then passed, but his cold spirit is said" +
 			"\nto be fueling the bike to this day. Also, in" +
 			"\nspare time it likes to hide in the bottle" +
