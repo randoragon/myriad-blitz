@@ -20,7 +20,7 @@ function scrq_delete_slot() {
 	var newinstance = instance_create_layer(CANVAS_XMID, CANVAS_YMID, "Popups", obj_slot_load);
 	newinstance.page = prevpage;
 
-	if (ceil((prevslotcount - 1) / 6) < prevpage) {
+	if (ceil((prevslotcount - 1) / 6) - 1 < prevpage) {
 	    newinstance.page--;
 	}
 
