@@ -19,6 +19,6 @@ if (async_load != -1 && async_load[? "type"] == "audiogroup_load" && async_load[
 	
 	if (global.chrsel == PLAYER_BOBILEUSZ) {
 		player_status_add(STATUS_EFFECT_GEAR5, -2, 0);
-		spawn_minion(500, 500, MINION_BOBILEUSZ_BOTTLE, 0, obj_player);
+		spawn_minion(500, 500, MINION_BOBILEUSZ_BOTTLE, 0, instance_find(obj_player, 0));
 	}
 }

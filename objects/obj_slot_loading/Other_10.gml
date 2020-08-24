@@ -32,6 +32,7 @@ with(obj_save_group) {
 		    }
 			if (!found && spawn != noone) {
 				show_debug_message("WARNING: no spawn id found for " + object_get_name(object_index) + ", previd=" + string(spawn));
+				spawn = instance_find(obj_player, 0);
 			}
 			
 			if (global.chrsel == PLAYER_BOBILEUSZ) {
@@ -39,7 +40,17 @@ with(obj_save_group) {
 				surface_overlay = surface_page_capture("projectile", 250);
 			}
 		break;
-		case obj_charge: case obj_eprojectile:
+		case obj_charge: case obj_minion:
+			var found = FALSE;
+		    with(obj_save_group) {
+		        if (other.spawn == previd) { other.spawn = id; found = TRUE; }
+		    }
+			if (!found && spawn != noone) {
+				show_debug_message("WARNING: no spawn id found for " + object_get_name(object_index) + ", previd=" + string(spawn));
+				spawn = instance_find(obj_player, 0);
+			}
+		break;
+		case obj_eprojectile:
 			var found = FALSE;
 		    with(obj_save_group) {
 		        if (other.spawn == previd) { other.spawn = id; found = TRUE; }
@@ -56,9 +67,11 @@ with(obj_save_group) {
 		    }
 			if (!found1 && spawn != noone) {
 				show_debug_message("WARNING: no spawn id found for " + object_get_name(object_index) + ", previd=" + string(spawn));
+				spawn = instance_find(obj_player, 0);
 			}
 			if (!found2 && enemy != noone) {
 				show_debug_message("WARNING: no enemy id found for " + object_get_name(object_index) + ", previd=" + string(enemy));
+				enemy = noone;
 			}
 			
 			if (global.chrsel == PLAYER_BOBILEUSZ) {
