@@ -28,6 +28,7 @@ function scr_LoadInstance() {
 	for (var i = 0; i < 12; i++) {
 		o.alarm[i] = string_readln_real(args);
 	}
+	o.depth	= string_readln_real(args);
 	if (version_ge(ver, "1.2.0")) {
 		var lname = string_readln(args);
 		if (layer_exists(lname)) {
@@ -44,7 +45,6 @@ function scr_LoadInstance() {
 			o.layer = -1;
 		}
 	}
-	o.depth			 = string_readln_real(args);
 	o.image_alpha	 = string_readln_real(args);
 	o.image_angle	 = string_readln_real(args);
 	o.image_blend	 = string_readln_real(args);

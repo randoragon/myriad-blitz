@@ -37,8 +37,8 @@ function scr_SaveInstance() {
 	for (var i = 0; i < 12; i++) {
 		save_append(args, o.alarm[i]);
 	}
-	save_append(args, layer_get_name(o.layer));
 	save_append(args, o.depth);
+	save_append(args, layer_get_name(o.layer));
 	save_append(args, o.image_alpha);
 	save_append(args, o.image_angle);
 	save_append(args, o.image_blend);

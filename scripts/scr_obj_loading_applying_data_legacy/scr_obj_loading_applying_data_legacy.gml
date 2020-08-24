@@ -352,13 +352,13 @@ function scr_obj_loading_applying_data_legacy() {
 		        for (var fi = 0; fi < 12; fi++) {
 		            alarm[fi]    = string_readln_real(bit, ";");
 		        }
+				depth			 = string_readln_real(bit, ";");
 				if (ds_map_exists(global.object_layer, object_index)) {
 					layer_add_instance(global.object_layer[? object_index], id);
 				} else {
 					show_debug_message("WARNING: \"" + object_get_name(object_index) + "\" not found in object_layer map");
 					layer = -1;
 				}
-		        depth			 = string_readln_real(bit, ";");
 		        image_alpha		 = string_readln_real(bit, ";");
 		        image_angle		 = string_readln_real(bit, ";");
 		        image_blend		 = string_readln_real(bit, ";");
