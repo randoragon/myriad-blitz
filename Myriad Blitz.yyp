@@ -297,6 +297,7 @@
     {"id":{"name":"ds_grid_export","path":"scripts/ds_grid_export/ds_grid_export.yy",},"order":6,},
     {"id":{"name":"ds_grid_import","path":"scripts/ds_grid_import/ds_grid_import.yy",},"order":7,},
     {"id":{"name":"file_text_readbit","path":"scripts/file_text_readbit/file_text_readbit.yy",},"order":8,},
+    {"id":{"name":"scr_MonitorSurfacePages","path":"scripts/scr_MonitorSurfacePages/scr_MonitorSurfacePages.yy",},"order":8,},
     {"id":{"name":"ask","path":"scripts/ask/ask.yy",},"order":0,},
     {"id":{"name":"display_message","path":"scripts/display_message/display_message.yy",},"order":1,},
     {"id":{"name":"version_check","path":"scripts/version_check/version_check.yy",},"order":2,},

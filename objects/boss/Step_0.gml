@@ -125,3 +125,9 @@ if (!global.loading) {
 }
 
 #endregion
+
+#region Monitor surface pages
+
+scr_MonitorSurfacePages();
+
+#endregion

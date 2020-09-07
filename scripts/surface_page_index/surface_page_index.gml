@@ -9,7 +9,7 @@ function surface_page_index() {
 
 	var page = global.surface_pages[? argument[0]];
 	var sufs = page[1];
-	return sufs[| argument[1]];
+	return sufs[| argument[1]].id;
 
 
 }

@@ -5,7 +5,7 @@ function surface_page_capture() {
 
 	// Targets a surface page and finds a free surface that can be used.
 	// If no surface is available, append a new one.
-	// Returns surface ID.
+	// Returns ds_list index that can be used to retrieve the surface ID.
 
 	var page = global.surface_pages[? argument[0]];
 	var free = page[0];
@@ -14,16 +14,20 @@ function surface_page_capture() {
 
 	// Find suitable surface that isn't being used
 	for (var i = 0; i < ds_list_size(free); i++) {
-		if (free[| i] && surface_get_width(sufs[| i]) >= size) {
+		if (free[| i] && sufs[| i].size >= size) {
 			free[| i] = FALSE;
-			return sufs[| i];
+			return i;
 		}
 	}
 
 	// If no available, allocate more memory
-	ds_list_add(sufs, surface_create(size, size));
+	var struct = {
+		id:   surface_create(size, size),
+		size: size
+	};
+	ds_list_add(sufs, struct);
 	ds_list_add(free, FALSE);
-	return sufs[| ds_list_size(sufs) - 1];
+	return ds_list_size(sufs) - 1;
 
 
 }

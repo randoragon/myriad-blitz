@@ -100,7 +100,7 @@ switch(f) {
 		    lifespan	 = 120;
 			fadeout      = 10;
 			image_blend  = hsv(irandom(255), 255, 255);
-			suf1		    = surface_page_index("projectile", 0); // see scr_SurfaceMapUpdate
+			suf1		    = 0 // see scr_SurfaceMapUpdate
 			surface_overlay = surface_page_capture("projectile", 250);
 		} else if (e == 1) {
 			sprite_index = spr_bobileusz_icicle;
@@ -127,7 +127,7 @@ switch(f) {
 			var hue		 = (dirmax - direction) / (dirmax - dirmin) * 255;
 			image_blend  = hsv(hue, 255, 255);
 			fadeout      = 10;
-			suf1		    = surface_page_index("projectile", 0); // see scr_SurfaceMapUpdate
+			suf1		    = 0; // see scr_SurfaceMapUpdate
 			surface_overlay = surface_page_capture("projectile", 250);
 		}
 	break;

@@ -8,8 +8,9 @@ function surface_page_clear() {
 	var sufs = page[1];
 
 	for (var i = 0; i < ds_list_size(sufs); i++) {
-		if (surface_exists(sufs[| i])) {
-			surface_free(sufs[| i]);
+		if (surface_exists(sufs[| i].id)) {
+			surface_free(sufs[| i].id);
+			delete sufs[| i];
 		}
 	}
 

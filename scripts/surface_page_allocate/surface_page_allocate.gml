@@ -12,7 +12,11 @@ function surface_page_allocate() {
 	var index = ds_list_size(page[1]);
 
 	repeat(argument[1]) {
-		ds_list_add(page[1], surface_create(size, size));
+		var struct = {
+			id:   surface_create(size, size),
+			size: size,
+		};
+		ds_list_add(page[1], struct);
 		ds_list_add(page[0], TRUE);
 	}
 

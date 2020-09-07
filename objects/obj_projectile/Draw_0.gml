@@ -29,14 +29,14 @@ if (f == PLAYER_BOBILEUSZ) {
 	
 		var x0 = min(A[0], B[0], C[0], D[0]);
 		var y0 = min(A[1], B[1], C[1], D[1]);
-		surface_set_target(surface_overlay);
+		surface_set_target(surface_page_index("projectile", surface_overlay));
 		draw_clear_alpha(0, 0);
-		var tex = texture_get_uvs(surface_get_texture(suf1));
-		var w   = surface_get_width(suf1);
-		var h   = surface_get_height(suf1);
+		var tex = texture_get_uvs(surface_get_texture(surface_page_index("projectile", suf1)));
+		var w   = surface_get_width(surface_page_index("projectile", suf1));
+		var h   = surface_get_height(surface_page_index("projectile", suf1));
 		var alpha = (0.7 + (0.15 * sin(global.gptime * 2))) * (fadeout / fadeoutmax);
 		shd_quadrangle_set(tex, w, h, A[0] - x0, A[1] - y0, B[0] - x0, B[1] - y0, C[0] - x0, C[1] - y0, D[0] - x0, D[1] - y0, image_blend, alpha, 1, 2);
-		draw_surface(suf1, 0, 0);
+		draw_surface(surface_page_index("projectile", suf1), 0, 0);
 		surface_reset_target();
 		shader_reset();
 		surface_overlay_x = x - mean(A[0] - x0, B[0] - x0);
@@ -76,8 +76,8 @@ if ((f == PLAYER_EVILFLAME && e == 2) || f == PLAYER_BOBILEUSZ) {
 if (global.shader_conditions == 0) {
     draw_afterimage_remove();
     draw_self();
-	if (surface_exists(surface_overlay)) {
-		draw_surface_ext(surface_overlay, surface_overlay_x, surface_overlay_y, surface_overlay_xscale, surface_overlay_yscale, surface_overlay_angle, c_white, surface_overlay_alpha);
+	if (surface_overlay != -1) {
+		draw_surface_ext(surface_page_index("projectile", surface_overlay), surface_overlay_x, surface_overlay_y, surface_overlay_xscale, surface_overlay_yscale, surface_overlay_angle, c_white, surface_overlay_alpha);
 	}
 } else {
     shd_sprite_effect_set(global.shader_conditions);
@@ -89,8 +89,8 @@ if (global.shader_conditions == 0) {
         }
     }
     draw_self();
-	if (surface_exists(surface_overlay)) {
-		draw_surface_ext(surface_overlay, surface_overlay_x, surface_overlay_y, surface_overlay_xscale, surface_overlay_yscale, surface_overlay_angle, c_white, surface_overlay_alpha);
+	if (surface_overlay != -1) {
+		draw_surface_ext(surface_page_index("projectile", surface_overlay), surface_overlay_x, surface_overlay_y, surface_overlay_xscale, surface_overlay_yscale, surface_overlay_angle, c_white, surface_overlay_alpha);
 	}
     shader_reset();
 }

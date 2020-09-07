@@ -20,7 +20,7 @@ function scr_UpdateSurfacePages() {
 			// is really needed. So, as a convention, when playing as Bobileusz
 			// the first surface on the surface page is reserved for
 			// the bullets to use and is colored pitch white.
-			surface_set_target(surface_page_capture("projectile", 250));
+			surface_set_target(surface_page_index("projectile", surface_page_capture("projectile", 250)));
 			draw_clear(c_white);
 			surface_reset_target();
 		break;

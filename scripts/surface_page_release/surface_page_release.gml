@@ -1,4 +1,4 @@
-/// @description surface_page_release(page, surface)
+/// @description surface_page_release(page, index)
 /// @param page
 /// @param surface
 function surface_page_release() {
@@ -7,13 +7,7 @@ function surface_page_release() {
 
 	var page = global.surface_pages[? argument[0]];
 	var free = page[0];
-	var sufs = page[1];
-
-	for (var i = 0; i < ds_list_size(sufs); i++) {
-		if (sufs[| i] == argument[0]) {
-			free[| i] = TRUE;
-		}
-	}
+	free[| argument[1]] = TRUE;
 
 
 }
