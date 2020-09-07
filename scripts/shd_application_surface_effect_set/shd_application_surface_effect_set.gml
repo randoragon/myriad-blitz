@@ -60,7 +60,7 @@ function shd_application_surface_effect_set() {
 	shader_set_uniform_f(global.shd_application_surface_effect_uni[| 7],  u_contrastIntensity);
 	shader_set_uniform_f(global.shd_application_surface_effect_uni[| 8],  u_desaturationIntensity);
 	shader_set_uniform_f(global.shd_application_surface_effect_uni[| 9],  u_brightnessIntensity);
-	shader_set_uniform_f(global.shd_application_surface_effect_uni[| 10], u_velocityLines);
+	shader_set_uniform_i(global.shd_application_surface_effect_uni[| 10], u_velocityLines);
 
 
 
