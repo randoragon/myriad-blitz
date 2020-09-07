@@ -11,7 +11,6 @@ surface_set_target(GUI_SURFACE);
 if (global.gpspeed != 0) {
     screen_darken(image_alpha * 3 / 4);
 }
-draw_set_alpha(image_alpha);
 gpu_set_alphatestref(0);
 surface_set_target(suf_mysurface);
 draw_clear_alpha(0, 0);
@@ -21,14 +20,13 @@ draw_set_align(fa_left, fa_top);
 draw_text_outline(image_width + hpadding, headline_height + vpadding, text, size * multiplier, size * multiplier, c_white, 2, c_black);
 draw_sprite_ext(spr_slot_char, global.chrsel, sprite_get_xoffset(spr_slot_char) * image_width / sprite_get_width(spr_slot_char), headline_height + vpadding + (sprite_get_yoffset(spr_slot_char) * image_height / sprite_get_height(spr_slot_char)), image_width / sprite_get_width(spr_slot_char), image_height / sprite_get_height(spr_slot_char), 0, c_white, image_alpha);
 surface_reset_target();
-draw_set_alpha(1);
 shd_shine_set(
 	progress,
 	image_width + hpadding + uname_width, headline_height + vpadding + uname_height, 
 	mysurface_width, mysurface_height,
 	color_get_red(global.color[global.chrsel]) / 255.0, color_get_green(global.color[global.chrsel]) / 255.0, color_get_blue(global.color[global.chrsel])/255.0, image_alpha,
 	0.0, (headline_height + vpadding) / mysurface_height, (image_width) / mysurface_width, 1.0);
-draw_surface(suf_mysurface, CANVAS_XMID - ((image_width + hpadding + uname_width) / 2), CANVAS_YMID - ((headline_height + vpadding + uname_height) / 2));
+draw_surface_ext(suf_mysurface, CANVAS_XMID - ((image_width + hpadding + uname_width) / 2), CANVAS_YMID - ((headline_height + vpadding + uname_height) / 2), 1, 1, 0, c_white, image_alpha);
 gpu_set_alphatestref(254);
 shader_reset();
 

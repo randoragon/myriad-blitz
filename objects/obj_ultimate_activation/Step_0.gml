@@ -11,24 +11,29 @@ if (!surface_exists(suf_mysurface)) {
 
 #region Size & stage control
 
+var stage0_dur, stage1_dur, stage2_dur;
+stage0_dur = 10;
+stage1_dur = 40;
+stage2_dur = 10;
+
 if (global.gpspeed != 0) {
 	progress++;
 	if (stage == 0) {
-		size                               = progress / 2;
-		image_alpha                        = progress / 10;
-		global.gpspeed_ultimate_activation = clamp(1 - (progress / 10), 0.1, 1);
-		if (size >= 5) {
+		size                               = progress * 5 / stage0_dur;
+		image_alpha                        = progress / stage0_dur;
+		global.gpspeed_ultimate_activation = clamp(1 - (progress / stage0_dur), 0.1, 1);
+		if (progress >= stage0_dur) {
 			play_sfx(sfx_ultimate_activation, 0);
 			stage = 1;
 		}
 	} else if (stage == 1) {
-		size = 5 + (progress - 10) / 40;
-		if (size >= 6) { stage = 2; }
+		size = 5 + (progress - stage0_dur) / stage1_dur;
+		if (progress >= stage0_dur + stage1_dur) { stage = 2; }
 		if (global.gpspeed_ultimate_activation > 0.1) { global.gpspeed_ultimate_activation = 0.1; }
 	} else if (stage == 2) {
-		size = 6 + (progress - 50) / 2;
-		image_alpha = 1 - ((progress - 50) / 10);
-		if (size >= 11) {
+		size = 6 + ((progress - stage0_dur - stage1_dur) * 5 / stage2_dur);
+		image_alpha = 1 - ((progress - stage0_dur - stage1_dur) / stage2_dur);
+		if (progress >= stage0_dur + stage1_dur + stage2_dur) {
 			instance_destroy();
 			if (surface_exists(suf_mysurface)) {
 				surface_free(suf_mysurface);
