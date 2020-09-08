@@ -17,8 +17,8 @@ function draw_text_outline() {
 
 	// var r = (argument_count == 9)? argument[8] : min(argument[3], argument[4]);
 	var prevcolor  = draw_get_color();
-	var prevhalign = draw_get_halign();
-	var prevvalign = draw_get_valign();
+	var halign = draw_get_halign();
+	var valign = draw_get_valign();
 	/*
 	draw_set_color(argument[8]);
 
@@ -65,14 +65,23 @@ function draw_text_outline() {
 		ocolor[0] = color_get_red(argument[7])   / 255;
 
 		var suf1 = surface_create(string_width(text) + 2, string_height(text) + 2);
-		var xsize, ysize;
+		var xsize, ysize, xdest, ydest;
 		xsize    = texture_get_texel_width(surface_get_texture(suf1));
 		ysize    = texture_get_texel_height(surface_get_texture(suf1));
 		surface_set_target(suf1);
 		draw_clear_alpha(0, 0);
-		draw_set_align(fa_left, fa_top);
+		switch(halign) {
+			case fa_left:   xdest = 1; break;
+			case fa_center: xdest = floor(surface_get_width(suf1) / 2); break;
+			case fa_right:  xdest = surface_get_width(suf1) - 1; break;
+		}
+		switch(valign) {
+			case fa_top:    ydest = 1; break;
+			case fa_middle: ydest = floor(surface_get_height(suf1) / 2); break;
+			case fa_bottom: ydest = surface_get_height(suf1) - 1; break;
+		}
 		if (tcolor != -1) { draw_set_color(tcolor); }
-		draw_text(1, 1, text);
+		draw_text(xdest, ydest, text);
 		surface_reset_target();
 
 		var suf2 = surface_create(string_width(text) + 2, string_height(text) + 2);
@@ -91,13 +100,12 @@ function draw_text_outline() {
 	
 		var xorig, yorig;
 		var xscale = argument[3], yscale = argument[4];
-		switch(prevhalign) {
+		switch(halign) {
 			case fa_left:   xorig = 0;										break;
 			case fa_center: xorig = -surface_get_width(suf2) * xscale / 2;	break;
 			case fa_right:  xorig = -surface_get_width(suf2) * xscale;		break;
 		}
-
-		switch(prevvalign) {
+		switch(valign) {
 			case fa_top:    yorig = 0;										break;
 			case fa_middle: yorig = -surface_get_height(suf2) * yscale / 2; break;
 			case fa_bottom: yorig = -surface_get_height(suf2) * yscale;		break;
@@ -116,7 +124,6 @@ function draw_text_outline() {
 	}
 
 	draw_set_color(prevcolor);
-	draw_set_align(prevhalign, prevvalign)
 
 
 }
