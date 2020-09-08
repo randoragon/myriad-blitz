@@ -8,7 +8,7 @@ event_inherited();
 
 #region Knockback mechanics && dirkb
 
-if (vkb != 0 || hkb != 0) {
+if (global.gpspeed != 0 && (vkb != 0 || hkb != 0)) {
 	x  += hkb;
 	y  += vkb;
 	hkb = home(hkb, 0, ahkb);
