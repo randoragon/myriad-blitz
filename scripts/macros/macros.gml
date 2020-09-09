@@ -2,9 +2,6 @@ function macros() {
 #region Game Metadata
 
 #macro VER "1.2.0"
-#macro DEV "Randoragon"
-#macro ENGINE "GameMaker: Studio"
-#macro COPYRIGHT "All rights reserved."
 
 #endregion
 
