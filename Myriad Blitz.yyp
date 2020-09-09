@@ -283,6 +283,7 @@
     {"id":{"name":"part_type_create_ult","path":"scripts/part_type_create_ult/part_type_create_ult.yy",},"order":8,},
     {"id":{"name":"part_type_size_orientation_ult","path":"scripts/part_type_size_orientation_ult/part_type_size_orientation_ult.yy",},"order":9,},
     {"id":{"name":"part_type_blend_color_alpha_ult","path":"scripts/part_type_blend_color_alpha_ult/part_type_blend_color_alpha_ult.yy",},"order":10,},
+    {"id":{"name":"scr_RunStart","path":"scripts/scr_RunStart/scr_RunStart.yy",},"order":13,},
     {"id":{"name":"part_type_edit_ult","path":"scripts/part_type_edit_ult/part_type_edit_ult.yy",},"order":11,},
     {"id":{"name":"part_type_exists_ult","path":"scripts/part_type_exists_ult/part_type_exists_ult.yy",},"order":12,},
     {"id":{"name":"part_type_count_ult","path":"scripts/part_type_count_ult/part_type_count_ult.yy",},"order":13,},
