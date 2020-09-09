@@ -44,7 +44,7 @@ switch(f) {
 		if (place_meeting(x, y, boss)) { draw_tooltip("Join Randoragon's\nDiscord server!", c_white, rgb(83, 122, 222), c_white); }
 	break;
 	case 16:
-		if (place_meeting(x, y, boss)) { draw_tooltip("Support Waterflame's\nawesome music!", rgb(25, 199, 214), c_black, rgb(255, 120, 0)); }
+		if (place_meeting(x, y, boss)) { draw_tooltip("Support Waterflame\nand his awesome music!", rgb(25, 199, 214), c_black, rgb(255, 120, 0)); }
 	break;
 	case 24:
 		draw_set_align(fa_left, fa_middle); draw_set_color(c_black); draw_text_transformed(429, y, "SAVE CHUNK SIZE", 3, 3, 0);
