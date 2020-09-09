@@ -1,0 +1,56 @@
+This file is a source of data for Myriad Blitz. Please do not mess with it, as the game is unable to recreate it on its own, meaning any changes to it are permanent!
+///1.2.0 UPDATE;September 9th#2020
+<+ Myriad Blitz goes open-source!
+<+ new character: Bobileusz
+<+ Remastered 3 Christmas Realm enemies:
+_Rocket Elf, Gingerbread Man, Crow
+<- save slots are much faster and more stable
+<- tons of fixed bugs and quality rewrites
+_----------------------------------------------------------
+<This is intended to be the last content update,
+<thank you so much to everyone for playing!
+///1.1.1 PATCH;September 23rd#2018
+<+ added a changelog
+<+ added a provisional help page
+<- the game would crash on first launch
+<- the game would sometimes crash after pausing
+///1.1.0 UPDATE;September 22nd#2018
+<+ game name: Christmas Donger > Myriad Blitz
+<+ the window ratio is now a delightful 16:9
+<+ all the sprite work has been drawn anew
+<+ added a proper menu and settings
+<+ a lot of new visual enhancements and effects
+<+ more music and sfx
+<+ pause menu
+<+ Focus Mode
+<+ Ultimate Moves
+<+ player status effects
+<+ a lot of pretty particles
+<+ save slots
+<+ character stats rebalancing
+<- enemy evasion factor
+<- some bugs
+<- major code and visual optimizations
+///1.0.6 UPDATE;April 1st#2018
+_(April Fools fake update)
+///1.0.5 UPDATE;January 14th#2018
+<+ player projectile spawn offsets
+<+ knockback and knockback resistance mechanics
+<+ enemy stats rebalancing
+<+ new character: Der Scootomik
+<+ character lore
+<+ presents spawn every 8k points instead of 3k
+<+ evened out the points' calculating system
+<- presents can no longer give points
+<- evading enemies no longer flicker
+<- minor performance improvements
+<- rebalanced Evilflame's charge
+///1.0.4 UPDATE;January 7th#2018
+<+ presents now spawn every 3k points
+<- minor visual enhancements
+<- present charge now bypasses cooldown
+<- fixed the spawnrate value not resetting
+///<1.0.4 UPDATES;???
+_Not much is known about updates before 1.0.4...
+_The internet is a dark place, no one dares to
+_dive deep enough to find the truth...
