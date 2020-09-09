@@ -2,10 +2,6 @@
   "ConfigValues": {
     "ProjectInfo": {"textureGroupId":"{\"name\":\"Default\",\"path\":\"texturegroups/Default\"}",},
   },
-  "textureGroupId": {
-    "name": "Menu",
-    "path": "texturegroups/Menu",
-  },
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -23,6 +19,10 @@
   "For3D": false,
   "width": 220,
   "height": 380,
+  "textureGroupId": {
+    "name": "Menu",
+    "path": "texturegroups/Menu",
+  },
   "swatchColours": null,
   "gridX": 0,
   "gridY": 0,
@@ -47,7 +47,7 @@
             {"id":"cf0ae28a-c1fb-439f-881c-f486cd005842","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"8c1a911a-8761-405b-9c98-c051e2bf1081","path":"sprites/spr_christmas_realm/spr_christmas_realm.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
-    "visibleRange": {"x":0.0,"y":0.0,},
+    "visibleRange": null,
     "lockOrigin": false,
     "showBackdrop": true,
     "showBackdropImage": false,
