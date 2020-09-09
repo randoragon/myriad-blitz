@@ -2,10 +2,6 @@
   "ConfigValues": {
     "ProjectInfo": {"textureGroupId":"{\"name\":\"Default\",\"path\":\"texturegroups/Default\"}",},
   },
-  "textureGroupId": {
-    "name": "Standard Gameplay",
-    "path": "texturegroups/Standard Gameplay",
-  },
   "bboxMode": 1,
   "collisionKind": 1,
   "type": 0,
@@ -23,6 +19,10 @@
   "For3D": false,
   "width": 40,
   "height": 40,
+  "textureGroupId": {
+    "name": "Standard Gameplay",
+    "path": "texturegroups/Standard Gameplay",
+  },
   "swatchColours": null,
   "gridX": 0,
   "gridY": 0,

@@ -2,10 +2,6 @@
   "ConfigValues": {
     "ProjectInfo": {"textureGroupId":"{\"name\":\"Default\",\"path\":\"texturegroups/Default\"}",},
   },
-  "textureGroupId": {
-    "name": "Evilflame",
-    "path": "texturegroups/Evilflame",
-  },
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -23,6 +19,10 @@
   "For3D": false,
   "width": 40,
   "height": 40,
+  "textureGroupId": {
+    "name": "Evilflame",
+    "path": "texturegroups/Evilflame",
+  },
   "swatchColours": null,
   "gridX": 0,
   "gridY": 0,

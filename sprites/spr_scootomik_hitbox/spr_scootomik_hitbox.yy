@@ -2,10 +2,6 @@
   "ConfigValues": {
     "ProjectInfo": {"textureGroupId":"{\"name\":\"Default\",\"path\":\"texturegroups/Default\"}",},
   },
-  "textureGroupId": {
-    "name": "Der Scootomik",
-    "path": "texturegroups/Der Scootomik",
-  },
   "bboxMode": 0,
   "collisionKind": 4,
   "type": 0,
@@ -23,6 +19,10 @@
   "For3D": false,
   "width": 78,
   "height": 48,
+  "textureGroupId": {
+    "name": "Der Scootomik",
+    "path": "texturegroups/Der Scootomik",
+  },
   "swatchColours": null,
   "gridX": 0,
   "gridY": 0,

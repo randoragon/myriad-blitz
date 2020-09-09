@@ -2,10 +2,6 @@
   "ConfigValues": {
     "ProjectInfo": {"textureGroupId":"{\"name\":\"Default\",\"path\":\"texturegroups/Default\"}",},
   },
-  "textureGroupId": {
-    "name": "Startup",
-    "path": "texturegroups/Startup",
-  },
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -23,11 +19,16 @@
   "For3D": false,
   "width": 563,
   "height": 577,
+  "textureGroupId": {
+    "name": "Startup",
+    "path": "texturegroups/Startup",
+  },
   "swatchColours": null,
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"32269657-456e-498b-aa9b-1b3c7c8e96d2","path":"sprites/spr_randoragon_logo/spr_randoragon_logo.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+    {"compositeImage":{"FrameId":{"name":"spr_randoragon_logo","path":"sprites/spr_randoragon_logo/spr_randoragon_logo.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"spr_randoragon_logo","path":"sprites/spr_randoragon_logo/spr_randoragon_logo.yy",},"LayerId":{"name":"spr_randoragon_logo","path":"sprites/spr_randoragon_logo/spr_randoragon_logo.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
         {"FrameId":{"name":"32269657-456e-498b-aa9b-1b3c7c8e96d2","path":"sprites/spr_randoragon_logo/spr_randoragon_logo.yy",},"LayerId":{"name":"8d296a40-920d-49a4-91cd-eb66568ca72d","path":"sprites/spr_randoragon_logo/spr_randoragon_logo.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"spr_randoragon_logo","path":"sprites/spr_randoragon_logo/spr_randoragon_logo.yy",},"resourceVersion":"1.0","name":"32269657-456e-498b-aa9b-1b3c7c8e96d2","tags":[],"resourceType":"GMSpriteFrame",},
   ],

@@ -1,8 +1,4 @@
 {
-  "textureGroupId": {
-    "name": "Christmas Realm",
-    "path": "texturegroups/Christmas Realm",
-  },
   "bboxMode": 2,
   "collisionKind": 2,
   "type": 0,
@@ -20,6 +16,10 @@
   "For3D": false,
   "width": 16,
   "height": 16,
+  "textureGroupId": {
+    "name": "Christmas Realm",
+    "path": "texturegroups/Christmas Realm",
+  },
   "swatchColours": null,
   "gridX": 0,
   "gridY": 0,

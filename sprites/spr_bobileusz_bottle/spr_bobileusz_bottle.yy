@@ -1,8 +1,4 @@
 {
-  "textureGroupId": {
-    "name": "Bobileusz",
-    "path": "texturegroups/Bobileusz",
-  },
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -20,6 +16,10 @@
   "For3D": false,
   "width": 11,
   "height": 11,
+  "textureGroupId": {
+    "name": "Bobileusz",
+    "path": "texturegroups/Bobileusz",
+  },
   "swatchColours": null,
   "gridX": 0,
   "gridY": 0,

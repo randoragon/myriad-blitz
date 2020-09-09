@@ -2,10 +2,6 @@
   "ConfigValues": {
     "ProjectInfo": {"textureGroupId":"{\"name\":\"Default\",\"path\":\"texturegroups/Default\"}",},
   },
-  "textureGroupId": {
-    "name": "Startup",
-    "path": "texturegroups/Startup",
-  },
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -23,6 +19,10 @@
   "For3D": false,
   "width": 1366,
   "height": 768,
+  "textureGroupId": {
+    "name": "Startup",
+    "path": "texturegroups/Startup",
+  },
   "swatchColours": null,
   "gridX": 0,
   "gridY": 0,
