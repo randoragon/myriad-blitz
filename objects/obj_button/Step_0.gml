@@ -253,7 +253,7 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 					play_sfx(sfx_button2, 0);
 				break;
 	            case 2:
-					if (!irandom(99)) {
+					if (irandom(99)) {
 						display_message("This button is a sham.\nI originally planned to add lore, but it didn't \nwork out and the menu just doesn't look as\ngood without this button, so here it will stay!", scrm_do_nothing);
 					} else {
 						url_open_ext("https://blaketrombone.github.io", "_blank");
