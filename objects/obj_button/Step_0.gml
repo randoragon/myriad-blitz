@@ -108,7 +108,7 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 	        case 9: case 10: case 11: case 12: case 15:
 				image_index = 0;
 			break;
-	        case 13: case 14: case 16: case 27:
+	        case 13: case 14: case 16: case 27: case 28:
 				image_scale(home(image_xscale, 1.1, 0.04, 0), image_xscale);
 			break;
 	        case 23:
@@ -139,7 +139,7 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 	        case 8:
 				image_blend = c_white;
 			break;
-	        case 13: case 14: case 16: case 27:
+	        case 13: case 14: case 16: case 27: case 28:
 				image_scale(home(image_xscale, 1, 0.04, 0), image_xscale);
 				image_blend = c_white;
 			break;
@@ -228,7 +228,7 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 				image_index = 2 * check;
 				image_scale(home(image_xscale, 0.9, 0.08, 0), image_xscale);
 			break;
-	        case 13: case 14: case 16: case 27:
+	        case 13: case 14: case 16: case 27: case 28:
 				image_blend = c_ltgray;
 				image_scale(home(image_xscale, 0.9, 0.08, 0), image_xscale);
 				grabbed = 1;
@@ -309,7 +309,7 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 				break;
 	            case 16:
 					image_blend = c_white;
-					url_open_ext("https://www.waterflamemusic.com/", "_blank");
+					url_open_ext("https://www.waterflame.com/", "_blank");
 					play_sfx(sfx_button3, 0);
 				break;
 	            case 17:
@@ -357,6 +357,11 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 	            case 27:
 					image_blend = c_white;
 					url_open_ext("https://www.gamejolt.com/@RandoragonGameDev", "_blank");
+					play_sfx(sfx_button3, 0);
+				break;
+				case 28:
+					image_blend = c_white;
+					url_open_ext("https://www.github.com/randoragon/myriad-blitz", "_blank");
 					play_sfx(sfx_button3, 0);
 				break;
             }

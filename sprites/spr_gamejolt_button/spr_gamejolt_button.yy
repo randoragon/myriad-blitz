@@ -2,10 +2,6 @@
   "ConfigValues": {
     "ProjectInfo": {"textureGroupId":"{\"name\":\"Default\",\"path\":\"texturegroups/Default\"}",},
   },
-  "textureGroupId": {
-    "name": "Menu",
-    "path": "texturegroups/Menu",
-  },
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -23,6 +19,10 @@
   "For3D": false,
   "width": 64,
   "height": 64,
+  "textureGroupId": {
+    "name": "Menu",
+    "path": "texturegroups/Menu",
+  },
   "swatchColours": null,
   "gridX": 0,
   "gridY": 0,
@@ -47,7 +47,7 @@
             {"id":"b98775e5-4fe9-4f35-b7d4-1142d0487018","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"0aa0881d-d1de-4789-873e-184ad76e5e2a","path":"sprites/spr_gamejolt_button/spr_gamejolt_button.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
-    "visibleRange": {"x":0.0,"y":0.0,},
+    "visibleRange": null,
     "lockOrigin": false,
     "showBackdrop": true,
     "showBackdropImage": false,

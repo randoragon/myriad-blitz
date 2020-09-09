@@ -98,6 +98,7 @@
     {"id":{"name":"spr_button_ol","path":"sprites/spr_button_ol/spr_button_ol.yy",},"order":6,},
     {"id":{"name":"spr_slider_bar","path":"sprites/spr_slider_bar/spr_slider_bar.yy",},"order":7,},
     {"id":{"name":"spr_slider_dot","path":"sprites/spr_slider_dot/spr_slider_dot.yy",},"order":8,},
+    {"id":{"name":"spr_github_button","path":"sprites/spr_github_button/spr_github_button.yy",},"order":20,},
     {"id":{"name":"spr_checkbox","path":"sprites/spr_checkbox/spr_checkbox.yy",},"order":9,},
     {"id":{"name":"spr_slot_load_rename","path":"sprites/spr_slot_load_rename/spr_slot_load_rename.yy",},"order":10,},
     {"id":{"name":"spr_slot_load_delete","path":"sprites/spr_slot_load_delete/spr_slot_load_delete.yy",},"order":11,},

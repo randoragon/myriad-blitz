@@ -59,6 +59,9 @@ switch(f) {
 	case 27:
 		if (place_meeting(x, y, boss)) { draw_tooltip("Check out my\nother games!", rgb(128, 255, 0), c_dkgray, c_white); }
 	break;
+	case 28:
+		if (place_meeting(x, y, boss)) { draw_tooltip("View the source\ncode on GitHub!", c_ltgray, hsv(0, 0, 40), c_ltgray); }
+	break;
 }
 
 #endregion

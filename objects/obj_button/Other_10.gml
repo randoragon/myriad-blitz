@@ -31,6 +31,7 @@ switch(f) {
 	case 25: sprite_index=spr_size_button; image_index=1+(3*(global.save_chunk_size==500)); image_speed=0; break;
 	case 26: sprite_index=spr_size_button; image_index=2+(3*(global.save_chunk_size==1500)); image_speed=0; break;
 	case 27: sprite_index=spr_gamejolt_button; image_index=0; image_speed=0; break;
+	case 28: sprite_index=spr_github_button; image_index=0; image_speed=0; break;
 }
 
 #endregion
