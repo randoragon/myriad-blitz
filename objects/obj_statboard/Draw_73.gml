@@ -79,8 +79,9 @@ if (x < xstart + 360) {
 			    draw_set_halign(fa_left);
 		    }
 		    if (datatype[s, i] == 1 || datatype[s, i] == 2) && (y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 1.2) * lineh) >= y - (sprite_height / 2) + 125 - lineh && y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 1.2) * lineh) <= y + (sprite_height / 2) - 50) {
-			    draw_set_color(color_shift_hsv(global.color[global.chrsel], 0, -random_range(0, (display[s, i] > limit[s, i]) * 30), 0, 1));
-			    draw_rectangle(xoffset + x - (sprite_width / 2) + 46, y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 1.2) * lineh) - 8, xoffset + x - (sprite_width / 2) + 46 + clamp(value[s, i] * (sprite_width - 64 - xoffset) / limit[s, i], 0, sprite_width - 74), y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 1.2) * lineh) + 8, 0);
+				var ratio = value[s, i] / limit[s, i];
+			    draw_set_color(color_shift_hsv(global.color[global.chrsel], -20 + (ratio * 40), -ratio * 100, -100 + (ratio * 100), 1));
+			    draw_rectangle(xoffset + x - (sprite_width / 2) + 46, y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 1.2) * lineh) - 8, xoffset + x - (sprite_width / 2) + 46 + clamp(ratio * (sprite_width - 64 - xoffset), 0, sprite_width - 74), y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 1.2) * lineh) + 8, 0);
 			    draw_set_color(c_black);
 			    draw_rectangle(xoffset + x - (sprite_width / 2) + 46, y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 1.2) * lineh) - 9, 10 + x + (sprite_width / 2) - 28, y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 1.2) * lineh) + 9, 1);
 			    draw_rectangle(xoffset + x - (sprite_width / 2) + 45, y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 1.2) * lineh) - 8, 10 + x + (sprite_width / 2) - 27, y + yoffset - (sprite_height / 2) + 125 + scroll + ((linecount[s, i] + 1.2) * lineh) + 8, 1);
