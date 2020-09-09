@@ -2,10 +2,6 @@
   "ConfigValues": {
     "ProjectInfo": {"textureGroupId":"{\"name\":\"Default\",\"path\":\"texturegroups/Default\"}",},
   },
-  "textureGroupId": {
-    "name": "Christmas Realm",
-    "path": "texturegroups/Christmas Realm",
-  },
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -23,6 +19,10 @@
   "For3D": false,
   "width": 1366,
   "height": 808,
+  "textureGroupId": {
+    "name": "Christmas Realm",
+    "path": "texturegroups/Christmas Realm",
+  },
   "swatchColours": null,
   "gridX": 0,
   "gridY": 0,
@@ -47,7 +47,7 @@
             {"id":"78b38955-73f1-4657-a056-a5a204ef4f5c","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"e5881e19-29fa-4a89-833e-3959cbd00dde","path":"sprites/bg_Christmas1/bg_Christmas1.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
-    "visibleRange": {"x":0.0,"y":0.0,},
+    "visibleRange": null,
     "lockOrigin": false,
     "showBackdrop": true,
     "showBackdropImage": false,

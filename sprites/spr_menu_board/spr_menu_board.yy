@@ -2,10 +2,6 @@
   "ConfigValues": {
     "ProjectInfo": {"textureGroupId":"{\"name\":\"Default\",\"path\":\"texturegroups/Default\"}",},
   },
-  "textureGroupId": {
-    "name": "Menu",
-    "path": "texturegroups/Menu",
-  },
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -23,13 +19,17 @@
   "For3D": false,
   "width": 454,
   "height": 558,
+  "textureGroupId": {
+    "name": "Menu",
+    "path": "texturegroups/Menu",
+  },
   "swatchColours": null,
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"502bc718-4124-40d4-acb9-58fa3bd0a7d0","path":"sprites/spr_menu_board/spr_menu_board.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"502bc718-4124-40d4-acb9-58fa3bd0a7d0","path":"sprites/spr_menu_board/spr_menu_board.yy",},"LayerId":{"name":"bce96f30-4b5a-403a-b523-9afba5e51b0d","path":"sprites/spr_menu_board/spr_menu_board.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_menu_board","path":"sprites/spr_menu_board/spr_menu_board.yy",},"resourceVersion":"1.0","name":"502bc718-4124-40d4-acb9-58fa3bd0a7d0","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"9dfaa488-97eb-4a40-a360-91c87e7680e0","path":"sprites/spr_menu_board/spr_menu_board.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"9dfaa488-97eb-4a40-a360-91c87e7680e0","path":"sprites/spr_menu_board/spr_menu_board.yy",},"LayerId":{"name":"4f613222-2580-4e7e-813a-0f97eab35afd","path":"sprites/spr_menu_board/spr_menu_board.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_menu_board","path":"sprites/spr_menu_board/spr_menu_board.yy",},"resourceVersion":"1.0","name":"9dfaa488-97eb-4a40-a360-91c87e7680e0","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_menu_board","path":"sprites/spr_menu_board/spr_menu_board.yy",},
@@ -44,10 +44,10 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"5e4fa39d-c0f7-4053-a8d2-ee39da938b63","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"502bc718-4124-40d4-acb9-58fa3bd0a7d0","path":"sprites/spr_menu_board/spr_menu_board.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"117b5b38-aa92-4138-901b-09c8382cad5d","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"9dfaa488-97eb-4a40-a360-91c87e7680e0","path":"sprites/spr_menu_board/spr_menu_board.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
-    "visibleRange": {"x":0.0,"y":0.0,},
+    "visibleRange": null,
     "lockOrigin": false,
     "showBackdrop": true,
     "showBackdropImage": false,
@@ -68,7 +68,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"bce96f30-4b5a-403a-b523-9afba5e51b0d","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"4f613222-2580-4e7e-813a-0f97eab35afd","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
     "name": "general GUI",
