@@ -219,7 +219,7 @@ function scr_PlayerDataUpdate() {
 	        global.sspd          = 24;
 	        global.fmin          = 0;
 	        global.fmax          = 1;
-	        global.fdmg          = 40;
+	        global.fdmg          = 25;
 	        global.fpen          = 25;
 	        global.fkb           = 0;
 	        global.cname         = "GEAR SHIFT";

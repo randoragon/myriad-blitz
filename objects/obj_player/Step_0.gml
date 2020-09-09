@@ -225,7 +225,7 @@ if (IS_STATUS_EFFECT_GEAR1) {
 }
 
 if (IS_STATUS_EFFECT_PRISMATIC_GLACIER) {
-    fdmg_factor = 0.25;
+    fdmg_factor = 0.35;
 }
 
 //final stats calculation
