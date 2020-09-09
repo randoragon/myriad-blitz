@@ -125,7 +125,6 @@
     {"id":{"name":"spr_evilflame_ultimate_icon","path":"sprites/spr_evilflame_ultimate_icon/spr_evilflame_ultimate_icon.yy",},"order":1,},
     {"id":{"name":"spr_moon","path":"sprites/spr_moon/spr_moon.yy",},"order":2,},
     {"id":{"name":"spr_loading","path":"sprites/spr_loading/spr_loading.yy",},"order":3,},
-    {"id":{"name":"spr_letter","path":"sprites/spr_letter/spr_letter.yy",},"order":4,},
     {"id":{"name":"spr_mouse","path":"sprites/spr_mouse/spr_mouse.yy",},"order":5,},
     {"id":{"name":"spr_explosion","path":"sprites/spr_explosion/spr_explosion.yy",},"order":6,},
     {"id":{"name":"spr_logo","path":"sprites/spr_logo/spr_logo.yy",},"order":7,},
