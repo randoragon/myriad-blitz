@@ -36,7 +36,7 @@ with(obj_save_group) {
 			}
 			
 			if (global.chrsel == PLAYER_BOBILEUSZ) {
-				suf1 = surface_page_index("projectile", 0);
+				suf1 = 0;
 				surface_overlay = surface_page_capture("projectile", 250);
 			}
 		break;
@@ -75,7 +75,7 @@ with(obj_save_group) {
 			}
 			
 			if (global.chrsel == PLAYER_BOBILEUSZ) {
-				suf1 = surface_page_index("projectile", 0);
+				suf1 = 0;
 				surface_overlay = surface_page_capture("projectile", 250);
 			}
 		break;
