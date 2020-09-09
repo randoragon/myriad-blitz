@@ -253,7 +253,12 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 					play_sfx(sfx_button2, 0);
 				break;
 	            case 2:
-					display_message("Lore isn't available yet.\nMaybe in the next update... Or not. We'll see.\nSorry for the inconvenience!\nRandoragon", scrm_do_nothing);
+					if (!irandom(99)) {
+						display_message("This button is a sham.\nI originally planned to add lore, but it didn't \nwork out and the menu just doesn't look as\ngood without this button, so here it will stay!", scrm_do_nothing);
+					} else {
+						url_open_ext("https://blaketrombone.github.io", "_blank");
+						display_message("Sorry, I couldn't resist.\n\nRegards,\nRandoragon", scrm_do_nothing);
+					}
 				break;
 	            case 3:
 					screen_transition(rm_Settings, -1, 30, choose(-1, 1, -2, 2), c_black);
