@@ -83,6 +83,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"3aac51d4-71d3-4c3f-8dff-2b0b4e758254","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "common enemies alt",
     "path": "folders/Sprites/common enemies alt.yy",

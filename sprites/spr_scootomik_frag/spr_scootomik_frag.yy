@@ -74,6 +74,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"c2bf5f03-5e91-4349-862e-66efbbd53c0c","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "frag bullets",
     "path": "folders/Sprites/frag bullets.yy",

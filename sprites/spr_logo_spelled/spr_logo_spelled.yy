@@ -110,6 +110,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"b6c4a209-6864-4260-9553-d65a2da0bced","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "decorations & particles",
     "path": "folders/Sprites/decorations & particles.yy",

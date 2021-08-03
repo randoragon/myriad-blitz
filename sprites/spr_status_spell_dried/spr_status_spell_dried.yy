@@ -70,6 +70,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"6f3edba7-07a1-495b-8bbe-2ea18f44bc69","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "status_effects",
     "path": "folders/Sprites/general GUI/status_effects.yy",

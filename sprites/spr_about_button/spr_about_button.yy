@@ -70,6 +70,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"4e108356-eb5a-4864-8904-bff6e391846d","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "buttons",
     "path": "folders/Sprites/general GUI/buttons.yy",

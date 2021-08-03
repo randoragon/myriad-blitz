@@ -130,6 +130,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"f6446ba8-6b66-4025-a3fa-3b709f8e2c8e","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "enemy projectiles",
     "path": "folders/Sprites/enemy projectiles.yy",

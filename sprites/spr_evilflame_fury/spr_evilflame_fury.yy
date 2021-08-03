@@ -98,6 +98,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"0d022c4e-8475-44af-903b-bb47ad86ab4f","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "ultimates",
     "path": "folders/Sprites/ultimates.yy",

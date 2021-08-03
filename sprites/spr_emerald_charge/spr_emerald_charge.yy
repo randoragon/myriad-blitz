@@ -98,6 +98,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"0787191d-0653-4cdc-ba65-ed836911072a","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "charge shots",
     "path": "folders/Sprites/charge shots.yy",

@@ -298,6 +298,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"3f5e327e-53c9-42f9-a2f6-40b962f6acb8","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "indicators",
     "path": "folders/Sprites/general GUI/indicators.yy",

@@ -90,6 +90,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"cc652d88-67b6-455e-98a6-4c003fcd9856","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "indicators",
     "path": "folders/Sprites/general GUI/indicators.yy",

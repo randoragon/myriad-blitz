@@ -74,6 +74,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"cbc11e0b-13cb-42e9-bc3f-31e6c7d9ce8a","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "general GUI",
     "path": "folders/Sprites/general GUI.yy",

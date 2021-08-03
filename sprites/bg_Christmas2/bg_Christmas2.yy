@@ -70,6 +70,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"841079ad-4adf-487b-beba-e3f6d64c30d3","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "Christmas Realm",
     "path": "folders/Sprites/tilesets/Christmas Realm.yy",

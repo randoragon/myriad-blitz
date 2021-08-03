@@ -98,6 +98,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"814c04e9-e782-4b2f-a4a1-e5962f3e1db9","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "charging sprites",
     "path": "folders/Sprites/charging sprites.yy",

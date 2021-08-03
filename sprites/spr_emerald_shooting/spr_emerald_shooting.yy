@@ -98,6 +98,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"5435c959-ae5a-4b98-9509-f8f49095819c","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "shooting sprites",
     "path": "folders/Sprites/shooting sprites.yy",

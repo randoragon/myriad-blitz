@@ -82,6 +82,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"e76c5136-371b-41e9-901b-f0eaed217840","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "characters",
     "path": "folders/Sprites/characters.yy",

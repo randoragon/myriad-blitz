@@ -98,6 +98,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"c2fb290a-6f50-4fe1-b4d0-5b4c9a463830","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "active charge sprites",
     "path": "folders/Sprites/active charge sprites.yy",

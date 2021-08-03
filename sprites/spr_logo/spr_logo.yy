@@ -28,7 +28,6 @@
   "gridY": 0,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"9c885c4f-a87a-4205-93f5-50df9c356450","path":"sprites/spr_logo/spr_logo.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"9c885c4f-a87a-4205-93f5-50df9c356450","path":"sprites/spr_logo/spr_logo.yy",},"LayerId":{"name":"","path":"",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
         {"FrameId":{"name":"9c885c4f-a87a-4205-93f5-50df9c356450","path":"sprites/spr_logo/spr_logo.yy",},"LayerId":{"name":"abe801d4-f0c0-41a3-b0d7-25957b663c84","path":"sprites/spr_logo/spr_logo.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"spr_logo","path":"sprites/spr_logo/spr_logo.yy",},"resourceVersion":"1.0","name":"9c885c4f-a87a-4205-93f5-50df9c356450","tags":[],"resourceType":"GMSpriteFrame",},
   ],
@@ -71,6 +70,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"abe801d4-f0c0-41a3-b0d7-25957b663c84","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "decorations & particles",
     "path": "folders/Sprites/decorations & particles.yy",

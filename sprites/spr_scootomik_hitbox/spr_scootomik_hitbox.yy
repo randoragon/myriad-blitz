@@ -70,6 +70,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"215ed27a-754b-4f9f-9dd6-4c3dfeaf6771","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "hitboxes",
     "path": "folders/Sprites/hitboxes.yy",

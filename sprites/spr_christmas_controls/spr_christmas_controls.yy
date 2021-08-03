@@ -78,6 +78,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"e2b1cddc-5f66-4c9e-b67d-69d6282d68f3","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "realm GUI",
     "path": "folders/Sprites/realm GUI.yy",

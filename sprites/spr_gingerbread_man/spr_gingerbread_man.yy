@@ -130,6 +130,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"1891383a-5eb3-4273-b7c4-1e070cb7e0bf","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "common enemies",
     "path": "folders/Sprites/common enemies.yy",
