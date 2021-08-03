@@ -131,6 +131,10 @@ function scr_SaveInstance() {
 		        save_append(args, o.bar_yoffset[1]);
 		        save_append(args, o.bar_yoffset[2]);
 			}
+			
+			if (version_ge(VER, "1.2.1")) {
+				save_append(args, o.ultcount);
+			}
 		break;
 		case obj_projectile:
 			save_append(args, o.spawn);

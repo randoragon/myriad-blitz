@@ -1,7 +1,7 @@
 function macros() {
 #region Game Metadata
 
-#macro VER "1.2.0"
+#macro VER "1.2.1"
 
 #endregion
 

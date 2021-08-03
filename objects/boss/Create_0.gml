@@ -1,6 +1,6 @@
 #region Miscellaneous Setup
 
-global.versions = ["1.1.0", "1.1.1", "1.2.0 beta", "1.2.0"];
+global.versions = ["1.1.0", "1.1.1", "1.2.0 beta", "1.2.0", "1.2.1"];
 gml_release_mode(TRUE);
 gpu_set_alphatestenable(1);
 window_last_width  = window_get_width();

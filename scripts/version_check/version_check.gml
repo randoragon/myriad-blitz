@@ -23,6 +23,9 @@ function version_check() {
 		break;
 		case "1.2.0":
 			compat = ["1.1.0", "1.1.1", "1.2.0 beta"];
+		case "1.2.1":
+			compat = ["1.1.0", "1.1.1", "1.2.0 beta", "1.2.0"];
+		break;
 	}
 
 	for (var i = 0; i < array_length_1d(compat); i++) {

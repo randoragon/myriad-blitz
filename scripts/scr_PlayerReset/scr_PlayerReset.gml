@@ -13,7 +13,7 @@ function scr_PlayerReset() {
 		discharge				= 0;
 		artcharge				= FALSE;
 		cb						= FALSE;
-		ultcount				= 1;
+		ultcount				= 0;
 		ultblink				= 0;
 		flash_clock				= 0;
 		spawn					= 0;

@@ -14,6 +14,4 @@ function home() {
 
 	return clamp(argument[1], argument[0] - argument[2], argument[0] + argument[2]);
 
-
-
 }

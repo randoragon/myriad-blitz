@@ -137,6 +137,12 @@ function scr_LoadInstance() {
 				o.bar_yoffset[1] = string_readln_real(args);
 				o.bar_yoffset[2] = string_readln_real(args);
 			}
+			
+			if (version_ge(ver, "1.2.1")) {
+				o.ultcount = string_readln_real(args);
+			} else {
+				o.ultcount = 0;
+			}
 		break;
 		case obj_projectile:
 			o.spawn	 = string_readln_real(args);
