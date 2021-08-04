@@ -32,9 +32,15 @@ switch(f) {
 		lifespan   = 600;
 	break;
 	case 1:
-		sprite_index = (e == 0)? spr_bolt : spr_bolt2;
-		instance_setup(irandom(image_number - 1), ((e == 0)? 0.25 : 0.33) * global.gpspeed, irandom(360), 1);
-		lifespan  = 1800;
+		if (e == 0) {
+			sprite_index = spr_bolt;
+			instance_setup(irandom(image_number - 1), 0.25 * global.gpspeed, irandom(360), 1);
+			lifespan = irandom_range(300, 1000);	
+		} else {
+			sprite_index = spr_bolt2;
+			instance_setup(irandom(image_number - 1), 0.33 * global.gpspeed, irandom(360), 1);
+			lifespan = 1800;
+		}
 	break;
 	case 2:
 		image_scale(2, 2);
