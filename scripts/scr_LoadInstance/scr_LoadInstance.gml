@@ -191,6 +191,12 @@ function scr_LoadInstance() {
 			o.surface_overlay_yscale = string_readln_real(args);
 			o.surface_overlay_angle  = string_readln_real(args);
 			o.surface_overlay_alpha  = string_readln_real(args);
+			
+			if (version_ge(ver, "1.2.1")) {
+				o.pierce_bounce = string_readln_real(args);
+			} else {
+				o.pierce_bounce = 0;
+			}
 		break;
 		case obj_charge:
 			o.spawn		= string_readln_real(args);

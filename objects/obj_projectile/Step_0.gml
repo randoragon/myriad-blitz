@@ -38,6 +38,16 @@ switch(f) {
 		    break;
 	    }
 	break;
+	case PLAYER_DER_SCOOTOMIK:
+		if (real_step()) {
+			var xmin, ymin, xmax, ymax;
+			xmin = x + lengthdir_x(1, direction);
+			ymin = y - 4 - lengthdir_y(2, direction);
+			xmax = x + lengthdir_x(3, direction);
+			ymax = y - 1 + lengthdir_y(2, direction);
+			part_type_spawn_ult(PART_SYSTEM_FRAG_ULT, PART_TYPE_P_SCOOTOMIK_YELLOW_2 + image_index, 1, xmin, ymin, xmax, ymax, "ellipse", "linear", 5);
+		}
+	break;
 	case PLAYER_BOBILEUSZ:
 		switch(e) {
 			case 0:

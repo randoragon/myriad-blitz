@@ -57,6 +57,7 @@ switch(f) {
 		    image_angle  = direction;
 		    speed1       = 20;
 		    lifespan     = 120;
+			pierce_bounce = 1;
 	    break;
 	    case 1: //scootomik 2nd bullet red frags
 		    sprite_index = spr_scootomik_frag;
@@ -65,6 +66,7 @@ switch(f) {
 		    image_angle  = direction;
 		    speed1       = 20;
 		    lifespan     = 120;
+			pierce_bounce = 1;
 	    break;
 	    case 2: //scootomik charge front frags
 		    sprite_index = spr_scootomik_charge;
@@ -77,6 +79,7 @@ switch(f) {
 		    fdmg         = spawn.cdmg;
 		    fkb          = spawn.ckb;
 		    lifespan     = 120;
+			pierce_bounce = 2;
 	    break;
 	    case 3: //scootomik charge back frags
 		    sprite_index = spr_scootomik_charge;
@@ -89,6 +92,7 @@ switch(f) {
 		    fdmg         = spawn.cdmg;
 		    fkb          = spawn.ckb;
 		    lifespan     = 120;
+			pierce_bounce = 2;
 	    break;
 	    }
 	break;

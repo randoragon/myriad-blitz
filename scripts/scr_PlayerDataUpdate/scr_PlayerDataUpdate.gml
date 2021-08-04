@@ -138,12 +138,12 @@ function scr_PlayerDataUpdate() {
 	        "\nwhich allow it to travel around the Earth" +
 	        "\nto attack its enemies from behind.";
 	        global.hp            = 1080;
-	        global.bdmg          = 86;
+	        global.bdmg          = 80;
 	        global.bdef          = 72;
 	        global.bpen          = 0;
 	        global.bkb           = 120;
 	        global.bkbres        = 85;
-	        global.acc           = 0.77;
+	        global.acc           = 0.85;
 	        global.counteracc    = 0.86;
 	        global.spd           = 16;
 	        global.invtime       = 85;
@@ -158,8 +158,8 @@ function scr_PlayerDataUpdate() {
 	        global.sspd          = 6;
 	        global.fmin          = 2;
 	        global.fmax          = 5;
-	        global.fdmg          = 5;
-	        global.fpen          = 75;
+	        global.fdmg          = 4;
+	        global.fpen          = 60;
 	        global.fkb           = 0;
 	        global.cname         = "BEAMING SPIN";
 	        global.cdesc         = 
@@ -167,8 +167,8 @@ function scr_PlayerDataUpdate() {
 	        "\nbeams of light in both directions" +
 	        "\nand briefly becomes invincible." +
 	        "\nActivates only 70% of the time.";
-	        global.cdmg          = 8;
-	        global.cpen          = 95;
+	        global.cdmg          = 5;
+	        global.cpen          = 75;
 	        global.ckb           = 100;
 	        global.ctime         = 30;
 	        global.ccooldown     = 1600;

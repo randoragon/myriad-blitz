@@ -20,7 +20,7 @@ function part_type_spawn_ult() {
 	 * 
 	 * Spawn_slot must be an integer value of at least 0.
 	 * 
-	 * THERE IS ONLY ONE SPAWN SLOT LIST FOR ALL **LITE** PARTICLES
+	 * THERE IS ONLY ONE SPAWN SLOT LIST FOR ALL **ULTRA LITE** PARTICLES
 	 */
 
 	var grid = argument[0];

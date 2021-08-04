@@ -2,23 +2,23 @@
   "ConfigValues": {
     "ProjectInfo": {"textureGroupId":"{\"name\":\"Default\",\"path\":\"texturegroups/Default\"}",},
   },
-  "bboxMode": 0,
+  "bboxMode": 2,
   "collisionKind": 1,
   "type": 0,
-  "origin": 1,
+  "origin": 4,
   "preMultiplyAlpha": false,
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 0,
-  "bbox_right": 19,
+  "bbox_left": 1,
+  "bbox_right": 18,
   "bbox_top": 0,
-  "bbox_bottom": 0,
+  "bbox_bottom": 2,
   "HTile": false,
   "VTile": false,
   "For3D": false,
   "width": 20,
-  "height": 1,
+  "height": 3,
   "textureGroupId": {
     "name": "Der Scootomik",
     "path": "texturegroups/Der Scootomik",
@@ -27,18 +27,18 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"78cd6b50-4e3c-4dfb-bb84-f3728c313025","path":"sprites/spr_scootomik_charge/spr_scootomik_charge.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"78cd6b50-4e3c-4dfb-bb84-f3728c313025","path":"sprites/spr_scootomik_charge/spr_scootomik_charge.yy",},"LayerId":{"name":"76c61b91-7cfc-488a-a7d1-e8a2058e5967","path":"sprites/spr_scootomik_charge/spr_scootomik_charge.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_scootomik_charge","path":"sprites/spr_scootomik_charge/spr_scootomik_charge.yy",},"resourceVersion":"1.0","name":"78cd6b50-4e3c-4dfb-bb84-f3728c313025","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"980e97a1-7797-4c99-bb61-c7bc27c6bb0a","path":"sprites/spr_scootomik_charge/spr_scootomik_charge.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"980e97a1-7797-4c99-bb61-c7bc27c6bb0a","path":"sprites/spr_scootomik_charge/spr_scootomik_charge.yy",},"LayerId":{"name":"76c61b91-7cfc-488a-a7d1-e8a2058e5967","path":"sprites/spr_scootomik_charge/spr_scootomik_charge.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_scootomik_charge","path":"sprites/spr_scootomik_charge/spr_scootomik_charge.yy",},"resourceVersion":"1.0","name":"980e97a1-7797-4c99-bb61-c7bc27c6bb0a","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"c6adbc19-f36a-40b1-8d2d-203abca6bccb","path":"sprites/spr_scootomik_charge/spr_scootomik_charge.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"c6adbc19-f36a-40b1-8d2d-203abca6bccb","path":"sprites/spr_scootomik_charge/spr_scootomik_charge.yy",},"LayerId":{"name":"7ed83977-cfbe-41a4-a462-c5db3487f13a","path":"sprites/spr_scootomik_charge/spr_scootomik_charge.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_scootomik_charge","path":"sprites/spr_scootomik_charge/spr_scootomik_charge.yy",},"resourceVersion":"1.0","name":"c6adbc19-f36a-40b1-8d2d-203abca6bccb","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"ada71f3e-a74a-483a-bdb9-208ea095adb9","path":"sprites/spr_scootomik_charge/spr_scootomik_charge.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"ada71f3e-a74a-483a-bdb9-208ea095adb9","path":"sprites/spr_scootomik_charge/spr_scootomik_charge.yy",},"LayerId":{"name":"7ed83977-cfbe-41a4-a462-c5db3487f13a","path":"sprites/spr_scootomik_charge/spr_scootomik_charge.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_scootomik_charge","path":"sprites/spr_scootomik_charge/spr_scootomik_charge.yy",},"resourceVersion":"1.0","name":"ada71f3e-a74a-483a-bdb9-208ea095adb9","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_scootomik_charge","path":"sprites/spr_scootomik_charge/spr_scootomik_charge.yy",},
     "timeUnits": 1,
     "playback": 1,
-    "playbackSpeed": 1.0,
+    "playbackSpeed": 10.0,
     "playbackSpeedType": 1,
     "autoRecord": true,
     "volume": 1.0,
@@ -47,11 +47,11 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"58e4f59c-25a6-4e26-ba94-93f3699ebd81","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"78cd6b50-4e3c-4dfb-bb84-f3728c313025","path":"sprites/spr_scootomik_charge/spr_scootomik_charge.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"345075ec-f1d5-4302-9d42-32821c5864ef","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"980e97a1-7797-4c99-bb61-c7bc27c6bb0a","path":"sprites/spr_scootomik_charge/spr_scootomik_charge.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"b0f09209-9820-49f5-9335-fda865a93e6f","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"c6adbc19-f36a-40b1-8d2d-203abca6bccb","path":"sprites/spr_scootomik_charge/spr_scootomik_charge.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"d916e9e5-a1d7-41fd-9c9a-fcaeaf34abb6","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"ada71f3e-a74a-483a-bdb9-208ea095adb9","path":"sprites/spr_scootomik_charge/spr_scootomik_charge.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
-    "visibleRange": {"x":0.0,"y":0.0,},
+    "visibleRange": null,
     "lockOrigin": false,
     "showBackdrop": true,
     "showBackdropImage": false,
@@ -62,7 +62,7 @@
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
     "xorigin": 10,
-    "yorigin": 0,
+    "yorigin": 1,
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_scootomik_charge","path":"sprites/spr_scootomik_charge/spr_scootomik_charge.yy",},
@@ -72,7 +72,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"76c61b91-7cfc-488a-a7d1-e8a2058e5967","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"7ed83977-cfbe-41a4-a462-c5db3487f13a","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {

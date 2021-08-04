@@ -318,6 +318,7 @@
         "GMObject",
         "GMRoom",
       ],"resourceVersion":"1.0","name":"status_effect","tags":[],"resourceType":"GMObjectProperty",},
+    {"varType":1,"value":"-1","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"cancellation_clock","tags":[],"resourceType":"GMObjectProperty",},
   ],
   "overriddenProperties": [],
   "parent": {

@@ -183,6 +183,10 @@ function scr_SaveInstance() {
 			save_append(args, o.surface_overlay_yscale);
 	        save_append(args, o.surface_overlay_angle);
 	        save_append(args, o.surface_overlay_alpha);
+			
+			if (version_ge(VER, "1.2.1")) {
+				save_append(args, o.pierce_bounce);
+			}
 		break;
 		case obj_charge:
 			save_append(args, o.spawn);

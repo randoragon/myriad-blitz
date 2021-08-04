@@ -600,6 +600,7 @@ if (global.state == 1 && global.gpspeed != 0) {
 				if (irandom(99) < 30) {
 					indicate(x, y, "FIZZLED!", 2, c_white, c_yellow);
 					sprite_index = spr_scootomik;
+					discharge /= 2;
 				} else {
 					spawn_bullet(x + 20, y, obj_charge, global.chrsel, 0, -1, id);
 				}
@@ -718,6 +719,21 @@ if (global.state == 1) {
 
 #region Contact & eprojectile damage (helper also)
 
+function scootomik_burst(xx, yy, enemy)
+{
+	for (var i = 0; i < irandom_range(2, 4); i++) {
+		with(spawn_bullet(xx, yy, obj_frag, global.chrsel, irandom_range(0, 3), enemy, id)) {
+			if (instance_exists(obj_enemy)) {
+				var eee = instance_find(obj_enemy, irandom(instance_number(obj_enemy) - 1));
+				direction = point_direction(x, y, eee.x, eee.y);
+			} else {
+				direction = random(360);
+			}
+			enemyharm = 0;
+		}
+	}
+}
+
 if (global.state == 1) {
     if (inv > 0 && global.gpspeed != 0) {
         inv = max(inv - 1, 0);
@@ -753,6 +769,12 @@ if (global.state == 1) {
                         global.enemy_details_selection = id;
                     }
                 }
+				if (global.chrsel == PLAYER_DER_SCOOTOMIK) {
+					var xx, yy;
+					xx = lerp(x, enemy.x, 0.5);
+					yy = lerp(y, enemy.y, 0.5);
+					scootomik_burst(xx, yy, enemy);
+				}
             } else { //split the enemy in two
                 if (abs(xv) + abs(yv) >= spd * global.gpspeed * 0.8) {
                     scr_EnemySplit(enemy, point_direction(0, 0, xv, yv));
@@ -781,7 +803,15 @@ if (global.state == 1) {
                 } else {
                     play_sfx(sfx_player_death, 0, global.sound_gpspeed * 100);
                 }
-            }
+				if (global.chrsel == PLAYER_DER_SCOOTOMIK) {
+					var xx, yy;
+					xx = lerp(x, projectile.x, 0.5);
+					yy = lerp(y, projectile.y, 0.5);
+					scootomik_burst(xx, yy, -1);
+				}
+            } else {
+				global.points += 75;
+			}
             with (projectile) {
                 lifespan = 0;
 				instance_destroy();
@@ -819,6 +849,12 @@ if (global.state == 1) {
                             global.enemy_details_selection = id;
                         }
                     }
+					if (global.chrsel == PLAYER_DER_SCOOTOMIK) {
+						var xx, yy;
+						xx = lerp(x, enemy.x, 0.5);
+						yy = lerp(y, enemy.y, 0.5);
+						scootomik_burst(xx, yy, enemy);
+					}
                 } else { //split the enemy in two
                     if (abs(xv) + abs(yv) >= spd * global.gpspeed * 0.8) {
                         scr_EnemySplit(enemy, point_direction(0, 0, xv, yv));
@@ -847,6 +883,12 @@ if (global.state == 1) {
                     } else {
                         play_sfx(sfx_player_death, 0, global.sound_gpspeed * 100);
                     }
+					if (global.chrsel == PLAYER_DER_SCOOTOMIK) {
+						var xx, yy;
+						xx = lerp(x, projectile.x, 0.5);
+						yy = lerp(y, projectile.y, 0.5);
+						scootomik_burst(xx, yy, -1);
+					}
                 }
                 with (projectile) {
                     lifespan = 0;

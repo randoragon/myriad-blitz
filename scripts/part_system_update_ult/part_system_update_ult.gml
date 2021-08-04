@@ -20,7 +20,7 @@ function part_system_update_ult() {
 		}
 	
 		// When particle is dead or should be dead
-		if (grid[# i, 1] <= 0 || part == -1) {
+		if (part == -1 || (grid[# i, 1] <= 0 && source[| 4] <= 0) || (grid[# i, 3] <= 0 && source[| 11] <= 0)) {
 			if (busy_slots > 0) {
 				if (part == -1) { continue; }
 				grid[# i, 0] = -1;

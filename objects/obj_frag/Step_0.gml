@@ -49,6 +49,25 @@ switch(f) {
 	    }
 	    image_angle = direction;
 	break;
+	case PLAYER_DER_SCOOTOMIK:
+		if (enemyharm == 0 && instance_exists(enemy) && !place_meeting(x, y, enemy)) {
+			enemyharm = 1;
+		}
+		image_yscale = 1 + pierce_bounce;
+		if (real_step()) {
+			var xmin, ymin, xmax, ymax, ptype;
+			xmin = x + lengthdir_x(1, direction);
+			ymin = y - 4 - lengthdir_y(2, direction);
+			xmax = x + lengthdir_x(3, direction);
+			ymax = y - 1 + lengthdir_y(2, direction);
+			switch(pierce_bounce) {
+				default: ptype = PART_TYPE_P_SCOOTOMIK_YELLOW_1; break;
+				case 1:  ptype = PART_TYPE_P_SCOOTOMIK_YELLOW_2; break;
+				case 2:  ptype = PART_TYPE_P_SCOOTOMIK_YELLOW_3; break;
+			}
+			part_type_spawn_ult(PART_SYSTEM_FRAG_ULT, ptype + image_index, 2, xmin, ymin, xmax, ymax, "ellipse", "linear", 5);
+		}
+	break;
 	case PLAYER_BOBILEUSZ:
 		if (e == 1) {
 			if (real_step()) {
@@ -84,7 +103,20 @@ if (!fading && place_meeting(x, y, obj_enemy) && instance_place(x, y, obj_enemy)
     knockback((100 - ee.fkbres) * fkb / 1000, point_direction(x, y, x, y), 1);
     indicate(x, y, display_damage, 1, rgb(255, 85, 0), c_red);
     play_sfx(sfx_evilflame_frag_hit + (global.chrsel * 4), 0, global.sound_gpspeed * 100);
-    fading = TRUE;
+	if (pierce_bounce > 0) {
+		enemy = ee;
+		enemyharm = 0;
+		if (instance_exists(obj_enemy)) {
+			var eee = instance_find(obj_enemy, irandom(instance_number(obj_enemy) - 1));
+			direction = point_direction(x, y, eee.x, eee.y);
+		} else {
+			direction = random(360);
+		}
+		image_angle = direction;
+		pierce_bounce--;
+	} else {
+		fading = TRUE;
+	}
 }
 
 #endregion

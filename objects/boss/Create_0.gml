@@ -289,6 +289,42 @@ part = global.part_type[26];
 part_type_size_orientation_ult(part, 0.1, 0.3, -0.004, 0, 360, 3);
 part_type_blend_color_alpha_ult(part, bm_add, hsv(223, 255, 255), 0.9, 0);
 
+// 27. scootomik yellow particles 3
+global.part_type[27] = part_type_create_ult(part_circle, 0);
+part = global.part_type[27];
+part_type_size_orientation_ult(part, 0.06, 0.12, -0.07, 0, 0, 0);
+part_type_blend_color_alpha_ult(part, bm_add, c_yellow, 0.4, 0);
+
+// 28. scootomik red particles 3
+global.part_type[28] = part_type_create_ult(part_circle, 0);
+part = global.part_type[28];
+part_type_size_orientation_ult(part, 0.06, 0.12, -0.07, 0, 0, 0);
+part_type_blend_color_alpha_ult(part, bm_add, c_red, 0.4, 0);
+
+// 27. scootomik yellow particles 2
+global.part_type[29] = part_type_create_ult(part_circle, 0);
+part = global.part_type[29];
+part_type_size_orientation_ult(part, 0.05, 0.1, -0.07, 0, 0, 0);
+part_type_blend_color_alpha_ult(part, bm_add, c_yellow, 0.4, 0);
+
+// 28. scootomik red particles 2
+global.part_type[30] = part_type_create_ult(part_circle, 0);
+part = global.part_type[30];
+part_type_size_orientation_ult(part, 0.05, 0.1, -0.07, 0, 0, 0);
+part_type_blend_color_alpha_ult(part, bm_add, c_red, 0.4, 0);
+
+// 27. scootomik yellow particles 1
+global.part_type[31] = part_type_create_ult(part_circle, 0);
+part = global.part_type[31];
+part_type_size_orientation_ult(part, 0.03, 0.08, -0.07, 0, 0, 0);
+part_type_blend_color_alpha_ult(part, bm_add, c_yellow, 0.4, 0);
+
+// 28. scootomik red particles 1
+global.part_type[32] = part_type_create_ult(part_circle, 0);
+part = global.part_type[32];
+part_type_size_orientation_ult(part, 0.03, 0.08, -0.07, 0, 0, 0);
+part_type_blend_color_alpha_ult(part, bm_add, c_red, 0.4, 0);
+
 #endregion
 
 #region Realm (Common) Enemies Setup
