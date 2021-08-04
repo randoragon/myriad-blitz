@@ -16,7 +16,7 @@ to make a very simple game as a joke for a couple of my friends on Christmas.
 And so, pompously named "Christmas Donger", the first ever version of what
 would later become Myriad Blitz was born. The game was received warmly despite
 many flaws, and since at the time I was burned out on a different game project
-I had been developing (Audiobatics), I had decided to continue working on it
+I had been developing (Audiobatics), I decided to continue working on it
 in my spare time.
 
 Fast forward a few years, and the project has evolved a lot.
