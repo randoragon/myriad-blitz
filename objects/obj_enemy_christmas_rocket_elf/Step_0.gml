@@ -158,13 +158,6 @@ if (global.gpspeed != 0 && intro == 2 && image_alpha > 0) || global.state == 2 {
 	explode(x, y, image_xscale, 1);
 	if (global.state != 2) {
 		event_perform(ev_other, ev_user1);
-		if (ds_map_exists(loot, "ultimate")) {
-			repeat (loot[? "ultimate"]) {
-				instance_create(x, y, obj_ultimate_pickup);
-				obj_player.ultcount++;
-				obj_player.ultblink = 45;
-			}
-		}
 	}
 	instance_destroy();
 }
