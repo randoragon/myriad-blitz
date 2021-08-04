@@ -178,14 +178,13 @@ if (global.gpspeed != 0) {
 
 	#region Cancellation Clock
 	
-	if (cancellation_clock > 0 && global.gpspeed != 0) {
-		if (cancellation_clock % 15 == 0) {
+	if (cancellation_clock > 0 && global.gpspeed != 0 && real_step()) {
+		if (cancellation_clock-- % 15 == 0) {
 			with (player) { knockback(7, 180 + image_angle, 1); }
 			spawn_bullet(x + 20, y, obj_charge, 0, 4, -1, player);
 			play_sfx(sfx_evilflame_charge_shot, 0, global.sound_gpspeed * 100);
 		}
-		cancellation_clock -= global.gpspeed;
-		if (cancellation_clock <= 0) {
+		if (cancellation_clock == 0) {
 			fx_shockwave(x, y, 600, 3, 20, c_aqua, depth, 0.8);
 			instance_create_layer(x, y, "Explosions", obj_explosion);
 			instance_destroy();

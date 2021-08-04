@@ -917,17 +917,17 @@ if (global.state == 1) {
 
 #region Cancellation Clock
 	
-if (cancellation_clock > 0 && global.gpspeed != 0) {
-	if (cancellation_clock % 15 == 0) {
+if (cancellation_clock > 0 && global.gpspeed != 0 && real_step()) {
+	if (cancellation_clock-- % 15 == 0) {
 		knockback(7, 180 + image_angle, 1);
 		spawn_bullet(x + 20, y, obj_charge, 0, 3, -1, id);
 		play_sfx(sfx_evilflame_charge_shot, 0, global.sound_gpspeed * 100);
 	}
-	cancellation_clock -= global.gpspeed;
-	if (cancellation_clock <= 0) {
+	if (cancellation_clock == 0) {
 		sprite_index = evilflame_sprite_swap ? spr_evilflame_ultimate : spr_evilflame;
 		player_status_add(STATUS_EFFECT_ULTIMATE_COOLDOWN, 20, 0);
 		player_status_add(STATUS_EFFECT_EXHAUSTED, 5, 1);
+		cancellation_clock = -1;
 	}
 }
 	
