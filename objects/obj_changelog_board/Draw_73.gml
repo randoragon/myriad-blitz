@@ -65,7 +65,11 @@ for (var i = 0; i < array_length(section); i++) {
 }
 
 var prevscroll = scroll;
-scroll = clamp(scroll + scrollv, -total_height, 0);
+if (is_undefined(grab_scroll)) {
+	scroll = clamp(scroll + scrollv, -total_height, 0);
+} else {
+	scroll = clamp(grab_scroll + boss.y - grab_mouse_y, -total_height, 0);
+}
 if (prevscroll + scrollv < -total_height || prevscroll + scrollv > 0) {
     scrollv = 0;
 }

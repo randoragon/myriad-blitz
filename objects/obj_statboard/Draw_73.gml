@@ -31,7 +31,11 @@ if (x < xstart + 360) {
 	// Set scroll bounds
 	var scroll_limit = -(linesum * lineh) + (sprite_height - 180);
 	var prevscroll   = scroll;
-	scroll           = clamp(scroll + scrollv, scroll_limit, 0);
+	if (is_undefined(grab_scroll)) {
+		scroll = clamp(scroll + scrollv, scroll_limit, 0);
+	} else {
+		scroll = clamp(grab_scroll + boss.y - grab_mouse_y, scroll_limit, 0);
+	}
 	if (prevscroll + scrollv < scroll_limit || prevscroll + scrollv > 0) { scrollv = 0; }
 
 	draw_set_align(fa_left, fa_middle); draw_set_color(c_black);

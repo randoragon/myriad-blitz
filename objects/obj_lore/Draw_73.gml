@@ -35,7 +35,11 @@ if (y < ystart + 350) {
 	}
 
 	var prevscroll = scroll;
-	scroll = clamp(scroll + scrollv, -(linecount * lineh) + (sprite_height - 146), 0);
+	if (is_undefined(grab_scroll)) {
+		scroll = clamp(scroll + scrollv, -(linecount * lineh) + (sprite_height - 146), 0);
+	} else {
+		scroll = clamp(grab_scroll + boss.y - grab_mouse_y, -(linecount * lineh) + (sprite_height - 146), 0);
+	}
 	if (prevscroll + scrollv < -(linecount * lineh) + (sprite_height - 146) || prevscroll + scrollv > 0) {
 		scrollv = 0;
 	}
