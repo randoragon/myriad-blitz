@@ -2,9 +2,10 @@
 /// @param data
 function scr_LoadGlobals() {
 
-	var args = argument[0];
+	var args = argument[0], ver;
 
 	args[@ 1] = string_readln(args);
+	ver       = args[@ 1];
 	global.chrsel = string_readln_real(args);
 	global.points = string_readln_real(args);
 	global.realm = string_readln_real(args);
@@ -43,7 +44,40 @@ function scr_LoadGlobals() {
 	}
 
 	// Update player variables
-	scr_PlayerDataUpdate(global.chrsel);
+	if (version_ge(ver, "1.2.1")) {
+		global.hp            = string_readln_real(args);
+	    global.bdmg          = string_readln_real(args);
+	    global.bdef          = string_readln_real(args);
+	    global.bpen          = string_readln_real(args);
+	    global.bkb           = string_readln_real(args);
+	    global.bkbres        = string_readln_real(args);
+	    global.acc           = string_readln_real(args);
+	    global.counteracc    = string_readln_real(args);
+	    global.spd           = string_readln_real(args);
+	    global.invtime       = string_readln_real(args);
+	    global.foctime       = string_readln_real(args);
+	    global.pdmg          = string_readln_real(args);
+	    global.pdef          = string_readln_real(args);
+	    global.ppen          = string_readln_real(args);
+	    global.pkb           = string_readln_real(args);
+	    global.pkbres        = string_readln_real(args);
+	    global.pspd          = string_readln_real(args);
+	    global.sacc          = string_readln_real(args);
+	    global.sspd          = string_readln_real(args);
+	    global.fmin          = string_readln_real(args);
+	    global.fmax          = string_readln_real(args);
+	    global.fdmg          = string_readln_real(args);
+	    global.fpen          = string_readln_real(args);
+	    global.fkb           = string_readln_real(args);
+	    global.cdmg          = string_readln_real(args);
+	    global.cpen          = string_readln_real(args);
+	    global.ckb           = string_readln_real(args);
+	    global.ctime         = string_readln_real(args);
+	    global.ccooldown     = string_readln_real(args);
+	    global.ucooldown     = string_readln_real(args);
+	} else {
+		scr_PlayerDataUpdate(global.chrsel);
+	}
 
 	// Update surface pages
 	scr_UpdateSurfacePages();

@@ -53,6 +53,39 @@ function scr_SaveGlobals() {
 		save_append(args, global.background_hspeed[i]);
 		save_append(args, global.background_hspeed[i]);
 	}
+	
+	if (version_ge(VER, "1.2.1")) {
+		save_append(args, global.hp);
+	    save_append(args, global.bdmg);
+	    save_append(args, global.bdef);
+	    save_append(args, global.bpen);
+	    save_append(args, global.bkb);
+	    save_append(args, global.bkbres);
+	    save_append(args, global.acc);
+	    save_append(args, global.counteracc);
+	    save_append(args, global.spd);
+	    save_append(args, global.invtime);
+	    save_append(args, global.foctime);
+	    save_append(args, global.pdmg);
+	    save_append(args, global.pdef);
+	    save_append(args, global.ppen);
+	    save_append(args, global.pkb);
+	    save_append(args, global.pkbres);
+	    save_append(args, global.pspd);
+	    save_append(args, global.sacc);
+	    save_append(args, global.sspd);
+	    save_append(args, global.fmin);
+	    save_append(args, global.fmax);
+	    save_append(args, global.fdmg);
+	    save_append(args, global.fpen);
+	    save_append(args, global.fkb);
+	    save_append(args, global.cdmg);
+	    save_append(args, global.cpen);
+	    save_append(args, global.ckb);
+	    save_append(args, global.ctime);
+	    save_append(args, global.ccooldown);
+	    save_append(args, global.ucooldown);
+	}
 
 	args[@ 0] += args[@ 1];
 
