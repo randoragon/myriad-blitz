@@ -10,8 +10,8 @@ surface_set_target(GENERAL_SURFACE);
 
 if (stage != 0) {
 	var num1 = 0;
-	for (var i = 0; i < array_length_1d(audiogroups); i++) { num1 += audio_group_load_progress(audiogroups[i]); }
-	var den1 = array_length_1d(audiogroups) * 100;
+	for (var i = 0; i < array_length(audiogroups); i++) { num1 += audio_group_load_progress(audiogroups[i]); }
+	var den1 = array_length(audiogroups) * 100;
 	var num2 = image_index;
 	var den2 = image_number;
 	var precision = 0.0001;

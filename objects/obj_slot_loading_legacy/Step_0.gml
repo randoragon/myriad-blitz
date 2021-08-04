@@ -14,7 +14,7 @@ if (phase == 1 && clock-- <= 0) {
         interval     = 1 - (global.save_chunk_size > 500);
         clock        = interval;
         progress     = 0;
-        progress_max = array_length_1d(chunk);
+        progress_max = array_length(chunk);
         with (obj_save_group) {
 			instance_destroy();
         }
@@ -36,7 +36,7 @@ if (phase == 2 && clock-- <= 0) {
         clock      = interval;
         data       = "";
         inst_index = 0;
-        inst_count = array_length_1d(chunk);
+        inst_count = array_length(chunk);
     }
 }
 
@@ -47,7 +47,7 @@ if (phase == 2 && clock-- <= 0) {
 if (phase == 3 && clock-- <= 0) {
     var index0 = inst_index;
     var pos;
-    while (inst_index < array_length_1d(chunk)) {
+    while (inst_index < array_length(chunk)) {
         pos = string_pos(separator, chunk[inst_index]);
         //found in the middle
         if (pos != 0) {
@@ -55,7 +55,7 @@ if (phase == 3 && clock-- <= 0) {
         }
         else {
             //end of chunks
-            if (inst_index == array_length_1d(chunk) - 1) {
+            if (inst_index == array_length(chunk) - 1) {
                 pos = string_length(chunk[inst_index]) + 1;
                 break;
             } else
@@ -104,7 +104,7 @@ if (phase == 3 && clock-- <= 0) {
         phase        = 4;
         data         = "";
         progress     = 0;
-        progress_max = array_length_1d(line);
+        progress_max = array_length(line);
     }
 }
 

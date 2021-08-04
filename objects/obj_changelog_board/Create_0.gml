@@ -52,9 +52,9 @@ if (file_exists(program_directory + "\\changelog.txt")) {
     content[0, 3] = "_Discord server invite is in the About section.";
 }
 
-total_height = array_length_1d(section) * ((3 * 12) + section_padding);
-for (var i = 0; i < array_length_1d(section); i++) {
-    total_height += (array_length_2d(content, i) * ((2 * 12) + content_padding)) - content_padding + content_end_padding;
+total_height = array_length(section) * ((3 * 12) + section_padding);
+for (var i = 0; i < array_length(section); i++) {
+    total_height += (array_length(content[i]) * ((2 * 12) + content_padding)) - content_padding + content_end_padding;
 }
 total_height = max(total_height - 558 + 120, 0);
 

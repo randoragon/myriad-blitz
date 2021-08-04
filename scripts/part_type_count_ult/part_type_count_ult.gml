@@ -17,7 +17,7 @@ function part_type_count_ult() {
 		    if (grid[# i, 0] == argument[0]) { count++; }
 		}
 	} else {
-		for (var i = 0; i < array_length_1d(global.part_system); i++) {
+		for (var i = 0; i < array_length(global.part_system); i++) {
 			count += part_type_count_ult(argument[0], global.part_system[i]);
 		}
 	}

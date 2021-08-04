@@ -13,7 +13,7 @@ function part_type_exists_pro() {
 	if (argument_count == 2) {
 		return ds_grid_value_exists(argument[1], 1, 0, ds_grid_width(argument[1])-1, 0, argument[0]);
 	} else {
-		for (var i = 0; i < array_length_1d(global.part_system); i++) {
+		for (var i = 0; i < array_length(global.part_system); i++) {
 			if (part_type_exists_pro(argument[0], global.part_system[i])) {
 				return TRUE;
 			}

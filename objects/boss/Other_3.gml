@@ -17,12 +17,12 @@ global.close_game = TRUE;
 if (ds_exists(global.part_type_pro_slots, ds_type_list)) { ds_list_destroy(global.part_type_pro_slots); }
 if (ds_exists(global.part_type_lt_slots,  ds_type_list)) { ds_list_destroy(global.part_type_lt_slots);  }
 if (ds_exists(global.part_type_ult_slots, ds_type_list)) { ds_list_destroy(global.part_type_ult_slots); }
-for (var i = 0; i < array_length_1d(global.part_system); i++) {
+for (var i = 0; i < array_length(global.part_system); i++) {
 	if (ds_exists(global.part_system[i], ds_type_grid)) {
 		ds_grid_destroy(global.part_system[i]);
 	}
 }
-for (var i = 0; i < array_length_1d(global.part_type); i++) {
+for (var i = 0; i < array_length(global.part_type); i++) {
 	if (ds_exists(global.part_type[i], ds_type_list)) {
 		ds_list_destroy(global.part_type[i]);
 	}

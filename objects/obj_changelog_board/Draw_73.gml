@@ -24,7 +24,7 @@ if (global.busy == 0 && mouse_wheel_up() && place_meeting(x, y, boss)) {
 
 draw_set_align(fa_center, fa_top);
 var distance = 0, yy;
-for (var i = 0; i < array_length_1d(section); i++) {
+for (var i = 0; i < array_length(section); i++) {
     yy = y - sprite_yoffset + 50 + scroll + distance;
     if (yy + (3 * 12) >= y - sprite_yoffset + 50 && yy <= y - sprite_yoffset + sprite_height - 70) {
         if (date[i] == "" || !(boss.x >= x - (0.5 * 3 * string_width(section[i])) - 2 && boss.x <= x + (0.5 * 3 * string_width(section[i])) && boss.y > yy - 2 && boss.y < yy + (3 * 12) + 2)) {
@@ -41,7 +41,7 @@ for (var i = 0; i < array_length_1d(section); i++) {
             draw_text_outline(x, yy, section[i], 3, 3, rgb(0, 255, 255), 2, c_black);
         }
     }
-    for (var l = 0; l < array_length_2d(content, i); l++) {
+    for (var l = 0; l < array_length(content[i]); l++) {
         if (yy + (3 * 12) + (2 * 12) + section_padding + (l * ((2 * 12) + content_padding)) >= y - sprite_yoffset + 50 && yy + (3 * 12) + section_padding + (l * ((2 * 12) + content_padding)) <= y - sprite_yoffset + sprite_height - 70) {
 	        draw_set_color(c_black);
 	        switch (string_copy(content[i, l], 1, 1)) {
@@ -61,7 +61,7 @@ for (var i = 0; i < array_length_1d(section); i++) {
 	        }
         }
     }
-    distance += (3 * 12) + section_padding + (array_length_2d(content, i) * ((2 * 12) + content_padding)) - content_padding + content_end_padding;
+    distance += (3 * 12) + section_padding + (array_length(content[i]) * ((2 * 12) + content_padding)) - content_padding + content_end_padding;
 }
 
 var prevscroll = scroll;
@@ -76,7 +76,7 @@ if (prevscroll + scrollv < -total_height || prevscroll + scrollv > 0) {
 
 //cuts
 var cut1_exists = 1;
-for (var i = 0; i < array_length_1d(cut1); i++) {
+for (var i = 0; i < array_length(cut1); i++) {
     if (!sprite_exists(cut1[i])) {
         cut1_exists = 0;
     }
@@ -85,7 +85,7 @@ if (cut1_exists) {
     draw_sprite_ext(cut1[floor(image_index) % image_number], 0, x, y, image_xscale, image_yscale, image_angle, image_blend, 1);
 }
 var cut2_exists = 1;
-for (var i = 0; i < array_length_1d(cut2); i++) {
+for (var i = 0; i < array_length(cut2); i++) {
     if (!sprite_exists(cut2[i])) {
         cut2_exists = 0;
     }
@@ -106,14 +106,14 @@ if (osc != -1) {
 
 //tooltips
 var distance = 0, yy;
-for (var i = 0; i < array_length_1d(section); i++) {
+for (var i = 0; i < array_length(section); i++) {
     yy = y - sprite_yoffset + 50 + scroll + distance;
     if (yy + (3 * 12) >= y - sprite_yoffset + 50 && yy <= y - sprite_yoffset + sprite_height - 70) {
         if (date[i] != "" && (boss.x >= x - (0.5 * 3 * string_width(section[i])) - 2 && boss.x <= x + (0.5 * 3 * string_width(section[i])) && boss.y > yy - 2 && boss.y < yy + (3 * 12) + 2)) {
             draw_tooltip(date[i]);
         }
     }
-    distance += (3 * 12) + section_padding + (array_length_2d(content, i) * ((2 * 12) + content_padding)) - content_padding + content_end_padding;
+    distance += (3 * 12) + section_padding + (array_length(content[i]) * ((2 * 12) + content_padding)) - content_padding + content_end_padding;
 }
 
 #endregion

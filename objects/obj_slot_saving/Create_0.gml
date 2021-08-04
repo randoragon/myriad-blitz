@@ -68,14 +68,14 @@ for (var i = 0; i < instance_count; i++) {
 }
 
 // Enqueue all music and sfx
-for (var i = 0; i < array_length_1d(global.music); i++) {
+for (var i = 0; i < array_length(global.music); i++) {
 	var snd = global.music[i];
 	if (audio_exists(snd) && audio_is_playing(snd)) {
 		enqueue_tuple(queue, SAVE_DATA_SOUND, snd);
 		progress_max++;
 	}
 }
-for (var i = 0; i < array_length_1d(global.sfx); i++) {
+for (var i = 0; i < array_length(global.sfx); i++) {
 	var snd = global.sfx[i];
 	if (audio_exists(snd) && audio_is_playing(snd)) {
 		enqueue_tuple(queue, SAVE_DATA_SOUND, snd);

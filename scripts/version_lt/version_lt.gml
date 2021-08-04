@@ -14,7 +14,7 @@ function version_lt() {
 
 	a = -1;
 	b = -1;
-	for (var i = 0; i < array_length_1d(global.versions); i++) {
+	for (var i = 0; i < array_length(global.versions); i++) {
 		if (global.versions[i] == v1) { a = i; }
 		if (global.versions[i] == v2) { b = i; }
 		if (a != -1 && b != -1) { break; }

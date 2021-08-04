@@ -35,7 +35,7 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 		break;
 	    case 18:
 			if (obj_slot_load.start_busy != global.busy) { exit; }
-			if (obj_slot_load.page == ceil((array_length_1d(obj_slot_load.slot) - 1) / 6) - 1) {
+			if (obj_slot_load.page == ceil((array_length(obj_slot_load.slot) - 1) / 6) - 1) {
 				image_blend = c_gray;
 			} else {
 				image_blend = rgb(255, 150, 100);
@@ -328,7 +328,7 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 				break;
 	            case 18:
 					if (image_blend != c_gray) {
-						obj_slot_load.page = home(obj_slot_load.page, ceil((array_length_1d(obj_slot_load.slot) - 1) / 6) - 1, 1, 0);
+						obj_slot_load.page = home(obj_slot_load.page, ceil((array_length(obj_slot_load.slot) - 1) / 6) - 1, 1, 0);
 						with(obj_slot) { phase = 2; }
 						obj_slot_load.spawncount = 7;
 						obj_slot_load.alarm[0] = 1;

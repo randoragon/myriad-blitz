@@ -8,8 +8,8 @@ event_inherited();
 
 #region Button interaction
 
-if (page > ceil((array_length_1d(slot) - 1) / 6)) {
-	page = ceil((array_length_1d(slot) - 1) / 6);
+if (page > ceil((array_length(slot) - 1) / 6)) {
+	page = ceil((array_length(slot) - 1) / 6);
 }
 
 if (obj_slot_load.start_busy != global.busy) { exit; }

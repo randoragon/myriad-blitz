@@ -48,7 +48,7 @@ if (y < ystart + 350) {
 if (x < xstart + 250) {
 	var cut1_exists = 1;
 	
-	for (var i = 0; i < array_length_1d(cut1); i++) {
+	for (var i = 0; i < array_length(cut1); i++) {
 		if (!sprite_exists(cut1[i])) {cut1_exists = 0; }
 	}
 	if (cut1_exists) {
@@ -57,7 +57,7 @@ if (x < xstart + 250) {
 	
 	var cut2_exists = 1;
 	
-	for (var i = 0; i < array_length_1d(cut2); i++) {
+	for (var i = 0; i < array_length(cut2); i++) {
 		if (!sprite_exists(cut2[i])) { cut2_exists = 0; }
 	}
 	

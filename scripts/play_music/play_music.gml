@@ -14,7 +14,7 @@ function play_music() {
 		priority = global.sound_priority[? audio_get_name(argument[0])];
 	}
 
-	for (var musiccount = 0; musiccount < array_length_1d(global.music); musiccount++) {
+	for (var musiccount = 0; musiccount < array_length(global.music); musiccount++) {
 	    if ((!audio_is_playing(global.music[musiccount]) || (audio_sound_get_gain(global.music[musiccount]) == 0 && global.muspercentage > 0))) {
 	        if (audio_is_playing(global.music[musiccount])) {
 				audio_stop_sound(global.music[musiccount]);
@@ -26,10 +26,10 @@ function play_music() {
 	    }
 	}
 
-	global.music[array_length_1d(global.music)] = audio_play_sound(soundid, priority, loops);
-	audio_sound_gain(global.music[array_length_1d(global.music) - 1], global.muspercentage / 100, 0);
-	audio_sound_pitch(global.music[array_length_1d(global.music) - 1], pitch);
-	return global.music[array_length_1d(global.music) - 1];
+	global.music[array_length(global.music)] = audio_play_sound(soundid, priority, loops);
+	audio_sound_gain(global.music[array_length(global.music) - 1], global.muspercentage / 100, 0);
+	audio_sound_pitch(global.music[array_length(global.music) - 1], pitch);
+	return global.music[array_length(global.music) - 1];
 
 
 

@@ -26,7 +26,7 @@ function part_type_wipe_lt() {
 		    }
 		}
 	} else {
-		for (var i = 0; i < array_length_1d(global.part_system); i++) {
+		for (var i = 0; i < array_length(global.part_system); i++) {
 			part_type_wipe_lt(argument[0], global.part_system[i]);
 		}
 	}

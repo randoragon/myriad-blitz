@@ -187,8 +187,8 @@ desc[n] = "";
 if (file_exists(working_directory+"userconfig.mbdat")) {
 	ini_open(working_directory+"userconfig.mbdat");
 
-	for (var i = 0; i < elementid[array_height_2d(elementid) - 1, array_length_2d(elementid, array_height_2d(elementid) - 1) - 1] + 1; i++)
-		for (var l = 0; l < array_height_2d(linecount); l++)
+	for (var i = 0; i < elementid[array_length(elementid) - 1, array_length(elementid[array_length(elementid) - 1]) - 1] + 1; i++)
+		for (var l = 0; l < array_length(linecount); l++)
 			for (var m = 0; m < section_length[l]; m++)
 				if (elementid[l, m] == i) {
 					var prev  = listed[i];
@@ -202,6 +202,6 @@ if (file_exists(working_directory+"userconfig.mbdat")) {
 
 scr_Stats_Update(button[0].show);
 
-for (var i = 0; i < array_length_1d(elementid); i++) { checkbox[i] = -4; }
+for (var i = 0; i < array_length(elementid); i++) { checkbox[i] = -4; }
 
 #endregion

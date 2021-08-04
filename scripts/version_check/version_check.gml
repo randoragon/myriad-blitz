@@ -28,7 +28,7 @@ function version_check() {
 		break;
 	}
 
-	for (var i = 0; i < array_length_1d(compat); i++) {
+	for (var i = 0; i < array_length(compat); i++) {
 		if (v2 == compat[i]) { return TRUE; }
 	}
 

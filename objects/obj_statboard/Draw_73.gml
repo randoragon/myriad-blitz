@@ -35,7 +35,7 @@ if (x < xstart + 360) {
 	if (prevscroll + scrollv < scroll_limit || prevscroll + scrollv > 0) { scrollv = 0; }
 
 	draw_set_align(fa_left, fa_middle); draw_set_color(c_black);
-	for (var s = 0; s < array_height_2d(linecount); s++) {
+	for (var s = 0; s < array_length(linecount); s++) {
 		//add section offset
 		var yoffset = 0;
 		var xoffset = 10 + (10 * (button[1].customize));
@@ -105,13 +105,13 @@ if (x < xstart + 360) {
 	#region Draw cuts, arrows, headline & buttons
 	
 	var cut1_exists = 1;
-	for (var i = 0; i < array_length_1d(cut1); i++) {
+	for (var i = 0; i < array_length(cut1); i++) {
 		if (!sprite_exists(cut1[i])) { cut1_exists = 0; }
 	}
 	if (cut1_exists) { draw_sprite_ext(cut1[floor(image_index) % image_number], 0, x, y, image_xscale, image_yscale, image_angle, image_blend, 1); }
 	
 	var cut2_exists = 1;
-	for (var i = 0; i < array_length_1d(cut2); i++) {
+	for (var i = 0; i < array_length(cut2); i++) {
 		if (!sprite_exists(cut2[i])) { cut2_exists = 0; }
 	}
 	if (cut2_exists) { draw_sprite_ext(cut2[floor(image_index) % image_number], 0, x, y, image_xscale, image_yscale, image_angle, image_blend, 1); }
@@ -140,7 +140,7 @@ if (x < xstart + 360) {
 	// This entire region used to be enclosed in with (other) {}. I couldn't understand why, and it seems to work flawlessly without it, so it's been removed.
 	
 	draw_set_align(fa_left, fa_middle); draw_set_color(c_black);
-	for (var s = 0; s < array_height_2d(linecount); s++) {
+	for (var s = 0; s < array_length(linecount); s++) {
 		//add section offset
 		var yoffset = 0;
 		var xoffset = 10 + (10 * (button[1].customize));

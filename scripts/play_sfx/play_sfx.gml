@@ -14,7 +14,7 @@ function play_sfx() {
 		priority = global.sound_priority[? audio_get_name(argument[0])];
 	}
 
-	for (var sfxcount=0; sfxcount < array_length_1d(global.sfx); sfxcount++) {
+	for (var sfxcount=0; sfxcount < array_length(global.sfx); sfxcount++) {
 	    if (!audio_is_playing(global.sfx[sfxcount]) || (audio_sound_get_gain(global.sfx[sfxcount]) == 0 && global.sfxpercentage > 0)) {
 	        if (audio_is_playing(global.sfx[sfxcount])) {
 				audio_stop_sound(global.sfx[sfxcount]);
@@ -26,10 +26,10 @@ function play_sfx() {
 	    }
 	}
 
-	global.sfx[array_length_1d(global.sfx)] = audio_play_sound(soundid, priority, loops);
-	audio_sound_gain (global.sfx[array_length_1d(global.sfx) - 1], global.sfxpercentage / 100, 0);
-	audio_sound_pitch(global.sfx[array_length_1d(global.sfx) - 1], pitch);
-	return global.sfx[array_length_1d(global.sfx) - 1];
+	global.sfx[array_length(global.sfx)] = audio_play_sound(soundid, priority, loops);
+	audio_sound_gain (global.sfx[array_length(global.sfx) - 1], global.sfxpercentage / 100, 0);
+	audio_sound_pitch(global.sfx[array_length(global.sfx) - 1], pitch);
+	return global.sfx[array_length(global.sfx) - 1];
 
 
 }

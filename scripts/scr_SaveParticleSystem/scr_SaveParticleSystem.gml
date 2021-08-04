@@ -15,7 +15,7 @@ function scr_SaveParticleSystem() {
 	 * the global.part_system array.
 	 */
 	var j = -1;
-	for (var i = 0; i < array_length_1d(global.part_system); i++) {
+	for (var i = 0; i < array_length(global.part_system); i++) {
 		if (global.part_system[i] == args[@ 2]) {
 			j = i;
 		}

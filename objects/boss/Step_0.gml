@@ -58,13 +58,13 @@ if (keyboard_check_pressed(vk_f11)) {
  */
 if (room == rm_Settings || (room == rm_Main && global.gpspeed == 0 && global.state == 1 && !global.loading)) {
     // MUSIC
-    for (var i = array_length_1d(global.music) - 1; i > -1; i--) {
+    for (var i = array_length(global.music) - 1; i > -1; i--) {
     if (audio_is_playing(global.music[i]))
 		audio_sound_gain(global.music[i], global.muspercentage / 100, 0);
     }
     
     // SFX
-    for(var i = array_length_1d(global.sfx) - 1; i > -1; i--) {
+    for(var i = array_length(global.sfx) - 1; i > -1; i--) {
     if (audio_is_playing(global.sfx[i]))
 		audio_sound_gain(global.sfx[i], global.sfxpercentage / 100, 0);
     }

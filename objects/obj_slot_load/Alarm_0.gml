@@ -4,7 +4,7 @@
 
 if (spawncount > 1) {
 	spawncount--;
-	while ((page * 6) + spawncount + 1 > array_length_1d(slot)) {
+	while ((page * 6) + spawncount + 1 > array_length(slot)) {
 		spawncount--;
 		if (spawncount < 0) { exit; }
 	}

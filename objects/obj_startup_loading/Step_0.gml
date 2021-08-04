@@ -2,16 +2,16 @@
 
 #region Load audio groups
 
-if (stage != 0 && stage <= array_length_1d(audiogroups) * 2) {
+if (stage != 0 && stage <= array_length(audiogroups) * 2) {
 	var all_loaded = bool(stage % 2 == 1);
 	var i = 0;
-	for (; i < array_length_1d(audiogroups); i++) {
+	for (; i < array_length(audiogroups); i++) {
 		if (!audio_group_is_loaded(audiogroups[i])) {
 			all_loaded = FALSE;
 			break;
 		}
 	}
-	i = min(i, array_length_1d(audiogroups) - 1);
+	i = min(i, array_length(audiogroups) - 1);
 	
 	if (!all_loaded && stage % 2 == 1) {
 		audio_group_load(audiogroups[i]);
@@ -19,7 +19,7 @@ if (stage != 0 && stage <= array_length_1d(audiogroups) * 2) {
 	} else if (!all_loaded && stage % 2 == 0 && audio_group_is_loaded(audiogroups[i])) {
 		stage += 1;
 	} else if (all_loaded) {
-		stage = (array_length_1d(audiogroups) * 2) + 1;
+		stage = (array_length(audiogroups) * 2) + 1;
 	}
 }
 

@@ -19,7 +19,7 @@ if (x >= xstart + 360) {
 	if (!instance_exists(button[1])) { button[1] = instance_create_depth_f(x - 87,  y - 170, depth - 1, obj_button, 21); }
 }
 
-for (var i = 0; i < array_length_1d(checkbox); i++) {
+for (var i = 0; i < array_length(checkbox); i++) {
 	if (instance_exists(checkbox[i])) {
 		checkbox[i].y = -20;
 		if (listed[i] != checkbox[i].check) { listed[i] = checkbox[i].check; }

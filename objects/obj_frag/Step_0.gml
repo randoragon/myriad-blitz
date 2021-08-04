@@ -61,7 +61,7 @@ switch(f) {
 				var parttype, hue, hues, i;
 				hue  = color_get_hue(image_blend);
 				hues = [0, 21, 43, 80, 122, 163, 197, 223, 255];
-				for (i = 0; i < array_length_1d(hues); i++) {
+				for (i = 0; i < array_length(hues); i++) {
 					if (hues[i] > hue) { break; }
 				}
 				hue = (abs(hue - hues[i-1]) < abs(hue - hues[i]))? i-1 : i % 8;

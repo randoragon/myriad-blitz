@@ -4,7 +4,7 @@ function scrq_delete_slot() {
 	play_sfx(sfx_slot_delete, 0);
 
 	var prevpage      = obj_slot_load.page;
-	var prevslotcount = array_length_1d(obj_slot_load.slot)-1;
+	var prevslotcount = array_length(obj_slot_load.slot)-1;
 
 	with (obj_slot_load) {
 	    file_delete(selection);
