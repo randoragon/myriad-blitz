@@ -10,7 +10,7 @@ function player_hp() {
 	with (ftarget) {
 	    hpmark         = hp;
 	    hp             = clamp(hp + argument[0], 0, hpmax);
-	    hpmark_v       = abs(hpmark - hp) / invtime;
+	    hpmark_v       = abs(hpmark - hp) / (invtime ? invtime : 60);
 	    bar_opacity[0] = 7;
 	}
 
