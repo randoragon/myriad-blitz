@@ -14,6 +14,11 @@ if (ds_map_exists(loot, "ultimate")) {
 		instance_create(x, y, obj_ultimate_pickup);
 		obj_player.ultcount++;
 		obj_player.ultblink = 45;
+		play_sfx(choose(sfx_ultimate_pickup1,
+					    sfx_ultimate_pickup2,
+						sfx_ultimate_pickup3,
+						sfx_ultimate_pickup4,
+						sfx_ultimate_pickup5), 0, 100 * global.gpspeed);
 	}
 }
 		
