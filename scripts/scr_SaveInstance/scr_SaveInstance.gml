@@ -134,6 +134,7 @@ function scr_SaveInstance() {
 			
 			if (version_ge(VER, "1.2.1")) {
 				save_append(args, o.ultcount);
+				save_append(args, o.cancellation_clock);
 			}
 		break;
 		case obj_projectile:
@@ -396,6 +397,10 @@ function scr_SaveInstance() {
 	        save_append(args, o.bar_yoffset[0]);
 	        save_append(args, o.bar_yoffset[1]);
 	        save_append(args, o.bar_yoffset[2]);
+			
+			if (version_ge(VER, "1.2.1")) {
+				save_append(args, o.cancellation_clock);
+			}
 		break;
 		case obj_emerald_ultimate:
 			save_append(args, o.scale_v);

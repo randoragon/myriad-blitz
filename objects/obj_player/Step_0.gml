@@ -636,37 +636,51 @@ if (global.state == 1 && global.gpspeed != 0) {
 
 // activation conditions and immediate effect
 var is_ultimate_cooldown  = IS_STATUS_EFFECT_ULTIMATE_COOLDOWN;
-var is_evilflame_ultimate = (global.chrsel == PLAYER_EVILFLAME && (instance_exists(obj_evilflame_ultimate) || evilflame_twilight_fury));
+var is_evilflame_ultimate = (global.chrsel == PLAYER_EVILFLAME && evilflame_twilight_fury);
 var is_emerald_ultimate   = (global.chrsel == PLAYER_EMERALD && instance_exists(obj_emerald_ultimate));
 var is_scootomik_ultimate = (global.chrsel == PLAYER_DER_SCOOTOMIK && IS_STATUS_EFFECT_CHIP_TUNING);
 var is_bobileusz_ultimate = (global.chrsel == PLAYER_BOBILEUSZ && instance_exists(obj_bobileusz_ultimate));
 var are_all_ultimates_off = !(is_evilflame_ultimate | is_emerald_ultimate | is_scootomik_ultimate | is_bobileusz_ultimate);
 if (keyboard_check_pressed(KEYBIND_ULTIMATE) && ultcount > 0 && !is_ultimate_cooldown && are_all_ultimates_off && global.state == 1 && global.gpspeed != 0 && !instance_exists(obj_ultimate_activation)) {
     ultcount--;
-    instance_create(0, 0, obj_ultimate_activation);
-    flash_clock = 50;
+	if (global.chrsel == PLAYER_EVILFLAME && !TWILIGHT_FURY && instance_exists(obj_evilflame_ultimate)) {
+		// cancel dual clone, secondary effect
+        part_type_spawn_lt(PART_SYSTEM_PLAYERTOP_LT, PART_TYPE_ULTIMATE_BURST_LT, 0, x - sprite_xoffset, y - sprite_yoffset, x - sprite_xoffset + sprite_width, y - sprite_yoffset + sprite_height, "ellipse", "invgaussian", 100);
+		sprite_index = evilflame_sprite_swap ? spr_evilflame_ultimate_charging : spr_evilflame_charging;
+		with(obj_evilflame_ultimate) {
+			part_type_spawn_lt(PART_SYSTEM_PLAYERTOP_LT, PART_TYPE_ULTIMATE_BURST_LT, 0, x - sprite_xoffset, y - sprite_yoffset, x - sprite_xoffset + sprite_width, y - sprite_yoffset + sprite_height, "ellipse", "invgaussian", 100);
+			sprite_index = other.evilflame_sprite_swap ? spr_evilflame_charging : spr_evilflame_ultimate_charging;
+		}
+		cancellation_clock = 45;
+		obj_evilflame_ultimate.cancellation_clock = 45;
+	} else {
+		instance_create(0, 0, obj_ultimate_activation);
+		flash_clock = 50;
+	}
 }
 
 // actual execution start
 if (flash_clock == 40) {
     ultblink = 45;
-        // particle burst
-        part_type_spawn_lt(PART_SYSTEM_PLAYERTOP_LT, PART_TYPE_ULTIMATE_BURST_LT, 0, x - sprite_xoffset, y - sprite_yoffset, x - sprite_xoffset + sprite_width, y - sprite_yoffset + sprite_height, "ellipse", "invgaussian", 100);
+    // particle burst
+    part_type_spawn_lt(PART_SYSTEM_PLAYERTOP_LT, PART_TYPE_ULTIMATE_BURST_LT, 0, x - sprite_xoffset, y - sprite_yoffset, x - sprite_xoffset + sprite_width, y - sprite_yoffset + sprite_height, "ellipse", "invgaussian", 100);
 		
-        if (global.chrsel == PLAYER_EVILFLAME && !TWILIGHT_FURY) {
-			part_type_spawn_lt(PART_SYSTEM_PLAYERTOP_LT, PART_TYPE_ULTIMATE_BURST_LT, 0, x - sprite_xoffset, -(y - sprite_yoffset) + room_height, x - sprite_xoffset + sprite_width, -(y - sprite_yoffset + sprite_height) + room_height, "ellipse", "invgaussian", 100);
-        } else if (global.chrsel == PLAYER_EMERALD || global.chrsel == PLAYER_BOBILEUSZ) {
-	        var random_x = irandom_range(CANVAS_XEND - 600, CANVAS_XEND - 200);
-	        var random_y = irandom_range(CANVAS_Y + 234, CANVAS_YEND - 234);
-	        part_type_spawn_lt(PART_SYSTEM_PLAYERTOP_LT, PART_TYPE_ULTIMATE_BURST_LT, 0, x, y, random_x, random_y, "line", "linear", 100);
-        }
+    if (global.chrsel == PLAYER_EVILFLAME && !TWILIGHT_FURY) {
+		part_type_spawn_lt(PART_SYSTEM_PLAYERTOP_LT, PART_TYPE_ULTIMATE_BURST_LT, 0, x - sprite_xoffset, -(y - sprite_yoffset) + room_height, x - sprite_xoffset + sprite_width, -(y - sprite_yoffset + sprite_height) + room_height, "ellipse", "invgaussian", 100);
+    } else if (global.chrsel == PLAYER_EMERALD || global.chrsel == PLAYER_BOBILEUSZ) {
+	    var random_x = irandom_range(CANVAS_XEND - 600, CANVAS_XEND - 200);
+	    var random_y = irandom_range(CANVAS_Y + 234, CANVAS_YEND - 234);
+	    part_type_spawn_lt(PART_SYSTEM_PLAYERTOP_LT, PART_TYPE_ULTIMATE_BURST_LT, 0, x, y, random_x, random_y, "line", "linear", 100);
+    }
 		
     switch(global.chrsel) {
 	    case PLAYER_EVILFLAME:
 		    if (!TWILIGHT_FURY) {
-			    hp /= 2; global.hp /= 2; hpmax /= 2; hpmark /= 2; hpmark_v /= 2;
-			    instance_create(0, 0, obj_evilflame_ultimate); //evilflame - dual clone
-			    player_status_add(STATUS_EFFECT_DUAL_CLONE, -2, 0);
+				hp /= 2; global.hp /= 2; hpmax /= 2; hpmark /= 2; hpmark_v /= 2;
+				instance_create(0, 0, obj_evilflame_ultimate); //evilflame - dual clone
+				player_hp(25);
+				player_hp(25, obj_evilflame_ultimate);
+				player_status_add(STATUS_EFFECT_DUAL_CLONE, -2, 0);
 		    } else {
 			    evilflame_twilight_fury = TRUE;
 			    sprite_index = spr_evilflame_fury;
@@ -899,6 +913,24 @@ if (global.state == 1) {
     }
 }
 
+#endregion
+
+#region Cancellation Clock
+	
+if (cancellation_clock > 0 && global.gpspeed != 0) {
+	if (cancellation_clock % 15 == 0) {
+		knockback(7, 180 + image_angle, 1);
+		spawn_bullet(x + 20, y, obj_charge, 0, 3, -1, id);
+		play_sfx(sfx_evilflame_charge_shot, 0, global.sound_gpspeed * 100);
+	}
+	cancellation_clock -= global.gpspeed;
+	if (cancellation_clock <= 0) {
+		sprite_index = evilflame_sprite_swap ? spr_evilflame_ultimate : spr_evilflame;
+		player_status_add(STATUS_EFFECT_ULTIMATE_COOLDOWN, 20, 0);
+		player_status_add(STATUS_EFFECT_EXHAUSTED, 5, 1);
+	}
+}
+	
 #endregion
 
 #region Game Over

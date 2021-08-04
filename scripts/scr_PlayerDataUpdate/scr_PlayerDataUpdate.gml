@@ -50,8 +50,8 @@ function scr_PlayerDataUpdate() {
 	        global.cdmg          = 115;
 	        global.cpen          = 50;
 	        global.ckb           = 200;
-	        global.ctime         = 90;
-	        global.ccooldown     = 720;
+	        global.ctime         = 45;
+	        global.ccooldown     = 690;
 	        if (!TWILIGHT_FURY) {
 	            global.uname     = "DUAL CLONE";
 	            global.utype     = "BUFF";

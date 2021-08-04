@@ -10,5 +10,6 @@ player_status_add(STATUS_EFFECT_DUAL_CLONE, 0, 0);
 // Restore player full hp
 player.hpmax *= 2;
 global.hp    *= 2;
+player.hp    += (cancellation_clock == 0)? hp : 0;
 
 #endregion

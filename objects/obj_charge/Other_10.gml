@@ -40,6 +40,24 @@ switch(f) {
 				speed1 = 10;
 			    mask_index = spr_evilflame_fury_charge_hitbox;
 		    break;
+			case 3: // evilflame cancellation charge
+				sprite_index = spr_evilflame_charge;
+				direction   = spawn.image_angle + random_range(-10, 10);
+				speed1      = 8;
+			    image_speed = global.gpspeed;
+			    charge      = 40;
+				var scale   = random_range(0.65, 0.8);
+				image_scale(scale, scale);
+			break;
+			case 4: // evilflame dual clone cancellation charge
+				sprite_index = spr_evilflame_charge;
+				direction   = spawn.image_angle + random_range(-10, 10);
+				speed1      = 8;
+			    image_speed = global.gpspeed;
+			    charge      = 40;
+				var scale   = random_range(0.65, 0.8);
+				image_scale(scale, scale);
+			break;
 	    }
 	break;
 	case PLAYER_EMERALD:

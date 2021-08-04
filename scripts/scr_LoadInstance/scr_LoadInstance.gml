@@ -140,8 +140,10 @@ function scr_LoadInstance() {
 			
 			if (version_ge(ver, "1.2.1")) {
 				o.ultcount = string_readln_real(args);
+				o.cancellation_clock = string_readln_real(args);
 			} else {
 				o.ultcount = 0;
+				o.cancellation_clock = -1;
 			}
 		break;
 		case obj_projectile:
@@ -410,6 +412,10 @@ function scr_LoadInstance() {
 			o.bar_yoffset[0] = string_readln_real(args);
 			o.bar_yoffset[1] = string_readln_real(args);
 			o.bar_yoffset[2] = string_readln_real(args);
+			
+			if (version_ge(ver, "1.2.1")) {
+				o.cancellation_clock = string_readln_real(args);
+			}
 		break;
 		case obj_emerald_ultimate:
 			o.scale_v	  = string_readln_real(args);

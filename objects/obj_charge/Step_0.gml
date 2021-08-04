@@ -23,12 +23,12 @@ if (f == PLAYER_EVILFLAME && global.gpspeed != 0) {
 					}
 				}
 			} else if (instance_exists(target)) {
-				direction = home(direction, point_direction(x, y, target.x, target.y), 2 * global.gpspeed, 1);
+				direction = home(direction, point_direction(x, y, target.x, target.y), (2 + 2 * (e > 2)) * global.gpspeed, 1);
 			}
 			image_angle = direction;
 		}
 		if (real_step()) {
-			part_type_spawn_ult(PART_SYSTEM_CHARGE_ULT, PART_TYPE_P_EVILFLAME_CHARGE_ULT, 3, x - 30, y - 30, x + 30, y + 30, "ellipse", "linear", 1.5);
+			part_type_spawn_ult(PART_SYSTEM_CHARGE_ULT, PART_TYPE_P_EVILFLAME_CHARGE_ULT, 3, x - 30 * image_xscale, y - 30 * image_yscale, x + 30 * image_xscale, y + 30 * image_yscale, "ellipse", "linear", 1.5);
 		}
 		if (place_meeting(x, y, obj_enemy) && instance_place(x, y, obj_enemy).hp > 0) {
 			with (instance_place(x, y, obj_enemy)) {
