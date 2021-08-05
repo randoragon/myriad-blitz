@@ -1,5 +1,6 @@
 {
   "option_gameguid": "{EA857852-4C02-4A1F-A6A4-4D1A2ACE6C56}",
+  "option_gameid": "0",
   "option_game_speed": 60,
   "option_mips_for_3d_textures": false,
   "option_draw_colour": 4294967295,
@@ -7,7 +8,7 @@
   "option_steam_app_id": "0",
   "option_sci_usesci": true,
   "option_author": "Randoragon",
-  "option_lastchanged": "04 February 2019 20:45:46",
+  "option_lastchanged": "05 August 2021 8:56:08",
   "option_spine_licence": false,
   "resourceVersion": "1.2",
   "name": "Main",
