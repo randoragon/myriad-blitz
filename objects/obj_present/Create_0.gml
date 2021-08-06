@@ -24,7 +24,10 @@ if (obj_player.hp < obj_player.hpmax) {
 	}
 }
 
-if (f == 0) { number = irandom_range(ceil(global.hp * 0.1), ceil(global.hp * 0.2)); }
+if (f == 0) {
+	var hpmax = instance_exists(obj_evilflame_ultimate) ? 2*global.hp : global.hp;
+	number = irandom_range(ceil(hpmax * 0.12), ceil(hpmax * 0.2));
+}
 hspeed1     = -4;
 image_speed = 0;
 image_scale(3, 3);
