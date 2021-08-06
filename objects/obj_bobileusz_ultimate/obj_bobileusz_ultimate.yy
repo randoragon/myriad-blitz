@@ -90,7 +90,7 @@
         "GMObject",
         "GMRoom",
       ],"resourceVersion":"1.0","name":"lifespan","tags":[],"resourceType":"GMObjectProperty",},
-    {"varType":0,"value":"930","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":null,"multiselect":false,"filters":[
+    {"varType":0,"value":"1230","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":null,"multiselect":false,"filters":[
         "GMTileSet",
         "GMSprite",
         "GMSound",

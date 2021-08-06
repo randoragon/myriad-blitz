@@ -210,7 +210,7 @@ function scr_PlayerDataUpdate() {
 			"\nto be fueling the bike to this day. Also, in" +
 			"\nspare time it likes to hide in the bottle" +
 			"\nand spit on its enemies.";
-	        global.hp            = 580;
+	        global.hp            = 650;
 	        global.bdmg          = 64;
 	        global.bdef          = 25;
 	        global.bpen          = 0.2;
