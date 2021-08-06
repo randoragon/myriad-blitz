@@ -1,13 +1,15 @@
 This file is a source of data for Myriad Blitz. Please do not mess with it, as the game is unable to recreate it on its own, meaning any changes to it are permanent!
-///1.2.1 PATCH; August 5th#2021
-<+ Buffdate with stat changes and new abilities:
-_Evilflame, Der Scootomik
+///1.2.1 SUPERPATCH;August 6th#2021
+<+ buffed/revamped these characters:
+_Der Scootomik, Evilflame, Bobileusz
 <+ new SFX when obtaining Power Points from enemies
-<+ capped Gingerbread Men blue bolts' lifespan
-<+ scroll support with left mouse button
-<- fixed double power point drops from some enemies
-<- fixed some save slot glitches
-<- fixed some Dual Clone glitches
+<+ scroll support by mouse dragging
+<+ added key for charge, revamped left-handed binds
+<+ mild nerfs to some Christmas Realm enemies
+<- fixed framerate issues on some platforms
+<- fixed double Power Point drops from some enemies
+<- other improvements and bugfixes
+_see release notes on GitHub (link in About section)
 ///1.2.0 UPDATE;September 9th#2020
 <+ Myriad Blitz goes open-source!
 <+ new character: Bobileusz
