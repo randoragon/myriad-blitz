@@ -253,7 +253,7 @@ if (f == 8 && global.state == 1 && !global.loading && ds_exists(global.player_st
 				} else if (timer_countdown < 3600) {
 					timer_text = " - " + string(floor(timer_countdown / 60)) + "s";
 				} else {
-					timer_text = " - " + string(floor(timer_countdown / 3600)) + "m " + string(floor(timer_countdown / 60) % 60) + "s";
+					timer_text = " - " + string(floor(timer_countdown / 3600)) + "m" + string(floor(timer_countdown / 60) % 60) + "s";
 				}
 			} else {
 				timer_text = " - " + chr(8734);
@@ -285,13 +285,13 @@ if (f == 8 && room == rm_Main && !global.loading) {
 		                   string(8000 - global.points % 8000);
 	if (global.gpspeed == 0) {
 		stats_text_left += "\nin-game time:\nfps:";
-		stats_text_right += "\n" + (global.gptime > 3600 ? string_format(global.gptime / 3600, -1, 0) + "m " : "") + string_format(global.gptime % 3600 / 60, -1, 0) + "s";
+		stats_text_right += "\n" + (global.gptime > 3600 ? string_format(global.gptime / 3600, -1, 0) + "m" : "") + string_format(global.gptime % 3600 / 60, -1, 0) + "s";
 		stats_text_right += "\n" + string(fps);
 		draw_set_align(fa_center, fa_top);
 		draw_text_outline(GUI_XMID, GUI_YEND - 40, "you can (un)pause with Escape or " + (global.left_handed_mode ? "P" : "Q"), 2, 2, c_white, 0, c_black);
 	}
 	draw_set_align(fa_right, fa_top);
-	draw_text_outline(GUI_XEND - 10 - 2 * string_width("999999"), GUI_Y - 80 + (85*global.transition), stats_text_left, 2, 2, c_yellow, 2, c_black);
+	draw_text_outline(GUI_XEND - 10 - 2 * string_width("9999999"), GUI_Y - 80 + (85*global.transition), stats_text_left, 2, 2, c_yellow, 2, c_black);
 	draw_text_outline(GUI_XEND - 10, GUI_Y - 80 + (85*global.transition), stats_text_right, 2, 2, c_orange, 2, c_black);
 
 	//'YOU DIED!' MESSAGE
@@ -310,7 +310,7 @@ if (f == 8 && room == rm_Main && !global.loading) {
 		draw_set_alpha(1);
 		var death_msg_left = "enemies killed:\nin-game time:\nfinal score:\n";
 		var death_msg_right = string(global.kill_count) + "\n" +
-		                      (global.gptime >= 3600 ? string_format(global.gptime / 3600, -1, 0) + "m " : "") + string_format(global.gptime % 3600 / 60, -1, 0) + "s\n" +
+		                      (global.gptime >= 3600 ? string_format(global.gptime / 3600, -1, 0) + "m" : "") + string_format(global.gptime % 3600 / 60, -1, 0) + "s\n" +
 							  string(global.points);
 		draw_set_align(fa_center, fa_top);
 		draw_text_outline(GUI_X + 683, GUI_Y + 300, "GAME OVER!", 4, 4, c_white, 2, c_black);
