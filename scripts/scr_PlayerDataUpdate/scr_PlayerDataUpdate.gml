@@ -221,7 +221,7 @@ function scr_PlayerDataUpdate() {
 	        global.spd           = 13;
 	        global.invtime       = 69;
 	        global.foctime       = 220;
-	        global.pdmg          = 4.5;
+	        global.pdmg          = 5.5;
 	        global.pdef          = 25;
 	        global.ppen          = 25;
 	        global.pkb           = 0;
@@ -244,7 +244,7 @@ function scr_PlayerDataUpdate() {
 	        global.cpen          = 0;
 	        global.ckb           = 0;
 	        global.ctime         = 1;
-	        global.ccooldown     = 330;
+	        global.ccooldown     = 210;
 	        global.uname         = "PRISMATIC GLACIER";
 	        global.utype         = "BUFF";
 	        global.ucooldown     = 3600;
