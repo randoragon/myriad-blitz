@@ -279,8 +279,13 @@ if (f == 8 && global.state == 1 && !global.loading && ds_exists(global.player_st
 
 if (f == 8 && room == rm_Main && !global.loading) {
 	//SCORE
+	var stats_text_left = "score:\nkills:\nnext present:";
+	var stats_text_right = string(global.points)     + "\n" +
+	                       string(global.kill_count) + "\n" +
+		                   string(8000 - global.points % 8000);
 	draw_set_align(fa_right, fa_top);
-	draw_text_outline(GUI_XEND - 10, GUI_Y - 80 + (85*global.transition), "score: " + string_format(global.points, -1, 0), 3, 3, c_yellow, 2, c_black);
+	draw_text_outline(GUI_XEND - 10 - 2 * string_width("999999"), GUI_Y - 80 + (85*global.transition), stats_text_left, 2, 2, c_yellow, 2, c_black);
+	draw_text_outline(GUI_XEND - 10, GUI_Y - 80 + (85*global.transition), stats_text_right, 2, 2, c_orange, 2, c_black);
 
 	//'YOU DIED!' MESSAGE
 	if (global.state == 2) {
@@ -296,9 +301,17 @@ if (f == 8 && room == rm_Main && !global.loading) {
 		gpu_set_colorwriteenable(1, 1, 1, 1);
 		gpu_set_alphatestref(254);
 		draw_set_alpha(1);
+		var death_msg_left = "enemies killed:\nin-game time:\nfinal score:\n";
+		var death_msg_right = string(global.kill_count) + "\n" +
+		                      (global.gptime >= 3600 ? string_format(global.gptime / 3600, -1, 0) + "m " : "") + string_format(global.gptime % 3600 / 60, -1, 0) + "s\n" +
+							  string(global.points);
 		draw_set_align(fa_center, fa_top);
-		draw_text_outline(GUI_X + 683, GUI_Y + 300, "GAME OVER!", 4, 4, c_yellow, 2, c_black);
-		draw_text_outline(GUI_X + 683, GUI_Y + 360, "enemies killed: " + string(global.kill_count) + "\nfinal score: " + string(global.points) + "\n\npress space to continue", 2, 2, c_white, 0, c_black);
+		draw_text_outline(GUI_X + 683, GUI_Y + 300, "GAME OVER!", 4, 4, c_white, 2, c_black);
+		draw_text_outline(GUI_X + 683, GUI_Y + 500, "press space to continue", 2, 2, c_white, 0, c_black);
+		draw_set_halign(fa_right);
+		draw_text_outline(GUI_X + 683 - 5, GUI_Y + 360, death_msg_left, 2, 2, c_yellow, 2, c_black);
+		draw_set_halign(fa_left);
+		draw_text_outline(GUI_X + 683 + 5, GUI_Y + 360, death_msg_right, 2, 2, c_orange, 2, c_black);
 	}
 }
 
