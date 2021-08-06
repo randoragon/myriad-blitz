@@ -31,7 +31,7 @@ if (global.gpspeed != 0) {
 
 	#region Shooting & charge
 
-	var can_shoot = discharge > 0 || !mouse_check_button(mb_right);
+	var can_shoot = (discharge > 0 || !mouse_check_button(mb_right)) && cancellation_clock == -1;
 	if (can_shoot) {
 		// is shooting event:
 		var is_shooting = keyboard_check(KEYBIND_SHOOT) || (mouse_check_button(mb_left) && (!place_meeting(boss.x, boss.y, obj_button) || instance_place(boss.x, boss.y, obj_button).image_alpha == 0));
@@ -67,7 +67,7 @@ if (global.gpspeed != 0) {
 
 	//charge
 	if (global.state == 1 && global.gpspeed != 0) {
-		if (mouse_check_button(mb_right) && global.state == 1) {
+		if (mouse_check_button(mb_right) && global.state == 1 && cancellation_clock == -1) {
 			bar_opacity[2] = 5;
 			if (discharge == 0) {
 				if (player.evilflame_sprite_swap) {

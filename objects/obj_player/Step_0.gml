@@ -360,7 +360,7 @@ if (global.state == 1 && gpspd != 0) {
 
     gpspd = global.gpspeed;
     var charge_sprite_lock = ((charge > 0 && artcharge == 0) || ((global.chrsel == PLAYER_EMERALD || global.chrsel == PLAYER_DER_SCOOTOMIK) && instance_exists(obj_charge)));
-    var can_shoot = (discharge > 0 || !mouse_check_button(mb_right)) && !charge_sprite_lock && !(global.chrsel == PLAYER_EMERALD && IS_STATUS_EFFECT_SPELL_DRIED);
+    var can_shoot = (discharge > 0 || !mouse_check_button(mb_right)) && !charge_sprite_lock && !(global.chrsel == PLAYER_EMERALD && IS_STATUS_EFFECT_SPELL_DRIED) && cancellation_clock == -1;
     if (can_shoot) {
         // is shooting event:
 		var is_shooting = (keyboard_check(KEYBIND_SHOOT) || (mouse_check_button(mb_left) && (!place_meeting(boss.x, boss.y, obj_button) || instance_place(boss.x, boss.y, obj_button).image_alpha == 0)));
@@ -535,7 +535,7 @@ if (global.state == 1 && global.gpspeed != 0) {
 	var does_emerald_laser_exist = (global.chrsel == PLAYER_EMERALD && instance_exists(obj_charge));
 	var is_spell_dried = (global.chrsel == PLAYER_EMERALD && IS_STATUS_EFFECT_SPELL_DRIED);
 	var bobileusz_invalid = (global.chrsel == PLAYER_BOBILEUSZ && (!(keyboard_check(KEYBIND_UP) ^^ keyboard_check(KEYBIND_DOWN)) || ((keyboard_check(KEYBIND_UP) && status_effect[STATUS_EFFECT_GEAR10]) || (keyboard_check(KEYBIND_DOWN) && status_effect[STATUS_EFFECT_GEAR1]))));
-	if (mouse_check_button(mb_right) && global.state == 1 && !does_emerald_laser_exist && !is_spell_dried) {	
+	if (mouse_check_button(mb_right) && global.state == 1 && !does_emerald_laser_exist && !is_spell_dried && cancellation_clock == -1) {	
 		// Charging
 		if (discharge == 0 && !bobileusz_invalid) {
 			if (evilflame_sprite_swap) {
@@ -643,7 +643,7 @@ var is_bobileusz_ultimate = (global.chrsel == PLAYER_BOBILEUSZ && instance_exist
 var are_all_ultimates_off = !(is_evilflame_ultimate | is_emerald_ultimate | is_scootomik_ultimate | is_bobileusz_ultimate);
 if (keyboard_check_pressed(KEYBIND_ULTIMATE) && ultcount > 0 && !is_ultimate_cooldown && are_all_ultimates_off && global.state == 1 && global.gpspeed != 0 && !instance_exists(obj_ultimate_activation)) {
     ultcount--;
-	if (global.chrsel == PLAYER_EVILFLAME && !TWILIGHT_FURY && instance_exists(obj_evilflame_ultimate)) {
+	if (global.chrsel == PLAYER_EVILFLAME && !TWILIGHT_FURY && instance_exists(obj_evilflame_ultimate) && cancellation_clock == -1) {
 		// cancel dual clone, secondary effect
         part_type_spawn_lt(PART_SYSTEM_PLAYERTOP_LT, PART_TYPE_ULTIMATE_BURST_LT, 0, x - sprite_xoffset, y - sprite_yoffset, x - sprite_xoffset + sprite_width, y - sprite_yoffset + sprite_height, "ellipse", "invgaussian", 100);
 		sprite_index = evilflame_sprite_swap ? spr_evilflame_ultimate_charging : spr_evilflame_charging;
