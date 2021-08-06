@@ -636,14 +636,14 @@ if (global.state == 1 && global.gpspeed != 0) {
 
 // activation conditions and immediate effect
 var is_ultimate_cooldown  = IS_STATUS_EFFECT_ULTIMATE_COOLDOWN;
-var is_evilflame_ultimate = (global.chrsel == PLAYER_EVILFLAME && evilflame_twilight_fury);
+var is_evilflame_ultimate = (global.chrsel == PLAYER_EVILFLAME && (evilflame_twilight_fury || cancellation_clock != -1));
 var is_emerald_ultimate   = (global.chrsel == PLAYER_EMERALD && instance_exists(obj_emerald_ultimate));
 var is_scootomik_ultimate = (global.chrsel == PLAYER_DER_SCOOTOMIK && IS_STATUS_EFFECT_CHIP_TUNING);
 var is_bobileusz_ultimate = (global.chrsel == PLAYER_BOBILEUSZ && instance_exists(obj_bobileusz_ultimate));
 var are_all_ultimates_off = !(is_evilflame_ultimate | is_emerald_ultimate | is_scootomik_ultimate | is_bobileusz_ultimate);
 if (keyboard_check_pressed(KEYBIND_ULTIMATE) && ultcount > 0 && !is_ultimate_cooldown && are_all_ultimates_off && global.state == 1 && global.gpspeed != 0 && !instance_exists(obj_ultimate_activation)) {
     ultcount--;
-	if (global.chrsel == PLAYER_EVILFLAME && !TWILIGHT_FURY && instance_exists(obj_evilflame_ultimate) && cancellation_clock == -1) {
+	if (global.chrsel == PLAYER_EVILFLAME && instance_exists(obj_evilflame_ultimate)) {
 		// cancel dual clone, secondary effect
         part_type_spawn_lt(PART_SYSTEM_PLAYERTOP_LT, PART_TYPE_ULTIMATE_BURST_LT, 0, x - sprite_xoffset, y - sprite_yoffset, x - sprite_xoffset + sprite_width, y - sprite_yoffset + sprite_height, "ellipse", "invgaussian", 100);
 		sprite_index = evilflame_sprite_swap ? spr_evilflame_ultimate_charging : spr_evilflame_charging;
