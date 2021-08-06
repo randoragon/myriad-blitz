@@ -85,6 +85,7 @@ function scr_SaveGlobals() {
 	    save_append(args, global.ctime);
 	    save_append(args, global.ccooldown);
 	    save_append(args, global.ucooldown);
+		save_append(args, global.gptime);
 	}
 
 	args[@ 0] += args[@ 1];

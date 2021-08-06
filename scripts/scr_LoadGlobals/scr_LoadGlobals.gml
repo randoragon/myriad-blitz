@@ -75,8 +75,10 @@ function scr_LoadGlobals() {
 	    global.ctime         = string_readln_real(args);
 	    global.ccooldown     = string_readln_real(args);
 	    global.ucooldown     = string_readln_real(args);
+		global.gptime        = string_readln_real(args);
 	} else {
 		scr_PlayerDataUpdate(global.chrsel);
+		global.gptime = 0;
 	}
 
 	// Update surface pages
