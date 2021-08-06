@@ -12,7 +12,7 @@ switch(f) {
 		tx			 = obj_player.x;
 		ty			 = obj_player.y;
 		acc          = GRAVITY;
-		speed1		 = 15;
+		speed1		 = 14;
 		/* Calculating the exact angle is VERY cumbersome, approximate instead.
 		 * Keep track of the closest solution to the distance equation.
 		 */
@@ -27,7 +27,7 @@ switch(f) {
 			}
 		}
 		// Prevent aim-bot abuse
-		direction += irandom_range(-8, 8);
+		direction += irandom_range(-15, 15);
 		rot        = random_range(-5, 5);
 		lifespan   = 600;
 	break;
