@@ -21,12 +21,11 @@ if (lifespan <= 0) {
 		case PLAYER_BOBILEUSZ:
 			if (e == 0) {
 				disperse_particles(PART_SYSTEM_PLAYERTOP_LT, x, x, y, y, irandom_range(3, 5), rgb(255, 255, 128));
-				surface_page_release("projectile", surface_overlay);
 			} else {
 				disperse_particles(PART_SYSTEM_PLAYERTOP_LT, x, x, y, y, irandom_range(3, 5), rgb(25, 165, 255));
+				spawn_bullet_ring(x, y, obj_frag, PLAYER_BOBILEUSZ, 1, -1, spawn, irandom_range(5, 7), 0);
+				play_sfx(sfx_bobileusz_icicle_burst, 0, random_range(90, 110));
 			}
-			spawn_bullet_ring(x, y, obj_frag, PLAYER_BOBILEUSZ, 1, -1, spawn, irandom_range(5, 7), 0);
-			play_sfx(sfx_bobileusz_icicle_burst, 0, random_range(90, 110));
 		break;
 		default:
 			disperse_particles(PART_SYSTEM_PLAYERTOP_LT, x, x, y, y, irandom_range(3, 5), global.color[global.chrsel]);
@@ -36,8 +35,11 @@ if (lifespan <= 0) {
 
 #endregion
 
-#region Destroy the afterimage grid
+#region Free Resources
 
+if (f == PLAYER_BOBILEUSZ && e == 0) {
+	surface_page_release("projectile", surface_overlay);
+}
 draw_afterimage_remove();
 
 #endregion
