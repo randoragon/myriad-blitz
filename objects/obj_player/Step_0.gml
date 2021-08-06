@@ -359,8 +359,8 @@ if (global.state == 1 && gpspd != 0) {
     }
 
     gpspd = global.gpspeed;
-    var charge_sprite_lock = ((charge > 0 && artcharge == 0) || ((global.chrsel == PLAYER_EMERALD || global.chrsel == PLAYER_DER_SCOOTOMIK) && instance_exists(obj_charge)));
-    var can_shoot = (discharge > 0 || !mouse_check_button(mb_right)) && !charge_sprite_lock && !(global.chrsel == PLAYER_EMERALD && IS_STATUS_EFFECT_SPELL_DRIED) && cancellation_clock == -1;
+    var charge_sprite_lock = ((charge > 0 && artcharge == 0) || ((global.chrsel == PLAYER_EMERALD || global.chrsel == PLAYER_DER_SCOOTOMIK) && instance_exists(obj_charge)) || (global.chrsel == PLAYER_EVILFLAME && cancellation_clock != -1));
+    var can_shoot = (discharge > 0 || !mouse_check_button(mb_right)) && !charge_sprite_lock && !(global.chrsel == PLAYER_EMERALD && IS_STATUS_EFFECT_SPELL_DRIED);
     if (can_shoot) {
         // is shooting event:
 		var is_shooting = (keyboard_check(KEYBIND_SHOOT) || (mouse_check_button(mb_left) && (!place_meeting(boss.x, boss.y, obj_button) || instance_place(boss.x, boss.y, obj_button).image_alpha == 0)));
