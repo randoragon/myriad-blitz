@@ -85,6 +85,10 @@ function scr_SaveGlobals() {
 	    save_append(args, global.ctime);
 	    save_append(args, global.ccooldown);
 	    save_append(args, global.ucooldown);
+		save_append(args, global.sfx_shoot);
+		save_append(args, global.sfx_bullet_hit);
+		save_append(args, global.sfx_frag_hit);
+		save_append(args, global.sfx_charge_shot);
 		save_append(args, global.gptime);
 	}
 

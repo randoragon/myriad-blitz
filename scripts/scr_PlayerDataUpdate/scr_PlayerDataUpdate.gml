@@ -68,6 +68,10 @@ function scr_PlayerDataUpdate() {
 	            global.udesc     = 
 	            "Borrows the power of stars...";
 	        }
+			global.sfx_shoot       = sfx_evilflame_shoot;
+			global.sfx_bullet_hit  = sfx_evilflame_bullet_hit;
+			global.sfx_frag_hit    = sfx_evilflame_frag_hit;
+			global.sfx_charge_shot = sfx_evilflame_charge_shot;
 	    break;
 	#endregion
 	#region Emerald~
@@ -125,6 +129,10 @@ function scr_PlayerDataUpdate() {
 	        "\ninside with extreme pressure." +
 	        "\nTemporarily weakens the caster" +
 	        "\nafterwards due to exhaustion.";
+			global.sfx_shoot       = sfx_emerald_shoot;
+			global.sfx_bullet_hit  = sfx_emerald_bullet_hit;
+			global.sfx_frag_hit    = sfx_emerald_frag_hit;
+			global.sfx_charge_shot = sfx_emerald_charge_shot;
 	    break;
 	#endregion
 	#region Der Scootomik
@@ -182,6 +190,10 @@ function scr_PlayerDataUpdate() {
 	        "\nthat you're able to sustain" +
 	        "\n0.00026% of the cosmic speed" +
 	        "\nlimit for a split second.";
+			global.sfx_shoot       = sfx_scootomik_shoot;
+			global.sfx_bullet_hit  = sfx_scootomik_bullet_hit;
+			global.sfx_frag_hit    = sfx_scootomik_frag_hit;
+			global.sfx_charge_shot = sfx_scootomik_charge_shot;
 	    break;
 	#endregion
 	#region Bobileusz
@@ -242,6 +254,10 @@ function scr_PlayerDataUpdate() {
 	        "\nand disperses projectiles into" +
 	        "\na ruthless rainbow shower of" +
 			"\ndisintegration rays.";
+			global.sfx_shoot       = sfx_bobileusz_shoot;
+			global.sfx_bullet_hit  = sfx_bobileusz_bullet_hit;
+			global.sfx_frag_hit    = sfx_bobileusz_frag_hit;
+			global.sfx_charge_shot = sfx_bobileusz_charge_shot;
 	    break;
 	#endregion
 	
@@ -288,6 +304,10 @@ function scr_PlayerDataUpdate() {
 	        global.utype         = "unspecified";
 	        global.ucooldown     = 0;
 	        global.udesc         = "description unavailable";
+			global.sfx_shoot       = -1;
+			global.sfx_bullet_hit  = -1;
+			global.sfx_frag_hit    = -1;
+			global.sfx_charge_shot = -1;
 	    break;
 	#endregion
 	}

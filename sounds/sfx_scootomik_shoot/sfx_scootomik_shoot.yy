@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_character_scootomik",
   },
   "soundFile": "sfx_scootomik_shoot",
-  "duration": 0.261463,
+  "duration": 0.256463,
   "parent": {
     "name": "Der Scootomik",
     "path": "folders/Sounds/SFX/Characters/Der Scootomik.yy",

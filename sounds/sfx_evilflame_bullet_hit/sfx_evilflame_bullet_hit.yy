@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_character_evilflame",
   },
   "soundFile": "sfx_evilflame_bullet_hit",
-  "duration": 0.063231,
+  "duration": 0.058231,
   "parent": {
     "name": "Evilflame",
     "path": "folders/Sounds/SFX/Characters/Evilflame.yy",

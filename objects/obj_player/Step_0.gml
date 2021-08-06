@@ -377,7 +377,7 @@ if (global.state == 1 && gpspd != 0) {
                 sprite_index = spr_evilflame_shooting + global.chrsel;
             }
             if (shot <= 0) {
-                play_sfx(sfx_evilflame_shoot + (global.chrsel * 4), 0, global.sound_gpspeed * 100);
+                play_sfx(global.sfx_shoot, 0, global.sound_gpspeed * 100);
 				var xoffset, yoffset, xoffset2, yoffset2;
                 switch(global.chrsel)
                 {
@@ -560,7 +560,7 @@ if (global.state == 1 && global.gpspeed != 0) {
 	if (mouse_check_button(mb_right) && charge > 0 && !does_emerald_laser_exist && !bobileusz_invalid) {
 		if (charge >= ctime) {
 			cb = 1;
-			play_sfx(sfx_evilflame_charge_shot + (global.chrsel * 4), 0, global.sound_gpspeed * 100);
+			play_sfx(global.sfx_charge_shot, 0, global.sound_gpspeed * 100);
 			charge = 0;
 			if (artcharge == 0) {
 				discharge = ccooldown;

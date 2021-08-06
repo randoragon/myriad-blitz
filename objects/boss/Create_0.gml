@@ -495,6 +495,17 @@ global.save_aindex[? "sfx_bobileusz_prism_idle3"]	= 45;
 global.save_aname[? 45]								= "sfx_bobileusz_prism_idle3";
 global.save_aindex[? "sfx_bobileusz_prism_shot"]	= 46;
 global.save_aname[? 46]								= "sfx_bobileusz_prism_shot";
+global.save_aindex[? "sfx_ultimate_pickup1"]	    = 47;
+global.save_aname[? 47]								= "sfx_ultimate_pickup1";
+global.save_aindex[? "sfx_ultimate_pickup2"]	    = 48;
+global.save_aname[? 48]								= "sfx_ultimate_pickup2";
+global.save_aindex[? "sfx_ultimate_pickup3"]	    = 49;
+global.save_aname[? 49]								= "sfx_ultimate_pickup3";
+global.save_aindex[? "sfx_ultimate_pickup4"]	    = 50;
+global.save_aname[? 50]								= "sfx_ultimate_pickup4";
+global.save_aindex[? "sfx_ultimate_pickup5"]	    = 51;
+global.save_aname[? 51]								= "sfx_ultimate_pickup5";
+
 
 #endregion
 
@@ -512,6 +523,11 @@ global.sound_priority[? "sfx_player_hurt" ] = 10;
 global.sound_priority[? "sfx_player_death"] = 10;
 global.sound_priority[? "sfx_charging"] = 4;
 global.sound_priority[? "sfx_ultimate_activation"] = 7;
+global.sound_priority[? "sfx_ultimate_pickup1"] = 10;
+global.sound_priority[? "sfx_ultimate_pickup2"] = 10;
+global.sound_priority[? "sfx_ultimate_pickup3"] = 10;
+global.sound_priority[? "sfx_ultimate_pickup4"] = 10;
+global.sound_priority[? "sfx_ultimate_pickup5"] = 10;
 
 // Characters
 global.sound_priority[? "sfx_evilflame_shoot"] = 2;

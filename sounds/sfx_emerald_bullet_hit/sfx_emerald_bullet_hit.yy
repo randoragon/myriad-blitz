@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_character_emerald",
   },
   "soundFile": "sfx_emerald_bullet_hit",
-  "duration": 0.068968,
+  "duration": 0.063968,
   "parent": {
     "name": "Emerald",
     "path": "folders/Sounds/SFX/Characters/Emerald.yy",

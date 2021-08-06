@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_character_bobileusz",
   },
   "soundFile": "sfx_bobileusz_shoot",
-  "duration": 0.070193,
+  "duration": 0.065193,
   "parent": {
     "name": "Bobileusz",
     "path": "folders/Sounds/SFX/Characters/Bobileusz.yy",
