@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default_gameplay",
   },
   "soundFile": "sfx_player_hurt",
-  "duration": 0.332891,
+  "duration": 0.327891,
   "parent": {
     "name": "General SFX",
     "path": "folders/Sounds/SFX/General SFX.yy",
