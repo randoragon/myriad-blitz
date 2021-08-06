@@ -288,7 +288,7 @@ if (f == 8 && room == rm_Main && !global.loading) {
 		stats_text_right += "\n" + (global.gptime > 3600 ? string_format(global.gptime / 3600, -1, 0) + "m " : "") + string_format(global.gptime % 3600 / 60, -1, 0) + "s";
 		stats_text_right += "\n" + string(fps);
 		draw_set_align(fa_center, fa_top);
-		draw_text_outline(GUI_XMID, GUI_YEND - 40, "you can (un)pause with Escape or Q", 2, 2, c_white, 0, c_black);
+		draw_text_outline(GUI_XMID, GUI_YEND - 40, "you can (un)pause with Escape or " + (global.left_handed_mode ? "P" : "Q"), 2, 2, c_white, 0, c_black);
 	}
 	draw_set_align(fa_right, fa_top);
 	draw_text_outline(GUI_XEND - 10 - 2 * string_width("999999"), GUI_Y - 80 + (85*global.transition), stats_text_left, 2, 2, c_yellow, 2, c_black);

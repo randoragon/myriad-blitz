@@ -10,12 +10,14 @@ function scr_RunStart(){
 	global.points = 0;
 	mouse_clear(mb_left);
 	mouse_clear(mb_right);
-	keyboard_clear(vk_space);
-	keyboard_clear(vk_shift);
-	keyboard_clear(ord("W"));
-	keyboard_clear(ord("A"));
-	keyboard_clear(ord("S"));
-	keyboard_clear(ord("D"));
+	keyboard_clear(KEYBIND_SHOOT);
+	keyboard_clear(KEYBIND_FOCUS);
+	keyboard_clear(KEYBIND_UP);
+	keyboard_clear(KEYBIND_LEFT);
+	keyboard_clear(KEYBIND_DOWN);
+	keyboard_clear(KEYBIND_RIGHT);
+	keyboard_clear(KEYBIND_CHARGE);
+	keyboard_clear(KEYBIND_PAUSE);
 	randomize();
 	
 	if (global.chrsel == PLAYER_BOBILEUSZ) {

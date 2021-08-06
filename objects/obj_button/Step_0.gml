@@ -428,7 +428,7 @@ if (global.busy == 0 || (f == 17 || f == 18 || f == 19 || f == 20)) {
 	            if (os_is_paused() && global.gpspeed != 0 && global.state == 1 && global.transition == 1) {
 	                scr_Pause();
 	            }
-	            if (global.state == 1 && (keyboard_check_pressed(vk_escape) || keyboard_check_pressed(ord("Q"))) && global.transition == 1) {
+	            if (global.state == 1 && (keyboard_check_pressed(vk_escape) || keyboard_check_pressed(KEYBIND_PAUSE)) && global.transition == 1) {
 	                if (global.gpspeed_state != 0) {
 	                    scr_Pause();
 	                } else {

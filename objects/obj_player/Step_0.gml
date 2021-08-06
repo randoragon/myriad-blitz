@@ -360,7 +360,7 @@ if (global.state == 1 && gpspd != 0) {
 
     gpspd = global.gpspeed;
     var charge_sprite_lock = ((charge > 0 && artcharge == 0) || ((global.chrsel == PLAYER_EMERALD || global.chrsel == PLAYER_DER_SCOOTOMIK) && instance_exists(obj_charge)) || (global.chrsel == PLAYER_EVILFLAME && cancellation_clock != -1));
-    var can_shoot = (discharge > 0 || !mouse_check_button(mb_right)) && !charge_sprite_lock && !(global.chrsel == PLAYER_EMERALD && IS_STATUS_EFFECT_SPELL_DRIED);
+    var can_shoot = (discharge > 0 || !(mouse_check_button(mb_right) && !keyboard_check(KEYBIND_CHARGE))) && !charge_sprite_lock && !(global.chrsel == PLAYER_EMERALD && IS_STATUS_EFFECT_SPELL_DRIED);
     if (can_shoot) {
         // is shooting event:
 		var is_shooting = (keyboard_check(KEYBIND_SHOOT) || (mouse_check_button(mb_left) && (!place_meeting(boss.x, boss.y, obj_button) || instance_place(boss.x, boss.y, obj_button).image_alpha == 0)));
@@ -535,7 +535,7 @@ if (global.state == 1 && global.gpspeed != 0) {
 	var does_emerald_laser_exist = (global.chrsel == PLAYER_EMERALD && instance_exists(obj_charge));
 	var is_spell_dried = (global.chrsel == PLAYER_EMERALD && IS_STATUS_EFFECT_SPELL_DRIED);
 	var bobileusz_invalid = (global.chrsel == PLAYER_BOBILEUSZ && (!(keyboard_check(KEYBIND_UP) ^^ keyboard_check(KEYBIND_DOWN)) || ((keyboard_check(KEYBIND_UP) && status_effect[STATUS_EFFECT_GEAR10]) || (keyboard_check(KEYBIND_DOWN) && status_effect[STATUS_EFFECT_GEAR1]))));
-	if (mouse_check_button(mb_right) && global.state == 1 && !does_emerald_laser_exist && !is_spell_dried && cancellation_clock == -1) {	
+	if ((mouse_check_button(mb_right) || keyboard_check(KEYBIND_CHARGE)) && global.state == 1 && !does_emerald_laser_exist && !is_spell_dried && cancellation_clock == -1) {	
 		// Charging
 		if (discharge == 0 && !bobileusz_invalid) {
 			if (evilflame_sprite_swap) {
@@ -557,7 +557,7 @@ if (global.state == 1 && global.gpspeed != 0) {
 	}
 
 	// launching charge
-	if (mouse_check_button(mb_right) && charge > 0 && !does_emerald_laser_exist && !bobileusz_invalid) {
+	if ((mouse_check_button(mb_right) || keyboard_check(KEYBIND_CHARGE)) && charge > 0 && !does_emerald_laser_exist && !bobileusz_invalid) {
 		if (charge >= ctime) {
 			cb = 1;
 			play_sfx(global.sfx_charge_shot, 0, global.sound_gpspeed * 100);
@@ -567,12 +567,13 @@ if (global.state == 1 && global.gpspeed != 0) {
 			} else {
 				artcharge = 0;
 				mouse_clear(mb_right);
+				keyboard_clear(KEYBIND_CHARGE);
 			}
 		}
 	}
 
 	// resetting charging progress
-	if (charge > 0 && !mouse_check_button(mb_right) && global.gpspeed != 0 && charge < ctime) {
+	if (charge > 0 && !mouse_check_button(mb_right) && !keyboard_check(KEYBIND_CHARGE) && global.gpspeed != 0 && charge < ctime) {
 		charge = 0;
 		bar_opacity[2] = 0;
 		if (evilflame_sprite_swap)

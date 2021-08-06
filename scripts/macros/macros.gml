@@ -26,6 +26,8 @@ function macros() {
 #macro KEYBIND_SHOOT global.keybind[4]
 #macro KEYBIND_FOCUS global.keybind[5]
 #macro KEYBIND_ULTIMATE global.keybind[6]
+#macro KEYBIND_CHARGE global.keybind[7]
+#macro KEYBIND_PAUSE  global.keybind[8]
 
 #endregion
 

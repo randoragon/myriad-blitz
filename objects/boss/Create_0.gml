@@ -58,6 +58,8 @@ KEYBIND_RIGHT    = ord("D");
 KEYBIND_SHOOT    = vk_space;
 KEYBIND_FOCUS    = vk_shift;
 KEYBIND_ULTIMATE = ord("E");
+KEYBIND_CHARGE   = ord("C");
+KEYBIND_PAUSE    = ord("Q");
 
 #endregion
 
