@@ -647,12 +647,12 @@ if (keyboard_check_pressed(KEYBIND_ULTIMATE) && ultcount > 0 && !is_ultimate_coo
 		// cancel dual clone, secondary effect
         part_type_spawn_lt(PART_SYSTEM_PLAYERTOP_LT, PART_TYPE_ULTIMATE_BURST_LT, 0, x - sprite_xoffset, y - sprite_yoffset, x - sprite_xoffset + sprite_width, y - sprite_yoffset + sprite_height, "ellipse", "invgaussian", 100);
 		sprite_index = evilflame_sprite_swap ? spr_evilflame_ultimate_charging : spr_evilflame_charging;
+		cancellation_clock = 45;
 		with(obj_evilflame_ultimate) {
 			part_type_spawn_lt(PART_SYSTEM_PLAYERTOP_LT, PART_TYPE_ULTIMATE_BURST_LT, 0, x - sprite_xoffset, y - sprite_yoffset, x - sprite_xoffset + sprite_width, y - sprite_yoffset + sprite_height, "ellipse", "invgaussian", 100);
 			sprite_index = other.evilflame_sprite_swap ? spr_evilflame_charging : spr_evilflame_ultimate_charging;
+			cancellation_clock = 45;
 		}
-		cancellation_clock = 45;
-		obj_evilflame_ultimate.cancellation_clock = 45;
 	} else {
 		instance_create(0, 0, obj_ultimate_activation);
 		flash_clock = 50;
