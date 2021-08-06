@@ -8,7 +8,7 @@
   "option_steam_app_id": "0",
   "option_sci_usesci": true,
   "option_author": "Randoragon",
-  "option_lastchanged": "05 August 2021 8:56:08",
+  "option_lastchanged": "06 August 2021 10:06:37",
   "option_spine_licence": false,
   "resourceVersion": "1.2",
   "name": "Main",

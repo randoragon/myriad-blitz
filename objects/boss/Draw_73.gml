@@ -182,6 +182,15 @@ draw_self();
 
 #endregion
 
+#region Debug mode prints
+
+if (debug_mode) {
+	draw_set_align(fa_right, fa_bottom);
+	draw_text_outline(CANVAS_XEND - 2, CANVAS_YEND - 2, "fps: " + string(fps) + "\nfps_real: " + string(fps_real), 3, 3, c_white, 1, c_black);
+}
+
+#endregion
+
 #region SURFACE RESET
 
 surface_reset_target();
